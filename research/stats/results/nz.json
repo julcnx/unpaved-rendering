@@ -1,0 +1,924 @@
+{
+ "country": "nz",
+ "name": "New Zealand",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:11:58.643Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "new-zealand-latest.osm.pbf",
+  "boundary": "r556706",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 837.8,
+   "untagged": 21.7,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 4210.4,
+   "untagged": 3.7,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 7223.7,
+   "unpaved": 20.2,
+   "untagged": 15.2,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 6264.1,
+   "unpaved": 111.7,
+   "untagged": 21.4,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "tertiary": {
+   "paved_tagged": 11334.5,
+   "unpaved": 1423.3,
+   "untagged": 45.6,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "unclassified": {
+   "unpaved": 35665,
+   "paved_tagged": 21849.4,
+   "untagged": 470.9,
+   "offroad": 51.2,
+   "specialized": 0
+  },
+  "residential": {
+   "paved_tagged": 15575.5,
+   "unpaved": 1655.1,
+   "untagged": 435.4,
+   "offroad": 1.9,
+   "specialized": 0
+  },
+  "all": {
+   "paved_tagged": 67295.4,
+   "unpaved": 38875.3,
+   "untagged": 1014,
+   "offroad": 53.1,
+   "specialized": 0
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 837.8,
+   "smoothness": 1.1
+  },
+  "trunk": {
+   "surface": 4210.4
+  },
+  "primary": {
+   "surface": 7243.9,
+   "smoothness": 87
+  },
+  "secondary": {
+   "surface": 6375.8,
+   "smoothness": 102.2
+  },
+  "tertiary": {
+   "surface": 12757.8,
+   "smoothness": 131.1,
+   "tracktype": 77.7
+  },
+  "unclassified": {
+   "surface": 57563.2,
+   "tracktype": 397.8,
+   "smoothness": 173.8,
+   "4wd_only": 10.6
+  },
+  "residential": {
+   "surface": 17232.2,
+   "smoothness": 64.8,
+   "tracktype": 3.4
+  },
+  "all": {
+   "surface": 106221,
+   "smoothness": 560,
+   "tracktype": 478.9,
+   "4wd_only": 10.6
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 837.8,
+   "default": 21.7
+  },
+  "trunk": {
+   "surface": 4210.4,
+   "default": 3.7
+  },
+  "primary": {
+   "surface": 7243.9,
+   "default": 15.2
+  },
+  "secondary": {
+   "surface": 6375.8,
+   "default": 21.4
+  },
+  "tertiary": {
+   "surface": 12757.8,
+   "default": 45.6
+  },
+  "unclassified": {
+   "surface": 57563.2,
+   "default": 470.9,
+   "tracktype": 2.5
+  },
+  "residential": {
+   "surface": 17232.2,
+   "default": 435.4,
+   "tracktype": 0.4
+  },
+  "all": {
+   "surface": 106221,
+   "default": 1014,
+   "tracktype": 2.8
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {},
+  "tertiary": {},
+  "unclassified": {
+   "smoothness": 25.3,
+   "tracktype": 16.2,
+   "4wd_only": 9.6
+  },
+  "residential": {
+   "smoothness": 1.7,
+   "tracktype": 0.2
+  },
+  "all": {
+   "smoothness": 27.1,
+   "tracktype": 16.5,
+   "4wd_only": 9.6
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=gravel": 18.8,
+    "surface=compacted": 1.4
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 72.7,
+    "surface=gravel": 31.9,
+    "surface=compacted": 7.1
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=gravel": 1041.6,
+    "surface=unpaved": 296.1,
+    "surface=compacted": 69.8,
+    "surface=fine_gravel": 14.6,
+    "surface=dirt": 1.3
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=gravel": 22084.3,
+    "surface=unpaved": 12154.2,
+    "surface=compacted": 1322.5,
+    "surface=dirt": 52.8,
+    "surface=fine_gravel": 28.5,
+    "surface=pebblestone": 26.8,
+    "surface=ground": 26.6,
+    "surface=sand": 10,
+    "surface=grass": 2.7,
+    "surface=gra": 2.3,
+    "tracktype=grade2": 2.1,
+    "surface=undefined; gravel": 1.5,
+    "surface=no": 1.1,
+    "surface=earth": 0.4,
+    "tracktype=grade4": 0.3,
+    "surface=unpaved;paved": 0.2
+   },
+   "offroad": {
+    "smoothness=very_bad": 24.3,
+    "tracktype=grade5": 8.3,
+    "4wd_only=yes": 6.1,
+    "tracktype=grade4": 4.7,
+    "4wd_only=recommended": 3.5,
+    "tracktype=grade3": 3.3,
+    "smoothness=horrible": 1.1
+   },
+   "specialized": {}
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 1032.4,
+    "surface=gravel": 541.2,
+    "surface=compacted": 67.2,
+    "surface=fine_gravel": 7.4,
+    "surface=dirt": 4.1,
+    "surface=sand": 2,
+    "surface=tarseal": 1.7,
+    "surface=grass": 0.4,
+    "surface=pebblestone": 0.2,
+    "tracktype=grade3": 0.1,
+    "tracktype=grade2": 0.1,
+    "tracktype=grade4": 0.1,
+    "surface=ground": 0,
+    "surface=unhewn_cobblestone": 0,
+    "surface=brick": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 1.5,
+    "smoothness=horrible": 0.2,
+    "tracktype=grade3": 0.1,
+    "tracktype=grade4": 0.1
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=gravel": 23717.7,
+    "surface=unpaved": 13555.4,
+    "surface=compacted": 1468,
+    "surface=dirt": 58.2,
+    "surface=fine_gravel": 50.4,
+    "surface=pebblestone": 27,
+    "surface=ground": 26.7,
+    "surface=sand": 11.9,
+    "surface=grass": 3,
+    "surface=gra": 2.3,
+    "tracktype=grade2": 2.2,
+    "surface=tarseal": 1.7,
+    "surface=undefined; gravel": 1.5,
+    "surface=no": 1.1,
+    "surface=earth": 0.4,
+    "tracktype=grade4": 0.4,
+    "surface=unpaved;paved": 0.2,
+    "tracktype=grade3": 0.1,
+    "surface=unhewn_cobblestone": 0,
+    "surface=brick": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 25.8,
+    "tracktype=grade5": 8.3,
+    "4wd_only=yes": 6.1,
+    "tracktype=grade4": 4.8,
+    "4wd_only=recommended": 3.5,
+    "tracktype=grade3": 3.4,
+    "smoothness=horrible": 1.3
+   },
+   "specialized": {}
+  }
+ },
+ "unknown_value_km": {
+  "surface=gra": 2.3,
+  "surface=tarseal": 1.7,
+  "surface=undefined; gravel": 1.5,
+  "surface=no": 1.1,
+  "surface=brick": 0
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + tracktype=grade3": 25.2,
+  "smoothness=good + surface=compacted": 0.3,
+  "smoothness=good + surface=gravel": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w229002044",
+    "highway": "secondary",
+    "km": 18.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxlength": "10.6",
+     "maxspeed": "30",
+     "name": "Waikaremoana Road",
+     "note": "not officially designated a State Highway",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w290237706",
+    "highway": "primary",
+    "km": 12.2,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "State Highway 38",
+     "highway": "primary",
+     "maxspeed": "100",
+     "name": "Lake Road",
+     "ref": "SH 38",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w1060195381",
+    "highway": "secondary",
+    "km": 7.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxlength": "10.6",
+     "maxspeed": "30",
+     "name": "Waikaremoana Road",
+     "note": "not officially designated a State Highway",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w212429380",
+    "highway": "secondary",
+    "km": 7.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxlength": "10.6",
+     "maxspeed": "40",
+     "name": "Waikaremoana Road",
+     "note": "not officially designated a State Highway",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w224203540",
+    "highway": "secondary",
+    "km": 6.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Mahuta Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w164770191",
+    "highway": "secondary",
+    "km": 5.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Purerua Road",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w984794527",
+    "highway": "secondary",
+    "km": 5.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "100",
+     "name": "Pouto Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1060200951",
+    "highway": "secondary",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxlength": "10.6",
+     "maxspeed": "30",
+     "name": "Waikaremoana Road",
+     "note": "not officially designated a State Highway",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w403554022",
+    "highway": "secondary",
+    "km": 4.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxlength": "10.6",
+     "maxspeed": "100",
+     "name": "Ruatahuna Road",
+     "note": "not officially designated a State Highway",
+     "oneway": "no",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w165122657",
+    "highway": "secondary",
+    "km": 4.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Matawaia Maromaku Road",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w833795111",
+    "highway": "secondary",
+    "km": 3.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Mount Wesley Coast Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w166103964",
+    "highway": "secondary",
+    "km": 3.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Redhill Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w403550598",
+    "highway": "secondary",
+    "km": 3.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxlength": "10.6",
+     "maxspeed": "100",
+     "name": "Ruatahuna Road",
+     "note": "not officially designated a State Highway",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w165717850",
+    "highway": "secondary",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "100",
+     "motor_vehicle": "yes",
+     "name": "Pipiwai Road",
+     "oneway": "no",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w34087386",
+    "highway": "secondary",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxlength": "10.6",
+     "maxspeed": "100",
+     "name": "Ruatahuna Road",
+     "note": "not officially designated a State Highway",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w1421342006",
+    "highway": "unclassified",
+    "km": 11.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w128108089",
+    "highway": "unclassified",
+    "km": 5.8,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "discouraged",
+     "highway": "unclassified",
+     "maxspeed": "60",
+     "name": "Flea Bay Road",
+     "smoothness": "bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w673545119",
+    "highway": "unclassified",
+    "km": 4.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Slope Point Road",
+     "surface": "gravel",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w27669692",
+    "highway": "unclassified",
+    "km": 4.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Stranges Road",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w439067334",
+    "highway": "unclassified",
+    "km": 3.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "100",
+     "name": "Pipers Valley Road",
+     "surface": "gravel",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w16866841",
+    "highway": "unclassified",
+    "km": 2.9,
+    "level": "offroad",
+    "tags": {
+     "access": "permissive",
+     "charge": "10 NZD",
+     "highway": "unclassified",
+     "lane_markings": "no",
+     "maxspeed": "30",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "toll": "yes",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w362727074",
+    "highway": "unclassified",
+    "km": 2.8,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "smoothness": "very_bad",
+     "surface": "sand",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w603316595",
+    "highway": "unclassified",
+    "km": 2.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Waiwhiu Road",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w709819146",
+    "highway": "unclassified",
+    "km": 1.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "100",
+     "name": "Panama Road",
+     "oneway": "no",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w338880928",
+    "highway": "unclassified",
+    "km": 1.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "School Road",
+     "smoothness": "very_bad",
+     "source": "bing",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w178959574",
+    "highway": "unclassified",
+    "km": 1.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "Fenian Road",
+     "smoothness": "very_bad",
+     "source": "LINZ NZ Topo 50",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w812411577",
+    "highway": "unclassified",
+    "km": 1.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "100",
+     "name": "Blackbridge Road",
+     "surface": "gravel",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w28042924",
+    "highway": "unclassified",
+    "km": 1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "description": "suited for 4-wheel drive vehicles only; very steep gravel road",
+     "highway": "unclassified",
+     "incline": "up",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "Morgans Road",
+     "smoothness": "horrible",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w331190402",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "100",
+     "name": "Panama Road",
+     "oneway": "no",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w26100886",
+    "highway": "residential",
+    "km": 0.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "maxspeed": "40",
+     "name": "Aylmers Valley Road",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w783259826",
+    "highway": "unclassified",
+    "km": 6.8,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w783268167",
+    "highway": "unclassified",
+    "km": 5,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w755581580",
+    "highway": "unclassified",
+    "km": 4.6,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w755796803",
+    "highway": "unclassified",
+    "km": 2.6,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w755552906",
+    "highway": "unclassified",
+    "km": 1.8,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w783259815",
+    "highway": "unclassified",
+    "km": 1.7,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w982361439",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w982361437",
+    "highway": "unclassified",
+    "km": 0.6,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "name": "West Coast Road",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w982361441",
+    "highway": "unclassified",
+    "km": 0.6,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "embankment": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "name": "West Coast Road",
+     "ref:linz:topo50_id": "1398288",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w691381203",
+    "highway": "unclassified",
+    "km": 2.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Waterworks Road",
+     "surface": "gra"
+    }
+   },
+   {
+    "id": "w28015020",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Beattys Road",
+     "surface": "undefined; gravel"
+    }
+   },
+   {
+    "id": "w166572411",
+    "highway": "unclassified",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "access": "no",
+     "highway": "unclassified",
+     "name": "Manuka Drive",
+     "ref:linz:road_id": "1814514",
+     "source": "LINZ & NZ Open GIS",
+     "surface": "no"
+    }
+   },
+   {
+    "id": "w229616263",
+    "highway": "residential",
+    "km": 0.6,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "yes",
+     "cycleway:both": "no",
+     "foot": "yes",
+     "highway": "residential",
+     "horse": "yes",
+     "lit": "yes",
+     "maxspeed": "50",
+     "motor_vehicle": "yes",
+     "name": "Messenger Terrace",
+     "oneway": "no",
+     "sidewalk": "both",
+     "surface": "tarseal"
+    }
+   }
+  ]
+ }
+}
