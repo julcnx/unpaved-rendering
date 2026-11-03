@@ -62,6 +62,14 @@ Point: **28.80567, 83.76673** (`geo:28.80567,83.76673?z=15`). Class: `highway=pr
 
 Verified: Mapillary images are from 2014, before the asphalt; transition confirmed by Julien on Google Street View (2026-11-03).
 
+Google Street View at the transition point (user photosphere, May 2025, "© nepal home search"; link only, the images are copyrighted and must not be uploaded):
+
+- [Looking north, towards the side tagged asphalt](https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSHENJQUJJaENmZl9nNGwzLW8wcjhLbHVFeHhBZmk.&heading=26): gravel and dirt in this view.
+- [Looking south, towards the side tagged gravel](https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSHENJQUJJaENmZl9nNGwzLW8wcjhLbHVFeHhBZmk.&heading=213): short concrete bridge deck, then gravel.
+- Local copies for checking only (not committed): `images/google/np-nh48-transition-paved.jpg`, `images/google/np-nh48-transition-unpaved.jpg`, side by side in `images/sheets/transitions/25-google.jpg`.
+
+Open question: neither direction of this panorama shows asphalt, so the asphalt may start further along, or Julien's confirmation was from another view. To check before using this spot.
+
 - Paved side: [w384304387](https://www.openstreetmap.org/way/384304387) `surface=asphalt`, 4.8 km, [Mapillary 2014-06-25](https://www.mapillary.com/app/?pKey=170085204903842)
 - Unpaved side: [w1254665821](https://www.openstreetmap.org/way/1254665821) `surface=gravel`, 4.5 km, [Mapillary 2014-06-25](https://www.mapillary.com/app/?pKey=272466534555985)
 

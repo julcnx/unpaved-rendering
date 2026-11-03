@@ -2422,5 +2422,21 @@
   "author": "roshanpoudel14",
   "captured": "2016-12-29",
   "licence": "CC BY-SA 4.0"
+ },
+ "google/np-nh48-transition-paved.jpg": {
+  "road": "Nepal NH48 Beni-Lo Manthang transition (paved direction)",
+  "way": "w384304387",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSHENJQUJJaENmZl9nNGwzLW8wcjhLbHVFeHhBZmk.&heading=26",
+  "captured": "2025-05",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/np-nh48-transition-unpaved.jpg": {
+  "road": "Nepal NH48 Beni-Lo Manthang transition (unpaved direction)",
+  "way": "w1254665821",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSHENJQUJJaENmZl9nNGwzLW8wcjhLbHVFeHhBZmk.&heading=213",
+  "captured": "2025-05",
+  "licence": "copyrighted: checking only, do not upload"
  }
 }
