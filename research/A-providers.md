@@ -11,6 +11,8 @@ Sources used:
 
 Komoot, Gaia GPS, Calimoto and Guru Maps do not appear anywhere in the workspace. Their current rendering is still to be checked in the apps (see task D).
 
+**Model (decided 2026-11-02):** two levels, Paved and Unpaved, plus an optional Off-road mark on Unpaved roads only. The ask to providers is therefore small: (1) draw the paved/unpaved split on **every** road class, using a paved whitelist, and (2) optionally add the Off-road mark. Several providers already have the two levels internally; the open question per provider is whether they draw them on main road classes (primary, secondary, tertiary) or only on tracks and minor roads. That check is still to do.
+
 ## A1. Providers that already whitelist paved values
 
 ### HOT Humanitarian style (HDM-CartoCSS)
@@ -31,7 +33,7 @@ END AS surface,
 
 `condition` is used in `roads.mss` L249. Unpaved roads get a different casing and fill (`@unpaved`, `@unpaved_case` in `palette.mss`).
 
-Same as our rule: paved whitelist, everything else unpaved, missing surface on main roads is paved.
+Same as our base level: paved whitelist, everything else unpaved, missing surface on main roads is paved.
 
 Differences from our rule:
 
@@ -47,7 +49,7 @@ Repo: [organicmaps/organicmaps](https://github.com/organicmaps/organicmaps), fil
 - Used at: [L729](https://github.com/organicmaps/organicmaps/blob/3e4abc2c1bf97be7bf89fa3ed00fa6cf4739c40a/generator/osm2type.cpp#L729) `isPaved = Has(pavedSurfaces, surface);`
 - No surface and no smoothness: no `psurface` at all ([L709](https://github.com/organicmaps/organicmaps/blob/3e4abc2c1bf97be7bf89fa3ed00fa6cf4739c40a/generator/osm2type.cpp#L709)), so drawn as normal road.
 
-Output is 4 values: `paved_good`, `paved_bad`, `unpaved_good`, `unpaved_bad`. This is the closest existing model to Paved / Rough / Off-road.
+Output is 4 values: `paved_good`, `paved_bad`, `unpaved_good`, `unpaved_bad`. The paved/unpaved part matches our base level; `unpaved_bad` is close to our Off-road mark, but it is also set from surface values alone (`dirt`, `ground`, `laterite` and others), not only from evidence tags.
 
 Differences from our rule:
 
@@ -61,7 +63,7 @@ Differences from our rule:
 |---|---|---|---|---|---|
 | 1 | Organic Maps / CoMaps | yes | `psurface` 4 values, drawn on tracks and minor roads | GitHub issues | [#8485](https://github.com/organicmaps/organicmaps/issues/8485) open, 18 comments, "Render tracks similar like the Carto-Style"; [#11835](https://github.com/organicmaps/organicmaps/issues/11835) "Color mode for displaying road passability" (smoothness colour mode), closed not planned the same day, no comment; **[#13045](https://github.com/organicmaps/organicmaps/issues/13045)** closed; **[PR #13229](https://github.com/organicmaps/organicmaps/pull/13229)** |
 | 2 | OsmAnd | yes | Optional "Road surface" and "Road quality" overlays, off by default, from z14: [default.render.xml L99-102](https://github.com/osmandapp/OsmAnd-resources/blob/85815c67803a53ed1e4e50b25337d678bac0fa16/rendering_styles/default.render.xml#L99-L102) | GitHub issues (OsmAnd, OsmAnd-resources) | [#9465](https://github.com/osmandapp/OsmAnd/issues/9465) open since 2020, "draw unpaved roads in the same style as tracks"; **[resources PR #1397](https://github.com/osmandapp/OsmAnd-resources/pull/1397)**; **[#25469](https://github.com/osmandapp/OsmAnd/issues/25469)** |
-| 3 | OpenStreetMap Americana | yes | Dash pattern when `surface=unpaved`: [road.js L56](https://github.com/osm-americana/openstreetmap-americana/blob/dddb072aad1ba2efb2332277ff53cc72f0bcbc65/src/layer/road.js#L56). Gets only paved/unpaved from the OpenMapTiles schema, so 3 levels need a schema change upstream | GitHub issues | [#216](https://github.com/osm-americana/openstreetmap-americana/issues/216) tracks/paths; **[#1434](https://github.com/osm-americana/openstreetmap-americana/issues/1434)** closed |
+| 3 | OpenStreetMap Americana | yes | Dash pattern when `surface=unpaved`: [road.js L56](https://github.com/osm-americana/openstreetmap-americana/blob/dddb072aad1ba2efb2332277ff53cc72f0bcbc65/src/layer/road.js#L56). Gets paved/unpaved from the OpenMapTiles schema, which is enough for our two base levels; the optional Off-road mark would need `smoothness`, `tracktype` or `4wd_only` in the schema upstream | GitHub issues | [#216](https://github.com/osm-americana/openstreetmap-americana/issues/216) tracks/paths; **[#1434](https://github.com/osm-americana/openstreetmap-americana/issues/1434)** closed |
 | 4 | OpenMapTiles / Planetiler | yes | Binary paved/unpaved in schema (`layers/transportation/class.sql`, `Transportation.java`) | GitHub issues | **[#1806](https://github.com/openmaptiles/openmaptiles/issues/1806), [PR #1807](https://github.com/openmaptiles/openmaptiles/pull/1807)**, **[PR #332](https://github.com/openmaptiles/planetiler-openmaptiles/pull/332)** all merged |
 | 5 | Tracestrack Topo | partly | Unpaved style exists | GitHub issues | **[#67](https://github.com/tracestrack/tracestrack-maps/issues/67)** fixed quickly |
 | 6 | CyclOSM | yes | Smoothness drawn for cycling | GitHub issues | [#566](https://github.com/cyclosm/cyclosm-cartocss-style/issues/566) finer smoothness levels |

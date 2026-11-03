@@ -21,47 +21,46 @@ Review (2026-11-02):
 
 Design history: the first mockups (three levels Paved / Rough / Off-road, options texture, centre dash, tinted fill) were replaced when the model changed to two levels plus a mark. Earlier feedback kept: regular dots, not random speckles; one grain size, only spacing changes; light tint so the road still reads as its class colour, not as a brown track.
 
-## D1. Sample roads (candidates from the stats)
+## D1. Sample roads
 
-| Country | Road | Way | Tags | Class |
-|---|---|---|---|---|
-| Gabon | RN4 (trunk) | [w449286536](https://www.openstreetmap.org/way/449286536) | `surface=unpaved` | Off-road |
-| Bolivia | RN39 Cuatro Cañadas-San Miguel de Velasco (trunk) | [w455824340](https://www.openstreetmap.org/way/455824340) | `surface=ground`, `smoothness=very_bad` | Off-road |
-| Iceland | F26 Sprengisandsleið (secondary) | [w319372206](https://www.openstreetmap.org/way/319372206) | `surface=gravel`, `4wd_only=yes` | Off-road (Rough without `4wd_only`) |
-| Nepal | NH18 (primary) | [w344160419](https://www.openstreetmap.org/way/344160419) | `surface=unpaved`, `smoothness=horrible`, note "Only small vehicles (4 x 4 jeeps) are allowed" | Off-road |
+Classes under the two-level model: **Unpaved**, with **+ mark** when `smoothness`, `tracktype` or `4wd_only` give off-road evidence. All picks have street-level imagery reviewed in [examples/images/review.md](examples/images/review.md).
 
-To add: Madagascar, Australia (Gibb River Road or Oodnadatta Track) once their results are in. Current rendering in apps: to capture.
+| Region | Road | Way | Tags | Class | Imagery |
+|---|---|---|---|---|---|
+| Africa | Congo-Brazzaville P1 (primary) | [w339788648](https://www.openstreetmap.org/way/339788648) | `surface=unpaved` | Unpaved | Mapillary 2026, laterite with erosion gullies |
+| Africa | Namibia C15/M33 (primary) | [w22726347](https://www.openstreetmap.org/way/22726347) | `surface=unpaved` | Unpaved | Mapillary 2026, graded gravel, car-drivable |
+| Africa | Senegal R.06.1 (secondary) | [w305374480](https://www.openstreetmap.org/way/305374480) | `surface=ground` | Unpaved | Google 2021 (link only), laterite |
+| Asia | Mongolia A0503 (primary) | [w76695032](https://www.openstreetmap.org/way/76695032) | `surface=unpaved` | Unpaved | Google 2015 (link only), parallel steppe tracks |
+| Asia | Nepal NH18 (primary) | [w344160419](https://www.openstreetmap.org/way/344160419) | `surface=unpaved`, `smoothness=horrible`, note "Only small vehicles (4 x 4 jeeps) are allowed" | Unpaved + mark | none checked |
+| Asia | Timor-Leste Umaboco-Viqueque (primary) | [w550548492](https://www.openstreetmap.org/way/550548492) | `surface=unpaved` | Unpaved | Mapillary 2026, stony gravel with mud |
+| Central America | Mexico QR 15 (secondary) | [w41680341](https://www.openstreetmap.org/way/41680341) | `surface=unpaved` | Unpaved (off-road-looking, no mark) | Mapillary 2022, sand track, 4x4 |
+| South America | Bolivia F4 Puerto Suárez-Puerto Busch (secondary) | [w55203670](https://www.openstreetmap.org/way/55203670) | `surface=unpaved` | Unpaved | Mapillary 2024 |
+| Oceania | Australia Gibb River Road (secondary) | [w313519144](https://www.openstreetmap.org/way/313519144) | `surface=unpaved` | Unpaved | Mapillary 2019, corrugated red dirt |
+| Oceania | Papua New Guinea Vanimo-Green River (secondary) | [w844126856](https://www.openstreetmap.org/way/844126856) | `surface=unpaved` | Unpaved | Mapillary 2025 |
+| Developed | Iceland Kjalvegur 35 (secondary) | [w620383908](https://www.openstreetmap.org/way/620383908) | `surface=gravel`, `4wd_only=yes` | Unpaved + mark | Google 2024 (link only) |
+| Developed | Finland 522 (secondary) | [w113796504](https://www.openstreetmap.org/way/113796504) | `surface=compacted` | Unpaved | Mapillary 2019, smooth gravel |
+| Special | Antarctica, South Pole Traverse (secondary) | [w1159748450](https://www.openstreetmap.org/way/1159748450) | `surface=ice`, `smoothness=very_bad` | Unpaved + mark | none |
 
-## D1b. Street-level imagery check (2026-11-02)
+Paved-now examples (tag out of date), useful for the "paving fast" point: Nepal NH66, Timor-Leste Viqueque-Baucau, Uganda Akokoro Road.
 
-Satellite alone is not enough evidence, so each example needs Mapillary or Google Street View. [examples/imagery-check.ts](examples/imagery-check.ts) samples 8 points along each way and looks for the nearest image within 50 m, with the same lookups as `unpaved-app/app/js/street-view.js` (Mapillary Graph API, Google Street View metadata API). Keys are read from `unpaved-app` at run time, never stored here. Candidates: [examples/candidates.txt](examples/candidates.txt) (wiki and famous roads) plus the top 3 major roads classified Off-road per country from the stats. Full table: [examples/imagery.md](examples/imagery.md) (62 roads).
+To do: the comparison grid, one location (a major road where a paved and an unpaved section meet, with imagery on both sides) shown in every app at the same zoom. Current rendering in apps: not captured yet.
 
-Best picks, Off-road roads with good coverage ("official" = Google car, not user photospheres):
+## D1b. Street-level imagery check
 
-| Region | Road | Coverage | Tags |
-|---|---|---|---|
-| Africa | Senegal R.06.1 ([w305374480](https://www.openstreetmap.org/way/305374480)), R071 | Google 8/8 official, 2021 | `ground`, `unpaved` |
-| Africa | Ghana R131 ([w79123562](https://www.openstreetmap.org/way/79123562)), IR11 | Google 8/8 and 4/8 official, 2026 | `unpaved` |
-| Africa | Congo-Brazzaville P1 ([w339788648](https://www.openstreetmap.org/way/339788648)) | Mapillary 5/8, 2026 | `unpaved` |
-| Asia | Nepal NH66 ([w342736414](https://www.openstreetmap.org/way/342736414)) | Google 8/8 official, 2025 | `unpaved` |
-| Asia | Timor-Leste Viqueque-Baucau ([w40678552](https://www.openstreetmap.org/way/40678552)), Lospalos-Malahara | Mapillary 8/8, 2025; Google photospheres | `unpaved` |
-| Asia | Mongolia A0503 ([w76695032](https://www.openstreetmap.org/way/76695032)) | Google 3/8 official, 2015 (old) | `unpaved` |
-| South America | Bolivia F4 Puerto Suárez-Puerto Busch ([w55203670](https://www.openstreetmap.org/way/55203670)) | Mapillary 2/8, 2024 | `unpaved` |
-| Oceania | Australia Birdsville Track ([w186428588](https://www.openstreetmap.org/way/186428588)) | Google 8/8 official 2024, Mapillary 3/8 | `unpaved` |
-| Oceania | Australia Gibb River Road ([w313519144](https://www.openstreetmap.org/way/313519144)) | Mapillary 4/8, 2019 | `unpaved` |
-| Oceania | Papua New Guinea Vanimo-Green River ([w844126856](https://www.openstreetmap.org/way/844126856)) | Mapillary 2/8, 2025 | `unpaved` |
-| Developed | Iceland Kjalvegur 35 ([w620383908](https://www.openstreetmap.org/way/620383908)) | Google 6/8 official, 2024 | `gravel` + `4wd_only=yes` |
+Satellite alone is not enough evidence, so each example needs Mapillary or Google Street View. [examples/imagery-check.ts](examples/imagery-check.ts) samples points along each way (8 in round 1, 4 in later screenings) and looks for the nearest image within 50 m, with the same lookups as `unpaved-app/app/js/street-view.js`. Keys are read from `unpaved-app` at run time, never stored here. `GOOGLE=0` skips Google entirely (Google Static images cost money; metadata calls are free). Candidates: [examples/candidates.txt](examples/candidates.txt) (wiki and famous roads) plus the longest Unpaved major roads per country from the stats. Full table: [examples/imagery.md](examples/imagery.md).
 
-Notes:
+Rounds:
 
-1. No coverage at all: Gabon RN4 and RN8, Bolivia RN39, Cameroon P12 and D21, Laos, Myanmar, Gunbarrel Highway, Oodnadatta Track, Tanami Road, the Australian guideline examples (Nyangumarta Highway, Rudall River Road, Kidson Track). These stay statistics only unless other roads with imagery are found.
-2. Iceland F26 has Google 6/8 but only user photospheres; Kjalvegur 35 has official car imagery, so it is the better Iceland example.
-3. Not usable as Off-road examples: Nepal Mid Hilly Highway (`bitumin`), Nepal 50A002R (`ottaseal`), Cambodia 95 and SKT-KPT (`dbst`). They are paved roads with local values that fall into Off-road (see [stats/unknown-values.md](stats/unknown-values.md)). They are good examples of the free quality check instead. Thailand 1093 is a data issue (see C-statistics).
-4. Coverage does not prove the class. Each pick still needs a look at the images. A Google car driving the Birdsville Track suggests it may be passable for a normal vehicle in the dry season, which is a real test of "`unpaved` = Off-road".
-5. Madagascar is not checked yet (result pending).
+1. 2026-11-02: 62 roads (first 18 countries), Google and Mapillary, 15 reviewed.
+2. 2026-11-02: 198 more roads, 4 points each, 14 reviewed with Mapillary only.
+3. 2026-11-03: 304 roads in the 24 late-added rows, Mapillary only, 26 reviewed.
 
-## D1c. Image review (2026-11-02)
+No coverage at all on the checked roads: Gabon RN4 and RN8, Bolivia RN39, Cameroon P12 and D21, Laos, Myanmar, Gunbarrel Highway, Oodnadatta Track, Tanami Road, the Australian guideline examples, Sri Lanka, Honduras, Albania, Iran, Solomon Islands, Antarctica. These stay statistics only.
 
-Images downloaded with [examples/fetch-images.ts](examples/fetch-images.ts) for the 15 best-covered roads and checked one by one: [examples/images/review.md](examples/images/review.md). Mapillary images are kept in `examples/images/mapillary/` (CC BY-SA 4.0), Google images in `examples/images/google/` (copyrighted, checking only, not committed).
+## D1c. Image review
 
-Summary: 7 of 15 confirm Off-road, 2 borderline, 4 are graded roads tagged `unpaved` that look Rough (Birdsville Track, Diamantina Developmental Road, Timor-Leste Lospalos-Malahara, part of Ghana IR11), and 2 main roads are now paved but still tagged `unpaved` (Nepal NH66, Timor-Leste Viqueque-Baucau). Best wiki-usable picks: Congo-Brazzaville P1, Gibb River Road, Papua New Guinea Vanimo-Green River, Bolivia F4.
+55 roads reviewed one by one: [examples/images/review.md](examples/images/review.md). Under the two-level model: 41 confirm Unpaved (about half genuinely off-road, half graded roads a car can drive), 9 are paved now (16%), 5 are mixed. Mapillary images are kept in `examples/images/mapillary/` (CC BY-SA 4.0), Google images in `examples/images/google/` (copyrighted, checking only, not committed).
+
+## D1d. Untagged roads (ground-truth pilot)
+
+Malaysia pilot of "Untagged = Paved": 16 of 16 visible untagged roads were paved, but only 2% of random untagged ways have imagery at all. See [C-statistics.md](C-statistics.md), "Ground-truth pilot".

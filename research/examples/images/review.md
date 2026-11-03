@@ -5,6 +5,8 @@ Images: `mapillary/` (CC BY-SA 4.0: reusable on the wiki with author credit on t
 
 Verdict: does the image match the class the rule gives the road?
 
+> Rounds 1 and 2 were reviewed under the earlier three-level model: the "Rule says" column shows that model (Off-road for `unpaved`). Under the current two-level model all these roads are **Unpaved**, with the Off-road mark only where `smoothness`, `tracktype` or `4wd_only` give evidence. "Too harsh" verdicts are therefore correct now: a graded road tagged `unpaved` is Unpaved.
+
 | # | Road | Rule says | Images show | Verdict | Best image |
 |---|---|---|---|---|---|
 | 1 | Congo-Brazzaville P1 (primary) | Off-road (`unpaved`) | Narrow red laterite, deep cuts, erosion gullies across the road | **Good, confirmed**, wiki-usable | `mapillary/cg-w339788648-0.jpg` (Hebrew, 2026) |
@@ -81,15 +83,21 @@ Under the two-level model the question is only: is the road really Unpaved?
 
 Summary: **20 of 26 confirm Unpaved**, 3 are paved now but still tagged unpaved or gravel (Finland 522, New Zealand Purerua Road, Uganda Akokoro Road), 3 are mixed (Ethiopia, two in Vietnam). 8 of the confirmed roads are graded and clearly car-drivable (Chile, Finland, Namibia, Oman): good evidence for the "Unpaved" label rather than "Off-road". 4 look off-road (Ivory Coast B303, Georgia Sh10, Morocco RR704, Mexico QR 15) but get no mark because nothing tags `smoothness` or `4wd_only` on them: examples of where better tagging would show on the map.
 
-## What the images tell us
+## What the images tell us (all three rounds, two-level model)
 
-Totals over both rounds (29 roads): **13 confirm Off-road** (1 to 7, 16 to 21), 5 plausible or borderline (8, 9, 22 to 24), 5 too harsh (graded or compacted roads tagged `unpaved`: 10 to 13, 25), **6 are paved now but tagged unpaved, dirt or ground** (14, 15, 26 to 29).
+55 roads tagged unpaved (`unpaved`, `dirt`, `ground`, `gravel`, `compacted` and similar) checked on street-level imagery. The question under the current model: is the road really Unpaved?
 
-1. **The Off-road class is confirmed on 13 roads in 9 countries.** First round: 7 of 15 (1 to 7), 2 borderline (8, 9).
-2. **4 of 15 are `unpaved` on graded roads that look Rough** (11, 12, 13, partly 10). The rule works as designed: `unpaved` says nothing precise, so the road is shown as Off-road until someone tags `compacted`, `gravel` or `smoothness`. These are good examples of "honest rendering gives mappers a reason to fix tags", and a fair point for critics.
-3. **6 of 29 roads are paved now but still tagged `unpaved`, `dirt` or `ground`** (14, 15, 26 to 29), in Nepal, Timor-Leste, Mongolia, Papua New Guinea and Myanmar. Caution: roads with street-level imagery are often the more important, recently improved ones, so this share is probably higher than across the whole network. Supports "the developing world is paving fast" and the Kenya survey reply about recency. Any rendering based on surface needs fresh data, and these are easy wins for mappers.
-4. Senegal R.06.1 is a clear laterite road tagged `ground`: a direct link to the `surface=laterite` work.
+| Verdict | Roads | Share | Numbers |
+|---|--:|--:|---|
+| **Unpaved, confirmed** | 41 | 75% | 1 to 9, 11, 12, 16 to 25, and 20 of the 26 in round 3 |
+| Paved now (tag out of date or wrong) | 9 | 16% | 14, 15, 26 to 29, Finland 522, New Zealand Purerua Road, Uganda Akokoro Road |
+| Mixed (partly paved or under works) | 5 | 9% | 10 (Ghana IR11), 13 (Timor-Leste Lospalos-Malahara), Ethiopia, two in Vietnam |
+
+1. **The Unpaved base level is right for three quarters of the roads.** About half of the confirmed ones look genuinely off-road (narrow laterite, rocky or muddy tracks); the other half are graded roads a normal car can drive (Birdsville Track, Namibia C15 and C39, Chile, Finland, Oman). This split is exactly what `surface=unpaved` cannot tell, and why the map has two levels.
+2. **Off-road-looking roads mostly get no mark**, because nothing tags `smoothness` or `4wd_only` on them (Ivory Coast B303, Georgia Sh10, Morocco RR704, Mexico QR 15). Where the mark does appear (Iceland F-roads with `4wd_only=yes`, Nepal NH18 with `smoothness=horrible`), the images agree.
+3. **9 of 55 (16%) are paved now.** 6 were paved after the unpaved tag was set (Nepal NH66: tag 2015, asphalt by 2025; Timor-Leste, Uganda, Papua New Guinea, New Zealand); 3 got their unpaved tag in 2025-2026 although street-level imagery from 2019-2024 already shows pavement (Mongolia, Myanmar, Finland), most likely armchair edits. Details: [C-statistics.md](../../C-statistics.md), "Unpaved roads that are paved now". Roads with imagery are often the more important, recently improved ones, so 16% is probably higher than across the whole network.
+4. Senegal R.06.1 and Ivory Coast roads are clear laterite tagged `ground`: a direct link to the `surface=laterite` work.
 
 ## For the wiki
 
-Wiki-usable (Mapillary, CC BY-SA 4.0, credit the author on the File page): #16 and #17 Congo-Brazzaville, #18 Gambia, #19 Timor-Leste Umaboco-Viqueque, #20 Iceland F208, #21 Bolivia F34, #1 Congo-Brazzaville P1, #4 Gibb River Road, #5 Papua New Guinea, #7 Bolivia, #15 Timor-Leste (as "tag out of date"). Google images (#2, #3, #6, #8, #9, #11, #14) can only be linked, not uploaded.
+Wiki-usable (Mapillary, CC BY-SA 4.0, credit the author on the File page): round 3 Namibia C15/M33 (graded, car-drivable), Mali RR13, Uganda, Georgia Sh10, Morocco RR704, Mexico QR 15, Chile A-97-B, Finland 522 (gravel), New Zealand Waikaremoana Road, Romania DJ131A; #16 and #17 Congo-Brazzaville, #18 Gambia, #19 Timor-Leste Umaboco-Viqueque, #20 Iceland F208, #21 Bolivia F34, #1 Congo-Brazzaville P1, #4 Gibb River Road, #5 Papua New Guinea, #7 Bolivia, #15 Timor-Leste (as "tag out of date"). Google images (#2, #3, #6, #8, #9, #11, #14) can only be linked, not uploaded.
