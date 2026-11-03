@@ -1,0 +1,925 @@
+{
+ "source": "CIA World Factbook, Transportation > Roadways, via github.com/factbook/factbook.json",
+ "commit": "43907b2cd0",
+ "snapshot_date": "2025-04-10",
+ "note": "Last snapshot with the Roadways field (removed by 2025-05-15). Public domain.",
+ "countries": {
+  "al": {
+   "name": "Albania",
+   "factbook_file": "europe/al.json",
+   "total_km": 3581,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2022",
+   "raw": {
+    "total": {
+     "text": "3,581 km (2022)"
+    }
+   }
+  },
+  "ar": {
+   "name": "Argentina",
+   "factbook_file": "south-america/ar.json",
+   "total_km": 240000,
+   "paved_km": 81355,
+   "unpaved_km": 158645,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "240,000 km"
+    },
+    "paved": {
+     "text": "81,355 km"
+    },
+    "unpaved": {
+     "text": "158,645 km (2017)"
+    }
+   }
+  },
+  "au": {
+   "name": "Australia",
+   "factbook_file": "australia-oceania/as.json",
+   "total_km": 873573,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": null,
+   "raw": {
+    "total": {
+     "text": "873,573 km"
+    },
+    "urban": {
+     "text": "145,928 km"
+    },
+    "non-urban": {
+     "text": "727,645 km (2015)"
+    }
+   }
+  },
+  "bo": {
+   "name": "Bolivia",
+   "factbook_file": "south-america/bl.json",
+   "total_km": 90568,
+   "paved_km": 9792,
+   "unpaved_km": 80776,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "90,568 km"
+    },
+    "paved": {
+     "text": "9,792 km"
+    },
+    "unpaved": {
+     "text": "80,776 km (2017)"
+    }
+   }
+  },
+  "br": {
+   "name": "Brazil",
+   "factbook_file": "south-america/br.json",
+   "total_km": null,
+   "paved_km": 246000,
+   "unpaved_km": null,
+   "year": "2018",
+   "raw": {
+    "total": {
+     "text": "2 million km"
+    },
+    "paved": {
+     "text": "246,000 km"
+    },
+    "unpaved": {
+     "text": "1.754 million km (2018)"
+    }
+   }
+  },
+  "cd": {
+   "name": "DR Congo",
+   "factbook_file": "africa/cg.json",
+   "total_km": 152373,
+   "paved_km": 3047,
+   "unpaved_km": 149326,
+   "year": null,
+   "raw": {
+    "total": {
+     "text": "152,373 km"
+    },
+    "paved": {
+     "text": "3,047 km"
+    },
+    "unpaved": {
+     "text": "149,326 km"
+    },
+    "urban": {
+     "text": "7,400 km"
+    },
+    "non-urban": {
+     "text": "144,973 km (2015)"
+    }
+   }
+  },
+  "cg": {
+   "name": "Congo-Brazzaville",
+   "factbook_file": "africa/cf.json",
+   "total_km": 23324,
+   "paved_km": 3111,
+   "unpaved_km": 20213,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "23,324 km"
+    },
+    "paved": {
+     "text": "3,111 km"
+    },
+    "unpaved": {
+     "text": "20,213 km (2017)"
+    },
+    "note": "<strong>note:</strong> road network in Congo is composed of 23,324 km of which 17,000 km are classified as national, departmental, and routes of local interest: 6,324 km are non-classified routes"
+   }
+  },
+  "ci": {
+   "name": "Ivory Coast",
+   "note": "not found in the Factbook"
+  },
+  "cl": {
+   "name": "Chile",
+   "factbook_file": "south-america/ci.json",
+   "total_km": 77801,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2016",
+   "raw": {
+    "total": {
+     "text": "77,801 km (2016)"
+    }
+   }
+  },
+  "cm": {
+   "name": "Cameroon",
+   "factbook_file": "africa/cm.json",
+   "total_km": 77589,
+   "paved_km": 5133,
+   "unpaved_km": 72456,
+   "year": "2019",
+   "raw": {
+    "total": {
+     "text": "77,589 km"
+    },
+    "paved": {
+     "text": "5,133 km"
+    },
+    "unpaved": {
+     "text": "72,456 km (2019)"
+    }
+   }
+  },
+  "co": {
+   "name": "Colombia",
+   "factbook_file": "south-america/co.json",
+   "total_km": 206102,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2022",
+   "raw": {
+    "total": {
+     "text": "206,102 km (2022)"
+    }
+   }
+  },
+  "cu": {
+   "name": "Cuba",
+   "factbook_file": "central-america-n-caribbean/cu.json",
+   "total_km": 60000,
+   "paved_km": 20000,
+   "unpaved_km": 40000,
+   "year": "2001",
+   "raw": {
+    "total": {
+     "text": "60,000 km (2015)"
+    },
+    "paved": {
+     "text": "20,000 km (2001)"
+    },
+    "unpaved": {
+     "text": "40,000 km (2001)"
+    }
+   }
+  },
+  "cz": {
+   "name": "Czechia",
+   "factbook_file": "europe/ez.json",
+   "total_km": 129418,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2022",
+   "raw": {
+    "total": {
+     "text": "129,418 km (2022)"
+    }
+   }
+  },
+  "dk": {
+   "name": "Denmark",
+   "factbook_file": "europe/da.json",
+   "total_km": 73591,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2022",
+   "raw": {
+    "total": {
+     "text": "73,591 km (2022)"
+    }
+   }
+  },
+  "et": {
+   "name": "Ethiopia",
+   "factbook_file": "africa/et.json",
+   "total_km": 180000,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2023",
+   "raw": {
+    "total": {
+     "text": "180,000 km (2023)"
+    }
+   }
+  },
+  "fi": {
+   "name": "Finland",
+   "factbook_file": "europe/fi.json",
+   "total_km": 108637,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2019",
+   "raw": {
+    "total": {
+     "text": "108,637 km (2019)"
+    },
+    "private and forest roads": {
+     "text": "350,000 km (2012)"
+    },
+    "urban": {
+     "text": "26,000 km (2012)"
+    }
+   }
+  },
+  "ga": {
+   "name": "Gabon",
+   "factbook_file": "africa/gb.json",
+   "total_km": 14300,
+   "paved_km": 900,
+   "unpaved_km": 13400,
+   "year": "2001",
+   "raw": {
+    "total": {
+     "text": "14,300 km"
+    },
+    "paved": {
+     "text": "900 km"
+    },
+    "unpaved": {
+     "text": "13,400 km (2001)"
+    }
+   }
+  },
+  "ge": {
+   "name": "Georgia",
+   "factbook_file": "middle-east/gg.json",
+   "total_km": 40044,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2021",
+   "raw": {
+    "total": {
+     "text": "40,044 km (2021)"
+    }
+   }
+  },
+  "gf": {
+   "name": "French Guiana",
+   "note": "part of France in the Factbook"
+  },
+  "gh": {
+   "name": "Ghana",
+   "factbook_file": "africa/gh.json",
+   "total_km": 65725,
+   "paved_km": 14948,
+   "unpaved_km": 50777,
+   "year": "2021",
+   "raw": {
+    "total": {
+     "text": "65,725 km"
+    },
+    "paved": {
+     "text": "14,948 km"
+    },
+    "unpaved": {
+     "text": "50,777 km (2021)"
+    },
+    "urban": {
+     "text": "28,480 km 27% total paved 73% total unpaved"
+    }
+   }
+  },
+  "gm": {
+   "name": "Gambia",
+   "factbook_file": "africa/ga.json",
+   "total_km": 2977,
+   "paved_km": 518,
+   "unpaved_km": 2459,
+   "year": "2011",
+   "raw": {
+    "total": {
+     "text": "2,977 km"
+    },
+    "paved": {
+     "text": "518 km"
+    },
+    "unpaved": {
+     "text": "2,459 km (2011)"
+    }
+   }
+  },
+  "gt": {
+   "name": "Guatemala",
+   "factbook_file": "central-america-n-caribbean/gt.json",
+   "total_km": 17440,
+   "paved_km": 7420,
+   "unpaved_km": 9440,
+   "year": "2022",
+   "raw": {
+    "total": {
+     "text": "17,440 km"
+    },
+    "paved": {
+     "text": "7,420 km"
+    },
+    "unpaved": {
+     "text": "9,440 km (2022)"
+    }
+   }
+  },
+  "hn": {
+   "name": "Honduras",
+   "factbook_file": "central-america-n-caribbean/ho.json",
+   "total_km": 14742,
+   "paved_km": 3367,
+   "unpaved_km": 11375,
+   "year": "2012",
+   "raw": {
+    "total": {
+     "text": "14,742 km"
+    },
+    "paved": {
+     "text": "3,367 km"
+    },
+    "unpaved": {
+     "text": "11,375 km (2012) (1,543 km summer only)"
+    },
+    "note": "<strong>note:</strong> an additional 8,951 km of non-official roads used by the coffee industry"
+   }
+  },
+  "id": {
+   "name": "Indonesia",
+   "factbook_file": "east-n-southeast-asia/id.json",
+   "total_km": 496607,
+   "paved_km": 283102,
+   "unpaved_km": 213505,
+   "year": "2011",
+   "raw": {
+    "total": {
+     "text": "496,607 km"
+    },
+    "paved": {
+     "text": "283,102 km"
+    },
+    "unpaved": {
+     "text": "213,505 km (2011)"
+    }
+   }
+  },
+  "in": {
+   "name": "India",
+   "factbook_file": "south-asia/in.json",
+   "total_km": 6371847,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2021",
+   "raw": {
+    "total": {
+     "text": "6,371,847 km (2021) note: includes 140,995 km of national highways and expressways, 171.039 km of state highways , and 6,059,813 km of other roads"
+    },
+    "note": "<strong>note:</strong> includes 96,214 km of national highways and expressways, 147,800 km of state highways, and 4,455,010 km of other roads"
+   }
+  },
+  "ir": {
+   "name": "Iran",
+   "factbook_file": "middle-east/ir.json",
+   "total_km": 223485,
+   "paved_km": 195618,
+   "unpaved_km": 27867,
+   "year": "2016",
+   "raw": {
+    "total": {
+     "text": "223,485 km"
+    },
+    "paved": {
+     "text": "195,618 km"
+    },
+    "unpaved": {
+     "text": "27,867 km (2016)"
+    }
+   }
+  },
+  "is": {
+   "name": "Iceland",
+   "factbook_file": "europe/ic.json",
+   "total_km": 12905,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2021",
+   "raw": {
+    "total": {
+     "text": "12,905 km (2021)"
+    }
+   }
+  },
+  "ke": {
+   "name": "Kenya",
+   "factbook_file": "africa/ke.json",
+   "total_km": 161451,
+   "paved_km": 18603,
+   "unpaved_km": 157596,
+   "year": "2023",
+   "raw": {
+    "total": {
+     "text": "161,451 km"
+    },
+    "paved": {
+     "text": "18,603 km"
+    },
+    "unpaved": {
+     "text": "157,596 km (2023)"
+    }
+   }
+  },
+  "kg": {
+   "name": "Kyrgyzstan",
+   "factbook_file": "central-asia/kg.json",
+   "total_km": 34000,
+   "paved_km": 22600,
+   "unpaved_km": 7700,
+   "year": "2020",
+   "raw": {
+    "total": {
+     "text": "34,000 km (2022)"
+    },
+    "paved": {
+     "text": "22,600 km (2020)"
+    },
+    "unpaved": {
+     "text": "7,700 km (2020)"
+    }
+   }
+  },
+  "kh": {
+   "name": "Cambodia",
+   "factbook_file": "east-n-southeast-asia/cb.json",
+   "total_km": 61810,
+   "paved_km": 15000,
+   "unpaved_km": 46810,
+   "year": "2021",
+   "raw": {
+    "total": {
+     "text": "61,810 km"
+    },
+    "paved": {
+     "text": "15,000 km"
+    },
+    "unpaved": {
+     "text": "46,810 km (2021)"
+    }
+   }
+  },
+  "la": {
+   "name": "Laos",
+   "factbook_file": "east-n-southeast-asia/la.json",
+   "total_km": 59647,
+   "paved_km": 13718,
+   "unpaved_km": 45929,
+   "year": "2024",
+   "raw": {
+    "total": {
+     "text": "59,647 km"
+    },
+    "paved": {
+     "text": "13,718 km"
+    },
+    "unpaved": {
+     "text": "45,929 km (2024)"
+    }
+   }
+  },
+  "lk": {
+   "name": "Sri Lanka",
+   "factbook_file": "south-asia/ce.json",
+   "total_km": 114093,
+   "paved_km": 16977,
+   "unpaved_km": 97116,
+   "year": "2010",
+   "raw": {
+    "total": {
+     "text": "114,093 km"
+    },
+    "paved": {
+     "text": "16,977 km"
+    },
+    "unpaved": {
+     "text": "97,116 km (2010)"
+    }
+   }
+  },
+  "ma": {
+   "name": "Morocco",
+   "factbook_file": "africa/mo.json",
+   "total_km": 57300,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2018",
+   "raw": {
+    "total": {
+     "text": "57,300 km (2018)"
+    }
+   }
+  },
+  "mg": {
+   "name": "Madagascar",
+   "factbook_file": "africa/ma.json",
+   "total_km": 31640,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "31,640 km (2017)"
+    }
+   }
+  },
+  "ml": {
+   "name": "Mali",
+   "factbook_file": "africa/ml.json",
+   "total_km": 139107,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2014",
+   "raw": {
+    "total": {
+     "text": "139,107 km (2014)"
+    }
+   }
+  },
+  "mm": {
+   "name": "Myanmar",
+   "factbook_file": "east-n-southeast-asia/bm.json",
+   "total_km": 157000,
+   "paved_km": 57840,
+   "unpaved_km": 99160,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "157,000 km (2013)"
+    },
+    "paved": {
+     "text": "57,840 km (2017)"
+    },
+    "unpaved": {
+     "text": "99,160 km (2017)"
+    }
+   }
+  },
+  "mn": {
+   "name": "Mongolia",
+   "factbook_file": "east-n-southeast-asia/mg.json",
+   "total_km": 113200,
+   "paved_km": 10600,
+   "unpaved_km": 102600,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "113,200 km"
+    },
+    "paved": {
+     "text": "10,600 km"
+    },
+    "unpaved": {
+     "text": "102,600 km (2017)"
+    }
+   }
+  },
+  "mx": {
+   "name": "Mexico",
+   "factbook_file": "north-america/mx.json",
+   "total_km": 704884,
+   "paved_km": 175526,
+   "unpaved_km": 529358,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "704,884 km"
+    },
+    "paved": {
+     "text": "175,526 km (includes 10,845 km of expressways)"
+    },
+    "unpaved": {
+     "text": "529,358 km (2017)"
+    }
+   }
+  },
+  "my": {
+   "name": "Malaysia",
+   "factbook_file": "east-n-southeast-asia/my.json",
+   "total_km": 144403,
+   "paved_km": 116169,
+   "unpaved_km": 28234,
+   "year": "2010",
+   "raw": {
+    "total": {
+     "text": "144,403 km (excludes local roads)"
+    },
+    "paved": {
+     "text": "116,169 km (includes 1,821 km of expressways)"
+    },
+    "unpaved": {
+     "text": "28,234 km (2010)"
+    }
+   }
+  },
+  "na": {
+   "name": "Namibia",
+   "factbook_file": "africa/wa.json",
+   "total_km": 48875,
+   "paved_km": 7893,
+   "unpaved_km": 40982,
+   "year": "2018",
+   "raw": {
+    "total": {
+     "text": "48,875 km"
+    },
+    "paved": {
+     "text": "7,893 km"
+    },
+    "unpaved": {
+     "text": "40,982 km (2018)"
+    }
+   }
+  },
+  "np": {
+   "name": "Nepal",
+   "factbook_file": "south-asia/np.json",
+   "total_km": 64500,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2020",
+   "raw": {
+    "total": {
+     "text": "64,500 km (2020)"
+    }
+   }
+  },
+  "nz": {
+   "name": "New Zealand",
+   "factbook_file": "australia-oceania/nz.json",
+   "total_km": 94000,
+   "paved_km": 61600,
+   "unpaved_km": 32400,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "94,000 km"
+    },
+    "paved": {
+     "text": "61,600 km (includes 199 km of expressways)"
+    },
+    "unpaved": {
+     "text": "32,400 km (2017)"
+    }
+   }
+  },
+  "om": {
+   "name": "Oman",
+   "factbook_file": "middle-east/mu.json",
+   "total_km": 60230,
+   "paved_km": 29685,
+   "unpaved_km": 30545,
+   "year": "2012",
+   "raw": {
+    "total": {
+     "text": "60,230 km"
+    },
+    "paved": {
+     "text": "29,685 km (includes 1,943 km of expressways)"
+    },
+    "unpaved": {
+     "text": "30,545 km (2012)"
+    }
+   }
+  },
+  "pe": {
+   "name": "Peru",
+   "factbook_file": "south-america/pe.json",
+   "total_km": 70000,
+   "paved_km": 18699,
+   "unpaved_km": null,
+   "year": "2022",
+   "raw": {
+    "total": {
+     "text": "70,000 km (2021)"
+    },
+    "paved": {
+     "text": "18,699 km (2022)"
+    },
+    "note": "<strong>note:</strong> includes 27,109 km of national roads (21,434 km paved), 247,505 km of departmental roads (3,623 km paved), and 113,857 km of local roads (1,858 km paved)"
+   }
+  },
+  "pg": {
+   "name": "Papua New Guinea",
+   "factbook_file": "east-n-southeast-asia/pp.json",
+   "total_km": 24862,
+   "paved_km": 2647,
+   "unpaved_km": 22215,
+   "year": "2015",
+   "raw": {
+    "total": {
+     "text": "24,862 km"
+    },
+    "paved": {
+     "text": "2,647 km"
+    },
+    "unpaved": {
+     "text": "22,215 km (2015)"
+    }
+   }
+  },
+  "ph": {
+   "name": "Philippines",
+   "factbook_file": "east-n-southeast-asia/rp.json",
+   "total_km": 216387,
+   "paved_km": 61093,
+   "unpaved_km": 155294,
+   "year": "2014",
+   "raw": {
+    "total": {
+     "text": "216,387 km"
+    },
+    "paved": {
+     "text": "61,093 km"
+    },
+    "unpaved": {
+     "text": "155,294 km (2014)"
+    }
+   }
+  },
+  "ro": {
+   "name": "Romania",
+   "factbook_file": "europe/ro.json",
+   "total_km": 85387,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2022",
+   "raw": {
+    "total": {
+     "text": "85,387 km (2022)"
+    }
+   }
+  },
+  "sb": {
+   "name": "Solomon Islands",
+   "factbook_file": "australia-oceania/bp.json",
+   "total_km": 1390,
+   "paved_km": 34,
+   "unpaved_km": 1356,
+   "year": "2011",
+   "raw": {
+    "total": {
+     "text": "1,390 km"
+    },
+    "paved": {
+     "text": "34 km"
+    },
+    "unpaved": {
+     "text": "1,356 km (2011)"
+    },
+    "note": "<strong>note:</strong> includes 920 km of private plantation roads"
+   }
+  },
+  "sn": {
+   "name": "Senegal",
+   "factbook_file": "africa/sg.json",
+   "total_km": 16665,
+   "paved_km": 6126,
+   "unpaved_km": 10539,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "16,665 km"
+    },
+    "paved": {
+     "text": "6,126 km (includes 241 km of expressways)"
+    },
+    "unpaved": {
+     "text": "10,539 km (2017)"
+    }
+   }
+  },
+  "th": {
+   "name": "Thailand",
+   "factbook_file": "east-n-southeast-asia/th.json",
+   "total_km": 180053,
+   "paved_km": null,
+   "unpaved_km": null,
+   "year": "2006",
+   "raw": {
+    "total": {
+     "text": "180,053 km (2006) (includes 450 km of expressways)"
+    }
+   }
+  },
+  "tl": {
+   "name": "Timor-Leste",
+   "factbook_file": "east-n-southeast-asia/tt.json",
+   "total_km": 6040,
+   "paved_km": 2600,
+   "unpaved_km": 3440,
+   "year": "2008",
+   "raw": {
+    "total": {
+     "text": "6,040 km"
+    },
+    "paved": {
+     "text": "2,600 km"
+    },
+    "unpaved": {
+     "text": "3,440 km (2008)"
+    }
+   }
+  },
+  "ug": {
+   "name": "Uganda",
+   "factbook_file": "africa/ug.json",
+   "total_km": 20544,
+   "paved_km": 4257,
+   "unpaved_km": 16287,
+   "year": "2017",
+   "raw": {
+    "total": {
+     "text": "20,544 km (excludes local roads)"
+    },
+    "paved": {
+     "text": "4,257 km"
+    },
+    "unpaved": {
+     "text": "16,287 km (2017)"
+    }
+   }
+  },
+  "vn": {
+   "name": "Vietnam",
+   "factbook_file": "east-n-southeast-asia/vm.json",
+   "total_km": 195468,
+   "paved_km": 148338,
+   "unpaved_km": 47130,
+   "year": "2013",
+   "raw": {
+    "total": {
+     "text": "195,468 km"
+    },
+    "paved": {
+     "text": "148,338 km"
+    },
+    "unpaved": {
+     "text": "47,130 km (2013)"
+    }
+   }
+  },
+  "za": {
+   "name": "South Africa",
+   "factbook_file": "africa/sf.json",
+   "total_km": 750000,
+   "paved_km": 158124,
+   "unpaved_km": 591876,
+   "year": "2016",
+   "raw": {
+    "total": {
+     "text": "750,000 km"
+    },
+    "paved": {
+     "text": "158,124 km"
+    },
+    "unpaved": {
+     "text": "591,876 km (2016)"
+    }
+   }
+  }
+ }
+}
