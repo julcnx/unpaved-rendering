@@ -2,7 +2,7 @@
 
 One verified spot per continent (2026-11-03). At each point, two ways of the same road meet, one tagged paved and one unpaved, and street-level imagery confirms the surface really changes there. Found with [transitions.ts](transitions.ts) ([transitions.json](transitions.json)).
 
-Only apps and styles that use OSM data are listed: Google, Apple and Bing draw their own data, so this proposal cannot change them. All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Kurviger, Guru Maps, Locus): open the `geo:` link on the phone or paste the coordinates.
+Only apps and styles that use OSM data are listed: Google, Apple and Bing draw their own data, so this proposal cannot change them. All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Guru Maps, Maps.me): open the `geo:` link on the phone or paste the coordinates.
 
 Why only one per country: of 27 tag transitions checked on imagery, 13 showed a real change and 14 did not (both sides paved, or both gravel or dirt), so every spot needs a look at the images. Other verified spots (Namibia C48, C28, C26, C47, C40; Bolivia RN3 west, RN25, F48) are kept in transitions.json and `images/sheets/transitions/` as backups.
 
@@ -31,6 +31,12 @@ Verified: Mapillary images on both sides checked: asphalt, then gravel.
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=16.9415&y=-18.81068&z=15) |
 | Gaia GPS (longitude first) | [open](https://www.gaiagps.com/map/?loc=15/16.9415/-18.81068) |
 | OsmAnd web | [open](https://osmand.net/map/?#15/-18.81068/16.9415) |
+| OpenCycleMap (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=C) |
+| Transport (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=T) |
+| Locus Map (LoMaps) | [open](https://web.locusmap.app/en/plan?lat=-18.81068&lng=16.9415&z=15&map=hikeBike) |
+| Strava | [open](https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#15/-18.81068/16.9415) |
+| Kurviger (marker on the point, no zoom in the URL) | [open](https://kurviger.com/en/plan?point=-18.81068%2C16.9415) |
+| DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
 ## 2. South America: Bolivia, RN3 near Trinidad: asphalt to dirt
 
@@ -55,6 +61,12 @@ Verified: Mapillary images on both sides checked: asphalt, then dirt.
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-64.99758&y=-14.87824&z=15) |
 | Gaia GPS (longitude first) | [open](https://www.gaiagps.com/map/?loc=15/-64.99758/-14.87824) |
 | OsmAnd web | [open](https://osmand.net/map/?#15/-14.87824/-64.99758) |
+| OpenCycleMap (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=C) |
+| Transport (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=T) |
+| Locus Map (LoMaps) | [open](https://web.locusmap.app/en/plan?lat=-14.87824&lng=-64.99758&z=15&map=hikeBike) |
+| Strava | [open](https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#15/-14.87824/-64.99758) |
+| Kurviger (marker on the point, no zoom in the URL) | [open](https://kurviger.com/en/plan?point=-14.87824%2C-64.99758) |
+| DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
 ## 3. Asia: Nepal, NH48 Beni-Lo Manthang (Mustang): asphalt to gravel jeep road
 
@@ -87,4 +99,10 @@ Google Street View at the transition point (user photosphere, May 2025, "© nepa
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=83.76673&y=28.80567&z=15) |
 | Gaia GPS (longitude first) | [open](https://www.gaiagps.com/map/?loc=15/83.76673/28.80567) |
 | OsmAnd web | [open](https://osmand.net/map/?#15/28.80567/83.76673) |
+| OpenCycleMap (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/28.80567/83.76673&layers=C) |
+| Transport (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/28.80567/83.76673&layers=T) |
+| Locus Map (LoMaps) | [open](https://web.locusmap.app/en/plan?lat=28.80567&lng=83.76673&z=15&map=hikeBike) |
+| Strava | [open](https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#15/28.80567/83.76673) |
+| Kurviger (marker on the point, no zoom in the URL) | [open](https://kurviger.com/en/plan?point=28.80567%2C83.76673) |
+| DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
