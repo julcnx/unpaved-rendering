@@ -1,6 +1,7 @@
 // Street-level imagery coverage of example roads (Mapillary and Google Street View).
 // Same lookups as unpaved-app/app/js/street-view.js: nearest image within 50 m of a point.
 // Usage: MAPILLARY_TOKEN=... GOOGLE_SV_KEY=... [AUTO_PER_COUNTRY=3] [SAMPLES=8] node examples/imagery-check.ts
+// COUNTRIES="na ci": only add stats candidates from these countries. GOOGLE=0: Mapillary only, no Google calls.
 // Roads already in examples/imagery.json are kept and not checked again.
 // Writes examples/imagery.json and examples/imagery.md.
 
@@ -10,8 +11,10 @@ import { classifyDetailed } from '../classifier/classify.ts';
 const SAMPLES = Number(process.env.SAMPLES ?? 8);
 const RADIUS_M = 50;
 const AUTO_PER_COUNTRY = Number(process.env.AUTO_PER_COUNTRY ?? 3);
+const USE_GOOGLE = process.env.GOOGLE !== '0';
+const COUNTRIES = process.env.COUNTRIES?.split(/\s+/).filter(Boolean);
 const { MAPILLARY_TOKEN, GOOGLE_SV_KEY } = process.env;
-if (!MAPILLARY_TOKEN || !GOOGLE_SV_KEY) throw new Error('set MAPILLARY_TOKEN and GOOGLE_SV_KEY');
+if (!MAPILLARY_TOKEN || (USE_GOOGLE && !GOOGLE_SV_KEY)) throw new Error('set MAPILLARY_TOKEN and GOOGLE_SV_KEY (or GOOGLE=0)');
 
 type Candidate = { id: string; country: string; label: string; origin: string };
 type Point = { lat: number; lon: number };
@@ -26,6 +29,7 @@ const candidates: Candidate[] = readFileSync(new URL('./candidates.txt', import.
 const resultsDir = new URL('../stats/results/', import.meta.url);
 for (const f of readdirSync(resultsDir).filter((f) => f.endsWith('.json'))) {
   const d = JSON.parse(readFileSync(new URL(f, resultsDir), 'utf8'));
+  if (COUNTRIES && !COUNTRIES.includes(d.country)) continue;
   for (const n of (d.odd.major_unpaved ?? d.odd.major_offroad).slice(0, AUTO_PER_COUNTRY)) {
     if (candidates.some((c) => c.id === n.id)) continue;
     const name = n.tags.ref ?? n.tags['name:en'] ?? n.tags.name ?? '';
@@ -87,7 +91,7 @@ for (const c of candidates) {
   const mly = [], gsv = [];
   for (const p of points) {
     mly.push(await mapillary(p));
-    gsv.push(await google(p));
+    gsv.push(USE_GOOGLE ? await google(p) : null);
   }
   const { level, source } = classifyDetailed(way.tags);
   const latest = (xs: any[]) => xs.filter(Boolean).map((x) => x.date).sort().pop() ?? '';
@@ -99,6 +103,8 @@ for (const c of candidates) {
     samples: points.map((p, i) => ({ ...p, mapillary: mly[i]?.url ?? '', google: gsv[i]?.url ?? '' })),
   };
   out.push(row);
+  // Saved after every road, so a stopped run resumes where it left off.
+  writeFileSync(jsonFile, JSON.stringify({ radius_m: RADIUS_M, roads: out }, null, 1));
   console.error(`${c.id} ${c.country} ${c.label}: Mapillary ${row.mapillary.covered}/${SAMPLES}, Google ${row.google.covered}/${SAMPLES}`);
   await sleep(500);
 }

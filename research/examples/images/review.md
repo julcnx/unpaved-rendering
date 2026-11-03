@@ -44,6 +44,43 @@ Screening of 198 more candidates (top 15 Off-road major roads per country, 4 poi
 | 28 | Papua New Guinea Baiyer Road ([w841361566](https://www.openstreetmap.org/way/841361566), secondary) | Off-road (`dirt`) | **Asphalt** with centre line (2023) | **Tag out of date** | |
 | 29 | Myanmar Moe Pyin-Mat Man ([w377792665](https://www.openstreetmap.org/way/377792665), secondary) | Off-road (`ground`) | **Concrete** road (2022) | **Tag out of date** | |
 
+## Third round: late-added countries (2026-11-03, Mapillary only)
+
+Screening of 304 more roads (top 15 Unpaved major roads per late-added country, 4 points each, `GOOGLE=0`): 57 have Mapillary coverage. 26 were picked (best coverage, up to 2 per country) and downloaded. No coverage on unpaved major roads: Sri Lanka, Honduras, Albania, Iran, Solomon Islands, Antarctica, Denmark, Czechia. Review sheets: `sheets/review-round3/` (local only).
+
+Under the two-level model the question is only: is the road really Unpaved?
+
+| # | Road | Tags | Images show | Verdict |
+|---|---|---|---|---|
+| 30 | Ivory Coast ([w37793428](https://www.openstreetmap.org/way/37793428)) | secondary, `ground` | Red laterite through villages and forest | **Unpaved, confirmed** (laterite tagged `ground`) |
+| 31 | Ivory Coast B303 ([w489172575](https://www.openstreetmap.org/way/489172575)) | secondary, `unpaved` | Narrow red laterite with ruts in forest | **Unpaved, confirmed**, off-road-like (no mark: no evidence tags) |
+| 32 | Chile 243 ([w339066661](https://www.openstreetmap.org/way/339066661)) | secondary, `fine_gravel` | Graded gravel through hills | **Unpaved, confirmed**, car-drivable |
+| 33 | Chile A-97-B ([w28319080](https://www.openstreetmap.org/way/28319080)) | secondary, `compacted` | Wide dusty gravel on the altiplano (4,400 m) | **Unpaved, confirmed**, car-drivable |
+| 34 | Ethiopia ([w113114612](https://www.openstreetmap.org/way/113114612)) | secondary, `unpaved` | Laterite in one image, new gravel or seal in others | **Mixed**: road under improvement |
+| 35 | Finland 522 ([w113796504](https://www.openstreetmap.org/way/113796504)) | secondary, `compacted` | Smooth gravel forest road | **Unpaved, confirmed**, car-drivable (Western example) |
+| 36 | Finland 522 ([w22733235](https://www.openstreetmap.org/way/22733235)) | secondary, `compacted` | **Asphalt** | **Tag out of date**: paved now |
+| 37 | Georgia Sh1 ([w111431030](https://www.openstreetmap.org/way/111431030)) | primary, `gravel` | Rough gravel mountain road | **Unpaved, confirmed** |
+| 38 | Georgia Sh10 ([w81287807](https://www.openstreetmap.org/way/81287807)) | secondary, `gravel` | Stony track with deep puddles | **Unpaved, confirmed**, off-road-like (no mark) |
+| 39 | Guatemala RD PET-06 ([w293378392](https://www.openstreetmap.org/way/293378392)) | secondary, `unpaved` | White compacted gravel through villages | **Unpaved, confirmed** |
+| 40 | Kyrgyzstan M-067 ([w1422780378](https://www.openstreetmap.org/way/1422780378)) | secondary, `gravel` | Gravel highway in a mountain valley | **Unpaved, confirmed** |
+| 41 | Morocco RN23 ([w475929890](https://www.openstreetmap.org/way/475929890)) | primary, `gravel` | Gravel mountain road, works in progress | **Unpaved, confirmed** |
+| 42 | Morocco RR704 ([w827183138](https://www.openstreetmap.org/way/827183138)) | secondary, `unpaved` | Rocky desert track (cyclist) | **Unpaved, confirmed**, off-road-like (no mark) |
+| 43 | Mali RR15 ([w41268427](https://www.openstreetmap.org/way/41268427)) | secondary, `unpaved` | Rough red dirt road | **Unpaved, confirmed** |
+| 44 | Mali RR13 ([w41268399](https://www.openstreetmap.org/way/41268399)) | secondary, `compacted` | Wide red laterite road | **Unpaved, confirmed** |
+| 45 | Mexico QR 15 ([w41680341](https://www.openstreetmap.org/way/41680341)) | secondary, `unpaved` | White sand and limestone track in jungle, wet, 4x4 vehicle | **Unpaved, confirmed**, off-road-like (no mark) |
+| 46 | Namibia C15/M33 ([w22726347](https://www.openstreetmap.org/way/22726347)) | primary, `unpaved` | Wide graded gravel; Roadroid roughness survey images show 50 to 89 km/h | **Unpaved, confirmed**, car-drivable |
+| 47 | Namibia C39 ([w240603923](https://www.openstreetmap.org/way/240603923)) | primary, `dirt` | Wide graded gravel | **Unpaved, confirmed**, car-drivable |
+| 48 | New Zealand Purerua Road ([w164770191](https://www.openstreetmap.org/way/164770191)) | secondary, `gravel` | **Sealed** (dark chipseal or asphalt) | **Tag out of date**: paved now |
+| 49 | New Zealand Waikaremoana Road ([w229002044](https://www.openstreetmap.org/way/229002044)) | secondary, `unpaved` | Gravel road through bush (motorbike) | **Unpaved, confirmed** |
+| 50 | Oman ([w241714242](https://www.openstreetmap.org/way/241714242)) | secondary, `unpaved` | Graded gravel desert road | **Unpaved, confirmed**, car-drivable |
+| 51 | Romania DJ131A ([w342739997](https://www.openstreetmap.org/way/342739997)) | secondary, `gravel` | Gravel road through forest | **Unpaved, confirmed** (EU member) |
+| 52 | Uganda ([w27567283](https://www.openstreetmap.org/way/27567283)) | secondary, `unpaved` | Wide red laterite through villages | **Unpaved, confirmed** |
+| 53 | Uganda Akokoro Road ([w518566598](https://www.openstreetmap.org/way/518566598)) | secondary, `unpaved` | **Fresh asphalt** | **Tag out of date**: paved now |
+| 54 | Vietnam QL.14D ([w1265032009](https://www.openstreetmap.org/way/1265032009)) | trunk, `gravel` | Broken concrete or asphalt with mud patches | **Mixed**: degraded pavement, not gravel |
+| 55 | Vietnam Bùi Thị Xuân ([w291750523](https://www.openstreetmap.org/way/291750523)) | secondary, `compacted` | Dirt and gravel in an industrial area, patches of pavement | **Mixed** |
+
+Summary: **20 of 26 confirm Unpaved**, 3 are paved now but still tagged unpaved or gravel (Finland 522, New Zealand Purerua Road, Uganda Akokoro Road), 3 are mixed (Ethiopia, two in Vietnam). 8 of the confirmed roads are graded and clearly car-drivable (Chile, Finland, Namibia, Oman): good evidence for the "Unpaved" label rather than "Off-road". 4 look off-road (Ivory Coast B303, Georgia Sh10, Morocco RR704, Mexico QR 15) but get no mark because nothing tags `smoothness` or `4wd_only` on them: examples of where better tagging would show on the map.
+
 ## What the images tell us
 
 Totals over both rounds (29 roads): **13 confirm Off-road** (1 to 7, 16 to 21), 5 plausible or borderline (8, 9, 22 to 24), 5 too harsh (graded or compacted roads tagged `unpaved`: 10 to 13, 25), **6 are paved now but tagged unpaved, dirt or ground** (14, 15, 26 to 29).

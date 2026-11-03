@@ -153,6 +153,57 @@ Full numbers: Overview in [stats/report.md](stats/report.md).
 8. **`surface=ground`** is the main Off-road value in Mongolia (608 km of primary) and second in Cameroon and Senegal.
 9. **Credibility check**: Bolivia has only 10% untagged km and Iceland 7%, so their high shares come from real tagging, not from a few tagged roads.
 
+## What "Untagged" and `surface=unpaved` really mean (2026-11-03)
+
+These two are the weakest parts of the data and must be explained on the wiki page, not hidden.
+
+### Untagged (no `surface`, no known `tracktype`)
+
+58% of all road km in the 54 countries has no surface tag (11.6 million of 20.0 million km). The share grows as the class gets smaller:
+
+| Class | Untagged | Untagged km |
+|---|--:|--:|
+| motorway | 16% | 0.02 M |
+| trunk | 32% | 0.22 M |
+| primary | 34% | 0.26 M |
+| secondary | 36% | 0.42 M |
+| tertiary | 49% | 1.38 M |
+| unclassified | 53% | 4.04 M |
+| residential | 79% | 5.28 M |
+
+A missing surface tag can mean three different things:
+
+1. **Implied paved**: the mapper saw an ordinary paved road and did not think a tag was needed. This is the usual case on main roads (motorways are 0% Unpaved wherever they are tagged).
+2. **A track reclassified as a road, with an implied unpaved surface**: common in Thailand. A dirt track first mapped as `highway=track` (implied unpaved) is later changed to `unclassified` or `residential` without adding `surface=*`, so the implied unpaved surface is lost. Imports and AI-assisted editing (Meta/Grab RapiD) also add rural ways as `highway=residential` with no surface. Thailand: 81% of residential km and 60% of unclassified km untagged.
+3. **Mapped from imagery, surface unknown**: the mapper could see a road but not its surface, and left it out rather than guess.
+
+The rendering rule treats all three as Paved (no per-country defaults, decision in the brief), because guessing would be worse and because an honest map gives mappers a reason to add the tag. The stats keep Untagged as its own column so the reader can see how much of each country rests on this assumption. Where Untagged is high (India, Indonesia, Myanmar, Vietnam, 88 to 91%), the Unpaved share is a minimum, not an estimate.
+
+### Ground-truth pilot: untagged roads in Malaysia (2026-11-03)
+
+Test of "Untagged = Paved" in a mostly paved country (Malaysia chosen instead of Thailand to avoid the author's own mapping area). [examples/untagged-sample.ts](examples/untagged-sample.ts) draws random untagged ways of 0.3 km or more, weighted by km (fixed seed), and keeps those with a Mapillary image within 25 m of the midpoint. Sample and verdicts: [examples/untagged/my.json](examples/untagged/my.json), images `examples/images/mapillary/untagged-my-*.jpg`.
+
+| Class | Untagged km | Ways tried | With imagery | Paved | Unpaved | No verdict |
+|---|--:|--:|--:|--:|--:|--:|
+| tertiary | 14,813 | 277 | 9 | 9 | 0 | 0 |
+| unclassified | 53,873 | 298 | 1 | 0 | 0 | 1 (road not visible) |
+| residential | 86,280 | 297 | 7 | 7 | 0 | 0 |
+
+Result: every untagged road we could see was paved (16 of 16). But only 17 of 872 random untagged ways (2%) have street-level imagery at all, and just 1 of 298 unclassified ways, so the sample only shows the roads people drive with cameras: main roads and towns. It supports "Untagged = Paved" for untagged tertiary and residential roads with traffic, and says nothing about the rural unclassified network, where reclassified tracks would be. A wider radius or more tries would not fix this bias; ground truth for rural untagged roads needs local mappers.
+
+### `surface=unpaved`
+
+`surface=unpaved` is 75.5% of all Unpaved km. The wiki page for the value says it "may mean everything from `surface=compacted` to `surface=mud`", and is used for armchair mapping, unknown material, and ways with changing surfaces. The image review confirms it covers everything: of 29 reviewed roads tagged `unpaved`, `dirt` or `ground`, 13 were really off-road, 5 were graded roads a normal car could drive, and 6 were already paved.
+
+How much a country relies on the generic value says a lot about how its roads were mapped:
+
+| Share of Unpaved km tagged just `surface=unpaved` | Countries |
+|---|---|
+| Highest (mostly imagery mapping) | Solomon Islands 96%, Vietnam 93%, Thailand 92%, Guatemala 92%, Malaysia 91%, Madagascar 89%, Mali 89%, Argentina 88% |
+| Lowest (specific values: `gravel`, `compacted`, `ground`) | Denmark 9%, Iceland 9%, Romania 11%, Mongolia 13%, Czechia 13%, Iran 33%, Kyrgyzstan 34%, New Zealand 35% |
+
+This is why the map has only two levels (decision 9): `surface=unpaved` honestly means "not paved, condition unknown", and a three-level map would have to guess.
+
 ## Findings, two-level model (55 rows, 2026-11-03)
 
 54 countries plus Antarctica, about 20 million km of road. Full numbers: Overview in [stats/report.md](stats/report.md). Shares below are Unpaved km (with or without the Off-road mark) of all km in the class; "tagged only" divides by km that have a `surface` or `tracktype` (an upper bound, see the two-bounds note in the earlier findings).

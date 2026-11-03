@@ -1,0 +1,258 @@
+{
+ "country": "my",
+ "created": "2026-11-03",
+ "seed": 20261103,
+ "radius_m": 25,
+ "min_km": 0.3,
+ "untagged_km": {
+  "tertiary": 14813,
+  "unclassified": 53873,
+  "residential": 86280
+ },
+ "sample": {
+  "tertiary": [
+   {
+    "n": "01",
+    "id": "w1125404403",
+    "highway": "tertiary",
+    "km": 2.25,
+    "mid": {
+     "lon": 101.8712855957811,
+     "lat": 3.0481259267197403
+    },
+    "image": "https://www.mapillary.com/app/?pKey=1986664298934172",
+    "file": "mapillary/untagged-my-tertiary-01-w1125404403.jpg",
+    "captured": "2026-03-28",
+    "verdict": "paved"
+   },
+   {
+    "n": "02",
+    "id": "w60808263",
+    "highway": "tertiary",
+    "km": 2.81,
+    "mid": {
+     "lon": 113.99157027370715,
+     "lat": 4.553785188743281
+    },
+    "image": "https://www.mapillary.com/app/?pKey=1944135612418314",
+    "file": "mapillary/untagged-my-tertiary-02-w60808263.jpg",
+    "captured": "2019-02-09",
+    "verdict": "paved"
+   },
+   {
+    "n": "03",
+    "id": "w1174209792",
+    "highway": "tertiary",
+    "km": 0.79,
+    "mid": {
+     "lon": 101.56099412790415,
+     "lat": 3.305662229535237
+    },
+    "image": "https://www.mapillary.com/app/?pKey=1390524319586460",
+    "file": "mapillary/untagged-my-tertiary-03-w1174209792.jpg",
+    "captured": "2026-06-30",
+    "verdict": "paved"
+   },
+   {
+    "n": "04",
+    "id": "w226834617",
+    "highway": "tertiary",
+    "km": 1.54,
+    "mid": {
+     "lon": 102.0887541936473,
+     "lat": 2.322854610296517
+    },
+    "image": "https://www.mapillary.com/app/?pKey=282076410273790",
+    "file": "mapillary/untagged-my-tertiary-04-w226834617.jpg",
+    "captured": "2021-06-25",
+    "verdict": "paved"
+   },
+   {
+    "n": "05",
+    "id": "w146200135",
+    "highway": "tertiary",
+    "km": 1.28,
+    "mid": {
+     "lon": 101.8859319188536,
+     "lat": 2.4199710095590117
+    },
+    "image": "https://www.mapillary.com/app/?pKey=563328855076445",
+    "file": "mapillary/untagged-my-tertiary-05-w146200135.jpg",
+    "captured": "2021-07-01",
+    "verdict": "paved"
+   },
+   {
+    "n": "06",
+    "id": "w283240863",
+    "highway": "tertiary",
+    "km": 5.67,
+    "mid": {
+     "lon": 102.45918245746077,
+     "lat": 2.7089312070030998
+    },
+    "image": "https://www.mapillary.com/app/?pKey=1599472057536239",
+    "file": "mapillary/untagged-my-tertiary-06-w283240863.jpg",
+    "captured": "2024-02-01",
+    "verdict": "paved"
+   },
+   {
+    "n": "07",
+    "id": "w955963384",
+    "highway": "tertiary",
+    "km": 5.19,
+    "mid": {
+     "lon": 103.85646382380052,
+     "lat": 2.416991462938244
+    },
+    "image": "https://www.mapillary.com/app/?pKey=197038602297913",
+    "file": "mapillary/untagged-my-tertiary-07-w955963384.jpg",
+    "captured": "2021-05-24",
+    "verdict": "paved"
+   },
+   {
+    "n": "08",
+    "id": "w31989098",
+    "highway": "tertiary",
+    "km": 0.87,
+    "mid": {
+     "lon": 102.0806744140546,
+     "lat": 2.3058276572509766
+    },
+    "image": "https://www.mapillary.com/app/?pKey=271814118025110",
+    "file": "mapillary/untagged-my-tertiary-08-w31989098.jpg",
+    "captured": "2021-06-22",
+    "verdict": "paved"
+   },
+   {
+    "n": "09",
+    "id": "w527042531",
+    "highway": "tertiary",
+    "km": 0.33,
+    "mid": {
+     "lon": 103.0267755960759,
+     "lat": 1.8514742388835081
+    },
+    "image": "https://www.mapillary.com/app/?pKey=951166738975617",
+    "file": "mapillary/untagged-my-tertiary-09-w527042531.jpg",
+    "captured": "2020-08-14",
+    "verdict": "paved"
+   }
+  ],
+  "unclassified": [
+   {
+    "n": "01",
+    "id": "w638297340",
+    "highway": "unclassified",
+    "km": 2.18,
+    "mid": {
+     "lon": 110.15618887673645,
+     "lat": 1.6194178182339063
+    },
+    "image": "https://www.mapillary.com/app/?pKey=302983711440105",
+    "file": "mapillary/untagged-my-unclassified-01-w638297340.jpg",
+    "captured": "2018-08-11",
+    "verdict": "inconclusive: road not visible"
+   }
+  ],
+  "residential": [
+   {
+    "n": "01",
+    "id": "w746203950",
+    "highway": "residential",
+    "km": 0.98,
+    "mid": {
+     "lon": 103.18685871556809,
+     "lat": 1.727807399633086
+    },
+    "image": "https://www.mapillary.com/app/?pKey=314127793554546",
+    "file": "mapillary/untagged-my-residential-01-w746203950.jpg",
+    "captured": "2020-08-19",
+    "verdict": "paved"
+   },
+   {
+    "n": "02",
+    "id": "w554245957",
+    "highway": "residential",
+    "km": 1.8,
+    "mid": {
+     "lon": 103.08367856371252,
+     "lat": 1.7743801571503175
+    },
+    "image": "https://www.mapillary.com/app/?pKey=2967961796769996",
+    "file": "mapillary/untagged-my-residential-02-w554245957.jpg",
+    "captured": "2020-08-26",
+    "verdict": "paved"
+   },
+   {
+    "n": "03",
+    "id": "w553246467",
+    "highway": "residential",
+    "km": 3.39,
+    "mid": {
+     "lon": 103.13291191749873,
+     "lat": 1.852311641078844
+    },
+    "image": "https://www.mapillary.com/app/?pKey=466787404609031",
+    "file": "mapillary/untagged-my-residential-03-w553246467.jpg",
+    "captured": "2020-08-26",
+    "verdict": "paved"
+   },
+   {
+    "n": "04",
+    "id": "w1207061159",
+    "highway": "residential",
+    "km": 0.42,
+    "mid": {
+     "lon": 100.51801694835835,
+     "lat": 5.647996503105102
+    },
+    "image": "https://www.mapillary.com/app/?pKey=1178731615934448",
+    "file": "mapillary/untagged-my-residential-04-w1207061159.jpg",
+    "captured": "2018-09-18",
+    "verdict": "paved"
+   },
+   {
+    "n": "05",
+    "id": "w399817956",
+    "highway": "residential",
+    "km": 0.99,
+    "mid": {
+     "lon": 100.50892507590343,
+     "lat": 5.210687091690182
+    },
+    "image": "https://www.mapillary.com/app/?pKey=162875489121469",
+    "file": "mapillary/untagged-my-residential-05-w399817956.jpg",
+    "captured": "2019-11-25",
+    "verdict": "paved"
+   },
+   {
+    "n": "06",
+    "id": "w1155414912",
+    "highway": "residential",
+    "km": 0.52,
+    "mid": {
+     "lon": 111.47736994003691,
+     "lat": 1.1470928166857892
+    },
+    "image": "https://www.mapillary.com/app/?pKey=1440464076293919",
+    "file": "mapillary/untagged-my-residential-06-w1155414912.jpg",
+    "captured": "2018-08-21",
+    "verdict": "paved"
+   },
+   {
+    "n": "07",
+    "id": "w652590386",
+    "highway": "residential",
+    "km": 0.4,
+    "mid": {
+     "lon": 102.21135395131698,
+     "lat": 2.322171531143908
+    },
+    "image": "https://www.mapillary.com/app/?pKey=1004715463597886",
+    "file": "mapillary/untagged-my-residential-07-w652590386.jpg",
+    "captured": "2021-06-26",
+    "verdict": "paved"
+   }
+  ]
+ }
+}
