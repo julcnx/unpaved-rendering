@@ -5265,6 +5265,357 @@
   }
  },
  {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH47",
+  "name": "Siddhartha Highway",
+  "highway": "trunk",
+  "lat": 28.19168,
+  "lon": 83.95235,
+  "paved": {
+   "way": 27021565,
+   "surface": "asphalt",
+   "run_km": 32.5,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=131187068999073",
+    "date": "2016-12-29"
+   }
+  },
+  "unpaved": {
+   "way": 1115705451,
+   "surface": "unpaved",
+   "run_km": 1.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=267231505104650",
+    "date": "2016-12-29"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH01",
+  "name": "महेन्द्र राज्मार्ग्",
+  "highway": "trunk",
+  "lat": 27.69857,
+  "lon": 83.46494,
+  "paved": {
+   "way": 27032647,
+   "surface": "asphalt",
+   "run_km": 99.7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=720700183715273",
+    "date": "2025-05-11"
+   }
+  },
+  "unpaved": {
+   "way": 215622791,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=527494203604540",
+    "date": "2024-11-02"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F22",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.61833,
+  "lon": 85.26459,
+  "paved": {
+   "way": 30474631,
+   "surface": "asphalt",
+   "run_km": 13.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=972751060434051",
+    "date": "2023-07-12"
+   }
+  },
+  "unpaved": {
+   "way": 1119878541,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=531994245695197",
+    "date": "2023-07-12"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH47",
+  "name": "Sidhartha Highway",
+  "highway": "trunk",
+  "lat": 27.7183,
+  "lon": 83.46602,
+  "paved": {
+   "way": 238938939,
+   "surface": "asphalt",
+   "run_km": 2.2,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1226505518574678",
+    "date": "2024-11-01"
+   }
+  },
+  "unpaved": {
+   "way": 1115207283,
+   "surface": "ground",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=512943459748411",
+    "date": "2020-03-22"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH01",
+  "name": "महेन्द्र राज्मार्ग्",
+  "highway": "trunk",
+  "lat": 27.69844,
+  "lon": 83.46501,
+  "paved": {
+   "way": 1327163972,
+   "surface": "asphalt",
+   "run_km": 1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=678890481516049",
+    "date": "2025-05-11"
+   }
+  },
+  "unpaved": {
+   "way": 317157715,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=523851320612793",
+    "date": "2024-11-02"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Dharan-Chatara Road",
+  "highway": "primary",
+  "lat": 26.80792,
+  "lon": 87.24649,
+  "paved": {
+   "way": 336015409,
+   "surface": "asphalt",
+   "run_km": 4.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1379288926843229",
+    "date": "2025-04-13"
+   }
+  },
+  "unpaved": {
+   "way": 889341416,
+   "surface": "gravel",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1227294315491682",
+    "date": "2025-04-13"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH41",
+  "name": "Tribhuvan Rajpath",
+  "highway": "trunk",
+  "lat": 27.70682,
+  "lon": 85.20107,
+  "paved": {
+   "way": 1548907293,
+   "surface": "asphalt",
+   "run_km": 116.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=585976249046487",
+    "date": "2019-10-04"
+   }
+  },
+  "unpaved": {
+   "way": 343515328,
+   "surface": "ground",
+   "run_km": 0.2,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=587215328840031",
+    "date": "2019-10-04"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Jeep Road Beni-Lo Manthang",
+  "highway": "primary",
+  "lat": 28.80567,
+  "lon": 83.76673,
+  "paved": {
+   "way": 384304387,
+   "surface": "asphalt",
+   "run_km": 4.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=170085204903842",
+    "date": "2014-06-25"
+   }
+  },
+  "unpaved": {
+   "way": 1254665821,
+   "surface": "gravel",
+   "run_km": 4.5,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=272466534555985",
+    "date": "2014-06-25"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH05",
+  "name": "Hulaki Sadak",
+  "highway": "primary",
+  "lat": 28.44529,
+  "lon": 81.07476,
+  "paved": {
+   "way": 443291686,
+   "surface": "paved",
+   "run_km": 17.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=127181356066968",
+    "date": "2016-09-21"
+   }
+  },
+  "unpaved": {
+   "way": 669834964,
+   "surface": "unpaved",
+   "run_km": 2.7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=3942257342558619",
+    "date": "2016-09-19"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH01",
+  "name": "Siddhartha Highway;Mahendra Highway",
+  "highway": "trunk",
+  "lat": 27.68646,
+  "lon": 83.46491,
+  "paved": {
+   "way": 1458962772,
+   "surface": "asphalt",
+   "run_km": 1.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=544288531656129",
+    "date": "2024-11-02"
+   }
+  },
+  "unpaved": {
+   "way": 1112863777,
+   "surface": "gravel",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=574048481961372",
+    "date": "2024-11-02"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH47",
+  "name": "Sidhartha Highway",
+  "highway": "trunk",
+  "lat": 27.71937,
+  "lon": 83.46687,
+  "paved": {
+   "way": 1115207282,
+   "surface": "asphalt",
+   "run_km": 117.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=2478924075637862",
+    "date": "2024-11-01"
+   }
+  },
+  "unpaved": {
+   "way": 1115207283,
+   "surface": "ground",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1083904033333614",
+    "date": "2024-11-01"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH41",
+  "name": "Tribhuvan Rajpath",
+  "highway": "trunk",
+  "lat": 27.70834,
+  "lon": 85.20037,
+  "paved": {
+   "way": 1486841933,
+   "surface": "paved",
+   "run_km": 6.9,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=301592201523218",
+    "date": "2017-09-25"
+   }
+  },
+  "unpaved": {
+   "way": 1119324010,
+   "surface": "ground",
+   "run_km": 0.2,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=587215328840031",
+    "date": "2019-10-04"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F22",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.61652,
+  "lon": 85.26458,
+  "paved": {
+   "way": 1119878540,
+   "surface": "asphalt",
+   "run_km": 28.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=662145655788055",
+    "date": "2023-07-12"
+   }
+  },
+  "unpaved": {
+   "way": 1119878541,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=832208121570397",
+    "date": "2023-07-12"
+   }
+  }
+ },
+ {
   "label": "Namibia C-roads",
   "country": "na",
   "ref": "C37",
@@ -6029,6 +6380,174 @@
    "way": 1176432817,
    "surface": "unpaved",
    "run_km": 1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F124",
+  "name": "Sauraha Main Street",
+  "highway": "secondary",
+  "lat": 27.58896,
+  "lon": 84.49475,
+  "paved": {
+   "way": 44693215,
+   "surface": "asphalt",
+   "run_km": 1.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 44693214,
+   "surface": "unpaved",
+   "run_km": 1.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1093489467955806",
+    "date": "2022-11-04"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH47",
+  "name": "Sidhartha Highway",
+  "highway": "trunk",
+  "lat": 28.1917,
+  "lon": 83.96985,
+  "paved": {
+   "way": 579476018,
+   "surface": "asphalt",
+   "run_km": 0.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 108863318,
+   "surface": "unpaved",
+   "run_km": 1.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1594984067963313",
+    "date": "2024-03-19"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH47",
+  "name": "सिद्धार्थ राजमार्ग",
+  "highway": "trunk",
+  "lat": 27.68574,
+  "lon": 83.46505,
+  "paved": {
+   "way": 205039492,
+   "surface": "asphalt",
+   "run_km": 47.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 669250698,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=574048481961372",
+    "date": "2024-11-02"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH01",
+  "name": "महेन्द्र राज्मार्ग्",
+  "highway": "trunk",
+  "lat": 27.68574,
+  "lon": 83.46505,
+  "paved": {
+   "way": 669250708,
+   "surface": "asphalt",
+   "run_km": 35.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 669250705,
+   "surface": "gravel",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=574048481961372",
+    "date": "2024-11-02"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.61276,
+  "lon": 85.25078,
+  "paved": {
+   "way": 1119878546,
+   "surface": "asphalt",
+   "run_km": 1.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=545486551126133",
+    "date": "2022-12-05"
+   }
+  },
+  "unpaved": {
+   "way": 224839517,
+   "surface": "ground",
+   "run_km": 4.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.62381,
+  "lon": 85.2463,
+  "paved": {
+   "way": 1119878545,
+   "surface": "asphalt",
+   "run_km": 2.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119878544,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=126773487035616",
+    "date": "2022-12-05"
+   }
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "Kulekhani Pharping Road",
+  "highway": "secondary",
+  "lat": 27.60013,
+  "lon": 85.23777,
+  "paved": {
+   "way": 1119878548,
+   "surface": "asphalt",
+   "run_km": 0.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=2602894106528272",
+    "date": "2022-12-05"
+   }
+  },
+  "unpaved": {
+   "way": 1119878547,
+   "surface": "ground",
+   "run_km": 1.4,
    "mapillary": null
   }
  },
@@ -18524,6 +19043,2610 @@
    "way": 1554362879,
    "surface": "unpaved",
    "run_km": 2.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH18",
+  "name": "Pasang Lhamu Highway",
+  "highway": "primary",
+  "lat": 27.84535,
+  "lon": 85.19317,
+  "paved": {
+   "way": 970616387,
+   "surface": "asphalt",
+   "run_km": 34.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 25512463,
+   "surface": "dirt",
+   "run_km": 1.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH18",
+  "name": "Pasang Lhamu Highway",
+  "highway": "primary",
+  "lat": 27.83207,
+  "lon": 85.19139,
+  "paved": {
+   "way": 246173480,
+   "surface": "paved",
+   "run_km": 22.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 25512463,
+   "surface": "dirt",
+   "run_km": 1.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH18",
+  "name": "Pasang Lhamu Highway",
+  "highway": "primary",
+  "lat": 28.03366,
+  "lon": 85.21761,
+  "paved": {
+   "way": 45269900,
+   "surface": "paved",
+   "run_km": 23.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 27033235,
+   "surface": "unpaved",
+   "run_km": 13.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F124",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.5956,
+  "lon": 84.50572,
+  "paved": {
+   "way": 44786172,
+   "surface": "paved",
+   "run_km": 0.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 44693214,
+   "surface": "unpaved",
+   "run_km": 1.4,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pokhara - Baglung Highway",
+  "highway": "trunk",
+  "lat": 28.23367,
+  "lon": 83.71038,
+  "paved": {
+   "way": 45270745,
+   "surface": "asphalt",
+   "run_km": 106.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1571890394,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pokhara - Baglung Highway",
+  "highway": "trunk",
+  "lat": 28.23522,
+  "lon": 83.7117,
+  "paved": {
+   "way": 45270756,
+   "surface": "asphalt",
+   "run_km": 44.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1571890394,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F198",
+  "name": "Bypass",
+  "highway": "primary",
+  "lat": 27.04581,
+  "lon": 84.90021,
+  "paved": {
+   "way": 45322944,
+   "surface": "asphalt",
+   "run_km": 2.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1120099494,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH44",
+  "name": "Gorkha - Ghyampesal Road",
+  "highway": "secondary",
+  "lat": 27.99585,
+  "lon": 84.64407,
+  "paved": {
+   "way": 90264508,
+   "surface": "paved",
+   "run_km": 17.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1118648046,
+   "surface": "gravel",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH18",
+  "name": "Pasang Lhamu Highway",
+  "highway": "primary",
+  "lat": 28.12407,
+  "lon": 85.3067,
+  "paved": {
+   "way": 246173479,
+   "surface": "asphalt",
+   "run_km": 7.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 141325664,
+   "surface": "unpaved",
+   "run_km": 2.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH21",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.7262,
+  "lon": 85.23397,
+  "paved": {
+   "way": 342003369,
+   "surface": "asphalt",
+   "run_km": 6.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 148452975,
+   "surface": "ground",
+   "run_km": 13.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Road Beni - Jomsom",
+  "highway": "primary",
+  "lat": 28.70978,
+  "lon": 83.64159,
+  "paved": {
+   "way": 180611187,
+   "surface": "asphalt",
+   "run_km": 5.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 175588642,
+   "surface": "tracktype=grade2",
+   "run_km": 36.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Road Beni - Jomsom",
+  "highway": "primary",
+  "lat": 28.73963,
+  "lon": 83.67938,
+  "paved": {
+   "way": 180611187,
+   "surface": "asphalt",
+   "run_km": 5.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1426331367,
+   "surface": "unpaved",
+   "run_km": 0.4,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Road Beni - Jomsom",
+  "highway": "primary",
+  "lat": 28.75604,
+  "lon": 83.69222,
+  "paved": {
+   "way": 1426330154,
+   "surface": "asphalt",
+   "run_km": 1.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 180611190,
+   "surface": "tracktype=grade2",
+   "run_km": 3.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "",
+  "highway": "primary",
+  "lat": 28.22168,
+  "lon": 84.0489,
+  "paved": {
+   "way": 187385266,
+   "surface": "asphalt",
+   "run_km": 3.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 268007991,
+   "surface": "unpaved",
+   "run_km": 0.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.53123,
+  "lon": 85.10082,
+  "paved": {
+   "way": 195260031,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 195260041,
+   "surface": "unpaved",
+   "run_km": 1.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "Kulekhani Road",
+  "highway": "secondary",
+  "lat": 27.5312,
+  "lon": 85.1006,
+  "paved": {
+   "way": 195260031,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 379089377,
+   "surface": "unpaved",
+   "run_km": 2.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.53701,
+  "lon": 85.10659,
+  "paved": {
+   "way": 195260033,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 195260034,
+   "surface": "ground",
+   "run_km": 0.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.53717,
+  "lon": 85.10606,
+  "paved": {
+   "way": 195260033,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 195260041,
+   "surface": "unpaved",
+   "run_km": 1.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F166",
+  "name": "Jomsom-Muktinath",
+  "highway": "primary",
+  "lat": 28.81695,
+  "lon": 83.84464,
+  "paved": {
+   "way": 355351120,
+   "surface": "asphalt",
+   "run_km": 0.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 203919671,
+   "surface": "gravel",
+   "run_km": 8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.55326,
+  "lon": 81.7007,
+  "paved": {
+   "way": 210559823,
+   "surface": "paved",
+   "run_km": 3.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998067,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.56987,
+  "lon": 81.67803,
+  "paved": {
+   "way": 210559823,
+   "surface": "paved",
+   "run_km": 3.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998070,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH527D",
+  "name": "",
+  "highway": "trunk",
+  "lat": 26.94853,
+  "lon": 84.84188,
+  "paved": {
+   "way": 233303604,
+   "surface": "asphalt",
+   "run_km": 49.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 221222777,
+   "surface": "unpaved",
+   "run_km": 3.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.59956,
+  "lon": 85.24037,
+  "paved": {
+   "way": 1119878548,
+   "surface": "asphalt",
+   "run_km": 0.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 224839517,
+   "surface": "ground",
+   "run_km": 4.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "primary",
+  "lat": 29.08567,
+  "lon": 80.53791,
+  "paved": {
+   "way": 232250619,
+   "surface": "asphalt",
+   "run_km": 25.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 232250620,
+   "surface": "compacted",
+   "run_km": 5.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.93563,
+  "lon": 86.28435,
+  "paved": {
+   "way": 234106910,
+   "surface": "asphalt",
+   "run_km": 15.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236006,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH53",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.30288,
+  "lon": 82.63694,
+  "paved": {
+   "way": 236948597,
+   "surface": "paved",
+   "run_km": 62.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 331511995,
+   "surface": "gravel",
+   "run_km": 1.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH18",
+  "name": "Pasang Lhamu Highway",
+  "highway": "primary",
+  "lat": 28.10308,
+  "lon": 85.28777,
+  "paved": {
+   "way": 246173482,
+   "surface": "asphalt",
+   "run_km": 3.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 344160419,
+   "surface": "unpaved",
+   "run_km": 13.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH18",
+  "name": "Pasang Lhamu Highway",
+  "highway": "primary",
+  "lat": 28.10939,
+  "lon": 85.30445,
+  "paved": {
+   "way": 246173482,
+   "surface": "asphalt",
+   "run_km": 3.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 934778608,
+   "surface": "unpaved",
+   "run_km": 1.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Jeep Road Beni-Lo Manthang",
+  "highway": "primary",
+  "lat": 28.78519,
+  "lon": 83.73525,
+  "paved": {
+   "way": 683770752,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 258494216,
+   "surface": "gravel",
+   "run_km": 4.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F131",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.97241,
+  "lon": 83.58861,
+  "paved": {
+   "way": 291071164,
+   "surface": "asphalt",
+   "run_km": 16.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 291071165,
+   "surface": "unpaved",
+   "run_km": 2.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Budisera ko Pul",
+  "highway": "secondary",
+  "lat": 27.85912,
+  "lon": 85.31888,
+  "paved": {
+   "way": 303977029,
+   "surface": "paved",
+   "run_km": 22.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1127442531,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Devisthan- Murkuti-Ghorahi Road",
+  "highway": "secondary",
+  "lat": 28.03411,
+  "lon": 82.78832,
+  "paved": {
+   "way": 332096916,
+   "surface": "paved",
+   "run_km": 76,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 304271768,
+   "surface": "gravel",
+   "run_km": 46,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "Salme -Tingla Bridge",
+  "highway": "primary",
+  "lat": 27.44469,
+  "lon": 86.57263,
+  "paved": {
+   "way": 313974130,
+   "surface": "asphalt",
+   "run_km": 13.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 314460957,
+   "surface": "tracktype=grade3",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Dedgaun - Ghumarighat Road",
+  "highway": "primary/secondary",
+  "lat": 27.85686,
+  "lon": 84.08029,
+  "paved": {
+   "way": 516625119,
+   "surface": "paved",
+   "run_km": 10.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 328010662,
+   "surface": "unpaved",
+   "run_km": 19.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH21",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.73434,
+  "lon": 85.15516,
+  "paved": {
+   "way": 329892980,
+   "surface": "asphalt",
+   "run_km": 2.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 341219576,
+   "surface": "ground",
+   "run_km": 13.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "primary",
+  "lat": 27.05215,
+  "lon": 86.03274,
+  "paved": {
+   "way": 331307836,
+   "surface": "asphalt",
+   "run_km": 10.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 866430480,
+   "surface": "unpaved",
+   "run_km": 1.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.04544,
+  "lon": 84.6295,
+  "paved": {
+   "way": 331578549,
+   "surface": "asphalt",
+   "run_km": 30.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1547479573,
+   "surface": "tracktype=grade3",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F72",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.57415,
+  "lon": 85.55055,
+  "paved": {
+   "way": 481261637,
+   "surface": "asphalt",
+   "run_km": 2.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 331883442,
+   "surface": "dirt",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F72",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.5742,
+  "lon": 85.55042,
+  "paved": {
+   "way": 1128003154,
+   "surface": "asphalt",
+   "run_km": 1.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 331883442,
+   "surface": "dirt",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH61",
+  "name": "Karnali Highway",
+  "highway": "primary",
+  "lat": 29.12612,
+  "lon": 81.76008,
+  "paved": {
+   "way": 335767509,
+   "surface": "paved",
+   "run_km": 40.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 332667614,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH61",
+  "name": "Karnali Highway",
+  "highway": "primary",
+  "lat": 29.12619,
+  "lon": 81.76016,
+  "paved": {
+   "way": 894152344,
+   "surface": "paved",
+   "run_km": 2.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 332667614,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH61",
+  "name": "Karnali Highway",
+  "highway": "primary",
+  "lat": 29.14433,
+  "lon": 81.77473,
+  "paved": {
+   "way": 894152344,
+   "surface": "paved",
+   "run_km": 2.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 332667617,
+   "surface": "unpaved",
+   "run_km": 52.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH44",
+  "name": "Rapti Bridge",
+  "highway": "secondary",
+  "lat": 27.54931,
+  "lon": 84.32605,
+  "paved": {
+   "way": 335276997,
+   "surface": "asphalt",
+   "run_km": 20.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 345069196,
+   "surface": "compacted",
+   "run_km": 9.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Ramdi - Rampur Road",
+  "highway": "secondary",
+  "lat": 27.87095,
+  "lon": 83.81662,
+  "paved": {
+   "way": 335434508,
+   "surface": "asphalt",
+   "run_km": 27,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1215671215,
+   "surface": "gravel",
+   "run_km": 6.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F26",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.82244,
+  "lon": 85.48825,
+  "paved": {
+   "way": 340452965,
+   "surface": "asphalt",
+   "run_km": 34.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 344592880,
+   "surface": "gravel",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Helambu Trek",
+  "highway": "secondary",
+  "lat": 27.84421,
+  "lon": 85.45802,
+  "paved": {
+   "way": 342271054,
+   "surface": "concrete",
+   "run_km": 0.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 340459128,
+   "surface": "dirt",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pushpalal highway",
+  "highway": "primary",
+  "lat": 28.15034,
+  "lon": 84.28356,
+  "paved": {
+   "way": 340490653,
+   "surface": "paved",
+   "run_km": 3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1022223495,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pushpalal highway",
+  "highway": "primary",
+  "lat": 28.13789,
+  "lon": 84.40491,
+  "paved": {
+   "way": 340491089,
+   "surface": "asphalt",
+   "run_km": 3.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 517069656,
+   "surface": "unpaved",
+   "run_km": 1.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pushpalal highway",
+  "highway": "primary",
+  "lat": 28.12747,
+  "lon": 84.41683,
+  "paved": {
+   "way": 340538634,
+   "surface": "paved",
+   "run_km": 2.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 517069656,
+   "surface": "unpaved",
+   "run_km": 1.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pushpalal highway",
+  "highway": "primary",
+  "lat": 28.14949,
+  "lon": 84.26504,
+  "paved": {
+   "way": 340588693,
+   "surface": "paved",
+   "run_km": 1.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 341056073,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Gaindakot - Rampur Road",
+  "highway": "secondary",
+  "lat": 27.86804,
+  "lon": 83.9303,
+  "paved": {
+   "way": 481427042,
+   "surface": "paved",
+   "run_km": 6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 915696841,
+   "surface": "unpaved",
+   "run_km": 0.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "Kulekhani Road",
+  "highway": "secondary",
+  "lat": 27.50644,
+  "lon": 85.06503,
+  "paved": {
+   "way": 379089383,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 340939180,
+   "surface": "unpaved",
+   "run_km": 1.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "Kulekhani Road",
+  "highway": "secondary",
+  "lat": 27.52323,
+  "lon": 85.0854,
+  "paved": {
+   "way": 340939182,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 340939184,
+   "surface": "unpaved",
+   "run_km": 1.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "Kulekhani Road",
+  "highway": "secondary",
+  "lat": 27.52325,
+  "lon": 85.08541,
+  "paved": {
+   "way": 340939182,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 379089377,
+   "surface": "unpaved",
+   "run_km": 2.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "Kulekhani Road",
+  "highway": "secondary",
+  "lat": 27.51363,
+  "lon": 85.07535,
+  "paved": {
+   "way": 340939183,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 379089386,
+   "surface": "unpaved",
+   "run_km": 1.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "Kulekhani Road",
+  "highway": "secondary",
+  "lat": 27.5138,
+  "lon": 85.07553,
+  "paved": {
+   "way": 340939183,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 340939184,
+   "surface": "unpaved",
+   "run_km": 1.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pushpalal highway",
+  "highway": "primary",
+  "lat": 28.14957,
+  "lon": 84.26493,
+  "paved": {
+   "way": 341056076,
+   "surface": "paved",
+   "run_km": 5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 341056073,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Helambu Trek",
+  "highway": "secondary",
+  "lat": 27.84367,
+  "lon": 85.45515,
+  "paved": {
+   "way": 342271054,
+   "surface": "concrete",
+   "run_km": 0.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 343025217,
+   "surface": "tracktype=grade2",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 27.3116,
+  "lon": 86.50542,
+  "paved": {
+   "way": 349628292,
+   "surface": "asphalt",
+   "run_km": 45.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1163796710,
+   "surface": "dirt",
+   "run_km": 0.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "",
+  "highway": "primary",
+  "lat": 28.46967,
+  "lon": 82.90048,
+  "paved": {
+   "way": 365177525,
+   "surface": "asphalt",
+   "run_km": 60.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 349891011,
+   "surface": "unpaved",
+   "run_km": 4.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Road Beni - Jomsom",
+  "highway": "primary",
+  "lat": 28.77564,
+  "lon": 83.71351,
+  "paved": {
+   "way": 684018753,
+   "surface": "concrete",
+   "run_km": 2.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 352882450,
+   "surface": "gravel",
+   "run_km": 3.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.55263,
+  "lon": 81.70642,
+  "paved": {
+   "way": 1531998068,
+   "surface": "paved",
+   "run_km": 0.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 377519254,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.55231,
+  "lon": 81.70676,
+  "paved": {
+   "way": 771451157,
+   "surface": "paved",
+   "run_km": 0.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 377519254,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Dhuliyabit-Bhedabari-dang Purandhara",
+  "highway": "secondary",
+  "lat": 28.55117,
+  "lon": 81.70706,
+  "paved": {
+   "way": 377519255,
+   "surface": "paved",
+   "run_km": 9.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 771451156,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.49686,
+  "lon": 81.75042,
+  "paved": {
+   "way": 377519255,
+   "surface": "paved",
+   "run_km": 9.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998066,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F19",
+  "name": "Kulekhani Road",
+  "highway": "secondary",
+  "lat": 27.50634,
+  "lon": 85.06508,
+  "paved": {
+   "way": 379089383,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 379089386,
+   "surface": "unpaved",
+   "run_km": 1.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.93591,
+  "lon": 86.28461,
+  "paved": {
+   "way": 459236007,
+   "surface": "asphalt",
+   "run_km": 0.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236006,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.94101,
+  "lon": 86.2878,
+  "paved": {
+   "way": 459236007,
+   "surface": "asphalt",
+   "run_km": 0.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236008,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.94462,
+  "lon": 86.29367,
+  "paved": {
+   "way": 459236010,
+   "surface": "asphalt",
+   "run_km": 1.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236022,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.94113,
+  "lon": 86.28797,
+  "paved": {
+   "way": 459236013,
+   "surface": "asphalt",
+   "run_km": 0.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 890792559,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.94266,
+  "lon": 86.29041,
+  "paved": {
+   "way": 459236013,
+   "surface": "asphalt",
+   "run_km": 0.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236019,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.94402,
+  "lon": 86.2924,
+  "paved": {
+   "way": 459236016,
+   "surface": "asphalt",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236019,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.94454,
+  "lon": 86.29349,
+  "paved": {
+   "way": 459236016,
+   "surface": "asphalt",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236022,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.95018,
+  "lon": 86.30465,
+  "paved": {
+   "way": 459236024,
+   "surface": "asphalt",
+   "run_km": 1.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236027,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.95026,
+  "lon": 86.30491,
+  "paved": {
+   "way": 459236029,
+   "surface": "asphalt",
+   "run_km": 0.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236027,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.95314,
+  "lon": 86.30975,
+  "paved": {
+   "way": 459236029,
+   "surface": "asphalt",
+   "run_km": 0.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236032,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.95331,
+  "lon": 86.31014,
+  "paved": {
+   "way": 459236035,
+   "surface": "asphalt",
+   "run_km": 1.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236032,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.95637,
+  "lon": 86.31999,
+  "paved": {
+   "way": 459236035,
+   "surface": "asphalt",
+   "run_km": 1.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236037,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 26.95663,
+  "lon": 86.32073,
+  "paved": {
+   "way": 459236038,
+   "surface": "asphalt",
+   "run_km": 5.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 459236037,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.4408,
+  "lon": 81.87067,
+  "paved": {
+   "way": 475436700,
+   "surface": "paved",
+   "run_km": 2.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998058,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Gaindakot - Rampur Road",
+  "highway": "secondary",
+  "lat": 27.86083,
+  "lon": 83.8805,
+  "paved": {
+   "way": 491899411,
+   "surface": "paved",
+   "run_km": 6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 481425794,
+   "surface": "gravel",
+   "run_km": 1.4,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH63",
+  "name": "Sanphebagar-Martadi-Kolti Highway",
+  "highway": "primary",
+  "lat": 29.41718,
+  "lon": 81.4268,
+  "paved": {
+   "way": 851969420,
+   "surface": "paved",
+   "run_km": 40.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 515894969,
+   "surface": "unpaved",
+   "run_km": 15.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH20",
+  "name": "",
+  "highway": "primary",
+  "lat": 27.23557,
+  "lon": 86.4542,
+  "paved": {
+   "way": 961263965,
+   "surface": "asphalt",
+   "run_km": 15.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 519247039,
+   "surface": "dirt",
+   "run_km": 5.4,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.62274,
+  "lon": 85.24893,
+  "paved": {
+   "way": 587825969,
+   "surface": "paved",
+   "run_km": 1.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119878544,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.61891,
+  "lon": 85.25605,
+  "paved": {
+   "way": 587825970,
+   "surface": "asphalt",
+   "run_km": 2.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119878543,
+   "surface": "unpaved",
+   "run_km": 0.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Road Beni - Jomsom",
+  "highway": "primary",
+  "lat": 28.78552,
+  "lon": 83.73484,
+  "paved": {
+   "way": 683770752,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 683770750,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Road Beni - Jomsom",
+  "highway": "primary",
+  "lat": 28.78532,
+  "lon": 83.73223,
+  "paved": {
+   "way": 1426177359,
+   "surface": "paving_stones",
+   "run_km": 2.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 684018754,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "Dhuliyabit-Bhedabari-dang Purandhara",
+  "highway": "secondary",
+  "lat": 28.55121,
+  "lon": 81.70703,
+  "paved": {
+   "way": 771451157,
+   "surface": "paved",
+   "run_km": 0.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 771451156,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH63",
+  "name": "Sanphebagar-Martadi-Kolti Highway",
+  "highway": "primary",
+  "lat": 29.35127,
+  "lon": 81.32702,
+  "paved": {
+   "way": 849797400,
+   "surface": "asphalt",
+   "run_km": 27.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 849797403,
+   "surface": "unpaved",
+   "run_km": 15.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "primary",
+  "lat": 27.02117,
+  "lon": 86.12267,
+  "paved": {
+   "way": 866438108,
+   "surface": "asphalt",
+   "run_km": 6.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 866438109,
+   "surface": "unpaved",
+   "run_km": 16,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "primary",
+  "lat": 27.04014,
+  "lon": 86.05619,
+  "paved": {
+   "way": 866744351,
+   "surface": "asphalt",
+   "run_km": 1.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 866744352,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "primary",
+  "lat": 27.0394,
+  "lon": 86.05772,
+  "paved": {
+   "way": 1055102232,
+   "surface": "asphalt",
+   "run_km": 0.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1014562808,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "Pushpalal highway",
+  "highway": "primary",
+  "lat": 28.15015,
+  "lon": 84.28333,
+  "paved": {
+   "way": 1022223496,
+   "surface": "paved",
+   "run_km": 1.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1022223495,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.44952,
+  "lon": 81.85041,
+  "paved": {
+   "way": 1049809734,
+   "surface": "paved",
+   "run_km": 2.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531707539,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.44091,
+  "lon": 81.87037,
+  "paved": {
+   "way": 1049809734,
+   "surface": "paved",
+   "run_km": 2.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998058,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.47001,
+  "lon": 81.817,
+  "paved": {
+   "way": 1531998059,
+   "surface": "paved",
+   "run_km": 2.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1049809735,
+   "surface": "gravel",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.46979,
+  "lon": 81.81791,
+  "paved": {
+   "way": 1531707545,
+   "surface": "paved",
+   "run_km": 3.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1049809735,
+   "surface": "gravel",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "primary",
+  "lat": 27.03536,
+  "lon": 86.06392,
+  "paved": {
+   "way": 1055102232,
+   "surface": "asphalt",
+   "run_km": 0.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1125063096,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH44",
+  "name": "Gorkha-Ghyampesal Road",
+  "highway": "secondary",
+  "lat": 27.9951,
+  "lon": 84.64513,
+  "paved": {
+   "way": 1118648045,
+   "surface": "asphalt",
+   "run_km": 4.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1118648046,
+   "surface": "gravel",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH21",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.73541,
+  "lon": 85.13562,
+  "paved": {
+   "way": 1119321090,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119321087,
+   "surface": "ground",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH21",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.73551,
+  "lon": 85.13647,
+  "paved": {
+   "way": 1119321088,
+   "surface": "concrete",
+   "run_km": 2.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119321089,
+   "surface": "ground",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH21",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.73563,
+  "lon": 85.13608,
+  "paved": {
+   "way": 1119321090,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119321089,
+   "surface": "ground",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "",
+  "highway": "secondary",
+  "lat": 27.6128,
+  "lon": 85.25968,
+  "paved": {
+   "way": 1119878542,
+   "surface": "concrete",
+   "run_km": 0.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119878543,
+   "surface": "unpaved",
+   "run_km": 0.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "Kulekhani Pharping Road",
+  "highway": "secondary",
+  "lat": 27.60484,
+  "lon": 85.23364,
+  "paved": {
+   "way": 1119878549,
+   "surface": "asphalt",
+   "run_km": 0.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119878547,
+   "surface": "ground",
+   "run_km": 1.4,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "F121",
+  "name": "Kulekhani Pharping Road",
+  "highway": "secondary",
+  "lat": 27.60681,
+  "lon": 85.23053,
+  "paved": {
+   "way": 1119878549,
+   "surface": "asphalt",
+   "run_km": 0.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1119878550,
+   "surface": "ground",
+   "run_km": 10.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.03304,
+  "lon": 82.50144,
+  "paved": {
+   "way": 1257361305,
+   "surface": "asphalt",
+   "run_km": 1.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1126423448,
+   "surface": "gravel",
+   "run_km": 46,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.03304,
+  "lon": 82.50144,
+  "paved": {
+   "way": 1257361306,
+   "surface": "asphalt",
+   "run_km": 1.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1126423448,
+   "surface": "gravel",
+   "run_km": 46,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "primary",
+  "lat": 29.11451,
+  "lon": 80.50799,
+  "paved": {
+   "way": 1134978686,
+   "surface": "asphalt",
+   "run_km": 0.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1275554832,
+   "surface": "compacted",
+   "run_km": 5.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.03627,
+  "lon": 82.49476,
+  "paved": {
+   "way": 1257361305,
+   "surface": "asphalt",
+   "run_km": 1.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1257361307,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.03627,
+  "lon": 82.49476,
+  "paved": {
+   "way": 1257361306,
+   "surface": "asphalt",
+   "run_km": 1.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1257361307,
+   "surface": "gravel",
+   "run_km": 0.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH48",
+  "name": "Road Beni - Jomsom",
+  "highway": "primary",
+  "lat": 28.74247,
+  "lon": 83.68159,
+  "paved": {
+   "way": 1426330154,
+   "surface": "asphalt",
+   "run_km": 1.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1426331367,
+   "surface": "unpaved",
+   "run_km": 0.4,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.44956,
+  "lon": 81.85002,
+  "paved": {
+   "way": 1531707540,
+   "surface": "paved",
+   "run_km": 0.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531707539,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.45306,
+  "lon": 81.84208,
+  "paved": {
+   "way": 1531707540,
+   "surface": "paved",
+   "run_km": 0.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531707544,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.45329,
+  "lon": 81.84183,
+  "paved": {
+   "way": 1531707545,
+   "surface": "paved",
+   "run_km": 3.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531707544,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.47346,
+  "lon": 81.79373,
+  "paved": {
+   "way": 1531998059,
+   "surface": "paved",
+   "run_km": 2.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998060,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.47365,
+  "lon": 81.79345,
+  "paved": {
+   "way": 1531998065,
+   "surface": "paved",
+   "run_km": 2.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998060,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.48112,
+  "lon": 81.77438,
+  "paved": {
+   "way": 1531998062,
+   "surface": "paved",
+   "run_km": 1.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998061,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.48094,
+  "lon": 81.7745,
+  "paved": {
+   "way": 1531998065,
+   "surface": "paved",
+   "run_km": 2.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998061,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.48998,
+  "lon": 81.76065,
+  "paved": {
+   "way": 1531998062,
+   "surface": "paved",
+   "run_km": 1.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998063,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.49026,
+  "lon": 81.76045,
+  "paved": {
+   "way": 1531998064,
+   "surface": "paved",
+   "run_km": 1.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998063,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.49671,
+  "lon": 81.75062,
+  "paved": {
+   "way": 1531998064,
+   "surface": "paved",
+   "run_km": 1.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998066,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.55329,
+  "lon": 81.70106,
+  "paved": {
+   "way": 1531998068,
+   "surface": "paved",
+   "run_km": 0.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998067,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH09",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.56983,
+  "lon": 81.67771,
+  "paved": {
+   "way": 1531998069,
+   "surface": "paved",
+   "run_km": 4.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1531998070,
+   "surface": "unpaved",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Nepal national and feeder roads",
+  "country": "np",
+  "ref": "NH03",
+  "name": "",
+  "highway": "secondary",
+  "lat": 28.04538,
+  "lon": 84.62947,
+  "paved": {
+   "way": 1547479572,
+   "surface": "asphalt",
+   "run_km": 9.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1547479573,
+   "surface": "tracktype=grade3",
+   "run_km": 0,
    "mapillary": null
   }
  }
