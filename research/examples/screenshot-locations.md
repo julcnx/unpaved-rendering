@@ -4,7 +4,7 @@ Verified 2026-11-03: each spot was found in [transitions.json](transitions.json)
 
 Of 24 tag transitions checked, 13 show a real change and 11 do not (both sides paved, or both gravel or dirt): a tag transition is not proof of a surface change. Failed: Gibb River Road near Derby, Namibia C34 (2), C14, C27, C28 (2), Bolivia RN6, RN7 (2), F22. No verified spot yet in Australia or Iceland (Kjalvegur has no Mapillary at its transition; check Google Street View yourself).
 
-All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Kurviger, Guru Maps, Locus): open the `geo:` link on the phone or paste the coordinates. Links marked "to check" use a URL format I could not confirm.
+All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Kurviger, Guru Maps, Locus): open the `geo:` link on the phone or paste the coordinates. All URL formats confirmed (Gaia GPS uses longitude first).
 
 ## 1. Namibia: C48: fresh asphalt to wide gravel (very clean)
 
@@ -18,7 +18,9 @@ Point: **-18.12805, 21.64435** (`geo:-18.12805,21.64435?z=15`). Class: `highway=
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-18.12805/21.64435) |  |
 | Americana | [open](https://americanamap.org/#map=15/-18.12805/21.64435) |  |
 | Google Maps | [open](https://www.google.com/maps/@-18.12805,21.64435,15z) |  |
@@ -41,7 +43,9 @@ Point: **-22.85645, 15.0354** (`geo:-22.85645,15.0354?z=15`). Class: `highway=pr
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-22.85645/15.0354) |  |
 | Americana | [open](https://americanamap.org/#map=15/-22.85645/15.0354) |  |
 | Google Maps | [open](https://www.google.com/maps/@-22.85645,15.0354,15z) |  |
@@ -64,7 +68,9 @@ Point: **-14.84989, -65.10523** (`geo:-14.84989,-65.10523?z=15`). Class: `highwa
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-14.84989/-65.10523) |  |
 | Americana | [open](https://americanamap.org/#map=15/-14.84989/-65.10523) |  |
 | Google Maps | [open](https://www.google.com/maps/@-14.84989,-65.10523,15z) |  |
@@ -87,7 +93,9 @@ Point: **-22.72791, 16.9509** (`geo:-22.72791,16.9509?z=15`). Class: `highway=pr
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-22.72791/16.9509) |  |
 | Americana | [open](https://americanamap.org/#map=15/-22.72791/16.9509) |  |
 | Google Maps | [open](https://www.google.com/maps/@-22.72791,16.9509,15z) |  |
@@ -110,7 +118,9 @@ Point: **-14.87824, -64.99758** (`geo:-14.87824,-64.99758?z=15`). Class: `highwa
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-14.87824/-64.99758) |  |
 | Americana | [open](https://americanamap.org/#map=15/-14.87824/-64.99758) |  |
 | Google Maps | [open](https://www.google.com/maps/@-14.87824,-64.99758,15z) |  |
@@ -133,7 +143,9 @@ Point: **-17.36235, -66.364** (`geo:-17.36235,-66.364?z=15`). Class: `highway=pr
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-17.36235/-66.364) |  |
 | Americana | [open](https://americanamap.org/#map=15/-17.36235/-66.364) |  |
 | Google Maps | [open](https://www.google.com/maps/@-17.36235,-66.364,15z) |  |
@@ -156,7 +168,9 @@ Point: **-20.05495, 18.24894** (`geo:-20.05495,18.24894?z=15`). Class: `highway=
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-20.05495/18.24894) |  |
 | Americana | [open](https://americanamap.org/#map=15/-20.05495/18.24894) |  |
 | Google Maps | [open](https://www.google.com/maps/@-20.05495,18.24894,15z) |  |
@@ -179,7 +193,9 @@ Point: **-18.81068, 16.9415** (`geo:-18.81068,16.9415?z=15`). Class: `highway=pr
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-18.81068/16.9415) |  |
 | Americana | [open](https://americanamap.org/#map=15/-18.81068/16.9415) |  |
 | Google Maps | [open](https://www.google.com/maps/@-18.81068,16.9415,15z) |  |
@@ -202,7 +218,9 @@ Point: **-19.62212, 14.841** (`geo:-19.62212,14.841?z=15`). Class: `highway=prim
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-19.62212/14.841) |  |
 | Americana | [open](https://americanamap.org/#map=15/-19.62212/14.841) |  |
 | Google Maps | [open](https://www.google.com/maps/@-19.62212,14.841,15z) |  |
@@ -225,7 +243,9 @@ Point: **-22.59733, 16.85222** (`geo:-22.59733,16.85222?z=15`). Class: `highway=
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-22.59733/16.85222) |  |
 | Americana | [open](https://americanamap.org/#map=15/-22.59733/16.85222) |  |
 | Google Maps | [open](https://www.google.com/maps/@-22.59733,16.85222,15z) |  |
@@ -248,7 +268,9 @@ Point: **-20.57606, 17.52333** (`geo:-20.57606,17.52333?z=15`). Class: `highway=
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-20.57606/17.52333) |  |
 | Americana | [open](https://americanamap.org/#map=15/-20.57606/17.52333) |  |
 | Google Maps | [open](https://www.google.com/maps/@-20.57606,17.52333,15z) |  |
@@ -271,7 +293,9 @@ Point: **-17.53697, -66.11823** (`geo:-17.53697,-66.11823?z=15`). Class: `highwa
 | OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823) |  |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823&layers=Y) |  |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823&layers=P) | to check: layer letter |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823&layers=P) | |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823&layers=S) | |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-17.53697/-66.11823) |  |
 | Americana | [open](https://americanamap.org/#map=15/-17.53697/-66.11823) |  |
 | Google Maps | [open](https://www.google.com/maps/@-17.53697,-66.11823,15z) |  |
