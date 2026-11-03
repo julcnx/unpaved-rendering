@@ -11,7 +11,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `smoothness=very_good` | 244 | India 90, Senegal 82, Brazil 53, Ghana 8, Gambia 6, Kenya 4, Argentina 1 |
 | `surface=karral` | 232 | Cameroon 232 |
 | `surface=terra` | 156 | Brazil 156 |
-| `surface=tartan` | 141 | India 87, Namibia 41, South Africa 5, Sri Lanka 4, Ivory Coast 2, Cameroon 1, Indonesia 1, Malaysia 1, Brazil 0, Nepal 0, Madagascar 0 |
+| `surface=tartan` | 143 | India 87, Namibia 41, South Africa 5, Sri Lanka 4, Ivory Coast 2, Denmark 1, Cameroon 1, Indonesia 1, Malaysia 1, Brazil 0, Nepal 0, Madagascar 0 |
 | `surface=sand/gravel/stones` | 132 | Kenya 125, Australia 6, India 1 |
 | `surface=dbst` | 132 | Cambodia 132 |
 | `smoothness=p` | 124 | Cameroon 124 |
@@ -20,11 +20,11 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=JOG` | 83 | DR Congo 83 |
 | `surface=Dirt_&_Rock` | 75 | Kenya 75 |
 | `surface=ottaseal` | 63 | Nepal 63 |
-| `smoothness=poor` | 52 | Colombia 25, Australia 18, Peru 4, Brazil 2, Philippines 2, Thailand 1, Indonesia 1, Vietnam 0 |
+| `smoothness=poor` | 53 | Colombia 25, Australia 18, Peru 4, Brazil 2, Philippines 2, Thailand 1, Indonesia 1, Vietnam 0, Denmark 0 |
 | `smoothness=rough` | 51 | South Africa 35, Thailand 14, Vietnam 2, Philippines 1 |
 | `surface=asphalt, ground` | 48 | India 48 |
 | `surface=não_pavimentadoc` | 47 | Brazil 47 |
-| `surface=acrylic` | 42 | Brazil 41, Sri Lanka 1, Australia 0, Chile 0 |
+| `surface=acrylic` | 43 | Brazil 41, Sri Lanka 1, Denmark 1, Australia 0, Chile 0 |
 | `surface=stone` | 41 | Indonesia 33, Brazil 3, Nepal 3, Argentina 1, Colombia 1, Gabon 0, India 0, Peru 0, Malaysia 0 |
 | `surface=Blacktopped` | 36 | Nepal 36 |
 | `surface=não_pavimentado` | 35 | Brazil 35 |
@@ -103,7 +103,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=Carpet` | 5 | Sri Lanka 5 |
 | `surface=construction` | 5 | Vietnam 5, Philippines 0, Argentina 0 |
 | `surface=bitumen_seal` | 5 | Australia 5 |
-| `smoothness=medium` | 5 | Brazil 5, Indonesia 0 |
+| `smoothness=medium` | 5 | Brazil 5, Indonesia 0, Denmark 0 |
 | `surface=g` | 5 | Madagascar 5 |
 | `surface=TANAH KANCING` | 5 | Indonesia 5 |
 | `surface=tierra` | 5 | Argentina 5 |
@@ -127,6 +127,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=12.50530/121.30882` | 4 | Philippines 4 |
 | `surface=písčitý` | 4 | Laos 4 |
 | `surface=Piçarra` | 4 | Brazil 4 |
+| `surface=com` | 3 | Denmark 2, Brazil 1, Indonesia 1 |
 | `surface=dirt/rock` | 3 | Kenya 3 |
 | `surface=as\` | 3 | Thailand 3 |
 | `surface=revsol` | 3 | Brazil 3 |
@@ -185,7 +186,6 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=Thâm_nhập_nhựa` | 2 | Vietnam 2 |
 | `surface=terrain` | 2 | Brazil 2 |
 | `surface=terra0` | 2 | Brazil 2 |
-| `surface=com` | 2 | Brazil 1, Indonesia 1 |
 | `surface=concrete_slabs` | 2 | India 1, South Africa 1 |
 | `surface=groundovertaking` | 2 | Brazil 2 |
 | `surface=grober_schotter` | 2 | Brazil 2 |
@@ -214,6 +214,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=ถนน_ค.ส.ล.` | 2 | Thailand 2 |
 | `surface=visinal_2` | 1 | Brazil 1 |
 | `surface=paralepípedo` | 1 | Brazil 1 |
+| `surface=verdichtetw` | 1 | Denmark 1 |
 | `surface=Tanah dan Beton` | 1 | Indonesia 1 |
 | `surface=Paving` | 1 | Indonesia 1 |
 | `surface=ps` | 1 | India 1 |
@@ -226,6 +227,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=cobblestone:lanes` | 1 | Brazil 1 |
 | `surface=1` | 1 | Brazil 1, Malaysia 1 |
 | `surface=sans revêtemen` | 1 | Cameroon 1 |
+| `surface=unspecified` | 1 | Denmark 1, Peru 0 |
 | `surface=ground;dirt/sand` | 1 | Kenya 1 |
 | `surface=dbst_and_gravek` | 1 | Cambodia 1 |
 | `surface=concrete/asphalt` | 1 | Philippines 1 |

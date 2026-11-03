@@ -46,4 +46,4 @@ australia-oceania/new-zealand NZ New Zealand
 # Western contrast
 europe/finland FI Finland
 europe/czech-republic CZ Czechia
-europe/france FR France
+europe/denmark DK Denmark

@@ -42,6 +42,7 @@ Share of km that is Unpaved per class (with or without the Off-road mark), sorte
 | India | 2026-11-02 | 0% | 0% | 0% | 1% | 3% | 0.0% | 89.4% | 3,695,527 |
 | French Guiana | 2026-11-01 | - | 0% | 9% | 1% | 37% | 0.5% | 34.2% | 2,498 |
 | Vietnam | 2026-11-02 | 0% | 0% | 0% | 1% | 14% | 0.1% | 87.7% | 579,103 |
+| Denmark | 2026-11-01 | 0% | 0% | 0% | 0% | 18% | 0.1% | 9.9% | 96,272 |
 
 ## Argentina (ar), data 2026-11-02
 
@@ -1130,6 +1131,103 @@ Untagged: no `surface` and no known `tracktype`, so the road is assumed paved. P
 ### Longest ways with unknown values
 
 - [w118276862](https://www.openstreetmap.org/way/118276862) tertiary, 0.6 km, **unpaved**: `surface=afalto`
+
+## Denmark (dk), data 2026-11-01
+
+Run 2026-11-03, classifier `0a018a8853bb`, pipeline `9767283de3b6`, osmium version 1.19.1, extract `denmark-latest.osm.pbf`, data date from header.
+
+| Class | km | Paved (tagged) | Untagged | Unpaved | of which Off-road mark |
+|---|--:|--:|--:|--:|--:|
+| motorway | 2,594 | 100.0% | 0.0% | 0.0% | 0.0% |
+| trunk | 486 | 100.0% | 0.0% | 0.0% | 0.0% |
+| primary | 2,782 | 100.0% | 0.0% | 0.0% | 0.0% |
+| secondary | 6,574 | 100.0% | 0.0% | 0.0% | 0.0% |
+| tertiary | 23,602 | 99.9% | 0.0% | 0.1% | 0.0% |
+| unclassified | 32,192 | 64.6% | 16.9% | 18.4% | 0.2% |
+| residential | 28,043 | 72.0% | 14.5% | 13.6% | 0.1% |
+| **All** | 96,272 | 80.0% | 9.9% | 10.1% | 0.1% |
+
+Untagged: no `surface` and no known `tracktype`, so the road is assumed paved. Paved (tagged) + Untagged + Unpaved = 100%. The Off-road mark is the part of Unpaved with off-road evidence (`smoothness`, `tracktype`, `4wd_only`).
+
+### Tag coverage (% of km with the tag, any value)
+
+| Class | `surface` | `smoothness` | `tracktype` | `4wd_only` |
+|---|--:|--:|--:|--:|
+| motorway | 100.0% | 0.6% | 0.0% | 0.0% |
+| trunk | 100.0% | 0.9% | 0.0% | 0.0% |
+| primary | 100.0% | 15.6% | 0.0% | 0.0% |
+| secondary | 100.0% | 8.9% | 0.0% | 0.0% |
+| tertiary | 100.0% | 3.7% | 0.0% | 0.0% |
+| unclassified | 83.0% | 1.8% | 1.2% | 0.0% |
+| residential | 85.4% | 2.4% | 0.7% | 0.0% |
+| **All** | 90.1% | 3.3% | 0.6% | 0.0% |
+
+### Deciding tag (% of km)
+
+| Class | Base: `surface` | Base: `tracktype` | Base: none | Mark: `smoothness` | Mark: `tracktype` | Mark: `4wd_only` |
+|---|--:|--:|--:|--:|--:|--:|
+| motorway | 100.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% |
+| trunk | 100.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% |
+| primary | 100.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% |
+| secondary | 100.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% |
+| tertiary | 100.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% |
+| unclassified | 83.0% | 0.1% | 16.9% | 0.0% | 0.2% | 0.0% |
+| residential | 85.4% | 0.1% | 14.5% | 0.0% | 0.1% | 0.0% |
+| **All** | 90.1% | 0.1% | 9.9% | 0.0% | 0.1% | 0.0% |
+
+### Deciding values for Unpaved and the Off-road mark (km, top 3)
+
+| Class | Unpaved | Off-road mark |
+|---|---|---|
+| motorway | none | none |
+| trunk | none | none |
+| primary | none | none |
+| secondary | none | none |
+| tertiary | `surface=gravel` 14, `surface=unpaved` 2, `surface=compacted` 1 | none |
+| unclassified | `surface=gravel` 4,129, `surface=compacted` 986, `surface=unpaved` 507 | `tracktype=grade3` 60, `tracktype=grade4` 5, `smoothness=very_bad` 4 |
+| residential | `surface=gravel` 2,180, `surface=compacted` 835, `surface=unpaved` 365 | `tracktype=grade3` 37, `tracktype=grade4` 3, `smoothness=very_bad` 1 |
+| **All** | `surface=gravel` 6,323, `surface=compacted` 1,822, `surface=unpaved` 874 | `tracktype=grade3` 97, `tracktype=grade4` 9, `smoothness=very_bad` 5 |
+
+### Unknown values (typos, local values): `surface=com` 2, `surface=verdichtetw` 1, `surface=tartan` 1, `surface=unspecified` 1, `surface=acrylic` 1, `surface=grus` 0, `smoothness=poor` 0, `smoothness=medium` 0
+
+### Conflicts (km): `smoothness=good + surface=compacted` 16, `paved (surface=asphalt) + tracktype=grade3` 5, `paved (surface=paved) + tracktype=grade3` 2, `smoothness=good + surface=gravel` 1, `smoothness=excellent + surface=gravel` 1, `paved (surface=asphalt) + smoothness=very_bad` 1, `paved (surface=asphalt) + tracktype=grade5` 0, `smoothness=good + surface=grass_paver` 0
+
+### Longest Unpaved motorway, trunk, primary, secondary
+
+None of 0.5 km or more.
+
+### Longest ways with the Off-road mark
+
+- [w39128346](https://www.openstreetmap.org/way/39128346) unclassified, 2.6 km, **offroad**: `surface=gravel` `tracktype=grade3`
+- [w102777416](https://www.openstreetmap.org/way/102777416) unclassified, 2.2 km, **offroad**: `surface=gravel` `tracktype=grade3`
+- [w38626234](https://www.openstreetmap.org/way/38626234) unclassified, 2.1 km, **offroad**: `surface=gravel` `tracktype=grade3`
+- [w121806875](https://www.openstreetmap.org/way/121806875) unclassified, 2.1 km, **offroad**: `surface=gravel` `smoothness=very_bad`
+- [w43156900](https://www.openstreetmap.org/way/43156900) residential, 2 km, **offroad**: `surface=unpaved` `tracktype=grade3`
+- [w97743678](https://www.openstreetmap.org/way/97743678) unclassified, 1.8 km, **offroad**: `surface=gravel` `tracktype=grade3`
+- [w66097991](https://www.openstreetmap.org/way/66097991) residential, 1.7 km, **offroad**: `surface=gravel` `tracktype=grade3`
+- [w196591406](https://www.openstreetmap.org/way/196591406) unclassified, 1.7 km, **offroad**: `surface=gravel` `tracktype=grade3`
+- [w98352901](https://www.openstreetmap.org/way/98352901) unclassified, 1.6 km, **offroad**: `surface=compacted` `tracktype=grade3`
+- [w260425735](https://www.openstreetmap.org/way/260425735) unclassified, 1.4 km, **offroad**: `surface=gravel` `tracktype=grade4`
+
+### Longest conflicts (off-road evidence on paved roads, smoothness excellent or good on unpaved)
+
+- [w61212232](https://www.openstreetmap.org/way/61212232) unclassified, 1.7 km, **unpaved**: `surface=compacted` `smoothness=good`
+- [w27738993](https://www.openstreetmap.org/way/27738993) unclassified, 1.5 km, **unpaved**: `surface=compacted` `smoothness=good`
+- [w104648361](https://www.openstreetmap.org/way/104648361) residential, 1.5 km, **paved**: `surface=paved` `tracktype=grade3`
+- [w117928295](https://www.openstreetmap.org/way/117928295) unclassified, 1.5 km, **paved**: `surface=asphalt` `tracktype=grade3`
+- [w127924252](https://www.openstreetmap.org/way/127924252) unclassified, 1.4 km, **paved**: `surface=asphalt` `tracktype=grade3`
+- [w123432902](https://www.openstreetmap.org/way/123432902) unclassified, 1.2 km, **paved**: `surface=asphalt` `tracktype=grade3`
+- [w52753532](https://www.openstreetmap.org/way/52753532) unclassified, 0.9 km, **unpaved**: `surface=compacted` `smoothness=good`
+- [w144965659](https://www.openstreetmap.org/way/144965659) unclassified, 0.9 km, **unpaved**: `surface=compacted` `smoothness=good`
+- [w81942974](https://www.openstreetmap.org/way/81942974) residential, 0.8 km, **unpaved**: `surface=compacted` `smoothness=good`
+- [w81943003](https://www.openstreetmap.org/way/81943003) residential, 0.7 km, **unpaved**: `surface=compacted` `smoothness=good`
+
+### Longest ways with unknown values
+
+- [w137012325](https://www.openstreetmap.org/way/137012325) unclassified, 1.4 km, **unpaved**: `surface=tartan`
+- [w147077649](https://www.openstreetmap.org/way/147077649) unclassified, 0.9 km, **unpaved**: `surface=unspecified` `smoothness=bad`
+- [w100875524](https://www.openstreetmap.org/way/100875524) unclassified, 0.8 km, **unpaved**: `surface=com`
+- [w96001161](https://www.openstreetmap.org/way/96001161) residential, 0.6 km, **unpaved**: `surface=verdichtetw`
 
 ## Gabon (ga), data 2026-11-02
 

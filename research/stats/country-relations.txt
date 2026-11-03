@@ -40,3 +40,4 @@ CI 192779 Ivory Coast
 NZ 556706 New Zealand
 CL 167454 Chile
 NA 195266 Namibia
+DK 50046 Denmark
