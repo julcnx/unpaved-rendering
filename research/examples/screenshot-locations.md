@@ -4,7 +4,7 @@ Verified 2026-11-03: each spot was found in [transitions.json](transitions.json)
 
 Of 24 tag transitions checked, 13 show a real change and 11 do not (both sides paved, or both gravel or dirt): a tag transition is not proof of a surface change. Failed: Gibb River Road near Derby, Namibia C34 (2), C14, C27, C28 (2), Bolivia RN6, RN7 (2), F22. No verified spot yet in Australia or Iceland (Kjalvegur has no Mapillary at its transition; check Google Street View yourself).
 
-All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Kurviger, Guru Maps, Locus): open the `geo:` link on the phone or paste the coordinates. All URL formats confirmed (Gaia GPS uses longitude first).
+Only apps and styles that use OSM data are listed: Google, Apple and Bing draw their own data, so this proposal cannot change them (separate future work, as in the brief). All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Kurviger, Guru Maps, Locus): open the `geo:` link on the phone or paste the coordinates. All URL formats confirmed (Gaia GPS uses longitude first).
 
 ## 1. Namibia: C48: fresh asphalt to wide gravel (very clean)
 
@@ -23,9 +23,6 @@ Point: **-18.12805, 21.64435** (`geo:-18.12805,21.64435?z=15`). Class: `highway=
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-18.12805/21.64435&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-18.12805/21.64435) |  |
 | Americana | [open](https://americanamap.org/#map=15/-18.12805/21.64435) |  |
-| Google Maps | [open](https://www.google.com/maps/@-18.12805,21.64435,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-18.12805,21.64435&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-18.12805~21.64435&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-18.12805,21.64435,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=21.64435&y=-18.12805&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/21.64435/-18.12805) | longitude first |
@@ -48,9 +45,6 @@ Point: **-22.85645, 15.0354** (`geo:-22.85645,15.0354?z=15`). Class: `highway=pr
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-22.85645/15.0354&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-22.85645/15.0354) |  |
 | Americana | [open](https://americanamap.org/#map=15/-22.85645/15.0354) |  |
-| Google Maps | [open](https://www.google.com/maps/@-22.85645,15.0354,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-22.85645,15.0354&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-22.85645~15.0354&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-22.85645,15.0354,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=15.0354&y=-22.85645&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/15.0354/-22.85645) | longitude first |
@@ -73,9 +67,6 @@ Point: **-14.84989, -65.10523** (`geo:-14.84989,-65.10523?z=15`). Class: `highwa
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-14.84989/-65.10523&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-14.84989/-65.10523) |  |
 | Americana | [open](https://americanamap.org/#map=15/-14.84989/-65.10523) |  |
-| Google Maps | [open](https://www.google.com/maps/@-14.84989,-65.10523,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-14.84989,-65.10523&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-14.84989~-65.10523&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-14.84989,-65.10523,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-65.10523&y=-14.84989&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/-65.10523/-14.84989) | longitude first |
@@ -98,9 +89,6 @@ Point: **-22.72791, 16.9509** (`geo:-22.72791,16.9509?z=15`). Class: `highway=pr
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-22.72791/16.9509&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-22.72791/16.9509) |  |
 | Americana | [open](https://americanamap.org/#map=15/-22.72791/16.9509) |  |
-| Google Maps | [open](https://www.google.com/maps/@-22.72791,16.9509,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-22.72791,16.9509&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-22.72791~16.9509&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-22.72791,16.9509,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=16.9509&y=-22.72791&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/16.9509/-22.72791) | longitude first |
@@ -123,9 +111,6 @@ Point: **-14.87824, -64.99758** (`geo:-14.87824,-64.99758?z=15`). Class: `highwa
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-14.87824/-64.99758) |  |
 | Americana | [open](https://americanamap.org/#map=15/-14.87824/-64.99758) |  |
-| Google Maps | [open](https://www.google.com/maps/@-14.87824,-64.99758,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-14.87824,-64.99758&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-14.87824~-64.99758&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-14.87824,-64.99758,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-64.99758&y=-14.87824&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/-64.99758/-14.87824) | longitude first |
@@ -148,9 +133,6 @@ Point: **-17.36235, -66.364** (`geo:-17.36235,-66.364?z=15`). Class: `highway=pr
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-17.36235/-66.364&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-17.36235/-66.364) |  |
 | Americana | [open](https://americanamap.org/#map=15/-17.36235/-66.364) |  |
-| Google Maps | [open](https://www.google.com/maps/@-17.36235,-66.364,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-17.36235,-66.364&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-17.36235~-66.364&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-17.36235,-66.364,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-66.364&y=-17.36235&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/-66.364/-17.36235) | longitude first |
@@ -173,9 +155,6 @@ Point: **-20.05495, 18.24894** (`geo:-20.05495,18.24894?z=15`). Class: `highway=
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-20.05495/18.24894&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-20.05495/18.24894) |  |
 | Americana | [open](https://americanamap.org/#map=15/-20.05495/18.24894) |  |
-| Google Maps | [open](https://www.google.com/maps/@-20.05495,18.24894,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-20.05495,18.24894&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-20.05495~18.24894&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-20.05495,18.24894,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=18.24894&y=-20.05495&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/18.24894/-20.05495) | longitude first |
@@ -198,9 +177,6 @@ Point: **-18.81068, 16.9415** (`geo:-18.81068,16.9415?z=15`). Class: `highway=pr
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-18.81068/16.9415) |  |
 | Americana | [open](https://americanamap.org/#map=15/-18.81068/16.9415) |  |
-| Google Maps | [open](https://www.google.com/maps/@-18.81068,16.9415,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-18.81068,16.9415&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-18.81068~16.9415&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-18.81068,16.9415,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=16.9415&y=-18.81068&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/16.9415/-18.81068) | longitude first |
@@ -223,9 +199,6 @@ Point: **-19.62212, 14.841** (`geo:-19.62212,14.841?z=15`). Class: `highway=prim
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-19.62212/14.841&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-19.62212/14.841) |  |
 | Americana | [open](https://americanamap.org/#map=15/-19.62212/14.841) |  |
-| Google Maps | [open](https://www.google.com/maps/@-19.62212,14.841,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-19.62212,14.841&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-19.62212~14.841&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-19.62212,14.841,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=14.841&y=-19.62212&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/14.841/-19.62212) | longitude first |
@@ -248,9 +221,6 @@ Point: **-22.59733, 16.85222** (`geo:-22.59733,16.85222?z=15`). Class: `highway=
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-22.59733/16.85222&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-22.59733/16.85222) |  |
 | Americana | [open](https://americanamap.org/#map=15/-22.59733/16.85222) |  |
-| Google Maps | [open](https://www.google.com/maps/@-22.59733,16.85222,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-22.59733,16.85222&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-22.59733~16.85222&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-22.59733,16.85222,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=16.85222&y=-22.59733&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/16.85222/-22.59733) | longitude first |
@@ -273,9 +243,6 @@ Point: **-20.57606, 17.52333** (`geo:-20.57606,17.52333?z=15`). Class: `highway=
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-20.57606/17.52333&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-20.57606/17.52333) |  |
 | Americana | [open](https://americanamap.org/#map=15/-20.57606/17.52333) |  |
-| Google Maps | [open](https://www.google.com/maps/@-20.57606,17.52333,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-20.57606,17.52333&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-20.57606~17.52333&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-20.57606,17.52333,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=17.52333&y=-20.57606&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/17.52333/-20.57606) | longitude first |
@@ -298,9 +265,6 @@ Point: **-17.53697, -66.11823** (`geo:-17.53697,-66.11823?z=15`). Class: `highwa
 | MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/-17.53697/-66.11823&layers=V) | |
 | OpenTopoMap | [open](https://opentopomap.org/#map=15/-17.53697/-66.11823) |  |
 | Americana | [open](https://americanamap.org/#map=15/-17.53697/-66.11823) |  |
-| Google Maps | [open](https://www.google.com/maps/@-17.53697,-66.11823,15z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-17.53697,-66.11823&z=15) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-17.53697~-66.11823&lvl=15) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-17.53697,-66.11823,15z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-66.11823&y=-17.53697&z=15) |  |
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=15/-66.11823/-17.53697) | longitude first |
