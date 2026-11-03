@@ -26,7 +26,7 @@ Point: **-18.12805, 21.64435** (`geo:-18.12805,21.64435?z=14`). Class: `highway=
 | Bing Maps | [open](https://www.bing.com/maps?cp=-18.12805~21.64435&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-18.12805,21.64435,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=21.64435&y=-18.12805&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-18.12805/21.64435) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/21.64435/-18.12805) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-18.12805/21.64435) | to check: URL format |
 
 ## 2. Namibia: C28 in the Namib desert: asphalt with road sign to pale gravel (very clean)
@@ -49,7 +49,7 @@ Point: **-22.85645, 15.0354** (`geo:-22.85645,15.0354?z=14`). Class: `highway=pr
 | Bing Maps | [open](https://www.bing.com/maps?cp=-22.85645~15.0354&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-22.85645,15.0354,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=15.0354&y=-22.85645&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-22.85645/15.0354) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/15.0354/-22.85645) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-22.85645/15.0354) | to check: URL format |
 
 ## 3. Bolivia: RN3 (trunk): asphalt with centre line to cracked dirt on the same straight road (very clean)
@@ -72,7 +72,7 @@ Point: **-14.84989, -65.10523** (`geo:-14.84989,-65.10523?z=14`). Class: `highwa
 | Bing Maps | [open](https://www.bing.com/maps?cp=-14.84989~-65.10523&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-14.84989,-65.10523,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-65.10523&y=-14.84989&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-14.84989/-65.10523) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-65.10523/-14.84989) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-14.84989/-65.10523) | to check: URL format |
 
 ## 4. Namibia: C26 at Kupferberg: new asphalt to gravel
@@ -95,7 +95,7 @@ Point: **-22.72791, 16.9509** (`geo:-22.72791,16.9509?z=14`). Class: `highway=pr
 | Bing Maps | [open](https://www.bing.com/maps?cp=-22.72791~16.9509&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-22.72791,16.9509,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=16.9509&y=-22.72791&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-22.72791/16.9509) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/16.9509/-22.72791) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-22.72791/16.9509) | to check: URL format |
 
 ## 5. Bolivia: RN3 near Trinidad: asphalt to dirt
@@ -118,7 +118,7 @@ Point: **-14.87824, -64.99758** (`geo:-14.87824,-64.99758?z=14`). Class: `highwa
 | Bing Maps | [open](https://www.bing.com/maps?cp=-14.87824~-64.99758&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-14.87824,-64.99758,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-64.99758&y=-14.87824&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-14.87824/-64.99758) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-64.99758/-14.87824) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-14.87824/-64.99758) | to check: URL format |
 
 ## 6. Bolivia: RN25 Vinto-Morochata: cobbles to dirt mountain road (paved side is cobbles, tagged asphalt)
@@ -141,7 +141,7 @@ Point: **-17.36235, -66.364** (`geo:-17.36235,-66.364?z=14`). Class: `highway=pr
 | Bing Maps | [open](https://www.bing.com/maps?cp=-17.36235~-66.364&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-17.36235,-66.364,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-66.364&y=-17.36235&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-17.36235/-66.364) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-66.364/-17.36235) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-17.36235/-66.364) | to check: URL format |
 
 ## 7. Namibia: C47: village asphalt to corrugated gravel
@@ -164,7 +164,7 @@ Point: **-20.05495, 18.24894** (`geo:-20.05495,18.24894?z=14`). Class: `highway=
 | Bing Maps | [open](https://www.bing.com/maps?cp=-20.05495~18.24894&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-20.05495,18.24894,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=18.24894&y=-20.05495&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-20.05495/18.24894) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/18.24894/-20.05495) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-20.05495/18.24894) | to check: URL format |
 
 ## 8. Namibia: C38 near Etosha: asphalt to gravel
@@ -187,7 +187,7 @@ Point: **-18.81068, 16.9415** (`geo:-18.81068,16.9415?z=14`). Class: `highway=pr
 | Bing Maps | [open](https://www.bing.com/maps?cp=-18.81068~16.9415&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-18.81068,16.9415,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=16.9415&y=-18.81068&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-18.81068/16.9415) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/16.9415/-18.81068) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-18.81068/16.9415) | to check: URL format |
 
 ## 9. Namibia: C40 at Kamanjab: town asphalt to gravel
@@ -210,7 +210,7 @@ Point: **-19.62212, 14.841** (`geo:-19.62212,14.841?z=14`). Class: `highway=prim
 | Bing Maps | [open](https://www.bing.com/maps?cp=-19.62212~14.841&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-19.62212,14.841,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=14.841&y=-19.62212&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-19.62212/14.841) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/14.841/-19.62212) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-19.62212/14.841) | to check: URL format |
 
 ## 10. Namibia: C28: asphalt to gravel
@@ -233,7 +233,7 @@ Point: **-22.59733, 16.85222** (`geo:-22.59733,16.85222?z=14`). Class: `highway=
 | Bing Maps | [open](https://www.bing.com/maps?cp=-22.59733~16.85222&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-22.59733,16.85222,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=16.85222&y=-22.59733&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-22.59733/16.85222) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/16.85222/-22.59733) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-22.59733/16.85222) | to check: URL format |
 
 ## 11. Namibia: C47: worn asphalt to gravel
@@ -256,7 +256,7 @@ Point: **-20.57606, 17.52333** (`geo:-20.57606,17.52333?z=14`). Class: `highway=
 | Bing Maps | [open](https://www.bing.com/maps?cp=-20.57606~17.52333&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-20.57606,17.52333,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=17.52333&y=-20.57606&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-20.57606/17.52333) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/17.52333/-20.57606) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-20.57606/17.52333) | to check: URL format |
 
 ## 12. Bolivia: F48: asphalt to rough cobblestone (unhewn cobblestone counts as Unpaved)
@@ -279,6 +279,6 @@ Point: **-17.53697, -66.11823** (`geo:-17.53697,-66.11823?z=14`). Class: `highwa
 | Bing Maps | [open](https://www.bing.com/maps?cp=-17.53697~-66.11823&lvl=14) |  |
 | Komoot | [open](https://www.komoot.com/plan/@-17.53697,-66.11823,14z) |  |
 | Mapy.com | [open](https://mapy.com/en/zakladni?x=-66.11823&y=-17.53697&z=14) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-17.53697/-66.11823) | to check: URL format |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=14/-66.11823/-17.53697) | longitude first |
 | OsmAnd web | [open](https://osmand.net/map/?#14/-17.53697/-66.11823) | to check: URL format |
 
