@@ -1,4 +1,4 @@
-// Kilometre statistics of road drivability per road class.
+// Kilometre statistics of paved and unpaved roads per road class.
 // Input (stdin): osmium export -f geojsonseq -u type_id --geometry-types=linestring
 // Usage: osmium export ... | node road-stats.ts <country-code> <data-date> [country-name] > <out.json>
 // Optional env for run metadata: OSMIUM_VERSION, SOURCE_PBF, BOUNDARY, DATA_DATE_SOURCE.

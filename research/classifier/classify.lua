@@ -1,12 +1,12 @@
--- Road drivability classifier: Lua port of classify.ts (osm2pgsql flex, Planetiler-style pipelines).
+-- Unpaved road rendering classifier: Lua port of classify.ts (osm2pgsql flex, Planetiler-style pipelines).
 -- Two base levels, paved and unpaved, plus an optional mark on unpaved roads only:
 -- offroad (needs a high-clearance vehicle) or specialized (render as a path).
 --
 -- Base: surface > tracktype > default (roads paved, tracks unpaved).
 -- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
 --
--- Usage: local drivability = require('classify')
---        local level, base, base_source, mark, mark_source = drivability.classify(object.tags)
+-- Usage: local classifier = require('classify')
+--        local level, base, base_source, mark, mark_source = classifier.classify(object.tags)
 
 local M = {}
 

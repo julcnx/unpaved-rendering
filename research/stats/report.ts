@@ -30,7 +30,7 @@ const table = (head: string[], rows: string[][], align = '--:') =>
   [`| ${head.join(' | ')} |`, `|---|${head.slice(1).map(() => align).join('|')}|`, ...rows.map((r) => `| ${r.join(' | ')} |`)];
 const className = (c: string) => (c === 'all' ? '**All**' : c);
 
-const out: string[] = ['# Road drivability statistics', ''];
+const out: string[] = ['# Unpaved road statistics', ''];
 const overview: { row: string[]; sort: number }[] = [];
 const OVERVIEW_CLASSES = ['trunk', 'primary', 'secondary', 'tertiary', 'unclassified'];
 // Unpaved share of a class (with or without the mark), or NaN when the class has no km.

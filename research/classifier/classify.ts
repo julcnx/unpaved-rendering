@@ -1,4 +1,4 @@
-// Road drivability classifier: reference implementation.
+// Unpaved road rendering classifier: reference implementation.
 // Two base levels, paved and unpaved, plus an optional mark on unpaved roads only:
 // offroad (needs a high-clearance vehicle) or specialized (render as a path).
 //

@@ -32,7 +32,7 @@ test('SQL port matches all levels', { skip: !process.env.PGHOST && 'set PGHOST/P
   const rows = cases.map((c, i) =>
     `(${i}, ${q(c.tags.highway)}, ${q(c.tags.surface)}, ${q(c.tags.smoothness)}, ${q(c.tags.tracktype)}, ${q(c.tags['4wd_only'])})`).join(',\n');
   const sql = readFileSync(new URL('./classify.sql', import.meta.url), 'utf8') +
-    `\nSELECT drivability(h, s, sm, t, f) FROM (VALUES ${rows}) AS v(i, h, s, sm, t, f) ORDER BY i;`;
+    `\nSELECT road_surface_class(h, s, sm, t, f) FROM (VALUES ${rows}) AS v(i, h, s, sm, t, f) ORDER BY i;`;
   const lines = execFileSync('psql', ['-X', '-q', '-tA', '-v', 'ON_ERROR_STOP=1', '-d', process.env.PGDATABASE ?? 'postgres'], { input: sql })
     .toString().trim().split('\n');
   cases.forEach((c, i) => assert.equal(lines[i], c.level, JSON.stringify(c.tags)));

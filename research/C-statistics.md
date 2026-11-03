@@ -7,7 +7,7 @@ Model: two base levels, **Paved** and **Unpaved**, plus an optional **Off-road m
 Reference implementation: [classifier/classify.ts](classifier/classify.ts). Ports with the same rules:
 
 - [classifier/classify.lua](classifier/classify.lua): Lua (osm2pgsql flex and similar). `classify(tags)` returns level, base, base source, mark, mark source.
-- [classifier/classify.sql](classifier/classify.sql): PostgreSQL functions. `drivability(highway, surface, smoothness, tracktype, 4wd_only)` returns `paved`, `unpaved`, `offroad` or `specialized`.
+- [classifier/classify.sql](classifier/classify.sql): PostgreSQL functions. `road_surface_class(highway, surface, smoothness, tracktype, 4wd_only)` returns `paved`, `unpaved`, `offroad` or `specialized`.
 
 Tests: [classifier/test-cases.json](classifier/test-cases.json) has 59 cases shared by all three. `node --test classifier/classify.test.ts classifier/ports.test.ts stats/test/road-stats.test.ts` runs everything (66 tests). The SQL test runs only when `PGHOST`/`PGPORT` point to a test database; run against a throwaway PostgreSQL 17 on 2026-11-02, all passing.
 
@@ -190,6 +190,29 @@ Test of "Untagged = Paved" in a mostly paved country (Malaysia chosen instead of
 | residential | 86,280 | 297 | 7 | 7 | 0 | 0 |
 
 Result: every untagged road we could see was paved (16 of 16). But only 17 of 872 random untagged ways (2%) have street-level imagery at all, and just 1 of 298 unclassified ways, so the sample only shows the roads people drive with cameras: main roads and towns. It supports "Untagged = Paved" for untagged tertiary and residential roads with traffic, and says nothing about the rural unclassified network, where reclassified tracks would be. A wider radius or more tries would not fix this bias; ground truth for rural untagged roads needs local mappers.
+
+### Unpaved roads that are paved now (2026-11-03)
+
+Across the three image rounds, 55 roads tagged as unpaved were checked on street-level imagery ([examples/images/review.md](examples/images/review.md)). **9 (16%) are clearly paved now**, and 5 more (9%) are partly paved or under improvement (Ghana IR11, Ethiopia, Timor-Leste Lospalos-Malahara, two in Vietnam). The way history shows when the current surface tag was set:
+
+| Road | Surface tag | Tag set | Imagery showing pavement |
+|---|---|---|---|
+| Nepal NH66 ([w342736414](https://www.openstreetmap.org/way/342736414)) | `unpaved` | 2015 | Google 2025 |
+| New Zealand Purerua Road ([w164770191](https://www.openstreetmap.org/way/164770191)) | `gravel` | 2012 | Mapillary 2022 |
+| Timor-Leste Viqueque-Baucau ([w40678552](https://www.openstreetmap.org/way/40678552)) | `unpaved` | 2020 | Mapillary and Google 2025 |
+| Timor-Leste Baucau-Lautém ([w40628148](https://www.openstreetmap.org/way/40628148)) | `unpaved` | 2020 | Google 2024, Mapillary 2025 |
+| Papua New Guinea Baiyer Road ([w841361566](https://www.openstreetmap.org/way/841361566)) | `dirt` | 2021 | Mapillary 2023 |
+| Uganda Akokoro Road ([w518566598](https://www.openstreetmap.org/way/518566598)) | `unpaved` | 2023 | Mapillary 2024 |
+| Mongolia Тамын trunk ([w1449651789](https://www.openstreetmap.org/way/1449651789)) | `ground` | 2026 | Mapillary 2024 (potholed asphalt) |
+| Myanmar Moe Pyin-Mat Man ([w377792665](https://www.openstreetmap.org/way/377792665)) | `ground` | 2026 | Mapillary 2022 (concrete) |
+| Finland 522 ([w22733235](https://www.openstreetmap.org/way/22733235)) | `compacted` | 2025 | Mapillary 2019 |
+
+Two different stories:
+
+1. **Paved after it was tagged (6 of 9)**: the unpaved tag is older than the imagery showing pavement, often by a few years (Timor-Leste 2020 to 2024-2025, Uganda 2023 to 2024, Papua New Guinea 2021 to 2023). This supports "the developing world is paving fast": surface tags go stale, and rendering based on them needs mappers to keep them fresh.
+2. **Tagged unpaved after imagery already showed pavement (3 of 9)**: Mongolia, Myanmar and Finland got their current tag in 2025-2026, while street-level imagery from 2019-2024 already shows asphalt or concrete. Most likely armchair edits from satellite imagery. Rendering unpaved roads gives a reason to check street-level imagery before tagging.
+
+Caution: roads with street-level imagery are often the more important, recently improved ones, so 16% is probably higher than across the whole network.
 
 ### `surface=unpaved`
 

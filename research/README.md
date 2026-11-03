@@ -1,4 +1,4 @@
-# Road drivability rendering
+# Unpaved road rendering
 
 Working folder for the proposal asking map apps to render how drivable a road is, separately from its road class: two levels, Paved and Unpaved, plus an optional Off-road mark on Unpaved roads.
 

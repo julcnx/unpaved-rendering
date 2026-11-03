@@ -1,5 +1,5 @@
 #!/bin/bash
-# Road drivability stats for one country.
+# Paved and unpaved road stats for one country.
 # Usage: stats/run-country.sh <code> <extract.osm.pbf> <country-boundary.geojson> [country name]
 # Writes stats/results/<code>.json and stats/combos/<code>.json (km per tag combination).
 # Intermediate files go to work/ and are always deleted.

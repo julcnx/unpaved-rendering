@@ -37,7 +37,7 @@ for (const f of readdirSync(resultsDir).filter((f) => f.endsWith('.json'))) {
   }
 }
 
-const UA = { 'User-Agent': 'drivability-stats/0.1 (osm user julcnx)' };
+const UA = { 'User-Agent': 'unpaved-rendering/0.1 (osm user julcnx)' };
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 function distKm(a: Point, b: Point) {

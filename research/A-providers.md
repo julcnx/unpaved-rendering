@@ -76,7 +76,7 @@ Differences from our rule:
 
 ## A3. Ranking (most receptive first)
 
-1. **OsmAnd**: overlays already exist, the ask is small (default-on drivability signal on roads). Earlier PR merged. Add to #9465.
+1. **OsmAnd**: overlays already exist, the ask is small (default-on unpaved signal on main roads). Earlier PR merged. Add to #9465.
 2. **Organic Maps / CoMaps**: closest data model, good relationship. #11835 shows a full colour overlay is rejected fast, so pitch "keep class colour, add one subtle signal". Comment on #8485.
 3. **Tracestrack**: small, fast to respond.
 4. **Americana**: active, but blocked by OpenMapTiles schema. First PR is probably Planetiler/OpenMapTiles (merged work already there).

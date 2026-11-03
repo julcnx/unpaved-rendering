@@ -22,7 +22,7 @@ if [ ! -s "$CACHE" ]; then
   mkdir -p borders
   # The API rate-limits large downloads ("try again in N seconds"): wait and retry.
   for attempt in 1 2 3 4 5 6; do
-    curl -sf -A "drivability-stats/0.1 (osm user julcnx)" -o "$TMP/r.osm" "https://api.openstreetmap.org/api/0.6/relation/$REL/full" && break
+    curl -sf -A "unpaved-rendering/0.1 (osm user julcnx)" -o "$TMP/r.osm" "https://api.openstreetmap.org/api/0.6/relation/$REL/full" && break
     [ "$attempt" = 6 ] && { echo "OSM API download failed for r$REL" >&2; exit 1; }
     echo "OSM API busy for r$REL, retrying in 60 s" >&2; sleep 60
   done
