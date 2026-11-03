@@ -1,0 +1,819 @@
+{
+ "country": "is",
+ "name": "Iceland",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-03T02:39:57.324Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "iceland-latest.osm.pbf",
+  "boundary": "r299133",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 1478.6,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 2804,
+   "unpaved": 218.9,
+   "untagged": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "unpaved": 2200.2,
+   "paved_tagged": 1517.5,
+   "offroad": 572.7,
+   "untagged": 4.6,
+   "specialized": 0
+  },
+  "tertiary": {
+   "unpaved": 1387.7,
+   "offroad": 956.7,
+   "paved_tagged": 570.7,
+   "untagged": 167.4,
+   "specialized": 0.1
+  },
+  "unclassified": {
+   "unpaved": 2276.3,
+   "untagged": 629.8,
+   "offroad": 586.1,
+   "paved_tagged": 426.5,
+   "specialized": 0
+  },
+  "residential": {
+   "paved_tagged": 1116,
+   "untagged": 479.1,
+   "unpaved": 272.1,
+   "offroad": 0.2,
+   "specialized": 0
+  },
+  "all": {
+   "paved_tagged": 7913.4,
+   "unpaved": 6355.2,
+   "offroad": 2115.8,
+   "untagged": 1280.9,
+   "specialized": 0.1
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 1478.6,
+   "smoothness": 27.2
+  },
+  "primary": {
+   "surface": 3022.9,
+   "smoothness": 497.1
+  },
+  "secondary": {
+   "surface": 4290.5,
+   "4wd_only": 458,
+   "smoothness": 356.9,
+   "tracktype": 24.5
+  },
+  "tertiary": {
+   "surface": 2913.2,
+   "4wd_only": 935,
+   "smoothness": 377.9,
+   "tracktype": 13.7
+  },
+  "unclassified": {
+   "surface": 3281.6,
+   "4wd_only": 462.8,
+   "smoothness": 462.3,
+   "tracktype": 41.4
+  },
+  "residential": {
+   "surface": 1385.8,
+   "smoothness": 5.9,
+   "tracktype": 3.1
+  },
+  "all": {
+   "surface": 16372.6,
+   "4wd_only": 1855.8,
+   "smoothness": 1727.3,
+   "tracktype": 82.6
+  }
+ },
+ "base_source_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 1478.6
+  },
+  "primary": {
+   "surface": 3022.9
+  },
+  "secondary": {
+   "surface": 4290.5,
+   "default": 4.6
+  },
+  "tertiary": {
+   "surface": 2913.2,
+   "default": 167.4,
+   "tracktype": 2
+  },
+  "unclassified": {
+   "surface": 3281.6,
+   "default": 629.8,
+   "tracktype": 7.4
+  },
+  "residential": {
+   "surface": 1385.8,
+   "default": 479.1,
+   "tracktype": 2.5
+  },
+  "all": {
+   "surface": 16372.6,
+   "default": 1280.9,
+   "tracktype": 11.8
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "4wd_only": 428.3,
+   "smoothness": 144.4
+  },
+  "tertiary": {
+   "4wd_only": 878.7,
+   "smoothness": 71.5,
+   "tracktype": 6.6
+  },
+  "unclassified": {
+   "4wd_only": 391.6,
+   "smoothness": 176.9,
+   "tracktype": 17.6
+  },
+  "residential": {
+   "tracktype": 0.2
+  },
+  "all": {
+   "4wd_only": 1698.6,
+   "smoothness": 392.8,
+   "tracktype": 24.5
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=gravel": 140.2,
+    "surface=compacted": 64.6,
+    "surface=fine_gravel": 11.1,
+    "surface=unpaved": 3.1
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=gravel": 2078.4,
+    "surface=compacted": 491.3,
+    "surface=unpaved": 136.4,
+    "surface=fine_gravel": 42.8,
+    "surface=dirt": 22,
+    "surface=ground": 2.1
+   },
+   "offroad": {
+    "4wd_only=yes": 428.3,
+    "smoothness=very_bad": 104.3,
+    "smoothness=horrible": 40.1
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=gravel": 2011.3,
+    "surface=unpaved": 163.5,
+    "surface=compacted": 68.7,
+    "surface=dirt": 39.2,
+    "surface=mud": 32.2,
+    "surface=fine_gravel": 13.6,
+    "surface=sand": 11.1,
+    "surface=ground": 2.5,
+    "tracktype=grade2": 2,
+    "surface=pebblestone": 0.3
+   },
+   "offroad": {
+    "4wd_only=yes": 878.7,
+    "smoothness=horrible": 49,
+    "smoothness=very_bad": 22.5,
+    "tracktype=grade5": 6.5,
+    "tracktype=grade4": 0.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.1
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=gravel": 2152.2,
+    "surface=unpaved": 414.6,
+    "surface=sand": 114.3,
+    "surface=compacted": 80.5,
+    "surface=ground": 58.5,
+    "surface=fine_gravel": 18.3,
+    "surface=pebblestone": 5.6,
+    "surface=dirt": 4.9,
+    "surface=ice": 4.3,
+    "tracktype=grade2": 3.3,
+    "tracktype=grade5": 2.1,
+    "tracktype=grade3": 1.2,
+    "surface=grass": 1.2,
+    "tracktype=grade4": 0.8,
+    "surface=grass_paver": 0.6,
+    "surface=rocks": 0
+   },
+   "offroad": {
+    "4wd_only=yes": 391.6,
+    "smoothness=horrible": 123.2,
+    "smoothness=very_bad": 53.7,
+    "tracktype=grade4": 9.9,
+    "tracktype=grade5": 4.9,
+    "tracktype=grade3": 2.9
+   },
+   "specialized": {}
+  },
+  "residential": {
+   "unpaved": {
+    "surface=gravel": 209.1,
+    "surface=unpaved": 41.4,
+    "surface=fine_gravel": 7.1,
+    "surface=grass": 6.6,
+    "surface=compacted": 2.8,
+    "tracktype=grade2": 2.4,
+    "surface=pebblestone": 2,
+    "surface=sand": 0.5,
+    "surface=ground": 0.4,
+    "tracktype=grade3": 0.1,
+    "surface=dirt": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 0.2
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=gravel": 6591.1,
+    "surface=unpaved": 759,
+    "surface=compacted": 707.9,
+    "surface=sand": 125.8,
+    "surface=fine_gravel": 92.9,
+    "surface=dirt": 66.2,
+    "surface=ground": 63.5,
+    "surface=mud": 32.2,
+    "surface=pebblestone": 7.9,
+    "surface=grass": 7.8,
+    "tracktype=grade2": 7.6,
+    "surface=ice": 4.3,
+    "tracktype=grade5": 2.1,
+    "tracktype=grade3": 1.3,
+    "tracktype=grade4": 0.8,
+    "surface=grass_paver": 0.6,
+    "surface=rocks": 0
+   },
+   "offroad": {
+    "4wd_only=yes": 1698.6,
+    "smoothness=horrible": 212.3,
+    "smoothness=very_bad": 180.4,
+    "tracktype=grade5": 11.3,
+    "tracktype=grade4": 10,
+    "tracktype=grade3": 3.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=rocks": 0
+ },
+ "conflict_km": {
+  "paved (no surface) + smoothness=very_bad": 1.2,
+  "paved (no surface) + 4wd_only=yes": 0.3,
+  "paved (surface=paved) + 4wd_only=yes": 0.1,
+  "smoothness=good + surface=compacted": 0.1,
+  "paved (surface=asphalt) + smoothness=very_bad": 0.1,
+  "paved (surface=concrete) + 4wd_only=yes": 0.1,
+  "paved (surface=metal) + 4wd_only=yes": 0,
+  "paved (surface=concrete) + smoothness=very_bad": 0,
+  "paved (surface=asphalt) + smoothness=horrible": 0,
+  "paved (surface=concrete) + smoothness=horrible": 0,
+  "paved (surface=asphalt) + 4wd_only=yes": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w319372206",
+    "highway": "secondary",
+    "km": 54.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w620383908",
+    "highway": "secondary",
+    "km": 54.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Kjalvegur",
+     "old_ref": "F35",
+     "oneway": "no",
+     "ref": "35",
+     "surface": "gravel",
+     "wikidata": "Q2141229"
+    }
+   },
+   {
+    "id": "w26118339",
+    "highway": "secondary",
+    "km": 39.7,
+    "level": "offroad",
+    "tags": {
+     "designation": "Sx",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Kaldadalsvegur",
+     "oneway": "no",
+     "ref": "550",
+     "smoothness": "horrible",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w229617014",
+    "highway": "secondary",
+    "km": 37.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "alt_ref": "F756",
+     "highway": "secondary",
+     "name": "Mælifellsdalsvegur",
+     "oneway": "no",
+     "ref": "756",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w48319322",
+    "highway": "secondary",
+    "km": 30.6,
+    "level": "unpaved",
+    "tags": {
+     "designation": "T",
+     "highway": "secondary",
+     "lit": "no",
+     "name": "Álftaneshreppsvegur",
+     "oneway": "no",
+     "ref": "533",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w48426337",
+    "highway": "secondary",
+    "km": 29.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w48321993",
+    "highway": "secondary",
+    "km": 24.1,
+    "level": "unpaved",
+    "tags": {
+     "designation": "T",
+     "highway": "secondary",
+     "name": "Strandavegur",
+     "oneway": "no",
+     "ref": "643",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w8107395",
+    "highway": "secondary",
+    "km": 23.9,
+    "level": "unpaved",
+    "tags": {
+     "designation": "T",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Hólsfjallavegur",
+     "oneway": "no",
+     "ref": "864",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w439502875",
+    "highway": "secondary",
+    "km": 23.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w5066969",
+    "highway": "secondary",
+    "km": 23.5,
+    "level": "unpaved",
+    "tags": {
+     "designation": "T",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Ólafsfjarðarvegur",
+     "oneway": "no",
+     "ref": "82",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w64757699",
+    "highway": "secondary",
+    "km": 22.8,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Kjalvegur",
+     "old_ref": "F35",
+     "oneway": "no",
+     "ref": "35",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w444601646",
+    "highway": "secondary",
+    "km": 22,
+    "level": "unpaved",
+    "tags": {
+     "designation": "T",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Örlygshafnarvegur",
+     "ref": "612",
+     "sac_scale": "mountain_hiking",
+     "surface": "fine_gravel",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w26144607",
+    "highway": "secondary",
+    "km": 21.9,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Þorskafjarðarheiði",
+     "designation": "T",
+     "highway": "secondary",
+     "lanes": "1.5",
+     "maxspeed": "80",
+     "name": "Þorskafjarðarvegur",
+     "oneway": "no",
+     "ref": "608",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w64748981",
+    "highway": "secondary",
+    "km": 21.9,
+    "level": "unpaved",
+    "tags": {
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Kjalvegur",
+     "old_ref": "F35",
+     "oneway": "no",
+     "ref": "35",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w292802049",
+    "highway": "secondary",
+    "km": 21.5,
+    "level": "unpaved",
+    "tags": {
+     "designation": "T",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Meðallandsvegur",
+     "oneway": "no",
+     "ref": "204",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w48322962",
+    "highway": "unclassified",
+    "km": 57.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "unclassified",
+     "maxspeed": "80",
+     "name": "Austurleið",
+     "oneway": "no",
+     "ref": "F910",
+     "smoothness": "bad",
+     "surface": "sand"
+    }
+   },
+   {
+    "id": "w319372206",
+    "highway": "secondary",
+    "km": 54.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w620383908",
+    "highway": "secondary",
+    "km": 54.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Kjalvegur",
+     "old_ref": "F35",
+     "oneway": "no",
+     "ref": "35",
+     "surface": "gravel",
+     "wikidata": "Q2141229"
+    }
+   },
+   {
+    "id": "w608659047",
+    "highway": "unclassified",
+    "km": 53.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "unclassified",
+     "name": "Öskjuleið",
+     "oneway": "no",
+     "ref": "F88",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w48320533",
+    "highway": "tertiary",
+    "km": 44.4,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "tertiary",
+     "maxspeed": "80",
+     "name": "Fjallabaksleið syðri",
+     "oneway": "no",
+     "ref": "F210",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w48324068",
+    "highway": "unclassified",
+    "km": 40.7,
+    "level": "offroad",
+    "tags": {
+     "designation": "L",
+     "highway": "unclassified",
+     "name": "Kverkfjallaleið",
+     "oneway": "no",
+     "ref": "F902",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w48420630",
+    "highway": "unclassified",
+    "km": 40.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "unclassified",
+     "maxspeed": "80",
+     "name": "Austurleið",
+     "oneway": "no",
+     "ref": "F910",
+     "smoothness": "bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w108334806",
+    "highway": "tertiary",
+    "km": 39.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "tertiary",
+     "name": "Skagafjarðarleið",
+     "oneway": "no",
+     "ref": "F752",
+     "smoothness": "bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w26118339",
+    "highway": "secondary",
+    "km": 39.7,
+    "level": "offroad",
+    "tags": {
+     "designation": "Sx",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Kaldadalsvegur",
+     "oneway": "no",
+     "ref": "550",
+     "smoothness": "horrible",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w622920560",
+    "highway": "tertiary",
+    "km": 38.4,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "tertiary",
+     "name": "Eyjafjarðarleið",
+     "oneway": "no",
+     "ref": "F821",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w229617014",
+    "highway": "secondary",
+    "km": 37.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "alt_ref": "F756",
+     "highway": "secondary",
+     "name": "Mælifellsdalsvegur",
+     "oneway": "no",
+     "ref": "756",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w48322890",
+    "highway": "unclassified",
+    "km": 34,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "unclassified",
+     "maxspeed": "80",
+     "name": "Austurleið",
+     "oneway": "no",
+     "ref": "F910",
+     "smoothness": "bad",
+     "surface": "sand"
+    }
+   },
+   {
+    "id": "w169400614",
+    "highway": "tertiary",
+    "km": 32.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "tertiary",
+     "maxspeed": "80",
+     "name": "Skjaldbreiðarvegur",
+     "oneway": "no",
+     "ref": "F338",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w246051642",
+    "highway": "tertiary",
+    "km": 31.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "tertiary",
+     "maxspeed": "80",
+     "name": "Hlöðuvallavegur",
+     "oneway": "no",
+     "ref": "F337",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w210651663",
+    "highway": "tertiary",
+    "km": 31.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Jökulheimaleið",
+     "ref": "F229",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w412813155",
+    "highway": "unclassified",
+    "km": 1.1,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Stafafellsfjöll",
+     "smoothness": "very_bad"
+    }
+   }
+  ],
+  "unknown_value": []
+ }
+}

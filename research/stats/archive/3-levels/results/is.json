@@ -1,0 +1,646 @@
+{
+ "country": "is",
+ "name": "Iceland",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-02T15:14:19.159Z",
+  "classifier_sha256": "892814b74563",
+  "pipeline_sha256": "fa32fb9837bf",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "iceland-latest.osm.pbf",
+  "boundary": "r299133",
+  "data_date_source": "header"
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 1474.7,
+   "rough": 3.9,
+   "untagged": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 2756.5,
+   "rough": 263.3,
+   "offroad": 3.1,
+   "untagged": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "rough": 2053.7,
+   "paved_tagged": 1508.4,
+   "offroad": 728.4,
+   "untagged": 4.6,
+   "specialized": 0
+  },
+  "tertiary": {
+   "rough": 1229.3,
+   "offroad": 1123.8,
+   "paved_tagged": 562.3,
+   "untagged": 167.1,
+   "specialized": 0.1
+  },
+  "unclassified": {
+   "rough": 1959.1,
+   "offroad": 913.9,
+   "untagged": 628.4,
+   "paved_tagged": 417.3,
+   "specialized": 0
+  },
+  "residential": {
+   "paved_tagged": 1115.5,
+   "untagged": 478.4,
+   "rough": 222.5,
+   "offroad": 51.1,
+   "specialized": 0
+  },
+  "all": {
+   "paved_tagged": 7834.7,
+   "rough": 5731.8,
+   "offroad": 2820.4,
+   "untagged": 1278.4,
+   "specialized": 0.1
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 1478.6,
+   "smoothness": 27.2
+  },
+  "primary": {
+   "surface": 3022.9,
+   "smoothness": 497.1
+  },
+  "secondary": {
+   "surface": 4290.5,
+   "4wd_only": 458,
+   "smoothness": 356.9,
+   "tracktype": 24.5
+  },
+  "tertiary": {
+   "surface": 2913.2,
+   "4wd_only": 935,
+   "smoothness": 377.9,
+   "tracktype": 13.7
+  },
+  "unclassified": {
+   "surface": 3281.6,
+   "4wd_only": 462.8,
+   "smoothness": 462.3,
+   "tracktype": 41.4
+  },
+  "residential": {
+   "surface": 1385.8,
+   "smoothness": 5.9,
+   "tracktype": 3.1
+  },
+  "all": {
+   "surface": 16372.6,
+   "4wd_only": 1855.8,
+   "smoothness": 1727.3,
+   "tracktype": 82.6
+  }
+ },
+ "source_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 1451.4,
+   "smoothness": 27.2
+  },
+  "primary": {
+   "surface": 2525.8,
+   "smoothness": 497.1
+  },
+  "secondary": {
+   "surface": 3505.9,
+   "4wd_only": 428.1,
+   "smoothness": 356.6,
+   "default": 4.6
+  },
+  "tertiary": {
+   "surface": 1889.8,
+   "4wd_only": 825.1,
+   "smoothness": 189.3,
+   "default": 167.1,
+   "tracktype": 11.2
+  },
+  "unclassified": {
+   "surface": 2643.7,
+   "default": 628.4,
+   "4wd_only": 370.1,
+   "smoothness": 249.9,
+   "tracktype": 26.6
+  },
+  "residential": {
+   "surface": 1380,
+   "default": 478.4,
+   "smoothness": 5.9,
+   "tracktype": 3.1
+  },
+  "all": {
+   "surface": 13396.7,
+   "4wd_only": 1623.2,
+   "smoothness": 1326.1,
+   "default": 1278.4,
+   "tracktype": 40.9
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "paved": {},
+   "rough": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "paved": {
+    "surface=asphalt": 1442.5,
+    "smoothness=good": 23.3,
+    "surface=concrete": 3.8,
+    "surface=concrete:plates": 2.1,
+    "surface=paved": 1.9,
+    "surface=metal": 1,
+    "surface=paving_stones": 0.1
+   },
+   "rough": {
+    "smoothness=intermediate": 3.9
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "paved": {
+    "surface=asphalt": 2332.9,
+    "smoothness=good": 294.9,
+    "smoothness=excellent": 110.9,
+    "surface=concrete": 16.4,
+    "surface=paved": 1.2,
+    "surface=wood": 0.2
+   },
+   "rough": {
+    "surface=gravel": 116.9,
+    "smoothness=bad": 46.4,
+    "smoothness=intermediate": 44.9,
+    "surface=compacted": 43.9,
+    "surface=fine_gravel": 11.1
+   },
+   "offroad": {
+    "surface=unpaved": 3.1
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "paved": {
+    "surface=asphalt": 1393.6,
+    "smoothness=good": 56.3,
+    "smoothness=excellent": 40.3,
+    "surface=paved": 13.4,
+    "surface=concrete": 2.7,
+    "surface=concrete:plates": 1.6,
+    "surface=wood": 0.4,
+    "surface=paving_stones": 0.2,
+    "surface=metal": 0
+   },
+   "rough": {
+    "surface=gravel": 1465.9,
+    "surface=compacted": 429.6,
+    "smoothness=bad": 75.9,
+    "surface=fine_gravel": 42.8,
+    "smoothness=intermediate": 39.5
+   },
+   "offroad": {
+    "4wd_only=yes": 428.1,
+    "surface=unpaved": 133.2,
+    "smoothness=very_bad": 104.5,
+    "smoothness=horrible": 40.1,
+    "surface=dirt": 22,
+    "surface=ground": 0.5
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "paved": {
+    "surface=asphalt": 535.8,
+    "smoothness=excellent": 10.8,
+    "surface=paved": 9.3,
+    "smoothness=good": 4.5,
+    "surface=paving_stones": 0.7,
+    "surface=concrete": 0.6,
+    "surface=wood": 0.3,
+    "surface=concrete:plates": 0.2
+   },
+   "rough": {
+    "surface=gravel": 1079,
+    "smoothness=bad": 88.5,
+    "surface=compacted": 31.5,
+    "smoothness=intermediate": 14,
+    "surface=fine_gravel": 11.6,
+    "tracktype=grade2": 4.6
+   },
+   "offroad": {
+    "4wd_only=yes": 825.1,
+    "surface=unpaved": 163.4,
+    "smoothness=horrible": 49,
+    "surface=mud": 32.2,
+    "smoothness=very_bad": 22.5,
+    "surface=dirt": 12.2,
+    "surface=sand": 11.1,
+    "tracktype=grade5": 6.5,
+    "surface=ground": 1.5,
+    "surface=pebblestone": 0.3,
+    "tracktype=grade4": 0.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.1
+   }
+  },
+  "unclassified": {
+   "paved": {
+    "surface=asphalt": 379.3,
+    "surface=paved": 29.3,
+    "smoothness=good": 5.9,
+    "surface=concrete": 1.6,
+    "smoothness=excellent": 1.2,
+    "tracktype=grade1": 0.1,
+    "surface=paving_stones": 0,
+    "surface=wood": 0
+   },
+   "rough": {
+    "surface=gravel": 1795.8,
+    "surface=compacted": 75.1,
+    "smoothness=bad": 41,
+    "smoothness=intermediate": 23.9,
+    "surface=fine_gravel": 14.4,
+    "tracktype=grade2": 8.9
+   },
+   "offroad": {
+    "4wd_only=yes": 370.1,
+    "surface=unpaved": 324.2,
+    "smoothness=horrible": 123.2,
+    "smoothness=very_bad": 54.8,
+    "tracktype=grade4": 9.9,
+    "surface=ground": 8.2,
+    "surface=pebblestone": 5.6,
+    "surface=dirt": 4.9,
+    "tracktype=grade5": 4.9,
+    "surface=ice": 4.3,
+    "tracktype=grade3": 2.9,
+    "surface=grass_paver": 0.6,
+    "surface=sand": 0.3,
+    "surface=rocks": 0
+   },
+   "specialized": {}
+  },
+  "residential": {
+   "paved": {
+    "surface=asphalt": 1084.2,
+    "surface=paved": 20.2,
+    "surface=paving_stones": 4.5,
+    "surface=concrete:plates": 3,
+    "smoothness=good": 1.7,
+    "surface=concrete": 1,
+    "tracktype=grade1": 0.4,
+    "smoothness=excellent": 0.3,
+    "surface=wood": 0.1,
+    "surface=cobblestone": 0
+   },
+   "rough": {
+    "surface=gravel": 207.4,
+    "surface=fine_gravel": 6.8,
+    "smoothness=bad": 2.6,
+    "tracktype=grade2": 2.4,
+    "surface=compacted": 1.9,
+    "smoothness=intermediate": 1.3
+   },
+   "offroad": {
+    "surface=unpaved": 41.4,
+    "surface=grass": 6.6,
+    "surface=pebblestone": 2,
+    "surface=sand": 0.5,
+    "surface=ground": 0.4,
+    "tracktype=grade3": 0.2,
+    "surface=dirt": 0.1
+   },
+   "specialized": {}
+  },
+  "all": {
+   "paved": {
+    "surface=asphalt": 7168.3,
+    "smoothness=good": 386.6,
+    "smoothness=excellent": 163.4,
+    "surface=paved": 75.3,
+    "surface=concrete": 26.1,
+    "surface=concrete:plates": 6.8,
+    "surface=paving_stones": 5.5,
+    "surface=wood": 1.1,
+    "surface=metal": 1,
+    "tracktype=grade1": 0.5,
+    "surface=cobblestone": 0
+   },
+   "rough": {
+    "surface=gravel": 4665.1,
+    "surface=compacted": 582,
+    "smoothness=bad": 254.3,
+    "smoothness=intermediate": 127.5,
+    "surface=fine_gravel": 86.8,
+    "tracktype=grade2": 15.9
+   },
+   "offroad": {
+    "4wd_only=yes": 1623.2,
+    "surface=unpaved": 665.3,
+    "smoothness=horrible": 212.3,
+    "smoothness=very_bad": 181.8,
+    "surface=dirt": 39.2,
+    "surface=mud": 32.2,
+    "surface=sand": 11.8,
+    "tracktype=grade5": 11.3,
+    "surface=ground": 10.5,
+    "tracktype=grade4": 10,
+    "surface=pebblestone": 7.9,
+    "surface=grass": 6.6,
+    "surface=ice": 4.3,
+    "tracktype=grade3": 3.1,
+    "surface=grass_paver": 0.6,
+    "surface=rocks": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=rocks": 0
+ },
+ "conflict_km": {
+  "smoothness=very_bad + surface=asphalt": 0.1,
+  "smoothness=very_horrible + surface=gravel": 0.1,
+  "smoothness=very_bad + surface=concrete": 0,
+  "smoothness=horrible + surface=asphalt": 0,
+  "smoothness=horrible + surface=concrete": 0
+ },
+ "odd": {
+  "major_offroad": [
+   {
+    "id": "w319372206",
+    "highway": "secondary",
+    "km": 54.9,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w620383908",
+    "highway": "secondary",
+    "km": 54.1,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Kjalvegur",
+     "old_ref": "F35",
+     "oneway": "no",
+     "ref": "35",
+     "surface": "gravel",
+     "wikidata": "Q2141229"
+    }
+   },
+   {
+    "id": "w26118339",
+    "highway": "secondary",
+    "km": 39.7,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "designation": "Sx",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Kaldadalsvegur",
+     "oneway": "no",
+     "ref": "550",
+     "smoothness": "horrible",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w229617014",
+    "highway": "secondary",
+    "km": 37.1,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "alt_ref": "F756",
+     "highway": "secondary",
+     "name": "Mælifellsdalsvegur",
+     "oneway": "no",
+     "ref": "756",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w48426337",
+    "highway": "secondary",
+    "km": 29.7,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w439502875",
+    "highway": "secondary",
+    "km": 23.7,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w64757699",
+    "highway": "secondary",
+    "km": 22.8,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Kjalvegur",
+     "old_ref": "F35",
+     "oneway": "no",
+     "ref": "35",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w26144607",
+    "highway": "secondary",
+    "km": 21.9,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "alt_name": "Þorskafjarðarheiði",
+     "designation": "T",
+     "highway": "secondary",
+     "lanes": "1.5",
+     "maxspeed": "80",
+     "name": "Þorskafjarðarvegur",
+     "oneway": "no",
+     "ref": "608",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w620397389",
+    "highway": "secondary",
+    "km": 20.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "designation": "Sx",
+     "highway": "secondary",
+     "maxspeed": "40",
+     "name": "Fjallabaksleið nyrðri",
+     "oneway": "no",
+     "ref": "208",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w539935048",
+    "highway": "secondary",
+    "km": 20.3,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "L",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Arnarvatnsvegur",
+     "oneway": "no",
+     "ref": "578",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w620397373",
+    "highway": "secondary",
+    "km": 17.5,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Fjallabaksleið nyrðri",
+     "oneway": "no",
+     "ref": "F208",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w50544017",
+    "highway": "secondary",
+    "km": 17.1,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "designation": "L",
+     "highway": "secondary",
+     "name": "Vesturheiðarvegur",
+     "oneway": "no",
+     "ref": "734",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w130589330",
+    "highway": "secondary",
+    "km": 16.9,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Sprengisandsleið",
+     "oneway": "no",
+     "ref": "F26",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w243893855",
+    "highway": "secondary",
+    "km": 16.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "designation": "T",
+     "highway": "secondary",
+     "name": "Svartárdalsvegur",
+     "oneway": "no",
+     "ref": "734",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w25469287",
+    "highway": "secondary",
+    "km": 15.2,
+    "level": "offroad",
+    "source": "4wd_only",
+    "tags": {
+     "4wd_only": "yes",
+     "designation": "Sx",
+     "highway": "secondary",
+     "name": "Fjallabaksleið nyrðri",
+     "oneway": "no",
+     "ref": "F208",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "conflict": [],
+  "unknown_value": []
+ }
+}

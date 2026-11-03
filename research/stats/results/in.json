@@ -1,0 +1,1459 @@
+{
+ "country": "in",
+ "name": "India",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:53:40.772Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "india-latest.osm.pbf",
+  "boundary": "r304716",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 10369.7,
+   "untagged": 4375.5,
+   "unpaved": 0.5,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "untagged": 106610.2,
+   "paved_tagged": 74417,
+   "unpaved": 395,
+   "offroad": 11,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 125390.8,
+   "paved_tagged": 42066.1,
+   "unpaved": 375.7,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 163382.6,
+   "paved_tagged": 49367.3,
+   "unpaved": 872,
+   "offroad": 0.4,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 593590.8,
+   "paved_tagged": 69366.6,
+   "unpaved": 6547.7,
+   "offroad": 36.2,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 1024461.7,
+   "paved_tagged": 51932.1,
+   "unpaved": 36397.4,
+   "offroad": 434,
+   "specialized": 75.9
+  },
+  "residential": {
+   "untagged": 1284387.6,
+   "paved_tagged": 35082,
+   "unpaved": 15469.6,
+   "offroad": 109.9,
+   "specialized": 1.7
+  },
+  "all": {
+   "untagged": 3302199.3,
+   "paved_tagged": 332600.8,
+   "unpaved": 60057.8,
+   "offroad": 591.5,
+   "specialized": 77.6
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 10370.3,
+   "smoothness": 2755.2
+  },
+  "trunk": {
+   "surface": 74823,
+   "smoothness": 1120.7,
+   "tracktype": 31.3
+  },
+  "primary": {
+   "surface": 42441.7,
+   "smoothness": 1162.5
+  },
+  "secondary": {
+   "surface": 50239.7,
+   "smoothness": 1212.7,
+   "tracktype": 1.1
+  },
+  "tertiary": {
+   "surface": 75780.6,
+   "smoothness": 1011.3,
+   "tracktype": 270.4
+  },
+  "unclassified": {
+   "surface": 88244.3,
+   "tracktype": 998.9,
+   "smoothness": 689.4,
+   "4wd_only": 4.9
+  },
+  "residential": {
+   "surface": 50233.9,
+   "smoothness": 526.1,
+   "tracktype": 479.4,
+   "4wd_only": 0
+  },
+  "all": {
+   "surface": 392133.6,
+   "smoothness": 8478,
+   "tracktype": 1781.1,
+   "4wd_only": 4.9
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 10370.3,
+   "default": 4375.5
+  },
+  "trunk": {
+   "default": 106610.2,
+   "surface": 74823
+  },
+  "primary": {
+   "default": 125390.8,
+   "surface": 42441.7
+  },
+  "secondary": {
+   "default": 163382.6,
+   "surface": 50239.7
+  },
+  "tertiary": {
+   "default": 593590.8,
+   "surface": 75780.6,
+   "tracktype": 169.8
+  },
+  "unclassified": {
+   "default": 1024461.7,
+   "surface": 88244.3,
+   "tracktype": 595.1
+  },
+  "residential": {
+   "default": 1284387.6,
+   "surface": 50233.9,
+   "tracktype": 429.2
+  },
+  "all": {
+   "default": 3302199.3,
+   "surface": 392133.6,
+   "tracktype": 1194.1
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {
+   "smoothness": 11
+  },
+  "primary": {},
+  "secondary": {
+   "smoothness": 0.4
+  },
+  "tertiary": {
+   "tracktype": 31.9,
+   "smoothness": 4.3
+  },
+  "unclassified": {
+   "tracktype": 299.5,
+   "smoothness": 207.3,
+   "4wd_only": 3.1
+  },
+  "residential": {
+   "tracktype": 96.1,
+   "smoothness": 15.4
+  },
+  "all": {
+   "tracktype": 427.5,
+   "smoothness": 238.5,
+   "4wd_only": 3.1
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {
+    "surface=concrete:lanes": 0.5,
+    "surface=gravel": 0
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=gravel": 219.7,
+    "surface=unpaved": 124.1,
+    "surface=compacted": 22.3,
+    "surface=asphalt:lanes": 21.6,
+    "surface=fuel": 13.3,
+    "surface=shingle": 4,
+    "surface=sand": 0.6,
+    "surface=tartan": 0.3
+   },
+   "offroad": {
+    "smoothness=horrible": 11
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 171.7,
+    "surface=ground": 103.6,
+    "surface=asphalt, ground": 47.8,
+    "surface=dirt": 23.9,
+    "surface=gravel": 20.8,
+    "surface=compacted": 3.7,
+    "surface=concrete:lanes": 2.8,
+    "surface=sand": 0.8,
+    "surface=fine_gravel": 0.4,
+    "surface=steel": 0.1
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 540.6,
+    "surface=ground": 113.9,
+    "surface=gravel": 72.4,
+    "surface=dirt": 71.7,
+    "surface=tartan": 13.5,
+    "surface=asphalt;gravel": 12.5,
+    "surface=fine_gravel": 10.5,
+    "surface=paving_stones,_asphalt": 10.1,
+    "surface=asphalt,_concrete": 6.2,
+    "surface=StackBOX": 4.6,
+    "surface=compacted": 4,
+    "surface=mud": 3.9,
+    "surface=tared": 3.1,
+    "surface=grass": 2.6,
+    "surface=concrete:lanes": 1.2,
+    "surface=concrete_slabs": 0.9,
+    "surface=cement": 0.7,
+    "surface=sand": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 0.4
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 4794.2,
+    "surface=ground": 742,
+    "surface=dirt": 436.8,
+    "surface=gravel": 305.3,
+    "surface=compacted": 72.7,
+    "surface=mixed": 29.8,
+    "surface=tartan": 29.5,
+    "surface=sand": 21.3,
+    "tracktype=grade3": 19.2,
+    "surface=concrete:lanes": 19.2,
+    "tracktype=grade2": 18.3,
+    "surface=Stackbox": 15.2,
+    "surface=fine_gravel": 12.2,
+    "surface=mixed_asphalt_&_gravel": 11.6,
+    "surface=bituminous": 10.5,
+    "tracktype=grade4": 8.3,
+    "surface=dirt/sand": 7.2,
+    "surface=earth": 4.5,
+    "surface=asphalt,_gravel": 4.2,
+    "tracktype=grade5": 3.6,
+    "surface=mud": 3.3,
+    "surface=Thar": 2.6,
+    "surface=asphalt,_paved,_concrete": 2.4,
+    "surface=pebblestone": 2.3,
+    "surface=asphalt:lanes": 2.1,
+    "surface=StackBOX": 1.9,
+    "surface=grass": 1.7,
+    "surface=unpaved; asphalt": 0.9,
+    "surface=concrete:tiles": 0.5,
+    "surface=concrete_slabs": 0.4,
+    "surface=asphalt_over_concrete": 0.2,
+    "surface=rock": 0.1,
+    "surface=unpaved;asphalt": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 19.3,
+    "tracktype=grade4": 9,
+    "smoothness=very_bad": 3.6,
+    "tracktype=grade5": 3.6,
+    "smoothness=horrible": 0.7
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 29462,
+    "surface=ground": 4258.9,
+    "surface=dirt": 1470.2,
+    "surface=compacted": 567.5,
+    "surface=gravel": 401.3,
+    "tracktype=grade2": 213.8,
+    "tracktype=grade3": 124.7,
+    "surface=sand": 102.7,
+    "tracktype=grade5": 53.3,
+    "surface=earth": 50.8,
+    "surface=mud": 40.5,
+    "surface=tartan": 31.5,
+    "surface=dirt/sand": 28.3,
+    "surface=fine_gravel": 13.8,
+    "tracktype=grade4": 10.7,
+    "surface=concrete:lanes": 9.9,
+    "surface=tared": 9.9,
+    "surface=StackBOX": 5,
+    "surface=sterrato": 5,
+    "surface=pebblestone": 5,
+    "surface=paved;unpaved": 4.4,
+    "surface=grass": 4.1,
+    "surface=grass_paver": 3.7,
+    "surface=unp": 3.3,
+    "surface=mixed": 3.1,
+    "surface=asphalt; unpaved": 2.9,
+    "surface=tarred": 1.9,
+    "surface=t": 1.9,
+    "surface=unhewn_cobblestone": 1.7,
+    "surface=unpaved222": 1.5,
+    "surface=cement": 1.4,
+    "surface=ps": 1.4,
+    "surface=tar_road": 1.2,
+    "surface=clay": 0.8,
+    "surface=P": 0.7,
+    "surface=sand/gravel/stones": 0.7,
+    "surface=rock": 0.6,
+    "surface=Land Area": 0.6,
+    "surface=brick": 0.6,
+    "surface=laterite": 0.6,
+    "surface=stackbox": 0.5,
+    "surface=r": 0.5,
+    "surface=asphalt:lanes": 0.5,
+    "surface=living_street": 0.5,
+    "surface=ùnp": 0.4,
+    "surface=ground;sand": 0.4,
+    "surface=Thar": 0.4,
+    "surface=p": 0.3,
+    "surface=half_asphalt,_half_dirt": 0.3,
+    "surface=paver_blocks": 0.3,
+    "surface=block": 0.3,
+    "surface=tiles": 0.3,
+    "surface=unpaved_minor22": 0.2,
+    "surface=bad": 0.2,
+    "surface=blocks": 0.1,
+    "surface=iron": 0,
+    "surface=C": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 150.1,
+    "smoothness=horrible": 115.5,
+    "tracktype=grade5": 94.5,
+    "tracktype=grade4": 54.9,
+    "smoothness=very_bad": 15.9,
+    "4wd_only=yes": 3.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 74.5,
+    "smoothness=impassable": 1.5
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 12672.7,
+    "surface=ground": 1407,
+    "surface=dirt": 514.3,
+    "tracktype=grade2": 296.6,
+    "surface=gravel": 238.3,
+    "surface=sand": 102.8,
+    "surface=compacted": 93.4,
+    "tracktype=grade3": 45.8,
+    "surface=mud": 37.8,
+    "surface=fine_gravel": 32.4,
+    "surface=grass": 23,
+    "tracktype=grade5": 16.1,
+    "surface=concrete:lanes": 13.4,
+    "surface=dirt/sand": 13.4,
+    "surface=earth": 13.3,
+    "surface=tartan": 12,
+    "tracktype=grade4": 9.3,
+    "surface=tar_road": 6.7,
+    "surface=cement": 6.1,
+    "surface=sterrato": 3.8,
+    "surface=pebblestone": 3.2,
+    "surface=Asphalt+Gravel": 2,
+    "surface=unhewn_cobblestone": 1.6,
+    "surface=residential": 1.3,
+    "surface=bitmac": 0.8,
+    "surface=cocreate": 0.8,
+    "surface=gff": 0.7,
+    "surface=clay": 0.6,
+    "surface=rock": 0.6,
+    "surface=tarred": 0.6,
+    "surface=asphalt_&_concrete": 0.6,
+    "surface=gravelmanganese_ore": 0.6,
+    "surface=macdimize": 0.5,
+    "surface=tiles": 0.5,
+    "surface=unpavedgg": 0.5,
+    "surface=laterite": 0.5,
+    "surface=asphalt,_concret,_unpaved": 0.5,
+    "surface=Bituminous_road": 0.5,
+    "surface=cement,_tar_road": 0.4,
+    "surface=tarmac": 0.4,
+    "surface=concrete,_gravel": 0.4,
+    "surface=block": 0.4,
+    "surface=Village_Road": 0.4,
+    "surface=--": 0.4,
+    "surface=Thar": 0.3,
+    "surface=0": 0.3,
+    "surface=7": 0.3,
+    "surface=asphalt_-_damaged": 0.3,
+    "surface=Pitch": 0.3,
+    "surface=Mud_Road": 0.3,
+    "surface=interlock": 0.2,
+    "surface=Paverblocks": 0.2,
+    "surface=yes": 0.2,
+    "surface=murum_sand": 0.2,
+    "surface=paving_stones:20": 0.2,
+    "surface=gravel,_unpaved": 0.2,
+    "surface=bitumenuos_Road": 0.2,
+    "surface=cheap_asphalt": 0.2,
+    "surface=stone": 0.1,
+    "surface=grass_paver": 0.1,
+    "surface=10": 0.1,
+    "surface=rubbercrumb": 0.1,
+    "surface=mahavir_Vas": 0.1,
+    "surface=nb": 0.1,
+    "surface=unpavede": 0.1,
+    "surface=upaved": 0.1,
+    "surface=unaved": 0.1,
+    "surface=curved": 0,
+    "surface=colony_road": 0,
+    "surface=metal_grid": 0,
+    "surface=steel_bridge": 0,
+    "surface=bamboo": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 51.7,
+    "tracktype=grade4": 26.7,
+    "tracktype=grade5": 17.7,
+    "smoothness=very_bad": 11,
+    "smoothness=horrible": 2.7
+   },
+   "specialized": {
+    "smoothness=very_horrible": 1.7
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 47765.3,
+    "surface=ground": 6625.5,
+    "surface=dirt": 2516.8,
+    "surface=gravel": 1257.8,
+    "surface=compacted": 763.4,
+    "tracktype=grade2": 528.6,
+    "surface=sand": 228.2,
+    "tracktype=grade3": 189.7,
+    "surface=tartan": 86.8,
+    "surface=mud": 85.5,
+    "tracktype=grade5": 73,
+    "surface=fine_gravel": 69.4,
+    "surface=earth": 68.6,
+    "surface=dirt/sand": 48.9,
+    "surface=asphalt, ground": 47.8,
+    "surface=concrete:lanes": 47.1,
+    "surface=mixed": 32.9,
+    "surface=grass": 31.4,
+    "tracktype=grade4": 28.3,
+    "surface=asphalt:lanes": 24.2,
+    "surface=Stackbox": 15.2,
+    "surface=fuel": 13.3,
+    "surface=tared": 13,
+    "surface=asphalt;gravel": 12.5,
+    "surface=StackBOX": 11.6,
+    "surface=mixed_asphalt_&_gravel": 11.6,
+    "surface=bituminous": 10.5,
+    "surface=pebblestone": 10.5,
+    "surface=paving_stones,_asphalt": 10.1,
+    "surface=sterrato": 8.8,
+    "surface=cement": 8.3,
+    "surface=tar_road": 7.9,
+    "surface=asphalt,_concrete": 6.2,
+    "surface=paved;unpaved": 4.4,
+    "surface=asphalt,_gravel": 4.2,
+    "surface=shingle": 4,
+    "surface=grass_paver": 3.8,
+    "surface=unp": 3.3,
+    "surface=Thar": 3.3,
+    "surface=unhewn_cobblestone": 3.3,
+    "surface=asphalt; unpaved": 2.9,
+    "surface=tarred": 2.5,
+    "surface=asphalt,_paved,_concrete": 2.4,
+    "surface=Asphalt+Gravel": 2,
+    "surface=t": 1.9,
+    "surface=unpaved222": 1.5,
+    "surface=clay": 1.4,
+    "surface=ps": 1.4,
+    "surface=rock": 1.4,
+    "surface=concrete_slabs": 1.3,
+    "surface=residential": 1.3,
+    "surface=laterite": 1.1,
+    "surface=unpaved; asphalt": 0.9,
+    "surface=bitmac": 0.8,
+    "surface=tiles": 0.8,
+    "surface=cocreate": 0.8,
+    "surface=P": 0.7,
+    "surface=sand/gravel/stones": 0.7,
+    "surface=gff": 0.7,
+    "surface=block": 0.6,
+    "surface=Land Area": 0.6,
+    "surface=brick": 0.6,
+    "surface=asphalt_&_concrete": 0.6,
+    "surface=gravelmanganese_ore": 0.6,
+    "surface=concrete:tiles": 0.5,
+    "surface=macdimize": 0.5,
+    "surface=stackbox": 0.5,
+    "surface=unpavedgg": 0.5,
+    "surface=asphalt,_concret,_unpaved": 0.5,
+    "surface=r": 0.5,
+    "surface=living_street": 0.5,
+    "surface=Bituminous_road": 0.5,
+    "surface=cement,_tar_road": 0.4,
+    "surface=tarmac": 0.4,
+    "surface=ùnp": 0.4,
+    "surface=ground;sand": 0.4,
+    "surface=concrete,_gravel": 0.4,
+    "surface=Village_Road": 0.4,
+    "surface=--": 0.4,
+    "surface=0": 0.3,
+    "surface=p": 0.3,
+    "surface=7": 0.3,
+    "surface=half_asphalt,_half_dirt": 0.3,
+    "surface=asphalt_-_damaged": 0.3,
+    "surface=Pitch": 0.3,
+    "surface=Mud_Road": 0.3,
+    "surface=paver_blocks": 0.3,
+    "surface=interlock": 0.2,
+    "surface=unpaved_minor22": 0.2,
+    "surface=Paverblocks": 0.2,
+    "surface=asphalt_over_concrete": 0.2,
+    "surface=yes": 0.2,
+    "surface=murum_sand": 0.2,
+    "surface=paving_stones:20": 0.2,
+    "surface=gravel,_unpaved": 0.2,
+    "surface=bitumenuos_Road": 0.2,
+    "surface=bad": 0.2,
+    "surface=cheap_asphalt": 0.2,
+    "surface=stone": 0.1,
+    "surface=10": 0.1,
+    "surface=blocks": 0.1,
+    "surface=rubbercrumb": 0.1,
+    "surface=mahavir_Vas": 0.1,
+    "surface=nb": 0.1,
+    "surface=steel": 0.1,
+    "surface=unpavede": 0.1,
+    "surface=upaved": 0.1,
+    "surface=unaved": 0.1,
+    "surface=unpaved;asphalt": 0,
+    "surface=curved": 0,
+    "surface=colony_road": 0,
+    "surface=iron": 0,
+    "surface=metal_grid": 0,
+    "surface=C": 0,
+    "surface=steel_bridge": 0,
+    "surface=bamboo": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 221.2,
+    "smoothness=horrible": 129.9,
+    "tracktype=grade5": 115.8,
+    "tracktype=grade4": 90.5,
+    "smoothness=very_bad": 31,
+    "4wd_only=yes": 3.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 76.2,
+    "smoothness=impassable": 1.5
+   }
+  }
+ },
+ "unknown_value_km": {
+  "smoothness=very_good": 90.1,
+  "surface=tartan": 86.8,
+  "surface=dirt/sand": 48.9,
+  "surface=asphalt, ground": 47.8,
+  "surface=mixed": 32.9,
+  "surface=asphalt:lanes": 24.2,
+  "surface=Stackbox": 15.2,
+  "surface=fuel": 13.3,
+  "surface=tared": 13,
+  "surface=StackBOX": 11.6,
+  "surface=mixed_asphalt_&_gravel": 11.6,
+  "smoothness=high_clearance": 11.4,
+  "surface=bituminous": 10.5,
+  "surface=paving_stones,_asphalt": 10.1,
+  "surface=sterrato": 8.8,
+  "surface=cement": 8.3,
+  "surface=tar_road": 7.9,
+  "surface=asphalt,_concrete": 6.2,
+  "surface=asphalt,_gravel": 4.2,
+  "surface=shingle": 4,
+  "surface=unp": 3.3,
+  "surface=Thar": 3.3,
+  "surface=tarred": 2.5,
+  "surface=asphalt,_paved,_concrete": 2.4,
+  "surface=Asphalt+Gravel": 2,
+  "smoothness=yes": 2,
+  "surface=t": 1.9,
+  "smoothness=good - Thin Wheels: racing bike": 1.6,
+  "surface=unpaved222": 1.5,
+  "surface=ps": 1.4,
+  "surface=concrete_slabs": 1.3,
+  "surface=residential": 1.3,
+  "surface=bitmac": 0.8,
+  "surface=tiles": 0.8,
+  "surface=cocreate": 0.8,
+  "surface=P": 0.7,
+  "surface=sand/gravel/stones": 0.7,
+  "surface=gff": 0.7,
+  "surface=block": 0.6,
+  "surface=Land Area": 0.6,
+  "surface=brick": 0.6,
+  "surface=asphalt_&_concrete": 0.6,
+  "surface=gravelmanganese_ore": 0.6,
+  "surface=concrete:tiles": 0.5,
+  "surface=macdimize": 0.5,
+  "surface=stackbox": 0.5,
+  "surface=unpavedgg": 0.5,
+  "surface=asphalt,_concret,_unpaved": 0.5,
+  "surface=r": 0.5,
+  "surface=living_street": 0.5,
+  "surface=Bituminous_road": 0.5,
+  "smoothness=robust_wheels": 0.4,
+  "surface=cement,_tar_road": 0.4,
+  "surface=tarmac": 0.4,
+  "surface=ùnp": 0.4,
+  "surface=concrete,_gravel": 0.4,
+  "surface=Village_Road": 0.4,
+  "surface=--": 0.4,
+  "surface=0": 0.3,
+  "surface=p": 0.3,
+  "surface=7": 0.3,
+  "surface=half_asphalt,_half_dirt": 0.3,
+  "surface=asphalt_-_damaged": 0.3,
+  "surface=Pitch": 0.3,
+  "surface=Mud_Road": 0.3,
+  "surface=paver_blocks": 0.3,
+  "surface=interlock": 0.2,
+  "surface=unpaved_minor22": 0.2,
+  "surface=Paverblocks": 0.2,
+  "surface=asphalt_over_concrete": 0.2,
+  "tracktype=amphibious": 0.2,
+  "surface=yes": 0.2,
+  "surface=murum_sand": 0.2,
+  "surface=paving_stones:20": 0.2,
+  "surface=gravel,_unpaved": 0.2,
+  "surface=bitumenuos_Road": 0.2,
+  "surface=bad": 0.2,
+  "surface=cheap_asphalt": 0.2,
+  "surface=stone": 0.1,
+  "surface=10": 0.1,
+  "surface=blocks": 0.1,
+  "surface=rubbercrumb": 0.1,
+  "surface=mahavir_Vas": 0.1,
+  "surface=nb": 0.1,
+  "surface=steel": 0.1,
+  "surface=unpavede": 0.1,
+  "surface=upaved": 0.1,
+  "surface=unaved": 0.1,
+  "surface=curved": 0,
+  "surface=colony_road": 0,
+  "surface=iron": 0,
+  "surface=metal_grid": 0,
+  "surface=C": 0,
+  "surface=steel_bridge": 0,
+  "surface=bamboo": 0
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + smoothness=very_bad": 39.5,
+  "paved (surface=cobblestone) + smoothness=horrible": 12.6,
+  "paved (surface=asphalt) + tracktype=grade4": 12.2,
+  "paved (surface=paved) + tracktype=grade3": 11.9,
+  "paved (no surface) + smoothness=very_bad": 9.6,
+  "paved (no surface) + smoothness=horrible": 9.1,
+  "paved (surface=asphalt) + smoothness=horrible": 8.9,
+  "paved (surface=concrete) + smoothness=very_bad": 8.8,
+  "paved (surface=concrete) + smoothness=horrible": 7.7,
+  "smoothness=good + surface=compacted": 6.6,
+  "paved (no surface) + smoothness=very_horrible": 3.5,
+  "paved (surface=asphalt) + tracktype=grade3": 2.7,
+  "paved (surface=paving_stones) + tracktype=grade3": 2.7,
+  "paved (no surface) + smoothness=impassable": 2.3,
+  "paved (surface=asphalt) + tracktype=grade5": 2.2,
+  "smoothness=excellent + surface=compacted": 1.9,
+  "paved (no surface) + 4wd_only=yes": 1.7,
+  "paved (surface=paved) + smoothness=very_bad": 1,
+  "paved (surface=paving_stones) + smoothness=very_bad": 1,
+  "smoothness=good + surface=gravel": 1,
+  "paved (surface=paved) + tracktype=grade5": 0.7,
+  "paved (surface=concrete) + tracktype=grade3": 0.3,
+  "smoothness=good + surface=unpaved": 0.3,
+  "smoothness=good + surface=fine_gravel": 0.2,
+  "paved (surface=paving_stones) + tracktype=grade4": 0.2,
+  "smoothness=excellent + surface=unpaved": 0.2,
+  "smoothness=good + surface=ground": 0.2,
+  "paved (surface=paved) + smoothness=horrible": 0.1,
+  "smoothness=good + surface=concrete:lanes": 0.1,
+  "paved (surface=paved) + tracktype=grade4": 0.1,
+  "paved (no surface) + 4wd_only=recommended": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w22832189",
+    "highway": "primary",
+    "km": 43.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Polur - Jamunamarathur - Alangayam - Vaniyambadi Road",
+     "oneway": "no",
+     "ref": "SH215",
+     "surface": "asphalt, ground"
+    }
+   },
+   {
+    "id": "w364239000",
+    "highway": "secondary",
+    "km": 30.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w168286862",
+    "highway": "trunk",
+    "km": 27.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "ref": "NH2",
+     "ref:old": "NH54",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w426560331",
+    "highway": "secondary",
+    "km": 26.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w1468577418",
+    "highway": "secondary",
+    "km": 26.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w62098530",
+    "highway": "primary",
+    "km": 25.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "Chamba Kilar Road",
+     "ref": "SH33",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w366341027",
+    "highway": "secondary",
+    "km": 24.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w169467488",
+    "highway": "trunk",
+    "km": 24.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "maxspeed": "20",
+     "name": "Kaza-Grampoo Road",
+     "ref": "NH505",
+     "surface": "gravel",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w757369138",
+    "highway": "primary",
+    "km": 23.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "SH52",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w243182462",
+    "highway": "trunk",
+    "km": 22.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "ref": "NH502A",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w27306629",
+    "highway": "trunk",
+    "km": 20,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "ref": "NH301",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w619127565",
+    "highway": "primary",
+    "km": 17.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w60888355",
+    "highway": "trunk",
+    "km": 17,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Kaza-Grampoo Road",
+     "ref": "NH505",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w689138054",
+    "highway": "secondary",
+    "km": 16.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Road through Windfarms",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1393060143",
+    "highway": "secondary",
+    "km": 16.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "ground"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w172300194",
+    "highway": "unclassified",
+    "km": 20.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w757356077",
+    "highway": "unclassified",
+    "km": 16.4,
+    "level": "offroad",
+    "tags": {
+     "embankment": "yes",
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w757356079",
+    "highway": "unclassified",
+    "km": 11.3,
+    "level": "offroad",
+    "tags": {
+     "embankment": "yes",
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w730205886",
+    "highway": "unclassified",
+    "km": 11,
+    "level": "offroad",
+    "tags": {
+     "embankment": "yes",
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w1231310943",
+    "highway": "unclassified",
+    "km": 10,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w261294783",
+    "highway": "tertiary",
+    "km": 10,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1231308936",
+    "highway": "unclassified",
+    "km": 9.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w120413532",
+    "highway": "unclassified",
+    "km": 9.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Chandratal Lake Road",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w169467486",
+    "highway": "trunk",
+    "km": 7.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "maxspeed": "20",
+     "name": "Kaza-Grampoo Road",
+     "ref": "NH505",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w731124888",
+    "highway": "unclassified",
+    "km": 7.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w619398600",
+    "highway": "unclassified",
+    "km": 7.1,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w613138446",
+    "highway": "unclassified",
+    "km": 7,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w624781918",
+    "highway": "unclassified",
+    "km": 6.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w1230782125",
+    "highway": "unclassified",
+    "km": 6.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w569358568",
+    "highway": "unclassified",
+    "km": 6.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "ground"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w527422600",
+    "highway": "tertiary",
+    "km": 11.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Mulapadu - Gaddamanugu Road",
+     "surface": "asphalt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w105021347",
+    "highway": "tertiary",
+    "km": 8.9,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "horrible",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w433012801",
+    "highway": "secondary",
+    "km": 6.2,
+    "level": "paved",
+    "tags": {
+     "embankment": "yes",
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Bandh Road",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w488065388",
+    "highway": "tertiary",
+    "km": 6,
+    "level": "paved",
+    "tags": {
+     "comment": "This part is mostly - no paved road - average speed is around 20km or lower",
+     "highway": "tertiary",
+     "smoothness": "horrible",
+     "surface": "cobblestone"
+    }
+   },
+   {
+    "id": "w410756931",
+    "highway": "tertiary",
+    "km": 5,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "lit": "yes",
+     "smoothness": "very_bad",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w959941577",
+    "highway": "secondary",
+    "km": 4.2,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "horrible",
+     "surface": "cobblestone"
+    }
+   },
+   {
+    "id": "w433012804",
+    "highway": "secondary",
+    "km": 3.8,
+    "level": "paved",
+    "tags": {
+     "embankment": "yes",
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Bandh Road",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1543948094",
+    "highway": "secondary",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Bandh Road",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w379890440",
+    "highway": "secondary",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Bandh Road",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w362279823",
+    "highway": "unclassified",
+    "km": 2.6,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w585911540",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w395581831",
+    "highway": "unclassified",
+    "km": 2.5,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1050458359",
+    "highway": "secondary",
+    "km": 2.4,
+    "level": "paved",
+    "tags": {
+     "embankment": "yes",
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Bandh Road",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1294757340",
+    "highway": "secondary",
+    "km": 2.4,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "horrible",
+     "surface": "cobblestone"
+    }
+   },
+   {
+    "id": "w795608764",
+    "highway": "tertiary",
+    "km": 2.3,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w22832189",
+    "highway": "primary",
+    "km": 43.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Polur - Jamunamarathur - Alangayam - Vaniyambadi Road",
+     "oneway": "no",
+     "ref": "SH215",
+     "surface": "asphalt, ground"
+    }
+   },
+   {
+    "id": "w939977680",
+    "highway": "tertiary",
+    "km": 28.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "40",
+     "name": "Danoi - Drabil - Kotidhiman Road",
+     "surface": "mixed"
+    }
+   },
+   {
+    "id": "w102209346",
+    "highway": "tertiary",
+    "km": 15.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "source": "stackbox",
+     "surface": "Stackbox"
+    }
+   },
+   {
+    "id": "w687727899",
+    "highway": "trunk",
+    "km": 13.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "2",
+     "maxspeed": "70",
+     "name": "Mani - Mysore Road",
+     "name:kn": "ಮಾಣಿ- ಮೈಸೂರು ರಸ್ತೆ",
+     "ref": "NH275",
+     "ref:old": "SH 88",
+     "surface": "fuel"
+    }
+   },
+   {
+    "id": "w1178063233",
+    "highway": "tertiary",
+    "km": 11.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Khumbawade - Talkat Road",
+     "surface": "mixed_asphalt_&_gravel"
+    }
+   },
+   {
+    "id": "w44639622",
+    "highway": "secondary",
+    "km": 9.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "oneway": "no",
+     "source": "Yahoo hires/Bing",
+     "surface": "paving_stones,_asphalt"
+    }
+   },
+   {
+    "id": "w379727158",
+    "highway": "secondary",
+    "km": 7.6,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lane_markings": "yes",
+     "lanes": "2",
+     "name": "Moonuperiya - Chakkarakkal Road",
+     "ref": "MDR",
+     "road_marking": "yes",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w178276649",
+    "highway": "unclassified",
+    "km": 7.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w496355562",
+    "highway": "tertiary",
+    "km": 6.9,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "Govindagatta Village Road",
+     "name:kn": "ಗೋವಿಂದಘಟ್ಟ ರಸ್ತೆ",
+     "surface": "bituminous"
+    }
+   },
+   {
+    "id": "w823756695",
+    "highway": "tertiary",
+    "km": 6.7,
+    "level": "unpaved",
+    "tags": {
+     "cutting": "yes",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "name": "Ooty-butterkambai-Thummanatty-Kammbatty-Morigal-Kappachi",
+     "name:ta": "ஊட்டி-பி-தும்மனாட்டி-கம்பட்டி-மோரிகள்-கப்பச்சி -புட்டேர்க்கொம்பை சாலை",
+     "ref": "UR12",
+     "source": "bing",
+     "surface": "tartan"
+    }
+   },
+   {
+    "id": "w397302222",
+    "highway": "secondary",
+    "km": 6.6,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lane_markings": "no",
+     "lanes": "2",
+     "name": "Elappara - Kochukarintharuvi - Pasuppara Road",
+     "road_marking": "yes",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w46240862",
+    "highway": "secondary",
+    "km": 5.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "MOUKODE -CHERUPUZHA ROAD",
+     "ref": "MDR120b",
+     "surface": "tartan"
+    }
+   },
+   {
+    "id": "w1340530064",
+    "highway": "trunk",
+    "km": 5.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "4",
+     "name": "Baramati Bypass",
+     "oneway": "yes",
+     "ref": "NH965G",
+     "surface": "asphalt:lanes"
+    }
+   },
+   {
+    "id": "w807690298",
+    "highway": "secondary",
+    "km": 5.3,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lane_markings": "yes",
+     "lanes": "2",
+     "maxspeed": "50",
+     "name": "Chakkuvally - Malumel road",
+     "oneway": "no",
+     "ref": "MDR",
+     "road_marking": "yes",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w85242199",
+    "highway": "secondary",
+    "km": 5.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "30",
+     "name": "Ketty - Palada - Selas Road",
+     "ref": "MDR1142",
+     "surface": "tartan"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,923 @@
+{
+ "google/sn-w305374480-0.jpg": {
+  "road": "R.06.1 (secondary)",
+  "way": "w305374480",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=O5_VY4Bh6a9fsH7rtGgs7Q",
+  "captured": "2021-12",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/sn-w305374480-2.jpg": {
+  "road": "R.06.1 (secondary)",
+  "way": "w305374480",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=z4fXdQU5oVWKkFuKV7WOmA",
+  "captured": "2021-12",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/sn-w305374480-5.jpg": {
+  "road": "R.06.1 (secondary)",
+  "way": "w305374480",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=N9FBJQ5bQoDEXVygEM3wZA",
+  "captured": "2021-12",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/sn-w305374480-7.jpg": {
+  "road": "R.06.1 (secondary)",
+  "way": "w305374480",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=15xKwpFH4llQo1mQ_Z8Ubg",
+  "captured": "2021-12",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/sn-w301425265-0.jpg": {
+  "road": "R071 (secondary)",
+  "way": "w301425265",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=lAOSG65h9J8sHIDmg40SHg",
+  "captured": "2021-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/sn-w301425265-2.jpg": {
+  "road": "R071 (secondary)",
+  "way": "w301425265",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=V62OMb8v6-pZzyCAo3U5og",
+  "captured": "2021-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/sn-w301425265-5.jpg": {
+  "road": "R071 (secondary)",
+  "way": "w301425265",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=hpSkVPJIeW1eVVd314Tqfg",
+  "captured": "2021-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/sn-w301425265-7.jpg": {
+  "road": "R071 (secondary)",
+  "way": "w301425265",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=ch8B3rCdEcPUuqdTI39nkw",
+  "captured": "2021-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w79123562-0.jpg": {
+  "road": "R131 (secondary)",
+  "way": "w79123562",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=mkYd1jSBxFU8j4HY2qnGyA",
+  "captured": "2026-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w79123562-2.jpg": {
+  "road": "R131 (secondary)",
+  "way": "w79123562",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=BDo-K7p-wFh6IbjZ18NSqQ",
+  "captured": "2026-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w79123562-5.jpg": {
+  "road": "R131 (secondary)",
+  "way": "w79123562",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=EbvSF0eR_CBeOuZcKU3elQ",
+  "captured": "2026-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w79123562-7.jpg": {
+  "road": "R131 (secondary)",
+  "way": "w79123562",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=5C7wn70uuk3ECJMHY4_5EQ",
+  "captured": "2026-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w166252951-4.jpg": {
+  "road": "IR11 (primary)",
+  "way": "w166252951",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=F4jwWwVtndrrIiNjTYYF_g",
+  "captured": "2026-06",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w166252951-5.jpg": {
+  "road": "IR11 (primary)",
+  "way": "w166252951",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=hDfqZQWLuxw-mg0dq2q5Jw",
+  "captured": "2026-06",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w166252951-6.jpg": {
+  "road": "IR11 (primary)",
+  "way": "w166252951",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=R1Jilli2G3EL9mvvIdtgYA",
+  "captured": "2026-06",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/gh-w166252951-7.jpg": {
+  "road": "IR11 (primary)",
+  "way": "w166252951",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=V_TCEMgZlpz37xawLW0oKg",
+  "captured": "2026-06",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "mapillary/cg-w339788648-0.jpg": {
+  "road": "P1 (primary)",
+  "way": "w339788648",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1668987584344537",
+  "author": "Hebrew",
+  "captured": "2026-02-22",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w339788648-1.jpg": {
+  "road": "P1 (primary)",
+  "way": "w339788648",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1326110712736545",
+  "author": "Hebrew",
+  "captured": "2026-02-22",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w339788648-6.jpg": {
+  "road": "P1 (primary)",
+  "way": "w339788648",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=3114804328707142",
+  "author": "Hebrew",
+  "captured": "2026-02-22",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w339788648-7.jpg": {
+  "road": "P1 (primary)",
+  "way": "w339788648",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=931829182833412",
+  "author": "Hebrew",
+  "captured": "2026-02-22",
+  "licence": "CC BY-SA 4.0"
+ },
+ "google/np-w342736414-0.jpg": {
+  "road": "NH66 (primary)",
+  "way": "w342736414",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=ve620hqy91BvbSYJ17eCPA",
+  "captured": "2025-01",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/np-w342736414-2.jpg": {
+  "road": "NH66 (primary)",
+  "way": "w342736414",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=Q8huP3Cr6Fi7lMwhuihlCw",
+  "captured": "2025-01",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/np-w342736414-5.jpg": {
+  "road": "NH66 (primary)",
+  "way": "w342736414",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=fpldZU2JCh-bMWzPqras5A",
+  "captured": "2025-01",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/np-w342736414-7.jpg": {
+  "road": "NH66 (primary)",
+  "way": "w342736414",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=xI5q8DzTaTwJbhemGvz19g",
+  "captured": "2025-01",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "mapillary/tl-w40678552-0.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=704880735991176",
+  "author": "kahbeng",
+  "captured": "2025-08-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w40678552-2.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=719740343751305",
+  "author": "kahbeng",
+  "captured": "2025-08-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w40678552-5.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=850741927303081",
+  "author": "kahbeng",
+  "captured": "2025-08-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w40678552-7.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1365299901649607",
+  "author": "kahbeng",
+  "captured": "2025-08-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "google/tl-w40678552-0.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSF0NJSE0wb2dLRUlDQWdJQ2JfSm5Yd1FF",
+  "captured": "2025-08",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/tl-w40678552-3.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSF0NJSE0wb2dLRUlDQWdJQ2J3dHlIM1FF",
+  "captured": "2025-08",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/tl-w40678552-5.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSHENJQUJJaEFwb2FqSV9ObzhaendNSWEtU2twTHA.",
+  "captured": "2025-08",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/tl-w40678552-7.jpg": {
+  "road": "Estrada Viqueque - Baucau (primary)",
+  "way": "w40678552",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSHENJQUJJaEFPUVFfcnF2bnZVTlY1a0ZQVFB5Y1A.",
+  "captured": "2025-08",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "mapillary/tl-w170259503-0.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1515697142975354",
+  "author": "kahbeng",
+  "captured": "2025-11-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w170259503-2.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=2343377256096616",
+  "author": "kahbeng",
+  "captured": "2025-11-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w170259503-5.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=840507971825360",
+  "author": "kahbeng",
+  "captured": "2024-08-31",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w170259503-7.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1918863809048784",
+  "author": "kahbeng",
+  "captured": "2024-08-31",
+  "licence": "CC BY-SA 4.0"
+ },
+ "google/tl-w170259503-0.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSHENJQUJJaERYN1JfdFRISWpUZE1SMkZnTmRRUG4.",
+  "captured": "2025-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/tl-w170259503-2.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSFkNJSE0wb2dLRUlDQWdJREhwLVNUS1E.",
+  "captured": "2025-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/tl-w170259503-5.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSFkNJSE0wb2dLRUlDQWdJREh5N3IwSnc.",
+  "captured": "2025-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/tl-w170259503-7.jpg": {
+  "road": "Estrada Lospalos - Malahara-Mehara (secondary)",
+  "way": "w170259503",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=CAoSFkNJSE0wb2dLRUlDQWdJREhpLU85VUE.",
+  "captured": "2025-11",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/mn-w76695032-2.jpg": {
+  "road": "A0503 (primary)",
+  "way": "w76695032",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=6k55CkYH8aTlqVd9A5S9vg",
+  "captured": "2015-06",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/mn-w76695032-3.jpg": {
+  "road": "A0503 (primary)",
+  "way": "w76695032",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=LwZvXh8nv4OAhZrwFUwbaw",
+  "captured": "2015-06",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/mn-w76695032-4.jpg": {
+  "road": "A0503 (primary)",
+  "way": "w76695032",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=ML0altlbL7-WcgIBzIAWsw",
+  "captured": "2015-06",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "mapillary/bo-w55203670-1.jpg": {
+  "road": "F4 (secondary)",
+  "way": "w55203670",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1742317199886891",
+  "author": "Danyvd91",
+  "captured": "2024-11-20",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/bo-w55203670-2.jpg": {
+  "road": "F4 (secondary)",
+  "way": "w55203670",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=8599556560163588",
+  "author": "Danyvd91",
+  "captured": "2024-11-20",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/au-w186428588-5.jpg": {
+  "road": "Birdsville Track",
+  "way": "w186428588",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=515146713198625",
+  "author": "stev391",
+  "captured": "2016-04-03",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/au-w186428588-6.jpg": {
+  "road": "Birdsville Track",
+  "way": "w186428588",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=3014082348837309",
+  "author": "stev391",
+  "captured": "2016-04-03",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/au-w186428588-7.jpg": {
+  "road": "Birdsville Track",
+  "way": "w186428588",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=250287626835692",
+  "author": "stev391",
+  "captured": "2016-04-03",
+  "licence": "CC BY-SA 4.0"
+ },
+ "google/au-w186428588-0.jpg": {
+  "road": "Birdsville Track",
+  "way": "w186428588",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=ValhaMqt6HuupuSckiwy_w",
+  "captured": "2024-09",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/au-w186428588-2.jpg": {
+  "road": "Birdsville Track",
+  "way": "w186428588",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=l7hBAgT-Y1rCvP-p9-oH1w",
+  "captured": "2024-09",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/au-w186428588-5.jpg": {
+  "road": "Birdsville Track",
+  "way": "w186428588",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=QhJiHLl49qnjxR51VD1L9Q",
+  "captured": "2024-09",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/au-w186428588-7.jpg": {
+  "road": "Birdsville Track",
+  "way": "w186428588",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=Xzgc8UELbBe1JY1msPfJMw",
+  "captured": "2024-09",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "mapillary/au-w313519144-0.jpg": {
+  "road": "Gibb River Road",
+  "way": "w313519144",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=458763261885428",
+  "author": "bob3bob3",
+  "captured": "2019-09-08",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/au-w313519144-1.jpg": {
+  "road": "Gibb River Road",
+  "way": "w313519144",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=300916848295009",
+  "author": "bob3bob3",
+  "captured": "2019-09-09",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/au-w313519144-2.jpg": {
+  "road": "Gibb River Road",
+  "way": "w313519144",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=296787081910216",
+  "author": "bob3bob3",
+  "captured": "2019-09-09",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/au-w313519144-3.jpg": {
+  "road": "Gibb River Road",
+  "way": "w313519144",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=5524701770904421",
+  "author": "bob3bob3",
+  "captured": "2019-09-08",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/pg-w844126856-1.jpg": {
+  "road": "Vanimo - Green River Road (secondary)",
+  "way": "w844126856",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=789256056870624",
+  "author": "PNGDOWH",
+  "captured": "2025-07-19",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/pg-w844126856-2.jpg": {
+  "road": "Vanimo - Green River Road (secondary)",
+  "way": "w844126856",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=4191036551173520",
+  "author": "PNGDOWH",
+  "captured": "2025-07-19",
+  "licence": "CC BY-SA 4.0"
+ },
+ "google/is-w620383908-0.jpg": {
+  "road": "35 (secondary)",
+  "way": "w620383908",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=u64bdf0mFdXB7r9PYlUD_w",
+  "captured": "2024-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/is-w620383908-2.jpg": {
+  "road": "35 (secondary)",
+  "way": "w620383908",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=7ZtowBAsn61FkHVE_JFzjA",
+  "captured": "2024-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/is-w620383908-3.jpg": {
+  "road": "35 (secondary)",
+  "way": "w620383908",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=kZUcfZeeJiWSRaV4nangGw",
+  "captured": "2024-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/is-w620383908-6.jpg": {
+  "road": "35 (secondary)",
+  "way": "w620383908",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=z9lljPzw0QtjkEdqhKaGVA",
+  "captured": "2024-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/au-w231792517-5.jpg": {
+  "road": "Diamantina Developmental Road",
+  "way": "w231792517",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=8nQAXP4wX-NZ7OdKDcD3og",
+  "captured": "2024-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/au-w231792517-6.jpg": {
+  "road": "Diamantina Developmental Road",
+  "way": "w231792517",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=MJ_1ViRjkZzthCWDMlGaFw",
+  "captured": "2024-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "google/au-w231792517-7.jpg": {
+  "road": "Diamantina Developmental Road",
+  "way": "w231792517",
+  "source": "Google Street View",
+  "image": "https://www.google.com/maps/@?api=1&map_action=pano&pano=I6FGCx23mdgIP6bdzMhwVA",
+  "captured": "2024-07",
+  "licence": "copyrighted: checking only, do not upload"
+ },
+ "mapillary/is-w620397373-0.jpg": {
+  "road": "F208 (secondary)",
+  "way": "w620397373",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1350954298620065",
+  "author": "tobiaso",
+  "captured": "2019-07-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/is-w620397373-1.jpg": {
+  "road": "F208 (secondary)",
+  "way": "w620397373",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=825833388022266",
+  "author": "tobiaso",
+  "captured": "2019-07-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/is-w620397373-2.jpg": {
+  "road": "F208 (secondary)",
+  "way": "w620397373",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=867458220651162",
+  "author": "tobiaso",
+  "captured": "2019-07-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/is-w620397373-3.jpg": {
+  "road": "F208 (secondary)",
+  "way": "w620397373",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=4504124189616344",
+  "author": "tobiaso",
+  "captured": "2019-07-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w150773592-0.jpg": {
+  "road": "Estrada Loti - Betano (primary)",
+  "way": "w150773592",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=777380885122523",
+  "author": "kahbeng",
+  "captured": "2025-10-18",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w150773592-1.jpg": {
+  "road": "Estrada Loti - Betano (primary)",
+  "way": "w150773592",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1350246896795533",
+  "author": "kahbeng",
+  "captured": "2025-10-18",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w150773592-2.jpg": {
+  "road": "Estrada Loti - Betano (primary)",
+  "way": "w150773592",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1374564800769016",
+  "author": "kahbeng",
+  "captured": "2025-10-18",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w150773592-3.jpg": {
+  "road": "Estrada Loti - Betano (primary)",
+  "way": "w150773592",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1488030149110468",
+  "author": "kahbeng",
+  "captured": "2025-10-18",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w550548492-0.jpg": {
+  "road": "Estrada Umaboco - Viqueque (primary)",
+  "way": "w550548492",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1768600157661378",
+  "author": "kahbeng",
+  "captured": "2026-08-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w550548492-1.jpg": {
+  "road": "Estrada Umaboco - Viqueque (primary)",
+  "way": "w550548492",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=4510552849223443",
+  "author": "kahbeng",
+  "captured": "2026-08-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w550548492-2.jpg": {
+  "road": "Estrada Umaboco - Viqueque (primary)",
+  "way": "w550548492",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1715377223082741",
+  "author": "kahbeng",
+  "captured": "2026-08-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w550548492-3.jpg": {
+  "road": "Estrada Umaboco - Viqueque (primary)",
+  "way": "w550548492",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=2060390724845533",
+  "author": "kahbeng",
+  "captured": "2026-08-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w40628148-0.jpg": {
+  "road": "Estrada Baucau - Lautém (primary)",
+  "way": "w40628148",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1528552198473405",
+  "author": "kahbeng",
+  "captured": "2024-07-13",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w40628148-1.jpg": {
+  "road": "Estrada Baucau - Lautém (primary)",
+  "way": "w40628148",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1344086807410585",
+  "author": "kahbeng",
+  "captured": "2025-11-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w40628148-2.jpg": {
+  "road": "Estrada Baucau - Lautém (primary)",
+  "way": "w40628148",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1878365773113054",
+  "author": "kahbeng",
+  "captured": "2024-07-13",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/tl-w40628148-3.jpg": {
+  "road": "Estrada Baucau - Lautém (primary)",
+  "way": "w40628148",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=2032961327539271",
+  "author": "kahbeng",
+  "captured": "2025-11-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w338830884-0.jpg": {
+  "road": "P45 (secondary)",
+  "way": "w338830884",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=900336253060845",
+  "author": "mab_baldo",
+  "captured": "2026-04-07",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w338830884-1.jpg": {
+  "road": "P45 (secondary)",
+  "way": "w338830884",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1969739416996726",
+  "author": "mab_baldo",
+  "captured": "2026-04-07",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w338830884-2.jpg": {
+  "road": "P45 (secondary)",
+  "way": "w338830884",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1516730226512543",
+  "author": "mab_baldo",
+  "captured": "2026-04-07",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w338830884-3.jpg": {
+  "road": "P45 (secondary)",
+  "way": "w338830884",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=957877679976291",
+  "author": "mab_baldo",
+  "captured": "2026-04-07",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w594633876-0.jpg": {
+  "road": "(primary)",
+  "way": "w594633876",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=2025774821316600",
+  "author": "Hebrew",
+  "captured": "2026-01-30",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w594633876-1.jpg": {
+  "road": "(primary)",
+  "way": "w594633876",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=892316683762820",
+  "author": "Ange23",
+  "captured": "2026-04-05",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w594633876-2.jpg": {
+  "road": "(primary)",
+  "way": "w594633876",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1426155402426279",
+  "author": "Hebrew",
+  "captured": "2026-01-30",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/cg-w594633876-3.jpg": {
+  "road": "(primary)",
+  "way": "w594633876",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1138257441586851",
+  "author": "Hebrew",
+  "captured": "2026-01-30",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/gm-w376175462-0.jpg": {
+  "road": "(secondary)",
+  "way": "w376175462",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=707386271702803",
+  "author": "LorenzoMB",
+  "captured": "2025-05-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/gm-w376175462-1.jpg": {
+  "road": "(secondary)",
+  "way": "w376175462",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1486098949465856",
+  "author": "LorenzoMB",
+  "captured": "2025-05-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/gm-w376175462-2.jpg": {
+  "road": "(secondary)",
+  "way": "w376175462",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1207639054180120",
+  "author": "LorenzoMB",
+  "captured": "2025-05-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/gm-w376175462-3.jpg": {
+  "road": "(secondary)",
+  "way": "w376175462",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=687056354162376",
+  "author": "LorenzoMB",
+  "captured": "2025-05-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/mn-w1449651789-0.jpg": {
+  "road": "Тамын 50 km (trunk)",
+  "way": "w1449651789",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=465799716109996",
+  "author": "haliuna",
+  "captured": "2024-05-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/mn-w1449651789-1.jpg": {
+  "road": "Тамын 50 km (trunk)",
+  "way": "w1449651789",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=982802126348518",
+  "author": "haliuna",
+  "captured": "2024-05-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/mn-w1449651789-2.jpg": {
+  "road": "Тамын 50 km (trunk)",
+  "way": "w1449651789",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1026045422196657",
+  "author": "haliuna",
+  "captured": "2024-05-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/mn-w1449651789-3.jpg": {
+  "road": "Тамын 50 km (trunk)",
+  "way": "w1449651789",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=659510156342169",
+  "author": "haliuna",
+  "captured": "2024-05-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/pg-w841361566-0.jpg": {
+  "road": "Baiyer Road (secondary)",
+  "way": "w841361566",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=644320734264276",
+  "author": "roadroid",
+  "captured": "2023-06-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/pg-w841361566-1.jpg": {
+  "road": "Baiyer Road (secondary)",
+  "way": "w841361566",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=9561281277276134",
+  "author": "roadroid",
+  "captured": "2023-06-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/pg-w841361566-2.jpg": {
+  "road": "Baiyer Road (secondary)",
+  "way": "w841361566",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=121232574312526",
+  "author": "roadroid",
+  "captured": "2023-06-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/pg-w841361566-3.jpg": {
+  "road": "Baiyer Road (secondary)",
+  "way": "w841361566",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=658629222378548",
+  "author": "roadroid",
+  "captured": "2023-06-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/mm-w377792665-1.jpg": {
+  "road": "မိုင်းပျဉ်း-မက်မန်း (secondary)",
+  "way": "w377792665",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1117961652216793",
+  "author": "roadroid",
+  "captured": "2022-12-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/mm-w377792665-2.jpg": {
+  "road": "မိုင်းပျဉ်း-မက်မန်း (secondary)",
+  "way": "w377792665",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=206257555213131",
+  "author": "roadroid",
+  "captured": "2022-12-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/bo-w122604957-1.jpg": {
+  "road": "F34 (secondary)",
+  "way": "w122604957",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=883489010559420",
+  "author": "SC06",
+  "captured": "2024-11-12",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/gh-w240464670-3.jpg": {
+  "road": "Offuman - Wenchi (secondary)",
+  "way": "w240464670",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=8069990389706807",
+  "author": "Hilander",
+  "captured": "2024-07-29",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/la-w27336563-2.jpg": {
+  "road": "4508 (secondary)",
+  "way": "w27336563",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1750556146199082",
+  "author": "Airpern001",
+  "captured": "2026-10-08",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/sn-w220163316-1.jpg": {
+  "road": "R.05.0 (secondary)",
+  "way": "w220163316",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1985456995579714",
+  "author": "Coulibalyita",
+  "captured": "2025-05-26",
+  "licence": "CC BY-SA 4.0"
+ }
+}

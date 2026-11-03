@@ -1,0 +1,1003 @@
+{
+ "country": "th",
+ "name": "Thailand",
+ "data_date": "2026-10-30",
+ "run": {
+  "generated_at": "2026-11-02T14:30:10.468Z",
+  "classifier_sha256": "892814b74563",
+  "pipeline_sha256": "a23eb48558d7",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "clipped.osm.pbf",
+  "boundary": "/Users/julien/Workspaces/OSM/unpaved-app/regions/th/country.geojson",
+  "data_date_source": "newest_object"
+ },
+ "km": {
+  "motorway": {
+   "untagged": 1043.3,
+   "paved_tagged": 611.4,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 12220.7,
+   "untagged": 7879.4,
+   "rough": 3.4,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 10486.5,
+   "untagged": 7164.6,
+   "rough": 38.3,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 23858.7,
+   "untagged": 17509.3,
+   "rough": 332,
+   "offroad": 13.7,
+   "specialized": 0.1
+  },
+  "tertiary": {
+   "untagged": 37364.3,
+   "paved_tagged": 32848.6,
+   "rough": 1731.6,
+   "offroad": 1400.8,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 92304,
+   "offroad": 30384.9,
+   "paved_tagged": 27866.8,
+   "rough": 3518.6,
+   "specialized": 16
+  },
+  "residential": {
+   "untagged": 283310.8,
+   "offroad": 46451.4,
+   "paved_tagged": 20851.5,
+   "rough": 959.2,
+   "specialized": 0.1
+  },
+  "all": {
+   "untagged": 446575.6,
+   "paved_tagged": 128744.1,
+   "offroad": 78250.8,
+   "rough": 6583,
+   "specialized": 16.2
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 611.4
+  },
+  "trunk": {
+   "surface": 12224,
+   "smoothness": 730
+  },
+  "primary": {
+   "surface": 10524.8,
+   "smoothness": 969.5,
+   "tracktype": 0.6
+  },
+  "secondary": {
+   "surface": 24157.8,
+   "smoothness": 2488.9,
+   "tracktype": 3
+  },
+  "tertiary": {
+   "surface": 35864.8,
+   "smoothness": 2999.2,
+   "tracktype": 49.5
+  },
+  "unclassified": {
+   "surface": 61559,
+   "smoothness": 4274.4,
+   "tracktype": 1409.3,
+   "4wd_only": 51.7
+  },
+  "residential": {
+   "surface": 68142.5,
+   "smoothness": 453.7,
+   "tracktype": 341.4,
+   "4wd_only": 4.3
+  },
+  "all": {
+   "surface": 213084.3,
+   "smoothness": 11915.9,
+   "tracktype": 1803.9,
+   "4wd_only": 56
+  }
+ },
+ "source_km": {
+  "motorway": {
+   "default": 1043.3,
+   "surface": 611.4
+  },
+  "trunk": {
+   "surface": 11494,
+   "default": 7879.4,
+   "smoothness": 730
+  },
+  "primary": {
+   "surface": 9554.6,
+   "default": 7164.6,
+   "smoothness": 969.5,
+   "tracktype": 0.6
+  },
+  "secondary": {
+   "surface": 21712.5,
+   "default": 17509.3,
+   "smoothness": 2488.9,
+   "tracktype": 3
+  },
+  "tertiary": {
+   "default": 37364.3,
+   "surface": 32953.5,
+   "smoothness": 2992.3,
+   "tracktype": 35.3
+  },
+  "unclassified": {
+   "default": 92304,
+   "surface": 56638.5,
+   "smoothness": 4263.5,
+   "tracktype": 880.1,
+   "4wd_only": 4.2
+  },
+  "residential": {
+   "default": 283310.8,
+   "surface": 67482.8,
+   "smoothness": 452.6,
+   "tracktype": 326.7
+  },
+  "all": {
+   "default": 446575.6,
+   "surface": 200447.3,
+   "smoothness": 11896.9,
+   "tracktype": 1245.7,
+   "4wd_only": 4.2
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "paved": {
+    "surface=asphalt": 556.9,
+    "surface=concrete": 52.6,
+    "surface=paved": 1.8
+   },
+   "rough": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "paved": {
+    "surface=asphalt": 8222.7,
+    "surface=paved": 2369.8,
+    "surface=concrete": 901.1,
+    "smoothness=good": 670.3,
+    "smoothness=excellent": 56.4,
+    "surface=concrete:plates": 0.4
+   },
+   "rough": {
+    "smoothness=bad": 1.8,
+    "smoothness=intermediate": 1.6
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "paved": {
+    "surface=asphalt": 6820.9,
+    "surface=paved": 2292.5,
+    "smoothness=good": 522.3,
+    "surface=concrete": 439.5,
+    "smoothness=excellent": 409.5,
+    "surface=concrete:plates": 1.4,
+    "surface=chipseal": 0.2,
+    "surface=asphalt;concrete": 0.1,
+    "surface=paving_stones": 0
+   },
+   "rough": {
+    "smoothness=intermediate": 27.6,
+    "smoothness=bad": 10.1,
+    "tracktype=grade2": 0.6
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "paved": {
+    "surface=asphalt": 15084.7,
+    "surface=paved": 6022.9,
+    "smoothness=excellent": 1194.2,
+    "smoothness=good": 959.7,
+    "surface=concrete": 578.9,
+    "surface=concrete:plates": 17.6,
+    "surface=paving_stones": 0.6,
+    "surface=wood": 0.1,
+    "surface=metal": 0.1
+   },
+   "rough": {
+    "smoothness=bad": 273.8,
+    "smoothness=intermediate": 53.4,
+    "tracktype=grade2": 3,
+    "surface=gravel": 1.7
+   },
+   "offroad": {
+    "smoothness=very_bad": 7.8,
+    "surface=unpaved": 5.5,
+    "surface=aas": 0.3,
+    "surface=artificial_turf": 0.1
+   },
+   "specialized": {
+    "smoothness=impassable": 0.1
+   }
+  },
+  "tertiary": {
+   "paved": {
+    "surface=asphalt": 19416.1,
+    "surface=paved": 10441.9,
+    "surface=concrete": 1628.9,
+    "smoothness=excellent": 767.2,
+    "smoothness=good": 555.6,
+    "tracktype=grade1": 17.6,
+    "surface=concrete:plates": 15.5,
+    "surface=bricks": 4.3,
+    "surface=cobblestone": 1.2,
+    "surface=paving_stones": 0.3,
+    "surface=wood": 0.1
+   },
+   "rough": {
+    "smoothness=bad": 1382.6,
+    "surface=gravel": 160.4,
+    "smoothness=intermediate": 157.1,
+    "surface=compacted": 21.9,
+    "tracktype=grade2": 9.6
+   },
+   "offroad": {
+    "surface=unpaved": 1184.2,
+    "smoothness=very_bad": 83.7,
+    "surface=dirt": 78.5,
+    "smoothness=horrible": 46.1,
+    "tracktype=grade3": 6,
+    "tracktype=grade5": 2,
+    "surface=ground": 0.2,
+    "surface=ปน.3058": 0.1
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "paved": {
+    "surface=paved": 13218.4,
+    "surface=asphalt": 9117.9,
+    "surface=concrete": 4666,
+    "smoothness=good": 443.5,
+    "tracktype=grade1": 223.4,
+    "smoothness=excellent": 146.5,
+    "surface=concrete:plates": 21.6,
+    "surface=paving_stones": 13.4,
+    "surface=cobblestone": 12.8,
+    "surface=paved; asphalt": 2.5,
+    "surface=metal": 0.7,
+    "surface=wood": 0.2
+   },
+   "rough": {
+    "surface=gravel": 1665.3,
+    "smoothness=bad": 1184.1,
+    "tracktype=grade2": 327.2,
+    "surface=compacted": 220.4,
+    "smoothness=intermediate": 99.8,
+    "surface=fine_gravel": 21.9
+   },
+   "offroad": {
+    "surface=unpaved": 26459.4,
+    "smoothness=very_bad": 2161.8,
+    "surface=dirt": 808.3,
+    "surface=ground": 246.6,
+    "smoothness=horrible": 211.8,
+    "tracktype=grade3": 185.7,
+    "tracktype=grade4": 128.2,
+    "surface=sand": 60.9,
+    "surface=concrete:lanes": 33.7,
+    "surface=earth": 24.8,
+    "tracktype=grade5": 15.6,
+    "surface=pebblestone": 15.4,
+    "surface=dirt/sand": 9.2,
+    "surface=laterite": 5.8,
+    "4wd_only=yes": 4.2,
+    "surface=as\\": 3.4,
+    "surface=ไม่ปรับผิวแ": 2,
+    "surface=gruspukk": 1.9,
+    "surface=rock": 1.8,
+    "surface=ถนน_ค.ส.ล.": 1.5,
+    "surface=partial unpaved": 1.3,
+    "surface=W": 0.8,
+    "surface=grass": 0.4,
+    "surface=asfalto,_empinado": 0.2,
+    "surface=unpavedW": 0.2,
+    "surface=unpavedsource:geometry=strava": 0.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 16
+   }
+  },
+  "residential": {
+   "paved": {
+    "surface=paved": 8759.2,
+    "surface=concrete": 7739.1,
+    "surface=asphalt": 3908.1,
+    "smoothness=good": 171.8,
+    "tracktype=grade1": 129.5,
+    "surface=concrete:plates": 62.8,
+    "smoothness=excellent": 39.7,
+    "surface=paving_stones": 37.6,
+    "surface=sett": 1.3,
+    "surface=wood": 0.9,
+    "surface=cobblestone": 0.6,
+    "surface=chipseal": 0.5,
+    "surface=bricks": 0.1,
+    "surface=metal": 0.1
+   },
+   "rough": {
+    "surface=gravel": 411.1,
+    "surface=compacted": 199.5,
+    "tracktype=grade2": 124.5,
+    "smoothness=intermediate": 119.2,
+    "smoothness=bad": 82.4,
+    "surface=fine_gravel": 21,
+    "surface=unhewn_cobblestone": 1.4
+   },
+   "offroad": {
+    "surface=unpaved": 45505,
+    "surface=dirt": 609.4,
+    "surface=ground": 119,
+    "tracktype=grade3": 54.5,
+    "surface=sand": 45.8,
+    "smoothness=very_bad": 30.4,
+    "tracktype=grade4": 17,
+    "surface=concrete:lanes": 16.3,
+    "surface=earth": 13.2,
+    "surface=pebblestone": 10.4,
+    "smoothness=horrible": 8.9,
+    "surface=grass": 4,
+    "surface=laterite": 2.9,
+    "surface=residential": 2.5,
+    "surface=d": 2,
+    "surface=partial unpaved": 1.6,
+    "tracktype=grade5": 1.1,
+    "surface=dirt/sand": 1.1,
+    "surface=cement": 1.1,
+    "surface=mud": 0.9,
+    "surface=ไม่ปรับผิวc": 0.9,
+    "surface=paved;unpaved": 0.6,
+    "surface=ไม่ปรับผิวท": 0.5,
+    "surface=rock": 0.4,
+    "surface=c": 0.4,
+    "surface=ไม่ปรับผิวz": 0.3,
+    "surface=clay": 0.2,
+    "surface=re": 0.2,
+    "surface=ไม่ปรับผิวแ": 0.1,
+    "surface=ถนนส่วนบุคคล": 0.1,
+    "surface=ไม่ปรับผิวหช": 0.1,
+    "surface=grass_paver": 0.1,
+    "surface=Soi 62": 0.1,
+    "surface=steel": 0.1,
+    "surface=brick": 0.1,
+    "surface=woodchips": 0,
+    "surface=concte": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.1
+   }
+  },
+  "all": {
+   "paved": {
+    "surface=asphalt": 63127.4,
+    "surface=paved": 43106.5,
+    "surface=concrete": 16006.1,
+    "smoothness=good": 3323.2,
+    "smoothness=excellent": 2613.5,
+    "tracktype=grade1": 370.6,
+    "surface=concrete:plates": 119.3,
+    "surface=paving_stones": 51.9,
+    "surface=cobblestone": 14.6,
+    "surface=bricks": 4.4,
+    "surface=paved; asphalt": 2.5,
+    "surface=sett": 1.3,
+    "surface=wood": 1.1,
+    "surface=metal": 0.9,
+    "surface=chipseal": 0.7,
+    "surface=asphalt;concrete": 0.1
+   },
+   "rough": {
+    "smoothness=bad": 2934.8,
+    "surface=gravel": 2238.5,
+    "tracktype=grade2": 464.9,
+    "smoothness=intermediate": 458.7,
+    "surface=compacted": 441.7,
+    "surface=fine_gravel": 42.9,
+    "surface=unhewn_cobblestone": 1.4
+   },
+   "offroad": {
+    "surface=unpaved": 73154,
+    "smoothness=very_bad": 2283.7,
+    "surface=dirt": 1496.2,
+    "surface=ground": 365.8,
+    "smoothness=horrible": 266.8,
+    "tracktype=grade3": 246.3,
+    "tracktype=grade4": 145.2,
+    "surface=sand": 106.7,
+    "surface=concrete:lanes": 50,
+    "surface=earth": 38,
+    "surface=pebblestone": 25.7,
+    "tracktype=grade5": 18.7,
+    "surface=dirt/sand": 10.3,
+    "surface=laterite": 8.7,
+    "surface=grass": 4.4,
+    "4wd_only=yes": 4.2,
+    "surface=as\\": 3.4,
+    "surface=partial unpaved": 2.9,
+    "surface=residential": 2.5,
+    "surface=rock": 2.2,
+    "surface=ไม่ปรับผิวแ": 2.2,
+    "surface=d": 2,
+    "surface=gruspukk": 1.9,
+    "surface=ถนน_ค.ส.ล.": 1.5,
+    "surface=cement": 1.1,
+    "surface=mud": 0.9,
+    "surface=ไม่ปรับผิวc": 0.9,
+    "surface=W": 0.8,
+    "surface=paved;unpaved": 0.6,
+    "surface=ไม่ปรับผิวท": 0.5,
+    "surface=c": 0.4,
+    "surface=aas": 0.3,
+    "surface=ไม่ปรับผิวz": 0.3,
+    "surface=asfalto,_empinado": 0.2,
+    "surface=clay": 0.2,
+    "surface=re": 0.2,
+    "surface=unpavedW": 0.2,
+    "surface=ถนนส่วนบุคคล": 0.1,
+    "surface=artificial_turf": 0.1,
+    "surface=ไม่ปรับผิวหช": 0.1,
+    "surface=unpavedsource:geometry=strava": 0.1,
+    "surface=grass_paver": 0.1,
+    "surface=Soi 62": 0.1,
+    "surface=steel": 0.1,
+    "surface=brick": 0.1,
+    "surface=ปน.3058": 0.1,
+    "surface=woodchips": 0,
+    "surface=concte": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 16.1,
+    "smoothness=impassable": 0.1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "smoothness=rough": 13.9,
+  "surface=dirt/sand": 10.3,
+  "surface=as\\": 3.4,
+  "surface=partial unpaved": 2.9,
+  "surface=residential": 2.5,
+  "surface=ไม่ปรับผิวแ": 2.2,
+  "surface=d": 2,
+  "surface=gruspukk": 1.9,
+  "smoothness=e4": 1.6,
+  "surface=ถนน_ค.ส.ล.": 1.5,
+  "smoothness=poor": 1.3,
+  "surface=cement": 1.1,
+  "surface=ไม่ปรับผิวc": 0.9,
+  "surface=W": 0.8,
+  "surface=ไม่ปรับผิวท": 0.5,
+  "surface=c": 0.4,
+  "surface=aas": 0.3,
+  "smoothness=very_badunpaved": 0.3,
+  "surface=ไม่ปรับผิวz": 0.3,
+  "smoothness=awful": 0.2,
+  "surface=asfalto,_empinado": 0.2,
+  "surface=re": 0.2,
+  "surface=unpavedW": 0.2,
+  "surface=ถนนส่วนบุคคล": 0.1,
+  "smoothness=4": 0.1,
+  "surface=artificial_turf": 0.1,
+  "smoothness=good;intermediate": 0.1,
+  "surface=ไม่ปรับผิวหช": 0.1,
+  "surface=unpavedsource:geometry=strava": 0.1,
+  "surface=Soi 62": 0.1,
+  "surface=steel": 0.1,
+  "surface=brick": 0.1,
+  "surface=ปน.3058": 0.1,
+  "smoothness=c": 0,
+  "surface=concte": 0
+ },
+ "conflict_km": {
+  "smoothness=horrible + surface=asphalt": 84,
+  "smoothness=very_bad + surface=paved": 31.3,
+  "smoothness=very_bad + surface=concrete": 23.6,
+  "smoothness=excellent + surface=unpaved": 6.2,
+  "smoothness=horrible + surface=concrete": 4.3,
+  "smoothness=very_bad + surface=asphalt": 2,
+  "smoothness=horrible + surface=paved": 0.9,
+  "smoothness=good + surface=aas": 0.9,
+  "smoothness=very_bad + surface=wood": 0.2,
+  "smoothness=impassable + surface=paved": 0.1,
+  "smoothness=very_horrible + surface=concrete": 0.1,
+  "smoothness=horrible + surface=wood": 0
+ },
+ "odd": {
+  "major_offroad": [
+   {
+    "id": "w283410813",
+    "highway": "secondary",
+    "km": 7.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "country": "Thailand",
+     "highway": "secondary",
+     "ref": "1093",
+     "smoothness": "very_bad",
+     "source": "GPS",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w803763872",
+    "highway": "secondary",
+    "km": 3.7,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "4258",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w766802650",
+    "highway": "secondary",
+    "km": 1.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "hwpi": "3",
+     "ref": "4276",
+     "source": "Bing",
+     "source:ref": "BHMM Roadnet",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w285739641",
+    "highway": "tertiary",
+    "km": 8.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "description": "no surface 30km !!! (2023)",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "ref": "กจ.3091",
+     "smoothness": "very_bad",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w1446182984",
+    "highway": "unclassified",
+    "km": 8.4,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "unclassified",
+     "note:surface": "80% paved but still rough bits for city cars",
+     "smoothness": "very_bad",
+     "source": "GPS",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w283410813",
+    "highway": "secondary",
+    "km": 7.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "country": "Thailand",
+     "highway": "secondary",
+     "ref": "1093",
+     "smoothness": "very_bad",
+     "source": "GPS",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w108883265",
+    "highway": "unclassified",
+    "km": 6.3,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "unclassified",
+     "note": "Cant find on DRR DB so unclassified.",
+     "smoothness": "horrible",
+     "source": "Bing; GPS",
+     "surface": "asphalt",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w968692295",
+    "highway": "unclassified",
+    "km": 6.2,
+    "level": "paved",
+    "source": "smoothness",
+    "tags": {
+     "highway": "unclassified",
+     "import": "grabremote",
+     "lanes": "2",
+     "ref": "ลป.4033",
+     "smoothness": "excellent",
+     "source": "DigitalGlobe-Standard",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w117157431",
+    "highway": "tertiary",
+    "km": 5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "ขก.2119",
+     "smoothness": "horrible",
+     "source": "Bing; GPS; sign",
+     "surface": "asphalt",
+     "width": "7"
+    }
+   },
+   {
+    "id": "w164041755",
+    "highway": "tertiary",
+    "km": 4.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "ขก.3018",
+     "smoothness": "horrible",
+     "source": "Bing; GPS; sign",
+     "surface": "asphalt",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w108083183",
+    "highway": "tertiary",
+    "km": 4.2,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "ขก.3051",
+     "smoothness": "horrible",
+     "source": "Bing; GPS; sign",
+     "surface": "asphalt",
+     "width": "8"
+    }
+   },
+   {
+    "id": "w1446182988",
+    "highway": "unclassified",
+    "km": 4.2,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "unclassified",
+     "note:surface": "80% paved but still rough bits for city cars",
+     "smoothness": "very_bad",
+     "source": "GPS",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w157810206",
+    "highway": "tertiary",
+    "km": 3.4,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "ขก.3051",
+     "smoothness": "horrible",
+     "source": "Bing; GPS; sign",
+     "surface": "asphalt",
+     "width": "8"
+    }
+   },
+   {
+    "id": "w157653479",
+    "highway": "tertiary",
+    "km": 3.3,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "ขก.3025",
+     "smoothness": "horrible",
+     "source": "Bing; GPS; sign",
+     "surface": "asphalt",
+     "width": "7"
+    }
+   },
+   {
+    "id": "w157514928",
+    "highway": "unclassified",
+    "km": 3.3,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "source": "Bing",
+     "surface": "asphalt",
+     "width": "7"
+    }
+   },
+   {
+    "id": "w156587463",
+    "highway": "unclassified",
+    "km": 3.2,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "source": "Bing; GPS",
+     "surface": "asphalt",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w105441667",
+    "highway": "unclassified",
+    "km": 3.2,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "lanes": "2",
+     "motor_vehicle": "yes",
+     "smoothness": "horrible",
+     "source": "GPS",
+     "surface": "concrete",
+     "url": "http://www.captainslash.com/nan-some-side-roads-sop-khun/",
+     "width": "2"
+    }
+   },
+   {
+    "id": "w121691440",
+    "highway": "unclassified",
+    "km": 3.2,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "source": "Bing; GPS",
+     "surface": "asphalt",
+     "width": "7"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w758370819",
+    "highway": "unclassified",
+    "km": 5.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "source": "Bing",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w348763605",
+    "highway": "unclassified",
+    "km": 3.5,
+    "level": "paved",
+    "source": "default",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "rough",
+     "source": "DigitalGlobe-Premium"
+    }
+   },
+   {
+    "id": "w231260566",
+    "highway": "unclassified",
+    "km": 3.4,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "as\\"
+    }
+   },
+   {
+    "id": "w651342841",
+    "highway": "unclassified",
+    "km": 2.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "oneway": "no",
+     "source": "digitalglobe;Mapbox",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w528000707",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "paved",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "note": "Blue signs erected",
+     "smoothness": "rough",
+     "source": "DigitalGlobe-Standard",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w656495391",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "paved",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "note": "Potholed rough section, not exactly sure of start or finish.",
+     "old_ref": "ตก.6011",
+     "ref": "ลป.3045",
+     "smoothness": "rough",
+     "source": "GPS survey, sign",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w614975238",
+    "highway": "residential",
+    "km": 2.4,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "residential",
+     "import": "yes",
+     "source": "digitalglobe",
+     "surface": "residential"
+    }
+   },
+   {
+    "id": "w538065687",
+    "highway": "unclassified",
+    "km": 2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "source": "digitalglobe",
+     "surface": "ไม่ปรับผิวแ"
+    }
+   },
+   {
+    "id": "w626237739",
+    "highway": "residential",
+    "km": 2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "residential",
+     "import": "yes",
+     "source": "digitalglobe",
+     "surface": "d"
+    }
+   },
+   {
+    "id": "w1028568284",
+    "highway": "unclassified",
+    "km": 1.9,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "source": "Mapbox",
+     "surface": "gruspukk"
+    }
+   },
+   {
+    "id": "w339062352",
+    "highway": "residential",
+    "km": 1.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "residential",
+     "surface": "partial unpaved"
+    }
+   },
+   {
+    "id": "w73142919",
+    "highway": "unclassified",
+    "km": 1.6,
+    "level": "paved",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "lane_markings": "yes",
+     "lanes": "2",
+     "smoothness": "e4",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w430214459",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "paved",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "ref": "90-009",
+     "smoothness": "rough",
+     "source": "GPS",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w1396488178",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "cutting": "yes",
+     "highway": "unclassified",
+     "lanes": "2",
+     "name": "ถนนสายหลังเทศบาลตำบลโคกก่อง บ้านโคกก่อง หมู่ 1 - บก.ถ.4-0001",
+     "surface": "ถนน_ค.ส.ล."
+    }
+   },
+   {
+    "id": "w227286884",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "paved",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "rough",
+     "source": "Bing, GPS",
+     "surface": "asphalt"
+    }
+   }
+  ]
+ }
+}

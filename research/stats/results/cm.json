@@ -1,0 +1,1235 @@
+{
+ "country": "cm",
+ "name": "Cameroon",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T02:59:31.182Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "cameroon-latest.osm.pbf",
+  "boundary": "r192830",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 148.7,
+   "untagged": 65.5,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 5078.2,
+   "unpaved": 1822.8,
+   "untagged": 764.4,
+   "offroad": 307.8,
+   "specialized": 0
+  },
+  "primary": {
+   "unpaved": 2909.3,
+   "paved_tagged": 1953.3,
+   "untagged": 570.1,
+   "offroad": 4.2,
+   "specialized": 0
+  },
+  "secondary": {
+   "unpaved": 7815.6,
+   "untagged": 1499.9,
+   "paved_tagged": 1293.4,
+   "specialized": 110.8,
+   "offroad": 49.9
+  },
+  "tertiary": {
+   "unpaved": 14747.4,
+   "untagged": 4868.8,
+   "paved_tagged": 940.7,
+   "offroad": 181.3,
+   "specialized": 0
+  },
+  "unclassified": {
+   "unpaved": 29160.3,
+   "untagged": 19373.5,
+   "paved_tagged": 382.9,
+   "offroad": 156,
+   "specialized": 64.4
+  },
+  "residential": {
+   "unpaved": 21038.6,
+   "untagged": 19023.7,
+   "paved_tagged": 1012.8,
+   "offroad": 54.4,
+   "specialized": 0
+  },
+  "all": {
+   "unpaved": 77494,
+   "untagged": 46166,
+   "paved_tagged": 10810,
+   "offroad": 753.6,
+   "specialized": 175.2
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 148.7
+  },
+  "trunk": {
+   "surface": 7208.8,
+   "smoothness": 706.2,
+   "tracktype": 74
+  },
+  "primary": {
+   "surface": 4866.9,
+   "smoothness": 172.9,
+   "tracktype": 22.7
+  },
+  "secondary": {
+   "surface": 9269.7,
+   "smoothness": 304.5,
+   "tracktype": 183.4
+  },
+  "tertiary": {
+   "surface": 15859.5,
+   "tracktype": 621,
+   "smoothness": 147.1
+  },
+  "unclassified": {
+   "surface": 29634.4,
+   "tracktype": 570.7,
+   "smoothness": 124.9,
+   "4wd_only": 7.4
+  },
+  "residential": {
+   "surface": 22056.6,
+   "smoothness": 316.8,
+   "tracktype": 183.3
+  },
+  "all": {
+   "surface": 89044.6,
+   "smoothness": 1772.4,
+   "tracktype": 1655.1,
+   "4wd_only": 7.4
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 148.7,
+   "default": 65.5
+  },
+  "trunk": {
+   "surface": 7208.8,
+   "default": 764.4
+  },
+  "primary": {
+   "surface": 4866.9,
+   "default": 570.1
+  },
+  "secondary": {
+   "surface": 9269.7,
+   "default": 1499.9,
+   "tracktype": 0
+  },
+  "tertiary": {
+   "surface": 15859.5,
+   "default": 4868.8,
+   "tracktype": 9.9
+  },
+  "unclassified": {
+   "surface": 29634.4,
+   "default": 19373.5,
+   "tracktype": 129.2
+  },
+  "residential": {
+   "surface": 22056.6,
+   "default": 19023.7,
+   "tracktype": 49.1
+  },
+  "all": {
+   "surface": 89044.6,
+   "default": 46166,
+   "tracktype": 188.3
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {
+   "smoothness": 298.4,
+   "tracktype": 9.4
+  },
+  "primary": {
+   "smoothness": 4.2
+  },
+  "secondary": {
+   "smoothness": 128.5,
+   "tracktype": 32.2
+  },
+  "tertiary": {
+   "tracktype": 161,
+   "smoothness": 20.3
+  },
+  "unclassified": {
+   "tracktype": 137.8,
+   "smoothness": 75.2,
+   "4wd_only": 7.4
+  },
+  "residential": {
+   "smoothness": 31.5,
+   "tracktype": 22.9
+  },
+  "all": {
+   "smoothness": 558.2,
+   "tracktype": 363.3,
+   "4wd_only": 7.4
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 1206.7,
+    "surface=ground": 466.9,
+    "surface=laterite": 223.4,
+    "surface=karral": 72.6,
+    "surface=compacted": 65.2,
+    "surface=dirt": 60.4,
+    "surface=mud": 35.3
+   },
+   "offroad": {
+    "smoothness=horrible": 181.1,
+    "smoothness=very_bad": 117.3,
+    "tracktype=grade5": 9.4
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 1654,
+    "surface=ground": 731.7,
+    "surface=laterite": 307.3,
+    "surface=gravel": 87.8,
+    "surface=compacted": 61.3,
+    "surface=clay": 37.1,
+    "surface=dirt": 17.1,
+    "surface=karral": 13.6,
+    "surface=pozzolan": 2.8,
+    "surface=fine_gravel": 0.8
+   },
+   "offroad": {
+    "smoothness=very_bad": 4.2
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 4733.4,
+    "surface=ground": 2534.3,
+    "surface=laterite": 339.3,
+    "surface=karral": 145.7,
+    "surface=compacted": 104.7,
+    "surface=clay": 58.4,
+    "surface=mud": 30.7,
+    "surface=clay;rock": 16,
+    "surface=dirt": 10,
+    "surface=rock": 2,
+    "surface=pozzolan": 1.2,
+    "surface=concrete:lanes": 0.2,
+    "surface=fine_gravel": 0.2,
+    "surface=gravel": 0.1,
+    "surface=sand": 0.1,
+    "tracktype=grade2": 0
+   },
+   "offroad": {
+    "tracktype=grade5": 30,
+    "smoothness=very_bad": 17.7,
+    "tracktype=grade3": 2.2,
+    "tracktype=grade4": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 110.8
+   }
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 7018.3,
+    "surface=ground": 6774,
+    "surface=dirt": 426.5,
+    "surface=laterite": 331.6,
+    "surface=compacted": 313.9,
+    "surface=sand": 37.5,
+    "surface=Non Bitume": 7.6,
+    "surface=Non Bitumee": 7.5,
+    "surface=Bitumee": 6.2,
+    "surface=gravel": 2.9,
+    "tracktype=grade2": 2.4,
+    "surface=grass": 0.3,
+    "tracktype=grade3": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 87.3,
+    "tracktype=grade5": 55.8,
+    "tracktype=grade4": 17.8,
+    "smoothness=horrible": 16,
+    "smoothness=very_bad": 4.3
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 20595.1,
+    "surface=ground": 8150.4,
+    "surface=dirt": 351.6,
+    "surface=laterite": 131.1,
+    "surface=sand": 41.6,
+    "surface=compacted": 34.3,
+    "surface=earth": 19.4,
+    "tracktype=grade3": 14.3,
+    "surface=gravel": 9.5,
+    "surface=Non Bitume": 7.4,
+    "tracktype=grade2": 6.1,
+    "surface=dirt/sand": 3.4,
+    "surface=grass": 3.4,
+    "surface=rock": 3.2,
+    "tracktype=grade5": 2.7,
+    "surface=mud": 1.3,
+    "surface=sans revêtemen": 1.2,
+    "tracktype=grade4": 1.2,
+    "surface=tartan": 1.2,
+    "surface=fine_gravel": 1,
+    "surface=pebblestone": 0.6,
+    "surface=sans revêtementY": 0.4,
+    "surface=karral": 0.4
+   },
+   "offroad": {
+    "tracktype=grade3": 126.2,
+    "tracktype=grade4": 8.8,
+    "4wd_only=yes": 7.4,
+    "smoothness=horrible": 6,
+    "smoothness=very_bad": 4.8,
+    "tracktype=grade5": 2.7
+   },
+   "specialized": {
+    "smoothness=very_horrible": 64.4
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 17557.4,
+    "surface=ground": 3179.4,
+    "surface=dirt": 176,
+    "surface=sand": 92,
+    "surface=dirt/sand": 14.8,
+    "surface=laterite": 14.3,
+    "tracktype=grade2": 14.1,
+    "surface=compacted": 10.4,
+    "surface=grass": 8.4,
+    "surface=mud": 7.7,
+    "surface=earth": 5.1,
+    "tracktype=grade4": 4.2,
+    "surface=rock": 2.6,
+    "surface=pebblestone": 2.5,
+    "tracktype=grade3": 1.4,
+    "surface=unhewn_cobblestone": 0.5,
+    "surface=fine_gravel": 0.5,
+    "surface=snas": 0.5,
+    "surface=grass_paver": 0.4,
+    "surface=gravel": 0.4,
+    "surface=Non classé": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 31.1,
+    "tracktype=grade3": 14.2,
+    "tracktype=grade4": 6.1,
+    "tracktype=grade5": 2.7,
+    "smoothness=horrible": 0.4
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 52764.9,
+    "surface=ground": 21836.6,
+    "surface=laterite": 1346.9,
+    "surface=dirt": 1041.6,
+    "surface=compacted": 590,
+    "surface=karral": 232.3,
+    "surface=sand": 171.3,
+    "surface=gravel": 100.7,
+    "surface=clay": 95.5,
+    "surface=mud": 75,
+    "surface=earth": 24.5,
+    "tracktype=grade2": 22.6,
+    "surface=dirt/sand": 18.2,
+    "surface=clay;rock": 16,
+    "tracktype=grade3": 15.8,
+    "surface=Non Bitume": 14.9,
+    "surface=grass": 12.1,
+    "surface=rock": 7.8,
+    "surface=Non Bitumee": 7.5,
+    "surface=Bitumee": 6.2,
+    "tracktype=grade4": 5.4,
+    "surface=pozzolan": 4,
+    "surface=pebblestone": 3.1,
+    "tracktype=grade5": 2.7,
+    "surface=fine_gravel": 2.5,
+    "surface=sans revêtemen": 1.2,
+    "surface=tartan": 1.2,
+    "surface=unhewn_cobblestone": 0.5,
+    "surface=snas": 0.5,
+    "surface=grass_paver": 0.4,
+    "surface=sans revêtementY": 0.4,
+    "surface=concrete:lanes": 0.2,
+    "surface=Non classé": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 229.8,
+    "smoothness=horrible": 203.6,
+    "smoothness=very_bad": 179.4,
+    "tracktype=grade5": 100.7,
+    "tracktype=grade4": 32.7,
+    "4wd_only=yes": 7.4
+   },
+   "specialized": {
+    "smoothness=very_horrible": 175.2
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=karral": 232.3,
+  "smoothness=p": 123.8,
+  "surface=dirt/sand": 18.2,
+  "surface=Non Bitume": 14.9,
+  "surface=Non Bitumee": 7.5,
+  "surface=Bitumee": 6.2,
+  "smoothness=P": 5.3,
+  "surface=pozzolan": 4,
+  "surface=sans revêtemen": 1.2,
+  "surface=tartan": 1.2,
+  "smoothness=intermediate;good": 1.1,
+  "smoothness=sans": 0.9,
+  "surface=snas": 0.5,
+  "surface=sans revêtementY": 0.4,
+  "surface=Non classé": 0.1
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + smoothness=horrible": 90.3,
+  "smoothness=good + surface=laterite": 47,
+  "smoothness=good + surface=ground": 14.2,
+  "smoothness=good + surface=unpaved": 9.6,
+  "smoothness=good + surface=dirt": 7.5,
+  "paved (surface=asphalt) + smoothness=very_bad": 6,
+  "paved (no surface) + smoothness=horrible": 2.6,
+  "paved (surface=paved) + tracktype=grade5": 0.5,
+  "paved (surface=asphalt) + smoothness=very_horrible": 0.4,
+  "paved (surface=paved) + smoothness=very_bad": 0.2,
+  "paved (surface=concrete) + smoothness=horrible": 0.2
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w242949573",
+    "highway": "secondary",
+    "km": 96.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ngaoundéré - Bélel",
+     "operator": "Région",
+     "ref": "D21",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w292853808",
+    "highway": "primary",
+    "km": 78,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Tibati-Ngaoundéré",
+     "ref": "P12",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w334982926",
+    "highway": "secondary",
+    "km": 74.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Région",
+     "ref": "D90",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w95946114",
+    "highway": "secondary",
+    "km": 74.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w23482606",
+    "highway": "trunk",
+    "km": 72.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "ref": "N15A",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w445379967",
+    "highway": "secondary",
+    "km": 69.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "D30",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w483663957",
+    "highway": "trunk",
+    "km": 62.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "ref": "N19",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w230453830",
+    "highway": "secondary",
+    "km": 60.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "D36",
+     "source": "GPS",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w247400055",
+    "highway": "secondary",
+    "km": 60.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "D82",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w231948084",
+    "highway": "primary",
+    "km": 57.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "operator": "Région",
+     "ref": "P 23",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w219963453",
+    "highway": "secondary",
+    "km": 53.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Commune",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "start_date": "1986",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w308995990",
+    "highway": "secondary",
+    "km": 52.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "D78",
+     "start_date": "1986",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w220773145",
+    "highway": "secondary",
+    "km": 50.9,
+    "level": "specialized",
+    "tags": {
+     "highway": "secondary",
+     "ref": "D25",
+     "smoothness": "very_horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w296216410",
+    "highway": "trunk",
+    "km": 48.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "operator": "État",
+     "ref": "N1A",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w44584042",
+    "highway": "primary",
+    "km": 47.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "P5",
+     "smoothness": "bad",
+     "source": "suvery",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w220773145",
+    "highway": "secondary",
+    "km": 50.9,
+    "level": "specialized",
+    "tags": {
+     "highway": "secondary",
+     "ref": "D25",
+     "smoothness": "very_horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w223347478",
+    "highway": "tertiary",
+    "km": 45.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w157308475",
+    "highway": "tertiary",
+    "km": 34.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Bafia-Deak",
+     "surface": "sand",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w276983870",
+    "highway": "tertiary",
+    "km": 34.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w647614722",
+    "highway": "secondary",
+    "km": 32.1,
+    "level": "specialized",
+    "tags": {
+     "highway": "secondary",
+     "name": "Batouri-Kette",
+     "ref": "D25",
+     "smoothness": "very_horrible",
+     "source": "Bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w44582728",
+    "highway": "secondary",
+    "km": 27.7,
+    "level": "specialized",
+    "tags": {
+     "highway": "secondary",
+     "name": "Batouri-Kette",
+     "ref": "D25",
+     "smoothness": "very_horrible",
+     "source": "Bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w220761546",
+    "highway": "trunk",
+    "km": 22.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "name": "Batouri-Kentzou",
+     "ref": "N10A",
+     "smoothness": "horrible",
+     "source": "Bing, survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w229169195",
+    "highway": "unclassified",
+    "km": 22.6,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w204450184",
+    "highway": "trunk",
+    "km": 20.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "name": "Batouri-Yokadouma",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "survey",
+     "start_date": "1986",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w227916474",
+    "highway": "unclassified",
+    "km": 19.5,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w44582680",
+    "highway": "trunk",
+    "km": 19.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "name": "Batouri-Yokadouma",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "survey",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w223474382",
+    "highway": "unclassified",
+    "km": 18.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w207328415",
+    "highway": "trunk",
+    "km": 17.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "name": "Batouri-Yokadouma",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w223474387",
+    "highway": "unclassified",
+    "km": 17.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w174317194",
+    "highway": "secondary",
+    "km": 16.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "ref": "D28",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w317636639",
+    "highway": "trunk",
+    "km": 28.2,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Bertoua-Batouri",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "suvery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w44582719",
+    "highway": "trunk",
+    "km": 26.3,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Bertoua-Batouri",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "suvery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1527506643",
+    "highway": "trunk",
+    "km": 14.5,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Bertoua-Batouri",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "suvery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w316309030",
+    "highway": "tertiary",
+    "km": 11.6,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "name": "Route Nkoum Mbaguempel",
+     "oneway": "no",
+     "operator": "commune",
+     "smoothness": "good",
+     "source": "Landsat;WRI",
+     "start_date": "after 2020",
+     "surface": "laterite"
+    }
+   },
+   {
+    "id": "w302799310",
+    "highway": "tertiary",
+    "km": 9,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "name": "Route Nkoum Mbaguempel",
+     "oneway": "no",
+     "operator": "commune",
+     "smoothness": "good",
+     "source": "Landsat;WRI",
+     "start_date": "after 2020",
+     "surface": "laterite"
+    }
+   },
+   {
+    "id": "w319623068",
+    "highway": "tertiary",
+    "km": 8.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "50",
+     "operator": "commune",
+     "smoothness": "good",
+     "surface": "laterite"
+    }
+   },
+   {
+    "id": "w1560295517",
+    "highway": "tertiary",
+    "km": 8.8,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "maxspeed": "50",
+     "name": "1",
+     "operator": "commune",
+     "smoothness": "good",
+     "surface": "laterite"
+    }
+   },
+   {
+    "id": "w1527490762",
+    "highway": "trunk",
+    "km": 6.5,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Bertoua-Batouri",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "suvery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1527498077",
+    "highway": "trunk",
+    "km": 5.3,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Batouri-Yokadouma",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w449720292",
+    "highway": "unclassified",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w1561887082",
+    "highway": "tertiary",
+    "km": 4.5,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "maxspeed": "50",
+     "name": "1",
+     "operator": "commune",
+     "smoothness": "good",
+     "surface": "laterite"
+    }
+   },
+   {
+    "id": "w1527490756",
+    "highway": "trunk",
+    "km": 4,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Bertoua-Batouri",
+     "ref": "N10",
+     "smoothness": "horrible",
+     "source": "suvery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w728274345",
+    "highway": "unclassified",
+    "km": 3.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w293579713",
+    "highway": "trunk",
+    "km": 3.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Batouri-Kentzou",
+     "ref": "N10A",
+     "smoothness": "good",
+     "source": "Bing, survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w356321087",
+    "highway": "unclassified",
+    "km": 2.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w296216410",
+    "highway": "trunk",
+    "km": 48.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "operator": "État",
+     "ref": "N1A",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w296324666",
+    "highway": "secondary",
+    "km": 37.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Région",
+     "ref": "D1",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w296216402",
+    "highway": "secondary",
+    "km": 26.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Région",
+     "ref": "D1",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w413443890",
+    "highway": "secondary",
+    "km": 25.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Région",
+     "ref": "D1",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w314621989",
+    "highway": "secondary",
+    "km": 24.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Région",
+     "ref": "D2",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w511099405",
+    "highway": "trunk",
+    "km": 12.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "operator": "État",
+     "ref": "N1A",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w296235645",
+    "highway": "trunk",
+    "km": 11.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "operator": "État",
+     "ref": "N1A",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w296216404",
+    "highway": "secondary",
+    "km": 10.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Région",
+     "ref": "D2",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w90298339",
+    "highway": "tertiary",
+    "km": 7.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "note": "Rural Roads",
+     "surface": "Non Bitume"
+    }
+   },
+   {
+    "id": "w90298317",
+    "highway": "tertiary",
+    "km": 7.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "Non Bitumee"
+    }
+   },
+   {
+    "id": "w762867757",
+    "highway": "primary",
+    "km": 6.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "operator": "Région",
+     "ref": "P28",
+     "ref:ar": "م ٢٨",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w296216406",
+    "highway": "secondary",
+    "km": 6.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Région",
+     "ref": "D2",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w90298343",
+    "highway": "tertiary",
+    "km": 6.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Departemental",
+     "surface": "Bitumee"
+    }
+   },
+   {
+    "id": "w296216412",
+    "highway": "primary",
+    "km": 5.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "operator": "Région",
+     "ref": "P28",
+     "ref:ar": "م ٢٨",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w391327624",
+    "highway": "secondary",
+    "km": 5.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "operator": "Commune",
+     "ref": "D2",
+     "seasonal": "dry_season",
+     "source": "MINTP CTIN - Référentiel Routier du Cameroun 2014",
+     "surface": "karral",
+     "width": "4"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,949 @@
+{
+ "country": "ci",
+ "name": "Ivory Coast",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:02:53.354Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "ivory-coast-latest.osm.pbf",
+  "boundary": "r192779",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 711.6,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 1133.1,
+   "untagged": 124.2,
+   "unpaved": 18.5,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 4641.2,
+   "unpaved": 1455.5,
+   "untagged": 22.4,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "unpaved": 2971.8,
+   "paved_tagged": 2140.8,
+   "untagged": 6.1,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "tertiary": {
+   "unpaved": 11321.1,
+   "paved_tagged": 1349.7,
+   "untagged": 129.2,
+   "offroad": 15.8,
+   "specialized": 0
+  },
+  "unclassified": {
+   "unpaved": 55403.6,
+   "untagged": 10495.9,
+   "offroad": 542.5,
+   "paved_tagged": 248.3,
+   "specialized": 42.4
+  },
+  "residential": {
+   "unpaved": 19661.4,
+   "untagged": 13325.7,
+   "paved_tagged": 988.8,
+   "offroad": 107,
+   "specialized": 0.7
+  },
+  "all": {
+   "unpaved": 90831.8,
+   "untagged": 24103.5,
+   "paved_tagged": 11213.5,
+   "offroad": 665.3,
+   "specialized": 43.1
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 711.6
+  },
+  "trunk": {
+   "surface": 1151.6,
+   "smoothness": 1.1
+  },
+  "primary": {
+   "surface": 6096.6,
+   "smoothness": 67.6
+  },
+  "secondary": {
+   "surface": 5112.5,
+   "smoothness": 175.6
+  },
+  "tertiary": {
+   "surface": 12686.6,
+   "smoothness": 110.5,
+   "tracktype": 14.6
+  },
+  "unclassified": {
+   "surface": 56236.8,
+   "tracktype": 609.9,
+   "smoothness": 539.6,
+   "4wd_only": 301.9
+  },
+  "residential": {
+   "surface": 20751.3,
+   "smoothness": 183.3,
+   "tracktype": 68.4,
+   "4wd_only": 6.6
+  },
+  "all": {
+   "surface": 102747,
+   "smoothness": 1077.6,
+   "tracktype": 693,
+   "4wd_only": 308.5
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 711.6,
+   "default": 0
+  },
+  "trunk": {
+   "surface": 1151.6,
+   "default": 124.2
+  },
+  "primary": {
+   "surface": 6096.6,
+   "default": 22.4
+  },
+  "secondary": {
+   "surface": 5112.5,
+   "default": 6.1
+  },
+  "tertiary": {
+   "surface": 12686.6,
+   "default": 129.2
+  },
+  "unclassified": {
+   "surface": 56236.8,
+   "default": 10495.9
+  },
+  "residential": {
+   "surface": 20751.3,
+   "default": 13325.7,
+   "tracktype": 6.7
+  },
+  "all": {
+   "surface": 102747,
+   "default": 24103.5,
+   "tracktype": 6.7
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {},
+  "tertiary": {
+   "smoothness": 10.8,
+   "tracktype": 5
+  },
+  "unclassified": {
+   "smoothness": 379.1,
+   "tracktype": 205.8
+  },
+  "residential": {
+   "smoothness": 64.9,
+   "tracktype": 42.8
+  },
+  "all": {
+   "smoothness": 454.8,
+   "tracktype": 253.6
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 18.5
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=ground": 1127.6,
+    "surface=unpaved": 172.2,
+    "surface=compacted": 105.1,
+    "surface=dirt": 50.6
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=ground": 2201.7,
+    "surface=unpaved": 585.5,
+    "surface=dirt": 145.9,
+    "surface=compacted": 38.7
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=ground": 7566,
+    "surface=unpaved": 3174.3,
+    "surface=compacted": 386.3,
+    "surface=dirt": 197.5,
+    "surface=sand": 10.3,
+    "surface=earth": 1.9,
+    "surface=gravel": 0.5
+   },
+   "offroad": {
+    "smoothness=very_bad": 10.8,
+    "tracktype=grade3": 5
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=ground": 31829.6,
+    "surface=unpaved": 23104.5,
+    "surface=dirt": 613.5,
+    "surface=compacted": 321.7,
+    "surface=gravel": 53.9,
+    "surface=unpaved; ground": 23.9,
+    "surface=earth": 22.1,
+    "surface=sand": 12.5,
+    "surface=soil": 6.6,
+    "surface=sol": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 192.1,
+    "smoothness=horrible": 144.6,
+    "tracktype=grade3": 103.1,
+    "tracktype=grade5": 59,
+    "tracktype=grade4": 43.6
+   },
+   "specialized": {
+    "smoothness=impassable": 36.3,
+    "smoothness=very_horrible": 6.1
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 14664.5,
+    "surface=ground": 4727.7,
+    "surface=dirt": 203.6,
+    "surface=compacted": 95.5,
+    "surface=gravel": 42,
+    "surface=pebblestone": 11,
+    "surface=sand": 6.7,
+    "surface=earth": 4.4,
+    "tracktype=grade4": 3.7,
+    "surface=fine_gravel": 2,
+    "surface=tartan": 1.8,
+    "tracktype=grade3": 1.8,
+    "tracktype=grade2": 1.2,
+    "surface=ground;asphalt": 0.9,
+    "surface=mud": 0.8,
+    "surface=asphalt;unpaved": 0.5,
+    "surface=nons": 0.5,
+    "surface=grass": 0.2,
+    "surface=Bitume": 0.1,
+    "surface=nonc": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 60.3,
+    "tracktype=grade3": 33.6,
+    "tracktype=grade4": 7.3,
+    "smoothness=horrible": 3.9,
+    "tracktype=grade5": 2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.6,
+    "smoothness=impassable": 0.1
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=ground": 47452.5,
+    "surface=unpaved": 41719.6,
+    "surface=dirt": 1211.1,
+    "surface=compacted": 947.3,
+    "surface=gravel": 96.4,
+    "surface=sand": 29.6,
+    "surface=earth": 28.5,
+    "surface=unpaved; ground": 23.9,
+    "surface=pebblestone": 11,
+    "surface=soil": 6.6,
+    "tracktype=grade4": 3.7,
+    "surface=fine_gravel": 2,
+    "surface=tartan": 1.8,
+    "tracktype=grade3": 1.8,
+    "tracktype=grade2": 1.2,
+    "surface=ground;asphalt": 0.9,
+    "surface=mud": 0.8,
+    "surface=asphalt;unpaved": 0.5,
+    "surface=nons": 0.5,
+    "surface=grass": 0.2,
+    "surface=Bitume": 0.1,
+    "surface=nonc": 0.1,
+    "surface=sol": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 263.2,
+    "smoothness=horrible": 148.5,
+    "tracktype=grade3": 141.6,
+    "tracktype=grade5": 61,
+    "tracktype=grade4": 50.9
+   },
+   "specialized": {
+    "smoothness=impassable": 36.4,
+    "smoothness=very_horrible": 6.7
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=soil": 6.6,
+  "surface=tartan": 1.8,
+  "surface=nons": 0.5,
+  "surface=Bitume": 0.1,
+  "surface=nonc": 0.1,
+  "surface=sol": 0
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + smoothness=very_bad": 43,
+  "paved (no surface) + smoothness=very_bad": 0.7,
+  "paved (surface=asphalt) + tracktype=grade5": 0.3,
+  "smoothness=good + surface=unpaved": 0.3,
+  "smoothness=good + surface=ground": 0.2,
+  "smoothness=good + surface=Bitume": 0.1,
+  "paved (surface=concrete:plates) + smoothness=very_bad": 0,
+  "paved (surface=concrete) + tracktype=grade4": 0,
+  "paved (surface=concrete) + smoothness=horrible": 0,
+  "paved (surface=concrete) + tracktype=grade3": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w322970939",
+    "highway": "secondary",
+    "km": 156,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Zuénoula - Mankono - Boundiali",
+     "ref": "B303",
+     "source": "Bing;landsat;Perry-Castañeda Library Map Collection",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w37785810",
+    "highway": "secondary",
+    "km": 84.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "note": "classification just a guess",
+     "source": "landsat",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w90952107",
+    "highway": "primary",
+    "km": 76,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Sassandra - Gagnoa",
+     "ref": "A5",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w356999389",
+    "highway": "secondary",
+    "km": 73,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "note": "classification just a guess",
+     "source": "landsat",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w115001599",
+    "highway": "secondary",
+    "km": 72.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "is_in:country_code": "CI",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w103426381",
+    "highway": "primary",
+    "km": 70.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "A10",
+     "source": "landsat",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w291229967",
+    "highway": "secondary",
+    "km": 68.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "source": "Bing",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w92440127",
+    "highway": "primary",
+    "km": 63.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "int_name": "A7",
+     "ref": "A7",
+     "source": "Bing & EO-1, NASA/USGS, 2004-01-17",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w37793428",
+    "highway": "secondary",
+    "km": 63.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "source": "landsat",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w293279786",
+    "highway": "secondary",
+    "km": 61.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "B410",
+     "source": "landsat",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w489172575",
+    "highway": "secondary",
+    "km": 59.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Zuénoula - Mankono - Boundiali",
+     "ref": "B303",
+     "source": "Bing;landsat;Perry-Castañeda Library Map Collection",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w37798698",
+    "highway": "secondary",
+    "km": 58.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Koutouba - Dabakala",
+     "ref": "B119",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w271242121",
+    "highway": "secondary",
+    "km": 57.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "source": "Bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w37794196",
+    "highway": "secondary",
+    "km": 57.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "B 205",
+     "source": "landsat",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w474337852",
+    "highway": "primary",
+    "km": 56.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "is_in:country_code": "CI",
+     "ref": "A10",
+     "source": "landsat",
+     "surface": "ground"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w503548440",
+    "highway": "unclassified",
+    "km": 64.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "name": "Piste Principale Bania-Gawi",
+     "smoothness": "horrible",
+     "surface": "dirt",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w680716477",
+    "highway": "unclassified",
+    "km": 40.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "noname": "yes",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w680702195",
+    "highway": "unclassified",
+    "km": 27.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "noname": "yes",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w760156153",
+    "highway": "unclassified",
+    "km": 26.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "noname": "yes",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w380899252",
+    "highway": "unclassified",
+    "km": 24.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w680575175",
+    "highway": "unclassified",
+    "km": 23.3,
+    "level": "specialized",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "no",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "noname": "yes",
+     "smoothness": "impassable",
+     "surface": "ground",
+     "tracktype": "grade5",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w680560818",
+    "highway": "unclassified",
+    "km": 19.5,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "smoothness": "horrible",
+     "surface": "dirt",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w486154797",
+    "highway": "unclassified",
+    "km": 18,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "maxar",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1057617857",
+    "highway": "unclassified",
+    "km": 14.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w680604836",
+    "highway": "unclassified",
+    "km": 13.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "name": "Piste Principale Bania-Gawi",
+     "smoothness": "horrible",
+     "surface": "dirt",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w423688683",
+    "highway": "unclassified",
+    "km": 13.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "noname": "yes",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w680946693",
+    "highway": "unclassified",
+    "km": 13.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "noname": "yes",
+     "smoothness": "horrible",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w680873329",
+    "highway": "unclassified",
+    "km": 13,
+    "level": "specialized",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "no",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "noname": "yes",
+     "smoothness": "impassable",
+     "surface": "ground",
+     "tracktype": "grade5",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w680702181",
+    "highway": "unclassified",
+    "km": 12.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "noname": "yes",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w339223065",
+    "highway": "unclassified",
+    "km": 12.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w639262293",
+    "highway": "tertiary",
+    "km": 21.6,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "note": "route en maivais état (Mai 2024)",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w274648890",
+    "highway": "tertiary",
+    "km": 7.1,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Route de Oumé",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w499457840",
+    "highway": "secondary",
+    "km": 3.3,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "source": "2005 Cnes / Spot Image",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w339266476",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Route d'Anyama-Adjame",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w931731504",
+    "highway": "secondary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "source": "2005 Cnes / Spot Image",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w283488670",
+    "highway": "tertiary",
+    "km": 0.8,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "noname": "yes",
+     "smoothness": "very_bad",
+     "source": "Bing",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w643471021",
+    "highway": "tertiary",
+    "km": 0.7,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "2005 Cnes / Spot Image",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w472561491",
+    "highway": "residential",
+    "km": 0.7,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w397562856",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "is_in": "Riviéra 3;Cocody;Abidjan;Côte d'Ivoire",
+     "lanes": "2",
+     "lit": "yes",
+     "name": "Rue E160",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "source": "yahoo",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1256487148",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "is_in": "Riviéra 3;Cocody;Abidjan;Côte d'Ivoire",
+     "lanes": "2",
+     "lit": "yes",
+     "name": "Rue E160",
+     "oneway": "yes",
+     "smoothness": "very_bad",
+     "source": "yahoo",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1231323626",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "lit": "yes",
+     "name": "Avenue Jean Konan Banny",
+     "oneway": "yes",
+     "ref": "G50",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w30619416",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "lit": "yes",
+     "name": "Avenue Jean Konan Banny",
+     "oneway": "yes",
+     "ref": "G50",
+     "smoothness": "very_bad",
+     "source": "yahoo",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w380267763",
+    "highway": "unclassified",
+    "km": 6.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "soil",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1180094997",
+    "highway": "residential",
+    "km": 1.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "source": "bing",
+     "surface": "tartan"
+    }
+   }
+  ]
+ }
+}

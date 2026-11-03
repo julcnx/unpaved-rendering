@@ -1,0 +1,1153 @@
+{
+ "country": "pe",
+ "name": "Peru",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:04:35.569Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "peru-latest.osm.pbf",
+  "boundary": "r288247",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 1429.4,
+   "untagged": 11.9,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 16801.6,
+   "untagged": 3181,
+   "unpaved": 1607.3,
+   "offroad": 86.2,
+   "specialized": 0
+  },
+  "primary": {
+   "unpaved": 9141.2,
+   "untagged": 7273.4,
+   "paved_tagged": 6562.1,
+   "offroad": 143.4,
+   "specialized": 0.9
+  },
+  "secondary": {
+   "unpaved": 9371,
+   "untagged": 6791.3,
+   "paved_tagged": 4655.4,
+   "offroad": 83.8,
+   "specialized": 0
+  },
+  "tertiary": {
+   "unpaved": 42031.5,
+   "untagged": 31670.6,
+   "paved_tagged": 3991.2,
+   "offroad": 196,
+   "specialized": 0
+  },
+  "unclassified": {
+   "unpaved": 70450.3,
+   "untagged": 52540.9,
+   "paved_tagged": 498.1,
+   "offroad": 233.8,
+   "specialized": 1.9
+  },
+  "residential": {
+   "untagged": 53176.2,
+   "unpaved": 30185.9,
+   "paved_tagged": 8791.4,
+   "offroad": 61.4,
+   "specialized": 0.5
+  },
+  "all": {
+   "unpaved": 162787.1,
+   "untagged": 154645.4,
+   "paved_tagged": 42729.1,
+   "offroad": 804.6,
+   "specialized": 3.2
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 1429.4
+  },
+  "trunk": {
+   "surface": 18495.2,
+   "smoothness": 3256.3,
+   "tracktype": 8
+  },
+  "primary": {
+   "surface": 15843,
+   "smoothness": 824.1,
+   "tracktype": 100.8
+  },
+  "secondary": {
+   "surface": 14110.1,
+   "smoothness": 274.7,
+   "4wd_only": 12.3,
+   "tracktype": 4.1
+  },
+  "tertiary": {
+   "surface": 46175.9,
+   "tracktype": 424.9,
+   "smoothness": 263.9
+  },
+  "unclassified": {
+   "surface": 71095.4,
+   "smoothness": 280.7,
+   "tracktype": 245.2
+  },
+  "residential": {
+   "surface": 39006.5,
+   "smoothness": 206.8,
+   "tracktype": 94.7
+  },
+  "all": {
+   "surface": 206155.5,
+   "smoothness": 5106.6,
+   "tracktype": 877.6,
+   "4wd_only": 12.3
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 1429.4,
+   "default": 11.9
+  },
+  "trunk": {
+   "surface": 18495.2,
+   "default": 3181
+  },
+  "primary": {
+   "surface": 15843,
+   "default": 7273.4,
+   "tracktype": 4.4
+  },
+  "secondary": {
+   "surface": 14110.1,
+   "default": 6791.3
+  },
+  "tertiary": {
+   "surface": 46175.9,
+   "default": 31670.6,
+   "tracktype": 42.7
+  },
+  "unclassified": {
+   "surface": 71095.4,
+   "default": 52540.9,
+   "tracktype": 88.7
+  },
+  "residential": {
+   "default": 53176.2,
+   "surface": 39006.5,
+   "tracktype": 32.7
+  },
+  "all": {
+   "surface": 206155.5,
+   "default": 154645.4,
+   "tracktype": 168.5
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {
+   "smoothness": 86.2
+  },
+  "primary": {
+   "smoothness": 139.8,
+   "tracktype": 4.4
+  },
+  "secondary": {
+   "smoothness": 71.6,
+   "4wd_only": 12.3
+  },
+  "tertiary": {
+   "tracktype": 158.8,
+   "smoothness": 37.2
+  },
+  "unclassified": {
+   "tracktype": 144.9,
+   "smoothness": 90.8
+  },
+  "residential": {
+   "tracktype": 58.5,
+   "smoothness": 3.5
+  },
+  "all": {
+   "smoothness": 429,
+   "tracktype": 366.6,
+   "4wd_only": 12.3
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 998.9,
+    "surface=compacted": 447.6,
+    "surface=gravel": 117.6,
+    "surface=ground": 74.4,
+    "surface=dirt": 53.2,
+    "surface=unhewn_cobblestone": 1.3,
+    "surface=sand": 0.5,
+    "surface=concrete:lanes": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 86.2
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 4299.2,
+    "surface=compacted": 1794.5,
+    "surface=ground": 1399.7,
+    "surface=dirt": 1380,
+    "surface=gravel": 319.9,
+    "surface=sand": 87.2,
+    "tracktype=grade4": 4.4,
+    "surface=unhewn_cobblestone": 0.3,
+    "surface=mud": 0.1,
+    "tracktype=grade2": 0
+   },
+   "offroad": {
+    "smoothness=horrible": 83.5,
+    "smoothness=very_bad": 55.4,
+    "tracktype=grade4": 4.4
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.9
+   }
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 6301.4,
+    "surface=compacted": 1942.7,
+    "surface=dirt": 599.4,
+    "surface=gravel": 308.3,
+    "surface=ground": 249,
+    "surface=fine_gravel": 32.6,
+    "surface=sand": 20.2,
+    "surface=earth": 1.2
+   },
+   "offroad": {
+    "smoothness=very_bad": 64.7,
+    "4wd_only=yes": 12.3,
+    "smoothness=horrible": 6.9
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 29426.6,
+    "surface=compacted": 8331.5,
+    "surface=ground": 2639.5,
+    "surface=dirt": 1072,
+    "surface=gravel": 620.8,
+    "surface=sand": 51.1,
+    "surface=earth": 29,
+    "tracktype=grade4": 19.1,
+    "tracktype=grade3": 16.7,
+    "surface=fine_gravel": 10.5,
+    "tracktype=grade5": 4.6,
+    "surface=grass": 3.7,
+    "tracktype=grade2": 2.3,
+    "surface=unhewn_cobblestone": 0.2,
+    "surface=mud": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 118.2,
+    "tracktype=grade4": 36,
+    "smoothness=horrible": 29.1,
+    "smoothness=very_bad": 8.1,
+    "tracktype=grade5": 4.6
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 53875,
+    "surface=compacted": 9903.3,
+    "surface=dirt": 3355,
+    "surface=ground": 2998.5,
+    "surface=gravel": 355.9,
+    "surface=sand": 41,
+    "surface=fine_gravel": 37.7,
+    "tracktype=grade3": 37.2,
+    "surface=earth": 20.8,
+    "tracktype=grade4": 18.9,
+    "tracktype=grade5": 17.3,
+    "tracktype=grade2": 13.3,
+    "surface=sin_pavimentarw": 3.5,
+    "surface=grass": 3.1,
+    "surface=mud": 1.6,
+    "surface=pebblestone": 1.4,
+    "surface=dirt/sand": 1,
+    "surface=sin_pavimentar2": 0.7,
+    "surface=unspecified": 0.3,
+    "surface=sin_pavimentar3": 0.3,
+    "surface=sin_pavimentar": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 66.1,
+    "smoothness=very_bad": 64.1,
+    "tracktype=grade4": 50.5,
+    "tracktype=grade5": 28.4,
+    "smoothness=horrible": 24.8
+   },
+   "specialized": {
+    "smoothness=very_horrible": 1.9
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 27123.6,
+    "surface=ground": 1457.8,
+    "surface=dirt": 846.7,
+    "surface=compacted": 633.5,
+    "surface=gravel": 81.4,
+    "tracktype=grade3": 24.7,
+    "surface=earth": 17.7,
+    "surface=sand": 16.7,
+    "surface=unhewn_cobblestone": 7.9,
+    "surface=fine_gravel": 7,
+    "surface=sin_pavimentarw": 6.7,
+    "tracktype=grade2": 6,
+    "surface=concrete:lanes": 5.1,
+    "surface=pebblestone": 4.8,
+    "surface=grass": 3.6,
+    "tracktype=grade4": 0.9,
+    "surface=jr._eladio_tapullima": 0.9,
+    "surface=pista": 0.7,
+    "surface=rock": 0.5,
+    "surface=sin_pavimentar": 0.4,
+    "surface=Q9030127": 0.4,
+    "surface=mud": 0.3,
+    "surface=clay": 0.3,
+    "surface=sin_pavimentarjj": 0.2,
+    "surface=stone": 0.1,
+    "surface=sin_pavimentarj": 0,
+    "surface=asfaltow": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 35.9,
+    "tracktype=grade4": 12.5,
+    "tracktype=grade5": 10,
+    "smoothness=horrible": 1.8,
+    "smoothness=very_bad": 1.2
+   },
+   "specialized": {
+    "smoothness=impassable": 0.5
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 122024.7,
+    "surface=compacted": 23053.1,
+    "surface=ground": 8819,
+    "surface=dirt": 7306.2,
+    "surface=gravel": 1803.8,
+    "surface=sand": 216.7,
+    "surface=fine_gravel": 87.8,
+    "tracktype=grade3": 78.7,
+    "surface=earth": 68.6,
+    "tracktype=grade4": 43.3,
+    "tracktype=grade5": 21.9,
+    "tracktype=grade2": 21.6,
+    "surface=grass": 10.4,
+    "surface=sin_pavimentarw": 10.2,
+    "surface=unhewn_cobblestone": 9.7,
+    "surface=pebblestone": 6.2,
+    "surface=concrete:lanes": 5.2,
+    "surface=mud": 2,
+    "surface=dirt/sand": 1,
+    "surface=jr._eladio_tapullima": 0.9,
+    "surface=pista": 0.7,
+    "surface=sin_pavimentar2": 0.7,
+    "surface=sin_pavimentar": 0.5,
+    "surface=rock": 0.5,
+    "surface=Q9030127": 0.4,
+    "surface=unspecified": 0.3,
+    "surface=sin_pavimentar3": 0.3,
+    "surface=clay": 0.3,
+    "surface=sin_pavimentarjj": 0.2,
+    "surface=stone": 0.1,
+    "surface=sin_pavimentarj": 0,
+    "surface=asfaltow": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 279.8,
+    "tracktype=grade3": 220.1,
+    "smoothness=horrible": 146,
+    "tracktype=grade4": 103.5,
+    "tracktype=grade5": 43,
+    "4wd_only=yes": 12.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.7,
+    "smoothness=impassable": 0.5
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=sin_pavimentarw": 10.2,
+  "smoothness=poor": 3.8,
+  "surface=dirt/sand": 1,
+  "surface=jr._eladio_tapullima": 0.9,
+  "surface=pista": 0.7,
+  "surface=sin_pavimentar2": 0.7,
+  "surface=sin_pavimentar": 0.5,
+  "surface=Q9030127": 0.4,
+  "surface=unspecified": 0.3,
+  "surface=sin_pavimentar3": 0.3,
+  "surface=sin_pavimentarjj": 0.2,
+  "surface=stone": 0.1,
+  "surface=sin_pavimentarj": 0,
+  "surface=asfaltow": 0
+ },
+ "conflict_km": {
+  "paved (no surface) + smoothness=very_bad": 16.5,
+  "smoothness=good + surface=gravel": 16.1,
+  "smoothness=good + surface=unpaved": 11.8,
+  "smoothness=good + surface=compacted": 7.3,
+  "paved (no surface) + smoothness=horrible": 4.4,
+  "paved (surface=asphalt) + smoothness=very_bad": 3,
+  "paved (surface=asphalt) + tracktype=grade4": 1.1,
+  "smoothness=good + surface=unhewn_cobblestone": 1,
+  "paved (surface=paved) + tracktype=grade5": 0.4,
+  "smoothness=excellent + surface=dirt": 0.1,
+  "paved (no surface) + smoothness=impassable": 0,
+  "paved (surface=wood) + tracktype=grade3": 0,
+  "paved (surface=concrete) + smoothness=horrible": 0,
+  "paved (surface=concrete) + smoothness=very_bad": 0,
+  "paved (surface=wood) + smoothness=very_bad": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w321795044",
+    "highway": "primary",
+    "km": 61.9,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "-Highway does not lead anywhere. Should this be secondary? Is route name correct?\n-fixed",
+     "highway": "primary",
+     "ref": "PI-105",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w354613167",
+    "highway": "secondary",
+    "km": 59.1,
+    "level": "unpaved",
+    "tags": {
+     "description": "Carretera Chilca - Santo Domingo de los Olleros",
+     "highway": "secondary",
+     "ref": "LM-812",
+     "source": "DigitalGlobe",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w304005891",
+    "highway": "primary",
+    "km": 53.3,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "improve accuracy",
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "oneway": "no",
+     "ref": "PE-5SA",
+     "source": "bing;MTC",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w363769138",
+    "highway": "primary",
+    "km": 52.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Carretera Longitudinal de Conchucos",
+     "old_ref": "AN-105",
+     "ref": "PE-14C",
+     "smoothness": "bad",
+     "surface": "dirt",
+     "width": "4.5"
+    }
+   },
+   {
+    "id": "w184360350",
+    "highway": "secondary",
+    "km": 52.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "AR-647",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w110964829",
+    "highway": "primary",
+    "km": 49.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "HV-110",
+     "source": "deperu.com, MTC",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w382267037",
+    "highway": "primary",
+    "km": 47.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "ref": "LM-119",
+     "source": "deperu.com",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w297083279",
+    "highway": "primary",
+    "km": 43.6,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "estimated due to low res satellite imagery coverage",
+     "highway": "primary",
+     "name": "Carretera Manu",
+     "ref": "MD-103",
+     "source": "bing",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w163082126",
+    "highway": "primary",
+    "km": 43.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "AP-112",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w304383448",
+    "highway": "primary",
+    "km": 43,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "AP-112",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w398918157",
+    "highway": "primary",
+    "km": 42.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "UC-105",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w310159542",
+    "highway": "primary",
+    "km": 41.5,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "improve accuracy",
+     "highway": "primary",
+     "ref": "AP-103",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w406690429",
+    "highway": "secondary",
+    "km": 40.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Carretera La Tortuga - La Unión",
+     "ref": "PI-103",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w321794726",
+    "highway": "primary",
+    "km": 40.6,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "Highway does not lead anywhere. Should this be secondary? Is route name correct?",
+     "highway": "primary",
+     "ref": "PI-105",
+     "source": "Mapas del MTC",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w585786194",
+    "highway": "primary",
+    "km": 40.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "oneway": "no",
+     "ref": "LM-108",
+     "surface": "ground"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w379813677",
+    "highway": "tertiary",
+    "km": 30.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "AN-588",
+     "surface": "sand",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w431081383",
+    "highway": "primary",
+    "km": 23.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "note": "Carretera regional d puno \"PU-136\", re-clasificada temporalmente a \"PE-3S R\", para asfaltado de la vía a cargo del MTC. fuente: https://portal.mtc.gob.pe/transportes/caminos/documentos/clasificador_rutas/RM%20N%C2%BA%20138-2014-MTC%2002.pdf",
+     "ref": "PU-136;PE-3SR",
+     "smoothness": "very_bad",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w257382383",
+    "highway": "primary",
+    "km": 23,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "ref": "PE-1NF",
+     "smoothness": "horrible",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w368544072",
+    "highway": "trunk",
+    "km": 22.2,
+    "level": "offroad",
+    "tags": {
+     "fixme": "geometry",
+     "highway": "trunk",
+     "maxspeed": "60",
+     "name": "Carretera Cholón",
+     "oneway": "no",
+     "ref": "PE-12A",
+     "smoothness": "very_bad",
+     "source": "IBGE",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w625194418",
+    "highway": "primary",
+    "km": 19.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "ref": "PU-136;PE-3SR",
+     "smoothness": "horrible",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w625867330",
+    "highway": "primary",
+    "km": 18.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "ref": "PU-136;PE-3SR",
+     "smoothness": "horrible",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w591047336",
+    "highway": "trunk",
+    "km": 17.8,
+    "level": "offroad",
+    "tags": {
+     "fixme": "geometry",
+     "highway": "trunk",
+     "maxspeed": "60",
+     "name": "Carretera Cholón",
+     "oneway": "no",
+     "ref": "PE-12A",
+     "smoothness": "very_bad",
+     "source": "IBGE",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w296971460",
+    "highway": "secondary",
+    "km": 15.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "AR-116",
+     "smoothness": "very_bad",
+     "source": "Bing;GPS, survey",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w366073515",
+    "highway": "unclassified",
+    "km": 14.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w371224367",
+    "highway": "tertiary",
+    "km": 14,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "name": "Carretera a Chosica - Ticrapa",
+     "ref": "AN-832",
+     "smoothness": "horrible",
+     "surface": "unpaved",
+     "width": "8"
+    }
+   },
+   {
+    "id": "w665176264",
+    "highway": "secondary",
+    "km": 12.3,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "secondary",
+     "motor_vehicle": "yes",
+     "ref": "MD-103",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w591067506",
+    "highway": "trunk",
+    "km": 12.2,
+    "level": "offroad",
+    "tags": {
+     "fixme": "geometry",
+     "highway": "trunk",
+     "maxspeed": "60",
+     "name": "Carretera Cholón",
+     "oneway": "no",
+     "ref": "PE-12A",
+     "smoothness": "very_bad",
+     "source": "IBGE",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w607264399",
+    "highway": "unclassified",
+    "km": 12,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w229977383",
+    "highway": "tertiary",
+    "km": 11.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "source": "bing",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w503000559",
+    "highway": "trunk",
+    "km": 11.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "maxspeed": "60",
+     "ref": "PE-12A",
+     "smoothness": "very_bad",
+     "source": "IBGE",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w226277758",
+    "highway": "tertiary",
+    "km": 14.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w66592695",
+    "highway": "unclassified",
+    "km": 6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "lit": "no",
+     "smoothness": "good",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w221026755",
+    "highway": "trunk",
+    "km": 3.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "1",
+     "maxspeed": "100",
+     "name": "Carretera Castrovirreyna - Huancavelica",
+     "oneway": "no",
+     "ref": "PE-28D",
+     "smoothness": "good",
+     "source": "gps 2013",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w682802597",
+    "highway": "tertiary",
+    "km": 3.9,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w406649399",
+    "highway": "tertiary",
+    "km": 3.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w641676277",
+    "highway": "secondary",
+    "km": 2.9,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "ref": "AR-116",
+     "smoothness": "very_bad",
+     "source": "GPS,survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w406650492",
+    "highway": "tertiary",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "JU-754",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w585520802",
+    "highway": "trunk",
+    "km": 2.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "1",
+     "maxspeed": "50",
+     "name": "Carretera Castrovirreyna - Huancavelica",
+     "oneway": "no",
+     "ref": "PE-28D",
+     "smoothness": "good",
+     "source": "gps 2013",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w224820681",
+    "highway": "tertiary",
+    "km": 2.1,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w585521847",
+    "highway": "trunk",
+    "km": 2.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "1",
+     "maxspeed": "50",
+     "name": "Carretera Castrovirreyna - Huancavelica",
+     "oneway": "no",
+     "overtaking": "no",
+     "ref": "PE-28D",
+     "smoothness": "good",
+     "source": "gps 2013",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w406476330",
+    "highway": "tertiary",
+    "km": 1.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "JU-754",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w585521846",
+    "highway": "trunk",
+    "km": 1.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "1",
+     "maxspeed": "50",
+     "name": "Carretera Castrovirreyna - Huancavelica",
+     "oneway": "no",
+     "ref": "PE-28D",
+     "smoothness": "good",
+     "source": "gps 2013",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w627379141",
+    "highway": "primary",
+    "km": 1.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "oneway": "no",
+     "ref": "PE-08B",
+     "smoothness": "good",
+     "source": "GPS, MTC",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1052178860",
+    "highway": "tertiary",
+    "km": 1.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "JU-754",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w585520794",
+    "highway": "trunk",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "1",
+     "maxspeed": "100",
+     "name": "Carretera Castrovirreyna - Huancavelica",
+     "oneway": "no",
+     "ref": "PE-28D",
+     "smoothness": "good",
+     "source": "gps 2013",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w368973517",
+    "highway": "tertiary",
+    "km": 3.8,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "noname": "yes",
+     "smoothness": "poor",
+     "source": "Bing"
+    }
+   },
+   {
+    "id": "w569756638",
+    "highway": "residential",
+    "km": 1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "surface": "sin_pavimentarw"
+    }
+   },
+   {
+    "id": "w1010730112",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarw"
+    }
+   },
+   {
+    "id": "w1284267853",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarw"
+    }
+   },
+   {
+    "id": "w1336316432",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarw"
+    }
+   },
+   {
+    "id": "w326233951",
+    "highway": "residential",
+    "km": 0.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "maxspeed": "30",
+     "name": "Calle Libertad",
+     "surface": "pista"
+    }
+   },
+   {
+    "id": "w676982290",
+    "highway": "unclassified",
+    "km": 0.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w1300381254",
+    "highway": "unclassified",
+    "km": 0.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentar2"
+    }
+   },
+   {
+    "id": "w243280626",
+    "highway": "residential",
+    "km": 0.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "surface": "sin_pavimentarw"
+    }
+   },
+   {
+    "id": "w305077004",
+    "highway": "residential",
+    "km": 0.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "Jr. Eladio Tapullima",
+     "surface": "jr._eladio_tapullima"
+    }
+   }
+  ]
+ }
+}

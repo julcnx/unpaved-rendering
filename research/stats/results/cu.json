@@ -1,0 +1,977 @@
+{
+ "country": "cu",
+ "name": "Cuba",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T02:39:46.496Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "cuba-latest.osm.pbf",
+  "boundary": "r307833",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "untagged": 591.6,
+   "paved_tagged": 462,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "untagged": 990.4,
+   "paved_tagged": 665.3,
+   "unpaved": 0.4,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 1939.9,
+   "paved_tagged": 1341.7,
+   "unpaved": 2.2,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 4437.7,
+   "paved_tagged": 1744.2,
+   "unpaved": 62.7,
+   "offroad": 23.5,
+   "specialized": 0
+  },
+  "tertiary": {
+   "paved_tagged": 3418.8,
+   "untagged": 3274.1,
+   "unpaved": 1742.9,
+   "offroad": 38.9,
+   "specialized": 0
+  },
+  "unclassified": {
+   "unpaved": 16050.6,
+   "untagged": 5595,
+   "paved_tagged": 1588.7,
+   "offroad": 926.6,
+   "specialized": 7.7
+  },
+  "residential": {
+   "untagged": 15882.5,
+   "unpaved": 2894.8,
+   "paved_tagged": 1833.5,
+   "offroad": 75.7,
+   "specialized": 0.6
+  },
+  "all": {
+   "untagged": 32711.2,
+   "unpaved": 20753.6,
+   "paved_tagged": 11054.2,
+   "offroad": 1064.7,
+   "specialized": 8.3
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 462
+  },
+  "trunk": {
+   "surface": 665.7,
+   "smoothness": 13.9
+  },
+  "primary": {
+   "surface": 1343.9,
+   "smoothness": 245.5
+  },
+  "secondary": {
+   "surface": 1829.2,
+   "smoothness": 215.8,
+   "tracktype": 1.2
+  },
+  "tertiary": {
+   "surface": 5191.4,
+   "smoothness": 312.2,
+   "tracktype": 71.2
+  },
+  "unclassified": {
+   "surface": 17196.7,
+   "tracktype": 5696.7,
+   "smoothness": 314.1
+  },
+  "residential": {
+   "surface": 4677.4,
+   "tracktype": 224.2,
+   "smoothness": 214.2
+  },
+  "all": {
+   "surface": 31366.3,
+   "tracktype": 5993.4,
+   "smoothness": 1315.6
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "default": 591.6,
+   "surface": 462
+  },
+  "trunk": {
+   "default": 990.4,
+   "surface": 665.7
+  },
+  "primary": {
+   "default": 1939.9,
+   "surface": 1343.9
+  },
+  "secondary": {
+   "default": 4437.7,
+   "surface": 1829.2,
+   "tracktype": 1.1
+  },
+  "tertiary": {
+   "surface": 5191.4,
+   "default": 3274.1,
+   "tracktype": 9.2
+  },
+  "unclassified": {
+   "surface": 17196.7,
+   "default": 5595,
+   "tracktype": 1376.9
+  },
+  "residential": {
+   "default": 15882.5,
+   "surface": 4677.4,
+   "tracktype": 127.3
+  },
+  "all": {
+   "default": 32711.2,
+   "surface": 31366.3,
+   "tracktype": 1514.5
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "smoothness": 22.8,
+   "tracktype": 0.7
+  },
+  "tertiary": {
+   "smoothness": 37.2,
+   "tracktype": 1.7
+  },
+  "unclassified": {
+   "tracktype": 856.3,
+   "smoothness": 78
+  },
+  "residential": {
+   "tracktype": 63.2,
+   "smoothness": 13.2
+  },
+  "all": {
+   "tracktype": 921.9,
+   "smoothness": 151.1
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=gravel": 0.4
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=compacted": 2.2,
+    "surface=unpaved": 0
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=gravel": 52.5,
+    "surface=ground": 15.3,
+    "surface=compacted": 11.1,
+    "surface=unpaved": 4.1,
+    "surface=sand": 2.3,
+    "tracktype=grade4": 0.7,
+    "surface=pebblestone": 0.2,
+    "tracktype=grade2": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 22.8,
+    "tracktype=grade4": 0.7
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 923.2,
+    "surface=compacted": 645.4,
+    "surface=gravel": 123.5,
+    "surface=ground": 43.9,
+    "surface=dirt": 30.2,
+    "tracktype=grade2": 9.1,
+    "surface=fine_gravel": 5.4,
+    "surface=afalto": 0.6,
+    "surface=earth": 0.5,
+    "surface=steel": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 35.4,
+    "smoothness=horrible": 1.8,
+    "tracktype=grade4": 1.7
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 14452.3,
+    "tracktype=grade2": 996.7,
+    "surface=compacted": 828.9,
+    "surface=ground": 281.2,
+    "surface=gravel": 224,
+    "tracktype=grade3": 84.9,
+    "surface=dirt": 78.3,
+    "surface=sand": 15.1,
+    "tracktype=grade4": 9.9,
+    "surface=fine_gravel": 7.3,
+    "surface=rock": 5.1,
+    "surface=grass": 0.7,
+    "surface=mud": 0.4,
+    "tracktype=grade5": 0.1
+   },
+   "offroad": {
+    "tracktype=grade4": 551.5,
+    "tracktype=grade3": 301.9,
+    "smoothness=very_bad": 55.2,
+    "smoothness=horrible": 15,
+    "tracktype=grade5": 2.9
+   },
+   "specialized": {
+    "smoothness=very_horrible": 5.9,
+    "smoothness=impassable": 1.8
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 2549.6,
+    "surface=compacted": 115.7,
+    "tracktype=grade2": 99.8,
+    "surface=ground": 87.8,
+    "surface=dirt": 49.9,
+    "surface=gravel": 20.8,
+    "tracktype=grade3": 19.4,
+    "surface=earth": 13.1,
+    "surface=sand": 4.6,
+    "surface=fine_gravel": 2.5,
+    "surface=unhewn_cobblestone": 2,
+    "surface=mud": 1.7,
+    "tracktype=grade4": 1.7,
+    "surface=grass": 1.3,
+    "tracktype=grade5": 0.8,
+    "surface=rock": 0.3,
+    "surface=rocky": 0.3,
+    "surface=pebblestone": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 34.4,
+    "tracktype=grade4": 27.9,
+    "smoothness=very_bad": 11.8,
+    "tracktype=grade5": 0.8,
+    "smoothness=horrible": 0.8
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.4,
+    "smoothness=impassable": 0.2
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 17929.2,
+    "surface=compacted": 1603.2,
+    "tracktype=grade2": 1105.6,
+    "surface=ground": 428.1,
+    "surface=gravel": 421.1,
+    "surface=dirt": 158.4,
+    "tracktype=grade3": 104.3,
+    "surface=sand": 22.1,
+    "surface=fine_gravel": 15.1,
+    "surface=earth": 13.6,
+    "tracktype=grade4": 12.3,
+    "surface=rock": 5.4,
+    "surface=mud": 2.1,
+    "surface=unhewn_cobblestone": 2,
+    "surface=grass": 1.9,
+    "tracktype=grade5": 0.9,
+    "surface=afalto": 0.6,
+    "surface=pebblestone": 0.3,
+    "surface=rocky": 0.3,
+    "surface=steel": 0.1
+   },
+   "offroad": {
+    "tracktype=grade4": 581.8,
+    "tracktype=grade3": 336.4,
+    "smoothness=very_bad": 125.2,
+    "smoothness=horrible": 17.6,
+    "tracktype=grade5": 3.7
+   },
+   "specialized": {
+    "smoothness=very_horrible": 6.3,
+    "smoothness=impassable": 2.1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=afalto": 0.6,
+  "surface=rocky": 0.3,
+  "surface=steel": 0.1
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + smoothness=very_bad": 27,
+  "paved (no surface) + smoothness=very_bad": 14.2,
+  "smoothness=good + surface=compacted": 6.1,
+  "smoothness=good + surface=unpaved": 2.8,
+  "paved (no surface) + smoothness=impassable": 2.3,
+  "paved (surface=asphalt) + tracktype=grade3": 0.9,
+  "paved (surface=asphalt) + smoothness=horrible": 0.2,
+  "paved (no surface) + smoothness=horrible": 0.1
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w118110197",
+    "highway": "secondary",
+    "km": 10.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "name": "Carretera Segundo Frente - Sagua",
+     "ref": "6-483",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w305160228",
+    "highway": "secondary",
+    "km": 8.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "name": "Carretera Mola - Najasa",
+     "ref": "5-166",
+     "smoothness": "very_bad",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w204029305",
+    "highway": "secondary",
+    "km": 7.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "Carretera de Moa-Baracoa",
+     "ref": "CN;6-123",
+     "source": "explored",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w633460521",
+    "highway": "secondary",
+    "km": 5.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "maxspeed:practical": "30",
+     "name": "Carretera San Cayetano - Santa Lucía",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w505428871",
+    "highway": "secondary",
+    "km": 5.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "name": "Carretera de Puerto Esperanza",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w343246703",
+    "highway": "secondary",
+    "km": 4.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "40",
+     "name": "Carretera Granma",
+     "ref": "CSO;6-20",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w805183644",
+    "highway": "secondary",
+    "km": 3.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "name": "Carretera Granma",
+     "ref": "CSO;6-20",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w210569528",
+    "highway": "secondary",
+    "km": 3.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "Carretera de Moa-Baracoa",
+     "ref": "CN;6-123",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w351686309",
+    "highway": "secondary",
+    "km": 3.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "name": "Carretera Granma",
+     "ref": "CSO;6-20",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w191938416",
+    "highway": "secondary",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "Carretera de Moa-Baracoa",
+     "ref": "CN;6-123",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w351686315",
+    "highway": "secondary",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "name": "Carretera Granma",
+     "ref": "CSO;6-20",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w733325863",
+    "highway": "secondary",
+    "km": 2.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "name": "Carretera de Moa-Baracoa",
+     "ref": "CN;6-123",
+     "source": "explored",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w633665109",
+    "highway": "secondary",
+    "km": 2.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "maxspeed:practical": "30",
+     "name": "Carretera San Cayetano - Santa Lucía",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w1268693992",
+    "highway": "primary",
+    "km": 2.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "70",
+     "name": "Carretera Palma - Barajagua",
+     "ref": "6-371",
+     "smoothness": "bad",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w756566014",
+    "highway": "secondary",
+    "km": 2,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "dismount",
+     "highway": "secondary",
+     "surface": "sand"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w121841251",
+    "highway": "unclassified",
+    "km": 11.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & Maxar Premium Imagery 11-04-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w256336245",
+    "highway": "unclassified",
+    "km": 9.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed:practical": "20",
+     "name": "Carretera de San Lorenzo",
+     "smoothness": "horrible",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w305160228",
+    "highway": "secondary",
+    "km": 8.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "name": "Carretera Mola - Najasa",
+     "ref": "5-166",
+     "smoothness": "very_bad",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w38808607",
+    "highway": "unclassified",
+    "km": 8.4,
+    "level": "offroad",
+    "tags": {
+     "description": "Terreno en muy mal estado. No recomendable tomar, no es apto para vehículos. Apenas se distinguen los bordes del terraplen.",
+     "highway": "unclassified",
+     "lanes": "1",
+     "motor_vehicle": "no",
+     "smoothness": "very_bad",
+     "source": "Yahoo",
+     "surface": "ground",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w117987405",
+    "highway": "tertiary",
+    "km": 8.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "60",
+     "name": "Carretera a Biran",
+     "smoothness": "very_bad",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w23969298",
+    "highway": "unclassified",
+    "km": 7.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w258696698",
+    "highway": "unclassified",
+    "km": 6.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & Maxar Premium Imagery 13-04-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w31119766",
+    "highway": "unclassified",
+    "km": 6.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "landsat",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w118199918",
+    "highway": "unclassified",
+    "km": 6.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w1092424940",
+    "highway": "unclassified",
+    "km": 6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & Maxar Premium Imagery 13-04-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w633460521",
+    "highway": "secondary",
+    "km": 5.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "maxspeed:practical": "30",
+     "name": "Carretera San Cayetano - Santa Lucía",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w125813975",
+    "highway": "tertiary",
+    "km": 5.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w38882892",
+    "highway": "unclassified",
+    "km": 5.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed:practical": "30",
+     "source": "survey & Maxar Premium Imagery 13-04-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w121841342",
+    "highway": "unclassified",
+    "km": 5.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & Maxar Premium Imagery 13-04-20",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w505428871",
+    "highway": "secondary",
+    "km": 5.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "name": "Carretera de Puerto Esperanza",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w195857725",
+    "highway": "secondary",
+    "km": 7.2,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "maxspeed:practical": "30",
+     "name": "Carretera San Cayetano - Santa Lucía",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w39824801",
+    "highway": "secondary",
+    "km": 5,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "maxspeed:practical": "40",
+     "name": "Circuito Sur",
+     "ref": "CS",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "width": "7"
+    }
+   },
+   {
+    "id": "w235498838",
+    "highway": "secondary",
+    "km": 4.4,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "maxspeed:practical": "30",
+     "name": "Carretera San Cayetano - Santa Lucía",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w200061545",
+    "highway": "tertiary",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Carretera Banes - Los Ángeles",
+     "oneway": "no",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w234954647",
+    "highway": "tertiary",
+    "km": 2.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Camino a Vega Alta",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1193879119",
+    "highway": "secondary",
+    "km": 2.5,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "name": "Carretera Mola - Najasa",
+     "ref": "5-166",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w807879816",
+    "highway": "secondary",
+    "km": 2.3,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "name": "Carretera San Cayetano - Santa Lucía",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w841881555",
+    "highway": "unclassified",
+    "km": 2.2,
+    "level": "paved",
+    "tags": {
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "smoothness": "impassable"
+    }
+   },
+   {
+    "id": "w175701092",
+    "highway": "tertiary",
+    "km": 1.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Carretera Gibara - Caletones",
+     "smoothness": "good",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w842211142",
+    "highway": "unclassified",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Carretera del Polvorín",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w633665098",
+    "highway": "secondary",
+    "km": 1.1,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "60",
+     "name": "Carretera San Cayetano - Santa Lucía",
+     "oneway": "no",
+     "ref": "CN;1-I-3",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w807879724",
+    "highway": "tertiary",
+    "km": 1.1,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lane_markings": "no",
+     "maxspeed": "50",
+     "name": "Carretera San Luis - Chile",
+     "ref": "6-401",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1497469302",
+    "highway": "unclassified",
+    "km": 1,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w476205940",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Carretera del Polvorín",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w320099072",
+    "highway": "residential",
+    "km": 0.8,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "lane_markings": "no",
+     "maxspeed": "50",
+     "name": "Calle 25",
+     "oneway": "yes",
+     "sidewalk": "both",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w118276862",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "name": "28 de enero",
+     "oneway": "yes",
+     "surface": "afalto"
+    }
+   }
+  ]
+ }
+}

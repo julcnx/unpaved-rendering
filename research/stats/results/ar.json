@@ -1,0 +1,1303 @@
+{
+ "country": "ar",
+ "name": "Argentina",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:25:04.552Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "argentina-latest.osm.pbf",
+  "boundary": "r286393",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 4077.9,
+   "untagged": 21.3,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 32582.6,
+   "untagged": 273.9,
+   "unpaved": 150.1,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 25558.8,
+   "untagged": 427.2,
+   "unpaved": 409.4,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 35243.8,
+   "unpaved": 4942.7,
+   "untagged": 4342.2,
+   "offroad": 0.5,
+   "specialized": 0
+  },
+  "tertiary": {
+   "unpaved": 107795.6,
+   "untagged": 14413.5,
+   "paved_tagged": 11941.4,
+   "offroad": 691.7,
+   "specialized": 38.9
+  },
+  "unclassified": {
+   "unpaved": 326006.9,
+   "untagged": 86365.4,
+   "offroad": 1456,
+   "paved_tagged": 1105.9,
+   "specialized": 71.1
+  },
+  "residential": {
+   "untagged": 101160.1,
+   "unpaved": 52132.6,
+   "paved_tagged": 37178.9,
+   "offroad": 79.2,
+   "specialized": 5.7
+  },
+  "all": {
+   "unpaved": 491437.3,
+   "untagged": 207003.5,
+   "paved_tagged": 147689.2,
+   "offroad": 2227.4,
+   "specialized": 115.6
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 4077.9,
+   "smoothness": 153.2
+  },
+  "trunk": {
+   "surface": 32732.6,
+   "smoothness": 570.6
+  },
+  "primary": {
+   "surface": 25968.2,
+   "smoothness": 673.5
+  },
+  "secondary": {
+   "surface": 40187.1,
+   "smoothness": 799.3,
+   "tracktype": 0
+  },
+  "tertiary": {
+   "surface": 120431.6,
+   "smoothness": 3543.4,
+   "tracktype": 466.2,
+   "4wd_only": 32.8
+  },
+  "unclassified": {
+   "surface": 328255.4,
+   "smoothness": 1668.9,
+   "tracktype": 1532.5,
+   "4wd_only": 51.4
+  },
+  "residential": {
+   "surface": 89373,
+   "smoothness": 690.6,
+   "tracktype": 117.7
+  },
+  "all": {
+   "surface": 641025.8,
+   "smoothness": 8099.6,
+   "tracktype": 2116.4,
+   "4wd_only": 84.2
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 4077.9,
+   "default": 21.3
+  },
+  "trunk": {
+   "surface": 32732.6,
+   "default": 273.9
+  },
+  "primary": {
+   "surface": 25968.2,
+   "default": 427.2
+  },
+  "secondary": {
+   "surface": 40187.1,
+   "default": 4342.2,
+   "tracktype": 0
+  },
+  "tertiary": {
+   "surface": 120431.6,
+   "default": 14413.5,
+   "tracktype": 35.9
+  },
+  "unclassified": {
+   "surface": 328255.4,
+   "default": 86365.4,
+   "tracktype": 384.5
+  },
+  "residential": {
+   "default": 101160.1,
+   "surface": 89373,
+   "tracktype": 23.4
+  },
+  "all": {
+   "surface": 641025.8,
+   "default": 207003.5,
+   "tracktype": 443.8
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "smoothness": 0.5,
+   "tracktype": 0
+  },
+  "tertiary": {
+   "smoothness": 578.1,
+   "tracktype": 152.5
+  },
+  "unclassified": {
+   "tracktype": 880.9,
+   "smoothness": 594.9,
+   "4wd_only": 51.3
+  },
+  "residential": {
+   "tracktype": 55.6,
+   "smoothness": 29.3
+  },
+  "all": {
+   "smoothness": 1202.7,
+   "tracktype": 1089.1,
+   "4wd_only": 51.3
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 105,
+    "surface=gravel": 32,
+    "surface=fine_gravel": 5.3,
+    "surface=pebblestone": 2.9,
+    "surface=ground": 2.5,
+    "surface=concrete:lanes": 2.2,
+    "surface=dirt": 0.2
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=gravel": 191.8,
+    "surface=ground": 135.7,
+    "surface=unpaved": 75.1,
+    "surface=compacted": 5,
+    "surface=concrete:lanes": 1.6,
+    "surface=pebblestone": 0.2
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 3199.1,
+    "surface=gravel": 1053.6,
+    "surface=compacted": 509.1,
+    "surface=ground": 105.6,
+    "surface=dirt": 40.5,
+    "surface=sand": 22.9,
+    "surface=pebblestone": 9.8,
+    "surface=fine_gravel": 1.3,
+    "surface=earth": 0.7,
+    "surface=unhewn_cobblestone": 0.4,
+    "surface=concrete:lanes": 0.1,
+    "surface=artificial_turf": 0.1,
+    "tracktype=grade3": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 0.5,
+    "tracktype=grade3": 0
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 88384.5,
+    "surface=gravel": 7870,
+    "surface=compacted": 4618.8,
+    "surface=dirt": 3905.1,
+    "surface=ground": 1723.8,
+    "surface=sand": 782.9,
+    "surface=pebblestone": 583.1,
+    "surface=fine_gravel": 477.8,
+    "surface=earth": 120.4,
+    "tracktype=grade3": 29.2,
+    "surface=sin_pavimentarw": 15.4,
+    "tracktype=grade2": 6.4,
+    "surface=grass": 4.1,
+    "surface=mud": 1.6,
+    "surface=sin_pavimentarz": 1.4,
+    "surface=unpaved111": 0.9,
+    "surface=unhewn_cobblestone": 0.8,
+    "tracktype=grade4": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 419.9,
+    "smoothness=horrible": 119.2,
+    "tracktype=grade3": 109.5,
+    "tracktype=grade4": 34.1,
+    "tracktype=grade5": 8.9
+   },
+   "specialized": {
+    "smoothness=very_horrible": 36.5,
+    "smoothness=impassable": 2.4
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 304699.6,
+    "surface=ground": 8406.6,
+    "surface=dirt": 5999.5,
+    "surface=gravel": 2425.6,
+    "surface=earth": 2359.5,
+    "surface=compacted": 2298.4,
+    "surface=sand": 352.7,
+    "surface=grass": 235.5,
+    "surface=pebblestone": 198.1,
+    "surface=fine_gravel": 108.1,
+    "tracktype=grade2": 104.3,
+    "tracktype=grade4": 101.6,
+    "tracktype=grade3": 92.2,
+    "tracktype=grade5": 77.9,
+    "surface=sin_pavimentarc": 19.3,
+    "surface=clay": 15.1,
+    "surface=sin_pavimentarz": 14.2,
+    "surface=laterite": 6.4,
+    "surface=unhewn_cobblestone": 5.8,
+    "surface=tierra": 4,
+    "surface=sin_pavimentarg": 3.1,
+    "surface=mud": 2.5,
+    "surface=sin_pavimentar": 2.3,
+    "surface=sin_pavimentare": 1,
+    "surface=15": 0.2,
+    "surface=unmpaved": 0.2,
+    "surface=sin_pavimentarpastor_juan_hoppe": 0.2,
+    "surface=rock": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 458.5,
+    "smoothness=very_bad": 450.7,
+    "tracktype=grade4": 282.2,
+    "tracktype=grade5": 140.3,
+    "smoothness=horrible": 73.1,
+    "4wd_only=yes": 51.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 69.1,
+    "smoothness=impassable": 2
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 39902.3,
+    "surface=compacted": 3468.2,
+    "surface=dirt": 2966.7,
+    "surface=ground": 2623,
+    "surface=sand": 1298.5,
+    "surface=gravel": 1066.3,
+    "surface=pebblestone": 468.7,
+    "surface=earth": 171,
+    "surface=fine_gravel": 134.1,
+    "surface=grass": 63.4,
+    "surface=unhewn_cobblestone": 13.2,
+    "tracktype=grade3": 11.8,
+    "tracktype=grade2": 5,
+    "tracktype=grade4": 4.3,
+    "surface=rock": 3.4,
+    "surface=mud": 2.2,
+    "surface=sin_pavimentarpuerto_madryn": 1.9,
+    "surface=laterite": 1.5,
+    "surface=clay": 1.1,
+    "surface=suelo": 1,
+    "tracktype=grade5": 1,
+    "surface=compacted; asphalt": 0.9,
+    "surface=tierra": 0.7,
+    "surface=stone": 0.7,
+    "surface=camino_de_tierra_y_de_ripio": 0.7,
+    "surface=concrete:lanes": 0.7,
+    "surface=Avenida_Ingeniero_Roberto_Gasparri_Sur": 0.7,
+    "surface=grass_paver": 0.6,
+    "surface=sin_pavimentar22": 0.6,
+    "surface=de_tierra": 0.6,
+    "surface=cobblestone_flatened": 0.4,
+    "surface=hormigónsalome": 0.4,
+    "surface=tiera": 0.4,
+    "surface=sin_pavimentar2": 0.4,
+    "surface=sin_pavimentar": 0.3,
+    "surface=empedrado": 0.2,
+    "surface=sin_pavimentarw": 0.2,
+    "surface=calle_573": 0.1,
+    "surface=construction": 0.1,
+    "surface=dirty": 0,
+    "surface=juan_carlos_patriarca": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 37.2,
+    "smoothness=very_bad": 17.1,
+    "tracktype=grade4": 12.3,
+    "smoothness=horrible": 6.6,
+    "tracktype=grade5": 6.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.9,
+    "smoothness=impassable": 2.8
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 436365.6,
+    "surface=ground": 12997.2,
+    "surface=dirt": 12912,
+    "surface=gravel": 12639.2,
+    "surface=compacted": 10899.5,
+    "surface=earth": 2651.5,
+    "surface=sand": 2457,
+    "surface=pebblestone": 1262.7,
+    "surface=fine_gravel": 726.6,
+    "surface=grass": 303,
+    "tracktype=grade3": 133.2,
+    "tracktype=grade2": 115.7,
+    "tracktype=grade4": 105.9,
+    "tracktype=grade5": 78.9,
+    "surface=unhewn_cobblestone": 20.3,
+    "surface=sin_pavimentarc": 19.3,
+    "surface=clay": 16.3,
+    "surface=sin_pavimentarz": 15.6,
+    "surface=sin_pavimentarw": 15.6,
+    "surface=laterite": 7.8,
+    "surface=mud": 6.3,
+    "surface=tierra": 4.7,
+    "surface=concrete:lanes": 4.7,
+    "surface=rock": 3.5,
+    "surface=sin_pavimentarg": 3.1,
+    "surface=sin_pavimentar": 2.6,
+    "surface=sin_pavimentarpuerto_madryn": 1.9,
+    "surface=sin_pavimentare": 1,
+    "surface=suelo": 1,
+    "surface=compacted; asphalt": 0.9,
+    "surface=unpaved111": 0.9,
+    "surface=stone": 0.7,
+    "surface=camino_de_tierra_y_de_ripio": 0.7,
+    "surface=Avenida_Ingeniero_Roberto_Gasparri_Sur": 0.7,
+    "surface=grass_paver": 0.6,
+    "surface=sin_pavimentar22": 0.6,
+    "surface=de_tierra": 0.6,
+    "surface=cobblestone_flatened": 0.4,
+    "surface=hormigónsalome": 0.4,
+    "surface=tiera": 0.4,
+    "surface=sin_pavimentar2": 0.4,
+    "surface=15": 0.2,
+    "surface=empedrado": 0.2,
+    "surface=unmpaved": 0.2,
+    "surface=sin_pavimentarpastor_juan_hoppe": 0.2,
+    "surface=calle_573": 0.1,
+    "surface=construction": 0.1,
+    "surface=artificial_turf": 0.1,
+    "surface=dirty": 0,
+    "surface=juan_carlos_patriarca": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 888.2,
+    "tracktype=grade3": 605.2,
+    "tracktype=grade4": 328.5,
+    "smoothness=horrible": 198.9,
+    "tracktype=grade5": 155.3,
+    "4wd_only=yes": 51.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 108.5,
+    "smoothness=impassable": 7.1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=sin_pavimentarc": 19.3,
+  "surface=sin_pavimentarz": 15.6,
+  "surface=sin_pavimentarw": 15.6,
+  "surface=tierra": 4.7,
+  "surface=sin_pavimentarg": 3.1,
+  "surface=sin_pavimentar": 2.6,
+  "surface=sin_pavimentarpuerto_madryn": 1.9,
+  "smoothness=very_good": 1.3,
+  "surface=sin_pavimentare": 1,
+  "surface=suelo": 1,
+  "surface=unpaved111": 0.9,
+  "surface=stone": 0.7,
+  "surface=camino_de_tierra_y_de_ripio": 0.7,
+  "surface=Avenida_Ingeniero_Roberto_Gasparri_Sur": 0.7,
+  "surface=sin_pavimentar22": 0.6,
+  "surface=de_tierra": 0.6,
+  "surface=cobblestone_flatened": 0.4,
+  "surface=hormigónsalome": 0.4,
+  "surface=tiera": 0.4,
+  "surface=sin_pavimentar2": 0.4,
+  "surface=15": 0.2,
+  "surface=empedrado": 0.2,
+  "surface=unmpaved": 0.2,
+  "surface=sin_pavimentarpastor_juan_hoppe": 0.2,
+  "surface=calle_573": 0.1,
+  "surface=construction": 0.1,
+  "surface=artificial_turf": 0.1,
+  "surface=dirty": 0,
+  "surface=juan_carlos_patriarca": 0
+ },
+ "conflict_km": {
+  "smoothness=good + surface=unpaved": 50.7,
+  "smoothness=good + surface=compacted": 31.1,
+  "paved (surface=asphalt) + smoothness=horrible": 30.1,
+  "smoothness=good + surface=gravel": 25.7,
+  "paved (no surface) + smoothness=horrible": 17.4,
+  "paved (no surface) + smoothness=very_bad": 15.3,
+  "paved (surface=asphalt) + smoothness=very_bad": 11.6,
+  "paved (surface=asphalt) + smoothness=very_horrible": 11,
+  "smoothness=good + surface=dirt": 7.9,
+  "smoothness=good + surface=ground": 5.7,
+  "paved (surface=asphalt) + tracktype=grade3": 5.5,
+  "smoothness=excellent + surface=gravel": 4.2,
+  "paved (surface=asphalt) + tracktype=grade5": 4,
+  "paved (surface=asphalt) + smoothness=impassable": 3.6,
+  "paved (surface=concrete) + tracktype=grade3": 1.8,
+  "paved (surface=paved) + smoothness=very_bad": 1.7,
+  "smoothness=excellent + surface=unpaved": 1.2,
+  "paved (no surface) + smoothness=impassable": 1.2,
+  "paved (surface=concrete) + smoothness=very_bad": 0.9,
+  "paved (surface=asphalt) + tracktype=grade4": 0.9,
+  "paved (surface=paved) + smoothness=horrible": 0.5,
+  "paved (surface=paved) + smoothness=very_horrible": 0.4,
+  "paved (surface=concrete) + smoothness=very_horrible": 0.2,
+  "paved (no surface) + 4wd_only=yes": 0.2,
+  "smoothness=excellent + surface=compacted": 0.1,
+  "paved (surface=concrete) + tracktype=grade4": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w33677929",
+    "highway": "secondary",
+    "km": 204.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 25",
+     "ref": "RP25",
+     "source": "Yahoo",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w269097792",
+    "highway": "secondary",
+    "km": 191.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Ruta Provincial 9",
+     "oneway": "no",
+     "ref": "RP9",
+     "source": "Yahoo",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w117805624",
+    "highway": "secondary",
+    "km": 178.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 12",
+     "ref": "RP12",
+     "source": "Yahoo",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w690439402",
+    "highway": "secondary",
+    "km": 173.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 17",
+     "oneway": "no",
+     "ref": "RP17",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1025222912",
+    "highway": "primary",
+    "km": 112.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "name": "Ruta Nacional 288",
+     "ref": "RN288",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w306092103",
+    "highway": "secondary",
+    "km": 100.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 47",
+     "ref": "RP47",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w274474331",
+    "highway": "secondary",
+    "km": 99.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 14",
+     "ref": "RP14",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w451989115",
+    "highway": "secondary",
+    "km": 90.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 12",
+     "ref": "RP12",
+     "source": "Yahoo",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w401132847",
+    "highway": "secondary",
+    "km": 88.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Ruta Provincial 59",
+     "oneway": "no",
+     "ref": "RP59",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w33665538",
+    "highway": "secondary",
+    "km": 84,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "name": "Ruta Provincial 2",
+     "oneway": "no",
+     "ref": "RP2",
+     "source": "Yahoo",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w300847487",
+    "highway": "secondary",
+    "km": 82.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "Ruta Provincial 18",
+     "oneway": "no",
+     "ref": "RP18",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w261582781",
+    "highway": "secondary",
+    "km": 77.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Ruta Provincial 16",
+     "oneway": "no",
+     "ref": "RP16",
+     "source": "Yahoo",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w1233460512",
+    "highway": "secondary",
+    "km": 75.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "90",
+     "name": "Ruta Provincial 6",
+     "oneway": "no",
+     "ref": "RP6",
+     "smoothness": "intermediate",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w33821542",
+    "highway": "secondary",
+    "km": 74.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 75",
+     "ref": "RP75",
+     "source": "Yahoo",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w228171395",
+    "highway": "secondary",
+    "km": 69.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ruta Provincial 89",
+     "ref": "RP89",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w618256836",
+    "highway": "unclassified",
+    "km": 69.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w230047672",
+    "highway": "unclassified",
+    "km": 68.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w223677955",
+    "highway": "unclassified",
+    "km": 54.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w218323094",
+    "highway": "unclassified",
+    "km": 46.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w865242369",
+    "highway": "unclassified",
+    "km": 45.7,
+    "level": "specialized",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "maxspeed": "60",
+     "motor_vehicle": "yes",
+     "name": "Ruta Provincial 68",
+     "oneway": "no",
+     "ref": "RP68",
+     "smoothness": "very_horrible",
+     "surface": "compacted",
+     "tracktype": "grade3",
+     "width": "2"
+    }
+   },
+   {
+    "id": "w1453572142",
+    "highway": "tertiary",
+    "km": 45.1,
+    "level": "offroad",
+    "tags": {
+     "access": "unknown",
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "name": "Ex-Ruta Provincial 80",
+     "old_ref": "RP80",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w460211748",
+    "highway": "tertiary",
+    "km": 38.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Camino a Gualcamayo",
+     "oneway": "no",
+     "ref": "RP444",
+     "smoothness": "very_bad",
+     "surface": "pebblestone",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w460119638",
+    "highway": "tertiary",
+    "km": 36.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Camino Buena Esperanza - Gualcamayo",
+     "oneway": "no",
+     "ref": "RP479",
+     "smoothness": "very_bad",
+     "surface": "pebblestone",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w410383724",
+    "highway": "unclassified",
+    "km": 33.6,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "fixme": "Confirmar en terreno el tracktype",
+     "highway": "unclassified",
+     "name": "a Mina Santa Maria",
+     "oneway": "no",
+     "surface": "unpaved",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w745443220",
+    "highway": "tertiary",
+    "km": 33.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Camino a Las Chacras",
+     "ref": "RP498",
+     "smoothness": "very_bad",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w254539769",
+    "highway": "tertiary",
+    "km": 33,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "60",
+     "name": "Ruta Provincial 49",
+     "oneway": "no",
+     "ref": "RP49",
+     "smoothness": "very_bad",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w844725754",
+    "highway": "unclassified",
+    "km": 31.6,
+    "level": "offroad",
+    "tags": {
+     "foot": "yes",
+     "highway": "unclassified",
+     "name": "Ruta Provincial 41",
+     "ref": "RP41",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w1244285630",
+    "highway": "tertiary",
+    "km": 30.4,
+    "level": "offroad",
+    "tags": {
+     "access": "permissive",
+     "highway": "tertiary",
+     "maxspeed": "60",
+     "name": "Ruta Provincial 9",
+     "old_name": "Ruta Nacional 40",
+     "old_ref": "RN40",
+     "oneway": "no",
+     "ref": "RP9",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w626215255",
+    "highway": "tertiary",
+    "km": 30,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "material": "sand",
+     "name": "Barros",
+     "surface": "sand",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w334453319",
+    "highway": "tertiary",
+    "km": 28.6,
+    "level": "specialized",
+    "tags": {
+     "4wd_only": "recommended",
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "motor_vehicle": "permissive",
+     "motorcycle": "yes",
+     "mtb:scale": "1",
+     "name": "Cuesta de Zapata",
+     "old_ref": "RN40",
+     "ref": "RP3",
+     "smoothness": "very_horrible",
+     "surface": "ground"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w343968558",
+    "highway": "unclassified",
+    "km": 25.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Antigua Ruta Nacional 9",
+     "smoothness": "horrible",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w351764525",
+    "highway": "tertiary",
+    "km": 23.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Ruta Provincial 29",
+     "ref": "RP29",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w602694726",
+    "highway": "unclassified",
+    "km": 15.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w987779390",
+    "highway": "secondary",
+    "km": 14.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes:backward": "1",
+     "lanes:forward": "1",
+     "lit": "no",
+     "maxspeed": "110",
+     "maxspeed:bus": "90",
+     "maxspeed:hgv": "80",
+     "name": "Ruta Provincial 34",
+     "oneway": "no",
+     "ref": "RP34",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w330647518",
+    "highway": "tertiary",
+    "km": 13.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "40",
+     "name": "Ruta Provincial S 471",
+     "ref": "RP S471",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w122028451",
+    "highway": "unclassified",
+    "km": 10.1,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w430064550",
+    "highway": "unclassified",
+    "km": 7.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "lit": "no",
+     "maxspeed": "60",
+     "name": "Camino Negro",
+     "old_ref": "RP19",
+     "oneway": "no",
+     "ref": "115-04",
+     "sidewalk": "no",
+     "smoothness": "very_horrible",
+     "surface": "asphalt",
+     "toll": "no",
+     "trolley_wire": "no"
+    }
+   },
+   {
+    "id": "w680961686",
+    "highway": "tertiary",
+    "km": 7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "40",
+     "name": "Ruta Provincial S 471",
+     "ref": "RP S471",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w599036909",
+    "highway": "primary",
+    "km": 5.5,
+    "level": "paved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "110",
+     "name": "Ruta Provincial 74 Gobernador Mariano Acosta",
+     "ref": "RP74",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1235678664",
+    "highway": "tertiary",
+    "km": 5.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Ruta Provincial 29",
+     "ref": "RP29",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w709250264",
+    "highway": "unclassified",
+    "km": 4,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w122028452",
+    "highway": "unclassified",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w265771676",
+    "highway": "unclassified",
+    "km": 3.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "40",
+     "name": "Ex Ruta Nacional 34",
+     "oneway": "no",
+     "surface": "asphalt",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w305552819",
+    "highway": "tertiary",
+    "km": 2.9,
+    "level": "paved",
+    "tags": {
+     "admin_level": "7",
+     "description": "Límite municipios Labordeboy - Melincué",
+     "disused:highway": "unclassified",
+     "highway": "tertiary",
+     "name": "Ruta Provincial 93",
+     "ref": "RP93",
+     "smoothness": "very_horrible",
+     "source": "Yahoo;http://www.idesf.santafe.gov.ar",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w351936818",
+    "highway": "unclassified",
+    "km": 2.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "segregated": "no",
+     "smoothness": "good",
+     "surface": "ground"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w245243325",
+    "highway": "tertiary",
+    "km": 15.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "RPS244",
+     "surface": "sin_pavimentarw"
+    }
+   },
+   {
+    "id": "w870499739",
+    "highway": "unclassified",
+    "km": 10.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarz"
+    }
+   },
+   {
+    "id": "w197054231",
+    "highway": "unclassified",
+    "km": 5.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarc"
+    }
+   },
+   {
+    "id": "w1059750047",
+    "highway": "unclassified",
+    "km": 5.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarc"
+    }
+   },
+   {
+    "id": "w163838965",
+    "highway": "unclassified",
+    "km": 4,
+    "level": "unpaved",
+    "tags": {
+     "addr:city": "Guaymallén",
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "30",
+     "name": "Ferrer",
+     "oneway": "no",
+     "surface": "tierra"
+    }
+   },
+   {
+    "id": "w1531130900",
+    "highway": "unclassified",
+    "km": 3.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarc"
+    }
+   },
+   {
+    "id": "w248774766",
+    "highway": "unclassified",
+    "km": 3.6,
+    "level": "unpaved",
+    "tags": {
+     "admin_level": "7",
+     "description": "Límite Municipio Chajarí",
+     "highway": "unclassified",
+     "surface": "sin_pavimentarz"
+    }
+   },
+   {
+    "id": "w1133956233",
+    "highway": "unclassified",
+    "km": 3.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarg"
+    }
+   },
+   {
+    "id": "w1531130901",
+    "highway": "unclassified",
+    "km": 2.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarc"
+    }
+   },
+   {
+    "id": "w585255795",
+    "highway": "unclassified",
+    "km": 2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentarc"
+    }
+   },
+   {
+    "id": "w1099339420",
+    "highway": "unclassified",
+    "km": 1.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentar"
+    }
+   },
+   {
+    "id": "w254025950",
+    "highway": "tertiary",
+    "km": 1.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Avenida de la Cremería",
+     "ref": "RP23",
+     "surface": "sin_pavimentarz"
+    }
+   },
+   {
+    "id": "w1296751865",
+    "highway": "unclassified",
+    "km": 1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sin_pavimentare"
+    }
+   },
+   {
+    "id": "w96882115",
+    "highway": "residential",
+    "km": 1,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Apóstoles",
+     "highway": "residential",
+     "name": "Apóstoles Sur",
+     "oneway": "yes",
+     "source": "GPS",
+     "surface": "suelo"
+    }
+   },
+   {
+    "id": "w882178381",
+    "highway": "tertiary",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "source": "maxar",
+     "surface": "unpaved111"
+    }
+   }
+  ]
+ }
+}

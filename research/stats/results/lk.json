@@ -1,0 +1,1209 @@
+{
+ "country": "lk",
+ "name": "Sri Lanka",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:06:00.785Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "sri-lanka-latest.osm.pbf",
+  "boundary": "r536807",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 624.4,
+   "untagged": 2.3,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 3931.5,
+   "untagged": 23.1,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 8374.9,
+   "untagged": 217.6,
+   "unpaved": 59.6,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 1245.8,
+   "untagged": 822.2,
+   "unpaved": 82.9,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 7314.9,
+   "paved_tagged": 3619.3,
+   "unpaved": 458.4,
+   "offroad": 28.8,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 12365,
+   "unpaved": 6831.7,
+   "paved_tagged": 2424.8,
+   "offroad": 471.6,
+   "specialized": 75.3
+  },
+  "residential": {
+   "untagged": 46030.5,
+   "unpaved": 7313.8,
+   "paved_tagged": 5034.3,
+   "offroad": 172,
+   "specialized": 16.8
+  },
+  "all": {
+   "untagged": 66775.6,
+   "paved_tagged": 25255,
+   "unpaved": 14746.5,
+   "offroad": 672.3,
+   "specialized": 92.1
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 624.4
+  },
+  "trunk": {
+   "surface": 3931.5,
+   "smoothness": 80.5
+  },
+  "primary": {
+   "surface": 8434.5,
+   "smoothness": 174.3,
+   "tracktype": 2.5
+  },
+  "secondary": {
+   "surface": 1323,
+   "smoothness": 166.2,
+   "tracktype": 22.2
+  },
+  "tertiary": {
+   "surface": 4104.4,
+   "smoothness": 494.3,
+   "tracktype": 8.4
+  },
+  "unclassified": {
+   "surface": 9679.3,
+   "smoothness": 1386.6,
+   "tracktype": 236
+  },
+  "residential": {
+   "surface": 12387.6,
+   "smoothness": 1093.9,
+   "tracktype": 223
+  },
+  "all": {
+   "surface": 40484.7,
+   "smoothness": 3395.8,
+   "tracktype": 492
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 624.4,
+   "default": 2.3
+  },
+  "trunk": {
+   "surface": 3931.5,
+   "default": 23.1
+  },
+  "primary": {
+   "surface": 8434.5,
+   "default": 217.6
+  },
+  "secondary": {
+   "surface": 1323,
+   "default": 822.2,
+   "tracktype": 5.7
+  },
+  "tertiary": {
+   "default": 7314.9,
+   "surface": 4104.4,
+   "tracktype": 2.1
+  },
+  "unclassified": {
+   "default": 12365,
+   "surface": 9679.3,
+   "tracktype": 124.1
+  },
+  "residential": {
+   "default": 46030.5,
+   "surface": 12387.6,
+   "tracktype": 149.3
+  },
+  "all": {
+   "default": 66775.6,
+   "surface": 40484.7,
+   "tracktype": 281.2
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {},
+  "tertiary": {
+   "smoothness": 27.4,
+   "tracktype": 1.4
+  },
+  "unclassified": {
+   "smoothness": 425.9,
+   "tracktype": 121
+  },
+  "residential": {
+   "tracktype": 112.6,
+   "smoothness": 76.2
+  },
+  "all": {
+   "smoothness": 529.4,
+   "tracktype": 235
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=gravel": 55.1,
+    "surface=tartan": 3,
+    "surface=compacted": 1.4,
+    "surface=unpaved": 0.1
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=ground": 38.5,
+    "surface=gravel": 20.6,
+    "surface=unpaved": 19.5,
+    "surface=compacted": 3.5,
+    "surface=concrete:lanes": 0.8
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 231.7,
+    "surface=ground": 59.4,
+    "surface=gravel": 48.6,
+    "surface=sand": 42,
+    "surface=dirt": 38.2,
+    "surface=compacted": 29,
+    "surface=mud": 19.4,
+    "surface=carpet": 15.2,
+    "tracktype=grade3": 1.4,
+    "surface=fine_gravel": 1.3,
+    "surface=acrylic": 1,
+    "surface=tartan": 0.1
+   },
+   "offroad": {
+    "smoothness=horrible": 19.4,
+    "smoothness=very_bad": 8,
+    "tracktype=grade3": 1.4
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 2868,
+    "surface=compacted": 1861,
+    "surface=ground": 1605.6,
+    "surface=gravel": 638,
+    "surface=sand": 175.8,
+    "surface=fine_gravel": 68.6,
+    "surface=dirt": 47.2,
+    "tracktype=grade3": 42,
+    "surface=mud": 21.6,
+    "tracktype=grade4": 15.9,
+    "tracktype=grade2": 12,
+    "tracktype=grade5": 9.1,
+    "surface=concrete:lanes": 3.2,
+    "surface=artificial_turf": 2.8,
+    "surface=earth": 2.3,
+    "surface=concrete_gavel": 2.1,
+    "surface=grass": 1.3,
+    "surface=tarmac": 1,
+    "surface=concrete:slabs": 0.5,
+    "surface=asphalt; carpeted": 0.5
+   },
+   "offroad": {
+    "smoothness=very_bad": 251.3,
+    "smoothness=horrible": 99.3,
+    "tracktype=grade3": 77,
+    "tracktype=grade4": 31.7,
+    "tracktype=grade5": 12.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 57,
+    "smoothness=impassable": 18.2
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 3349.8,
+    "surface=gravel": 1350.3,
+    "surface=compacted": 1176.5,
+    "surface=ground": 966.7,
+    "surface=sand": 341.8,
+    "surface=dirt": 88.5,
+    "surface=fine_gravel": 74.4,
+    "tracktype=grade4": 41.5,
+    "tracktype=grade3": 35.7,
+    "tracktype=grade2": 12.8,
+    "surface=earth": 10.4,
+    "surface=tarmac": 7.9,
+    "tracktype=grade5": 7.6,
+    "surface=Carpet": 5.1,
+    "surface=grass": 4.3,
+    "surface=mud": 4.2,
+    "surface=tar": 3.3,
+    "surface=concrete/gravel": 3,
+    "surface=clay": 3,
+    "surface=grass_paver": 2.6,
+    "surface=carpet": 2.5,
+    "surface=carpeted_road": 2.4,
+    "surface=concrete (300m) and Gravel": 2,
+    "surface=2m kurukku road": 0.9,
+    "surface=taar": 0.8,
+    "surface=concrete:lanes": 0.8,
+    "surface=tartan": 0.7,
+    "surface=pebblestone": 0.6,
+    "surface=Path": 0.5,
+    "surface=gravel,_cement": 0.5,
+    "surface=macadam": 0.4,
+    "surface=block": 0.2,
+    "surface=Anuradhapura": 0.2,
+    "surface=Hard Soil": 0.2,
+    "surface=vinusha": 0.2,
+    "surface=path": 0.2,
+    "surface=unhewn_cobblestone": 0.1
+   },
+   "offroad": {
+    "tracktype=grade4": 54,
+    "smoothness=very_bad": 48.3,
+    "tracktype=grade3": 45.5,
+    "tracktype=grade5": 13,
+    "smoothness=horrible": 11
+   },
+   "specialized": {
+    "smoothness=very_horrible": 16,
+    "smoothness=impassable": 0.8
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 6469.1,
+    "surface=compacted": 3071.4,
+    "surface=ground": 2670.2,
+    "surface=gravel": 2112.6,
+    "surface=sand": 559.6,
+    "surface=dirt": 173.8,
+    "surface=fine_gravel": 144.3,
+    "tracktype=grade3": 79.1,
+    "tracktype=grade4": 57.5,
+    "surface=mud": 45.1,
+    "tracktype=grade2": 24.8,
+    "surface=carpet": 17.7,
+    "tracktype=grade5": 16.7,
+    "surface=earth": 12.8,
+    "surface=tarmac": 8.9,
+    "surface=grass": 5.6,
+    "surface=Carpet": 5.1,
+    "surface=concrete:lanes": 4.8,
+    "surface=tartan": 3.8,
+    "surface=tar": 3.3,
+    "surface=concrete/gravel": 3,
+    "surface=clay": 3,
+    "surface=artificial_turf": 2.8,
+    "surface=grass_paver": 2.6,
+    "surface=carpeted_road": 2.4,
+    "surface=concrete_gavel": 2.1,
+    "surface=concrete (300m) and Gravel": 2,
+    "surface=acrylic": 1,
+    "surface=2m kurukku road": 0.9,
+    "surface=taar": 0.8,
+    "surface=pebblestone": 0.6,
+    "surface=concrete:slabs": 0.5,
+    "surface=Path": 0.5,
+    "surface=asphalt; carpeted": 0.5,
+    "surface=gravel,_cement": 0.5,
+    "surface=macadam": 0.4,
+    "surface=block": 0.2,
+    "surface=Anuradhapura": 0.2,
+    "surface=Hard Soil": 0.2,
+    "surface=vinusha": 0.2,
+    "surface=path": 0.2,
+    "surface=unhewn_cobblestone": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 307.6,
+    "smoothness=horrible": 129.8,
+    "tracktype=grade3": 124,
+    "tracktype=grade4": 85.7,
+    "tracktype=grade5": 25.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 73,
+    "smoothness=impassable": 19.1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=carpet": 17.7,
+  "surface=tarmac": 8.9,
+  "surface=Carpet": 5.1,
+  "surface=tartan": 3.8,
+  "surface=tar": 3.3,
+  "surface=concrete/gravel": 3,
+  "surface=artificial_turf": 2.8,
+  "surface=carpeted_road": 2.4,
+  "surface=concrete_gavel": 2.1,
+  "surface=concrete (300m) and Gravel": 2,
+  "surface=acrylic": 1,
+  "surface=2m kurukku road": 0.9,
+  "surface=taar": 0.8,
+  "surface=concrete:slabs": 0.5,
+  "surface=Path": 0.5,
+  "surface=asphalt; carpeted": 0.5,
+  "surface=gravel,_cement": 0.5,
+  "surface=macadam": 0.4,
+  "surface=block": 0.2,
+  "surface=Anuradhapura": 0.2,
+  "smoothness=g'": 0.2,
+  "surface=Hard Soil": 0.2,
+  "surface=vinusha": 0.2,
+  "surface=path": 0.2,
+  "smoothness=excellent;good": 0.2
+ },
+ "conflict_km": {
+  "smoothness=good + surface=gravel": 18,
+  "smoothness=good + surface=unpaved": 6.8,
+  "smoothness=good + surface=ground": 5.4,
+  "paved (surface=cobblestone) + smoothness=horrible": 3.9,
+  "paved (surface=concrete) + tracktype=grade3": 3.2,
+  "paved (no surface) + smoothness=horrible": 3,
+  "paved (surface=paved) + tracktype=grade3": 2.5,
+  "smoothness=good + surface=compacted": 2.2,
+  "paved (surface=concrete) + smoothness=horrible": 1.5,
+  "paved (surface=asphalt) + tracktype=grade3": 1.3,
+  "paved (no surface) + smoothness=very_bad": 1,
+  "smoothness=good + surface=acrylic": 1,
+  "paved (surface=sett) + smoothness=very_bad": 0.9,
+  "paved (surface=paved) + smoothness=horrible": 0.8,
+  "smoothness=good + surface=concrete:lanes": 0.7,
+  "paved (surface=concrete) + smoothness=very_horrible": 0.7,
+  "paved (surface=cobblestone) + smoothness=very_bad": 0.4,
+  "smoothness=good + surface=sand": 0.3,
+  "paved (surface=concrete) + smoothness=very_bad": 0.3,
+  "paved (surface=asphalt) + smoothness=very_bad": 0.2,
+  "paved (surface=paving_stones) + tracktype=grade3": 0.1,
+  "paved (no surface) + smoothness=impassable": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w539055369",
+    "highway": "primary",
+    "km": 31.7,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "description": "Road declared under Gazette No. 561/5 dated of 06-06-1989 as the B379-Puttalam-Marichchukkaddi Road. No person has the authority to alter the trace unless such changes are redefined and published through a new Gazette.",
+     "hgv": "yes",
+     "highway": "primary",
+     "maxspeed": "30",
+     "motor_vehicle": "yes",
+     "name": "Mannar Road",
+     "nat_name": "Puttalam-Marichchukkaddi Road",
+     "network": "SL:national",
+     "official_name": "Mannar Road",
+     "oneway": "no",
+     "operator": "Road Development Authority",
+     "ref": "B379",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w197929094",
+    "highway": "secondary",
+    "km": 19.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w78140418",
+    "highway": "secondary",
+    "km": 9,
+    "level": "unpaved",
+    "tags": {
+     "access": "permit",
+     "highway": "secondary",
+     "maxspeed": "25",
+     "maxspeed:note": "25",
+     "name": "Yala Santuary Road",
+     "oneway": "no",
+     "surface": "unpaved",
+     "tracktype": "grade1"
+    }
+   },
+   {
+    "id": "w197929085",
+    "highway": "secondary",
+    "km": 8.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "40",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w647587653",
+    "highway": "secondary",
+    "km": 6.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w1126764788",
+    "highway": "secondary",
+    "km": 5.8,
+    "level": "unpaved",
+    "tags": {
+     "access": "permit",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "Kumbukkana Road",
+     "oneway": "no",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w1413847334",
+    "highway": "primary",
+    "km": 4.5,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "description": "Road declared under Gazette No. 561/5 dated of 06-06-1989 as the B379-Puttalam-Marichchukkaddi Road. No person has the authority to alter the trace unless such changes are redefined and published through a new Gazette.",
+     "hgv": "yes",
+     "highway": "primary",
+     "maxspeed": "30",
+     "motor_vehicle": "yes",
+     "name": "Mannar Road",
+     "nat_name": "Puttalam-Marichchukkaddi Road",
+     "network": "SL:national",
+     "official_name": "Mannar Road",
+     "oneway": "no",
+     "operator": "Road Development Authority",
+     "ref": "B379",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w297310391",
+    "highway": "primary",
+    "km": 4.2,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "description": "Road declared in Gazette No. 561/5 dated 06-06-1989 as B355-Panama-Kumbukkana Road. No one may alter this trace unless redefined and issued in a new Gazette.",
+     "highway": "primary",
+     "lanes": "1",
+     "maxspeed": "40",
+     "motor_vehicle": "yes",
+     "name": "Panama-Kumana Road",
+     "nat_name": "Panama-Kumbukkana Road",
+     "network": "SL:national",
+     "official_name": "Panama-Kumana Road",
+     "oneway": "no",
+     "operator": "Road Development Authority",
+     "ref": "B355",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w1342415383",
+    "highway": "secondary",
+    "km": 3.6,
+    "level": "unpaved",
+    "tags": {
+     "access": "permit",
+     "highway": "secondary",
+     "maxspeed": "25",
+     "maxspeed:note": "25",
+     "name": "Yala Santuary Road",
+     "oneway": "no",
+     "surface": "unpaved",
+     "tracktype": "grade1"
+    }
+   },
+   {
+    "id": "w314944568",
+    "highway": "secondary",
+    "km": 3.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1128415082",
+    "highway": "secondary",
+    "km": 3.1,
+    "level": "unpaved",
+    "tags": {
+     "access": "permit",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "Kumbukkana Road",
+     "oneway": "no",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w555953044",
+    "highway": "secondary",
+    "km": 3.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "15",
+     "smoothness": "bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w52323631",
+    "highway": "primary",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "name": "Kolonnawa-Angoda Road",
+     "ref": "B231",
+     "source": "yahoo",
+     "surface": "tartan"
+    }
+   },
+   {
+    "id": "w1254887990",
+    "highway": "primary",
+    "km": 2.8,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "description": "Road declared in Gazette No. 561/5 dated 06-06-1989 as B355-Panama-Kumbukkana Road. No one may alter this trace unless redefined and issued in a new Gazette.",
+     "highway": "primary",
+     "lanes": "1",
+     "maxspeed": "40",
+     "motor_vehicle": "yes",
+     "name": "Panama-Kumana Road",
+     "nat_name": "Panama-Kumbukkana Road",
+     "network": "SL:national",
+     "official_name": "Panama-Kumana Road",
+     "oneway": "no",
+     "operator": "Road Development Authority",
+     "ref": "B355",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w1120274739",
+    "highway": "primary",
+    "km": 2.7,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "description": "Road declared in Gazette No. 561/5 dated 06-06-1989 as B355-Panama-Kumbukkana Road. No one may alter this trace unless redefined and issued in a new Gazette.",
+     "highway": "primary",
+     "lanes": "1",
+     "maxspeed": "40",
+     "motor_vehicle": "yes",
+     "name": "Panama-Kumana Road",
+     "nat_name": "Panama-Kumbukkana Road",
+     "network": "SL:national",
+     "official_name": "Panama-Kumana Road",
+     "oneway": "no",
+     "operator": "Road Development Authority",
+     "ref": "B355",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w318232755",
+    "highway": "tertiary",
+    "km": 11.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "40",
+     "smoothness": "horrible",
+     "surface": "mud"
+    }
+   },
+   {
+    "id": "w330657394",
+    "highway": "residential",
+    "km": 10.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w358573613",
+    "highway": "unclassified",
+    "km": 10.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "40",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w318232754",
+    "highway": "tertiary",
+    "km": 7.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "40",
+     "smoothness": "horrible",
+     "surface": "mud"
+    }
+   },
+   {
+    "id": "w589721898",
+    "highway": "unclassified",
+    "km": 7.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w514995593",
+    "highway": "unclassified",
+    "km": 7.4,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w538433489",
+    "highway": "unclassified",
+    "km": 7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "name": "Track 04 Road",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w662088397",
+    "highway": "unclassified",
+    "km": 6.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "10",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w439995663",
+    "highway": "tertiary",
+    "km": 6.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w525537729",
+    "highway": "unclassified",
+    "km": 6.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w1021110339",
+    "highway": "unclassified",
+    "km": 6.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w530501650",
+    "highway": "unclassified",
+    "km": 6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w558195395",
+    "highway": "unclassified",
+    "km": 5.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w509649696",
+    "highway": "unclassified",
+    "km": 5.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "20",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w583604996",
+    "highway": "unclassified",
+    "km": 5.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "sand",
+     "tracktype": "grade4"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w462902551",
+    "highway": "unclassified",
+    "km": 12.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w512755615",
+    "highway": "unclassified",
+    "km": 4.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w456080436",
+    "highway": "unclassified",
+    "km": 3.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "incline": "10%",
+     "maxspeed": "20",
+     "smoothness": "horrible",
+     "surface": "cobblestone",
+     "tracktype": "grade2",
+     "width": "2"
+    }
+   },
+   {
+    "id": "w580636019",
+    "highway": "residential",
+    "km": 3,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "horrible",
+     "tracktype": "grade1"
+    }
+   },
+   {
+    "id": "w544509282",
+    "highway": "unclassified",
+    "km": 1.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w580698035",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "smoothness": "horrible",
+     "surface": "concrete",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w586016742",
+    "highway": "unclassified",
+    "km": 1.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "20",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w545963121",
+    "highway": "residential",
+    "km": 1.3,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w624066900",
+    "highway": "residential",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "maxspeed": "20",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w179237105",
+    "highway": "residential",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "maxspeed": "30",
+     "name": "Puranvalavu Road",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w496168559",
+    "highway": "unclassified",
+    "km": 1.1,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "20",
+     "surface": "concrete",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w544963300",
+    "highway": "residential",
+    "km": 1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "good",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w464766740",
+    "highway": "residential",
+    "km": 1,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w505060610",
+    "highway": "tertiary",
+    "km": 1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "good",
+     "surface": "acrylic"
+    }
+   },
+   {
+    "id": "w547907937",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "ground"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w516224902",
+    "highway": "tertiary",
+    "km": 9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Thawalama Road",
+     "surface": "carpet"
+    }
+   },
+   {
+    "id": "w354958858",
+    "highway": "residential",
+    "km": 5.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "Kooralawala Road",
+     "surface": "Carpet"
+    }
+   },
+   {
+    "id": "w52323631",
+    "highway": "primary",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "name": "Kolonnawa-Angoda Road",
+     "ref": "B231",
+     "source": "yahoo",
+     "surface": "tartan"
+    }
+   },
+   {
+    "id": "w352308843",
+    "highway": "unclassified",
+    "km": 2.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "surface": "artificial_turf"
+    }
+   },
+   {
+    "id": "w1182268759",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Thawalama Road",
+     "surface": "carpet"
+    }
+   },
+   {
+    "id": "w317791278",
+    "highway": "residential",
+    "km": 2.4,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "highway": "residential",
+     "horse": "designated",
+     "maxspeed": "30",
+     "name": "Galamuna Kajugama Road",
+     "name:si": "Galamuna-Kajugama Road",
+     "road_marking": "unclassified",
+     "surface": "carpeted_road"
+    }
+   },
+   {
+    "id": "w528612896",
+    "highway": "residential",
+    "km": 2.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "keselwaththa road",
+     "surface": "concrete/gravel"
+    }
+   },
+   {
+    "id": "w528926769",
+    "highway": "unclassified",
+    "km": 2.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "elawella road",
+     "surface": "concrete_gavel"
+    }
+   },
+   {
+    "id": "w107710782",
+    "highway": "tertiary",
+    "km": 1.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "layer": "-1",
+     "maxspeed": "50",
+     "name": "Nachchaduwa road",
+     "surface": "carpet",
+     "tunnel": "yes"
+    }
+   },
+   {
+    "id": "w683701851",
+    "highway": "residential",
+    "km": 1.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "Sri Seelarathana Mawatha",
+     "smoothness": "intermediate",
+     "surface": "tarmac",
+     "width": "1.5"
+    }
+   },
+   {
+    "id": "w1247296825",
+    "highway": "tertiary",
+    "km": 1.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Thawalama Road",
+     "surface": "carpet"
+    }
+   },
+   {
+    "id": "w1429733604",
+    "highway": "residential",
+    "km": 1.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "1",
+     "maxspeed": "30",
+     "surface": "tarmac"
+    }
+   },
+   {
+    "id": "w452021060",
+    "highway": "residential",
+    "km": 1.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "Kochchithotta Veethy",
+     "surface": "concrete (300m) and Gravel"
+    }
+   },
+   {
+    "id": "w478098639",
+    "highway": "residential",
+    "km": 1.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "lanes": "1",
+     "maxspeed": "30",
+     "smoothness": "very_bad",
+     "surface": "tarmac",
+     "width": "1.5"
+    }
+   },
+   {
+    "id": "w385960645",
+    "highway": "residential",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "maxspeed": "30",
+     "name": "Salliththeevu Road",
+     "surface": "tar"
+    }
+   }
+  ]
+ }
+}
