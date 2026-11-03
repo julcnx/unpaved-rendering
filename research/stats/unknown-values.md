@@ -7,12 +7,12 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | Value | km | Countries (km) |
 |---|---|---|
 | `tracktype=grade3-5` | 1,209 | South Africa 1209 |
-| `surface=dirt/sand` | 881 | Brazil 307, Kenya 236, Ethiopia 133, South Africa 62, India 49, Cameroon 18, Indonesia 12, Honduras 11, Thailand 10, Australia 9, Myanmar 6, Senegal 5, Chile 5, Kyrgyzstan 5, Laos 4, Cambodia 3, Philippines 2, Madagascar 1, Peru 1, Mongolia 1, Papua New Guinea 1, Colombia 1, Guatemala 0, Malaysia 0, Namibia 0, Nepal 0 |
-| `smoothness=very_good` | 265 | India 90, Senegal 82, Brazil 53, Honduras 21, Ghana 8, Gambia 6, Kenya 4, Argentina 1 |
+| `surface=dirt/sand` | 893 | Brazil 307, Kenya 236, Ethiopia 133, South Africa 62, India 49, Cameroon 18, Morocco 12, Indonesia 12, Honduras 11, Thailand 10, Australia 9, Myanmar 6, Senegal 5, Chile 5, Kyrgyzstan 5, Laos 4, Cambodia 3, Philippines 2, Madagascar 1, Peru 1, Mongolia 1, Papua New Guinea 1, Colombia 1, Guatemala 0, Malaysia 0, Namibia 0, Nepal 0 |
+| `smoothness=very_good` | 305 | India 90, Senegal 82, Brazil 53, Morocco 40, Honduras 21, Ghana 8, Gambia 6, Kenya 4, Argentina 1 |
+| `surface=sand/gravel/stones` | 288 | Morocco 156, Kenya 125, Australia 6, India 1 |
 | `surface=karral` | 232 | Cameroon 232 |
 | `surface=terra` | 156 | Brazil 156 |
 | `surface=tartan` | 143 | India 87, Namibia 41, South Africa 5, Sri Lanka 4, Ivory Coast 2, Denmark 1, Cameroon 1, Indonesia 1, Malaysia 1, Ethiopia 0, Brazil 0, Nepal 0, Madagascar 0 |
-| `surface=sand/gravel/stones` | 132 | Kenya 125, Australia 6, India 1 |
 | `surface=dbst` | 132 | Cambodia 132 |
 | `smoothness=p` | 124 | Cameroon 124 |
 | `surface=ground,_sand` | 114 | Mongolia 114 |
@@ -63,6 +63,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=StackBOX` | 12 | India 12 |
 | `surface=mixed_asphalt_&_gravel` | 12 | India 12 |
 | `smoothness=high_clearance` | 11 | India 11 |
+| `surface=sand,_gravel,_stones` | 11 | Morocco 11 |
 | `surface=dirt_gravel_ground` | 11 | Australia 11 |
 | `surface=bituminous` | 11 | India 11 |
 | `surface=3.5` | 11 | Nepal 11 |
@@ -74,9 +75,11 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=pedra_poliédrica` | 9 | Brazil 9 |
 | `surface=sterrato` | 9 | India 9 |
 | `surface=DBST` | 9 | Cambodia 9 |
+| `surface=sand/gravel` | 8 | Morocco 8 |
 | `surface=não_pavimentadocc` | 8 | Brazil 8 |
 | `surface=Gavilla` | 8 | Chile 8 |
 | `surface=asphalt,dull` | 8 | Indonesia 8 |
+| `surface=sand/gravel/stones/concrete` | 8 | Morocco 8 |
 | `smoothness=intermediate;good` | 8 | Indonesia 7, Cameroon 1 |
 | `surface=Non Bitumee` | 8 | Cameroon 8 |
 | `surface=asphalt_&_Ground` | 8 | Indonesia 8 |
@@ -86,6 +89,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=grave` | 7 | Honduras 7 |
 | `surface=double_bitumenous_surface_treatment` | 7 | Cambodia 7 |
 | `surface=não_pavimentada` | 7 | Brazil 7 |
+| `surface=sand,_gravel,_rock` | 7 | Morocco 7 |
 | `surface=ground,_dirt,_mud` | 7 | Mongolia 7 |
 | `surface=q2007` | 7 | Malaysia 7 |
 | `surface=concreted,_paved` | 6 | Philippines 6 |
@@ -117,12 +121,12 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=concrete,_gravel` | 4 | Cambodia 3, Philippines 1, India 0 |
 | `surface=unpaved_sand` | 4 | Senegal 4, Gambia 0 |
 | `surface=Tanah dan Aspal` | 4 | Indonesia 4 |
+| `surface=shingle` | 4 | India 4, Morocco 0 |
 | `surface=asphalt,_gravel` | 4 | India 4 |
 | `surface=yes` | 4 | Indonesia 2, Brazil 2, Guatemala 0, India 0, Philippines 0 |
 | `surface=un}` | 4 | Chile 4 |
 | `surface=goud` | 4 | Kenya 4 |
 | `surface=pozzolan` | 4 | Cameroon 4 |
-| `surface=shingle` | 4 | India 4 |
 | `surface=premix` | 4 | Nepal 4 |
 | `surface=surface` | 4 | Brazil 4 |
 | `surface=Pedras` | 4 | Brazil 4 |
@@ -145,11 +149,14 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=block` | 3 | Brazil 2, India 1, Sri Lanka 0, Chile 0 |
 | `surface=Soil graded` | 3 | Kenya 3 |
 | `surface=concrete/gravel` | 3 | Sri Lanka 3 |
+| `surface=route` | 3 | Morocco 2, Senegal 1 |
 | `surface=multi` | 3 | South Africa 3 |
 | `surface=nezpevněnýě` | 3 | Brazil 3 |
 | `surface=mixed_paved_and_unpaved` | 3 | Philippines 3 |
 | `surface=partial unpaved` | 3 | Thailand 3 |
 | `surface=terra_batida` | 3 | Brazil 3 |
+| `surface=piste` | 3 | Morocco 3 |
+| `surface=non` | 3 | Morocco 2, Madagascar 0 |
 | `surface=seet` | 3 | Brazil 3 |
 | `surface=asfalto,_paralelepípedo` | 3 | Brazil 3 |
 | `surface=césped_tierra` | 3 | Colombia 3 |
@@ -161,6 +168,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=asphalt,_paved,_concrete` | 2 | India 2 |
 | `surface=Graded Soil` | 2 | Kenya 2 |
 | `surface=carpeted_road` | 2 | Sri Lanka 2 |
+| `surface=Schotter` | 2 | Morocco 2 |
 | `surface=n` | 2 | Philippines 2, Brazil 0 |
 | `surface=concrete:tiles` | 2 | Brazil 2, India 1 |
 | `surface=asfalto_e_não_pavimentado.` | 2 | Brazil 2 |
@@ -194,6 +202,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=grober_schotter` | 2 | Brazil 2 |
 | `surface=asfalto,_paralelepídedo,_sem_pavimentação` | 2 | Brazil 2 |
 | `surface=Tanah` | 2 | Indonesia 2 |
+| `surface=ohne_straßenbelag3` | 2 | Morocco 2 |
 | `surface=uhhhh` | 2 | Madagascar 2 |
 | `surface=tarseal` | 2 | New Zealand 2 |
 | `surface=unpaved,_sand` | 2 | Senegal 2 |
@@ -224,6 +233,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=Tanah dan Beton` | 1 | Indonesia 1 |
 | `surface=Paving` | 1 | Indonesia 1 |
 | `surface=ps` | 1 | India 1 |
+| `surface=اسفلت` | 1 | Morocco 1 |
 | `surface=unpoaved` | 1 | South Africa 1 |
 | `surface=em_obras` | 1 | Brazil 1 |
 | `surface=road` | 1 | DR Congo 1, Nepal 0 |
@@ -245,7 +255,6 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=calçamento_octogonal_de_concreto_ascalho` | 1 | Brazil 1 |
 | `surface=GO-320` | 1 | Brazil 1 |
 | `surface=concrete_brick` | 1 | Indonesia 1 |
-| `surface=route` | 1 | Senegal 1 |
 | `surface=sin_pavimentare` | 1 | Argentina 1 |
 | `surface=suelo` | 1 | Argentina 1 |
 | `surface=Unipaved` | 1 | Brazil 1 |
