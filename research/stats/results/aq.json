@@ -1,0 +1,775 @@
+{
+ "country": "aq",
+ "name": "Antarctica (not a country)",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:27:17.383Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "antarctica-latest.osm.pbf",
+  "boundary": "south of 60S",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "offroad": 972.3,
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "specialized": 0
+  },
+  "tertiary": {
+   "unpaved": 3284.8,
+   "offroad": 1433.7,
+   "paved_tagged": 0,
+   "untagged": 0,
+   "specialized": 0
+  },
+  "unclassified": {
+   "unpaved": 555.9,
+   "offroad": 14.7,
+   "untagged": 6.3,
+   "paved_tagged": 0.4,
+   "specialized": 0
+  },
+  "residential": {
+   "unpaved": 4.9,
+   "untagged": 0.7,
+   "offroad": 0.5,
+   "paved_tagged": 0,
+   "specialized": 0
+  },
+  "all": {
+   "unpaved": 3845.5,
+   "offroad": 2421.2,
+   "untagged": 7,
+   "paved_tagged": 0.4,
+   "specialized": 0
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "surface": 972.3,
+   "smoothness": 972.3
+  },
+  "tertiary": {
+   "surface": 4718.5,
+   "smoothness": 1433.7
+  },
+  "unclassified": {
+   "surface": 571,
+   "smoothness": 14.7
+  },
+  "residential": {
+   "surface": 5.3,
+   "smoothness": 0.5
+  },
+  "all": {
+   "surface": 6267.2,
+   "smoothness": 2421.2
+  }
+ },
+ "base_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "surface": 972.3
+  },
+  "tertiary": {
+   "surface": 4718.5
+  },
+  "unclassified": {
+   "surface": 571,
+   "default": 6.3
+  },
+  "residential": {
+   "surface": 5.3,
+   "default": 0.7
+  },
+  "all": {
+   "surface": 6267.2,
+   "default": 7
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "smoothness": 972.3
+  },
+  "tertiary": {
+   "smoothness": 1433.7
+  },
+  "unclassified": {
+   "smoothness": 14.7
+  },
+  "residential": {
+   "smoothness": 0.5
+  },
+  "all": {
+   "smoothness": 2421.2
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=ice": 972.3
+   },
+   "offroad": {
+    "smoothness=very_bad": 972.3
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=ice": 4704.2,
+    "surface=unpaved": 10.7,
+    "surface=gravel": 3.1,
+    "surface=fine_gravel": 0.5
+   },
+   "offroad": {
+    "smoothness=horrible": 1406.1,
+    "smoothness=very_bad": 27.6
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=ice": 496.7,
+    "surface=unpaved": 56.4,
+    "surface=fine_gravel": 8.2,
+    "surface=gravel": 5.9,
+    "surface=dirt": 3.1,
+    "surface=compacted": 0.3
+   },
+   "offroad": {
+    "smoothness=very_bad": 14.7
+   },
+   "specialized": {}
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 3.8,
+    "surface=ice": 0.8,
+    "surface=fine_gravel": 0.7
+   },
+   "offroad": {
+    "smoothness=horrible": 0.5
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=ice": 6174,
+    "surface=unpaved": 71,
+    "surface=fine_gravel": 9.5,
+    "surface=gravel": 8.9,
+    "surface=dirt": 3.1,
+    "surface=compacted": 0.3
+   },
+   "offroad": {
+    "smoothness=horrible": 1406.6,
+    "smoothness=very_bad": 1014.6
+   },
+   "specialized": {}
+  }
+ },
+ "unknown_value_km": {},
+ "conflict_km": {},
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w1159748450",
+    "highway": "secondary",
+    "km": 110.5,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w821893170",
+    "highway": "secondary",
+    "km": 107.9,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w124904767",
+    "highway": "secondary",
+    "km": 102.3,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "no",
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "horse": "no",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159749848",
+    "highway": "secondary",
+    "km": 101.2,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159748451",
+    "highway": "secondary",
+    "km": 100.9,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159749847",
+    "highway": "secondary",
+    "km": 95.3,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159749846",
+    "highway": "secondary",
+    "km": 94.7,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159748449",
+    "highway": "secondary",
+    "km": 94,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159748452",
+    "highway": "secondary",
+    "km": 86.1,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159748453",
+    "highway": "secondary",
+    "km": 79.4,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w1233516169",
+    "highway": "tertiary",
+    "km": 368,
+    "level": "offroad",
+    "tags": {
+     "fixme": "Improve geometry when possible and then split into ways less than 100km long",
+     "highway": "tertiary",
+     "name": "Мирный - Восток - Мирный",
+     "name:en": "Mirny - Vostok - Mirny Road",
+     "name:hu": "Mirnij - Vosztok út",
+     "name:ru": "Мирный - Восток - Мирный",
+     "seasonal": "summer",
+     "smoothness": "horrible",
+     "source": "bing",
+     "surface": "ice",
+     "winter_road": "yes"
+    }
+   },
+   {
+    "id": "w1159748450",
+    "highway": "secondary",
+    "km": 110.5,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w821893170",
+    "highway": "secondary",
+    "km": 107.9,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w124904767",
+    "highway": "secondary",
+    "km": 102.3,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "no",
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "horse": "no",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1248925685",
+    "highway": "tertiary",
+    "km": 101.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Мирный - Восток - Мирный",
+     "name:en": "Mirny - Vostok - Mirny Road",
+     "name:hu": "Mirnij - Vosztok út",
+     "name:ru": "Мирный - Восток - Мирный",
+     "seasonal": "summer",
+     "smoothness": "horrible",
+     "source": "bing",
+     "surface": "ice",
+     "winter_road": "yes"
+    }
+   },
+   {
+    "id": "w1159749848",
+    "highway": "secondary",
+    "km": 101.2,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159748451",
+    "highway": "secondary",
+    "km": 100.9,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1233523188",
+    "highway": "tertiary",
+    "km": 98.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Мирный - Восток - Мирный",
+     "name:en": "Mirny - Vostok - Mirny Road",
+     "name:hu": "Mirnij - Vosztok út",
+     "name:ru": "Мирный - Восток - Мирный",
+     "seasonal": "summer",
+     "smoothness": "horrible",
+     "source": "bing",
+     "surface": "ice",
+     "winter_road": "yes"
+    }
+   },
+   {
+    "id": "w1248925687",
+    "highway": "tertiary",
+    "km": 98.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Мирный - Восток - Мирный",
+     "name:en": "Mirny - Vostok - Mirny Road",
+     "name:hu": "Mirnij - Vosztok út",
+     "name:ru": "Мирный - Восток - Мирный",
+     "seasonal": "summer",
+     "smoothness": "horrible",
+     "source": "bing",
+     "surface": "ice",
+     "winter_road": "yes"
+    }
+   },
+   {
+    "id": "w1248925688",
+    "highway": "tertiary",
+    "km": 98.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Мирный - Восток - Мирный",
+     "name:en": "Mirny - Vostok - Mirny Road",
+     "name:hu": "Mirnij - Vosztok út",
+     "name:ru": "Мирный - Восток - Мирный",
+     "seasonal": "summer",
+     "smoothness": "horrible",
+     "source": "bing",
+     "surface": "ice",
+     "winter_road": "yes"
+    }
+   },
+   {
+    "id": "w1248925686",
+    "highway": "tertiary",
+    "km": 95.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Мирный - Восток - Мирный",
+     "name:en": "Mirny - Vostok - Mirny Road",
+     "name:hu": "Mirnij - Vosztok út",
+     "name:ru": "Мирный - Восток - Мирный",
+     "seasonal": "summer",
+     "smoothness": "horrible",
+     "source": "bing",
+     "surface": "ice",
+     "winter_road": "yes"
+    }
+   },
+   {
+    "id": "w1159749847",
+    "highway": "secondary",
+    "km": 95.3,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159749846",
+    "highway": "secondary",
+    "km": 94.7,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1159748449",
+    "highway": "secondary",
+    "km": 94,
+    "level": "offroad",
+    "tags": {
+     "description": "1601 km compacted snow road. South end: Amundsen–Scott South Pole Station; North end: McMurdo Station",
+     "highway": "secondary",
+     "ice_road": "yes",
+     "length": "1601000",
+     "name": "South Pole Traverse",
+     "official_name": "McMurdo - South Pole Ice Highway",
+     "seasonal": "summer",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "snowmobile": "yes",
+     "start_date": "2007",
+     "surface": "ice",
+     "wikidata": "Q800558",
+     "wikipedia": "en:South Pole Traverse"
+    }
+   },
+   {
+    "id": "w1248925689",
+    "highway": "tertiary",
+    "km": 92.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Мирный - Восток - Мирный",
+     "name:en": "Mirny - Vostok - Mirny Road",
+     "name:hu": "Mirnij - Vosztok út",
+     "name:ru": "Мирный - Восток - Мирный",
+     "seasonal": "summer",
+     "smoothness": "horrible",
+     "source": "bing",
+     "surface": "ice",
+     "winter_road": "yes"
+    }
+   }
+  ],
+  "conflict": [],
+  "unknown_value": []
+ }
+}

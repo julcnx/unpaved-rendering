@@ -1,0 +1,289 @@
+{
+ "country": "sb",
+ "name": "Solomon Islands",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:24:45.249Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "solomon-islands-latest.osm.pbf",
+  "boundary": "r1857436",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 39.2,
+   "paved_tagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 23.5,
+   "untagged": 5.4,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 548.5,
+   "unpaved": 148.7,
+   "paved_tagged": 5.8,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 1589.2,
+   "unpaved": 815.5,
+   "offroad": 14.2,
+   "paved_tagged": 9.5,
+   "specialized": 0
+  },
+  "residential": {
+   "untagged": 397,
+   "unpaved": 113.5,
+   "paved_tagged": 5.7,
+   "offroad": 2,
+   "specialized": 0
+  },
+  "all": {
+   "untagged": 2579.2,
+   "unpaved": 1077.7,
+   "paved_tagged": 44.5,
+   "offroad": 16.3,
+   "specialized": 0
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "surface": 23.5,
+   "smoothness": 10.5
+  },
+  "tertiary": {
+   "surface": 154.6
+  },
+  "unclassified": {
+   "surface": 839.2,
+   "tracktype": 37.5
+  },
+  "residential": {
+   "surface": 121.2,
+   "smoothness": 2.5,
+   "tracktype": 0.3
+  },
+  "all": {
+   "surface": 1138.5,
+   "tracktype": 37.8,
+   "smoothness": 13
+  }
+ },
+ "base_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {
+   "default": 39.2
+  },
+  "secondary": {
+   "surface": 23.5,
+   "default": 5.4
+  },
+  "tertiary": {
+   "default": 548.5,
+   "surface": 154.6
+  },
+  "unclassified": {
+   "default": 1589.2,
+   "surface": 839.2
+  },
+  "residential": {
+   "default": 397,
+   "surface": 121.2
+  },
+  "all": {
+   "default": 2579.2,
+   "surface": 1138.5
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {},
+  "tertiary": {},
+  "unclassified": {
+   "tracktype": 14.2
+  },
+  "residential": {
+   "smoothness": 1.7,
+   "tracktype": 0.3
+  },
+  "all": {
+   "tracktype": 14.6,
+   "smoothness": 1.7
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 144.3,
+    "surface=fine_gravel": 4.4
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 797.7,
+    "surface=sand": 23.3,
+    "surface=ground": 6.1,
+    "surface=dirt": 1.4,
+    "surface=gravel": 0.9,
+    "surface=compacted": 0.2
+   },
+   "offroad": {
+    "tracktype=grade4": 14.2
+   },
+   "specialized": {}
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 105.6,
+    "surface=dirt": 5.6,
+    "surface=compacted": 4,
+    "surface=ground": 0.3
+   },
+   "offroad": {
+    "smoothness=very_bad": 1.6,
+    "tracktype=grade4": 0.3,
+    "smoothness=horrible": 0.1
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 1047.7,
+    "surface=sand": 23.3,
+    "surface=dirt": 7.1,
+    "surface=ground": 6.4,
+    "surface=fine_gravel": 4.4,
+    "surface=compacted": 4.2,
+    "surface=gravel": 0.9
+   },
+   "offroad": {
+    "tracktype=grade4": 14.6,
+    "smoothness=very_bad": 1.6,
+    "smoothness=horrible": 0.1
+   },
+   "specialized": {}
+  }
+ },
+ "unknown_value_km": {},
+ "conflict_km": {},
+ "odd": {
+  "major_unpaved": [],
+  "offroad_mark": [
+   {
+    "id": "w746616542",
+    "highway": "unclassified",
+    "km": 6.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & ESRI World imagery 05-02-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w698134375",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & ESRI World imagery 05-02-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w696231150",
+    "highway": "unclassified",
+    "km": 2.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & ESRI World imagery 05-02-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w698134374",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "survey & ESRI World imagery 05-02-20",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w51341065",
+    "highway": "residential",
+    "km": 1.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "name": "Zion Road",
+     "smoothness": "very_bad",
+     "source": "Yahoo",
+     "surface": "compacted"
+    }
+   }
+  ],
+  "conflict": [],
+  "unknown_value": []
+ }
+}

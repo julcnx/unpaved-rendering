@@ -12,6 +12,11 @@ CACHE="borders/$ISO.geojson"
 if [ ! -s "$CACHE" ]; then
   REL=$(awk -v c="$ISO" '$1 == c { print $2 }' stats/country-relations.txt)
   [ -n "$REL" ] || { echo "no relation id for $ISO in stats/country-relations.txt" >&2; exit 1; }
+  if [ "$REL" = "-" ]; then
+    # No country relation (Antarctica): everything south of 60°S, the Antarctic Treaty area.
+    mkdir -p borders
+    echo '{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"id":"south of 60S"},"geometry":{"type":"Polygon","coordinates":[[[-180,-90],[180,-90],[180,-60],[-180,-60],[-180,-90]]]}}]}' > "$CACHE"
+  else
   TMP=$(mktemp -d)
   trap 'rm -rf "$TMP"' EXIT
   mkdir -p borders
@@ -33,6 +38,7 @@ if (!f) { console.error(`could not build a polygon for relation r${rel}`); proce
 fs.writeFileSync(out, JSON.stringify({ type: "FeatureCollection", features: [{ type: "Feature", properties: { id: `r${rel}`, name: f.properties.name }, geometry: f.geometry }] }));
 ' "$REL" "$TMP/r.geojsonseq" "$CACHE"
   echo "border r$REL cached in $CACHE" >&2
+  fi
 fi
 
 [ -z "$OUT" ] || cp "$CACHE" "$OUT"

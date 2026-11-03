@@ -39,6 +39,17 @@ asia/india IN India
 asia/indonesia ID Indonesia
 south-america/brazil BR Brazil
 
+# Regional gaps (added 2026-11-03)
+australia-oceania/solomon-islands SB Solomon Islands
+central-america/honduras HN Honduras
+asia/kyrgyzstan KG Kyrgyzstan
+central-america/guatemala GT Guatemala
+africa/ethiopia ET Ethiopia
+africa/morocco MA Morocco
+
+# Special case, not a country (added 2026-11-03)
+antarctica AQ Antarctica (not a country)
+
 # Developed countries with unpaved highways (added 2026-11-03)
 south-america/chile CL Chile
 australia-oceania/new-zealand NZ New Zealand
