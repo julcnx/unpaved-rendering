@@ -651,7 +651,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/tl-w40628148-0.jpg": {
-  "road": "Estrada Baucau - Lautém (primary)",
+  "road": "Estrada Baucau - Laut\u00e9m (primary)",
   "way": "w40628148",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=1528552198473405",
@@ -660,7 +660,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/tl-w40628148-1.jpg": {
-  "road": "Estrada Baucau - Lautém (primary)",
+  "road": "Estrada Baucau - Laut\u00e9m (primary)",
   "way": "w40628148",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=1344086807410585",
@@ -669,7 +669,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/tl-w40628148-2.jpg": {
-  "road": "Estrada Baucau - Lautém (primary)",
+  "road": "Estrada Baucau - Laut\u00e9m (primary)",
   "way": "w40628148",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=1878365773113054",
@@ -678,7 +678,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/tl-w40628148-3.jpg": {
-  "road": "Estrada Baucau - Lautém (primary)",
+  "road": "Estrada Baucau - Laut\u00e9m (primary)",
   "way": "w40628148",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=2032961327539271",
@@ -795,7 +795,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/mn-w1449651789-0.jpg": {
-  "road": "Тамын 50 km (trunk)",
+  "road": "\u0422\u0430\u043c\u044b\u043d 50 km (trunk)",
   "way": "w1449651789",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=465799716109996",
@@ -804,7 +804,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/mn-w1449651789-1.jpg": {
-  "road": "Тамын 50 km (trunk)",
+  "road": "\u0422\u0430\u043c\u044b\u043d 50 km (trunk)",
   "way": "w1449651789",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=982802126348518",
@@ -813,7 +813,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/mn-w1449651789-2.jpg": {
-  "road": "Тамын 50 km (trunk)",
+  "road": "\u0422\u0430\u043c\u044b\u043d 50 km (trunk)",
   "way": "w1449651789",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=1026045422196657",
@@ -822,7 +822,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/mn-w1449651789-3.jpg": {
-  "road": "Тамын 50 km (trunk)",
+  "road": "\u0422\u0430\u043c\u044b\u043d 50 km (trunk)",
   "way": "w1449651789",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=659510156342169",
@@ -867,7 +867,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/mm-w377792665-1.jpg": {
-  "road": "မိုင်းပျဉ်း-မက်မန်း (secondary)",
+  "road": "\u1019\u102d\u102f\u1004\u103a\u1038\u1015\u103b\u1009\u103a\u1038-\u1019\u1000\u103a\u1019\u1014\u103a\u1038 (secondary)",
   "way": "w377792665",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=1117961652216793",
@@ -876,7 +876,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/mm-w377792665-2.jpg": {
-  "road": "မိုင်းပျဉ်း-မက်မန်း (secondary)",
+  "road": "\u1019\u102d\u102f\u1004\u103a\u1038\u1015\u103b\u1009\u103a\u1038-\u1019\u1000\u103a\u1019\u1014\u103a\u1038 (secondary)",
   "way": "w377792665",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=206257555213131",
@@ -1281,7 +1281,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/ge-w111431030-0.jpg": {
-  "road": "შ 1 (primary)",
+  "road": "\u10e8 1 (primary)",
   "way": "w111431030",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=373740793960206",
@@ -1290,7 +1290,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/ge-w111431030-1.jpg": {
-  "road": "შ 1 (primary)",
+  "road": "\u10e8 1 (primary)",
   "way": "w111431030",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=253243013247189",
@@ -1299,7 +1299,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/ge-w111431030-2.jpg": {
-  "road": "შ 1 (primary)",
+  "road": "\u10e8 1 (primary)",
   "way": "w111431030",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=1212860322550143",
@@ -1308,7 +1308,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/ge-w111431030-3.jpg": {
-  "road": "შ 1 (primary)",
+  "road": "\u10e8 1 (primary)",
   "way": "w111431030",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=302041158094572",
@@ -1317,7 +1317,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/ge-w81287807-0.jpg": {
-  "road": "შ 10 (secondary)",
+  "road": "\u10e8 10 (secondary)",
   "way": "w81287807",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=141364618007698",
@@ -1326,7 +1326,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/ge-w81287807-1.jpg": {
-  "road": "შ 10 (secondary)",
+  "road": "\u10e8 10 (secondary)",
   "way": "w81287807",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=370801911018769",
@@ -1335,7 +1335,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/ge-w81287807-2.jpg": {
-  "road": "შ 10 (secondary)",
+  "road": "\u10e8 10 (secondary)",
   "way": "w81287807",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=811566426147048",
@@ -1902,7 +1902,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/vn-w291750523-0.jpg": {
-  "road": "Bùi Thị Xuân (secondary)",
+  "road": "B\u00f9i Th\u1ecb Xu\u00e2n (secondary)",
   "way": "w291750523",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=405359598877956",
@@ -1911,7 +1911,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/vn-w291750523-1.jpg": {
-  "road": "Bùi Thị Xuân (secondary)",
+  "road": "B\u00f9i Th\u1ecb Xu\u00e2n (secondary)",
   "way": "w291750523",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=455833366770582",
@@ -1920,7 +1920,7 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/vn-w291750523-2.jpg": {
-  "road": "Bùi Thị Xuân (secondary)",
+  "road": "B\u00f9i Th\u1ecb Xu\u00e2n (secondary)",
   "way": "w291750523",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=1340374049978442",
@@ -1929,12 +1929,444 @@
   "licence": "CC BY-SA 4.0"
  },
  "mapillary/vn-w291750523-3.jpg": {
-  "road": "Bùi Thị Xuân (secondary)",
+  "road": "B\u00f9i Th\u1ecb Xu\u00e2n (secondary)",
   "way": "w291750523",
   "source": "Mapillary",
   "image": "https://www.mapillary.com/app/?pKey=809223047724868",
   "author": "bemaps3_sg",
   "captured": "2024-03-22",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-au-1-paved.jpg": {
+  "road": "Gibb River Road Gibb River Road transition (paved side)",
+  "way": "w1126623141",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=125805172872269",
+  "author": "bob3bob3",
+  "captured": "2019-09-10",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-au-1-unpaved.jpg": {
+  "road": "Gibb River Road Gibb River Road transition (unpaved side)",
+  "way": "w28335211",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=3865372606912521",
+  "author": "bob3bob3",
+  "captured": "2019-09-10",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-2-paved.jpg": {
+  "road": "Namibia C-roads C34 transition (paved side)",
+  "way": "w88637104",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=392267001907807",
+  "author": "elphix",
+  "captured": "2019-04-04",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-2-unpaved.jpg": {
+  "road": "Namibia C-roads C34 transition (unpaved side)",
+  "way": "w220587545",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=810213656284846",
+  "author": "elphix",
+  "captured": "2019-04-04",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-3-paved.jpg": {
+  "road": "Namibia C-roads C14 transition (paved side)",
+  "way": "w83649257",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1030373365892091",
+  "author": "roadroid",
+  "captured": "2025-06-18",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-3-unpaved.jpg": {
+  "road": "Namibia C-roads C14 transition (unpaved side)",
+  "way": "w1531234620",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1328659438180078",
+  "author": "roadroid",
+  "captured": "2025-07-03",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-4-paved.jpg": {
+  "road": "Namibia C-roads C40 transition (paved side)",
+  "way": "w424570019",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1922402024574067",
+  "author": "elphix",
+  "captured": "2019-04-02",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-4-unpaved.jpg": {
+  "road": "Namibia C-roads C40 transition (unpaved side)",
+  "way": "w26451980",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=288708646244307",
+  "author": "elphix",
+  "captured": "2019-04-02",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-5-paved.jpg": {
+  "road": "Bolivia F-roads F7 transition (paved side)",
+  "way": "w585217321",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1274467643427304",
+  "author": "jjiglesias",
+  "captured": "2023-04-08",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-5-unpaved.jpg": {
+  "road": "Bolivia F-roads F7 transition (unpaved side)",
+  "way": "w584339832",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=210049761756972",
+  "author": "jjiglesias",
+  "captured": "2023-04-08",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-6-paved.jpg": {
+  "road": "Bolivia F-roads F6 transition (paved side)",
+  "way": "w1411479804",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=290640669224948",
+  "author": "yoviajo",
+  "captured": "2017-01-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-6-unpaved.jpg": {
+  "road": "Bolivia F-roads F6 transition (unpaved side)",
+  "way": "w491636267",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=907407159833646",
+  "author": "yoviajo",
+  "captured": "2017-01-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-7-paved.jpg": {
+  "road": "Bolivia F-roads F25 transition (paved side)",
+  "way": "w977951925",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=243917530968410",
+  "author": "jjiglesias",
+  "captured": "2021-09-04",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-7-unpaved.jpg": {
+  "road": "Bolivia F-roads F25 transition (unpaved side)",
+  "way": "w521851727",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=138457651776748",
+  "author": "jjiglesias",
+  "captured": "2021-09-04",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-8-paved.jpg": {
+  "road": "Namibia C-roads C47 transition (paved side)",
+  "way": "w816238181",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=932617432769407",
+  "author": "roadroid",
+  "captured": "2026-02-05",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-8-unpaved.jpg": {
+  "road": "Namibia C-roads C47 transition (unpaved side)",
+  "way": "w22794120",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=915225127634224",
+  "author": "roadroid",
+  "captured": "2026-02-05",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-9-paved.jpg": {
+  "road": "Namibia C-roads C48 transition (paved side)",
+  "way": "w56321265",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=463738388027357",
+  "author": "tallguy",
+  "captured": "2019-10-20",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-9-unpaved.jpg": {
+  "road": "Namibia C-roads C48 transition (unpaved side)",
+  "way": "w254738450",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=302467514669638",
+  "author": "tallguy",
+  "captured": "2019-10-20",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-10-paved.jpg": {
+  "road": "Namibia C-roads C28 transition (paved side)",
+  "way": "w397753962",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=781695659201735",
+  "author": "rubynikki",
+  "captured": "2019-06-27",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-10-unpaved.jpg": {
+  "road": "Namibia C-roads C28 transition (unpaved side)",
+  "way": "w83287418",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=486837159301441",
+  "author": "rubynikki",
+  "captured": "2020-04-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-11-paved.jpg": {
+  "road": "Namibia C-roads C38 transition (paved side)",
+  "way": "w551124886",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=319565122947004",
+  "author": "tallguy",
+  "captured": "2017-10-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-11-unpaved.jpg": {
+  "road": "Namibia C-roads C38 transition (unpaved side)",
+  "way": "w225220011",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=684848622263848",
+  "author": "tallguy",
+  "captured": "2017-10-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-12-paved.jpg": {
+  "road": "Namibia C-roads C28 transition (paved side)",
+  "way": "w665001032",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=894522061394844",
+  "author": "rubynikki",
+  "captured": "2020-04-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-12-unpaved.jpg": {
+  "road": "Namibia C-roads C28 transition (unpaved side)",
+  "way": "w364860384",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=290383772778556",
+  "author": "rubynikki",
+  "captured": "2020-04-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-13-paved.jpg": {
+  "road": "Namibia C-roads C28 transition (paved side)",
+  "way": "w665001031",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=185550276762403",
+  "author": "rubynikki",
+  "captured": "2020-04-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-13-unpaved.jpg": {
+  "road": "Namibia C-roads C28 transition (unpaved side)",
+  "way": "w364860387",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=676897859751668",
+  "author": "rubynikki",
+  "captured": "2020-04-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-14-paved.jpg": {
+  "road": "Namibia C-roads C28 transition (paved side)",
+  "way": "w1355099162",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=491712225600345",
+  "author": "staehler",
+  "captured": "2015-12-23",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-14-unpaved.jpg": {
+  "road": "Namibia C-roads C28 transition (unpaved side)",
+  "way": "w364860387",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=314057246845388",
+  "author": "staehler",
+  "captured": "2015-12-23",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-15-paved.jpg": {
+  "road": "Namibia C-roads C27 transition (paved side)",
+  "way": "w415322380",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1029943364079835",
+  "author": "tallguy",
+  "captured": "2017-11-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-15-unpaved.jpg": {
+  "road": "Namibia C-roads C27 transition (unpaved side)",
+  "way": "w415322382",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=485978202719079",
+  "author": "tallguy",
+  "captured": "2017-11-02",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-16-paved.jpg": {
+  "road": "Namibia C-roads C47 transition (paved side)",
+  "way": "w1035986767",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1973308916903251",
+  "author": "roadroid",
+  "captured": "2026-02-04",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-16-unpaved.jpg": {
+  "road": "Namibia C-roads C47 transition (unpaved side)",
+  "way": "w816238178",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1638001100532489",
+  "author": "roadroid",
+  "captured": "2026-02-04",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-17-paved.jpg": {
+  "road": "Namibia C-roads C26 transition (paved side)",
+  "way": "w1383297910",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1339612504567112",
+  "author": "roadroid",
+  "captured": "2025-11-14",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-17-unpaved.jpg": {
+  "road": "Namibia C-roads C26 transition (unpaved side)",
+  "way": "w1238003282",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=2911981139045662",
+  "author": "staehler",
+  "captured": "2016-01-01",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-18-paved.jpg": {
+  "road": "Namibia C-roads C34 transition (paved side)",
+  "way": "w1356337712",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=301445578368701",
+  "author": "tallguy",
+  "captured": "2019-10-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-na-18-unpaved.jpg": {
+  "road": "Namibia C-roads C34 transition (unpaved side)",
+  "way": "w1393391381",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1436205290105359",
+  "author": "tallguy",
+  "captured": "2019-10-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-19-paved.jpg": {
+  "road": "Bolivia F-roads F3 transition (paved side)",
+  "way": "w353263510",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=264405276700353",
+  "author": "SUPBN04",
+  "captured": "2023-11-19",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-19-unpaved.jpg": {
+  "road": "Bolivia F-roads F3 transition (unpaved side)",
+  "way": "w700419617",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1589823008160588",
+  "author": "cesarc",
+  "captured": "2022-09-22",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-20-paved.jpg": {
+  "road": "Bolivia F-roads F22 transition (paved side)",
+  "way": "w372206645",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1453129352230550",
+  "author": "SC06",
+  "captured": "2024-06-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-20-unpaved.jpg": {
+  "road": "Bolivia F-roads F22 transition (unpaved side)",
+  "way": "w419729187",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=437562842456643",
+  "author": "SC06",
+  "captured": "2024-06-26",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-21-paved.jpg": {
+  "road": "Bolivia F-roads F48 transition (paved side)",
+  "way": "w885382365",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1202799947450495",
+  "author": "jjiglesias",
+  "captured": "2024-11-17",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-21-unpaved.jpg": {
+  "road": "Bolivia F-roads F48 transition (unpaved side)",
+  "way": "w422115405",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=944343276134556",
+  "author": "jjiglesias",
+  "captured": "2019-12-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-22-paved.jpg": {
+  "road": "Bolivia F-roads F48 transition (paved side)",
+  "way": "w888055552",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=780487750463937",
+  "author": "jjiglesias",
+  "captured": "2023-05-21",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-22-unpaved.jpg": {
+  "road": "Bolivia F-roads F48 transition (unpaved side)",
+  "way": "w422115405",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=3056754611237169",
+  "author": "jjiglesias",
+  "captured": "2019-12-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-23-paved.jpg": {
+  "road": "Bolivia F-roads F7 transition (paved side)",
+  "way": "w528121056",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1983670802001116",
+  "author": "jjiglesias",
+  "captured": "2023-04-08",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-23-unpaved.jpg": {
+  "road": "Bolivia F-roads F7 transition (unpaved side)",
+  "way": "w1145598748",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=3523357651281143",
+  "author": "jjiglesias",
+  "captured": "2023-04-08",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-24-paved.jpg": {
+  "road": "Bolivia F-roads F3 transition (paved side)",
+  "way": "w1323474515",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=1232400407401445",
+  "author": "cesarc",
+  "captured": "2022-09-22",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-bo-24-unpaved.jpg": {
+  "road": "Bolivia F-roads F3 transition (unpaved side)",
+  "way": "w803452005",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=189132390146229",
+  "author": "cesarc",
+  "captured": "2022-09-22",
   "licence": "CC BY-SA 4.0"
  }
 }

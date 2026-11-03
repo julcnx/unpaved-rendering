@@ -1,152 +1,129 @@
 # Screenshot locations: paved to unpaved on the same road
 
-Generated from [transitions.json](transitions.json) (2026-11-03): two ways of the same road meet, one tagged paved and one unpaved, with at least 5 km of each on either side. All links open at zoom 13 on the point where the surface changes, so both sections are visible. Take every screenshot at the same zoom and centre.
+Verified 2026-11-03: each spot was found in [transitions.json](transitions.json) (two ways of the same road meet, one tagged paved, one unpaved, at least 5 km of each), **and** the Mapillary images about 300 m into each side were looked at and show a real change of surface. The image pair for each spot is in `images/sheets/transitions/<number>.jpg` (local only) and the single images in `images/mapillary/transition-*` (CC BY-SA 4.0, authors in `images/credits.json`).
 
-Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Kurviger, Guru Maps, Locus): open the `geo:` link on the phone, or paste the coordinates into the app search.
+Of 24 tag transitions checked, 13 show a real change and 11 do not (both sides paved, or both gravel or dirt): a tag transition is not proof of a surface change. Failed: Gibb River Road near Derby, Namibia C34 (2), C14, C27, C28 (2), Bolivia RN6, RN7 (2), F22. No verified spot yet in Australia or Iceland (Kjalvegur has no Mapillary at its transition; check Google Street View yourself).
 
-Links marked "to check" use a URL format I could not confirm; if one opens at the wrong place, search the coordinates instead.
+All links open at zoom 13 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Kurviger, Guru Maps, Locus): open the `geo:` link on the phone or paste the coordinates. Links marked "to check" use a URL format I could not confirm.
 
-## 1. Australia: Gibb River Road, near Derby
+## 1. Namibia: C48: fresh asphalt to wide gravel (very clean)
 
-Point: **-17.38984, 124.75817** (`geo:-17.38984,124.75817?z=13`). Class: `highway=secondary`, ref `Gibb River Road`.
+Point: **-18.12805, 21.64435** (`geo:-18.12805,21.64435?z=13`). Class: `highway=primary`, ref `C48`. Image pair: `images/sheets/transitions/9.jpg`.
 
-- Paved side: [w1126623141](https://www.openstreetmap.org/way/1126623141) `surface=paved`, 119.9 km, [Mapillary 2019-09-10](https://www.mapillary.com/app/?pKey=125805172872269)
-- Unpaved side: [w28335211](https://www.openstreetmap.org/way/28335211) `surface=unpaved`, 82.8 km, [Mapillary 2019-09-10](https://www.mapillary.com/app/?pKey=3865372606912521)
-
-| App | Link | Note |
-|---|---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-17.38984/124.75817) |  |
-| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-17.38984/124.75817&layers=Y) |  |
-| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-17.38984/124.75817&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-17.38984/124.75817&layers=P) | to check: layer letter |
-| OpenTopoMap | [open](https://opentopomap.org/#map=13/-17.38984/124.75817) |  |
-| Americana | [open](https://americanamap.org/#map=13/-17.38984/124.75817) |  |
-| Google Maps | [open](https://www.google.com/maps/@-17.38984,124.75817,13z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-17.38984,124.75817&z=13) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-17.38984~124.75817&lvl=13) |  |
-| Komoot | [open](https://www.komoot.com/plan/@-17.38984,124.75817,13z) |  |
-| Mapy.com | [open](https://mapy.com/en/zakladni?x=124.75817&y=-17.38984&z=13) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-17.38984/124.75817) | to check: URL format |
-| OsmAnd web | [open](https://osmand.net/map/?#13/-17.38984/124.75817) | to check: URL format |
-
-## 2. Namibia: C34 Skeleton Coast road: asphalt to salt road
-
-Point: **-21.26482, 13.72093** (`geo:-21.26482,13.72093?z=13`). Class: `highway=primary`, ref `C34`.
-
-- Paved side: [w88637104](https://www.openstreetmap.org/way/88637104) `surface=paved`, 177.3 km, [Mapillary 2019-04-04](https://www.mapillary.com/app/?pKey=392267001907807)
-- Unpaved side: [w220587545](https://www.openstreetmap.org/way/220587545) `surface=salt`, 115.1 km, [Mapillary 2019-04-04](https://www.mapillary.com/app/?pKey=810213656284846)
+- Paved side: [w56321265](https://www.openstreetmap.org/way/56321265) `surface=asphalt`, 13.3 km, [Mapillary 2019-10-20](https://www.mapillary.com/app/?pKey=463738388027357)
+- Unpaved side: [w254738450](https://www.openstreetmap.org/way/254738450) `surface=gravel`, 19.2 km, [Mapillary 2019-10-20](https://www.mapillary.com/app/?pKey=302467514669638)
 
 | App | Link | Note |
 |---|---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-21.26482/13.72093) |  |
-| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-21.26482/13.72093&layers=Y) |  |
-| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-21.26482/13.72093&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-21.26482/13.72093&layers=P) | to check: layer letter |
-| OpenTopoMap | [open](https://opentopomap.org/#map=13/-21.26482/13.72093) |  |
-| Americana | [open](https://americanamap.org/#map=13/-21.26482/13.72093) |  |
-| Google Maps | [open](https://www.google.com/maps/@-21.26482,13.72093,13z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-21.26482,13.72093&z=13) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-21.26482~13.72093&lvl=13) |  |
-| Komoot | [open](https://www.komoot.com/plan/@-21.26482,13.72093,13z) |  |
-| Mapy.com | [open](https://mapy.com/en/zakladni?x=13.72093&y=-21.26482&z=13) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-21.26482/13.72093) | to check: URL format |
-| OsmAnd web | [open](https://osmand.net/map/?#13/-21.26482/13.72093) | to check: URL format |
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-18.12805/21.64435) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-18.12805/21.64435&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-18.12805/21.64435&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-18.12805/21.64435&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-18.12805/21.64435) |  |
+| Americana | [open](https://americanamap.org/#map=13/-18.12805/21.64435) |  |
+| Google Maps | [open](https://www.google.com/maps/@-18.12805,21.64435,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-18.12805,21.64435&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-18.12805~21.64435&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-18.12805,21.64435,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=21.64435&y=-18.12805&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-18.12805/21.64435) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-18.12805/21.64435) | to check: URL format |
 
-## 3. Namibia: C14 east of Walvis Bay: asphalt to salt road
+## 2. Namibia: C28 in the Namib desert: asphalt with road sign to pale gravel (very clean)
 
-Point: **-23.21481, 15.30431** (`geo:-23.21481,15.30431?z=13`). Class: `highway=primary`, ref `C14`.
+Point: **-22.85645, 15.0354** (`geo:-22.85645,15.0354?z=13`). Class: `highway=primary`, ref `C28`. Image pair: `images/sheets/transitions/14.jpg`.
 
-- Paved side: [w83649257](https://www.openstreetmap.org/way/83649257) `surface=asphalt`, 88.3 km, [Mapillary 2025-06-18](https://www.mapillary.com/app/?pKey=1030373365892091)
-- Unpaved side: [w1531234620](https://www.openstreetmap.org/way/1531234620) `surface=salt`, 50.5 km, [Mapillary 2025-07-03](https://www.mapillary.com/app/?pKey=1328659438180078)
-
-| App | Link | Note |
-|---|---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-23.21481/15.30431) |  |
-| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-23.21481/15.30431&layers=Y) |  |
-| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-23.21481/15.30431&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-23.21481/15.30431&layers=P) | to check: layer letter |
-| OpenTopoMap | [open](https://opentopomap.org/#map=13/-23.21481/15.30431) |  |
-| Americana | [open](https://americanamap.org/#map=13/-23.21481/15.30431) |  |
-| Google Maps | [open](https://www.google.com/maps/@-23.21481,15.30431,13z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-23.21481,15.30431&z=13) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-23.21481~15.30431&lvl=13) |  |
-| Komoot | [open](https://www.komoot.com/plan/@-23.21481,15.30431,13z) |  |
-| Mapy.com | [open](https://mapy.com/en/zakladni?x=15.30431&y=-23.21481&z=13) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-23.21481/15.30431) | to check: URL format |
-| OsmAnd web | [open](https://osmand.net/map/?#13/-23.21481/15.30431) | to check: URL format |
-
-## 4. Namibia: C40 west of Kamanjab
-
-Point: **-19.62212, 14.841** (`geo:-19.62212,14.841?z=13`). Class: `highway=primary`, ref `C40`.
-
-- Paved side: [w424570019](https://www.openstreetmap.org/way/424570019) `surface=asphalt`, 144.4 km, [Mapillary 2019-04-02](https://www.mapillary.com/app/?pKey=1922402024574067)
-- Unpaved side: [w26451980](https://www.openstreetmap.org/way/26451980) `surface=gravel`, 113.7 km, [Mapillary 2019-04-02](https://www.mapillary.com/app/?pKey=288708646244307)
+- Paved side: [w1355099162](https://www.openstreetmap.org/way/1355099162) `surface=asphalt`, 49.8 km, [Mapillary 2015-12-23](https://www.mapillary.com/app/?pKey=491712225600345)
+- Unpaved side: [w364860387](https://www.openstreetmap.org/way/364860387) `surface=unpaved`, 209 km, [Mapillary 2015-12-23](https://www.mapillary.com/app/?pKey=314057246845388)
 
 | App | Link | Note |
 |---|---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841) |  |
-| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841&layers=Y) |  |
-| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841&layers=P) | to check: layer letter |
-| OpenTopoMap | [open](https://opentopomap.org/#map=13/-19.62212/14.841) |  |
-| Americana | [open](https://americanamap.org/#map=13/-19.62212/14.841) |  |
-| Google Maps | [open](https://www.google.com/maps/@-19.62212,14.841,13z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-19.62212,14.841&z=13) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-19.62212~14.841&lvl=13) |  |
-| Komoot | [open](https://www.komoot.com/plan/@-19.62212,14.841,13z) |  |
-| Mapy.com | [open](https://mapy.com/en/zakladni?x=14.841&y=-19.62212&z=13) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-19.62212/14.841) | to check: URL format |
-| OsmAnd web | [open](https://osmand.net/map/?#13/-19.62212/14.841) | to check: URL format |
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-22.85645/15.0354) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-22.85645/15.0354&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-22.85645/15.0354&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-22.85645/15.0354&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-22.85645/15.0354) |  |
+| Americana | [open](https://americanamap.org/#map=13/-22.85645/15.0354) |  |
+| Google Maps | [open](https://www.google.com/maps/@-22.85645,15.0354,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-22.85645,15.0354&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-22.85645~15.0354&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-22.85645,15.0354,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=15.0354&y=-22.85645&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-22.85645/15.0354) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-22.85645/15.0354) | to check: URL format |
 
-## 5. Bolivia: RN7 Epizana-Comarapa (trunk, old Cochabamba-Santa Cruz road)
+## 3. Bolivia: RN3 (trunk): asphalt with centre line to cracked dirt on the same straight road (very clean)
 
-Point: **-17.83241, -64.64252** (`geo:-17.83241,-64.64252?z=13`). Class: `highway=trunk`, ref `F7`.
+Point: **-14.84989, -65.10523** (`geo:-14.84989,-65.10523?z=13`). Class: `highway=trunk`, ref `F3`. Image pair: `images/sheets/transitions/24.jpg`.
 
-- Paved side: [w585217321](https://www.openstreetmap.org/way/585217321) `surface=concrete`, 37.6 km, [Mapillary 2023-04-08](https://www.mapillary.com/app/?pKey=1274467643427304)
-- Unpaved side: [w584339832](https://www.openstreetmap.org/way/584339832) `surface=unpaved`, 9.3 km, [Mapillary 2023-04-08](https://www.mapillary.com/app/?pKey=210049761756972)
-
-| App | Link | Note |
-|---|---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-17.83241/-64.64252) |  |
-| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-17.83241/-64.64252&layers=Y) |  |
-| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-17.83241/-64.64252&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-17.83241/-64.64252&layers=P) | to check: layer letter |
-| OpenTopoMap | [open](https://opentopomap.org/#map=13/-17.83241/-64.64252) |  |
-| Americana | [open](https://americanamap.org/#map=13/-17.83241/-64.64252) |  |
-| Google Maps | [open](https://www.google.com/maps/@-17.83241,-64.64252,13z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-17.83241,-64.64252&z=13) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-17.83241~-64.64252&lvl=13) |  |
-| Komoot | [open](https://www.komoot.com/plan/@-17.83241,-64.64252,13z) |  |
-| Mapy.com | [open](https://mapy.com/en/zakladni?x=-64.64252&y=-17.83241&z=13) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-17.83241/-64.64252) | to check: URL format |
-| OsmAnd web | [open](https://osmand.net/map/?#13/-17.83241/-64.64252) | to check: URL format |
-
-## 6. Bolivia: RN6 Padilla-Monteagudo (trunk)
-
-Point: **-19.80607, -63.98787** (`geo:-19.80607,-63.98787?z=13`). Class: `highway=trunk`, ref `F6`.
-
-- Paved side: [w1411479804](https://www.openstreetmap.org/way/1411479804) `surface=asphalt`, 53.1 km, [Mapillary 2017-01-01](https://www.mapillary.com/app/?pKey=290640669224948)
-- Unpaved side: [w491636267](https://www.openstreetmap.org/way/491636267) `surface=unpaved`, 16.9 km, [Mapillary 2017-01-01](https://www.mapillary.com/app/?pKey=907407159833646)
+- Paved side: [w1323474515](https://www.openstreetmap.org/way/1323474515) `surface=asphalt`, 59.2 km, [Mapillary 2022-09-22](https://www.mapillary.com/app/?pKey=1232400407401445)
+- Unpaved side: [w803452005](https://www.openstreetmap.org/way/803452005) `surface=compacted`, 8.9 km, [Mapillary 2022-09-22](https://www.mapillary.com/app/?pKey=189132390146229)
 
 | App | Link | Note |
 |---|---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-19.80607/-63.98787) |  |
-| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-19.80607/-63.98787&layers=Y) |  |
-| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-19.80607/-63.98787&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-19.80607/-63.98787&layers=P) | to check: layer letter |
-| OpenTopoMap | [open](https://opentopomap.org/#map=13/-19.80607/-63.98787) |  |
-| Americana | [open](https://americanamap.org/#map=13/-19.80607/-63.98787) |  |
-| Google Maps | [open](https://www.google.com/maps/@-19.80607,-63.98787,13z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=-19.80607,-63.98787&z=13) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=-19.80607~-63.98787&lvl=13) |  |
-| Komoot | [open](https://www.komoot.com/plan/@-19.80607,-63.98787,13z) |  |
-| Mapy.com | [open](https://mapy.com/en/zakladni?x=-63.98787&y=-19.80607&z=13) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-19.80607/-63.98787) | to check: URL format |
-| OsmAnd web | [open](https://osmand.net/map/?#13/-19.80607/-63.98787) | to check: URL format |
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-14.84989/-65.10523) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-14.84989/-65.10523&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-14.84989/-65.10523&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-14.84989/-65.10523&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-14.84989/-65.10523) |  |
+| Americana | [open](https://americanamap.org/#map=13/-14.84989/-65.10523) |  |
+| Google Maps | [open](https://www.google.com/maps/@-14.84989,-65.10523,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-14.84989,-65.10523&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-14.84989~-65.10523&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-14.84989,-65.10523,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=-65.10523&y=-14.84989&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-14.84989/-65.10523) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-14.84989/-65.10523) | to check: URL format |
 
-## 7. Bolivia: RN25 Vinto-Morochata
+## 4. Namibia: C26 at Kupferberg: new asphalt to gravel
 
-Point: **-17.36235, -66.364** (`geo:-17.36235,-66.364?z=13`). Class: `highway=primary`, ref `F25`.
+Point: **-22.72791, 16.9509** (`geo:-22.72791,16.9509?z=13`). Class: `highway=primary`, ref `C26`. Image pair: `images/sheets/transitions/17.jpg`.
+
+- Paved side: [w1383297910](https://www.openstreetmap.org/way/1383297910) `surface=asphalt`, 17.7 km, [Mapillary 2025-11-14](https://www.mapillary.com/app/?pKey=1339612504567112)
+- Unpaved side: [w1238003282](https://www.openstreetmap.org/way/1238003282) `surface=compacted`, 169.8 km, [Mapillary 2016-01-01](https://www.mapillary.com/app/?pKey=2911981139045662)
+
+| App | Link | Note |
+|---|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-22.72791/16.9509) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-22.72791/16.9509&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-22.72791/16.9509&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-22.72791/16.9509&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-22.72791/16.9509) |  |
+| Americana | [open](https://americanamap.org/#map=13/-22.72791/16.9509) |  |
+| Google Maps | [open](https://www.google.com/maps/@-22.72791,16.9509,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-22.72791,16.9509&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-22.72791~16.9509&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-22.72791,16.9509,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=16.9509&y=-22.72791&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-22.72791/16.9509) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-22.72791/16.9509) | to check: URL format |
+
+## 5. Bolivia: RN3 near Trinidad: asphalt to dirt
+
+Point: **-14.87824, -64.99758** (`geo:-14.87824,-64.99758?z=13`). Class: `highway=trunk`, ref `F3`. Image pair: `images/sheets/transitions/19.jpg`.
+
+- Paved side: [w353263510](https://www.openstreetmap.org/way/353263510) `surface=asphalt`, 15.3 km, [Mapillary 2023-11-19](https://www.mapillary.com/app/?pKey=264405276700353)
+- Unpaved side: [w700419617](https://www.openstreetmap.org/way/700419617) `surface=compacted`, 5.1 km, [Mapillary 2022-09-22](https://www.mapillary.com/app/?pKey=1589823008160588)
+
+| App | Link | Note |
+|---|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-14.87824/-64.99758) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-14.87824/-64.99758&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-14.87824/-64.99758&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-14.87824/-64.99758&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-14.87824/-64.99758) |  |
+| Americana | [open](https://americanamap.org/#map=13/-14.87824/-64.99758) |  |
+| Google Maps | [open](https://www.google.com/maps/@-14.87824,-64.99758,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-14.87824,-64.99758&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-14.87824~-64.99758&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-14.87824,-64.99758,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=-64.99758&y=-14.87824&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-14.87824/-64.99758) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-14.87824/-64.99758) | to check: URL format |
+
+## 6. Bolivia: RN25 Vinto-Morochata: cobbles to dirt mountain road (paved side is cobbles, tagged asphalt)
+
+Point: **-17.36235, -66.364** (`geo:-17.36235,-66.364?z=13`). Class: `highway=primary`, ref `F25`. Image pair: `images/sheets/transitions/7.jpg`.
 
 - Paved side: [w977951925](https://www.openstreetmap.org/way/977951925) `surface=asphalt`, 8.9 km, [Mapillary 2021-09-04](https://www.mapillary.com/app/?pKey=243917530968410)
 - Unpaved side: [w521851727](https://www.openstreetmap.org/way/521851727) `surface=unpaved`, 41.6 km, [Mapillary 2021-09-04](https://www.mapillary.com/app/?pKey=138457651776748)
@@ -167,27 +144,141 @@ Point: **-17.36235, -66.364** (`geo:-17.36235,-66.364?z=13`). Class: `highway=pr
 | Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-17.36235/-66.364) | to check: URL format |
 | OsmAnd web | [open](https://osmand.net/map/?#13/-17.36235/-66.364) | to check: URL format |
 
-## 8. Iceland: Kjalvegur (road 35), south end near Gullfoss
+## 7. Namibia: C47: village asphalt to corrugated gravel
 
-Point: **64.43162, -20.00864** (`geo:64.43162,-20.00864?z=13`). Class: `highway=primary/secondary`, ref `35`.
+Point: **-20.05495, 18.24894** (`geo:-20.05495,18.24894?z=13`). Class: `highway=primary`, ref `C47`. Image pair: `images/sheets/transitions/8.jpg`.
 
-- Paved side: [w169400628](https://www.openstreetmap.org/way/169400628) `surface=asphalt`, 42.8 km, no Mapillary
-- Unpaved side: [w69019862](https://www.openstreetmap.org/way/69019862) `surface=gravel`, 5 km, no Mapillary
+- Paved side: [w816238181](https://www.openstreetmap.org/way/816238181) `surface=asphalt`, 5.2 km, [Mapillary 2026-02-05](https://www.mapillary.com/app/?pKey=932617432769407)
+- Unpaved side: [w22794120](https://www.openstreetmap.org/way/22794120) `surface=gravel`, 62.5 km, [Mapillary 2026-02-05](https://www.mapillary.com/app/?pKey=915225127634224)
 
 | App | Link | Note |
 |---|---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/64.43162/-20.00864) |  |
-| CyclOSM | [open](https://www.openstreetmap.org/#map=13/64.43162/-20.00864&layers=Y) |  |
-| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/64.43162/-20.00864&layers=H) |  |
-| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/64.43162/-20.00864&layers=P) | to check: layer letter |
-| OpenTopoMap | [open](https://opentopomap.org/#map=13/64.43162/-20.00864) |  |
-| Americana | [open](https://americanamap.org/#map=13/64.43162/-20.00864) |  |
-| Google Maps | [open](https://www.google.com/maps/@64.43162,-20.00864,13z) |  |
-| Apple Maps | [open](https://maps.apple.com/?ll=64.43162,-20.00864&z=13) |  |
-| Bing Maps | [open](https://www.bing.com/maps?cp=64.43162~-20.00864&lvl=13) |  |
-| Komoot | [open](https://www.komoot.com/plan/@64.43162,-20.00864,13z) |  |
-| Mapy.com | [open](https://mapy.com/en/zakladni?x=-20.00864&y=64.43162&z=13) |  |
-| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/64.43162/-20.00864) | to check: URL format |
-| OsmAnd web | [open](https://osmand.net/map/?#13/64.43162/-20.00864) | to check: URL format |
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-20.05495/18.24894) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-20.05495/18.24894&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-20.05495/18.24894&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-20.05495/18.24894&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-20.05495/18.24894) |  |
+| Americana | [open](https://americanamap.org/#map=13/-20.05495/18.24894) |  |
+| Google Maps | [open](https://www.google.com/maps/@-20.05495,18.24894,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-20.05495,18.24894&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-20.05495~18.24894&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-20.05495,18.24894,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=18.24894&y=-20.05495&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-20.05495/18.24894) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-20.05495/18.24894) | to check: URL format |
 
-Iceland: no Mapillary at this point; Google Street View has official car imagery along Kjalvegur (2024). Its gravel sections carry `4wd_only=yes`, so it also shows the Off-road mark where apps support it.
+## 8. Namibia: C38 near Etosha: asphalt to gravel
+
+Point: **-18.81068, 16.9415** (`geo:-18.81068,16.9415?z=13`). Class: `highway=primary`, ref `C38`. Image pair: `images/sheets/transitions/11.jpg`.
+
+- Paved side: [w551124886](https://www.openstreetmap.org/way/551124886) `surface=asphalt`, 35.1 km, [Mapillary 2017-10-24](https://www.mapillary.com/app/?pKey=319565122947004)
+- Unpaved side: [w225220011](https://www.openstreetmap.org/way/225220011) `surface=gravel`, 72.3 km, [Mapillary 2017-10-24](https://www.mapillary.com/app/?pKey=684848622263848)
+
+| App | Link | Note |
+|---|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-18.81068/16.9415) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-18.81068/16.9415&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-18.81068/16.9415&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-18.81068/16.9415&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-18.81068/16.9415) |  |
+| Americana | [open](https://americanamap.org/#map=13/-18.81068/16.9415) |  |
+| Google Maps | [open](https://www.google.com/maps/@-18.81068,16.9415,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-18.81068,16.9415&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-18.81068~16.9415&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-18.81068,16.9415,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=16.9415&y=-18.81068&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-18.81068/16.9415) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-18.81068/16.9415) | to check: URL format |
+
+## 9. Namibia: C40 at Kamanjab: town asphalt to gravel
+
+Point: **-19.62212, 14.841** (`geo:-19.62212,14.841?z=13`). Class: `highway=primary`, ref `C40`. Image pair: `images/sheets/transitions/4.jpg`.
+
+- Paved side: [w424570019](https://www.openstreetmap.org/way/424570019) `surface=asphalt`, 144.4 km, [Mapillary 2019-04-02](https://www.mapillary.com/app/?pKey=1922402024574067)
+- Unpaved side: [w26451980](https://www.openstreetmap.org/way/26451980) `surface=gravel`, 113.7 km, [Mapillary 2019-04-02](https://www.mapillary.com/app/?pKey=288708646244307)
+
+| App | Link | Note |
+|---|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-19.62212/14.841&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-19.62212/14.841) |  |
+| Americana | [open](https://americanamap.org/#map=13/-19.62212/14.841) |  |
+| Google Maps | [open](https://www.google.com/maps/@-19.62212,14.841,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-19.62212,14.841&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-19.62212~14.841&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-19.62212,14.841,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=14.841&y=-19.62212&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-19.62212/14.841) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-19.62212/14.841) | to check: URL format |
+
+## 10. Namibia: C28: asphalt to gravel
+
+Point: **-22.59733, 16.85222** (`geo:-22.59733,16.85222?z=13`). Class: `highway=primary`, ref `C28`. Image pair: `images/sheets/transitions/10.jpg`.
+
+- Paved side: [w397753962](https://www.openstreetmap.org/way/397753962) `surface=asphalt`, 18.9 km, [Mapillary 2019-06-27](https://www.mapillary.com/app/?pKey=781695659201735)
+- Unpaved side: [w83287418](https://www.openstreetmap.org/way/83287418) `surface=gravel`, 16.4 km, [Mapillary 2020-04-24](https://www.mapillary.com/app/?pKey=486837159301441)
+
+| App | Link | Note |
+|---|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-22.59733/16.85222) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-22.59733/16.85222&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-22.59733/16.85222&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-22.59733/16.85222&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-22.59733/16.85222) |  |
+| Americana | [open](https://americanamap.org/#map=13/-22.59733/16.85222) |  |
+| Google Maps | [open](https://www.google.com/maps/@-22.59733,16.85222,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-22.59733,16.85222&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-22.59733~16.85222&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-22.59733,16.85222,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=16.85222&y=-22.59733&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-22.59733/16.85222) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-22.59733/16.85222) | to check: URL format |
+
+## 11. Namibia: C47: worn asphalt to gravel
+
+Point: **-20.57606, 17.52333** (`geo:-20.57606,17.52333?z=13`). Class: `highway=primary`, ref `C47`. Image pair: `images/sheets/transitions/16.jpg`.
+
+- Paved side: [w1035986767](https://www.openstreetmap.org/way/1035986767) `surface=asphalt`, 7.5 km, [Mapillary 2026-02-04](https://www.mapillary.com/app/?pKey=1973308916903251)
+- Unpaved side: [w816238178](https://www.openstreetmap.org/way/816238178) `surface=gravel`, 88.2 km, [Mapillary 2026-02-04](https://www.mapillary.com/app/?pKey=1638001100532489)
+
+| App | Link | Note |
+|---|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-20.57606/17.52333) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-20.57606/17.52333&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-20.57606/17.52333&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-20.57606/17.52333&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-20.57606/17.52333) |  |
+| Americana | [open](https://americanamap.org/#map=13/-20.57606/17.52333) |  |
+| Google Maps | [open](https://www.google.com/maps/@-20.57606,17.52333,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-20.57606,17.52333&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-20.57606~17.52333&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-20.57606,17.52333,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=17.52333&y=-20.57606&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-20.57606/17.52333) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-20.57606/17.52333) | to check: URL format |
+
+## 12. Bolivia: F48: asphalt to rough cobblestone (unhewn cobblestone counts as Unpaved)
+
+Point: **-17.53697, -66.11823** (`geo:-17.53697,-66.11823?z=13`). Class: `highway=primary`, ref `F48`. Image pair: `images/sheets/transitions/21.jpg`.
+
+- Paved side: [w885382365](https://www.openstreetmap.org/way/885382365) `surface=asphalt`, 5.2 km, [Mapillary 2024-11-17](https://www.mapillary.com/app/?pKey=1202799947450495)
+- Unpaved side: [w422115405](https://www.openstreetmap.org/way/422115405) `surface=unhewn_cobblestone`, 10.2 km, [Mapillary 2019-12-25](https://www.mapillary.com/app/?pKey=944343276134556)
+
+| App | Link | Note |
+|---|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=13/-17.53697/-66.11823) |  |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=13/-17.53697/-66.11823&layers=Y) |  |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=13/-17.53697/-66.11823&layers=H) |  |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=13/-17.53697/-66.11823&layers=P) | to check: layer letter |
+| OpenTopoMap | [open](https://opentopomap.org/#map=13/-17.53697/-66.11823) |  |
+| Americana | [open](https://americanamap.org/#map=13/-17.53697/-66.11823) |  |
+| Google Maps | [open](https://www.google.com/maps/@-17.53697,-66.11823,13z) |  |
+| Apple Maps | [open](https://maps.apple.com/?ll=-17.53697,-66.11823&z=13) |  |
+| Bing Maps | [open](https://www.bing.com/maps?cp=-17.53697~-66.11823&lvl=13) |  |
+| Komoot | [open](https://www.komoot.com/plan/@-17.53697,-66.11823,13z) |  |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=-66.11823&y=-17.53697&z=13) |  |
+| Gaia GPS | [open](https://www.gaiagps.com/map/?loc=13/-17.53697/-66.11823) | to check: URL format |
+| OsmAnd web | [open](https://osmand.net/map/?#13/-17.53697/-66.11823) | to check: URL format |
+
