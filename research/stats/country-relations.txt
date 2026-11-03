@@ -48,3 +48,13 @@ KG 178009 Kyrgyzstan
 ET 192800 Ethiopia
 SB 1857436 Solomon Islands
 AQ - Antarctica (no country relation: everything south of 60S)
+MX 114686 Mexico
+RO 90689 Romania
+GE 28699 Georgia
+ML 192785 Mali
+UG 192796 Uganda
+OM 305138 Oman
+AL 53292 Albania
+IR 304938 Iran
+UA 60199 Ukraine
+CA 1428125 Canada

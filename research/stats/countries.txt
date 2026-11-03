@@ -50,6 +50,17 @@ africa/morocco MA Morocco
 # Special case, not a country (added 2026-11-03)
 antarctica AQ Antarctica (not a country)
 
+# Regional gaps, second round, smallest first (added 2026-11-03)
+europe/albania AL Albania
+europe/georgia GE Georgia
+africa/mali ML Mali
+asia/iran IR Iran
+asia/gcc-states OM Oman
+europe/romania RO Romania
+africa/uganda UG Uganda
+north-america/mexico MX Mexico
+# europe/ukraine UA Ukraine   (on hold 2026-11-03)
+
 # Developed countries with unpaved highways (added 2026-11-03)
 south-america/chile CL Chile
 australia-oceania/new-zealand NZ New Zealand
@@ -58,3 +69,6 @@ australia-oceania/new-zealand NZ New Zealand
 europe/finland FI Finland
 europe/czech-republic CZ Czechia
 europe/denmark DK Denmark
+
+# Last: biggest download (6.2 GB)
+# north-america/canada CA Canada   (on hold 2026-11-03)

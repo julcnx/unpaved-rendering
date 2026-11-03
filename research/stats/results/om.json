@@ -1,0 +1,853 @@
+{
+ "country": "om",
+ "name": "Oman",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:40:40.662Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "gcc-states-latest.osm.pbf",
+  "boundary": "r305138",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 1106.3,
+   "untagged": 10.5,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 6231.3,
+   "untagged": 798.7,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 2809.5,
+   "untagged": 353.3,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 2441,
+   "untagged": 817.2,
+   "unpaved": 71,
+   "offroad": 10.3,
+   "specialized": 0
+  },
+  "tertiary": {
+   "paved_tagged": 3804,
+   "untagged": 3219.2,
+   "unpaved": 828.2,
+   "offroad": 255.7,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 11837.2,
+   "unpaved": 4614.8,
+   "paved_tagged": 2448.4,
+   "offroad": 787.9,
+   "specialized": 46.3
+  },
+  "residential": {
+   "untagged": 16496.6,
+   "paved_tagged": 3525.6,
+   "unpaved": 1065.6,
+   "offroad": 111.4,
+   "specialized": 0
+  },
+  "all": {
+   "untagged": 33532.8,
+   "paved_tagged": 22366.2,
+   "unpaved": 6579.6,
+   "offroad": 1165.3,
+   "specialized": 46.3
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 1106.3
+  },
+  "trunk": {
+   "surface": 6231.3,
+   "smoothness": 349.7
+  },
+  "primary": {
+   "surface": 2809.5,
+   "4wd_only": 25.2,
+   "smoothness": 23.2
+  },
+  "secondary": {
+   "surface": 2522.4,
+   "smoothness": 41.7,
+   "tracktype": 10.4,
+   "4wd_only": 0
+  },
+  "tertiary": {
+   "surface": 4801.5,
+   "tracktype": 259.4,
+   "smoothness": 126.7,
+   "4wd_only": 95.5
+  },
+  "unclassified": {
+   "surface": 7548.9,
+   "tracktype": 1194.4,
+   "smoothness": 435.6,
+   "4wd_only": 21.1
+  },
+  "residential": {
+   "surface": 4580.9,
+   "tracktype": 182.8,
+   "smoothness": 28.1,
+   "4wd_only": 0.1
+  },
+  "all": {
+   "surface": 29600.8,
+   "tracktype": 1647,
+   "smoothness": 1005,
+   "4wd_only": 141.9
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 1106.3,
+   "default": 10.5
+  },
+  "trunk": {
+   "surface": 6231.3,
+   "default": 798.7
+  },
+  "primary": {
+   "surface": 2809.5,
+   "default": 353.3
+  },
+  "secondary": {
+   "surface": 2522.4,
+   "default": 817.2
+  },
+  "tertiary": {
+   "surface": 4801.5,
+   "default": 3219.2,
+   "tracktype": 86.4
+  },
+  "unclassified": {
+   "default": 11837.2,
+   "surface": 7548.9,
+   "tracktype": 348.5
+  },
+  "residential": {
+   "default": 16496.6,
+   "surface": 4580.9,
+   "tracktype": 121.7
+  },
+  "all": {
+   "default": 33532.8,
+   "surface": 29600.8,
+   "tracktype": 556.7
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "tracktype": 10.3,
+   "4wd_only": 0
+  },
+  "tertiary": {
+   "tracktype": 103,
+   "4wd_only": 84.2,
+   "smoothness": 68.5
+  },
+  "unclassified": {
+   "tracktype": 673.1,
+   "smoothness": 155.9,
+   "4wd_only": 5.2
+  },
+  "residential": {
+   "tracktype": 106.8,
+   "smoothness": 4.6
+  },
+  "all": {
+   "tracktype": 893.3,
+   "smoothness": 229,
+   "4wd_only": 89.4
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 77.5,
+    "surface=compacted": 3.8,
+    "surface=gravel": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 10.3,
+    "4wd_only=recommended": 0
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 446.7,
+    "surface=compacted": 303.5,
+    "surface=gravel": 153.4,
+    "tracktype=grade2": 65.2,
+    "surface=sand": 51.3,
+    "surface=ground": 42.4,
+    "tracktype=grade3": 18,
+    "tracktype=grade4": 3.2,
+    "surface=dirt": 0.1
+   },
+   "offroad": {
+    "4wd_only=yes": 84.2,
+    "smoothness=very_bad": 68.5,
+    "tracktype=grade3": 56.6,
+    "tracktype=grade4": 46.4
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 2510.4,
+    "surface=gravel": 1362.1,
+    "surface=compacted": 818.6,
+    "surface=sand": 263.2,
+    "surface=ground": 164.7,
+    "tracktype=grade4": 139.7,
+    "tracktype=grade3": 107,
+    "tracktype=grade2": 52.1,
+    "tracktype=grade5": 24.7,
+    "surface=dirt": 6.5
+   },
+   "offroad": {
+    "tracktype=grade3": 431.5,
+    "tracktype=grade4": 215.3,
+    "smoothness=very_bad": 75.2,
+    "smoothness=horrible": 34.4,
+    "tracktype=grade5": 26.3,
+    "4wd_only=yes": 5.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 45.9,
+    "smoothness=impassable": 0.4
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 849.3,
+    "surface=gravel": 87.8,
+    "surface=dirt": 84.8,
+    "tracktype=grade3": 65.9,
+    "surface=ground": 29.1,
+    "tracktype=grade2": 27.9,
+    "tracktype=grade4": 11,
+    "surface=compacted": 10.4,
+    "surface=sand": 6.4,
+    "surface=us": 1.8,
+    "surface=fine_gravel": 0.6,
+    "surface=ي": 0.4,
+    "surface=mud": 0.4,
+    "surface=unpaved; asphalt": 0.3,
+    "surface=d": 0.3,
+    "surface=nieutwardzona_(ogólnie)2": 0.3,
+    "surface=pebblestone": 0.1,
+    "tracktype=grade5": 0.1,
+    "surface=unpaved;asphalt": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 94.5,
+    "tracktype=grade4": 11.2,
+    "smoothness=very_bad": 4.6,
+    "tracktype=grade5": 1.1
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 3884,
+    "surface=gravel": 1603.3,
+    "surface=compacted": 1136.2,
+    "surface=sand": 320.9,
+    "surface=ground": 236.3,
+    "tracktype=grade3": 190.9,
+    "tracktype=grade4": 153.9,
+    "tracktype=grade2": 145.3,
+    "surface=dirt": 91.4,
+    "tracktype=grade5": 24.8,
+    "surface=us": 1.8,
+    "surface=fine_gravel": 0.6,
+    "surface=ي": 0.4,
+    "surface=mud": 0.4,
+    "surface=unpaved; asphalt": 0.3,
+    "surface=d": 0.3,
+    "surface=nieutwardzona_(ogólnie)2": 0.3,
+    "surface=pebblestone": 0.1,
+    "surface=unpaved;asphalt": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 592.9,
+    "tracktype=grade4": 272.9,
+    "smoothness=very_bad": 148.3,
+    "4wd_only=yes": 89.4,
+    "smoothness=horrible": 34.4,
+    "tracktype=grade5": 27.4,
+    "4wd_only=recommended": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 45.9,
+    "smoothness=impassable": 0.4
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=us": 1.8,
+  "surface=ي": 0.4,
+  "surface=d": 0.3,
+  "surface=nieutwardzona_(ogólnie)2": 0.3
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + tracktype=grade3": 38.1,
+  "paved (surface=asphalt) + smoothness=impassable": 37.7,
+  "paved (surface=asphalt) + 4wd_only=yes": 25.4,
+  "paved (no surface) + 4wd_only=yes": 11.3,
+  "paved (surface=asphalt) + tracktype=grade4": 4,
+  "paved (surface=paved) + tracktype=grade3": 2.8
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w241714242",
+    "highway": "secondary",
+    "km": 43.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "old_ref": "45",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w118061684",
+    "highway": "secondary",
+    "km": 12.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "طريق مقنيات",
+     "name:ar": "طريق مقنيات",
+     "name:en": "Maqniyat Road",
+     "ref": "D617",
+     "source": "bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w257266919",
+    "highway": "secondary",
+    "km": 8.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w239626896",
+    "highway": "secondary",
+    "km": 6.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1335849839",
+    "highway": "secondary",
+    "km": 3.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w315932124",
+    "highway": "secondary",
+    "km": 1.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "100",
+     "name": "طريق ينقل - وادي صاع",
+     "name:ar": "طريق ينقل - وادي صاع",
+     "name:en": "Yanqul - Wadi Sa Road",
+     "ref": "D612",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w532664028",
+    "highway": "secondary",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "طريق مقنيات",
+     "name:ar": "طريق مقنيات",
+     "name:en": "Maqniyat Road",
+     "ref": "D617",
+     "source": "bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1335849840",
+    "highway": "secondary",
+    "km": 0.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w239807498",
+    "highway": "secondary",
+    "km": 0.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w550488462",
+    "highway": "unclassified",
+    "km": 83.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sand",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w45619859",
+    "highway": "unclassified",
+    "km": 68.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "yahoo lowres",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w1164095768",
+    "highway": "unclassified",
+    "km": 45.1,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w45619896",
+    "highway": "unclassified",
+    "km": 33.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "surface": "compacted",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w668105311",
+    "highway": "tertiary",
+    "km": 33.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "sand"
+    }
+   },
+   {
+    "id": "w372830336",
+    "highway": "tertiary",
+    "km": 33,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w288138818",
+    "highway": "tertiary",
+    "km": 29.5,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "yes",
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "motor_vehicle": "yes",
+     "name": "طريق خصب - دبا",
+     "name:ar": "طريق خصب - دبا",
+     "name:en": "Khasab - Dibba Road",
+     "name:es": "Khasab - Dibba Road",
+     "name:fr": "Khasab - Dibba Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w45731321",
+    "highway": "tertiary",
+    "km": 28.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "طريق هيماء - السحمة",
+     "name:ar": "طريق هيماء - السحمة",
+     "name:en": "Haima - Sahmah Road",
+     "oneway": "no",
+     "ref": "D703",
+     "surface": "compacted",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w118190031",
+    "highway": "unclassified",
+    "km": 28,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w46727793",
+    "highway": "unclassified",
+    "km": 26.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "60",
+     "source": "yahoo lowres",
+     "surface": "gravel",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w45645875",
+    "highway": "tertiary",
+    "km": 24.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "طريق هيماء - السحمة",
+     "name:ar": "طريق هيماء - السحمة",
+     "name:en": "Haima - Sahmah Road",
+     "oneway": "no",
+     "ref": "D703",
+     "surface": "compacted",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w112472480",
+    "highway": "unclassified",
+    "km": 23,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w332738671",
+    "highway": "unclassified",
+    "km": 23,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w258646491",
+    "highway": "unclassified",
+    "km": 20.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sand",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w46721172",
+    "highway": "unclassified",
+    "km": 20.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "yahoo lowres",
+     "tracktype": "grade3"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w233945632",
+    "highway": "unclassified",
+    "km": 19.5,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "smoothness": "excellent",
+     "source": "Maxar Premium Imagery",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w661409652",
+    "highway": "primary",
+    "km": 12.8,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "permit",
+     "highway": "primary",
+     "name": "طريق بركة الموز - الجبل الأخضر",
+     "name:ar": "طريق بركة الموز - الجبل الأخضر",
+     "name:en": "Birkat al Mawz - Jabal al Akhdar Road",
+     "ref": "D518",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w42833660",
+    "highway": "tertiary",
+    "km": 11,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "source": "yahoo lowres"
+    }
+   },
+   {
+    "id": "w43297935",
+    "highway": "tertiary",
+    "km": 10.6,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "oneway": "no",
+     "source": "GPS",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1089343169",
+    "highway": "unclassified",
+    "km": 10.2,
+    "level": "paved",
+    "tags": {
+     "access": "no",
+     "highway": "unclassified",
+     "smoothness": "impassable",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w590253987",
+    "highway": "unclassified",
+    "km": 10,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "impassable",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1163940359",
+    "highway": "unclassified",
+    "km": 10,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "impassable",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1089343185",
+    "highway": "unclassified",
+    "km": 7.5,
+    "level": "paved",
+    "tags": {
+     "access": "no",
+     "highway": "unclassified",
+     "smoothness": "impassable",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1386932726",
+    "highway": "primary",
+    "km": 5.4,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "permit",
+     "highway": "primary",
+     "name": "طريق بركة الموز - الجبل الأخضر",
+     "name:ar": "طريق بركة الموز - الجبل الأخضر",
+     "name:en": "Birkat al Mawz - Jabal al Akhdar Road",
+     "ref": "D518",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w200662164",
+    "highway": "unclassified",
+    "km": 4.7,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "source": "landsat",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w216965372",
+    "highway": "primary",
+    "km": 4.7,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "permit",
+     "highway": "primary",
+     "name": "طريق بركة الموز - الجبل الأخضر",
+     "name:ar": "طريق بركة الموز - الجبل الأخضر",
+     "name:en": "Birkat al Mawz - Jabal al Akhdar Road",
+     "ref": "D518",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w43038730",
+    "highway": "unclassified",
+    "km": 3.5,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "source": "yahoo lowres",
+     "surface": "asphalt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w218638974",
+    "highway": "tertiary",
+    "km": 2.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "source": "Bing Aerial",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w46203500",
+    "highway": "tertiary",
+    "km": 1.7,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "source": "Bing Aerial",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1385082374",
+    "highway": "primary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "primary",
+     "name": "طريق بركة الموز - الجبل الأخضر",
+     "name:ar": "طريق بركة الموز - الجبل الأخضر",
+     "name:en": "Birkat al Mawz - Jabal al Akhdar Road",
+     "ref": "D518",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w1534264276",
+    "highway": "residential",
+    "km": 1.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "surface": "us"
+    }
+   }
+  ]
+ }
+}
