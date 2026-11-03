@@ -1,6 +1,6 @@
 // Find points where a major road changes from paved to unpaved: two ways of the same road (same ref or name)
 // sharing an end node, one Paved and one Unpaved under our classifier. Checks Mapillary on both sides.
-// Usage: MAPILLARY_TOKEN=... node examples/transitions.ts   (writes examples/transitions.json and .md)
+// Usage: MAPILLARY_TOKEN=... [ONLY="np"] node examples/transitions.ts   (writes examples/transitions.json and .md)
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { classifyDetailed } from '../classifier/classify.ts';
@@ -21,6 +21,11 @@ const SEARCHES: [string, string, string, string][] = [
   ['Namibia C-roads', 'na', '[ref~"^C[0-9]"]', '-29.0,11.5,-17.0,25.5'],
   ['Iceland road 35', 'is', '[ref="35"]', '63.9,-21.0,65.5,-18.5'],
   ['Bolivia F-roads', 'bo', '[ref~"^F ?[0-9]"]', '-23.0,-69.7,-9.6,-57.4'],
+  ['Nepal national and feeder roads', 'np', '[ref~"^(NH|F) ?[0-9]"]', '26.3,80.0,30.5,88.3'],
+  ['Iceland numbered roads', 'is', '[ref~"^F?[0-9]+$"]', '63.2,-24.6,66.6,-13.4'],
+  ['Australia: north-west numbered roads', 'au', '[ref~"^[A-Z]?[0-9]+$"]', '-26.0,113.0,-13.0,129.0'],
+  ['Australia: Northern Territory numbered roads', 'au', '[ref~"^[A-Z]?[0-9]+$"]', '-26.0,129.0,-11.0,138.0'],
+  ['Australia: outback Queensland numbered roads', 'au', '[ref~"^[A-Z]?[0-9]+$"]', '-29.0,138.0,-16.0,146.0'],
 ];
 
 type Way = { id: number; tags: Record<string, string>; nodes: number[]; geometry: { lat: number; lon: number }[] };
@@ -90,8 +95,11 @@ function runKm(first: Way, node: number, ends: Map<number, Way[]>, key: (w: Way)
   return Math.round(km * 10) / 10;
 }
 
-const found: any[] = [];
+// ONLY="np": run only the searches for these countries and keep the other results from the earlier run.
+const ONLY = process.env.ONLY?.split(/\s+/).filter(Boolean);
+const found: any[] = ONLY ? [...cache.values()].filter((t) => !ONLY.includes(t.country)) : [];
 for (const [label, country, filter, bbox] of SEARCHES) {
+  if (ONLY && !ONLY.includes(country)) continue;
   const ways = await overpass(filter, bbox);
   const key = (w: Way) => w.tags.ref ?? w.tags.name ?? '';
   const ends = new Map<number, Way[]>();

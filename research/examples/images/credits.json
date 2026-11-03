@@ -2368,5 +2368,59 @@
   "author": "cesarc",
   "captured": "2022-09-22",
   "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-np-25-paved.jpg": {
+  "road": "Nepal NH48 transition (paved side)",
+  "way": "w384304387",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=170085204903842",
+  "author": "supersubra",
+  "captured": "2014-06-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-np-25-unpaved.jpg": {
+  "road": "Nepal NH48 transition (unpaved side)",
+  "way": "w1254665821",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=272466534555985",
+  "author": "supersubra",
+  "captured": "2014-06-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-np-26-paved.jpg": {
+  "road": "Nepal NH05 transition (paved side)",
+  "way": "w443291686",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=127181356066968",
+  "author": "nirabpudasaini",
+  "captured": "2016-09-21",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-np-26-unpaved.jpg": {
+  "road": "Nepal NH05 transition (unpaved side)",
+  "way": "w669834964",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=3942257342558619",
+  "author": "nirabpudasaini",
+  "captured": "2016-09-19",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-np-27-paved.jpg": {
+  "road": "Nepal NH47 transition (paved side)",
+  "way": "w27021565",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=131187068999073",
+  "author": "roshanpoudel14",
+  "captured": "2016-12-29",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/transition-np-27-unpaved.jpg": {
+  "road": "Nepal NH47 transition (unpaved side)",
+  "way": "w1115705451",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=267231505104650",
+  "author": "roshanpoudel14",
+  "captured": "2016-12-29",
+  "licence": "CC BY-SA 4.0"
  }
 }
