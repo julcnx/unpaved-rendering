@@ -18,7 +18,7 @@ const SPOTS: Record<string, [number, number]> = {
 const osm = (layer: string) => (la: number, lo: number) => `https://www.openstreetmap.org/#map=${ZOOM}/${la}/${lo}&layers=${layer}`;
 // go: extra steps for sites whose URL cannot hold the position.
 type App = { url: (la: number, lo: number) => string; css?: string; wait?: number; click?: string[]; zoomIn?: number;
-  go?: (page: any, la: number, lo: number) => Promise<void> };
+  go?: (page: any, la: number, lo: number) => Promise<void>; noBanner?: boolean };
 const APPS: Record<string, App> = {
   'osm-carto': { url: osm('M') },
   cyclosm: { url: osm('Y') },
@@ -43,6 +43,12 @@ const APPS: Record<string, App> = {
     go: (page, la, lo) => page.evaluate((a: number, o: number, z: number) => (window as any).map.setView([a, o], z), la, lo, ZOOM) },
   'maptiler-outdoor': { url: (la, lo) => `https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=${ZOOM}/${la}/${lo}` },
   'maptiler-streets': { url: (la, lo) => `https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=${ZOOM}/${la}/${lo}` },
+  // No cookie clicks: its header has a "Close" button that resets the map. The banner is hidden with the rest anyway.
+  caltopo: { url: (la, lo) => `https://caltopo.com/map.html#ll=${la},${lo}&z=${ZOOM}&b=mbt`, noBanner: true },
+  // AllTrails blocks automated browsers: screenshot it by hand (link in screenshot-locations.md).
+  'stadia-alidade': { url: (la, lo) => `https://stadiamaps.com/explore-the-map/#style=alidade_smooth&map=${ZOOM}/${la}/${lo}` },
+  'stadia-outdoors': { url: (la, lo) => `https://stadiamaps.com/explore-the-map/#style=outdoors&map=${ZOOM}/${la}/${lo}` },
+  protomaps: { url: (la, lo) => `https://maps.protomaps.com/#map=${ZOOM}/${la}/${lo}&flavorName=light&lang=en` },
   // The planner opens on the visitor's own location: type the coordinates in its search box, then drop the marker.
   'ridewithgps': { url: () => 'https://ridewithgps.com/routes/new', click: ['Remove marker'],
     go: async (page, la, lo) => {
@@ -132,7 +138,7 @@ for (const spot of spots.length ? spots : ['namibia', 'bolivia']) {
     try {
       await page.goto(app.url(la, lo), { waitUntil: 'networkidle2', timeout: 60000 });
       await sleep(4000); // cookie dialogs slide in after the page is idle and ignore clicks until then
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < (app.noBanner ? 0 : 2); i++) {
         for (const label of BANNER) if (await clickText(page, label)) await sleep(800);
         await sleep(1000);
       }

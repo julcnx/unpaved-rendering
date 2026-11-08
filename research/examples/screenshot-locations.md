@@ -39,6 +39,11 @@ Verified: Mapillary images on both sides checked: asphalt, then gravel.
 | Thunderforest Outdoors (no location in the URL: search or pan) | [open](https://www.thunderforest.com/maps/outdoors/preview/) |
 | MapTiler Outdoor | [open](https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=15/-18.81068/16.9415) |
 | MapTiler Streets | [open](https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=15/-18.81068/16.9415) |
+| CalTopo (MapBuilder Topo) | [open](https://caltopo.com/map.html#ll=-18.81068,16.9415&z=15&b=mbt) |
+| AllTrails (blocks automated browsers: screenshot by hand) | [open](https://www.alltrails.com/explore?b_tl_lat=-18.79568&b_tl_lng=16.91550&b_br_lat=-18.82568&b_br_lng=16.96750) |
+| Stadia Alidade Smooth | [open](https://stadiamaps.com/explore-the-map/#style=alidade_smooth&map=15/-18.81068/16.9415) |
+| Stadia Outdoors | [open](https://stadiamaps.com/explore-the-map/#style=outdoors&map=15/-18.81068/16.9415) |
+| Protomaps basemap | [open](https://maps.protomaps.com/#map=15/-18.81068/16.9415&flavorName=light&lang=en) |
 | Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
 | DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
@@ -73,6 +78,11 @@ Verified: Mapillary images on both sides checked: asphalt, then dirt.
 | Thunderforest Outdoors (no location in the URL: search or pan) | [open](https://www.thunderforest.com/maps/outdoors/preview/) |
 | MapTiler Outdoor | [open](https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=15/-14.87824/-64.99758) |
 | MapTiler Streets | [open](https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=15/-14.87824/-64.99758) |
+| CalTopo (MapBuilder Topo) | [open](https://caltopo.com/map.html#ll=-14.87824,-64.99758&z=15&b=mbt) |
+| AllTrails (blocks automated browsers: screenshot by hand) | [open](https://www.alltrails.com/explore?b_tl_lat=-14.86324&b_tl_lng=-65.02358&b_br_lat=-14.89324&b_br_lng=-64.97158) |
+| Stadia Alidade Smooth | [open](https://stadiamaps.com/explore-the-map/#style=alidade_smooth&map=15/-14.87824/-64.99758) |
+| Stadia Outdoors | [open](https://stadiamaps.com/explore-the-map/#style=outdoors&map=15/-14.87824/-64.99758) |
+| Protomaps basemap | [open](https://maps.protomaps.com/#map=15/-14.87824/-64.99758&flavorName=light&lang=en) |
 | Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
 | DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
@@ -115,6 +125,11 @@ Google Street View at the transition point (user photosphere, May 2025, "© nepa
 | Thunderforest Outdoors (no location in the URL: search or pan) | [open](https://www.thunderforest.com/maps/outdoors/preview/) |
 | MapTiler Outdoor | [open](https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=15/28.80567/83.76673) |
 | MapTiler Streets | [open](https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=15/28.80567/83.76673) |
+| CalTopo (MapBuilder Topo) | [open](https://caltopo.com/map.html#ll=28.80567,83.76673&z=15&b=mbt) |
+| AllTrails (blocks automated browsers: screenshot by hand) | [open](https://www.alltrails.com/explore?b_tl_lat=28.82067&b_tl_lng=83.74073&b_br_lat=28.79067&b_br_lng=83.79273) |
+| Stadia Alidade Smooth | [open](https://stadiamaps.com/explore-the-map/#style=alidade_smooth&map=15/28.80567/83.76673) |
+| Stadia Outdoors | [open](https://stadiamaps.com/explore-the-map/#style=outdoors&map=15/28.80567/83.76673) |
+| Protomaps basemap | [open](https://maps.protomaps.com/#map=15/28.80567/83.76673&flavorName=light&lang=en) |
 | Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
 | DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
