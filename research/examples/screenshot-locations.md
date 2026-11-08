@@ -36,6 +36,10 @@ Verified: Mapillary images on both sides checked: asphalt, then gravel.
 | Locus Map (LoMaps) | [open](https://web.locusmap.app/en/plan?lat=-18.81068&lng=16.9415&z=15&map=hikeBike) |
 | Strava | [open](https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#15/-18.81068/16.9415) |
 | Kurviger (marker on the point, no zoom in the URL) | [open](https://kurviger.com/en/plan?point=-18.81068%2C16.9415) |
+| Thunderforest Outdoors (no location in the URL: search or pan) | [open](https://www.thunderforest.com/maps/outdoors/preview/) |
+| MapTiler Outdoor | [open](https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=15/-18.81068/16.9415) |
+| MapTiler Streets | [open](https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=15/-18.81068/16.9415) |
+| Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
 | DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
 ## 2. South America: Bolivia, RN3 near Trinidad: asphalt to dirt
@@ -66,6 +70,10 @@ Verified: Mapillary images on both sides checked: asphalt, then dirt.
 | Locus Map (LoMaps) | [open](https://web.locusmap.app/en/plan?lat=-14.87824&lng=-64.99758&z=15&map=hikeBike) |
 | Strava | [open](https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#15/-14.87824/-64.99758) |
 | Kurviger (marker on the point, no zoom in the URL) | [open](https://kurviger.com/en/plan?point=-14.87824%2C-64.99758) |
+| Thunderforest Outdoors (no location in the URL: search or pan) | [open](https://www.thunderforest.com/maps/outdoors/preview/) |
+| MapTiler Outdoor | [open](https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=15/-14.87824/-64.99758) |
+| MapTiler Streets | [open](https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=15/-14.87824/-64.99758) |
+| Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
 | DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 
 ## 3. Asia: Nepal, NH48 Beni-Lo Manthang (Mustang): asphalt to gravel jeep road
@@ -104,5 +112,9 @@ Google Street View at the transition point (user photosphere, May 2025, "© nepa
 | Locus Map (LoMaps) | [open](https://web.locusmap.app/en/plan?lat=28.80567&lng=83.76673&z=15&map=hikeBike) |
 | Strava | [open](https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#15/28.80567/83.76673) |
 | Kurviger (marker on the point, no zoom in the URL) | [open](https://kurviger.com/en/plan?point=28.80567%2C83.76673) |
+| Thunderforest Outdoors (no location in the URL: search or pan) | [open](https://www.thunderforest.com/maps/outdoors/preview/) |
+| MapTiler Outdoor | [open](https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=15/28.80567/83.76673) |
+| MapTiler Streets | [open](https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=15/28.80567/83.76673) |
+| Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
 | DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
 

@@ -16,7 +16,9 @@ const SPOTS: Record<string, [number, number]> = {
 };
 
 const osm = (layer: string) => (la: number, lo: number) => `https://www.openstreetmap.org/#map=${ZOOM}/${la}/${lo}&layers=${layer}`;
-type App = { url: (la: number, lo: number) => string; css?: string; wait?: number; click?: string[]; zoomIn?: number };
+// go: extra steps for sites whose URL cannot hold the position.
+type App = { url: (la: number, lo: number) => string; css?: string; wait?: number; click?: string[]; zoomIn?: number;
+  go?: (page: any, la: number, lo: number) => Promise<void> };
 const APPS: Record<string, App> = {
   'osm-carto': { url: osm('M') },
   cyclosm: { url: osm('Y') },
@@ -36,6 +38,20 @@ const APPS: Record<string, App> = {
   strava: { url: (la, lo) => `https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#${ZOOM}/${la}/${lo}` },
   // The URL has no zoom: the map opens far out, so zoom in with the mouse wheel on the centre (the point).
   kurviger: { url: (la, lo) => `https://kurviger.com/en/plan?point=${la}%2C${lo}`, click: ['No, thanks'], zoomIn: 7 },
+  // The preview page ignores the URL position, but its Leaflet map is a global.
+  'thunderforest-outdoors': { url: () => 'https://www.thunderforest.com/maps/outdoors/preview/',
+    go: (page, la, lo) => page.evaluate((a: number, o: number, z: number) => (window as any).map.setView([a, o], z), la, lo, ZOOM) },
+  'maptiler-outdoor': { url: (la, lo) => `https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=${ZOOM}/${la}/${lo}` },
+  'maptiler-streets': { url: (la, lo) => `https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=${ZOOM}/${la}/${lo}` },
+  // The planner opens on the visitor's own location: type the coordinates in its search box, then drop the marker.
+  'ridewithgps': { url: () => 'https://ridewithgps.com/routes/new', click: ['Remove marker'],
+    go: async (page, la, lo) => {
+      await page.keyboard.press('Escape'); // welcome dialog
+      await page.type('input[placeholder="Enter a location"]', `${la}, ${lo}`);
+      await sleep(2500);
+      await page.keyboard.press('Enter');
+      await sleep(4000);
+    } },
 };
 
 const args = process.argv.slice(2);
@@ -120,6 +136,7 @@ for (const spot of spots.length ? spots : ['namibia', 'bolivia']) {
         for (const label of BANNER) if (await clickText(page, label)) await sleep(800);
         await sleep(1000);
       }
+      if (app.go) await app.go(page, la, lo);
       for (const label of app.click ?? []) { await clickText(page, label); await sleep(1000); }
       if (app.zoomIn) {
         // Zoom on the waypoint marker if there is one (a side panel can shift the map centre), else on the centre.
