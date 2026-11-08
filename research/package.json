@@ -1,1 +1,1 @@
-{ "private": true, "type": "module" }
+{"private":true,"type":"module","devDependencies":{"puppeteer-core":"^23.11.1"}}

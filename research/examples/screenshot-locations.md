@@ -19,7 +19,7 @@ Verified: Mapillary images on both sides checked: asphalt, then gravel.
 
 | App | Link |
 |---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415) |
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=M) |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=Y) |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=H) |
 | Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-18.81068/16.9415&layers=P) |
@@ -49,7 +49,7 @@ Verified: Mapillary images on both sides checked: asphalt, then dirt.
 
 | App | Link |
 |---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758) |
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=M) |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=Y) |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=H) |
 | Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/-14.87824/-64.99758&layers=P) |
@@ -87,7 +87,7 @@ Google Street View at the transition point (user photosphere, May 2025, "© nepa
 
 | App | Link |
 |---|---|
-| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/28.80567/83.76673) |
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/28.80567/83.76673&layers=M) |
 | CyclOSM | [open](https://www.openstreetmap.org/#map=15/28.80567/83.76673&layers=Y) |
 | Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/28.80567/83.76673&layers=H) |
 | Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/28.80567/83.76673&layers=P) |
