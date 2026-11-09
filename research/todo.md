@@ -24,7 +24,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 ## Screenshots and examples (D)
 
 6. Retry Humanitarian (HOT) for Iceland: `APPS=humanitarian node examples/screenshots.ts iceland` (tile server still down on 2026-11-09 evening).
-7. AllTrails by hand for Namibia, Bolivia, Iceland, Australia and Alberta; DMD2 by hand for Iceland, Australia and Alberta.
 8. Komoot in the phone app; OsmAnd default vs Motorcycle at one spot.
 10. Comparison grid: one picture per app at the same spot.
 11. Chiang Mai before/after, including the Mon Klui viewpoint road.
