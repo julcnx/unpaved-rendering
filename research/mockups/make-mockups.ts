@@ -11,12 +11,13 @@ const CASING = '#c6c68a';
 const TINT = '#f1df9c';
 const TINT_CASING = '#c4b27a';
 const BROWN = '#7d5328';
+const DARK = '#ebd979'; // darker tint of the class colour, for the dashes
 const STATES = ['Paved', 'Unpaved', 'Unpaved + Off-road'] as const;
 type State = (typeof STATES)[number];
 
 const CELL_W = 300;
-const CELL_H = 110;
-const ROAD = 'M 15 75 C 80 20, 150 100, 210 50 S 280 40, 290 45';
+const CELL_H = 70;
+const ROAD = 'M 20 35 L 280 35'; // straight, so the patterns are easy to compare
 
 // Regular staggered dots: one tile holds two dots, so rows are offset by half a step.
 function dots(id: string, step: number, r: number) {
@@ -32,21 +33,24 @@ const road = (fill: string, casing = CASING, extra = '') =>
   `<path d="${ROAD}" fill="none" stroke="${casing}" stroke-width="15" stroke-linecap="round"/>` +
   `<path d="${ROAD}" fill="none" stroke="${fill}" stroke-width="11" stroke-linecap="round"/>${extra}`;
 const DASH = `<path d="${ROAD}" fill="none" stroke="${BROWN}" stroke-width="2.4" stroke-dasharray="9 4"/>`;
+// Full-width dashes in a darker tint of the class colour, the usual dashed unpaved style (dash 4, gap 4 in road widths in Americana, here 11 px).
+const TINT_DASHES = `<path d="${ROAD}" fill="none" stroke="${DARK}" stroke-width="11" stroke-dasharray="11 11"/>`;
+const CENTRE_DOTS = `<path d="${ROAD}" fill="none" stroke="${BROWN}" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0 7"/>`;
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
 const offroad = (s: State) => s.endsWith('Off-road');
 
 type Option = { title: string; note: string; road: (s: State) => string };
 const OPTIONS: Record<string, Option> = {
-  'dots-dash': {
-    title: 'Dots + dash',
-    note: 'Unpaved: regular dots inside the fill. Off-road mark: brown centre dash on top.',
-    road: (s) => road(unpaved(s) ? 'url(#unpaved)' : FILL, CASING, offroad(s) ? DASH : ''),
-  },
   'tint-dash': {
     title: 'Tint + dash',
     note: 'Unpaved: class colour shifted toward sandy. Off-road mark: brown centre dash on top.',
     road: (s) => unpaved(s) ? road(TINT, TINT_CASING, offroad(s) ? DASH : '') : road(FILL),
+  },
+  'dashes-dots': {
+    title: 'Dashes + dots',
+    note: 'Unpaved: dashes in a darker tint of the class colour, the dashed style already in use. Off-road mark: brown centre dots on top.',
+    road: (s) => road(FILL, CASING, (unpaved(s) ? TINT_DASHES : '') + (offroad(s) ? CENTRE_DOTS : '')),
   },
   'dots-dense': {
     title: 'Dots + dense dots',

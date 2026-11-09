@@ -26,6 +26,13 @@ const SEARCHES: [string, string, string, string][] = [
   ['Australia: north-west numbered roads', 'au', '[ref~"^[A-Z]?[0-9]+$"]', '-26.0,113.0,-13.0,129.0'],
   ['Australia: Northern Territory numbered roads', 'au', '[ref~"^[A-Z]?[0-9]+$"]', '-26.0,129.0,-11.0,138.0'],
   ['Australia: outback Queensland numbered roads', 'au', '[ref~"^[A-Z]?[0-9]+$"]', '-29.0,138.0,-16.0,146.0'],
+  ['Alaska state routes', 'us', '[ref~"^AK"]', '59.0,-165.0,71.5,-141.0'],
+  ['Yukon and Northwest Territories highways', 'ca', '[ref~"^[0-9]+$"]', '60.0,-141.0,69.5,-123.0'],
+  ['US West: Utah, Nevada, Idaho state routes', 'us', '[ref~"^(UT|SR|NV|ID) ?[0-9]+"]', '35.0,-120.0,49.0,-109.0'],
+  ['US West: Montana and Wyoming state routes', 'us', '[ref~"^(MT|WY|S) ?[0-9]+"]', '41.0,-116.1,49.0,-104.0'],
+  ['British Columbia and western Alberta highways', 'ca', '[ref~"^[0-9]+[A-Z]?$"]', '49.0,-135.0,60.0,-114.0'],
+  ['Mexico: Baja California', 'mx', '[ref]', '22.8,-117.2,32.8,-109.3'],
+  ['Mexico: Yucatan peninsula', 'mx', '[ref]', '17.8,-92.5,21.7,-86.7'],
 ];
 
 type Way = { id: number; tags: Record<string, string>; nodes: number[]; geometry: { lat: number; lon: number }[] };

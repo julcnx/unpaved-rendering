@@ -1,12 +1,14 @@
 # Screenshot locations: paved to unpaved on the same road
 
-One verified spot per continent (2026-11-03, Iceland and Australia 2026-11-09). At each point, two ways of the same road meet, one tagged paved and one unpaved, and street-level imagery confirms the surface really changes there. Found with [transitions.ts](transitions.ts) ([transitions.json](transitions.json)).
+One verified spot per continent (2026-11-03, Iceland and Australia 2026-11-09, North America 2026-11-09). At each point, two ways of the same road meet, one tagged paved and one unpaved, and street-level imagery confirms the surface really changes there. Found with [transitions.ts](transitions.ts) ([transitions.json](transitions.json)).
 
 Only apps and styles that use OSM data are listed: Google, Apple and Bing draw their own data, so this proposal cannot change them. All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Guru Maps, Maps.me): open the `geo:` link on the phone or paste the coordinates.
 
 Why only one per country: of 27 tag transitions checked on imagery, 13 showed a real change and 14 did not (both sides paved, or both gravel or dirt), so every spot needs a look at the images. Other verified spots (Namibia C48, C28, C26, C47, C40; Bolivia RN3 west, RN25, F48) are kept in transitions.json and `images/sheets/transitions/` as backups.
 
 Iceland and Australia were added on 2026-11-09. Of the 10 Iceland and Australia pairs checked on Mapillary, 5 showed a real change (Iceland 85, 54, 731, 208; Australia 27), 4 did not (Iceland 63 and 60: gravel on both sides; Gibb River Road and Australia 19: dirt on both sides) and 1 was unclear (Australia 12). The other real ones are backups in `images/sheets/transitions/`.
+
+North America (searched 2026-11-09, spot 6 chosen from the second search): [transitions.ts](transitions.ts) found 66 tag transitions in Alaska and the Yukon/Northwest Territories. The only 3 places with Mapillary on both sides (Sterling Highway AK 1, Taylor Highway AK 5, Liard Highway NWT 7) are paved on both sides on the images, so their gravel tags are out of date. The others have no imagery near the point, including the known end of the pavement on the Denali Highway (AK 8) at Tangle Lakes and near Cantwell. A second search (Utah, Nevada, Idaho, British Columbia and western Alberta, Baja California, Yucatan; Montana and Wyoming failed on Overpass) found real changes on Alberta Hwy 40 (spot 6), Alberta Hwy 68 Sibbald Creek Trail at 51.03701, -114.72531 (backup) and Mexico QR 15 to Punta Allen at 20.12795, -87.4655 (backup for Central America).
 
 ## 1. Africa: Namibia, C38 near Etosha: asphalt to gravel
 
@@ -208,5 +210,44 @@ Verified: Mapillary images on both sides checked (2021-07-10): asphalt with a ce
 | Stadia Alidade Smooth | [open](https://stadiamaps.com/explore-the-map/#style=alidade_smooth&map=15/-17.15373/144.51059) |
 | Stadia Outdoors | [open](https://stadiamaps.com/explore-the-map/#style=outdoors&map=15/-17.15373/144.51059) |
 | Protomaps basemap | [open](https://maps.protomaps.com/#map=15/-17.15373/144.51059&flavorName=light&lang=en) |
+| Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
+| DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |
+
+## 6. North America: Canada, Alberta Highway 40 (Forestry Trunk Road) in Kananaskis: asphalt to gravel
+
+Point: **51.30019, -114.94517** (`geo:51.30019,-114.94517?z=15`). Class: `highway=primary`, ref `40`. Image pair: `images/sheets/transitions/ca-40.jpg`. Added 2026-11-09.
+
+Verified: Mapillary images on both sides checked (2021-05-18): asphalt with a yellow centre line, then gravel.
+
+- Paved side: [w4676490](https://www.openstreetmap.org/way/4676490) `surface=asphalt`, 27.1 km, [Mapillary 2021-05-18](https://www.mapillary.com/app/?pKey=824577318479115)
+- Unpaved side: [w1079763555](https://www.openstreetmap.org/way/1079763555) `surface=unpaved`, 8.7 km, [Mapillary 2021-05-18](https://www.mapillary.com/app/?pKey=5717260585013265)
+
+| App | Link |
+|---|---|
+| OSM Carto (Standard) | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=M) |
+| CyclOSM | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=Y) |
+| Humanitarian (HOT) | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=H) |
+| Tracestrack Topo | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=P) |
+| OSMF Shortbread (vector) | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=S) |
+| MapTiler OMT (OpenMapTiles) | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=V) |
+| OpenTopoMap | [open](https://opentopomap.org/#map=15/51.30019/-114.94517) |
+| Americana | [open](https://americanamap.org/#map=15/51.30019/-114.94517) |
+| Komoot | [open](https://www.komoot.com/plan/@51.30019,-114.94517,15z) |
+| Mapy.com | [open](https://mapy.com/en/zakladni?x=-114.94517&y=51.30019&z=15) |
+| Gaia GPS (longitude first) | [open](https://www.gaiagps.com/map/?loc=15/-114.94517/51.30019) |
+| OsmAnd web | [open](https://osmand.net/map/?#15/51.30019/-114.94517) |
+| OpenCycleMap (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=C) |
+| Transport (Thunderforest) | [open](https://www.openstreetmap.org/#map=15/51.30019/-114.94517&layers=T) |
+| Locus Map (LoMaps) | [open](https://web.locusmap.app/en/plan?lat=51.30019&lng=-114.94517&z=15&map=hikeBike) |
+| Strava | [open](https://www.strava.com/maps?sport=All&style=standard&terrain=false&labels=true&poi=true&cPhotos=true&3d=false#15/51.30019/-114.94517) |
+| Kurviger (marker on the point, no zoom in the URL) | [open](https://kurviger.com/en/plan?point=51.30019%2C-114.94517) |
+| Thunderforest Outdoors (no location in the URL: search or pan) | [open](https://www.thunderforest.com/maps/outdoors/preview/) |
+| MapTiler Outdoor | [open](https://www.maptiler.com/maps/#style=outdoor-v4&mode=2d&position=15/51.30019/-114.94517) |
+| MapTiler Streets | [open](https://www.maptiler.com/maps/#style=streets-v4&mode=2d&position=15/51.30019/-114.94517) |
+| CalTopo (MapBuilder Topo) | [open](https://caltopo.com/map.html#ll=51.30019,-114.94517&z=15&b=mbt) |
+| AllTrails (blocks automated browsers: screenshot by hand) | [open](https://www.alltrails.com/explore?b_tl_lat=51.31519&b_tl_lng=-114.97117&b_br_lat=51.28519&b_br_lng=-114.91917) |
+| Stadia Alidade Smooth | [open](https://stadiamaps.com/explore-the-map/#style=alidade_smooth&map=15/51.30019/-114.94517) |
+| Stadia Outdoors | [open](https://stadiamaps.com/explore-the-map/#style=outdoors&map=15/51.30019/-114.94517) |
+| Protomaps basemap | [open](https://maps.protomaps.com/#map=15/51.30019/-114.94517&flavorName=light&lang=en) |
 | Ride with GPS (no location in the URL: paste the coordinates in the search box) | [open](https://ridewithgps.com/routes/new) |
 | DMD2 planner (no location in the URL: search the coordinates) | [open](https://hub.dmdnavigation.com/planner/) |

@@ -11556,6 +11556,762 @@
   }
  },
  {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 1",
+  "name": "Sterling Highway",
+  "highway": "primary",
+  "lat": 59.78842,
+  "lon": -151.83453,
+  "paved": {
+   "way": 438209190,
+   "surface": "asphalt",
+   "run_km": 35.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=826736448821803",
+    "date": "2023-07-30"
+   }
+  },
+  "unpaved": {
+   "way": 160438341,
+   "surface": "fine_gravel",
+   "run_km": 4.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=805863854408832",
+    "date": "2023-07-30"
+   }
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 5",
+  "name": "Taylor Highway",
+  "highway": "primary",
+  "lat": 64.07303,
+  "lon": -141.93276,
+  "paved": {
+   "way": 569640171,
+   "surface": "asphalt",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=446477970784235",
+    "date": "2016-01-12"
+   }
+  },
+  "unpaved": {
+   "way": 197781651,
+   "surface": "gravel",
+   "run_km": 13.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=194324746347397",
+    "date": "2016-01-12"
+   }
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 5",
+  "name": "Taylor Highway",
+  "highway": "primary",
+  "lat": 64.06587,
+  "lon": -141.99553,
+  "paved": {
+   "way": 569309210,
+   "surface": "asphalt",
+   "run_km": 101.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1387644768437351",
+    "date": "2016-01-12"
+   }
+  },
+  "unpaved": {
+   "way": 569640161,
+   "surface": "gravel",
+   "run_km": 3.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=637175341110174",
+    "date": "2016-01-12"
+   }
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 5",
+  "name": "Taylor Highway",
+  "highway": "primary",
+  "lat": 64.07303,
+  "lon": -141.93308,
+  "paved": {
+   "way": 569640171,
+   "surface": "asphalt",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=157891160245837",
+    "date": "2016-01-12"
+   }
+  },
+  "unpaved": {
+   "way": 569640164,
+   "surface": "gravel",
+   "run_km": 3.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=122790543709279",
+    "date": "2016-01-12"
+   }
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.12052,
+  "lon": -123.17274,
+  "paved": {
+   "way": 1252086061,
+   "surface": "paved",
+   "run_km": 19.9,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1373139688058778",
+    "date": "2026-06-29"
+   }
+  },
+  "unpaved": {
+   "way": 267165692,
+   "surface": "unpaved",
+   "run_km": 26.5,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=978863841641583",
+    "date": "2026-06-29"
+   }
+  }
+ },
+ {
+  "label": "US West: Utah, Nevada, Idaho state routes",
+  "country": "us",
+  "ref": "SR 225",
+  "name": "Mountain City Highway",
+  "highway": "primary",
+  "lat": 40.8356,
+  "lon": -115.78847,
+  "paved": {
+   "way": 485185616,
+   "surface": "asphalt",
+   "run_km": 1.5,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=696063256896884",
+    "date": "2026-03-17"
+   }
+  },
+  "unpaved": {
+   "way": 122643619,
+   "surface": "compacted",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=925478990360229",
+    "date": "2026-03-17"
+   }
+  }
+ },
+ {
+  "label": "US West: Utah, Nevada, Idaho state routes",
+  "country": "us",
+  "ref": "SR 225",
+  "name": "Mountain City Highway",
+  "highway": "primary",
+  "lat": 40.83629,
+  "lon": -115.78909,
+  "paved": {
+   "way": 704701604,
+   "surface": "asphalt",
+   "run_km": 159.9,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=3455735051250355",
+    "date": "2026-03-17"
+   }
+  },
+  "unpaved": {
+   "way": 122643619,
+   "surface": "compacted",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=25984071337930743",
+    "date": "2026-03-17"
+   }
+  }
+ },
+ {
+  "label": "US West: Utah, Nevada, Idaho state routes",
+  "country": "us",
+  "ref": "SR 21",
+  "name": "State Highway 21",
+  "highway": "secondary",
+  "lat": 47.92925,
+  "lon": -118.68995,
+  "paved": {
+   "way": 389303333,
+   "surface": "concrete",
+   "run_km": 22.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=505772460605586",
+    "date": "2017-10-17"
+   }
+  },
+  "unpaved": {
+   "way": 1368968090,
+   "surface": "wood",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=477551579993234",
+    "date": "2017-10-17"
+   }
+  }
+ },
+ {
+  "label": "US West: Utah, Nevada, Idaho state routes",
+  "country": "us",
+  "ref": "SR 225",
+  "name": "Mountain City Highway",
+  "highway": "primary",
+  "lat": 40.83558,
+  "lon": -115.78862,
+  "paved": {
+   "way": 485185624,
+   "surface": "asphalt",
+   "run_km": 1.5,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=696063256896884",
+    "date": "2026-03-17"
+   }
+  },
+  "unpaved": {
+   "way": 485185628,
+   "surface": "compacted",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=3915838208547251",
+    "date": "2026-03-17"
+   }
+  }
+ },
+ {
+  "label": "US West: Utah, Nevada, Idaho state routes",
+  "country": "us",
+  "ref": "SR 225",
+  "name": "Mountain City Highway",
+  "highway": "primary",
+  "lat": 40.83626,
+  "lon": -115.78924,
+  "paved": {
+   "way": 704701605,
+   "surface": "asphalt",
+   "run_km": 159.9,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=3455735051250355",
+    "date": "2026-03-17"
+   }
+  },
+  "unpaved": {
+   "way": 485185628,
+   "surface": "compacted",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=960208923022751",
+    "date": "2026-03-17"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Forestry Trunk Road",
+  "highway": "primary",
+  "lat": 51.30019,
+  "lon": -114.94517,
+  "paved": {
+   "way": 4676490,
+   "surface": "asphalt",
+   "run_km": 27.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=824577318479115",
+    "date": "2021-05-18"
+   }
+  },
+  "unpaved": {
+   "way": 1079763555,
+   "surface": "unpaved",
+   "run_km": 8.7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=5717260585013265",
+    "date": "2021-05-18"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "734",
+  "name": "Forestry Trunk Road",
+  "highway": "secondary",
+  "lat": 51.65725,
+  "lon": -115.28716,
+  "paved": {
+   "way": 32103427,
+   "surface": "concrete:plates",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1213977857163466",
+    "date": "2025-08-18"
+   }
+  },
+  "unpaved": {
+   "way": 32092661,
+   "surface": "gravel",
+   "run_km": 34.9,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=3985342891681401",
+    "date": "2025-06-06"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "734",
+  "name": "Forestry Trunk Road",
+  "highway": "secondary",
+  "lat": 51.65066,
+  "lon": -115.26863,
+  "paved": {
+   "way": 32094335,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=535387649447671",
+    "date": "2025-05-02"
+   }
+  },
+  "unpaved": {
+   "way": 32098105,
+   "surface": "unpaved",
+   "run_km": 6.7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1304954696914973",
+    "date": "2017-08-25"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "734",
+  "name": "Forestry Trunk Road",
+  "highway": "secondary",
+  "lat": 51.65081,
+  "lon": -115.26919,
+  "paved": {
+   "way": 32094335,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1079829493979973",
+    "date": "2025-05-02"
+   }
+  },
+  "unpaved": {
+   "way": 32096718,
+   "surface": "unpaved",
+   "run_km": 1.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=119836234168347",
+    "date": "2017-08-25"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "734",
+  "name": "Forestry Trunk Road",
+  "highway": "secondary",
+  "lat": 51.65673,
+  "lon": -115.28677,
+  "paved": {
+   "way": 32103427,
+   "surface": "concrete:plates",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1082988930703480",
+    "date": "2025-08-18"
+   }
+  },
+  "unpaved": {
+   "way": 32096718,
+   "surface": "unpaved",
+   "run_km": 1.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=494403008689983",
+    "date": "2017-08-25"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "579",
+  "name": "Highway 579",
+  "highway": "secondary",
+  "lat": 51.51176,
+  "lon": -114.67652,
+  "paved": {
+   "way": 32103932,
+   "surface": "paved",
+   "run_km": 0.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=712630054275147",
+    "date": "2024-03-31"
+   }
+  },
+  "unpaved": {
+   "way": 370094586,
+   "surface": "gravel",
+   "run_km": 13.5,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=426399719936101",
+    "date": "2024-03-31"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "940",
+  "name": "Forestry Trunk Road",
+  "highway": "secondary",
+  "lat": 51.48846,
+  "lon": -115.07439,
+  "paved": {
+   "way": 266455226,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1113480469600625",
+    "date": "2017-07-27"
+   }
+  },
+  "unpaved": {
+   "way": 266455228,
+   "surface": "unpaved",
+   "run_km": 5.6,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1243435270565091",
+    "date": "2025-05-02"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Forestry Trunk Road",
+  "highway": "primary",
+  "lat": 51.36809,
+  "lon": -114.99128,
+  "paved": {
+   "way": 289831574,
+   "surface": "asphalt",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1363257361445222",
+    "date": "2025-07-02"
+   }
+  },
+  "unpaved": {
+   "way": 289831575,
+   "surface": "unpaved",
+   "run_km": 8.7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=754838690325354",
+    "date": "2025-07-02"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Forestry Trunk Road",
+  "highway": "primary",
+  "lat": 51.36846,
+  "lon": -114.99177,
+  "paved": {
+   "way": 289831574,
+   "surface": "asphalt",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=2836233976556194",
+    "date": "2025-07-02"
+   }
+  },
+  "unpaved": {
+   "way": 289831576,
+   "surface": "unpaved",
+   "run_km": 10.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1769575667295185",
+    "date": "2025-07-02"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "16",
+  "name": "Yellowhead Highway",
+  "highway": "trunk",
+  "lat": 53.12591,
+  "lon": -117.9902,
+  "paved": {
+   "way": 848576819,
+   "surface": "asphalt",
+   "run_km": 59.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1093080608078975",
+    "date": "2021-07-29"
+   }
+  },
+  "unpaved": {
+   "way": 1302916480,
+   "surface": "artificial_turf",
+   "run_km": 1.8,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=162295959803469",
+    "date": "2021-07-29"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "68",
+  "name": "Sibbald Creek Trail",
+  "highway": "primary",
+  "lat": 51.03701,
+  "lon": -114.72531,
+  "paved": {
+   "way": 1084470446,
+   "surface": "paved",
+   "run_km": 12,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1180588459448596",
+    "date": "2022-07-16"
+   }
+  },
+  "unpaved": {
+   "way": 1084470448,
+   "surface": "gravel",
+   "run_km": 7.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=509367784320628",
+    "date": "2022-07-16"
+   }
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "68",
+  "name": "Sibbald Creek Trail",
+  "highway": "primary",
+  "lat": 51.04611,
+  "lon": -114.81947,
+  "paved": {
+   "way": 1084470453,
+   "surface": "asphalt",
+   "run_km": 4.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=566476021799324",
+    "date": "2022-07-16"
+   }
+  },
+  "unpaved": {
+   "way": 1084470448,
+   "surface": "gravel",
+   "run_km": 7.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1439075616607212",
+    "date": "2022-07-16"
+   }
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "QR 15",
+  "name": "Carretera Ramal a Punta Allen",
+  "highway": "secondary",
+  "lat": 20.12795,
+  "lon": -87.4655,
+  "paved": {
+   "way": 28039614,
+   "surface": "asphalt",
+   "run_km": 7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=3922931734497983",
+    "date": "2022-05-31"
+   }
+  },
+  "unpaved": {
+   "way": 41680336,
+   "surface": "dirt",
+   "run_km": 13.9,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=717612226145448",
+    "date": "2022-05-31"
+   }
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "QR 15",
+  "name": "Carretera Ramal a Punta Allen",
+  "highway": "secondary",
+  "lat": 20.00814,
+  "lon": -87.48182,
+  "paved": {
+   "way": 41680340,
+   "surface": "asphalt",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=539660334526959",
+    "date": "2022-05-31"
+   }
+  },
+  "unpaved": {
+   "way": 41680336,
+   "surface": "dirt",
+   "run_km": 13.9,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=151209324109869",
+    "date": "2022-05-31"
+   }
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "QR 15",
+  "name": "Carretera Ramal a Punta Allen",
+  "highway": "secondary",
+  "lat": 20.00691,
+  "lon": -87.48136,
+  "paved": {
+   "way": 41680340,
+   "surface": "asphalt",
+   "run_km": 0.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1185926022154990",
+    "date": "2022-05-31"
+   }
+  },
+  "unpaved": {
+   "way": 41680341,
+   "surface": "unpaved",
+   "run_km": 29.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1039705990277914",
+    "date": "2022-05-31"
+   }
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D410",
+  "name": "San Andres Road",
+  "highway": "secondary",
+  "lat": 18.38876,
+  "lon": -88.40135,
+  "paved": {
+   "way": 377182629,
+   "surface": "chipseal",
+   "run_km": 0.7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=579826986328688",
+    "date": "2020-03-19"
+   }
+  },
+  "unpaved": {
+   "way": 377182628,
+   "surface": "unpaved",
+   "run_km": 0.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=4025010420867717",
+    "date": "2020-03-19"
+   }
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D410",
+  "name": "San Andres Road",
+  "highway": "secondary",
+  "lat": 18.38831,
+  "lon": -88.40523,
+  "paved": {
+   "way": 204852468,
+   "surface": "asphalt",
+   "run_km": 0.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1275374346975445",
+    "date": "2024-10-26"
+   }
+  },
+  "unpaved": {
+   "way": 377182628,
+   "surface": "unpaved",
+   "run_km": 0.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1441621482844086",
+    "date": "2020-03-19"
+   }
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D410",
+  "name": "San Andres Road",
+  "highway": "secondary",
+  "lat": 18.38831,
+  "lon": -88.40523,
+  "paved": {
+   "way": 377182629,
+   "surface": "chipseal",
+   "run_km": 1.5,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1441621482844086",
+    "date": "2020-03-19"
+   }
+  },
+  "unpaved": {
+   "way": 377182628,
+   "surface": "unpaved",
+   "run_km": 0.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=1441621482844086",
+    "date": "2020-03-19"
+   }
+  }
+ },
+ {
   "label": "Namibia C-roads",
   "country": "na",
   "ref": "C37",
@@ -13592,6 +14348,150 @@
    "way": 934487905,
    "surface": "unpaved",
    "run_km": 2.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "68",
+  "name": "Sibbald Creek Trail",
+  "highway": "primary",
+  "lat": 51.03862,
+  "lon": -114.87394,
+  "paved": {
+   "way": 1084470453,
+   "surface": "asphalt",
+   "run_km": 4.1,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=986649855365400",
+    "date": "2022-07-16"
+   }
+  },
+  "unpaved": {
+   "way": 4676451,
+   "surface": "unpaved",
+   "run_km": 14,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "633",
+  "name": "Highway 633",
+  "highway": "secondary",
+  "lat": 53.65753,
+  "lon": -114.22224,
+  "paved": {
+   "way": 937016429,
+   "surface": "asphalt",
+   "run_km": 46.7,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=159546919345645",
+    "date": "2014-08-10"
+   }
+  },
+  "unpaved": {
+   "way": 27574149,
+   "surface": "gravel",
+   "run_km": 4.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "695",
+  "name": "Township Road 1010",
+  "highway": "secondary",
+  "lat": 57.73011,
+  "lon": -117.63206,
+  "paved": {
+   "way": 1125425147,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=4583253191690477",
+    "date": "2017-07-08"
+   }
+  },
+  "unpaved": {
+   "way": 30469252,
+   "surface": "unpaved",
+   "run_km": 1.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "940",
+  "name": "Forestry Trunk Road",
+  "highway": "secondary",
+  "lat": 51.48883,
+  "lon": -115.07427,
+  "paved": {
+   "way": 266455226,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=188809046853455",
+    "date": "2017-07-27"
+   }
+  },
+  "unpaved": {
+   "way": 266455227,
+   "surface": "unpaved",
+   "run_km": 13.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D410",
+  "name": "San Andres Road",
+  "highway": "secondary",
+  "lat": 18.38876,
+  "lon": -88.40135,
+  "paved": {
+   "way": 204852390,
+   "surface": "chipseal",
+   "run_km": 1.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 377182628,
+   "surface": "unpaved",
+   "run_km": 0.4,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=4025010420867717",
+    "date": "2020-03-19"
+   }
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "YUC",
+  "name": "Calle 75",
+  "highway": "secondary",
+  "lat": 20.9096,
+  "lon": -89.57361,
+  "paved": {
+   "way": 786057163,
+   "surface": "asphalt",
+   "run_km": 1.3,
+   "mapillary": {
+    "url": "https://www.mapillary.com/app/?pKey=811699653083715",
+    "date": "2020-09-16"
+   }
+  },
+  "unpaved": {
+   "way": 849008571,
+   "surface": "ground",
+   "run_km": 2.9,
    "mapillary": null
   }
  },
@@ -27750,7 +28650,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27771,7 +28671,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27792,7 +28692,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27813,7 +28713,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27834,7 +28734,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27855,7 +28755,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27876,7 +28776,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27897,7 +28797,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -27918,7 +28818,7 @@
   }
  },
  {
-  "label": "Tanami Road",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C5",
   "name": "Tanami Road",
@@ -28065,7 +28965,7 @@
   }
  },
  {
-  "label": "Strzelecki Track",
+  "label": "Australia: outback Queensland numbered roads",
   "country": "au",
   "ref": "D96",
   "name": "Strzelecki Track",
@@ -28086,7 +28986,7 @@
   }
  },
  {
-  "label": "Strzelecki Track",
+  "label": "Australia: outback Queensland numbered roads",
   "country": "au",
   "ref": "D96",
   "name": "Strzelecki Track",
@@ -28128,7 +29028,7 @@
   }
  },
  {
-  "label": "Strzelecki Track",
+  "label": "Australia: outback Queensland numbered roads",
   "country": "au",
   "ref": "D96",
   "name": "Strzelecki Track",
@@ -28401,7 +29301,7 @@
   }
  },
  {
-  "label": "Plenty Highway",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C12",
   "name": "Plenty Highway",
@@ -28422,7 +29322,7 @@
   }
  },
  {
-  "label": "Plenty Highway",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C12",
   "name": "Plenty Highway",
@@ -28443,7 +29343,7 @@
   }
  },
  {
-  "label": "Plenty Highway",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C12",
   "name": "Plenty Highway",
@@ -28464,7 +29364,7 @@
   }
  },
  {
-  "label": "Plenty Highway",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C12",
   "name": "Plenty Highway",
@@ -28485,7 +29385,7 @@
   }
  },
  {
-  "label": "Plenty Highway",
+  "label": "Australia: Northern Territory numbered roads",
   "country": "au",
   "ref": "C12",
   "name": "Plenty Highway",
@@ -28506,7 +29406,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28527,7 +29427,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28548,7 +29448,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28569,7 +29469,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28590,7 +29490,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28611,7 +29511,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28632,7 +29532,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28653,7 +29553,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28674,7 +29574,7 @@
   }
  },
  {
-  "label": "Iceland road 35",
+  "label": "Iceland numbered roads",
   "country": "is",
   "ref": "35",
   "name": "Kjalvegur",
@@ -28796,27 +29696,6 @@
    "way": 5375923,
    "surface": "gravel",
    "run_km": 5.7,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "primary",
-  "lat": 65.43112,
-  "lon": -19.80191,
-  "paved": {
-   "way": 23074017,
-   "surface": "asphalt",
-   "run_km": 3.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 5377632,
-   "surface": "compacted",
-   "run_km": 7.9,
    "mapillary": null
   }
  },
@@ -30587,69 +31466,6 @@
  {
   "label": "Iceland numbered roads",
   "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "secondary",
-  "lat": 65.41787,
-  "lon": -19.82567,
-  "paved": {
-   "way": 967598540,
-   "surface": "asphalt",
-   "run_km": 3.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 64748981,
-   "surface": "gravel",
-   "run_km": 59.1,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "primary/secondary",
-  "lat": 64.43162,
-  "lon": -20.00864,
-  "paved": {
-   "way": 169400628,
-   "surface": "asphalt",
-   "run_km": 42.8,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 69019862,
-   "surface": "gravel",
-   "run_km": 5,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "secondary",
-  "lat": 64.4695,
-  "lon": -19.97586,
-  "paved": {
-   "way": 169400627,
-   "surface": "concrete",
-   "run_km": 0,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 69019862,
-   "surface": "gravel",
-   "run_km": 5,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
   "ref": "937",
   "name": "Skriðdalsvegur",
   "highway": "secondary",
@@ -30965,27 +31781,6 @@
  {
   "label": "Iceland numbered roads",
   "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "secondary",
-  "lat": 64.46962,
-  "lon": -19.97546,
-  "paved": {
-   "way": 169400627,
-   "surface": "concrete",
-   "run_km": 0,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 582211653,
-   "surface": "gravel",
-   "run_km": 13.7,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
   "ref": "577",
   "name": "Helgafellssveitarvegur",
   "highway": "secondary",
@@ -31190,48 +31985,6 @@
    "way": 190104936,
    "surface": "gravel",
    "run_km": 9.8,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "secondary",
-  "lat": 64.53651,
-  "lon": -19.78112,
-  "paved": {
-   "way": 190348351,
-   "surface": "concrete",
-   "run_km": 0.1,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 582211653,
-   "surface": "gravel",
-   "run_km": 13.7,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "secondary",
-  "lat": 64.53672,
-  "lon": -19.77966,
-  "paved": {
-   "way": 190348351,
-   "surface": "concrete",
-   "run_km": 0.1,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 620383908,
-   "surface": "gravel",
-   "run_km": 62.2,
    "mapillary": null
   }
  },
@@ -34766,48 +35519,6 @@
  {
   "label": "Iceland numbered roads",
   "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "secondary",
-  "lat": 64.93735,
-  "lon": -19.52056,
-  "paved": {
-   "way": 565131808,
-   "surface": "concrete",
-   "run_km": 0,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 817142591,
-   "surface": "gravel",
-   "run_km": 59.1,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
-  "ref": "35",
-  "name": "Kjalvegur",
-  "highway": "secondary",
-  "lat": 64.93711,
-  "lon": -19.52001,
-  "paved": {
-   "way": 565131808,
-   "surface": "concrete",
-   "run_km": 0,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 1497079808,
-   "surface": "gravel",
-   "run_km": 62.2,
-   "mapillary": null
-  }
- },
- {
-  "label": "Iceland numbered roads",
-  "country": "is",
   "ref": "590",
   "name": "Klofningsvegur",
   "highway": "secondary",
@@ -36866,132 +37577,6 @@
  {
   "label": "Australia: Northern Territory numbered roads",
   "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -22.27713,
-  "lon": 131.82423,
-  "paved": {
-   "way": 188551902,
-   "surface": "asphalt",
-   "run_km": 268.1,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 188551900,
-   "surface": "unpaved",
-   "run_km": 0.5,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -22.2757,
-  "lon": 131.81993,
-  "paved": {
-   "way": 188551901,
-   "surface": "asphalt",
-   "run_km": 13.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 188551900,
-   "surface": "unpaved",
-   "run_km": 0.5,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -22.23997,
-  "lon": 131.69857,
-  "paved": {
-   "way": 188551906,
-   "surface": "asphalt",
-   "run_km": 13.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 808742893,
-   "surface": "unpaved",
-   "run_km": 0,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -22.02839,
-  "lon": 131.3139,
-  "paved": {
-   "way": 909284889,
-   "surface": "asphalt",
-   "run_km": 0.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 188552693,
-   "surface": "unpaved",
-   "run_km": 124.3,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -21.05919,
-  "lon": 130.7422,
-  "paved": {
-   "way": 188690215,
-   "surface": "asphalt",
-   "run_km": 10.1,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 188552693,
-   "surface": "unpaved",
-   "run_km": 124.3,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -20.97843,
-  "lon": 130.69701,
-  "paved": {
-   "way": 188690215,
-   "surface": "asphalt",
-   "run_km": 10.1,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 188690200,
-   "surface": "unpaved",
-   "run_km": 239.6,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
   "ref": "14",
   "name": "Sandover Highway",
   "highway": "secondary",
@@ -37007,27 +37592,6 @@
    "way": 193262428,
    "surface": "unpaved",
    "run_km": 7,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C12",
-  "name": "Plenty Highway",
-  "highway": "primary",
-  "lat": -23.01313,
-  "lon": 134.47602,
-  "paved": {
-   "way": 193308112,
-   "surface": "asphalt",
-   "run_km": 96.9,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 467547652,
-   "surface": "unpaved",
-   "run_km": 0.7,
    "mapillary": null
   }
  },
@@ -37391,27 +37955,6 @@
  {
   "label": "Australia: Northern Territory numbered roads",
   "country": "au",
-  "ref": "C12",
-  "name": "Plenty Highway",
-  "highway": "primary",
-  "lat": -23.01437,
-  "lon": 134.48293,
-  "paved": {
-   "way": 599907330,
-   "surface": "asphalt",
-   "run_km": 111.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 467547653,
-   "surface": "unpaved",
-   "run_km": 0.7,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
   "ref": "C80",
   "name": "Buchanan Highway",
   "highway": "primary",
@@ -37748,69 +38291,6 @@
  {
   "label": "Australia: Northern Territory numbered roads",
   "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -22.23995,
-  "lon": 131.69844,
-  "paved": {
-   "way": 808742892,
-   "surface": "asphalt",
-   "run_km": 19.8,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 808742893,
-   "surface": "unpaved",
-   "run_km": 0,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -22.1814,
-  "lon": 131.52007,
-  "paved": {
-   "way": 1177450589,
-   "surface": "asphalt",
-   "run_km": 19.8,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 909284888,
-   "surface": "unpaved",
-   "run_km": 28.2,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C5",
-  "name": "Tanami Road",
-  "highway": "primary",
-  "lat": -22.0314,
-  "lon": 131.31567,
-  "paved": {
-   "way": 909284889,
-   "surface": "asphalt",
-   "run_km": 0.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 909284888,
-   "surface": "unpaved",
-   "run_km": 28.2,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
   "ref": "C24",
   "name": "Central Arnhem Highway",
   "highway": "trunk",
@@ -38061,69 +38541,6 @@
   }
  },
  {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C12",
-  "name": "Plenty Highway",
-  "highway": "primary",
-  "lat": -22.9234,
-  "lon": 135.5296,
-  "paved": {
-   "way": 1211125163,
-   "surface": "asphalt",
-   "run_km": 111.4,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 1342769182,
-   "surface": "unpaved",
-   "run_km": 15.1,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C12",
-  "name": "Plenty Highway",
-  "highway": "primary",
-  "lat": -22.9724,
-  "lon": 135.8629,
-  "paved": {
-   "way": 1211125164,
-   "surface": "asphalt",
-   "run_km": 20,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 1342769740,
-   "surface": "gravel",
-   "run_km": 253.1,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: Northern Territory numbered roads",
-  "country": "au",
-  "ref": "C12",
-  "name": "Plenty Highway",
-  "highway": "primary",
-  "lat": -22.95171,
-  "lon": 135.6703,
-  "paved": {
-   "way": 1211125164,
-   "surface": "asphalt",
-   "run_km": 20,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 1342769182,
-   "surface": "unpaved",
-   "run_km": 15.1,
-   "mapillary": null
-  }
- },
- {
   "label": "Australia: outback Queensland numbered roads",
   "country": "au",
   "ref": "76",
@@ -38204,48 +38621,6 @@
    "way": 28824242,
    "surface": "unpaved",
    "run_km": 36.9,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: outback Queensland numbered roads",
-  "country": "au",
-  "ref": "D96",
-  "name": "Strzelecki Track",
-  "highway": "secondary",
-  "lat": -28.12937,
-  "lon": 140.69458,
-  "paved": {
-   "way": 258035251,
-   "surface": "paved",
-   "run_km": 47.7,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 36982737,
-   "surface": "unpaved",
-   "run_km": 54.6,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: outback Queensland numbered roads",
-  "country": "au",
-  "ref": "D96",
-  "name": "Strzelecki Track",
-  "highway": "secondary",
-  "lat": -28.76261,
-  "lon": 140.13388,
-  "paved": {
-   "way": 1502838972,
-   "surface": "paved",
-   "run_km": 74,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 36982739,
-   "surface": "unpaved",
-   "run_km": 60.7,
    "mapillary": null
   }
  },
@@ -38624,27 +38999,6 @@
    "way": 231786271,
    "surface": "unpaved",
    "run_km": 4.3,
-   "mapillary": null
-  }
- },
- {
-  "label": "Australia: outback Queensland numbered roads",
-  "country": "au",
-  "ref": "D96",
-  "name": "Strzelecki Track",
-  "highway": "secondary",
-  "lat": -28.13279,
-  "lon": 140.21973,
-  "paved": {
-   "way": 1443408520,
-   "surface": "paved",
-   "run_km": 74,
-   "mapillary": null
-  },
-  "unpaved": {
-   "way": 260862057,
-   "surface": "unpaved",
-   "run_km": 54.6,
    "mapillary": null
   }
  },
@@ -41186,6 +41540,2337 @@
    "way": 1544700398,
    "surface": "unpaved",
    "run_km": 67.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.2199,
+  "lon": -147.07592,
+  "paved": {
+   "way": 8963228,
+   "surface": "asphalt",
+   "run_km": 54.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 616136368,
+   "surface": "wood",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.37278,
+  "lon": -148.82831,
+  "paved": {
+   "way": 34995656,
+   "surface": "paved",
+   "run_km": 4.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 8984744,
+   "surface": "unpaved",
+   "run_km": 58.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.24549,
+  "lon": -147.80463,
+  "paved": {
+   "way": 34996360,
+   "surface": "concrete",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 8984851,
+   "surface": "unpaved",
+   "run_km": 55.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 69.50129,
+  "lon": -148.57248,
+  "paved": {
+   "way": 253952201,
+   "surface": "paved",
+   "run_km": 41.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 8987375,
+   "surface": "gravel",
+   "run_km": 174.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 5",
+  "name": "Taylor Highway",
+  "highway": "primary",
+  "lat": 64.35649,
+  "lon": -141.41286,
+  "paved": {
+   "way": 8993285,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 8993368,
+   "surface": "gravel",
+   "run_km": 6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 5",
+  "name": "Taylor Highway",
+  "highway": "primary",
+  "lat": 64.35679,
+  "lon": -141.41285,
+  "paved": {
+   "way": 8993285,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 287720273,
+   "surface": "gravel",
+   "run_km": 55.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 10",
+  "name": "Copper River Highway",
+  "highway": "primary",
+  "lat": 60.49531,
+  "lon": -145.46493,
+  "paved": {
+   "way": 1334690743,
+   "surface": "asphalt",
+   "run_km": 19.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 8998494,
+   "surface": "compacted",
+   "run_km": 3.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.41109,
+  "lon": -145.88735,
+  "paved": {
+   "way": 1029941612,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 9001434,
+   "surface": "gravel",
+   "run_km": 7.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.40033,
+  "lon": -145.74055,
+  "paved": {
+   "way": 1029941605,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 9001434,
+   "surface": "gravel",
+   "run_km": 7.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.24605,
+  "lon": -147.805,
+  "paved": {
+   "way": 34996360,
+   "surface": "concrete",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 34996358,
+   "surface": "unpaved",
+   "run_km": 58.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.04194,
+  "lon": -146.88391,
+  "paved": {
+   "way": 971267428,
+   "surface": "asphalt",
+   "run_km": 6.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 34998781,
+   "surface": "wood",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.04198,
+  "lon": -146.88297,
+  "paved": {
+   "way": 34998782,
+   "surface": "asphalt",
+   "run_km": 55.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 34998781,
+   "surface": "wood",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 66.25705,
+  "lon": -150.3268,
+  "paved": {
+   "way": 35015271,
+   "surface": "paved",
+   "run_km": 25.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 506100205,
+   "surface": "gravel",
+   "run_km": 17.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 66.44096,
+  "lon": -150.63118,
+  "paved": {
+   "way": 35015271,
+   "surface": "paved",
+   "run_km": 25.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 506100221,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 65.49058,
+  "lon": -148.66126,
+  "paved": {
+   "way": 506125295,
+   "surface": "asphalt",
+   "run_km": 0.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 36768037,
+   "surface": "gravel",
+   "run_km": 115.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 70.0974,
+  "lon": -148.51488,
+  "paved": {
+   "way": 89905938,
+   "surface": "paved",
+   "run_km": 14.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1110631600,
+   "surface": "gravel",
+   "run_km": 29.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.04597,
+  "lon": -146.01837,
+  "paved": {
+   "way": 230766122,
+   "surface": "asphalt",
+   "run_km": 55.2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 230766121,
+   "surface": "wood",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.04656,
+  "lon": -147.0084,
+  "paved": {
+   "way": 971267428,
+   "surface": "asphalt",
+   "run_km": 6.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 231144937,
+   "surface": "unpaved",
+   "run_km": 55.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 66.03241,
+  "lon": -150.13038,
+  "paved": {
+   "way": 617493132,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 253831738,
+   "surface": "gravel",
+   "run_km": 115.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 69.85691,
+  "lon": -148.76836,
+  "paved": {
+   "way": 253952201,
+   "surface": "paved",
+   "run_km": 41.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1110631600,
+   "surface": "gravel",
+   "run_km": 29.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.37094,
+  "lon": -146.0571,
+  "paved": {
+   "way": 437101311,
+   "surface": "asphalt",
+   "run_km": 54.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 292650413,
+   "surface": "gravel",
+   "run_km": 11.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 8",
+  "name": "Denali Highway",
+  "highway": "secondary",
+  "lat": 63.04644,
+  "lon": -146.01511,
+  "paved": {
+   "way": 295113708,
+   "surface": "asphalt",
+   "run_km": 34,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1093178450,
+   "surface": "unpaved",
+   "run_km": 0.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 5",
+  "name": "Taylor Highway",
+  "highway": "primary",
+  "lat": 64.31519,
+  "lon": -141.41971,
+  "paved": {
+   "way": 569493312,
+   "surface": "concrete",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 315842698,
+   "surface": "gravel",
+   "run_km": 50.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.59095,
+  "lon": -144.70325,
+  "paved": {
+   "way": 1031026519,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 453688564,
+   "surface": "gravel",
+   "run_km": 48.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.57234,
+  "lon": -144.80125,
+  "paved": {
+   "way": 1030302080,
+   "surface": "paved",
+   "run_km": 3.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 453702689,
+   "surface": "wood",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.57239,
+  "lon": -144.80056,
+  "paved": {
+   "way": 1030302082,
+   "surface": "paved",
+   "run_km": 0.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 453702689,
+   "surface": "wood",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.4396,
+  "lon": -145.52664,
+  "paved": {
+   "way": 1030558421,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 453702690,
+   "surface": "gravel",
+   "run_km": 23,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.55009,
+  "lon": -145.17678,
+  "paved": {
+   "way": 1029414807,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 453702690,
+   "surface": "gravel",
+   "run_km": 23,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 2",
+  "name": "Elliott Highway",
+  "highway": "secondary",
+  "lat": 65.48853,
+  "lon": -148.65454,
+  "paved": {
+   "way": 506125293,
+   "surface": "asphalt",
+   "run_km": 146.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 462221397,
+   "surface": "gravel",
+   "run_km": 2.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 66.44133,
+  "lon": -150.63166,
+  "paved": {
+   "way": 506100222,
+   "surface": "paved",
+   "run_km": 167.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 506100221,
+   "surface": "gravel",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 5",
+  "name": "Taylor Highway",
+  "highway": "primary",
+  "lat": 64.31566,
+  "lon": -141.41939,
+  "paved": {
+   "way": 569493312,
+   "surface": "concrete",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 569493311,
+   "surface": "unpaved",
+   "run_km": 6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.21989,
+  "lon": -147.07616,
+  "paved": {
+   "way": 616136370,
+   "surface": "asphalt",
+   "run_km": 52.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 616136368,
+   "surface": "wood",
+   "run_km": 0,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 66.03252,
+  "lon": -150.13051,
+  "paved": {
+   "way": 617493132,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 617493131,
+   "surface": "gravel",
+   "run_km": 9.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 66.11604,
+  "lon": -150.16588,
+  "paved": {
+   "way": 617500372,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 617493131,
+   "surface": "gravel",
+   "run_km": 9.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 66.11627,
+  "lon": -150.1659,
+  "paved": {
+   "way": 617500372,
+   "surface": "concrete",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 617500371,
+   "surface": "gravel",
+   "run_km": 17.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.42547,
+  "lon": -145.56728,
+  "paved": {
+   "way": 1029414798,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029414799,
+   "surface": "gravel",
+   "run_km": 3.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.42565,
+  "lon": -145.56706,
+  "paved": {
+   "way": 1029414798,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1030558420,
+   "surface": "gravel",
+   "run_km": 2.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.40992,
+  "lon": -145.62278,
+  "paved": {
+   "way": 1029414802,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029414799,
+   "surface": "gravel",
+   "run_km": 3.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.40587,
+  "lon": -145.68022,
+  "paved": {
+   "way": 1029414800,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029941604,
+   "surface": "gravel",
+   "run_km": 3.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.406,
+  "lon": -145.67974,
+  "paved": {
+   "way": 1029414800,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029414801,
+   "surface": "gravel",
+   "run_km": 2.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.40984,
+  "lon": -145.62309,
+  "paved": {
+   "way": 1029414802,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029414801,
+   "surface": "gravel",
+   "run_km": 2.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.55011,
+  "lon": -145.17636,
+  "paved": {
+   "way": 1029414807,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029414806,
+   "surface": "gravel",
+   "run_km": 13.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.57118,
+  "lon": -144.8846,
+  "paved": {
+   "way": 1031026513,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029414806,
+   "surface": "gravel",
+   "run_km": 13.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.40011,
+  "lon": -145.74027,
+  "paved": {
+   "way": 1029941605,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029941604,
+   "surface": "gravel",
+   "run_km": 3.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.41109,
+  "lon": -145.88777,
+  "paved": {
+   "way": 1029941612,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1029941611,
+   "surface": "gravel",
+   "run_km": 11.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.5696,
+  "lon": -144.86873,
+  "paved": {
+   "way": 1030302080,
+   "surface": "paved",
+   "run_km": 3.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1031026512,
+   "surface": "gravel",
+   "run_km": 0.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.57485,
+  "lon": -144.79403,
+  "paved": {
+   "way": 1030302082,
+   "surface": "paved",
+   "run_km": 0.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1031026518,
+   "surface": "gravel",
+   "run_km": 4.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.43958,
+  "lon": -145.52766,
+  "paved": {
+   "way": 1030558421,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1030558420,
+   "surface": "gravel",
+   "run_km": 2.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.5712,
+  "lon": -144.88415,
+  "paved": {
+   "way": 1031026513,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1031026512,
+   "surface": "gravel",
+   "run_km": 0.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 6",
+  "name": "Steese Highway",
+  "highway": "primary",
+  "lat": 65.59096,
+  "lon": -144.70374,
+  "paved": {
+   "way": 1031026519,
+   "surface": "tracktype=grade1",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1031026518,
+   "surface": "gravel",
+   "run_km": 4.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 67.80462,
+  "lon": -149.81953,
+  "paved": {
+   "way": 1110631598,
+   "surface": "paved",
+   "run_km": 1.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1062035697,
+   "surface": "gravel",
+   "run_km": 15.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 67.67402,
+  "lon": -149.71964,
+  "paved": {
+   "way": 1110631595,
+   "surface": "asphalt",
+   "run_km": 167.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1062035697,
+   "surface": "gravel",
+   "run_km": 15.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Alaska state routes",
+  "country": "us",
+  "ref": "AK 11",
+  "name": "Dalton Highway",
+  "highway": "primary",
+  "lat": 67.81608,
+  "lon": -149.8251,
+  "paved": {
+   "way": 1110631598,
+   "surface": "paved",
+   "run_km": 1.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1110631597,
+   "surface": "gravel",
+   "run_km": 54.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.46241,
+  "lon": -123.36873,
+  "paved": {
+   "way": 267165689,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267165688,
+   "surface": "unpaved",
+   "run_km": 16.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.32103,
+  "lon": -123.30848,
+  "paved": {
+   "way": 267165691,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267165688,
+   "surface": "unpaved",
+   "run_km": 16.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.4626,
+  "lon": -123.36882,
+  "paved": {
+   "way": 267165689,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267165695,
+   "surface": "unpaved",
+   "run_km": 51.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.30459,
+  "lon": -123.31548,
+  "paved": {
+   "way": 267165690,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267165694,
+   "surface": "unpaved",
+   "run_km": 2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.30405,
+  "lon": -123.3175,
+  "paved": {
+   "way": 267165690,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267165696,
+   "surface": "unpaved",
+   "run_km": 26.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.3207,
+  "lon": -123.30841,
+  "paved": {
+   "way": 267165691,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267165694,
+   "surface": "unpaved",
+   "run_km": 2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.84563,
+  "lon": -123.20997,
+  "paved": {
+   "way": 267601150,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267601149,
+   "surface": "unpaved",
+   "run_km": 51.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Yukon and Northwest Territories highways",
+  "country": "ca",
+  "ref": "7",
+  "name": "Liard Highway",
+  "highway": "primary",
+  "lat": 60.8459,
+  "lon": -123.20885,
+  "paved": {
+   "way": 267601150,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 267601151,
+   "surface": "unpaved",
+   "run_km": 21.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "532",
+  "name": "Highway 532",
+  "highway": "secondary",
+  "lat": 50.24204,
+  "lon": -114.35104,
+  "paved": {
+   "way": 288249490,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 4676458,
+   "surface": "gravel",
+   "run_km": 12.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "766",
+  "name": "Highway 766",
+  "highway": "secondary",
+  "lat": 52.08616,
+  "lon": -114.38245,
+  "paved": {
+   "way": 25542860,
+   "surface": "asphalt",
+   "run_km": 25.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 31908091,
+   "surface": "unpaved",
+   "run_km": 5.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "752",
+  "name": "Highway 752",
+  "highway": "secondary",
+  "lat": 52.28877,
+  "lon": -115.04908,
+  "paved": {
+   "way": 396082798,
+   "surface": "paved",
+   "run_km": 15.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 25678612,
+   "surface": "pa",
+   "run_km": 8.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "633",
+  "name": "Range Road 20",
+  "highway": "secondary",
+  "lat": 53.6575,
+  "lon": -114.14898,
+  "paved": {
+   "way": 31642685,
+   "surface": "asphalt",
+   "run_km": 1.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 27574149,
+   "surface": "gravel",
+   "run_km": 4.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "58",
+  "name": "Highway 58",
+  "highway": "primary",
+  "lat": 58.51485,
+  "lon": -116.14409,
+  "paved": {
+   "way": 30458853,
+   "surface": "paved",
+   "run_km": 56.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 30468515,
+   "surface": "gravel",
+   "run_km": 13.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "688",
+  "name": "Highway 688",
+  "highway": "secondary",
+  "lat": 56.21801,
+  "lon": -117.11005,
+  "paved": {
+   "way": 30468316,
+   "surface": "asphalt",
+   "run_km": 17.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 30460455,
+   "surface": "artificial_turf",
+   "run_km": 1.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "58",
+  "name": "58 Highway",
+  "highway": "primary",
+  "lat": 58.49913,
+  "lon": -119.42603,
+  "paved": {
+   "way": 1128050470,
+   "surface": "paved",
+   "run_km": 137.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 30465494,
+   "surface": "unpaved",
+   "run_km": 1.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "58",
+  "name": "Highway 58",
+  "highway": "primary",
+  "lat": 58.58398,
+  "lon": -114.66784,
+  "paved": {
+   "way": 30468067,
+   "surface": "paved",
+   "run_km": 0.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 30470014,
+   "surface": "gravel",
+   "run_km": 20.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "737",
+  "name": "Highway 737",
+  "highway": "secondary",
+  "lat": 56.13098,
+  "lon": -117.88993,
+  "paved": {
+   "way": 1199952182,
+   "surface": "paved",
+   "run_km": 0.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 30848617,
+   "surface": "unpaved",
+   "run_km": 9.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "665",
+  "name": "Secondary Highway 665",
+  "highway": "secondary",
+  "lat": 54.96683,
+  "lon": -117.07533,
+  "paved": {
+   "way": 31081222,
+   "surface": "paved",
+   "run_km": 14.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1025337904,
+   "surface": "gravel",
+   "run_km": 15.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "734",
+  "name": "734 Highway",
+  "highway": "secondary",
+  "lat": 52.24214,
+  "lon": -116.02593,
+  "paved": {
+   "way": 286773622,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 31179600,
+   "surface": "unpaved",
+   "run_km": 16.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "633",
+  "name": "Range Road 20",
+  "highway": "secondary",
+  "lat": 53.64302,
+  "lon": -114.14901,
+  "paved": {
+   "way": 31642685,
+   "surface": "asphalt",
+   "run_km": 1.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 915283397,
+   "surface": "gravel",
+   "run_km": 11.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "591",
+  "name": "Highway 591",
+  "highway": "secondary",
+  "lat": 52.02709,
+  "lon": -115.15174,
+  "paved": {
+   "way": 31909478,
+   "surface": "paved",
+   "run_km": 4.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 31906474,
+   "surface": "gravel",
+   "run_km": 7.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "771",
+  "name": "Highway 771",
+  "highway": "secondary",
+  "lat": 52.95977,
+  "lon": -114.07426,
+  "paved": {
+   "way": 101297995,
+   "surface": "asphalt",
+   "run_km": 14.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 31912109,
+   "surface": "gravel",
+   "run_km": 24.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "766",
+  "name": "Range Road 33",
+  "highway": "secondary",
+  "lat": 51.9989,
+  "lon": -114.35862,
+  "paved": {
+   "way": 32093028,
+   "surface": "asphalt",
+   "run_km": 38.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 31917785,
+   "surface": "unpaved",
+   "run_km": 1.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.0793,
+  "lon": -117.19787,
+  "paved": {
+   "way": 322501614,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 59434400,
+   "surface": "unpaved",
+   "run_km": 5.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.07138,
+  "lon": -117.27851,
+  "paved": {
+   "way": 322369748,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 59434400,
+   "surface": "unpaved",
+   "run_km": 5.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "771",
+  "name": "Highway 771",
+  "highway": "secondary",
+  "lat": 52.75622,
+  "lon": -114.11047,
+  "paved": {
+   "way": 101296249,
+   "surface": "asphalt",
+   "run_km": 10.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 101298002,
+   "surface": "gravel",
+   "run_km": 24.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "633",
+  "name": "Secondary Highway 633",
+  "highway": "secondary",
+  "lat": 53.65751,
+  "lon": -114.00186,
+  "paved": {
+   "way": 365161332,
+   "surface": "asphalt",
+   "run_km": 12.3,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 112266103,
+   "surface": "gravel",
+   "run_km": 11.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "549",
+  "name": "Highway 549",
+  "highway": "secondary",
+  "lat": 50.7467,
+  "lon": -114.50776,
+  "paved": {
+   "way": 119546475,
+   "surface": "paved",
+   "run_km": 14,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 119546254,
+   "surface": "unpaved",
+   "run_km": 2.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "734",
+  "name": "734 Highway",
+  "highway": "secondary",
+  "lat": 52.24206,
+  "lon": -116.02591,
+  "paved": {
+   "way": 286773622,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 286773615,
+   "surface": "unpaved",
+   "run_km": 6.2,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "532",
+  "name": "Highway 532",
+  "highway": "secondary",
+  "lat": 50.24186,
+  "lon": -114.35129,
+  "paved": {
+   "way": 288249490,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 288249489,
+   "surface": "gravel",
+   "run_km": 13.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.06135,
+  "lon": -117.30202,
+  "paved": {
+   "way": 322369747,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 334656062,
+   "surface": "unpaved",
+   "run_km": 1.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.06129,
+  "lon": -117.30212,
+  "paved": {
+   "way": 322369747,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 401028893,
+   "surface": "unpaved",
+   "run_km": 2.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.07126,
+  "lon": -117.27927,
+  "paved": {
+   "way": 322369748,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 334656062,
+   "surface": "unpaved",
+   "run_km": 1.9,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.07933,
+  "lon": -117.19729,
+  "paved": {
+   "way": 322501614,
+   "surface": "paved",
+   "run_km": 0,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 322379554,
+   "surface": "unpaved",
+   "run_km": 9.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.13932,
+  "lon": -117.10455,
+  "paved": {
+   "way": 322379559,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1120462367,
+   "surface": "unpaved",
+   "run_km": 43.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Highway 40",
+  "highway": "primary",
+  "lat": 53.13892,
+  "lon": -117.1049,
+  "paved": {
+   "way": 322379559,
+   "surface": "paved",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 322379560,
+   "surface": "unpaved",
+   "run_km": 9.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "British Columbia and western Alberta highways",
+  "country": "ca",
+  "ref": "40",
+  "name": "Forestry Trunk Road",
+  "highway": "primary",
+  "lat": 49.64206,
+  "lon": -114.49721,
+  "paved": {
+   "way": 1572311202,
+   "surface": "paved",
+   "run_km": 1.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 385653195,
+   "surface": "unpaved",
+   "run_km": 2.4,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Baja California",
+  "country": "mx",
+  "ref": "BC 5",
+  "name": "Carretera Mexicali-Progreso",
+  "highway": "primary",
+  "lat": 32.63492,
+  "lon": -115.57382,
+  "paved": {
+   "way": 54366334,
+   "surface": "asphalt",
+   "run_km": 2.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 54355468,
+   "surface": "ground",
+   "run_km": 1.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Baja California",
+  "country": "mx",
+  "ref": "SON 117",
+  "name": "Sahuaripa - Tepache",
+  "highway": "secondary",
+  "lat": 29.25913,
+  "lon": -109.31876,
+  "paved": {
+   "way": 282263959,
+   "surface": "asphalt",
+   "run_km": 87.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 282263963,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Baja California",
+  "country": "mx",
+  "ref": "SON 117",
+  "name": "Sahuaripa - Tepache",
+  "highway": "secondary",
+  "lat": 29.2584,
+  "lon": -109.3187,
+  "paved": {
+   "way": 282263983,
+   "surface": "asphalt",
+   "run_km": 9.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 282263963,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Baja California",
+  "country": "mx",
+  "ref": "BC 5",
+  "name": "Carretera Mexicali-Progreso",
+  "highway": "primary",
+  "lat": 32.64621,
+  "lon": -115.57353,
+  "paved": {
+   "way": 756299600,
+   "surface": "asphalt",
+   "run_km": 4.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1054896008,
+   "surface": "ground",
+   "run_km": 1.3,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D482",
+  "name": "San Estevan - Progresso Road",
+  "highway": "secondary",
+  "lat": 18.15029,
+  "lon": -88.49731,
+  "paved": {
+   "way": 1454180163,
+   "surface": "chipseal",
+   "run_km": 1.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 30812976,
+   "surface": "unpaved",
+   "run_km": 13.5,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "F3300",
+  "name": "Blue Creek Road",
+  "highway": "secondary",
+  "lat": 17.89952,
+  "lon": -88.84948,
+  "paved": {
+   "way": 207609690,
+   "surface": "concrete",
+   "run_km": 4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1151271385,
+   "surface": "unpaved",
+   "run_km": 1.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "MEX 281",
+  "name": "Calle 25",
+  "highway": "secondary",
+  "lat": 20.90878,
+  "lon": -89.97329,
+  "paved": {
+   "way": 208491592,
+   "surface": "asphalt",
+   "run_km": 3.9,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 564087376,
+   "surface": "unpaved",
+   "run_km": 1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "MEX 281",
+  "name": "Calle 25",
+  "highway": "secondary",
+  "lat": 20.90878,
+  "lon": -89.97329,
+  "paved": {
+   "way": 1318569487,
+   "surface": "asphalt",
+   "run_km": 0.5,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 564087376,
+   "surface": "unpaved",
+   "run_km": 1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "MEX 281",
+  "name": "Carretera Mérida - Celestún",
+  "highway": "primary/secondary",
+  "lat": 20.90483,
+  "lon": -89.9822,
+  "paved": {
+   "way": 564087375,
+   "surface": "asphalt",
+   "run_km": 45.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 891726880,
+   "surface": "unpaved",
+   "run_km": 1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "CAM",
+  "name": "Camino Nohalal - Montebello",
+  "highway": "secondary",
+  "lat": 20.04057,
+  "lon": -89.92383,
+  "paved": {
+   "way": 655217693,
+   "surface": "asphalt",
+   "run_km": 7.6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 885702756,
+   "surface": "tracktype=grade2",
+   "run_km": 13,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "QR",
+  "name": "",
+  "highway": "secondary",
+  "lat": 20.5494,
+  "lon": -86.91198,
+  "paved": {
+   "way": 869985203,
+   "surface": "paving_stones",
+   "run_km": 0.7,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 680994581,
+   "surface": "dirt",
+   "run_km": 0.7,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.90166,
+  "lon": -88.32975,
+  "paved": {
+   "way": 998023760,
+   "surface": "asphalt",
+   "run_km": 6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1530500854,
+   "surface": "unpaved",
+   "run_km": 30.8,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "F3300",
+  "name": "Blue Creek Road",
+  "highway": "secondary",
+  "lat": 17.90773,
+  "lon": -88.83887,
+  "paved": {
+   "way": 1151271403,
+   "surface": "chipseal",
+   "run_km": 8.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1151271385,
+   "surface": "unpaved",
+   "run_km": 1.6,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.8567,
+  "lon": -88.31179,
+  "paved": {
+   "way": 1155590228,
+   "surface": "asphalt",
+   "run_km": 6,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1426487064,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.84029,
+  "lon": -88.31257,
+  "paved": {
+   "way": 1155590229,
+   "surface": "chipseal",
+   "run_km": 2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1155590230,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.85577,
+  "lon": -88.31149,
+  "paved": {
+   "way": 1155590229,
+   "surface": "chipseal",
+   "run_km": 2,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1426487064,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.83944,
+  "lon": -88.31277,
+  "paved": {
+   "way": 1155603339,
+   "surface": "chipseal",
+   "run_km": 1.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1155590230,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.82413,
+  "lon": -88.31286,
+  "paved": {
+   "way": 1155603339,
+   "surface": "chipseal",
+   "run_km": 1.8,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1155603340,
+   "surface": "unpaved",
+   "run_km": 1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.81603,
+  "lon": -88.31129,
+  "paved": {
+   "way": 1155603341,
+   "surface": "chipseal",
+   "run_km": 2.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1155603340,
+   "surface": "unpaved",
+   "run_km": 1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 17.80026,
+  "lon": -88.30212,
+  "paved": {
+   "way": 1155603341,
+   "surface": "chipseal",
+   "run_km": 2.4,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1155603342,
+   "surface": "unpaved",
+   "run_km": 0.1,
+   "mapillary": null
+  }
+ },
+ {
+  "label": "Mexico: Yucatan peninsula",
+  "country": "mx",
+  "ref": "D250",
+  "name": "Old Northern Highway",
+  "highway": "secondary",
+  "lat": 18.02046,
+  "lon": -88.543,
+  "paved": {
+   "way": 1239943893,
+   "surface": "asphalt",
+   "run_km": 0.1,
+   "mapillary": null
+  },
+  "unpaved": {
+   "way": 1426487067,
+   "surface": "unpaved",
+   "run_km": 30.8,
    "mapillary": null
   }
  }

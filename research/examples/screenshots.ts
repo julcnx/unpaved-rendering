@@ -1,5 +1,5 @@
 // Screenshots of the verified screenshot spots in every OSM-based web map, same size, zoom and centre.
-// Usage: node examples/screenshots.ts [spot ...] [--show]   (spots: namibia, bolivia, nepal; --show opens a Chrome window)
+// Usage: node examples/screenshots.ts [spot ...] [--show]   (spots: namibia, bolivia, nepal, iceland, australia, alberta; --show opens a Chrome window)
 // Writes examples/screenshots/<spot>/<app>.png. Uses the installed Google Chrome through puppeteer-core.
 
 import { mkdirSync } from 'node:fs';
@@ -13,6 +13,9 @@ const SPOTS: Record<string, [number, number]> = {
   namibia: [-18.81068, 16.9415],
   bolivia: [-14.87824, -64.99758],
   nepal: [28.80567, 83.76673],
+  iceland: [64.99903, -22.7612],
+  australia: [-17.15373, 144.51059],
+  alberta: [51.30019, -114.94517],
 };
 
 const osm = (layer: string) => (la: number, lo: number) => `https://www.openstreetmap.org/#map=${ZOOM}/${la}/${lo}&layers=${layer}`;
