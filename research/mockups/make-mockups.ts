@@ -97,8 +97,8 @@ const OPTIONS: Record<string, Option> = {
   },
   dashes: {
     title: '4. Dashes',
-    note: 'Track rhythm across the road, reversed: a darker tint shows in the gaps, so the medium dashes of Off-road look darker than the long dashes of Unpaved.',
-    road: (s, c) => unpaved(s) ? road(c.dash, c.casing, line(c.fill, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' '))) : road(c.fill, c.casing),
+    note: 'The shared ladder across the road, in a darker class tint (light brown on white): long dashes = Unpaved, medium dashes = Off-road.',
+    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
 };
 
