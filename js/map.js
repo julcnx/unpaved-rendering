@@ -216,7 +216,7 @@ export class MapView {
         const k = 0.72 + 0.28 * shade;
         let rgb = land.map((v) => v * k);
         const band = Math.floor(h[i] / interval);
-        if (px < TILE - 1 && py < TILE - 1 && (Math.floor(h[i + 1] / interval) !== band || Math.floor(h[i + TILE] / interval) !== band)) rgb = [0xc6, 0xa7, 0x7f]; // contour brown
+        if (px < TILE - 1 && py < TILE - 1 && (Math.floor(h[i + 1] / interval) !== band || Math.floor(h[i + TILE] / interval) !== band)) rgb = rgb.map((v, j) => v * 0.55 + [0xc6, 0xa7, 0x7f][j] * 0.45); // contour brown, half blended so contours stay in the background
         o[i * 4] = rgb[0]; o[i * 4 + 1] = rgb[1]; o[i * 4 + 2] = rgb[2]; o[i * 4 + 3] = 255;
       }
       g.putImageData(out, 0, 0);
