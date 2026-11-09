@@ -56,12 +56,12 @@
       "narrowWidth": 1,
       "narrowBelow": 6,
       "unpavedDash": [
-        15,
+        22,
         6
       ],
       "offroadDash": [
-        9,
-        7
+        8,
+        9
       ]
     },
     "grain": {
@@ -78,24 +78,24 @@
       "name": "4. Dashed fill",
       "note": "The shared ladder across the road, in a darker class tint (light brown on white): long dashes = Unpaved, medium dashes = Off-road.",
       "unpavedXWidth": [
-        2.45,
+        3.6,
         0.98
       ],
       "offroadXWidth": [
-        1.47,
-        1.15
+        1.31,
+        1.47
       ]
     },
     "dashed-casing": {
       "name": "2. Dashed casing",
       "note": "Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, medium dashes = Off-road, the same rhythm as the centre line.",
       "unpaved": [
-        15,
+        22,
         6
       ],
       "offroad": [
-        9,
-        7
+        8,
+        9
       ],
       "casing": {
         "trunk": "#a33b20",

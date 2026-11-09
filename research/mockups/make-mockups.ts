@@ -16,10 +16,11 @@ const LAND = '#f2efe9';
 type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string };
 // One track rhythm for the line styles (centre line and dashed casing), from OSM Carto tracks scaled to our lines:
 // One ladder for roads now and tracks later (Julien's choice, 2026-11-09): Paved solid, Unpaved = long dashes
-// (Carto tracktype=grade2, 11, 4), Off-road = medium dashes (grade3, 7, 5), both at about 1.36 x.
-// Rougher = more broken, as in Carto's track grades. Not the dash-dot (in Carto: track with no tracktype, unknown),
-// not grade4 short sparse dashes (read as dots), not dense short dashes (a tunnel casing, 4, 2).
-const RHYTHM = { unpaved: [15, 6], offroad: [9, 7] };
+// (Carto tracktype=grade2 order), Off-road = medium dashes (grade3 order), with a bigger step than Carto between the
+// two so they are easy to tell apart: Unpaved long dashes and short gaps (22/6), Off-road short dashes and gaps a bit
+// longer than the dashes (8/9). Limits: Off-road dashes 7 px or more (shorter read as dots), Unpaved gaps 5 px or more
+// (shorter look solid at z13-14). Not the dash-dot (in Carto: track with no tracktype), not dense short dashes (tunnel casing).
+const RHYTHM = { unpaved: [22, 6], offroad: [8, 9] };
 // Dashed fill fills the whole road, so it uses the same rhythm 1.8 x larger, in fill widths (the mockup fill is 11 px).
 const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 100);
 const SPEC = {
