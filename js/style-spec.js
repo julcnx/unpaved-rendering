@@ -50,7 +50,7 @@ export default {
   },
   "styles": {
     "centre-line": {
-      "name": "1. Centre line",
+      "name": "1. Dashed centre line",
       "note": "Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), medium dashes = Off-road (grade3). Slightly thicker than contour lines.",
       "color": "#8a6440",
       "width": 1.8,
@@ -66,7 +66,7 @@ export default {
       ]
     },
     "grain": {
-      "name": "3. Grain (OSM Carto)",
+      "name": "3. Grain fill",
       "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: big grain added on top.",
       "scale": 1.5,
       "offroadScale": 3,
@@ -75,8 +75,8 @@ export default {
         37
       ]
     },
-    "dashes": {
-      "name": "4. Dashes",
+    "dashed-fill": {
+      "name": "4. Dashed fill",
       "note": "The shared ladder across the road, in a darker class tint (light brown on white): long dashes = Unpaved, medium dashes = Off-road.",
       "unpavedXWidth": [
         2.45,

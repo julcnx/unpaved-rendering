@@ -6,7 +6,7 @@ import { mkdirSync } from 'node:fs';
 
 const arg = (name, def) => { const i = process.argv.indexOf(`--${name}`); return i > 0 ? process.argv[i + 1].split(',') : def; };
 const spots = arg('spots', ['namibia', 'bolivia', 'nepal', 'iceland', 'australia', 'alberta']);
-const styles = arg('styles', ['centre-line', 'grain', 'dashes', 'gaps']);
+const styles = arg('styles', ['centre-line', 'dashed-casing', 'grain', 'dashed-fill']);
 const bgs = arg('bgs', ['white', 'forest', 'sand', 'dark', 'terrain']);
 const zooms = arg('zooms', ['13', '15', '17']);
 const compare = process.argv.includes('--compare');

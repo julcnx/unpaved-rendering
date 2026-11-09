@@ -56,7 +56,7 @@ const off = (level) => level === 'offroad' || level === 'specialized';
 
 // Each style: (level, class colours, fill width w, brown, ctx) -> { casing, fill, over[] }.
 // A layer is { color, width, dash?, cap? }. Paved roads are the same in every style.
-const CL = S['centre-line'], GR = S.grain, DA = S.dashes, GA = S['dashed-casing'];
+const CL = S['centre-line'], GR = S.grain, DA = S['dashed-fill'], GA = S['dashed-casing'];
 export const STYLES = {
   'centre-line': {
     name: CL.name, note: CL.note, minWidth: 5,
@@ -77,7 +77,7 @@ export const STYLES = {
       over: off(level) ? [{ color: grain(ctx, null, c.grainDot, GR.offroadScale, GR.offroadShift), width: w, cap: 'butt' }] : [],
     },
   },
-  dashes: {
+  'dashed-fill': {
     name: DA.name, note: DA.note, minWidth: 3,
     draw: (level, c, w) => ({
       over: level === 'paved' ? [] : [{ color: c.dash, width: w, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
