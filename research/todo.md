@@ -11,10 +11,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 5. Styles: four left after the mockups (1 Centre line, 2 Grain, 3 Dashes, 4 Open gaps); brown fill and tint dropped, too hard to see or they change the class you see. Pick the default after the screenshot loop.
 6. Repo: a new local repo `~/Workspaces/OSM/unpaved-rendering`, pushed to `julcnx/unpaved-rendering` only after Julien's OK.
 7. Screenshot spots: one per continent, no Antarctica. North America = Alberta Hwy 40 (spot 6, added 2026-11-09); backups Alberta Hwy 68 and Mexico QR 15.
-
-## Classification spec
-
-1. Write the generic styling guide (Paved / Unpaved / third level) separate from the OSM tag mapping, so other data sources can add their own mapping.
+8. The proposal stays OSM-specific: no generic styling guide for other data sources.
 
 ## Research (A)
 
