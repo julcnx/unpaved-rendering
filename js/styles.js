@@ -73,9 +73,11 @@ export const STYLES = {
   },
   dashes: {
     name: DA.name, note: DA.note, minWidth: 3,
-    draw: (level, c, w) => ({
-      over: level === 'paved' ? [] : [{ color: c.dash, width: w, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
-    }),
+    // Reversed: darker tint as the fill, the class colour in the rhythm on top, so Off-road shows more dark.
+    draw: (level, c, w) => level === 'paved' ? {} : {
+      fill: { color: c.dash },
+      over: [{ color: c.fill, width: w, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
+    },
   },
   'dashed-casing': {
     name: GA.name, note: GA.note, minWidth: 3,

@@ -79,7 +79,7 @@ export default {
     },
     "dashes": {
       "name": "3. Dashes",
-      "note": "The track rhythm of styles 1 and 4 across the whole road, in a darker tint of the class colour (light brown on white): long dashes = Unpaved, dash-dot = Off-road.",
+      "note": "Track rhythm across the road, reversed: a darker tint shows in the gaps, so the dash-dot of Off-road looks darker than the long dashes of Unpaved.",
       "unpavedXWidth": [
         2.45,
         0.98
