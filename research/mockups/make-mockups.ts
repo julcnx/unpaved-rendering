@@ -14,6 +14,9 @@ const LAND = '#f2efe9';
 // (Carto's own background is only a lighter fill); white roads stay white, with warm brown dots instead of Carto's grey; tunnel fill (Carto: lighter fill, darker for white roads);
 // dash colour: a slightly darker tint of the class colour, light brown on white roads (grey would look like Carto construction).
 type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string };
+// One track rhythm for the line styles (centre line and dashed casing), from OSM Carto tracks scaled to our lines:
+// Unpaved = long dashes (Carto tracktype=grade2), Off-road = the track dash-dot (not short dashes: those look like tunnels).
+const RHYTHM = { unpaved: [15, 6], offroad: [8, 5, 2.5, 5] };
 const SPEC = {
   // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
   classes: {
@@ -25,17 +28,16 @@ const SPEC = {
   },
   // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
   styles: {
-    // Track rhythms from OSM Carto, scaled from its 1.5 px track to the 1.8 px line: Unpaved = long dashes
-    // (Carto tracktype=grade2, 11, 4), Off-road = the default track dash-dot (5, 4, 2, 4).
-    'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: [13, 5], offroadDash: [6, 5, 2.5, 5] },
+    'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
     grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
     dashes: { unpavedXWidth: [3, 2], offroadXWidth: [2, 1] },
-    gaps: { unpaved: [36, 8], offroad: [26, 6, 6, 6], minorCasing: '#8f8f8f' },
+    // Dashed casing, the fill stays continuous (as Gaia GPS draws tracks and DMD2 unpaved roads).
+    'dashed-casing': { unpaved: RHYTHM.unpaved, offroad: RHYTHM.offroad, minorCasing: '#8f8f8f' },
   },
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
 const CLASSES: Klass[] = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
-const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles.dashes, GA = SPEC.styles.gaps;
+const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles.dashes, GA = SPEC.styles['dashed-casing'];
 const BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
 const TRACK = '#996600'; // OSM Carto @track-fill
 const MINOR_CONSTRUCTION = '#aaa'; // OSM Carto @minor-construction
@@ -60,10 +62,10 @@ const DEFS = `<defs>${CLASSES.map(grain).join('')}</defs>`;
 const line = (stroke: string, width: number, dash = '', cap = 'butt', extra = '') =>
   `<path d="${ROAD}" fill="none" stroke="${stroke}" stroke-width="${width}" stroke-linecap="${cap}"${dash ? ` stroke-dasharray="${dash}"` : ''}${extra}/>`;
 const road = (fill: string, casing: string, extra = '') => line(casing, W + CAS, '') + line(fill, W) + extra;
-// Road cut into pieces with see-through gaps: casing and fill share the same dashes.
-// White roads get a darker casing (OSM Carto tertiary casing), or the pieces vanish into the land.
+// Dashed casing: only the outline is broken, the fill stays continuous.
+// White roads get a darker casing (OSM Carto tertiary casing), or the dashes vanish into the land.
 const gapCasing = (c: Klass) => (c.id === 'minor' ? GA.minorCasing : c.casing);
-const pieces = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) + line(c.fill, W, dash);
+const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) + line(c.fill, W);
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
 const offroad = (s: State) => s.endsWith('Off-road');
@@ -86,10 +88,10 @@ const OPTIONS: Record<string, Option> = {
     note: 'Unpaved: long dashes, dash 3 x and gap 2 x road width (Americana: 4 x and 4 x), darker tint of the class colour (light brown on white). Off-road: dash 2 x, gap 1 x road width.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
-  gaps: {
-    title: '4. Open gaps',
-    note: 'Road cut into class-coloured pieces with see-through gaps: long pieces = Unpaved; long and short pieces, like the Carto track dash-dot = Off-road.',
-    road: (s, c) => unpaved(s) ? pieces(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
+  'dashed-casing': {
+    title: '4. Dashed casing',
+    note: 'Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, track dash-dot = Off-road, the same rhythm as the centre line.',
+    road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
 };
 

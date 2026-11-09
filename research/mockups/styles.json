@@ -56,11 +56,11 @@
       "narrowWidth": 1,
       "narrowBelow": 6,
       "unpavedDash": [
-        13,
-        5
+        15,
+        6
       ],
       "offroadDash": [
-        6,
+        8,
         5,
         2.5,
         5
@@ -88,18 +88,18 @@
         1
       ]
     },
-    "gaps": {
-      "name": "4. Open gaps",
-      "note": "Road cut into class-coloured pieces with see-through gaps: long pieces = Unpaved; long and short pieces, like the Carto track dash-dot = Off-road.",
+    "dashed-casing": {
+      "name": "4. Dashed casing",
+      "note": "Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, track dash-dot = Off-road, the same rhythm as the centre line.",
       "unpaved": [
-        36,
-        8
+        15,
+        6
       ],
       "offroad": [
-        26,
-        6,
-        6,
-        6
+        8,
+        5,
+        2.5,
+        5
       ],
       "minorCasing": "#8f8f8f"
     }
