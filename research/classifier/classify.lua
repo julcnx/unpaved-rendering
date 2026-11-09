@@ -3,6 +3,7 @@
 -- offroad (needs a high-clearance vehicle) or specialized (render as a path).
 --
 -- Base: surface > tracktype > default (roads paved, tracks unpaved).
+-- wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
 -- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
 --
 -- Usage: local classifier = require('classify')
@@ -16,9 +17,14 @@ local RANK = { offroad = 0, specialized = 1 }
 -- cobblestone is a legacy value, mostly used for sett.
 M.PAVED_SURFACES = {
   paved = true, asphalt = true, chipseal = true, concrete = true, ['concrete:plates'] = true,
-  paving_stones = true, sett = true, bricks = true, metal = true, wood = true,
+  paving_stones = true, sett = true, bricks = true, metal = true,
   cobblestone = true, ['cobblestone:flattened'] = true,
 }
+
+-- Paved in some places, broken or improvised in others (smooth farm lanes vs washed-out strips,
+-- plank bridges vs log bridges, intact vs broken grass pavers): unpaved unless smoothness says the road is smooth enough.
+M.MIXED_SURFACES = { wood = true, ['concrete:lanes'] = true, grass_paver = true }
+M.SMOOTH_ENOUGH = { excellent = true, good = true, intermediate = true, bad = true }
 
 -- Smoothness only gives evidence for the mark; better values give no mark (false).
 M.SMOOTHNESS = {
@@ -37,9 +43,11 @@ M.TRACKTYPE_MARK = {
 M.FOUR_WD_ONLY = { recommended = 'offroad', yes = 'offroad', extreme = 'specialized' }
 
 -- Multiple values (e.g. "asphalt;concrete") are paved only if every part is.
-function M.surface_base(surface)
+function M.surface_base(surface, smoothness)
+  local smooth = smoothness ~= nil and M.SMOOTH_ENOUGH[smoothness]
   for part in string.gmatch(surface, '[^;]+') do
-    if not M.PAVED_SURFACES[part:match('^%s*(.-)%s*$')] then return 'unpaved' end
+    local p = part:match('^%s*(.-)%s*$')
+    if not (M.PAVED_SURFACES[p] or (smooth and M.MIXED_SURFACES[p])) then return 'unpaved' end
   end
   return 'paved'
 end
@@ -48,7 +56,7 @@ end
 function M.classify(tags)
   local base, base_source
   if tags.surface then
-    base, base_source = M.surface_base(tags.surface), 'surface'
+    base, base_source = M.surface_base(tags.surface, tags.smoothness), 'surface'
   elseif tags.tracktype and M.TRACKTYPE_MARK[tags.tracktype] ~= nil then
     base, base_source = tags.tracktype == 'grade1' and 'paved' or 'unpaved', 'tracktype'
   else

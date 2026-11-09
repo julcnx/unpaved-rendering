@@ -25,7 +25,7 @@ const COVERAGE_KEYS = ['surface', 'smoothness', 'tracktype', '4wd_only'];
 const KNOWN_UNPAVED = new Set([
   'unpaved', 'compacted', 'fine_gravel', 'gravel', 'unhewn_cobblestone', 'dirt', 'earth', 'ground', 'grass',
   'grass_paver', 'mud', 'sand', 'rock', 'pebblestone', 'clay', 'laterite', 'woodchips', 'snow', 'ice', 'salt',
-  'concrete:lanes', 'stepping_stones', 'shells',
+  'concrete:lanes', 'wood', 'stepping_stones', 'shells',
 ]);
 // Files whose changes can change the numbers.
 const PIPELINE_FILES = ['../classifier/classify.ts', './road-stats.ts', './run-country.sh'];

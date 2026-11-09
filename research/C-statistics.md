@@ -15,7 +15,7 @@ Tests: [classifier/test-cases.json](classifier/test-cases.json) has 59 cases sha
 
 | Priority | Tag | Paved | Unpaved |
 |---|---|---|---|
-| 1 | `surface` | paved, asphalt, chipseal, concrete, concrete:plates, paving_stones, sett, bricks, metal, wood, cobblestone, cobblestone:flattened | everything else, including typos and local values |
+| 1 | `surface` | paved, asphalt, chipseal, concrete, concrete:plates, paving_stones, sett, bricks, metal, cobblestone, cobblestone:flattened; wood, concrete:lanes and grass_paver only with `smoothness` bad or better | everything else, including typos and local values |
 | 2 | `tracktype` (no surface) | grade1 | grade2 to grade8 |
 | 3 | nothing | road classes | `highway=track` |
 
@@ -310,4 +310,5 @@ Answers recorded here.
    - **Specialized** (render as path): `smoothness=very_horrible` or `impassable`, `tracktype=grade8`, `4wd_only=extreme`.
    - Smoothness no longer decides Paved vs Unpaved (reverses decision 4 for the base level).
    - Stats columns: Paved (tagged), Untagged, Unpaved, Off-road mark.
+10. **`wood`, `concrete:lanes` and `grass_paver`** (decided 2026-11-09): Unpaved by default, Paved when `smoothness` is bad or better, since only `very_bad` and worse mean Off-road. All three look very different by region: smooth farm lanes in Europe vs broken strips with a washed-out middle in Thailand; plank bridges vs log or branch bridges; intact vs broken grass pavers. Before this, `wood` was always Paved, `concrete:lanes` and `grass_paver` always Unpaved. The stats were not rerun (the extracts are deleted): recomputed from the combo tables, about 216 km move from Paved to Unpaved (mostly `wood` in Indonesia and Brazil) and 84 km the other way (mostly `concrete:lanes` in Colombia and Indonesia), out of 20 million km in all 55 rows, so no table changes visibly.
    - Status (2026-11-02): mockups, classifier, Lua and SQL ports, tests, stats and report all updated. Three-level results archived in [stats/archive/3-levels/](stats/archive/3-levels/). All countries to be rerun once (Timor-Leste done). Thailand added to the country list with a fresh Geofabrik download.

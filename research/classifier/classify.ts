@@ -3,6 +3,7 @@
 // offroad (needs a high-clearance vehicle) or specialized (render as a path).
 //
 // Base: surface > tracktype > default (roads paved, tracks unpaved).
+// wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
 // Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
 
 export type Base = 'paved' | 'unpaved';
@@ -17,8 +18,13 @@ export const RANK: Record<Mark, number> = { offroad: 0, specialized: 1 };
 // cobblestone is a legacy value, mostly used for sett.
 export const PAVED_SURFACES = new Set([
   'paved', 'asphalt', 'chipseal', 'concrete', 'concrete:plates',
-  'paving_stones', 'sett', 'bricks', 'metal', 'wood', 'cobblestone', 'cobblestone:flattened',
+  'paving_stones', 'sett', 'bricks', 'metal', 'cobblestone', 'cobblestone:flattened',
 ]);
+
+// Paved in some places, broken or improvised in others (smooth farm lanes vs washed-out strips,
+// plank bridges vs log bridges, intact vs broken grass pavers): unpaved unless smoothness says the road is smooth enough.
+export const MIXED_SURFACES = new Set(['wood', 'concrete:lanes', 'grass_paver']);
+export const SMOOTH_ENOUGH = new Set(['excellent', 'good', 'intermediate', 'bad']);
 
 // Smoothness only gives evidence for the mark; better values give no mark.
 export const SMOOTHNESS: Record<string, Mark | null> = {
@@ -43,8 +49,10 @@ export const FOUR_WD_ONLY: Record<string, Mark> = {
 export type Tags = Record<string, string | undefined>;
 
 // Multiple values (e.g. "asphalt;concrete") are paved only if every part is.
-export function surfaceBase(surface: string): Base {
-  return surface.split(';').every((s) => PAVED_SURFACES.has(s.trim())) ? 'paved' : 'unpaved';
+export function surfaceBase(surface: string, smoothness?: string): Base {
+  const smooth = smoothness !== undefined && SMOOTH_ENOUGH.has(smoothness);
+  return surface.split(';').every((s) => PAVED_SURFACES.has(s.trim()) || (smooth && MIXED_SURFACES.has(s.trim())))
+    ? 'paved' : 'unpaved';
 }
 
 export type Result = { level: Level; base: Base; baseSource: BaseSource; mark: Mark | null; markSource: MarkSource | null };
@@ -53,7 +61,7 @@ export function classifyDetailed(tags: Tags): Result {
   let base: Base;
   let baseSource: BaseSource;
   if (tags.surface) {
-    base = surfaceBase(tags.surface);
+    base = surfaceBase(tags.surface, tags.smoothness);
     baseSource = 'surface';
   } else if (tags.tracktype && tags.tracktype in TRACKTYPE_MARK) {
     base = tags.tracktype === 'grade1' ? 'paved' : 'unpaved';

@@ -3,6 +3,7 @@
 -- offroad (needs a high-clearance vehicle) or specialized (render as a path).
 --
 -- Base: surface > tracktype > default (roads paved, tracks unpaved).
+-- wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
 -- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
 --
 -- Usage, with an hstore tags column (osm2pgsql):
@@ -11,9 +12,12 @@
 
 -- Whitelist: any surface value not listed is unpaved, including typos and local values.
 -- Multiple values (e.g. 'asphalt;concrete') are paved only if every part is. cobblestone is a legacy value, mostly used for sett.
-CREATE OR REPLACE FUNCTION road_surface_base(surface text) RETURNS text AS $$
+-- wood, concrete:lanes and grass_paver are paved in some places, broken or improvised in others: paved only when smoothness is good enough.
+CREATE OR REPLACE FUNCTION road_surface_base(surface text, smoothness text) RETURNS text AS $$
   SELECT CASE WHEN bool_and(trim(p) IN ('paved', 'asphalt', 'chipseal', 'concrete', 'concrete:plates', 'paving_stones',
-                                        'sett', 'bricks', 'metal', 'wood', 'cobblestone', 'cobblestone:flattened'))
+                                        'sett', 'bricks', 'metal', 'cobblestone', 'cobblestone:flattened')
+                            OR (trim(p) IN ('wood', 'concrete:lanes', 'grass_paver')
+                                AND coalesce(smoothness IN ('excellent', 'good', 'intermediate', 'bad'), false)))
     THEN 'paved' ELSE 'unpaved' END
   FROM unnest(string_to_array(surface, ';')) AS p;
 $$ LANGUAGE sql IMMUTABLE;
@@ -28,7 +32,7 @@ RETURNS text AS $$
   END
   FROM (SELECT
     CASE
-      WHEN surface IS NOT NULL THEN road_surface_base(surface)
+      WHEN surface IS NOT NULL THEN road_surface_base(surface, smoothness)
       WHEN tracktype = 'grade1' THEN 'paved'
       -- grade6-8 are an Australian local extension (Australian Tagging Guidelines/Roads).
       WHEN tracktype IN ('grade2', 'grade3', 'grade4', 'grade5', 'grade6', 'grade7', 'grade8') THEN 'unpaved'
