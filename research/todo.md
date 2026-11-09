@@ -8,7 +8,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 2. `wood`, `concrete:lanes` and `grass_paver`: Unpaved unless `smoothness` is bad or better (only `very_bad` and worse mean Off-road). Done in all three ports, 68 tests pass (C-statistics decision 10).
 3. `4wd_only` keeps raising the Off-road mark.
 4. Stats are not rerun: the new rule moves only about 300 km out of 20 million.
-5. Styles: four left after the mockups (1 Centre line, 2 Grain, 3 Dashes, 4 Dashed casing, which replaced open gaps); brown fill and tint dropped, too hard to see or they change the class you see. Pick the default after the screenshot loop.
+5. Styles: four left after the mockups (numbered by preference, 2026-11-09: 1 Centre line, 2 Dashed casing, which replaced open gaps, 3 Grain, 4 Dashes); brown fill and tint dropped, too hard to see or they change the class you see. Pick the default after the screenshot loop.
 6. Repo: a new local repo `~/Workspaces/OSM/unpaved-rendering`, pushed to `julcnx/unpaved-rendering` only after Julien's OK.
 7. Screenshot spots: one per continent, no Antarctica. North America = Alberta Hwy 40 (spot 6, added 2026-11-09); backups Alberta Hwy 68 and Mexico QR 15.
 8. The proposal stays OSM-specific: no generic styling guide for other data sources.

@@ -76,7 +76,7 @@ const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, das
 const unpaved = (s: State) => s.startsWith('Unpaved');
 const offroad = (s: State) => s.endsWith('Off-road');
 
-// From the brief, renumbered (its brown fill and tint styles were dropped: too hard to see). Paved is the same normal road in all of them.
+// Numbered by preference (ranking 2026-11-09): centre line, dashed casing, grain, dashes. Brown fill and tint were dropped. Paved is the same normal road in all of them.
 type Option = { title: string; note: string; road: (s: State, c: Klass) => string };
 const OPTIONS: Record<string, Option> = {
   'centre-line': {
@@ -84,20 +84,20 @@ const OPTIONS: Record<string, Option> = {
     note: 'Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), short sparse dashes = Off-road (grade4). Slightly thicker than contour lines.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(BROWN, W < CL.narrowBelow ? CL.narrowWidth : CL.width, (offroad(s) ? CL.offroadDash : CL.unpavedDash).join(' ')) : ''),
   },
+  'dashed-casing': {
+    title: '2. Dashed casing',
+    note: 'Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, short sparse dashes = Off-road, the same rhythm as the centre line.',
+    road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
+  },
   grain: {
-    title: '2. Grain (OSM Carto)',
+    title: '3. Grain (OSM Carto)',
     note: 'Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: big grain added on top.',
     road: (s, c) => road(unpaved(s) ? `url(#grain-${c.id})` : c.fill, c.casing, offroad(s) ? line(`url(#grain2-${c.id})`, W) : ''),
   },
   dashes: {
-    title: '3. Dashes',
+    title: '4. Dashes',
     note: 'Track rhythm across the road, reversed: a darker tint shows in the gaps, so the short sparse dashes of Off-road look darker than the long dashes of Unpaved.',
     road: (s, c) => unpaved(s) ? road(c.dash, c.casing, line(c.fill, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' '))) : road(c.fill, c.casing),
-  },
-  'dashed-casing': {
-    title: '4. Dashed casing',
-    note: 'Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, short sparse dashes = Off-road, the same rhythm as the centre line.',
-    road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
 };
 
