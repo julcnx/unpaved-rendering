@@ -15,7 +15,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 
 ## Demo and colour tests
 
-15. Static demo page: first version done 2026-11-09 in `~/Workspaces/OSM/unpaved-rendering` (canvas, 4 styles from the mockups, side by side, 5 backgrounds incl. hillshade/contours/labels, legend, live Overpass from z14, Nominatim search, OSM attribution). Cached data for all spots done. Still to do: update the styles to the 2026-11-09 mockups (renumbered 1-4, centre line colour, grain, dash ratios and colours, gap patterns), Chiang Mai spot, dark-mode primary looks brown (see LOG.md).
+15. Static demo page: first version done 2026-11-09 in `~/Workspaces/OSM/unpaved-rendering` (canvas, 4 styles from the mockups, side by side, 5 backgrounds incl. hillshade/contours/labels, legend, live Overpass from z14, Nominatim search, OSM attribution). Cached data for all spots done. Styles synced from the mockups (`mockups/styles.json`, 2026-11-09), style chips, live Overpass anywhere (main roads from z11). Still to do: refetch the spot data with way ids when Overpass has capacity; dark-mode primary looks brown (see LOG.md).
 16. Backgrounds: white, forest green, sand/desert, dark mode, and a realistic one with hillshade, contours and labels.
 17. Zoom behaviour: where each style starts working, and how it looks on thin roads.
 18. Colour tests: several earthy browns against every background, distinct from contour and boundary browns; dark-mode variant per style; colour-blindness simulation; write down why the colours were picked.

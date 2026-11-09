@@ -1,6 +1,8 @@
 // Mockups of the unpaved styles we keep from the Mind the Surface brief, on red, orange, yellow and white roads.
 // Two levels (Paved, Unpaved) plus an optional Off-road mark drawn on top of Unpaved roads only.
-// Usage: node mockups/make-mockups.ts   (writes mockups/*.svg)
+// Usage: node mockups/make-mockups.ts   (writes mockups/*.svg and mockups/styles.json)
+// styles.json is the single source of the style values: the demo (~/Workspaces/OSM/unpaved-rendering) copies it
+// with `node scripts/sync-styles.mjs`.
 // Road colours are OSM Carto's. Style 2 is based on the OSM Carto grain, style 3 on the Americana dashes;
 // the Off-road marks are ours (neither style has one).
 
@@ -12,13 +14,27 @@ const LAND = '#f2efe9';
 // (Carto's own background is only a lighter fill); white roads stay white, with warm brown dots instead of Carto's grey; tunnel fill (Carto: lighter fill, darker for white roads);
 // dash colour: a slightly darker tint of the class colour, light brown on white roads (grey would look like Carto construction).
 type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string };
-const CLASSES: Klass[] = [
-  { name: 'Red', id: 'r', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ef9a80', tunnel: '#fbd3c6' },
-  { name: 'Orange', id: 'o', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#f0bd7c', tunnel: '#fde7c9' },
-  { name: 'Yellow', id: 'y', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#555a28', dash: '#dfe48a', tunnel: '#fbfdd8' },
-  { name: 'White', id: 'w', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#5e4a35', dash: '#dccab0', tunnel: '#f2f2f2' },
-];
-const BROWN = '#8a6440'; // a bit lighter than a contour-line brown, so it does not read as a third dark line
+const SPEC = {
+  // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
+  classes: {
+    motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#dc7c8f', tunnel: '#efb3be' },
+    trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ef9a80', tunnel: '#fbd3c6' },
+    primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#f0bd7c', tunnel: '#fde7c9' },
+    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#555a28', dash: '#dfe48a', tunnel: '#fbfdd8' },
+    minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#5e4a35', dash: '#dccab0', tunnel: '#f2f2f2' },
+  },
+  // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
+  styles: {
+    'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, offroadDash: [6, 5] },
+    grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
+    dashes: { unpavedXWidth: [3, 2], offroadXWidth: [2, 1] },
+    gaps: { unpaved: [36, 8], offroad: [26, 6, 6, 6], minorCasing: '#8f8f8f' },
+  },
+};
+const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
+const CLASSES: Klass[] = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
+const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles.dashes, GA = SPEC.styles.gaps;
+const BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
 const TRACK = '#996600'; // OSM Carto @track-fill
 const MINOR_CONSTRUCTION = '#aaa'; // OSM Carto @minor-construction
 const STATES = ['Paved', 'Unpaved', 'Unpaved + Off-road'] as const;
@@ -35,8 +51,8 @@ let CAS = 4;
 // Unpaved: drawn 1.5 x larger than Carto, which is too faint at this size. Off-road: a 3 x larger copy of the dots on top.
 const GRAIN = readFileSync(new URL('./carto-unpaved-grain.svg', import.meta.url), 'utf8').match(/<path[^>]*?\sd="([^"]+)"/)![1];
 const grain = (c: Klass) =>
-  `<pattern id="grain-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)"><rect width="64" height="64" fill="${c.grainBg}"/><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>` +
-  `<pattern id="grain2-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(21 37) scale(3)"><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>`;
+  `<pattern id="grain-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(${GR.scale})"><rect width="64" height="64" fill="${c.grainBg}"/><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>` +
+  `<pattern id="grain2-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(${GR.offroadShift.join(' ')}) scale(${GR.offroadScale})"><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>`;
 const DEFS = `<defs>${CLASSES.map(grain).join('')}</defs>`;
 
 const line = (stroke: string, width: number, dash = '', cap = 'butt', extra = '') =>
@@ -44,7 +60,7 @@ const line = (stroke: string, width: number, dash = '', cap = 'butt', extra = ''
 const road = (fill: string, casing: string, extra = '') => line(casing, W + CAS, '') + line(fill, W) + extra;
 // Road cut into pieces with see-through gaps: casing and fill share the same dashes.
 // White roads get a darker casing (OSM Carto tertiary casing), or the pieces vanish into the land.
-const gapCasing = (c: Klass) => (c.id === 'w' ? '#8f8f8f' : c.casing);
+const gapCasing = (c: Klass) => (c.id === 'minor' ? GA.minorCasing : c.casing);
 const pieces = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) + line(c.fill, W, dash);
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
@@ -56,7 +72,7 @@ const OPTIONS: Record<string, Option> = {
   'centre-line': {
     title: '1. Centre line',
     note: 'Thin brown line down the middle: solid = Unpaved, dashed = Off-road. Slightly thicker than contour lines.',
-    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(BROWN, W < 6 ? 1 : 1.8, offroad(s) ? '6 5' : '') : ''),
+    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(BROWN, W < CL.narrowBelow ? CL.narrowWidth : CL.width, offroad(s) ? CL.offroadDash.join(' ') : '') : ''),
   },
   grain: {
     title: '2. Grain (OSM Carto)',
@@ -66,12 +82,12 @@ const OPTIONS: Record<string, Option> = {
   dashes: {
     title: '3. Dashes',
     note: 'Unpaved: long dashes, dash 3 x and gap 2 x road width (Americana: 4 x and 4 x), darker tint of the class colour (light brown on white). Off-road: dash 2 x, gap 1 x road width.',
-    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, offroad(s) ? `${2 * W} ${W}` : `${3 * W} ${2 * W}`) : ''),
+    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
   gaps: {
     title: '4. Open gaps',
     note: 'Road cut into class-coloured pieces with see-through gaps: long pieces = Unpaved; long and short pieces, like the Carto track dash-dot = Off-road.',
-    road: (s, c) => unpaved(s) ? pieces(c, offroad(s) ? '26 6 6 6' : '36 8') : road(c.fill, c.casing),
+    road: (s, c) => unpaved(s) ? pieces(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
 };
 
@@ -84,7 +100,7 @@ const track = () => line('white', (1.5 + 2) * k(), '', 'butt', ' stroke-opacity=
 const tunnel = (c: Klass) => line(c.casing, W + CAS, `${4 * k()} ${2 * k()}`) + line(c.tunnel, W);
 const REFERENCES = () => [
   { label: 'Carto construction', cells: [...CLASSES.slice(0, 3).map((c) => [`${c.name.split(' ')[0]}`, construction(c.fill)]), ['White', construction(MINOR_CONSTRUCTION)]] },
-  { label: 'Carto tunnel', cells: CLASSES.map((c) => [c.name.split(' ')[0], tunnel(c)]) },
+  { label: 'Carto tunnel', cells: CLASSES.map((c) => [c.name, tunnel(c)]) },
   { label: 'Carto track', cells: [['Track', track()]] },
 ];
 
@@ -136,3 +152,7 @@ render('');
 W = 5;
 CAS = 2;
 render('-narrow');
+
+// Style values for the demo, with the titles and notes shown in its menu and legend.
+const styles = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, { name: OPTIONS[k].title, note: OPTIONS[k].note, ...v }]));
+writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'osm-wiki/unpaved-rendering/mockups/make-mockups.ts', classes: SPEC.classes, styles }, null, 2) + '\n');
