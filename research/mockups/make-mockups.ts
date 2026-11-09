@@ -1,4 +1,4 @@
-// Mockups of the styling options on a yellow tertiary road.
+// Mockups of the five styles from the Mind the Surface brief, on a yellow tertiary road.
 // Two levels (Paved, Unpaved) plus an optional Off-road mark drawn on top of Unpaved roads only.
 // Usage: node mockups/make-mockups.ts   (writes mockups/*.svg)
 // Colours are illustrative, close to common OSM styles: each provider uses its own palette.
@@ -8,10 +8,11 @@ import { writeFileSync } from 'node:fs';
 const LAND = '#f2efe9';
 const FILL = '#fdfbb0';
 const CASING = '#c6c68a';
-const TINT = '#f1df9c';
-const TINT_CASING = '#c4b27a';
-const BROWN = '#7d5328';
-const DARK = '#ebd979'; // darker tint of the class colour, for the dashes
+const CLASS_DARK = '#d8c13a'; // stronger class colour, for a class-coloured casing
+const BROWN = '#7d5328'; // "not paved" in every style
+const SAND = '#c9a06a'; // light brown fill
+const TINT = '#efdc98'; // class colour mixed with some brown
+const TINT_OFF = '#dcc08a'; // browner
 const STATES = ['Paved', 'Unpaved', 'Unpaved + Off-road'] as const;
 type State = (typeof STATES)[number];
 
@@ -22,40 +23,48 @@ const ROAD = 'M 20 35 L 280 35'; // straight, so the patterns are easy to compar
 // Regular staggered dots: one tile holds two dots, so rows are offset by half a step.
 function dots(id: string, step: number, r: number) {
   return `<pattern id="${id}" width="${step}" height="${step}" patternUnits="userSpaceOnUse">` +
-    `<rect width="${step}" height="${step}" fill="${FILL}"/><g fill="${BROWN}" fill-opacity="0.85">` +
+    `<rect width="${step}" height="${step}" fill="${FILL}"/><g fill="${BROWN}">` +
     `<circle cx="${step / 4}" cy="${step / 4}" r="${r}"/><circle cx="${(3 * step) / 4}" cy="${(3 * step) / 4}" r="${r}"/></g></pattern>`;
 }
 
-// Same grain everywhere: only the spacing changes.
-const DEFS = `<defs>${dots('unpaved', 12, 1.1)}${dots('dense', 7, 1.1)}</defs>`;
+// Same spacing: Off-road dots are bigger, not denser.
+const DEFS = `<defs>${dots('small', 10, 0.9)}${dots('big', 10, 1.8)}</defs>`;
 
-const road = (fill: string, casing = CASING, extra = '') =>
-  `<path d="${ROAD}" fill="none" stroke="${casing}" stroke-width="15" stroke-linecap="round"/>` +
-  `<path d="${ROAD}" fill="none" stroke="${fill}" stroke-width="11" stroke-linecap="round"/>${extra}`;
-const DASH = `<path d="${ROAD}" fill="none" stroke="${BROWN}" stroke-width="2.4" stroke-dasharray="9 4"/>`;
-// Full-width dashes in a darker tint of the class colour, the usual dashed unpaved style (dash 4, gap 4 in road widths in Americana, here 11 px).
-const TINT_DASHES = `<path d="${ROAD}" fill="none" stroke="${DARK}" stroke-width="11" stroke-dasharray="11 11"/>`;
-const CENTRE_DOTS = `<path d="${ROAD}" fill="none" stroke="${BROWN}" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0 7"/>`;
+const line = (stroke: string, width: number, dash = '', cap = 'round') =>
+  `<path d="${ROAD}" fill="none" stroke="${stroke}" stroke-width="${width}" stroke-linecap="${cap}"${dash ? ` stroke-dasharray="${dash}"` : ''}/>`;
+const road = (fill: string, casing = CASING, extra = '', casingDash = '') =>
+  line(casing, 15, casingDash, casingDash ? 'butt' : 'round') + line(fill, 11) + extra;
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
 const offroad = (s: State) => s.endsWith('Off-road');
 
+// The five styles of the brief, in its order. Paved is the same normal road in all of them.
 type Option = { title: string; note: string; road: (s: State) => string };
 const OPTIONS: Record<string, Option> = {
-  'tint-dash': {
-    title: 'Tint + dash',
-    note: 'Unpaved: class colour shifted toward sandy. Off-road mark: brown centre dash on top.',
-    road: (s) => unpaved(s) ? road(TINT, TINT_CASING, offroad(s) ? DASH : '') : road(FILL),
+  'centre-line': {
+    title: '1. Centre line',
+    note: 'Thin brown line down the middle: solid = Unpaved, dashed = Off-road. Slightly thicker than contour lines.',
+    road: (s) => road(FILL, CASING, unpaved(s) ? line(BROWN, 2.2, offroad(s) ? '6 5' : '', 'butt') : ''),
   },
-  'dashes-dots': {
-    title: 'Dashes + dots',
-    note: 'Unpaved: dashes in a darker tint of the class colour, the dashed style already in use. Off-road mark: brown centre dots on top.',
-    road: (s) => road(FILL, CASING, (unpaved(s) ? TINT_DASHES : '') + (offroad(s) ? CENTRE_DOTS : '')),
+  'brown-fill': {
+    title: '2. Brown fill',
+    note: 'Width and class-coloured casing show the class, brown fill shows the surface. Off-road: dashed casing.',
+    road: (s) => unpaved(s) ? road(SAND, CLASS_DARK, '', offroad(s) ? '7 4' : '') : road(FILL),
   },
-  'dots-dense': {
-    title: 'Dots + dense dots',
-    note: 'Unpaved: regular dots. Off-road mark: tighter dots, same grain.',
-    road: (s) => road(offroad(s) ? 'url(#dense)' : unpaved(s) ? 'url(#unpaved)' : FILL),
+  dots: {
+    title: '3. Dots',
+    note: 'Faint option for subtle styles: small dots = Unpaved, bigger dots (same spacing) = Off-road.',
+    road: (s) => road(offroad(s) ? 'url(#big)' : unpaved(s) ? 'url(#small)' : FILL),
+  },
+  tint: {
+    title: '4. Tint',
+    note: 'Class colour mixed with brown, never just darker. Off-road: browner fill and dashed casing.',
+    road: (s) => unpaved(s) ? road(offroad(s) ? TINT_OFF : TINT, CASING, '', offroad(s) ? '7 4' : '') : road(FILL),
+  },
+  dashes: {
+    title: '5. Brown dashes',
+    note: 'Long brown dashes = Unpaved, short dashes with wide gaps = Off-road. Fallback only: tiring, close to construction.',
+    road: (s) => road(FILL, CASING, unpaved(s) ? line(BROWN, 5, offroad(s) ? '4 9' : '14 6', 'butt') : ''),
   },
 };
 
