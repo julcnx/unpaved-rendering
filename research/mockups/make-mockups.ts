@@ -89,8 +89,8 @@ const OPTIONS: Record<string, Option> = {
   },
   dashes: {
     title: '3. Dashes',
-    note: 'The track rhythm of styles 1 and 4 across the whole road, in a darker tint of the class colour (light brown on white): long dashes = Unpaved, dash-dot = Off-road.',
-    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
+    note: 'Track rhythm across the road, reversed: a darker tint shows in the gaps, so the dash-dot of Off-road looks darker than the long dashes of Unpaved.',
+    road: (s, c) => unpaved(s) ? road(c.dash, c.casing, line(c.fill, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' '))) : road(c.fill, c.casing),
   },
   'dashed-casing': {
     title: '4. Dashed casing',
