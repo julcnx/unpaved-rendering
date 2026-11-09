@@ -18,7 +18,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 
 ## Research (A)
 
-3. Track rendering per app (double line, dashed, continuous), for the future-work section.
 4. Find the feedback channel for the 16 providers still marked "(to confirm)" in A2.
 
 ## Screenshots and examples (D)
@@ -52,5 +51,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 25. Allies: HOT, local mapping communities, the laterite-discussion contacts.
 
 ## Low priority
+- Track rendering per app (double line, dashed, continuous), for the future-work section.
 - OsmAnd default vs Motorcycle screenshot at one spot (the difference is already described in A0; Komoot phone app check not needed).
 28. OsmAnd Motorcycle (low priority, after everything else): the owner said yes on [discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) (2026-11-09) and suggests Julien forks it. Thanked in French on 2026-11-09 (said it comes later). Then fork and draw unpaved roads in their class colour, as the phone demo. Find the OsmAnd plugin he mentions (F-Droid build).
