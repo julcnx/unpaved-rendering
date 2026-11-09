@@ -5,8 +5,11 @@ import { SPOTS } from './spots.js';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
-const LIVE_ZOOM = 14; // live Overpass loads only from this zoom, to keep queries small
-const CELL = 0.02; // live areas are cached per 0.02 degree cell
+// Live Overpass, anywhere: main roads only from zoom 11 in big cells, every highway from zoom 14 in small cells.
+const TIERS = [
+  { minZoom: 14, cell: 0.02, query: 'way[highway]', label: 'roads' },
+  { minZoom: 11, cell: 0.2, query: 'way[highway~"^(motorway|trunk|primary|secondary|tertiary)(_link)?$"]', label: 'main roads' },
+];
 
 const options = (sel, entries, value) => {
   sel.innerHTML = entries.map(([k, v]) => `<option value="${k}">${v}</option>`).join('');
@@ -31,8 +34,8 @@ const msg = (text) => { $('msg').textContent = text; $('msg').style.display = te
 
 // ---- Data: cached sample spots, then live Overpass for anywhere else ----
 const OVERPASS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
-async function overpass(bbox) {
-  const q = `[out:json][timeout:60];way[highway](${bbox});out tags geom;`;
+async function overpass(bbox, query) {
+  const q = `[out:json][timeout:60];${query}(${bbox});out tags geom;`;
   for (const url of OVERPASS) {
     try {
       const res = await fetch(url, { method: 'POST', body: new URLSearchParams({ data: q }) });
@@ -41,7 +44,7 @@ async function overpass(bbox) {
   }
   throw new Error('Overpass is not answering, try again later');
 }
-const toFeatures = (els) => els.map((w) => ({ properties: w.tags, geometry: { coordinates: w.geometry.map((p) => [p.lon, p.lat]) } }));
+const toFeatures = (els) => els.map((w) => ({ properties: { ...w.tags, id: `w${w.id}` }, geometry: { coordinates: w.geometry.map((p) => [p.lon, p.lat]) } }));
 
 async function loadSpot(id) {
   if (!id) return;
@@ -50,7 +53,11 @@ async function loadSpot(id) {
     try {
       const res = await fetch(`data/${id}.json`);
       if (!res.ok) throw new Error();
-      map.layers.set(`spot:${id}`, prepare((await res.json()).features));
+      const data = await res.json();
+      map.layers.set(`spot:${id}`, prepare(data.features));
+      // The saved area counts as loaded, for every tier: live loading takes over outside it.
+      const [s, w, n, e] = data.bbox.split(',').map(Number);
+      for (const t of TIERS) cellsIn({ south: s, west: w, north: n, east: e }, t.cell, true).forEach((c) => loadedCells.add(`${t.cell}:${c}`));
     } catch { /* not cached yet: the live loader takes over */ }
   }
   if (!params.has('lat') || map.started) map.setCenter(spot.center[0], spot.center[1], 15);
@@ -59,27 +66,32 @@ async function loadSpot(id) {
   loadLive();
 }
 
-const loaded = new Set();
+const loadedCells = new Set(); // `${cell size}:${lat index},${lon index}`
+// Cells of size `cell` that touch the bounds; `inside` keeps only the cells fully inside (for saved areas).
+function cellsIn(b, cell, inside = false) {
+  const out = [], f = inside ? Math.ceil : Math.floor, g = inside ? (v) => Math.floor(v) - 1 : Math.floor;
+  for (let la = f(b.south / cell); la <= g(b.north / cell); la++)
+    for (let lo = f(b.west / cell); lo <= g(b.east / cell); lo++) out.push(`${la},${lo}`);
+  return out;
+}
 async function loadLive() {
   const { z } = map.center();
-  const b = map.bounds();
-  const cells = [];
-  for (let la = Math.floor(b.south / CELL); la <= Math.floor(b.north / CELL); la++)
-    for (let lo = Math.floor(b.west / CELL); lo <= Math.floor(b.east / CELL); lo++) cells.push([la, lo]);
-  const spotCovered = [...map.layers.keys()].some((k) => k.startsWith('spot:') && k === `spot:${$('spot').value}`);
-  const missing = cells.filter(([la, lo]) => !loaded.has(`${la},${lo}`));
-  if (!missing.length || spotCovered) { msg(''); return; }
-  if (z < LIVE_ZOOM) { msg(`Zoom in to load roads (zoom ${LIVE_ZOOM}+)`); return; }
-  missing.forEach(([la, lo]) => loaded.add(`${la},${lo}`));
-  const las = missing.map((c) => c[0]), los = missing.map((c) => c[1]);
-  const bbox = [Math.min(...las) * CELL, Math.min(...los) * CELL, (Math.max(...las) + 1) * CELL, (Math.max(...los) + 1) * CELL].map((v) => v.toFixed(4)).join(',');
-  msg('Loading roads from OpenStreetMap...');
+  const tier = TIERS.find((t) => z >= t.minZoom);
+  if (!tier) { msg(`Zoom in to load roads (main roads from zoom ${TIERS.at(-1).minZoom})`); return; }
+  const missing = cellsIn(map.bounds(), tier.cell).filter((c) => !loadedCells.has(`${tier.cell}:${c}`));
+  if (!missing.length) { msg(''); return; }
+  if (missing.length > 12) { msg('Zoom in a little to load roads'); return; }
+  missing.forEach((c) => loadedCells.add(`${tier.cell}:${c}`));
+  const ij = missing.map((c) => c.split(',').map(Number));
+  const las = ij.map((c) => c[0]), los = ij.map((c) => c[1]);
+  const bbox = [Math.min(...las) * tier.cell, Math.min(...los) * tier.cell, (Math.max(...las) + 1) * tier.cell, (Math.max(...los) + 1) * tier.cell].map((v) => v.toFixed(4)).join(',');
+  msg(`Loading ${tier.label} from OpenStreetMap...`);
   try {
-    map.layers.set(`live:${bbox}`, prepare(toFeatures(await overpass(bbox))));
+    map.layers.set(`live:${tier.cell}:${bbox}`, prepare(toFeatures(await overpass(bbox, tier.query))));
     msg('');
     map.redraw();
   } catch (e) {
-    missing.forEach(([la, lo]) => loaded.delete(`${la},${lo}`));
+    missing.forEach((c) => loadedCells.delete(`${tier.cell}:${c}`));
     msg(e.message);
   }
 }
@@ -107,7 +119,7 @@ function sample(canvas, styleKey, level) {
     ctx.beginPath(); ctx.moveTo(8, H / 2); ctx.lineTo(W - 8, H / 2);
     ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = cap; ctx.setLineDash(dash ?? []); ctx.stroke();
   };
-  line(c.casing, w + 3, d.casing?.dash, d.casing?.cap);
+  line(d.casing?.color ?? c.casing, w + 3, d.casing?.dash, d.casing?.cap);
   line(d.fill?.color ?? c.fill, w, d.fill?.dash, d.fill?.cap);
   for (const o of d.over ?? []) line(o.color, o.width, o.dash, o.cap);
 }
@@ -130,10 +142,31 @@ function updateNote() {
   $('status').textContent = `Zoom ${z.toFixed(1)}: primary road ${w.toFixed(1)} px wide${w < st.minWidth && !map.opts.compare ? ', too thin for this style' : ''}.`;
 }
 
+// Style chips on the map, and keys 1-4 (A = all side by side): switch style in one click.
+function renderChips() {
+  const items = [...Object.entries(STYLES).map(([k, v], i) => [k, v.name.replace(/^\d+\.\s*/, ''), String(i + 1)]), ['all', 'All', 'A']];
+  $('chips').innerHTML = items.map(([k, label, key]) => {
+    const on = k === 'all' ? map.opts.compare : !map.opts.compare && map.opts.style === k;
+    return `<button data-style="${k}" aria-pressed="${on}">${label}<kbd>${key}</kbd></button>`;
+  }).join('');
+}
+function pickStyle(k) {
+  if (k === 'all') $('compare').checked = !$('compare').checked;
+  else { $('style').value = k; $('compare').checked = false; }
+  $('style').dispatchEvent(new Event('change'));
+}
+$('chips').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) pickStyle(b.dataset.style); });
+window.addEventListener('keydown', (e) => {
+  if (e.target.matches('input, select, textarea') || e.metaKey || e.ctrlKey || e.altKey) return;
+  const keys = Object.keys(STYLES);
+  if (e.key >= '1' && e.key <= String(keys.length)) pickStyle(keys[+e.key - 1]);
+  else if (e.key.toLowerCase() === 'a') pickStyle('all');
+});
+
 for (const id of ['style', 'bg', 'compare']) {
   $(id).addEventListener('change', () => {
     map.opts = { style: $('style').value, bg: $('bg').value, compare: $('compare').checked };
-    map.redraw(); updateLegend(); updateNote(); updateUrl();
+    map.redraw(); updateLegend(); updateNote(); updateUrl(); renderChips();
   });
 }
 $('spot').addEventListener('change', () => { loadSpot($('spot').value); updateUrl(); });
@@ -142,5 +175,6 @@ if (params.has('lat')) map.setCenter(+params.get('lat'), +params.get('lon'), +(p
 else if (params.has('z')) map.view.z = +params.get('z');
 await loadSpot($('spot').value);
 if (params.has('z') && !params.has('lat')) { const c = map.center(); map.setCenter(c.lat, c.lon, +params.get('z')); }
-updateLegend(); updateNote(); updateUrl();
+updateLegend(); updateNote(); updateUrl(); renderChips();
+loadLive(); // also when the page opens on a place with no saved spot
 window.mapReady = true; // for the screenshot loop

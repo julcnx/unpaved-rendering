@@ -2,16 +2,16 @@
 // one road: its casing, its fill, and optional overlays. The map draws all casings first, then
 // all fills, then the overlays, so crossings look right.
 import { GRAIN_D } from './grain.js';
+import SPEC from './style-spec.js';
 
-// Per class: fill and casing (OSM Carto), grain colours (Carto symbols/unpaved), dash colour
-// (Americana: light tint on trunk, grey on other classes). Dark mode: our own darker variants.
+// Light palette and style values: from the osm-wiki mockups (js/style-spec.js, synced by scripts/sync-styles.mjs).
+// Per class: fill and casing (OSM Carto), grain background and dots, dash colour. Dark mode: our own darker variants.
+const { motorway, trunk, primary, secondary, minor } = SPEC.classes;
+const S = SPEC.styles;
 const LIGHT = {
-  motorway: { fill: '#e892a2', casing: '#dc2a67', grainBg: '#f2a3b2', grainDot: '#561428', dash: '#f6c9d1' },
-  trunk: { fill: '#f9b29c', casing: '#c84e2f', grainBg: '#ffbda6', grainDot: '#511d0f', dash: '#fdd9cd' },
-  primary: { fill: '#fcd6a4', casing: '#a06b00', grainBg: '#ffe1af', grainDot: '#563d12', dash: '#cccccc' },
-  secondary: { fill: '#f7fabf', casing: '#707d05', grainBg: '#ffffca', grainDot: '#555a28', dash: '#cccccc' },
-  minor: { fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#5e5e5e', dash: '#cccccc' },
-  brown: '#7d5328',
+  motorway, trunk, primary, secondary,
+  minor: { ...minor, gapCasing: S.gaps.minorCasing }, // open gaps: a darker casing, or white pieces vanish into the land
+  brown: S['centre-line'].color,
 };
 const DARK = {
   motorway: { fill: '#8f4456', casing: '#c86a82', grainBg: '#8f4456', grainDot: '#f2c4cf', dash: '#b56b7d' },
@@ -33,10 +33,10 @@ export const roadInfo = (highway) => ROAD[highway?.replace(/_link$/, '')] ?? nul
 export const RANK = ['service', 'road', 'living_street', 'residential', 'unclassified', 'tertiary', 'secondary', 'primary', 'trunk', 'motorway'];
 export const widthAt = (base, z) => base * 2 ** (0.55 * (z - 15));
 
-// Grain patterns are built once per colour pair: the same 64 px tile, two colours.
+// Grain patterns are built once per colour pair and scale: the same 64 px OSM Carto tile, two colours.
 const grainCache = new Map();
-function grain(ctx, bg, dot, shifted = false) {
-  const key = `${bg}|${dot}|${shifted}`;
+function grain(ctx, bg, dot, scale, shift = [0, 0]) {
+  const key = `${bg}|${dot}|${scale}|${shift}`;
   if (!grainCache.has(key)) {
     const c = new OffscreenCanvas(64, 64);
     const g = c.getContext('2d');
@@ -44,7 +44,7 @@ function grain(ctx, bg, dot, shifted = false) {
     g.fillStyle = dot;
     g.fill(new Path2D(GRAIN_D));
     const p = ctx.createPattern(c, 'repeat');
-    if (shifted) p.setTransform(new DOMMatrix().translate(21, 37)); // Off-road: a second copy of the dots, offset
+    p.setTransform(new DOMMatrix().translate(...shift).scale(scale));
     grainCache.set(key, p);
   }
   return grainCache.get(key);
@@ -54,40 +54,33 @@ const off = (level) => level === 'offroad' || level === 'specialized';
 
 // Each style: (level, class colours, fill width w, brown, ctx) -> { casing, fill, over[] }.
 // A layer is { color, width, dash?, cap? }. Paved roads are the same in every style.
+const CL = S['centre-line'], GR = S.grain, DA = S.dashes, GA = S.gaps;
 export const STYLES = {
   'centre-line': {
-    name: '1. Centre line',
-    note: 'Thin brown line down the middle: solid = Unpaved, dashed = Off-road.',
-    minWidth: 5,
+    name: CL.name, note: CL.note, minWidth: 5,
     draw: (level, c, w, brown) => ({
-      over: level === 'paved' ? [] : [{ color: brown, width: Math.max(1.2, w * 0.2), dash: off(level) ? [w * 0.55, w * 0.45] : null, cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: off(level) ? CL.offroadDash : null, cap: 'butt' }],
     }),
   },
   grain: {
-    name: '3. Grain (OSM Carto)',
-    note: 'OSM Carto grain: dark dots in the class hue. Off-road: twice as dense.',
-    minWidth: 6,
+    name: GR.name, note: GR.note, minWidth: 6,
     draw: (level, c, w, brown, ctx) => level === 'paved' ? {} : {
-      fill: { color: grain(ctx, c.grainBg, c.grainDot) },
-      over: off(level) ? [{ color: grain(ctx, null, c.grainDot, true), width: w }] : [],
+      fill: { color: grain(ctx, c.grainBg, c.grainDot, GR.scale) },
+      over: off(level) ? [{ color: grain(ctx, null, c.grainDot, GR.offroadScale, GR.offroadShift), width: w, cap: 'butt' }] : [],
     },
   },
   dashes: {
-    name: '5. Dashes (Americana)',
-    note: 'Americana light dashes, 4 road widths long. Off-road: short dashes, 1 road width.',
-    minWidth: 3,
+    name: DA.name, note: DA.note, minWidth: 3,
     draw: (level, c, w) => ({
-      over: level === 'paved' ? [] : [{ color: c.dash, width: w, dash: off(level) ? [w, w] : [4 * w, 4 * w], cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: c.dash, width: w, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
     }),
   },
   gaps: {
-    name: '6. Open gaps',
-    note: 'Road cut into class-coloured pieces with see-through gaps: few gaps = Unpaved, many = Off-road.',
-    minWidth: 3,
-    draw: (level, c, w) => {
+    name: GA.name, note: GA.note, minWidth: 3,
+    draw: (level, c) => {
       if (level === 'paved') return {};
-      const dash = off(level) ? [w * 1.1, w * 0.45] : [w * 3.6, w * 0.45];
-      return { casing: { dash, cap: 'butt' }, fill: { dash, cap: 'butt' } };
+      const dash = off(level) ? GA.offroad : GA.unpaved;
+      return { casing: { dash, cap: 'butt', color: c.gapCasing }, fill: { dash, cap: 'butt' } };
     },
   },
 };

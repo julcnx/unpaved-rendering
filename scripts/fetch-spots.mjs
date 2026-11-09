@@ -30,7 +30,7 @@ for (const [id, spot] of Object.entries(SPOTS)) {
   const data = await overpass(`[out:json][timeout:120];way[highway](${bbox});out tags geom;`);
   const features = data.elements.map((w) => ({
     type: 'Feature',
-    properties: Object.fromEntries(KEYS.filter((k) => w.tags[k]).map((k) => [k, w.tags[k]])),
+    properties: { id: `w${w.id}`, ...Object.fromEntries(KEYS.filter((k) => w.tags[k]).map((k) => [k, w.tags[k]])) },
     geometry: { type: 'LineString', coordinates: w.geometry.map((p) => [+p.lon.toFixed(6), +p.lat.toFixed(6)]) },
   }));
   writeFileSync(new URL(`../data/${id}.json`, import.meta.url), JSON.stringify({ type: 'FeatureCollection', bbox, features }));

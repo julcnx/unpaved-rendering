@@ -107,8 +107,9 @@ export class MapView {
       ctx.beginPath(); ctx.rect(rect.x, rect.y, rect.w, rect.h); ctx.clip();
       this.drawPanel(ctx, rect, key);
       if (styles.length > 1) {
-        ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillRect(rect.x + 8, rect.y + 8, 190, 24);
-        ctx.fillStyle = '#222'; ctx.font = '600 13px system-ui, sans-serif'; ctx.fillText(STYLES[key].name, rect.x + 16, rect.y + 25);
+        const ly = rect.y + (rect.y === 0 ? 48 : 8); // top row: below the style chips
+        ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillRect(rect.x + 8, ly, 190, 24);
+        ctx.fillStyle = '#222'; ctx.font = '600 13px system-ui, sans-serif'; ctx.fillText(STYLES[key].name, rect.x + 16, ly + 17);
         ctx.strokeStyle = '#888'; ctx.lineWidth = 1; ctx.strokeRect(rect.x + 0.5, rect.y + 0.5, rect.w - 1, rect.h - 1);
       }
       ctx.restore();
@@ -152,7 +153,7 @@ export class MapView {
       const c = pal[info[0]], w = widthAt(info[1], z);
       return { f, c, w, rank: RANK.indexOf(f.tags.highway.replace(/_link$/, '')), d: style.draw(f.level, c, w, pal.brown, ctx) };
     }).filter(Boolean).sort((a, b) => a.rank - b.rank);
-    for (const r of roads) { path(r.f); stroke(r.c.casing, r.w + Math.max(1, r.w * 0.3), r.d.casing?.dash, r.d.casing?.cap); }
+    for (const r of roads) { path(r.f); stroke(r.d.casing?.color ?? r.c.casing, r.w + Math.max(1, r.w * 0.3), r.d.casing?.dash, r.d.casing?.cap); }
     for (const r of roads) { path(r.f); stroke(r.d.fill?.color ?? r.c.fill, r.w, r.d.fill?.dash, r.d.fill?.cap); }
     for (const r of roads) for (const o of r.d.over ?? []) { path(r.f); stroke(o.color, o.width, o.dash, o.cap ?? 'round'); }
     ctx.setLineDash([]);

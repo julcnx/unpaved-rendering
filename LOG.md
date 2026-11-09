@@ -11,3 +11,11 @@
 
 - Nepal and Alberta on the terrain background: contours were full-strength brown (#c6a77f) and, in Nepal, competed with the brown unpaved signals. Now blended 45% into the land colour, as on usual topo maps. The brown of the styles must stay clearly darker or more saturated than contours: check in the colour tests.
 - Terrain tiles stop at zoom 14, so at zoom 15+ contours are upscaled and look blocky. Acceptable for a demo background.
+
+## 2026-11-09: styles from the mockups, chips, live loading anywhere
+
+- Style values now come from the osm-wiki mockups: `make-mockups.ts` writes `mockups/styles.json`, `node scripts/sync-styles.mjs` copies it to `js/style-spec.js`. Light colours are the mockup ones (OSM Carto road colours, grain on a brownish fill, darker class-tint dashes, light brown on white roads). Dark colours stay ours until the colour tests.
+- Styles renumbered 1-4 as in the mockups: centre line (lighter brown, 1 px on narrow roads), grain (1.5 x, big grain on top for Off-road), dashes (3:2 and 2:1 road widths), open gaps (36/8 px; Off-road 26/6/6/6 like the track dash-dot; darker casing on white roads).
+- Style chips on the map, keys 1-4 and A (all side by side). Panel labels moved below the chips.
+- Live Overpass anywhere: main roads from zoom 11 (0.2 degree cells), every highway from zoom 14 (0.02 degree cells). A saved spot only covers its own area, so panning away loads live data; before, a selected spot blocked live loading everywhere. Live loading also starts when the page opens on a place without a spot.
+- Spot data will keep OSM way ids (`fetch-spots.mjs`); not refetched yet, Overpass at capacity on 2026-11-09.
