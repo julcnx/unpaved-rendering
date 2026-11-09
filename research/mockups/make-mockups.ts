@@ -17,6 +17,8 @@ type Klass = { name: string; id: string; fill: string; casing: string; grainBg: 
 // One track rhythm for the line styles (centre line and dashed casing), from OSM Carto tracks scaled to our lines:
 // Unpaved = long dashes (Carto tracktype=grade2), Off-road = the track dash-dot (not short dashes: those look like tunnels).
 const RHYTHM = { unpaved: [15, 6], offroad: [8, 5, 2.5, 5] };
+// Style 3 fills the whole road, so it uses the same rhythm 1.8 x larger, in fill widths (the mockup fill is 11 px).
+const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 100);
 const SPEC = {
   // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
   classes: {
@@ -30,9 +32,11 @@ const SPEC = {
   styles: {
     'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
     grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
-    dashes: { unpavedXWidth: [3, 2], offroadXWidth: [2, 1] },
+    dashes: { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad) },
     // Dashed casing, the fill stays continuous (as Gaia GPS draws tracks and DMD2 unpaved roads).
-    'dashed-casing': { unpaved: RHYTHM.unpaved, offroad: RHYTHM.offroad, minorCasing: '#8f8f8f' },
+    // Casing colour for the dashed outline: darker on red and orange (the normal casing is close to the fill),
+    // darker on white (OSM Carto tertiary casing), or the dashes fade.
+    'dashed-casing': { unpaved: RHYTHM.unpaved, offroad: RHYTHM.offroad, casing: { trunk: '#a33b20', primary: '#7d5400', minor: '#8f8f8f' } },
   },
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
@@ -64,7 +68,7 @@ const line = (stroke: string, width: number, dash = '', cap = 'butt', extra = ''
 const road = (fill: string, casing: string, extra = '') => line(casing, W + CAS, '') + line(fill, W) + extra;
 // Dashed casing: only the outline is broken, the fill stays continuous.
 // White roads get a darker casing (OSM Carto tertiary casing), or the dashes vanish into the land.
-const gapCasing = (c: Klass) => (c.id === 'minor' ? GA.minorCasing : c.casing);
+const gapCasing = (c: Klass) => (GA.casing as Record<string, string>)[c.id] ?? c.casing;
 const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) + line(c.fill, W);
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
@@ -85,7 +89,7 @@ const OPTIONS: Record<string, Option> = {
   },
   dashes: {
     title: '3. Dashes',
-    note: 'Unpaved: long dashes, dash 3 x and gap 2 x road width (Americana: 4 x and 4 x), darker tint of the class colour (light brown on white). Off-road: dash 2 x, gap 1 x road width.',
+    note: 'The track rhythm of styles 1 and 4 across the whole road, in a darker tint of the class colour (light brown on white): long dashes = Unpaved, dash-dot = Off-road.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
   'dashed-casing': {
