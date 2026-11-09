@@ -10,7 +10,7 @@ const { motorway, trunk, primary, secondary, minor } = SPEC.classes;
 const S = SPEC.styles;
 const LIGHT = {
   motorway, trunk, primary, secondary,
-  minor: { ...minor, gapCasing: S.gaps.minorCasing }, // open gaps: a darker casing, or white pieces vanish into the land
+  minor: { ...minor, gapCasing: S['dashed-casing'].minorCasing }, // dashed casing: darker, or white roads' dashes vanish into the land
   brown: S['centre-line'].color,
 };
 const DARK = {
@@ -54,7 +54,7 @@ const off = (level) => level === 'offroad' || level === 'specialized';
 
 // Each style: (level, class colours, fill width w, brown, ctx) -> { casing, fill, over[] }.
 // A layer is { color, width, dash?, cap? }. Paved roads are the same in every style.
-const CL = S['centre-line'], GR = S.grain, DA = S.dashes, GA = S.gaps;
+const CL = S['centre-line'], GR = S.grain, DA = S.dashes, GA = S['dashed-casing'];
 export const STYLES = {
   'centre-line': {
     name: CL.name, note: CL.note, minWidth: 5,
@@ -75,12 +75,10 @@ export const STYLES = {
       over: level === 'paved' ? [] : [{ color: c.dash, width: w, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
     }),
   },
-  gaps: {
+  'dashed-casing': {
     name: GA.name, note: GA.note, minWidth: 3,
-    draw: (level, c) => {
-      if (level === 'paved') return {};
-      const dash = off(level) ? GA.offroad : GA.unpaved;
-      return { casing: { dash, cap: 'butt', color: c.gapCasing }, fill: { dash, cap: 'butt' } };
+    draw: (level, c) => level === 'paved' ? {} : {
+      casing: { dash: off(level) ? GA.offroad : GA.unpaved, cap: 'butt', color: c.gapCasing }, // the fill stays continuous
     },
   },
 };
