@@ -20,3 +20,4 @@
 - Live Overpass anywhere: main roads from zoom 11 (0.2 degree cells), every highway from zoom 14 (0.02 degree cells). A saved spot only covers its own area, so panning away loads live data; before, a selected spot blocked live loading everywhere. Live loading also starts when the page opens on a place without a spot.
 - Spot data will keep OSM way ids (`fetch-spots.mjs`); not refetched yet, Overpass at capacity on 2026-11-09.
 - All styles side by side is now the default (`compare=0` in the URL for one style); the All chip and key A always return to it. In All mode the legend is a small table: one row per level, one sample per style, numbered like the panels.
+- Labels on the realistic background: route numbers only (`ref` on trunk to tertiary), as small shields at a visible point of the road, overlapping ones skipped. Street names removed: they piled up over towns and hid the roads being compared. The loading message moved to the bottom of the map.

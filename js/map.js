@@ -158,22 +158,31 @@ export class MapView {
     for (const r of roads) for (const o of r.d.over ?? []) { path(r.f); stroke(o.color, o.width, o.dash, o.cap ?? 'round'); }
     ctx.setLineDash([]);
 
-    if (bg.terrain) this.drawLabels(ctx, roads, s, ox, oy);
+    if (bg.terrain) this.drawLabels(ctx, roads, s, ox, oy, rect);
   }
 
-  // Road names at the middle of each named road, with a halo. Simple, horizontal.
-  drawLabels(ctx, roads, s, ox, oy) {
-    ctx.font = '600 11px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.lineJoin = 'round';
-    const done = new Set();
+  // Route numbers only (ref on trunk to tertiary), as small shields, like real maps at zoom 11-14.
+  // Street names are left out: they cover the roads being compared. Overlapping shields are skipped.
+  drawLabels(ctx, roads, s, ox, oy, rect) {
+    ctx.font = '600 11px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    const MAIN = new Set(['trunk', 'primary', 'secondary', 'tertiary']);
+    const done = new Set(), boxes = [];
     for (const r of [...roads].reverse()) {
-      const label = r.f.tags.ref ?? r.f.tags.name;
-      if (!label || done.has(label) || r.f.pts.length < 2) continue;
-      done.add(label);
-      const [x, y] = r.f.pts[Math.floor(r.f.pts.length / 2)];
-      ctx.strokeStyle = '#fff'; ctx.lineWidth = 3; ctx.strokeText(label, x * s + ox, y * s + oy - r.w);
-      ctx.fillStyle = '#333'; ctx.fillText(label, x * s + ox, y * s + oy - r.w);
+      const ref = r.f.tags.ref?.split(';')[0];
+      if (!ref || done.has(ref) || !MAIN.has(r.f.tags.highway)) continue;
+      // Middle of the part of the road inside the panel.
+      const vis = r.f.pts.map(([x, y]) => [x * s + ox, y * s + oy])
+        .filter(([x, y]) => x > rect.x + 30 && x < rect.x + rect.w - 30 && y > rect.y + 60 && y < rect.y + rect.h - 20);
+      if (!vis.length) continue;
+      const [x, y] = vis[Math.floor(vis.length / 2)];
+      const w = ctx.measureText(ref).width + 10, h = 16, box = [x - w / 2, y - h / 2, w, h];
+      if (boxes.some(([bx, by, bw, bh]) => x - w / 2 < bx + bw + 4 && bx < x + w / 2 + 4 && y - h / 2 < by + bh + 4 && by < y + h / 2 + 4)) continue;
+      boxes.push(box); done.add(ref);
+      ctx.fillStyle = '#fff'; ctx.strokeStyle = '#555'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.roundRect(...box, 3); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#222'; ctx.fillText(ref, x, y + 0.5);
     }
-    ctx.textAlign = 'start';
+    ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic';
   }
 
   // Hillshade and contours computed in the browser from Terrarium elevation tiles (AWS Terrain Tiles).
