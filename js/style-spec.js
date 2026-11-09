@@ -66,7 +66,7 @@ export default {
       ]
     },
     "grain": {
-      "name": "2. Grain (OSM Carto)",
+      "name": "3. Grain (OSM Carto)",
       "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: big grain added on top.",
       "scale": 1.5,
       "offroadScale": 3,
@@ -76,7 +76,7 @@ export default {
       ]
     },
     "dashes": {
-      "name": "3. Dashes",
+      "name": "4. Dashes",
       "note": "Track rhythm across the road, reversed: a darker tint shows in the gaps, so the short sparse dashes of Off-road look darker than the long dashes of Unpaved.",
       "unpavedXWidth": [
         2.45,
@@ -88,7 +88,7 @@ export default {
       ]
     },
     "dashed-casing": {
-      "name": "4. Dashed casing",
+      "name": "2. Dashed casing",
       "note": "Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, short sparse dashes = Off-road, the same rhythm as the centre line.",
       "unpaved": [
         15,

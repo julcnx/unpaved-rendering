@@ -64,6 +64,12 @@ export const STYLES = {
       over: level === 'paved' ? [] : [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: off(level) ? CL.offroadDash : CL.unpavedDash, cap: 'butt' }],
     }),
   },
+  'dashed-casing': {
+    name: GA.name, note: GA.note, minWidth: 3,
+    draw: (level, c) => level === 'paved' ? {} : {
+      casing: { dash: off(level) ? GA.offroad : GA.unpaved, cap: 'butt', color: c.gapCasing }, // the fill stays continuous
+    },
+  },
   grain: {
     name: GR.name, note: GR.note, minWidth: 6,
     draw: (level, c, w, brown, ctx) => level === 'paved' ? {} : {
@@ -77,12 +83,6 @@ export const STYLES = {
     draw: (level, c, w) => level === 'paved' ? {} : {
       fill: { color: c.dash },
       over: [{ color: c.fill, width: w, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
-    },
-  },
-  'dashed-casing': {
-    name: GA.name, note: GA.note, minWidth: 3,
-    draw: (level, c) => level === 'paved' ? {} : {
-      casing: { dash: off(level) ? GA.offroad : GA.unpaved, cap: 'butt', color: c.gapCasing }, // the fill stays continuous
     },
   },
 };

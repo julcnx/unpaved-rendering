@@ -26,3 +26,4 @@
 - Style 3 (dashes) uses the same track rhythm as styles 1 and 4, scaled to the road width: long dashes Unpaved, dash-dot Off-road. Style 4 outline darker on red, orange and white roads (per-class `casing` in the spec).
 - Style 3 reversed: the darker tint is the fill and the class colour is drawn in the rhythm on top, so the dash-dot of Off-road shows more dark than the long dashes of Unpaved (rougher looks darker).
 - Off-road rhythm changed from the dash-dot to OSM Carto's `tracktype=grade4` rhythm (short dashes, longer gaps: 5.5/8), with Unpaved on `grade2` (15/6): rougher = more broken, as in Carto's track grades. The dash-dot means "no tracktype" (unknown) in Carto.
+- Styles renumbered by preference (2026-11-09 ranking): 1 Centre line, 2 Dashed casing, 3 Grain, 4 Dashes. Chips, keys 1-4 and the side-by-side panels follow this order.
