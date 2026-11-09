@@ -25,7 +25,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 
 6. Retry Humanitarian (HOT) for Iceland: `APPS=humanitarian node examples/screenshots.ts iceland` (tile server still down on 2026-11-09 evening).
 10. Comparison grid: one picture per app at the same spot.
-11. Chiang Mai before/after, including the Mon Klui viewpoint road.
 
 ## Statistics (C)
 
@@ -43,7 +42,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 ## Repo, article and publishing (ask before anything public)
 
 20. Create the public repo `julcnx/unpaved-rendering` (description and topics mention OSM), with GitHub Pages for the demo and the article.
-21. Article "Mind the Surface: Where can my city car go?": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits, legend wording, known limitations, future work (tracks, paths, routing, Google and Apple), the iD `surface=laterite` conflict, credits to imagico and Sommerluk.
+21. Article "Mind the Surface: A Main Road Is Not Always Paved": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits, legend wording, known limitations, future work (tracks, paths, routing, Google and Apple), the iD `surface=laterite` conflict, credits to imagico and Sommerluk.
 22. Short OSM wiki page for the tag mapping only, linking to the repo; OSM diary entry; Facebook post pointing to the diary. Get feedback on the community forum first.
 
 ## Outreach (drafts only, send nothing)
