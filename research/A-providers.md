@@ -29,6 +29,7 @@ Checked in each style's source code (commits as cloned in `osm-tag-support-track
 | **OSMF Shortbread** (vector.openstreetmap.org) | **No** in the deployed style | (none) | The Shortbread schema already exports the raw `surface` on streets from z11 ([schema 1.0](https://shortbread-tiles.org/schema/1.0/)) | Style change only, no schema change (Spirit PR #93) |
 | **Tracestrack Topo** | Has an unpaved style (issue #67); class scope not checked (closed style) | | | Check in app |
 | **Komoot** (closed) | **No** surface on the map: legend is by road type ("Track" category); surfaces only in the route summary ("Way types & surfaces") | | | Map rendering of unpaved roads |
+| **Mapy.com** (closed, formerly Mapy.cz) | **No** on the basic map (`zakladni`): at all three screenshot spots (Namibia C38, Bolivia RN3, Nepal NH48, 2026-11-08) the paved and unpaved sides are the same solid orange line; the outdoor map is not checked yet | (none seen) | (unknown) | Paved/unpaved split on main roads; check the outdoor map |
 | **Calimoto** (closed) | **Yes, partly**: support legend says off-road segments get a light brown background; routing avoids them | | | Check which classes and tags |
 | **Kurviger** (OSM-based motorbike app) | **No on the base map**: unpaved shown only on the planned route (red); users keep asking ([forum: different colours for sealed and unsealed roads](https://forum.kurviger.com/t/different-colours-for-sealed-and-unsealed-roads/18588), [enhance visibility of unpaved roads](https://forum.kurviger.com/t/enhance-visibility-of-offroad-tracks-and-unpaved-roads/19355)) | | | Base-map rendering; existing feature requests to join |
 | **Gaia GPS** (closed) | Not confirmed for Gaia Topo; the separate premium **Gaia Overland** layer shows road surfaces | | | Check in app |
@@ -37,7 +38,7 @@ Checked in each style's source code (commits as cloned in `osm-tag-support-track
 Summary:
 
 1. **Already on every class**: OSM Carto, Americana, HOT; CyclOSM from z14 for cycling. Their gaps are the classification (explicit lists instead of a whitelist; CyclOSM misses `surface=unpaved`) or the styling (HOT drops the class colour).
-2. **Not at all, or only on request**: Organic Maps, CoMaps, OsmAnd (overlay off by default), OpenTopoMap, Shortbread, Komoot, Kurviger. These are the main targets, and Organic Maps and OsmAnd are the most used open apps among riders.
+2. **Not at all, or only on request**: Organic Maps, CoMaps, OsmAnd (overlay off by default), OpenTopoMap, Shortbread, Komoot, Kurviger, Mapy.com (basic map). These are the main targets, and Organic Maps and OsmAnd are the most used open apps among riders.
 3. Sources for the closed apps: [Komoot help: map legend](https://www.komoot.com/help/map), [calimoto legend](https://support.calimoto.com/hc/articles/9447607082140), [Gaia Overland map](https://expeditionportal.com/gaia-gps-launches-new-overlanding-map/), Kurviger forum links above.
 
 ### Prior work: Julien's 2022 draft (to reuse and move)
