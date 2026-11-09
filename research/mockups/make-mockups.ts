@@ -15,10 +15,11 @@ const LAND = '#f2efe9';
 // dash colour: a slightly darker tint of the class colour, light brown on white roads (grey would look like Carto construction).
 type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string };
 // One track rhythm for the line styles (centre line and dashed casing), from OSM Carto tracks scaled to our lines:
-// Unpaved = long dashes (Carto tracktype=grade2, 11, 4), Off-road = short dashes with longer gaps (grade4, 4, 6),
-// both at about 1.36 x. Rougher = more broken, as in Carto's track grades. Not the dash-dot: in Carto it means a track
-// with no tracktype (unknown). Not dense short dashes either: those look like a tunnel casing (4, 2).
-const RHYTHM = { unpaved: [15, 6], offroad: [5.5, 8] };
+// One ladder for roads now and tracks later (Julien's choice, 2026-11-09): Paved solid, Unpaved = long dashes
+// (Carto tracktype=grade2, 11, 4), Off-road = medium dashes (grade3, 7, 5), both at about 1.36 x.
+// Rougher = more broken, as in Carto's track grades. Not the dash-dot (in Carto: track with no tracktype, unknown),
+// not grade4 short sparse dashes (read as dots), not dense short dashes (a tunnel casing, 4, 2).
+const RHYTHM = { unpaved: [15, 6], offroad: [9, 7] };
 // Style 3 fills the whole road, so it uses the same rhythm 1.8 x larger, in fill widths (the mockup fill is 11 px).
 const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 100);
 const SPEC = {
@@ -81,12 +82,12 @@ type Option = { title: string; note: string; road: (s: State, c: Klass) => strin
 const OPTIONS: Record<string, Option> = {
   'centre-line': {
     title: '1. Centre line',
-    note: 'Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), short sparse dashes = Off-road (grade4). Slightly thicker than contour lines.',
+    note: 'Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), medium dashes = Off-road (grade3). Slightly thicker than contour lines.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(BROWN, W < CL.narrowBelow ? CL.narrowWidth : CL.width, (offroad(s) ? CL.offroadDash : CL.unpavedDash).join(' ')) : ''),
   },
   'dashed-casing': {
     title: '2. Dashed casing',
-    note: 'Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, short sparse dashes = Off-road, the same rhythm as the centre line.',
+    note: 'Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, medium dashes = Off-road, the same rhythm as the centre line.',
     road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
   grain: {
@@ -96,7 +97,7 @@ const OPTIONS: Record<string, Option> = {
   },
   dashes: {
     title: '4. Dashes',
-    note: 'Track rhythm across the road, reversed: a darker tint shows in the gaps, so the short sparse dashes of Off-road look darker than the long dashes of Unpaved.',
+    note: 'Track rhythm across the road, reversed: a darker tint shows in the gaps, so the medium dashes of Off-road look darker than the long dashes of Unpaved.',
     road: (s, c) => unpaved(s) ? road(c.dash, c.casing, line(c.fill, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' '))) : road(c.fill, c.casing),
   },
 };

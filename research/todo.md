@@ -12,6 +12,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 6. Repo: a new local repo `~/Workspaces/OSM/unpaved-rendering`, pushed to `julcnx/unpaved-rendering` only after Julien's OK.
 7. Screenshot spots: one per continent, no Antarctica. North America = Alberta Hwy 40 (spot 6, added 2026-11-09); backups Alberta Hwy 68 and Mexico QR 15.
 8. The proposal stays OSM-specific: no generic styling guide for other data sources.
+9. One pattern ladder for roads now and tracks later: Paved solid, Unpaved long dashes (Carto `grade2` rhythm), Off-road medium dashes (`grade3`); used by the centre line, dashed casing and dashes styles. Open: whether style 4 (dashes) stays reversed (Off-road darker) or follows the other line styles.
 
 ## Demo and colour tests
 
