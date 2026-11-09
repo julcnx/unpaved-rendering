@@ -48,7 +48,7 @@ Classes under the two-level model: **Unpaved**, with **+ mark** when `smoothness
 
 Paved-now examples (tag out of date), useful for the "paving fast" point: Nepal NH66, Timor-Leste Viqueque-Baucau, Uganda Akokoro Road.
 
-To do: the comparison grid, one location (a major road where a paved and an unpaved section meet, with imagery on both sides) shown in every app at the same zoom. Current rendering in apps: not captured yet.
+Comparison grids (2026-11-09): [examples/screenshots/](examples/screenshots/) `<spot>-grid.jpg`, one per screenshot spot, every app cropped to the paved/unpaved transition at z15 and labelled with its A0 result (class kept, class lost, some roads only, no difference). Built by [examples/comparison-grid.ts](examples/comparison-grid.ts) from the screenshots.
 
 ## D1b. Street-level imagery check
 

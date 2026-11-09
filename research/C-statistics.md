@@ -80,6 +80,8 @@ Each result also has:
 
 **Untagged** means no `surface` and no known `tracktype`, so the road is assumed Paved. `smoothness` or `4wd_only` alone do not make a road tagged, because they never decide the base level. Use this wording on the wiki.
 
+**Off-road evidence per country** (2026-11-09, [stats/mark-coverage.md](stats/mark-coverage.md), from the combination tables): 5.8% of Unpaved km have `smoothness`, `tracktype` or `4wd_only`, so the Off-road mark can be decided there today; 3.6% get the mark. From 41% in Bolivia (mostly `smoothness`) and 29% in Iceland (mostly `4wd_only`) down to 2% in Brazil, which has the most Unpaved km. Includes a short table for the article.
+
 **Spot check** (2026-11-09, [stats/spot-check.ts](stats/spot-check.ts)): the 2 longest ways of each odd-way list (unpaved main roads, Off-road mark, conflicts, unknown values) for Namibia, Bolivia, Nepal and Denmark, 28 ways, fetched again from the OSM API. All 28 have the same tags, level and length as in the results. This checks the per-way pipeline (tags, classifier, length), not the country totals.
 
 Tests: see Classifier above (66 tests, including 5 stats tests on a fixture of known lengths).

@@ -17,16 +17,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 
 4. Find the feedback channel for the 16 providers still marked "(to confirm)" in A2.
 
-## Screenshots and examples (D)
-
-6. Retry Humanitarian (HOT) for Iceland: `APPS=humanitarian node examples/screenshots.ts iceland` (tile server still down on 2026-11-09 evening).
-10. Comparison grid: one picture per app at the same spot.
-
-## Statistics (C)
-
-12. Check the summary has, per country, the share of roads with `smoothness` or `tracktype` (where the third level is usable today), and a short table of a few countries for the article.
-14. Contacts for the late-added countries (B); wiki table and sample countries (C); Western contrast countries: is `surface=unpaved` used there for roads a city car can drive?
-
 ## Demo and colour tests
 
 15. Static demo page: first version done 2026-11-09 in `~/Workspaces/OSM/unpaved-rendering` (canvas, 4 styles from the mockups, side by side, 5 backgrounds incl. hillshade/contours/labels, legend, live Overpass from z14, Nominatim search, OSM attribution). Cached data for all spots done. Still to do: update the styles to the 2026-11-09 mockups (renumbered 1-4, centre line colour, grain, dash ratios and colours, gap patterns), Chiang Mai spot, dark-mode primary looks brown (see LOG.md).
@@ -43,6 +33,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 
 ## Outreach (drafts only, send nothing)
 
+14. Contacts for the late-added countries (B); wiki table and sample countries (C); Western contrast countries: is `surface=unpaved` used there for roads a city car can drive?
 23. One issue draft per provider, adapted to its current rendering and tile schema. Open apps first (Organic Maps, OsmAnd, Americana), issue before PR, small first PR. A3 order: CyclOSM, OsmAnd #9465, Organic Maps #8485, OpenMapTiles whitelist, Kurviger forum, Tracestrack.
 24. Commercial apps through support or product teams: Komoot, Gaia GPS, Calimoto, Guru Maps, Ride with GPS and the others.
 25. Allies: HOT, local mapping communities, the laterite-discussion contacts.
