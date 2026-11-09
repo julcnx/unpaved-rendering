@@ -9,7 +9,7 @@ Reference implementation: [classifier/classify.ts](classifier/classify.ts). Port
 - [classifier/classify.lua](classifier/classify.lua): Lua (osm2pgsql flex and similar). `classify(tags)` returns level, base, base source, mark, mark source.
 - [classifier/classify.sql](classifier/classify.sql): PostgreSQL functions. `road_surface_class(highway, surface, smoothness, tracktype, 4wd_only)` returns `paved`, `unpaved`, `offroad` or `specialized`.
 
-Tests: [classifier/test-cases.json](classifier/test-cases.json) has 59 cases shared by all three. `node --test classifier/classify.test.ts classifier/ports.test.ts stats/test/road-stats.test.ts` runs everything (66 tests). The SQL test runs only when `PGHOST`/`PGPORT` point to a test database; run against a throwaway PostgreSQL 17 on 2026-11-02, all passing.
+Tests: [classifier/test-cases.json](classifier/test-cases.json) has 67 cases shared by all three. `node --test classifier/classify.test.ts classifier/ports.test.ts stats/test/road-stats.test.ts` runs everything (74 tests, the SQL one skipped without a database). The SQL test runs only when `PGHOST`/`PGPORT` point to a test database; run against a throwaway PostgreSQL 17 on 2026-11-02, all passing.
 
 **Base level** (first tag that applies):
 
@@ -84,7 +84,7 @@ Each result also has:
 
 **Spot check** (2026-11-09, [stats/spot-check.ts](stats/spot-check.ts)): the 2 longest ways of each odd-way list (unpaved main roads, Off-road mark, conflicts, unknown values) for Namibia, Bolivia, Nepal and Denmark, 28 ways, fetched again from the OSM API. All 28 have the same tags, level and length as in the results. This checks the per-way pipeline (tags, classifier, length), not the country totals.
 
-Tests: see Classifier above (66 tests, including 5 stats tests on a fixture of known lengths).
+Tests: see Classifier above (74 tests, including 5 stats tests on a fixture of known lengths).
 
 ## Runs
 

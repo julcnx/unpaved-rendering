@@ -5,6 +5,7 @@
 // Off-road mark (near zero on road classes); raw km stay in the JSON.
 
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import * as mark from './mark-coverage.ts';
 
 const dir = new URL('./results/', import.meta.url);
 // Paved (tagged) + Untagged + Unpaved = 100%. Off-road mark is the part of Unpaved that has the mark.
@@ -170,6 +171,7 @@ const key = [
   `- Untagged (no \`surface\`, no known \`tracktype\`, assumed paved): ${pct(agg('all', 'untagged'), allKm)}% of km.`,
   `- Unpaved: ${pct(unpavedAll, allKm)}% of all km (minimum), ${(100 * unpavedAll / (allKm - agg('all', 'untagged'))).toFixed(1)}% of tagged km (upper bound).`,
   `- Off-road mark: ${pct(markAll, allKm)}% of all km, ${(100 * markAll / unpavedAll).toFixed(1)}% of Unpaved km (${Math.round(markAll).toLocaleString('en')} km).`,
+  `- Off-road evidence (\`smoothness\`, \`tracktype\` or \`4wd_only\`) on ${(100 * mark.total.evidence / mark.total.unpaved).toFixed(1)}% of Unpaved km: the mark can only be decided there, so it stays optional (per country: [mark-coverage.md](mark-coverage.md)).`,
   `- \`surface=unpaved\` is ${share(values['surface=unpaved'] ?? 0)} of Unpaved km; then \`ground\` ${share(values['surface=ground'] ?? 0)}, \`gravel\` ${share(values['surface=gravel'] ?? 0)}, \`dirt\` ${share(values['surface=dirt'] ?? 0)}, \`compacted\` ${share(values['surface=compacted'] ?? 0)}.`,
   `- Motorways: ${Math.round(motorwayUnpaved)} km Unpaved out of ${Math.round(totalOf('motorway')).toLocaleString('en')} km.`,
   '', '## Main roads', '',

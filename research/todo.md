@@ -24,7 +24,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 ## Repo, article and publishing (ask before anything public)
 
 20. Create the public repo `julcnx/unpaved-rendering` (description and topics mention OSM), with GitHub Pages for the demo and the article.
-21. Article "Mind the Surface: A Main Road Is Not Always Paved": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits, legend wording, known limitations, future work (tracks, paths, routing, Google and Apple), the iD `surface=laterite` conflict, credits to imagico and Sommerluk.
+21. Article "Mind the Surface: A Main Road Is Not Always Paved": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits (OpenMapTiles has no `surface` below z12, so Americana, MapTiler, Stadia and OpenFreeMap cannot show unpaved there; A4), how rare the Off-road evidence is (5.8% of Unpaved km), legend wording, known limitations, future work (tracks, paths, routing, Google and Apple), the iD `surface=laterite` conflict, credits to imagico and Sommerluk.
 22. Short OSM wiki page for the tag mapping only, linking to the repo; OSM diary entry; Facebook post pointing to the diary. Get feedback on the community forum first.
 
 ## Outreach (drafts only, send nothing)
