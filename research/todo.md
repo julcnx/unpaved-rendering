@@ -37,5 +37,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 
 ## Low priority
 - Track rendering per app (double line, dashed, continuous), for the future-work section.
+- Paved `highway=track` (`tracktype=grade1` or a paved surface) drawn as a continuous line, matching the track rhythms now used by the centre line (OSM Carto already draws grade1 solid). For the future-work section, after the road classes.
 - OsmAnd default vs Motorcycle screenshot at one spot (the difference is already described in A0; Komoot phone app check not needed).
 28. OsmAnd Motorcycle (low priority, after everything else): the owner said yes on [discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) (2026-11-09) and suggests Julien forks it. Thanked in French on 2026-11-09 (said it comes later). Then fork and draw unpaved roads in their class colour, as the phone demo. Find the OsmAnd plugin he mentions (F-Droid build).
