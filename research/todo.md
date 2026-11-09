@@ -13,10 +13,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 7. Screenshot spots: one per continent, no Antarctica. North America = Alberta Hwy 40 (spot 6, added 2026-11-09); backups Alberta Hwy 68 and Mexico QR 15.
 8. The proposal stays OSM-specific: no generic styling guide for other data sources.
 
-## Research (A)
-
-4. Find the feedback channel for the 16 providers still marked "(to confirm)" in A2.
-
 ## Demo and colour tests
 
 15. Static demo page: first version done 2026-11-09 in `~/Workspaces/OSM/unpaved-rendering` (canvas, 4 styles from the mockups, side by side, 5 backgrounds incl. hillshade/contours/labels, legend, live Overpass from z14, Nominatim search, OSM attribution). Cached data for all spots done. Still to do: update the styles to the 2026-11-09 mockups (renumbered 1-4, centre line colour, grain, dash ratios and colours, gap patterns), Chiang Mai spot, dark-mode primary looks brown (see LOG.md).

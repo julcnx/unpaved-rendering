@@ -112,24 +112,24 @@ Differences from our rule:
 | 8 | Spirit / OSMF Shortbread | yes | None | GitHub issues | **[#91](https://github.com/pnorman/spirit/issues/91), [PR #93](https://github.com/pnorman/spirit/pull/93)** pinged 2026-08-17, no reply |
 | 9 | OpenTopoMap | yes | Track dashes only | GitHub issues | **[#36](https://github.com/der-stefan/OpenTopoMap/issues/36), [PR #398](https://github.com/der-stefan/OpenTopoMap/pull/398)**. Project only kept online |
 | 10 | OSM Carto (credit only, not a target) | yes | Subtle unpaved texture. Surface lists in `project.mml` L472-476 | | **[PR #5263](https://github.com/openstreetmap-carto/openstreetmap-carto/pull/5263)**, [#5268](https://github.com/openstreetmap-carto/openstreetmap-carto/issues/5268), [#4724](https://github.com/openstreetmap-carto/openstreetmap-carto/issues/4724). Stay passive |
-| 11 | Komoot | no | To check in app | Support / feature requests (to confirm) | |
-| 12 | Gaia GPS | no | None on Gaia Topo (checked in app 2026-11-09); premium Overland layer shows surfaces | Support / feature requests (to confirm) | |
-| 13 | Calimoto | no | Unpaved segments drawn thinner (checked in app 2026-11-09) | Support / feature requests (to confirm) | |
-| 14 | Guru Maps | no | None (checked in app 2026-11-09) | Community forum (to confirm) | |
-| 15 | Maps.me | no | None (checked in app 2026-11-09) | (to confirm) | |
+| 11 | Komoot | no | None on the web map (screenshots 2026-11-09) | [Help center, Submit a request](https://support.komoot.com) (no public ideas board) | |
+| 12 | Gaia GPS | no | None on Gaia Topo (checked in app 2026-11-09); premium Overland layer shows surfaces | [Help center community forum](https://help.gaiagps.com/hc/en-us/community/topics); staff treat a post as the official feature request | |
+| 13 | Calimoto | no | Unpaved segments drawn thinner (checked in app 2026-11-09) | [Help center](https://support.calimoto.com/hc/en-us) (request form); no public ideas board found | |
+| 14 | Guru Maps | no | None (checked in app 2026-11-09) | Support email or Contact Support in the app settings ([docs](https://gurumaps.app/docs/intro)); no official forum | |
+| 15 | Maps.me | no | None (checked in app 2026-11-09) | [Help center](https://support.maps.me), then `feedback@maps.me` | |
 | 16 | OsmAnd Motorcycle styles | yes | Unpaved roads drawn like tracks, class lost (checked in app 2026-11-09) | GitHub discussions | **[discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22)**: owner agrees (2026-11-09), suggests Julien forks and edits it |
-| 17 | Ride with GPS | no | Unpaved roads drawn like tracks (dashed brown), class lost (screenshots 2026-11-09) | Support / feature requests (to confirm) | |
+| 17 | Ride with GPS | no | Unpaved roads drawn like tracks (dashed brown), class lost (screenshots 2026-11-09) | [Help center](https://support.ridewithgps.com), Contact Us; no public ideas board found | |
 | 18 | Kurviger | no | None on the base map, only on planned routes | Forum | [sealed and unsealed roads](https://forum.kurviger.com/t/different-colours-for-sealed-and-unsealed-roads/18588), [visibility of unpaved roads](https://forum.kurviger.com/t/enhance-visibility-of-offroad-tracks-and-unpaved-roads/19355) |
-| 19 | Mapy.com | no | None on the basic map (screenshots 2026-11-08) | (to confirm) | |
-| 20 | MapTiler (Outdoor, Streets, OMT) | no | None (screenshots 2026-11-09); OpenMapTiles schema already has paved/unpaved | (to confirm) | |
-| 21 | Thunderforest (OpenCycleMap, Transport, Outdoors) | no | None (screenshots 2026-11-09) | (to confirm) | |
-| 22 | Locus Map / LoMaps | no | None on the web map (screenshots 2026-11-09); app depends on the theme | (to confirm) | |
-| 23 | Strava | no | None (screenshots 2026-11-09) | (to confirm) | |
-| 24 | CalTopo | no | None (screenshots 2026-11-09) | (to confirm) | |
-| 25 | Stadia Maps (Alidade Smooth, Outdoors) | no | None (screenshots 2026-11-09) | (to confirm) | |
-| 26 | Protomaps basemap | yes | None (screenshots 2026-11-09) | GitHub issues (to confirm) | |
-| 27 | AllTrails | no | No paved/unpaved split on main roads (screenshots 2026-11-09) | (to confirm) | |
-| 28 | DMD2 | no | Unpaved on every class seen, class colour kept, dark dashed casing (screenshots 2026-11-09) | (to confirm) | |
+| 19 | Mapy.com | no | None on the basic map (screenshots 2026-11-08) | In-app feedback (Tools, feedback on Mapy.com: ideas) and the [community forum](https://community.mapy.com/category/4/ideas-for-new-features-nápady-na-nové-vychytávky), ideas category, staff reply there | |
+| 20 | MapTiler (Outdoor, Streets, OMT) | no | None (screenshots 2026-11-09); OpenMapTiles schema already has paved/unpaved | MapTiler support for its styles; the schema through [OpenMapTiles GitHub](https://github.com/openmaptiles/openmaptiles/issues) | |
+| 21 | Thunderforest (OpenCycleMap, Transport, Outdoors) | no | None (screenshots 2026-11-09) | Email `support (at) thunderforest (dot) com` ([contact](https://www.thunderforest.com/contact/)); no public tracker | |
+| 22 | Locus Map / LoMaps | no | None on the web map (screenshots 2026-11-09); app depends on the theme | [Helpdesk ideas](https://help.locusmap.eu), users vote on ideas there | |
+| 23 | Strava | no | None (screenshots 2026-11-09) | [Community Hub Ideas board](https://communityhub.strava.com), staff send suggestions there for voting | |
+| 24 | CalTopo | no | None (screenshots 2026-11-09) | [Help center forum, Feature Requests](https://help.caltopo.com/hc/en-us/community/topics/4416797631899-Feature-Requests), read by staff | |
+| 25 | Stadia Maps (Alidade Smooth, Outdoors) | no | None (screenshots 2026-11-09) | `support@stadiamaps.com`, Discord, OSM US Slack `#stadia-maps` ([support page](https://docs.stadiamaps.com/support/)); no public style repo | |
+| 26 | Protomaps basemap | yes | None (screenshots 2026-11-09) | [GitHub issues](https://github.com/protomaps/basemaps/issues) (open, 44 issues) | |
+| 27 | AllTrails | no | No paved/unpaved split on main roads (screenshots 2026-11-09) | `support@alltrails.com` or [help center](https://support.alltrails.com); map data questions are often sent back to OSM | |
+| 28 | DMD2 | no | Unpaved on every class seen, class colour kept, dark dashed casing (screenshots 2026-11-09) | [DMD forum](https://drivemodedashboard.com/forums/) (developer answers requests there); one forum post says talk moved to Discord, not checked | |
 
 ## A3. Ranking (updated 2026-11-09 after the screenshots and phone app checks)
 
