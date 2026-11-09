@@ -30,3 +30,4 @@
 - Off-road rhythm: medium dashes (Carto `grade3`, 9/7), chosen by Julien as the ladder tracks will reuse later; `grade4` short sparse dashes read as dots.
 - Style 4 (dashes) no longer reversed: dark tint drawn as the dashes, like the other line styles, so "more broken = rougher" holds everywhere.
 - Styles renamed so each name says the signal and where it is drawn: 1 Dashed centre line, 2 Dashed casing, 3 Grain fill (no more "OSM Carto" in the name), 4 Dashed fill (key `dashed-fill`, was `dashes`). Screenshot script updated to the current four style keys.
+- Ladder widened: Unpaved 22/6 (long dashes, short gaps), Off-road 8/9 (short dashes, longer gaps); 15/6 vs 9/7 looked too close.
