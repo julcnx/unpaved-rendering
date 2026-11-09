@@ -79,14 +79,16 @@ export default {
     },
     "dashes": {
       "name": "3. Dashes",
-      "note": "Unpaved: long dashes, dash 3 x and gap 2 x road width (Americana: 4 x and 4 x), darker tint of the class colour (light brown on white). Off-road: dash 2 x, gap 1 x road width.",
+      "note": "The track rhythm of styles 1 and 4 across the whole road, in a darker tint of the class colour (light brown on white): long dashes = Unpaved, dash-dot = Off-road.",
       "unpavedXWidth": [
-        3,
-        2
+        2.45,
+        0.98
       ],
       "offroadXWidth": [
-        2,
-        1
+        1.31,
+        0.82,
+        0.41,
+        0.82
       ]
     },
     "dashed-casing": {
@@ -102,7 +104,11 @@ export default {
         2.5,
         5
       ],
-      "minorCasing": "#8f8f8f"
+      "casing": {
+        "trunk": "#a33b20",
+        "primary": "#7d5400",
+        "minor": "#8f8f8f"
+      }
     }
   }
 };

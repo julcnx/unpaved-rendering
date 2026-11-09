@@ -8,9 +8,11 @@ import SPEC from './style-spec.js';
 // Per class: fill and casing (OSM Carto), grain background and dots, dash colour. Dark mode: our own darker variants.
 const { motorway, trunk, primary, secondary, minor } = SPEC.classes;
 const S = SPEC.styles;
+// Dashed casing: a darker outline where the normal casing is too close to the fill (red, orange, white).
+const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key] });
 const LIGHT = {
-  motorway, trunk, primary, secondary,
-  minor: { ...minor, gapCasing: S['dashed-casing'].minorCasing }, // dashed casing: darker, or white roads' dashes vanish into the land
+  motorway: withGapCasing('motorway', motorway), trunk: withGapCasing('trunk', trunk), primary: withGapCasing('primary', primary),
+  secondary: withGapCasing('secondary', secondary), minor: withGapCasing('minor', minor),
   brown: S['centre-line'].color,
 };
 const DARK = {
