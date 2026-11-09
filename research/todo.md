@@ -24,7 +24,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 ## Screenshots and examples (D)
 
 6. Retry Humanitarian (HOT) for Iceland: `APPS=humanitarian node examples/screenshots.ts iceland` (tile server still down on 2026-11-09 evening).
-8. Komoot in the phone app; OsmAnd default vs Motorcycle at one spot.
 10. Comparison grid: one picture per app at the same spot.
 11. Chiang Mai before/after, including the Mon Klui viewpoint road.
 
@@ -59,4 +58,5 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 27. Out-of-date gravel tags in North America, paved on Mapillary: Sterling Highway AK 1 (59.78842, -151.83453), Taylor Highway AK 5 near Chicken (64.06587, -141.99553), Liard Highway NWT 7 (60.12052, -123.17274). Check the images and retag.
 
 ## Low priority
+- OsmAnd default vs Motorcycle screenshot at one spot (the difference is already described in A0; Komoot phone app check not needed).
 28. OsmAnd Motorcycle (low priority, after everything else): the owner said yes on [discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) (2026-11-09) and suggests Julien forks it. Thanked in French on 2026-11-09 (said it comes later). Then fork and draw unpaved roads in their class colour, as the phone demo. Find the OsmAnd plugin he mentions (F-Droid build).
