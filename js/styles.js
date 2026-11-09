@@ -59,7 +59,7 @@ export const STYLES = {
   'centre-line': {
     name: CL.name, note: CL.note, minWidth: 5,
     draw: (level, c, w, brown) => ({
-      over: level === 'paved' ? [] : [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: off(level) ? CL.offroadDash : null, cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: off(level) ? CL.offroadDash : CL.unpavedDash, cap: 'butt' }],
     }),
   },
   grain: {

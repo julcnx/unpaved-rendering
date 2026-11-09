@@ -21,3 +21,4 @@
 - Spot data will keep OSM way ids (`fetch-spots.mjs`); not refetched yet, Overpass at capacity on 2026-11-09.
 - All styles side by side is now the default (`compare=0` in the URL for one style); the All chip and key A always return to it. In All mode the legend is a small table: one row per level, one sample per style, numbered like the panels.
 - Labels on the realistic background: route numbers only (`ref` on trunk to tertiary), as small shields at a visible point of the road, overlapping ones skipped. Street names removed: they piled up over towns and hid the roads being compared. The loading message moved to the bottom of the map.
+- Centre line in OSM Carto track rhythms: long dashes (Carto `tracktype=grade2`, 11, 4, scaled to 13, 5) for Unpaved, the track dash-dot (5, 4, 2, 4, scaled to 6, 5, 2.5, 5) for Off-road. The line stays inside the casing, so it does not read as a track beside the road (checked in the mockup references).
