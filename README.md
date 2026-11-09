@@ -1,6 +1,6 @@
 # Mind the Surface
 
-*Where can my city car go?*
+*A Main Road Is Not Always Paved*
 
 A proposal asking map apps to show whether a road is paved or unpaved, as an extra signal on top of the road class colour, so the class (function and importance) is never lost.
 
