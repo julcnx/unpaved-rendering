@@ -3,7 +3,7 @@
 // Usage: node mockups/make-mockups.ts   (writes mockups/*.svg and mockups/styles.json)
 // styles.json is the single source of the style values: the demo (~/Workspaces/OSM/unpaved-rendering) copies it
 // with `node scripts/sync-styles.mjs`.
-// Road colours are OSM Carto's. Style 2 is based on the OSM Carto grain, style 3 on the Americana dashes;
+// Road colours are OSM Carto's. The grain fill is based on the OSM Carto grain, the dashed fill on the Americana dashes;
 // the Off-road marks are ours (neither style has one).
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -20,7 +20,7 @@ type Klass = { name: string; id: string; fill: string; casing: string; grainBg: 
 // Rougher = more broken, as in Carto's track grades. Not the dash-dot (in Carto: track with no tracktype, unknown),
 // not grade4 short sparse dashes (read as dots), not dense short dashes (a tunnel casing, 4, 2).
 const RHYTHM = { unpaved: [15, 6], offroad: [9, 7] };
-// Style 3 fills the whole road, so it uses the same rhythm 1.8 x larger, in fill widths (the mockup fill is 11 px).
+// Dashed fill fills the whole road, so it uses the same rhythm 1.8 x larger, in fill widths (the mockup fill is 11 px).
 const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 100);
 const SPEC = {
   // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
@@ -35,7 +35,7 @@ const SPEC = {
   styles: {
     'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
     grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
-    dashes: { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad) },
+    'dashed-fill': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad) },
     // Dashed casing, the fill stays continuous (as Gaia GPS draws tracks and DMD2 unpaved roads).
     // Casing colour for the dashed outline: darker on red and orange (the normal casing is close to the fill),
     // darker on white (OSM Carto tertiary casing), or the dashes fade.
@@ -44,7 +44,7 @@ const SPEC = {
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
 const CLASSES: Klass[] = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
-const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles.dashes, GA = SPEC.styles['dashed-casing'];
+const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles['dashed-fill'], GA = SPEC.styles['dashed-casing'];
 const BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
 const TRACK = '#996600'; // OSM Carto @track-fill
 const MINOR_CONSTRUCTION = '#aaa'; // OSM Carto @minor-construction
@@ -77,11 +77,11 @@ const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, das
 const unpaved = (s: State) => s.startsWith('Unpaved');
 const offroad = (s: State) => s.endsWith('Off-road');
 
-// Numbered by preference (ranking 2026-11-09): centre line, dashed casing, grain, dashes. Brown fill and tint were dropped. Paved is the same normal road in all of them.
+// Numbered by preference (ranking 2026-11-09): dashed centre line, dashed casing, grain fill, dashed fill. Brown fill and tint were dropped. Paved is the same normal road in all of them.
 type Option = { title: string; note: string; road: (s: State, c: Klass) => string };
 const OPTIONS: Record<string, Option> = {
   'centre-line': {
-    title: '1. Centre line',
+    title: '1. Dashed centre line',
     note: 'Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), medium dashes = Off-road (grade3). Slightly thicker than contour lines.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(BROWN, W < CL.narrowBelow ? CL.narrowWidth : CL.width, (offroad(s) ? CL.offroadDash : CL.unpavedDash).join(' ')) : ''),
   },
@@ -91,12 +91,12 @@ const OPTIONS: Record<string, Option> = {
     road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
   grain: {
-    title: '3. Grain (OSM Carto)',
+    title: '3. Grain fill',
     note: 'Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: big grain added on top.',
     road: (s, c) => road(unpaved(s) ? `url(#grain-${c.id})` : c.fill, c.casing, offroad(s) ? line(`url(#grain2-${c.id})`, W) : ''),
   },
-  dashes: {
-    title: '4. Dashes',
+  'dashed-fill': {
+    title: '4. Dashed fill',
     note: 'The shared ladder across the road, in a darker class tint (light brown on white): long dashes = Unpaved, medium dashes = Off-road.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
@@ -115,8 +115,8 @@ const REFERENCES = () => [
   { label: 'Carto track', cells: [
     ['Track', track()],
     ['Track next to a road', road(CLASSES[2].fill, CLASSES[2].casing) + `<g transform="translate(0 ${(W + CAS) / 2 + 3 * k()})">${track()}</g>`],
-    ['Style 1, Off-road (to compare)', OPTIONS['centre-line'].road('Unpaved + Off-road', CLASSES[2])],
-    ['Style 1, Off-road on white', OPTIONS['centre-line'].road('Unpaved + Off-road', CLASSES[3])],
+    ['Dashed centre line, Off-road', OPTIONS['centre-line'].road('Unpaved + Off-road', CLASSES[2])],
+    ['Dashed centre line, Off-road on white', OPTIONS['centre-line'].road('Unpaved + Off-road', CLASSES[3])],
   ] },
 ];
 
