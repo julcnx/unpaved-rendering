@@ -50,7 +50,7 @@
   "styles": {
     "centre-line": {
       "name": "1. Centre line",
-      "note": "Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved, dash-dot = Off-road. Slightly thicker than contour lines.",
+      "note": "Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), short sparse dashes = Off-road (grade4). Slightly thicker than contour lines.",
       "color": "#8a6440",
       "width": 1.8,
       "narrowWidth": 1,
@@ -60,10 +60,8 @@
         6
       ],
       "offroadDash": [
-        8,
-        5,
-        2.5,
-        5
+        5.5,
+        8
       ]
     },
     "grain": {
@@ -78,30 +76,26 @@
     },
     "dashes": {
       "name": "3. Dashes",
-      "note": "Track rhythm across the road, reversed: a darker tint shows in the gaps, so the dash-dot of Off-road looks darker than the long dashes of Unpaved.",
+      "note": "Track rhythm across the road, reversed: a darker tint shows in the gaps, so the short sparse dashes of Off-road look darker than the long dashes of Unpaved.",
       "unpavedXWidth": [
         2.45,
         0.98
       ],
       "offroadXWidth": [
-        1.31,
-        0.82,
-        0.41,
-        0.82
+        0.9,
+        1.31
       ]
     },
     "dashed-casing": {
       "name": "4. Dashed casing",
-      "note": "Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, track dash-dot = Off-road, the same rhythm as the centre line.",
+      "note": "Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, short sparse dashes = Off-road, the same rhythm as the centre line.",
       "unpaved": [
         15,
         6
       ],
       "offroad": [
-        8,
-        5,
-        2.5,
-        5
+        5.5,
+        8
       ],
       "casing": {
         "trunk": "#a33b20",
