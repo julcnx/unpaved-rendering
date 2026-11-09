@@ -18,7 +18,7 @@ const options = (sel, entries, value) => {
 options($('spot'), [['', '(none: search or pan)'], ...Object.entries(SPOTS).map(([k, v]) => [k, v.name])], params.get('spot') ?? 'namibia');
 options($('style'), Object.entries(STYLES).map(([k, v]) => [k, v.name]), params.get('style'));
 options($('bg'), Object.entries(BACKGROUNDS).map(([k, v]) => [k, v.name]), params.get('bg'));
-$('compare').checked = params.get('compare') === '1';
+$('compare').checked = params.get('compare') !== '0'; // all styles side by side by default
 
 const map = new MapView($('map'), () => { updateUrl(); loadLive(); updateNote(); });
 map.opts = { style: $('style').value, bg: $('bg').value, compare: $('compare').checked };
@@ -26,7 +26,7 @@ map.opts = { style: $('style').value, bg: $('bg').value, compare: $('compare').c
 function updateUrl() {
   const { lat, lon, z } = map.center();
   const p = new URLSearchParams({ spot: $('spot').value, style: map.opts.style, bg: map.opts.bg, z: z.toFixed(2), lat: lat.toFixed(5), lon: lon.toFixed(5) });
-  if (map.opts.compare) p.set('compare', '1');
+  p.set('compare', map.opts.compare ? '1' : '0');
   history.replaceState(null, '', `?${p}`);
 }
 
@@ -107,8 +107,8 @@ $('search').addEventListener('keydown', async (e) => {
 });
 
 // ---- Legend and zoom note ----
-function sample(canvas, styleKey, level) {
-  const dpr = window.devicePixelRatio || 1, W = 90, H = 22;
+function sample(canvas, styleKey, level, W = 90) {
+  const dpr = window.devicePixelRatio || 1, H = 22;
   canvas.width = W * dpr; canvas.height = H * dpr;
   const ctx = canvas.getContext('2d');
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -116,7 +116,7 @@ function sample(canvas, styleKey, level) {
   ctx.fillStyle = bg.land; ctx.fillRect(0, 0, W, H);
   const d = STYLES[styleKey].draw(level, c, w, pal.brown, ctx);
   const line = (color, width, dash, cap = 'round') => {
-    ctx.beginPath(); ctx.moveTo(8, H / 2); ctx.lineTo(W - 8, H / 2);
+    ctx.beginPath(); ctx.moveTo(6, H / 2); ctx.lineTo(W - 6, H / 2);
     ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = cap; ctx.setLineDash(dash ?? []); ctx.stroke();
   };
   line(d.casing?.color ?? c.casing, w + 3, d.casing?.dash, d.casing?.cap);
@@ -124,11 +124,18 @@ function sample(canvas, styleKey, level) {
   for (const o of d.over ?? []) line(o.color, o.width, o.dash, o.cap);
 }
 
+const LEVELS = [['paved', 'Paved'], ['unpaved', 'Unpaved'], ['offroad', 'Off-road']];
 function updateLegend() {
-  const key = map.opts.compare ? Object.keys(STYLES)[0] : map.opts.style;
-  $('legend').innerHTML = [['paved', 'Paved'], ['unpaved', 'Unpaved'], ['offroad', 'Off-road']]
-    .map(([lv, text]) => `<div><canvas data-level="${lv}"></canvas>${text}</div>`).join('');
-  $('legend').querySelectorAll('canvas').forEach((cv) => sample(cv, key, cv.dataset.level));
+  if (map.opts.compare) {
+    // All styles: one row per level, one small sample per style, numbered like the panels.
+    const keys = Object.keys(STYLES);
+    $('legend').innerHTML = `<table class="all"><tr><th></th>${keys.map((k) => `<th title="${STYLES[k].name}">${STYLES[k].name.split('.')[0]}</th>`).join('')}</tr>` +
+      LEVELS.map(([lv, text]) => `<tr><td>${text}</td>${keys.map((k) => `<td><canvas data-level="${lv}" data-style="${k}"></canvas></td>`).join('')}</tr>`).join('') + '</table>';
+    $('legend').querySelectorAll('canvas').forEach((cv) => sample(cv, cv.dataset.style, cv.dataset.level, 46));
+    return;
+  }
+  $('legend').innerHTML = LEVELS.map(([lv, text]) => `<div><canvas data-level="${lv}"></canvas>${text}</div>`).join('');
+  $('legend').querySelectorAll('canvas').forEach((cv) => sample(cv, map.opts.style, cv.dataset.level));
 }
 
 function updateNote() {
@@ -151,7 +158,7 @@ function renderChips() {
   }).join('');
 }
 function pickStyle(k) {
-  if (k === 'all') $('compare').checked = !$('compare').checked;
+  if (k === 'all') $('compare').checked = true;
   else { $('style').value = k; $('compare').checked = false; }
   $('style').dispatchEvent(new Event('change'));
 }
