@@ -1,12 +1,12 @@
 // Screenshots of the verified screenshot spots in every OSM-based web map, same size, zoom and centre.
-// Usage: node examples/screenshots.ts [spot ...] [--show]   (spots: namibia, bolivia, nepal, iceland, australia, alberta; --show opens a Chrome window)
+// Usage: [ZOOM=11] [APPS=a,b] node examples/screenshots.ts [spot ...] [--show]   (spots: namibia, bolivia, nepal, iceland, australia, alberta; --show opens a Chrome window)
 // Writes examples/screenshots/<spot>/<app>.png. Uses the installed Google Chrome through puppeteer-core.
 
 import { mkdirSync } from 'node:fs';
 import puppeteer from 'puppeteer-core';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
-const ZOOM = 15;
+const ZOOM = Number(process.env.ZOOM ?? 15); // other zooms write to screenshots/<spot>-z<zoom>/
 const VIEW = { width: 1200, height: 800 };
 
 const SPOTS: Record<string, [number, number]> = {
@@ -132,7 +132,7 @@ const browser = await puppeteer.launch({
 const only = process.env.APPS?.split(/\s+/).filter(Boolean);
 for (const spot of spots.length ? spots : ['namibia', 'bolivia']) {
   const [la, lo] = SPOTS[spot];
-  const dir = new URL(`./screenshots/${spot}/`, import.meta.url);
+  const dir = new URL(`./screenshots/${spot}${ZOOM === 15 ? '' : `-z${ZOOM}`}/`, import.meta.url);
   mkdirSync(dir, { recursive: true });
   for (const [name, app] of Object.entries(APPS)) {
     if (only && !only.includes(name)) continue;

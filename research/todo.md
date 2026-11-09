@@ -18,10 +18,8 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 
 ## Research (A)
 
-2. Tile-schema table: for Mapbox Streets, OpenMapTiles, Shortbread, Protomaps, OsmAnd, Organic Maps and the others, which surface attributes exist (full `surface`, paved/unpaved flag, `smoothness`, `tracktype`) and from which zoom.
 3. Track rendering per app (double line, dashed, continuous), for the future-work section.
 4. Find the feedback channel for the 16 providers still marked "(to confirm)" in A2.
-5. z11 check: does each provider that draws unpaved still draw it at low zoom?
 
 ## Screenshots and examples (D)
 
@@ -34,7 +32,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 ## Statistics (C)
 
 12. Check the summary has, per country, the share of roads with `smoothness` or `tracktype` (where the third level is usable today), and a short table of a few countries for the article.
-13. Spot-check a few roads on osm.org against the stats.
 14. Contacts for the late-added countries (B); wiki table and sample countries (C); Western contrast countries: is `surface=unpaved` used there for roads a city car can drive?
 
 ## Demo and colour tests
