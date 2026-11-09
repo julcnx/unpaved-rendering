@@ -50,13 +50,19 @@
   "styles": {
     "centre-line": {
       "name": "1. Centre line",
-      "note": "Thin brown line down the middle: solid = Unpaved, dashed = Off-road. Slightly thicker than contour lines.",
+      "note": "Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved, dash-dot = Off-road. Slightly thicker than contour lines.",
       "color": "#8a6440",
       "width": 1.8,
       "narrowWidth": 1,
       "narrowBelow": 6,
+      "unpavedDash": [
+        13,
+        5
+      ],
       "offroadDash": [
         6,
+        5,
+        2.5,
         5
       ]
     },

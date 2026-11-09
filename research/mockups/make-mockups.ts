@@ -25,7 +25,9 @@ const SPEC = {
   },
   // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
   styles: {
-    'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, offroadDash: [6, 5] },
+    // Track rhythms from OSM Carto, scaled from its 1.5 px track to the 1.8 px line: Unpaved = long dashes
+    // (Carto tracktype=grade2, 11, 4), Off-road = the default track dash-dot (5, 4, 2, 4).
+    'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: [13, 5], offroadDash: [6, 5, 2.5, 5] },
     grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
     dashes: { unpavedXWidth: [3, 2], offroadXWidth: [2, 1] },
     gaps: { unpaved: [36, 8], offroad: [26, 6, 6, 6], minorCasing: '#8f8f8f' },
@@ -71,8 +73,8 @@ type Option = { title: string; note: string; road: (s: State, c: Klass) => strin
 const OPTIONS: Record<string, Option> = {
   'centre-line': {
     title: '1. Centre line',
-    note: 'Thin brown line down the middle: solid = Unpaved, dashed = Off-road. Slightly thicker than contour lines.',
-    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(BROWN, W < CL.narrowBelow ? CL.narrowWidth : CL.width, offroad(s) ? CL.offroadDash.join(' ') : '') : ''),
+    note: 'Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved, dash-dot = Off-road. Slightly thicker than contour lines.',
+    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(BROWN, W < CL.narrowBelow ? CL.narrowWidth : CL.width, (offroad(s) ? CL.offroadDash : CL.unpavedDash).join(' ')) : ''),
   },
   grain: {
     title: '2. Grain (OSM Carto)',
@@ -101,7 +103,12 @@ const tunnel = (c: Klass) => line(c.casing, W + CAS, `${4 * k()} ${2 * k()}`) + 
 const REFERENCES = () => [
   { label: 'Carto construction', cells: [...CLASSES.slice(0, 3).map((c) => [`${c.name.split(' ')[0]}`, construction(c.fill)]), ['White', construction(MINOR_CONSTRUCTION)]] },
   { label: 'Carto tunnel', cells: CLASSES.map((c) => [c.name, tunnel(c)]) },
-  { label: 'Carto track', cells: [['Track', track()]] },
+  { label: 'Carto track', cells: [
+    ['Track', track()],
+    ['Track next to a road', road(CLASSES[2].fill, CLASSES[2].casing) + `<g transform="translate(0 ${(W + CAS) / 2 + 3 * k()})">${track()}</g>`],
+    ['Style 1, Off-road (to compare)', OPTIONS['centre-line'].road('Unpaved + Off-road', CLASSES[2])],
+    ['Style 1, Off-road on white', OPTIONS['centre-line'].road('Unpaved + Off-road', CLASSES[3])],
+  ] },
 ];
 
 const text = (x: number, y: number, s: string, size = 14, weight = 400, anchor = 'start') =>
