@@ -27,6 +27,26 @@ Dropped: the brief's brown fill (the class shows only in the casing) and tint (t
 
 Design history: the earlier options Tint + dash, Dashes + dots and Dots + dense dots (review 2026-11-02: Tint + dash was the clearest) were replaced by the five styles of the brief on 2026-11-09, then reduced to four. Dots + dash (regular dots, brown centre dash) was dropped on 2026-11-09: busy when both are on, dots and dash compete inside a narrow road. The first mockups (three levels Paved / Rough / Off-road, options texture, centre dash, tinted fill) were replaced when the model changed to two levels plus a mark. Earlier feedback kept: regular dots, not random speckles; one grain size, only spacing changes; light tint so the road still reads as its class colour, not as a brown track.
 
+## D3. Design research: imagico's road articles and OSM Carto markings (2026-11-09)
+
+Christoph Hormann (imagico) designed the unpaved grain used by OSM Carto and wrote about road styling in OSM-based maps. Read: [Navigating the Maze, part 2](https://imagico.de/blog/en/navigating-the-maze-part-2/) (2021, section on unpaved roads), [Navigating the Maze, part 1](https://imagico.de/blog/en/navigating-the-maze-part-1/) (2021, road layering only), [Drawing the lines](https://imagico.de/blog/en/drawing-the-lines/) (2017, dashing of tracks and paths), [Rethinking road access restrictions rendering](https://imagico.de/blog/en/rethinking-road-access-restrictions-rendering/) (2021). Not read yet: [Drawing the line, on the use of line signatures in maps](https://imagico.de/blog/en/drawing-the-line-on-the-use-of-line-signatures-in-maps/) (2023).
+
+What he says, and what it means for our styles:
+
+1. **Grain is his preferred signal**: a fine-grained pattern in the road fill is "highly intuitive in its meaning and can be tuned to be fairly subtle". He tried dashing first and dropped it. Supports style 2, which is already the OSM Carto direction. Credit him and Lukas Sommer (the 2D fill pattern, OSM Carto PR 3399) in the article.
+2. **Dashes on main roads collide with existing markings**: in OSM Carto, tunnels have a dashed casing, construction a dashed fill, and restricted access marks along the middle of the road. He found surface dashing "very noisy" or too close to these. Our references cover tunnels and construction (D2); access restrictions are the third case (below).
+3. **Dashed lines break continuity**: a dashed or dotted line makes it harder to follow a road as one line. A point against styles 3 (dashes) and 4 (open gaps) to weigh in the default-style decision, and the reason the centre line keeps the road fill and casing continuous.
+4. **Contrast per road colour**: he tuned his access dashing per fill colour. We already do this (per-class grain colours and dash tints).
+5. **Patchy tagging becomes visible noise**: a mark that appears only where tags exist looks random. Fits the Off-road evidence finding (5.8% of Unpaved km, [stats/mark-coverage.md](stats/mark-coverage.md)): keep the mark optional.
+6. **Readable without a key**: his test for a general map. The two base levels should pass it; the Off-road mark may need the legend.
+7. Nothing in these articles on "missing surface means paved".
+
+**OSM Carto access marking** (checked in `style/roads.mss`, [commit 003cefdd](https://github.com/openstreetmap-carto/openstreetmap-carto/blob/003cefdd/style/roads.mss)): restricted roads (`access=private`, `no` and similar for the road's main mode) get a row of light grey round dots along the middle of the fill from z15 (`line-dasharray: 0.1,9`, 3 px, round caps; 6 px at z17), on every class from motorway to residential. Carto already combines it with the unpaved grain (`@access-marking-white-unpaved`).
+
+**Style 1 (centre line) is not meant for OSM Carto.** Its line sits where Carto puts the access dots, and Carto already has the grain. The centre line is for other renderers that have no marking in the middle of the road and prefer a line signal over a pattern (for example vector styles where 2D fill patterns are hard to draw). The Carto-related risks (access dots, tracks next to roads) still matter for readers who know the Carto look, so they stay in the references.
+
+Open question (2026-11-09): Unpaved centre line as long dashes (Carto `tracktype=grade2` rhythm, current) or solid. Long dashes look almost solid at z13-14 and a dashed middle line is the pattern imagico warns about; solid keeps the road one continuous line and still differs from the Off-road dash-dot. To decide in the demo.
+
 ## D1. Sample roads
 
 Classes under the two-level model: **Unpaved**, with **+ mark** when `smoothness`, `tracktype` or `4wd_only` give off-road evidence. All picks have street-level imagery reviewed in [examples/images/review.md](examples/images/review.md).
