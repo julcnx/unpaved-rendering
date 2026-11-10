@@ -29,7 +29,7 @@ const SPEC = {
     motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#da768a', tunnel: '#efb3be', offTint: '#d7697e', offDash: '#d0526b', lowTint: '#dd7f91', fullDash: '#db7b8e' },
     trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ea8b6e', tunnel: '#fbd3c6', offTint: '#e98667', offDash: '#e3643d', lowTint: '#ed9d84', fullDash: '#ed9980' },
     primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#e9b066', tunnel: '#fde7c9', offTint: '#e8ac61', offDash: '#df8d23', lowTint: '#eec28b', fullDash: '#ecbc7e' },
-    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#3f4318', dash: '#d9df75', tunnel: '#fbfdd8', offTint: '#d0d651', offDash: '#b9c12d', lowTint: '#e3e798', fullDash: '#dee387' },
+    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#3f4318', dash: '#d9df75', tunnel: '#fbfdd8', offTint: '#c7ce31', offDash: '#b9c12d', lowTint: '#dfe389', fullDash: '#dee387' },
     minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#46362a', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#d6bc9b', offDash: '#c8ac84', lowTint: '#e2cfb8', fullDash: '#dccab0' },
   },
   // Below this fill width (px) every style draws a plain tint: lowTint for Unpaved, offTint for Off-road (patterns blur there).
