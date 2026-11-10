@@ -211,10 +211,41 @@ These two are the weakest parts of the data and must be explained on the wiki pa
 A missing surface tag can mean three different things:
 
 1. **Implied paved**: the mapper saw an ordinary paved road and did not think a tag was needed. This is the usual case on main roads (motorways are 0% Unpaved wherever they are tagged).
-2. **A track reclassified as a road, with an implied unpaved surface**: common in Thailand. A dirt track first mapped as `highway=track` (implied unpaved) is later changed to `unclassified` or `residential` without adding `surface=*`, so the implied unpaved surface is lost. Imports and AI-assisted editing (Meta/Grab RapiD) also add rural ways as `highway=residential` with no surface. Thailand: 81% of residential km and 60% of unclassified km untagged.
+2. **A track reclassified as a road, with an implied unpaved surface**: common in Thailand. A dirt track first mapped as `highway=track` (implied unpaved) is later changed to `unclassified` or `residential` without adding `surface=*`, so the implied unpaved surface is lost. Organised editing also added farm tracks as `highway=residential` with no surface from the start (Grab, see "Mapping history in Thailand" below). Thailand: 81% of residential km and 60% of unclassified km untagged.
 3. **Mapped from imagery, surface unknown**: the mapper could see a road but not its surface, and left it out rather than guess.
 
 The rendering rule treats all three as Paved (no per-country defaults, decision in the brief), because guessing would be worse and because an honest map gives mappers a reason to add the tag. The stats keep Untagged as its own column so the reader can see how much of each country rests on this assumption. Where Untagged is high (India, Indonesia, Myanmar, Vietnam, 88 to 91%), the Unpaved share is a minimum, not an estimate.
+
+### Mapping history in Thailand: unpaved roads as `track`, farm tracks as `residential` (2026-11-10)
+
+Two practices, documented on the OSM community forum, move unpaved road out of our numbers in opposite directions. Both make the Thai Unpaved share a minimum.
+
+**1. Unpaved roads mapped as `highway=track` from the start, because renderers showed nothing else.** Not a later downgrade: some survey mappers chose `track` for rough roads, including roads between villages, when they first mapped them.
+
+- [How we use highway=track in Thailand](https://community.openstreetmap.org/t/how-we-use-highway-track-in-thailand/74579) (January 2016, old forum topic 53213). stephankn proposed tagging by function (village links at least `unclassified`, never `track`), supported by Bernhard_Hiller and Paul_012. Survey mappers disagreed:
+  - Russ_McD: a road a normal 2WD car can drive is `unclassified` + `surface`; if ruts and washouts stop normal travel it is a `track`, and "some of the mountain hamlets and settlements are connected by these ways, but in this case we dont tag as an UPR just because it connects villages".
+  - crsCR, on `surface` and `tracktype`: "These don't change the visual display in any useful or usable way. (At least, not in any OSM data displaying maps I've seen.)" For that reason they did not add those tags at all, and used `track` for rough ways. They quoted the `highway=unclassified` wiki page of the time: "should be tagged as highway=track if they are unfit for standard motorcar usage".
+- [Proposal for highway classification revision](https://community.openstreetmap.org/t/proposal-for-highway-classification-revision/93701) (2021), julcnx (post 36): consensus in 2016 leaned towards `track` for safety reasons, and "Most renderers will only rely on highway tag and this is why highway=track has been abused to describe unpaved/4wd conditions instead of its actual function."
+- [Thailand's Minor Road Classifications Revision Proposal](https://community.openstreetmap.org/t/5805) (2022), julcnx: lists "highway=track used for anything unpaved" as a current problem.
+- Today's [Tag:highway=track](https://wiki.openstreetmap.org/wiki/Tag:highway=track) page says the opposite ("Unpaved roads that are not track roads"; surface alone is not enough to classify a road).
+
+Effect on the stats: these roads are outside our scope (tracks are left out), so unpaved km between villages is missing from the Unpaved share. This is the "tagging for the renderer" problem the project answers: once a renderer shows unpaved roads, mappers no longer need `track` to warn about the surface.
+
+**2. Farm tracks mapped as `highway=residential` because of huts (Grab, about 2018 to 2022).** Grab's organised editing team added rural ways as `residential` when rooftops were visible on imagery; many were farm tracks, unpaved, some 4WD only, with no `surface` tag.
+
+- [Warning: New GrabOSM campaign](https://community.openstreetmap.org/t/94805) (from December 2021):
+  - julcnx (post 5): "Under the pretext of visible 'rooftops', your mappers continuously added residential roads everywhere outside of settlements. Most of these 'roads' are actually agricultural tracks leading to farms, and many are unpaved, 4WD only. Many visible 'rooftops' are often huts used for rest."
+  - Grab (jinalfoflia, post 10) accepted it: "Going forward will tag the unpaved roads in the agricultural or forestry areas as tracks referring to WikiProject_Thailand."
+  - Bernhard_Hiller (post 13), after a field trip: Grab ways are mapped "as a 'residential' for kilometers into rubber plantations".
+- [Rules for remote organized editing teams](https://community.openstreetmap.org/t/95637) (2022), julcnx, list of issues: "farm huts are not residential houses!", "adding thru-traffic residential roads everywhere in rural/farming/agricultural areas", "changing (valid) tracks and service roads to residential".
+- [GRAB - Here we bloody go again !](https://community.openstreetmap.org/t/85194) (2018): AlaskaDave says the ways "look like they're only rough tracks through a field"; Russ_McD asks Grab to stop adding "tracks across fields".
+- [Grab / GlobalLogic India directed editing](https://community.openstreetmap.org/t/84849) (2018), Russ_McD on Facebook's earlier edits: "virtually everything tagged as a residential road, from tracks across fields, to peoples private drives".
+- [Ending corporate vandalism: please vote!](https://community.openstreetmap.org/t/95523) (2022), Veiviseren: "Seen lot of dirt track being classified as Residential here in Nan."
+- [Improvements in Thailand: Reducing the Risks of Armchair Mapping](https://community.openstreetmap.org/t/123857) (2025), julcnx: imports came from Facebook (`highway=track/unclassified`) and Grab (`highway=residential/service`), and local mappers then copied the pattern.
+
+Effect on the stats: these ways count as Untagged and render as Paved, so "Untagged = Paved" is weakest exactly on rural residential roads, where the Malaysia pilot below found no imagery to test it.
+
+Notes for citing: forum posts migrated from the old forum all show 2023-03-08; the dates above are the thread creation dates. Several of the clearest quotes are by julcnx (the author); the independent backing is Grab's own reply and the posts by Russ_McD, AlaskaDave, Bernhard_Hiller and Veiviseren.
 
 ### Ground-truth pilot: untagged roads in Malaysia (2026-11-03)
 
@@ -278,7 +309,7 @@ This is why the map has only two levels (decision 9): `surface=unpaved` honestly
 | Official share **higher** than even the OSM upper bound | 18, for example DR Congo 98% (OSM 38% / 97%), Mexico 75% (13% / 48%), Sri Lanka 85% (14% / 38%), Cambodia 76% (9% / 52%), Philippines 72% (13% / 40%) |
 | Official share lower | 1: New Zealand 34% (OSM 36% / 37%), practically equal |
 
-Conclusion: **OSM-based Unpaved shares are conservative.** Where they differ from official statistics, official figures show more unpaved road, not less. Caveats to state with the numbers: definitions differ (official "unpaved" usually includes rural roads and tracks that OSM may map as `highway=track`, which we leave out), survey years are old in some countries (Gabon and Cuba 2001; roads have been paved since, which works against the conclusion), and OSM maps 1 to 10 times more road km than the official inventories (mostly residential and unclassified roads not counted officially). Full table: "Official figures" in [stats/report.md](stats/report.md).
+Conclusion: **OSM-based Unpaved shares are conservative.** Where they differ from official statistics, official figures show more unpaved road, not less. Caveats to state with the numbers: definitions differ (official "unpaved" usually includes rural roads and tracks that OSM may map as `highway=track`, which we leave out; in Thailand this includes unpaved village roads mapped as `track` on purpose, see "Mapping history in Thailand"), survey years are old in some countries (Gabon and Cuba 2001; roads have been paved since, which works against the conclusion), and OSM maps 1 to 10 times more road km than the official inventories (mostly residential and unclassified roads not counted officially). Full table: "Official figures" in [stats/report.md](stats/report.md).
 
 ## Findings, two-level model (55 rows, 2026-11-03)
 
