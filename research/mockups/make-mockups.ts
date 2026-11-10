@@ -21,9 +21,10 @@ type Klass = { name: string; id: string; fill: string; casing: string; grainBg: 
 // longer than the dashes (8/9). Limits: Off-road dashes 7 px or more (shorter read as dots), Unpaved gaps 5 px or more
 // (shorter look solid at z13-14). Not the dash-dot (in Carto: track with no tracktype), not dense short dashes (tunnel casing).
 const RHYTHM = { unpaved: [22, 6], offroad: [8, 9] };
-// Dashed fill: the same rhythm in fill widths (the mockup fill is 11 px), so it scales with the road. Not enlarged:
-// at 1.8 x the dashes were about 3.6 road widths long and, in a narrow band, read like style 1.
-const xWidth = (d: number[]) => d.map((v) => Math.round((v / 11) * 100) / 100);
+// Dashed fill: the same rhythm 1.8 x larger, in fill widths (the mockup fill is 11 px), over the full road width.
+// Long dashes with short gaps are the opposite of Carto construction's even blocks, and the dark casing stays (construction has none).
+// A 60-75% band was tried on 2026-11-10 and dropped: it read like a wide centre line (style 1) or like short even blocks.
+const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 100);
 const SPEC = {
   // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
   classes: {
@@ -37,7 +38,7 @@ const SPEC = {
   styles: {
     'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
     grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
-    'dashed-fill': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad), band: 0.75, bandFromWidth: 6 },
+    'dashed-fill': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad) },
     // Dashed casing, the fill stays continuous: the dashed outline of Gaia GPS tracks, with the class kept.
     // Casing colour for the dashed outline: darker on red and orange (the normal casing is close to the fill),
     // darker on white (OSM Carto tertiary casing), or the dashes fade.
@@ -109,9 +110,7 @@ const OPTIONS: Record<string, Option> = {
   'dashed-fill': {
     title: '4. Dashed fill',
     note: 'Darker class tint in the fill (as DMD2 draws unpaved roads; light brown on white): long dashes = Unpaved, medium dashes = Off-road.',
-    // Dashes in a centred band 75% of the road width (wide enough to read as a fill, not a line), so a thin edge of the normal fill stays along both sides: the road reads
-    // as one road with a pattern, not as Carto construction (full-width blocks). Full width below 6 px, or the band vanishes.
-    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W < DA.bandFromWidth ? W : W * DA.band, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
+    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
 };
 

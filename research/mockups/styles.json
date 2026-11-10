@@ -88,15 +88,13 @@
       "name": "4. Dashed fill",
       "note": "Darker class tint in the fill (as DMD2 draws unpaved roads; light brown on white): long dashes = Unpaved, medium dashes = Off-road.",
       "unpavedXWidth": [
-        2,
-        0.55
+        3.6,
+        0.98
       ],
       "offroadXWidth": [
-        0.73,
-        0.82
-      ],
-      "band": 0.75,
-      "bandFromWidth": 6
+        1.31,
+        1.47
+      ]
     },
     "dashed-casing": {
       "name": "2. Dashed casing",
