@@ -52,9 +52,9 @@ export default {
       "grainDot": "#3f4318",
       "dash": "#d9df75",
       "tunnel": "#fbfdd8",
-      "offTint": "#d0d651",
+      "offTint": "#c7ce31",
       "offDash": "#b9c12d",
-      "lowTint": "#e3e798",
+      "lowTint": "#dfe389",
       "fullDash": "#dee387"
     },
     "minor": {
