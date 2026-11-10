@@ -35,3 +35,10 @@
 - Five styles from faint to strong: 1 Grain fill, 2 Dashed centre line, 3 Dashed fill (60% band), 4 Dashed casing, 5 Dashed fill full width (as Americana). Off-road is now the official tint version: the Unpaved pattern, only darker (darker fill in 1, 2, 4; darker dashes in 3, 5). Side by side shows three columns.
 - Low zoom: below 6 px of road width every style draws a plain tint (lowTint Unpaved, offTint Off-road), measured in steps of contrast 1.2. Grain dots darker on yellow and white. Checked at Namibia z13 (primary 4.7 px).
 - Style 5 (full width): lighter Unpaved dash (contrast 1.25 against the fill; white keeps the tan dash), since full width already covers most of the road.
+
+## 2026-11-10: screenshot loop (5 styles side by side, 6 spots, white and terrain, z12/14/16)
+
+- z12 (primary 3.2 px): every style is the plain tint, as intended. The step paved / Unpaved / Off-road is visible but subtle on thin roads; strongest on red and orange, weakest on yellow.
+- z14 (6.8 px): patterns take over; the transition reads in all five styles at every spot. Nepal NH48 Off-road is clearly darker in all styles.
+- z16 (14.6 px): all clear. Style 5 is the loudest, especially in towns (Bolivia, Namibia) where many minor unpaved roads get full-width dashes; style 3 (band) is calmer there.
+- Wait in scripts/shots.mjs changed from network idle to a fixed delay (live Overpass loading kept the network busy).

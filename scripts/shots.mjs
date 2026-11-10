@@ -20,9 +20,9 @@ page.on('pageerror', (e) => console.error('page error:', e.message));
 for (const spot of spots) for (const bg of bgs) for (const z of zooms) for (const style of compare ? ['all'] : styles) {
   const q = new URLSearchParams({ spot, bg, z, style: compare ? 'centre-line' : style });
   if (compare) q.set('compare', '1');
-  await page.goto(`http://localhost:8765/?${q}`, { waitUntil: 'networkidle0' });
+  await page.goto(`http://localhost:8765/?${q}`, { waitUntil: 'domcontentloaded' });
   await page.waitForFunction('window.mapReady === true', { timeout: 20000 });
-  await new Promise((r) => setTimeout(r, bg === 'terrain' ? 2500 : 400));
+  await new Promise((r) => setTimeout(r, bg === 'terrain' ? 3000 : 1200));
   const file = `${out}/${spot}-${style}-${bg}-z${z}.png`;
   await page.screenshot({ path: file });
   console.error(file);
