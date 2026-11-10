@@ -108,7 +108,8 @@ export class MapView {
     const panels = compare ? [...Object.keys(STYLES), NONE].map((s) => ({ style: s, bg: bg === 'all' ? 'white' : bg, label: s === NONE ? '6. No style (all paved)' : STYLES[s].name }))
       : bg === 'all' ? Object.keys(BACKGROUNDS).map((b) => ({ style, bg: b, label: BACKGROUNDS[b].name }))
       : [{ style, bg }];
-    const cols = panels.length > 4 ? 3 : panels.length > 1 ? 2 : 1, rows = Math.ceil(panels.length / cols);
+    // Portrait map (taller than wide): 2 columns, so 6 panels stack as 3 rows (for phone-shaped screenshots).
+    const cols = panels.length > 4 && W >= H ? 3 : panels.length > 1 ? 2 : 1, rows = Math.ceil(panels.length / cols);
     const cw = W / cols, ch = H / rows;
     this.cell = { w: cw, h: ch };
     // Fill the whole canvas first, so an empty grid cell (5 backgrounds in 3 x 2) does not show old pixels.

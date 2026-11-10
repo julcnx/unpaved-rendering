@@ -25,7 +25,7 @@ const only = process.argv.slice(2);
 for (const [id, spot] of Object.entries(SPOTS)) {
   if (only.length && !only.includes(id)) continue;
   const [la, lo] = spot.center;
-  const dLa = 0.06, dLo = 0.06 / Math.cos((la * Math.PI) / 180);
+  const dLa = spot.radius ?? 0.06, dLo = dLa / Math.cos((la * Math.PI) / 180);
   const bbox = [la - dLa, lo - dLo, la + dLa, lo + dLo].map((v) => v.toFixed(5)).join(',');
   const data = await overpass(`[out:json][timeout:120];way[highway](${bbox});out tags geom;`);
   const features = data.elements.map((w) => ({

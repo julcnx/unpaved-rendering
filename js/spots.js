@@ -6,4 +6,7 @@ export const SPOTS = {
   iceland: { name: 'Iceland, road 54', center: [64.99903, -22.7612] },
   australia: { name: 'Australia, Burke Developmental Road', center: [-17.15373, 144.51059] },
   alberta: { name: 'Canada, Alberta Hwy 40', center: [51.30019, -114.94517] },
+  // Facebook post spot (research/todo.md item 29), not a continent spot.
+  // radius: cached area in degrees of latitude (default 0.06), wider here for portrait shots at zoom 13.
+  pai: { name: 'Thailand, MS.4014 Pai to Wiang Haeng', center: [19.540403, 98.548539], radius: 0.12 },
 };

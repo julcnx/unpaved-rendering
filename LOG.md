@@ -80,3 +80,14 @@
 - Terrain: a narrow white Unpaved road (tan, about 3 px) is close in colour to the contour lines (Australia, z16). The grey casing separates them, but it is the pair to watch if contours get stronger.
 - Dark: Unpaved is faint in styles 1, 3 and 5 (dash 1.32 against the fill); styles 2 and 4 read well, Off-road reads in all five. Unchanged, dark stays low priority.
 
+
+## 2026-11-10: Pai spot (Facebook post) and portrait shots
+
+- New spot `pai` (Thailand, MS.4014 Pai to Wiang Haeng, 19.540403, 98.548539), cached once with `node scripts/fetch-spots.mjs pai` (187 ways). MS.4014 in the cache: about 24 km `surface=unpaved` + `smoothness=very_bad` (Unpaved with the Off-road mark), 6 km `concrete`, 2.5 km `paved`; no `laterite`. The `very_bad` explains why Gaia GPS draws it as a track.
+- All-styles grid: a portrait map (taller than wide) now uses 2 columns x 3 rows instead of 3 x 2.
+- `scripts/shots.mjs --portrait`: 1080 x 1350 (4:5, Facebook feed).
+- Fix: `shots.mjs` without `--compare` took the all-styles grid anyway (the demo shows all styles unless `compare=0`); it now sets `compare=0`.
+- Shots: `shots/pai-portrait/pai-centre-line-{white,terrain}-z14.png`, same frame as the app screenshots in `research/examples/screenshots/pai-z14-portrait/`. At z14 the five styles draw this road the same (plain tan tint), so one style is enough.
+- `shots.mjs --center lat,lon`: shoot another view than the spot centre. All-styles Pai shots taken at 19.540403, 98.5635 (about 1.5 km east of the spot centre, ridge loop in the middle of each panel): `shots/pai-portrait/pai-all-{terrain,forest}-z{14,15}.png`.
+- Fix: the map canvas is now absolutely positioned in `main`. Before, it kept the pixel ratio of its first frame: drawn with the sidebar (780 px wide), then stretched to 1080 px when the sidebar was hidden, it grew to 1869 px tall and the third row of the grid fell off the screenshot. Same issue for anyone resizing the window.
+- Pai cache widened for portrait shots at zoom 13: optional `radius` per spot in `js/spots.js` (default 0.06), used by `fetch-spots.mjs`; `pai` has 0.12 (1530 ways). Full-frame shots of the 5 styles at Julien's view (19.54971, 98.53772, z13 and z13.04, terrain and forest): `shots/pai-portrait/pai-<style>-<bg>-z13*.png`.
