@@ -13,7 +13,7 @@ const LAND = '#f2efe9';
 // fill and casing; grain dots (symbols/unpaved/unpaved_<class>-fill.svg) on a background tinted a little toward brown
 // (Carto's own background is only a lighter fill); white roads stay white, with warm brown dots instead of Carto's grey; tunnel fill (Carto: lighter fill, darker for white roads);
 // dash colour (luminance contrast 1.3 or more against the fill, 1.4 on red and orange where the dashes looked soft; same hue): a slightly darker tint of the class colour, light brown on white roads (grey would look like Carto construction).
-type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string; offTint: string; offDash: string };
+type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string; offTint: string; offDash: string; lowTint: string };
 // One track rhythm for the line styles (centre line and dashed casing), from OSM Carto tracks scaled to our lines:
 // One ladder for roads now and tracks later (Julien's choice, 2026-11-09): Paved solid, Unpaved = long dashes
 // (Carto tracktype=grade2 order), Off-road = medium dashes (grade3 order), with a bigger step than Carto between the
@@ -26,12 +26,14 @@ const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 
 const SPEC = {
   // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
   classes: {
-    motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#da768a', tunnel: '#efb3be', offTint: '#dc7c8f', offDash: '#d0526b' },
-    trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ea8b6e', tunnel: '#fbd3c6', offTint: '#eb9074', offDash: '#e3643d' },
-    primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#e9b066', tunnel: '#fde7c9', offTint: '#ebb470', offDash: '#df8d23' },
-    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#555a28', dash: '#d9df75', tunnel: '#fbfdd8', offTint: '#d4da61', offDash: '#b9c12d' },
-    minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#5e4a35', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#d9c1a3', offDash: '#c8ac84' },
+    motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#da768a', tunnel: '#efb3be', offTint: '#d7697e', offDash: '#d0526b', lowTint: '#dd7f91' },
+    trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ea8b6e', tunnel: '#fbd3c6', offTint: '#e98667', offDash: '#e3643d', lowTint: '#ed9d84' },
+    primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#e9b066', tunnel: '#fde7c9', offTint: '#e8ac61', offDash: '#df8d23', lowTint: '#eec28b' },
+    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#3f4318', dash: '#d9df75', tunnel: '#fbfdd8', offTint: '#d0d651', offDash: '#b9c12d', lowTint: '#e3e798' },
+    minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#46362a', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#d6bc9b', offDash: '#c8ac84', lowTint: '#e2cfb8' },
   },
+  // Below this fill width (px) every style draws a plain tint: lowTint for Unpaved, offTint for Off-road (patterns blur there).
+  lowZoom: { below: 6 },
   // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
   styles: {
     'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
@@ -126,7 +128,9 @@ const OPTIONS: Record<string, Option> = {
 
 // Official Off-road: the Unpaved pattern, only darker: darker fill (offTint) in the grain fill, centre line and casing,
 // darker dashes (offDash) in the two dashed fills.
-const official = (key: string, s: State, c: Klass) => !offroad(s) ? OPTIONS[key].road(s, c)
+// Below SPEC.lowZoom.below px of fill width, every style is a plain tint (stepwise contrast 1.2 or more: fill, lowTint, offTint).
+const official = (key: string, s: State, c: Klass) => unpaved(s) && W < SPEC.lowZoom.below ? road(offroad(s) ? c.offTint : c.lowTint, c.casing)
+  : !offroad(s) ? OPTIONS[key].road(s, c)
   : OPTIONS[key].road('Unpaved', key.startsWith('dashed-fill') ? tintedDash(c) : tinted(c));
 
 // OSM Carto features the styles must not look like, scaled from z16 (construction 8 px wide) to our road width.
@@ -179,7 +183,7 @@ function render(suffix: string) {
   const grid = (road: (key: string, s: State, c: Klass) => string) => ROWS.map(({ c, s }, r) => text(10, y(r) + CELL_H / 2 + 5, `${c.name}: ${s}`, 14, 700) +
     keys.map((key, i) => box(LABEL_W + i * (CELL_W + 10), y(r), road(key, s, c))).join('')).join('');
   out(`options-comparison${suffix}`, svg(w, h + 30, header + grid(official) +
-    text(10, h + 18, 'Off-road = the Unpaved pattern, only darker: darker fill in styles 1, 2 and 4 (tan on white), darker dashes in styles 3 and 5.', 13)));
+    text(10, h + 18, (W < SPEC.lowZoom.below ? 'Below 6 px of road width every style is a plain tint: lighter for Unpaved, darker for Off-road (patterns blur there).' : 'Off-road = the Unpaved pattern, only darker: darker fill in styles 1, 2 and 4 (tan on white), darker dashes in styles 3 and 5.'), 13)));
   // Backup only: the earlier Off-road, more broken (medium dashes, big grain).
   out(`options-comparison-broken${suffix}`, svg(w, h + 30, header + grid((key, s, c) => OPTIONS[key].road(s, c)) +
     text(10, h + 18, 'Backup only: the earlier Off-road, more broken (medium dashes; big grain on top in style 1). The official version uses a darker tint.', 13)));
@@ -202,4 +206,4 @@ render('-narrow');
 
 // Style values for the demo, with the titles and notes shown in its menu and legend.
 const styles = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, { name: OPTIONS[k].title, note: OPTIONS[k].note, ...v }]));
-writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'osm-wiki/unpaved-rendering/mockups/make-mockups.ts', classes: SPEC.classes, styles }, null, 2) + '\n');
+writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'osm-wiki/unpaved-rendering/mockups/make-mockups.ts', lowZoom: SPEC.lowZoom, classes: SPEC.classes, styles }, null, 2) + '\n');

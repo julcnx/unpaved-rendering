@@ -1,5 +1,8 @@
 {
   "source": "osm-wiki/unpaved-rendering/mockups/make-mockups.ts",
+  "lowZoom": {
+    "below": 6
+  },
   "classes": {
     "motorway": {
       "name": "Pink",
@@ -9,8 +12,9 @@
       "grainDot": "#420015",
       "dash": "#da768a",
       "tunnel": "#efb3be",
-      "offTint": "#dc7c8f",
-      "offDash": "#d0526b"
+      "offTint": "#d7697e",
+      "offDash": "#d0526b",
+      "lowTint": "#dd7f91"
     },
     "trunk": {
       "name": "Red",
@@ -20,8 +24,9 @@
       "grainDot": "#511d0f",
       "dash": "#ea8b6e",
       "tunnel": "#fbd3c6",
-      "offTint": "#eb9074",
-      "offDash": "#e3643d"
+      "offTint": "#e98667",
+      "offDash": "#e3643d",
+      "lowTint": "#ed9d84"
     },
     "primary": {
       "name": "Orange",
@@ -31,30 +36,33 @@
       "grainDot": "#563d12",
       "dash": "#e9b066",
       "tunnel": "#fde7c9",
-      "offTint": "#ebb470",
-      "offDash": "#df8d23"
+      "offTint": "#e8ac61",
+      "offDash": "#df8d23",
+      "lowTint": "#eec28b"
     },
     "secondary": {
       "name": "Yellow",
       "fill": "#f7fabf",
       "casing": "#707d05",
       "grainBg": "#f3efb2",
-      "grainDot": "#555a28",
+      "grainDot": "#3f4318",
       "dash": "#d9df75",
       "tunnel": "#fbfdd8",
-      "offTint": "#d4da61",
-      "offDash": "#b9c12d"
+      "offTint": "#d0d651",
+      "offDash": "#b9c12d",
+      "lowTint": "#e3e798"
     },
     "minor": {
       "name": "White",
       "fill": "#ffffff",
       "casing": "#bbbbbb",
       "grainBg": "#ffffff",
-      "grainDot": "#5e4a35",
+      "grainDot": "#46362a",
       "dash": "#dccab0",
       "tunnel": "#f2f2f2",
-      "offTint": "#d9c1a3",
-      "offDash": "#c8ac84"
+      "offTint": "#d6bc9b",
+      "offDash": "#c8ac84",
+      "lowTint": "#e2cfb8"
     }
   },
   "styles": {
