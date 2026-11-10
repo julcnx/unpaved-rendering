@@ -14,7 +14,7 @@ Open `index.html` through a local web server (`python3 -m http.server 8765`, the
 - Sample spots: places where one road changes from paved to unpaved, cached in `data/` (`node scripts/fetch-spots.mjs`). They are the same spots as the screenshots of today's apps.
 - Search anywhere: roads load live from Overpass from zoom 14.
 - Styles: `js/styles.js`, one small function each. Side by side view, five backgrounds, legend.
-- URL parameters: `spot`, `style`, `bg`, `z`, `lat`, `lon`, `compare=1`.
+- URL parameters: `spot`, `style`, `bg` (`all` = every background, one style), `z`, `lat`, `lon`, `compare=1`.
 
 ## Classifier
 

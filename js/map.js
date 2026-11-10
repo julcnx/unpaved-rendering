@@ -20,6 +20,9 @@ const TRACKS = {
   cycleway: { color: '#0000ff', dark: '#7f9fff', width: 1.2, dash: [4, 3] },
 };
 
+// Extra panel in the all-styles grid: no unpaved signal at all.
+export const NONE = 'none';
+
 const TILE = 256;
 const lonX = (lon) => (lon + 180) / 360;
 const latY = (lat) => { const s = Math.sin((lat * Math.PI) / 180); return 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI); };
@@ -98,28 +101,33 @@ export class MapView {
     if (c.width !== W * dpr || c.height !== H * dpr) { c.width = W * dpr; c.height = H * dpr; }
     const ctx = c.getContext('2d');
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const styles = this.opts.compare ? Object.keys(STYLES) : [this.opts.style];
-    const cols = styles.length > 4 ? 3 : styles.length > 1 ? 2 : 1, rows = Math.ceil(styles.length / cols);
+    // Panels: all styles (plus "No style", everything drawn paved, as most maps today), all backgrounds for one style, or one map.
+    const { style, bg, compare } = this.opts;
+    const panels = compare ? [...Object.keys(STYLES), NONE].map((s) => ({ style: s, bg: bg === 'all' ? 'white' : bg, label: s === NONE ? '6. No style (all paved)' : STYLES[s].name }))
+      : bg === 'all' ? Object.keys(BACKGROUNDS).map((b) => ({ style, bg: b, label: BACKGROUNDS[b].name }))
+      : [{ style, bg }];
+    const cols = panels.length > 4 ? 3 : panels.length > 1 ? 2 : 1, rows = Math.ceil(panels.length / cols);
     const cw = W / cols, ch = H / rows;
-    // Fill the whole canvas with the land colour first, so an empty grid cell (5 styles in 3 x 2) matches the background.
-    ctx.fillStyle = BACKGROUNDS[this.opts.bg].land; ctx.fillRect(0, 0, W, H);
-    styles.forEach((key, i) => {
+    // Fill the whole canvas first, so an empty grid cell (5 backgrounds in 3 x 2) does not show old pixels.
+    ctx.fillStyle = BACKGROUNDS[panels[0].bg].land; ctx.fillRect(0, 0, W, H);
+    panels.forEach((p, i) => {
       const rect = { x: (i % cols) * cw, y: Math.floor(i / cols) * ch, w: cw, h: ch };
       ctx.save();
       ctx.beginPath(); ctx.rect(rect.x, rect.y, rect.w, rect.h); ctx.clip();
-      this.drawPanel(ctx, rect, key);
-      if (styles.length > 1) {
+      this.drawPanel(ctx, rect, p.style, p.bg);
+      if (panels.length > 1) {
         const ly = rect.y + (rect.y === 0 ? 48 : 8); // top row: below the style chips
-        ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillRect(rect.x + 8, ly, 190, 24);
-        ctx.fillStyle = '#222'; ctx.font = '600 13px system-ui, sans-serif'; ctx.fillText(STYLES[key].name, rect.x + 16, ly + 17);
+        ctx.font = '600 13px system-ui, sans-serif';
+        ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillRect(rect.x + 8, ly, ctx.measureText(p.label).width + 16, 24);
+        ctx.fillStyle = '#222'; ctx.fillText(p.label, rect.x + 16, ly + 17);
         ctx.strokeStyle = '#888'; ctx.lineWidth = 1; ctx.strokeRect(rect.x + 0.5, rect.y + 0.5, rect.w - 1, rect.h - 1);
       }
       ctx.restore();
     });
   }
 
-  drawPanel(ctx, rect, styleKey) {
-    const bg = BACKGROUNDS[this.opts.bg];
+  drawPanel(ctx, rect, styleKey, bgKey) {
+    const bg = BACKGROUNDS[bgKey];
     const pal = palette(bg.dark);
     const z = this.view.z, s = TILE * 2 ** z;
     const ox = rect.x + rect.w / 2 - this.view.x * s, oy = rect.y + rect.h / 2 - this.view.y * s;
@@ -148,7 +156,7 @@ export class MapView {
     }
 
     // Roads: casings, then fills by rank, then overlays.
-    const style = STYLES[styleKey];
+    const style = styleKey === NONE ? { draw: () => ({}) } : STYLES[styleKey]; // No style: every road drawn as paved
     const roads = all.map((f) => {
       const info = roadInfo(f.tags.highway);
       if (!info) return null;

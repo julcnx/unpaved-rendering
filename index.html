@@ -30,9 +30,11 @@
   #attr { position: absolute; right: 0; bottom: 0; background: rgba(255,255,255,0.8); color: #333; font-size: 11px; padding: 2px 6px; }
   #attr a { color: #0645ad; }
   #chips { position: absolute; left: 10px; top: 10px; display: flex; flex-wrap: wrap; gap: 6px; max-width: calc(100% - 20px); }
-  #chips button { font: 600 13px system-ui, sans-serif; padding: 5px 11px; border-radius: 999px; border: 1px solid #bbb; background: rgba(255,255,255,0.92); color: #222; cursor: pointer; }
-  #chips button[aria-pressed=true] { background: #222; color: #fff; border-color: #fff; box-shadow: 0 0 0 1px #222; } /* white ring: visible on dark maps too */
-  #chips kbd { font: inherit; opacity: 0.55; margin-left: 5px; }
+  #bgchips { position: absolute; right: 10px; bottom: 26px; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; max-width: calc(100% - 20px); }
+  #bgchips button { font-weight: 500; padding: 4px 10px; font-size: 12px; }
+  .chips button, #chips button { font: 600 13px system-ui, sans-serif; padding: 5px 11px; border-radius: 999px; border: 1px solid #bbb; background: rgba(255,255,255,0.92); color: #222; cursor: pointer; }
+  .chips button[aria-pressed=true], #chips button[aria-pressed=true] { background: #222; color: #fff; border-color: #fff; box-shadow: 0 0 0 1px #222; } /* white ring: visible on dark maps too */
+  .chips kbd, #chips kbd { font: inherit; opacity: 0.55; margin-left: 5px; }
   #msg { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); background: rgba(0,0,0,0.75); color: #fff; padding: 6px 12px; border-radius: 4px; display: none; }
   @media (max-width: 700px) { body { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { border-right: 0; border-bottom: 1px solid var(--line); } }
 </style>
@@ -48,12 +50,11 @@
   <label for="search">Search anywhere</label>
   <input id="search" type="search" placeholder="Place name, then Enter">
 
-  <label for="style">Style</label>
-  <select id="style"></select>
+  <div id="style-box">
+    <label for="style">Style</label>
+    <select id="style"></select>
+  </div>
   <div class="row"><input id="compare" type="checkbox"><label for="compare">Side by side: all styles</label></div>
-
-  <label for="bg">Background</label>
-  <select id="bg"></select>
 
   <div id="legend"></div>
   <div id="note"></div>
@@ -62,6 +63,7 @@
 <main>
   <canvas id="map"></canvas>
   <div id="chips" role="group" aria-label="Style"></div>
+  <div id="bgchips" class="chips" role="group" aria-label="Background"></div>
   <div id="msg"></div>
   <div id="attr">© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Terrain: AWS Terrain Tiles</div>
 </main>

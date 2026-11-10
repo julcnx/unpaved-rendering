@@ -45,3 +45,9 @@
 - Yellow tints stronger for low zoom: lowTint #dfe389, offTint #c7ce31 (steps of contrast 1.25, were 1.2).
 - Dark background uses the measured dark palette from the mockups (SPEC.dark): Off-road is the lighter step; primary more orange (no longer brown). Checked on Nepal NH48.
 - Selected chip has a white ring (visible on dark maps); the empty side-by-side cell uses the land colour.
+
+## 2026-11-10: demo feedback (grid, background chips)
+
+- All styles grid: a sixth panel "No style (all paved)", the same map with no unpaved signal, as most maps today.
+- The Style select in the panel is hidden in All mode (it changed nothing there).
+- Backgrounds are chips at the bottom right of the map (the select is gone). With one style, an extra "All" chip shows every background side by side (`bg=all` in the URL), to see how the style fits each map. Not offered in All styles mode (too many panels).

@@ -17,11 +17,13 @@ const options = (sel, entries, value) => {
 };
 options($('spot'), [['', '(none: search or pan)'], ...Object.entries(SPOTS).map(([k, v]) => [k, v.name])], params.get('spot') ?? 'namibia');
 options($('style'), Object.entries(STYLES).map(([k, v]) => [k, v.name]), params.get('style'));
-options($('bg'), Object.entries(BACKGROUNDS).map(([k, v]) => [k, v.name]), params.get('bg'));
 $('compare').checked = params.get('compare') !== '0'; // all styles side by side by default
+// Background: a key of BACKGROUNDS, or 'all' (every background side by side, one style only).
+let bg = BACKGROUNDS[params.get('bg')] || params.get('bg') === 'all' ? params.get('bg') : 'white';
+if ($('compare').checked && bg === 'all') bg = 'white';
 
 const map = new MapView($('map'), () => { updateUrl(); loadLive(); updateNote(); });
-map.opts = { style: $('style').value, bg: $('bg').value, compare: $('compare').checked };
+map.opts = { style: $('style').value, bg, compare: $('compare').checked };
 
 function updateUrl() {
   const { lat, lon, z } = map.center();
@@ -112,7 +114,7 @@ function sample(canvas, styleKey, level, W = 90) {
   canvas.width = W * dpr; canvas.height = H * dpr;
   const ctx = canvas.getContext('2d');
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const bg = BACKGROUNDS[map.opts.bg], pal = palette(bg.dark), c = pal.primary, w = 10;
+  const bg = BACKGROUNDS[map.opts.bg] ?? BACKGROUNDS.white, pal = palette(bg.dark), c = pal.primary, w = 10;
   ctx.fillStyle = bg.land; ctx.fillRect(0, 0, W, H);
   const d = STYLES[styleKey].draw(level, c, w, pal.brown, ctx);
   const line = (color, width, dash, cap = 'round') => {
@@ -144,7 +146,8 @@ function updateNote() {
   // Zoom from which a primary road is wide enough for the style.
   const from = 15 + Math.log2(st.minWidth / 10) / 0.55;
   const w = widthAt(10, z);
-  $('note').textContent = map.opts.compare ? 'Side by side: same view, every style.' :
+  $('note').textContent = map.opts.compare ? 'Side by side: same view, every style, and the map without any unpaved style.' :
+    map.opts.bg === 'all' ? `${st.note} Side by side: same view, every background.` :
     `${st.note} Readable from about zoom ${from.toFixed(1)} on primary roads (${st.minWidth} px).`;
   $('status').textContent = `Zoom ${z.toFixed(1)}: primary road ${w.toFixed(1)} px wide${w < st.minWidth && !map.opts.compare ? ', too thin for this style' : ''}.`;
 }
@@ -163,6 +166,16 @@ function pickStyle(k) {
   $('style').dispatchEvent(new Event('change'));
 }
 $('chips').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) pickStyle(b.dataset.style); });
+
+// Background chips, bottom right. "All" (every background side by side) only when one style is shown.
+function renderBgChips() {
+  const items = [...Object.entries(BACKGROUNDS).map(([k, v]) => [k, v.name]), ...(map.opts.compare ? [] : [['all', 'All']])];
+  $('bgchips').innerHTML = items.map(([k, label]) => `<button data-bg="${k}" aria-pressed="${map.opts.bg === k}">${label}</button>`).join('');
+}
+$('bgchips').addEventListener('click', (e) => {
+  const b = e.target.closest('button');
+  if (b) { bg = b.dataset.bg; $('compare').dispatchEvent(new Event('change')); }
+});
 window.addEventListener('keydown', (e) => {
   if (e.target.matches('input, select, textarea') || e.metaKey || e.ctrlKey || e.altKey) return;
   const keys = Object.keys(STYLES);
@@ -170,18 +183,19 @@ window.addEventListener('keydown', (e) => {
   else if (e.key.toLowerCase() === 'a') pickStyle('all');
 });
 
-for (const id of ['style', 'bg', 'compare']) {
-  $(id).addEventListener('change', () => {
-    map.opts = { style: $('style').value, bg: $('bg').value, compare: $('compare').checked };
-    map.redraw(); updateLegend(); updateNote(); updateUrl(); renderChips();
-  });
+function refresh() {
+  if ($('compare').checked && bg === 'all') bg = 'white'; // all styles x all backgrounds would be too many panels
+  map.opts = { style: $('style').value, bg, compare: $('compare').checked };
+  $('style-box').hidden = map.opts.compare; // the style select means nothing when every style is shown
+  map.redraw(); updateLegend(); updateNote(); updateUrl(); renderChips(); renderBgChips();
 }
+for (const id of ['style', 'compare']) $(id).addEventListener('change', refresh);
 $('spot').addEventListener('change', () => { loadSpot($('spot').value); updateUrl(); });
 
 if (params.has('lat')) map.setCenter(+params.get('lat'), +params.get('lon'), +(params.get('z') ?? 15));
 else if (params.has('z')) map.view.z = +params.get('z');
 await loadSpot($('spot').value);
 if (params.has('z') && !params.has('lat')) { const c = map.center(); map.setCenter(c.lat, c.lon, +params.get('z')); }
-updateLegend(); updateNote(); updateUrl(); renderChips();
+refresh();
 loadLive(); // also when the page opens on a place with no saved spot
 window.mapReady = true; // for the screenshot loop
