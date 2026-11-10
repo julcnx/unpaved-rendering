@@ -131,7 +131,7 @@ function updateLegend() {
     const keys = Object.keys(STYLES);
     $('legend').innerHTML = `<table class="all"><tr><th></th>${keys.map((k) => `<th title="${STYLES[k].name}">${STYLES[k].name.split('.')[0]}</th>`).join('')}</tr>` +
       LEVELS.map(([lv, text]) => `<tr><td>${text}</td>${keys.map((k) => `<td><canvas data-level="${lv}" data-style="${k}"></canvas></td>`).join('')}</tr>`).join('') + '</table>';
-    $('legend').querySelectorAll('canvas').forEach((cv) => sample(cv, cv.dataset.style, cv.dataset.level, 46));
+    $('legend').querySelectorAll('canvas').forEach((cv) => sample(cv, cv.dataset.style, cv.dataset.level, 38));
     return;
   }
   $('legend').innerHTML = LEVELS.map(([lv, text]) => `<div><canvas data-level="${lv}"></canvas>${text}</div>`).join('');

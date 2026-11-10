@@ -99,7 +99,7 @@ export class MapView {
     const ctx = c.getContext('2d');
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const styles = this.opts.compare ? Object.keys(STYLES) : [this.opts.style];
-    const cols = styles.length > 1 ? 2 : 1, rows = Math.ceil(styles.length / cols);
+    const cols = styles.length > 4 ? 3 : styles.length > 1 ? 2 : 1, rows = Math.ceil(styles.length / cols);
     const cw = W / cols, ch = H / rows;
     styles.forEach((key, i) => {
       const rect = { x: (i % cols) * cw, y: Math.floor(i / cols) * ch, w: cw, h: ch };

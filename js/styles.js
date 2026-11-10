@@ -56,31 +56,42 @@ const off = (level) => level === 'offroad' || level === 'specialized';
 
 // Each style: (level, class colours, fill width w, brown, ctx) -> { casing, fill, over[] }.
 // A layer is { color, width, dash?, cap? }. Paved roads are the same in every style.
-const CL = S['centre-line'], GR = S.grain, DA = S['dashed-fill'], GA = S['dashed-casing'];
+const CL = S['centre-line'], GR = S.grain, DA = S['dashed-fill'], GA = S['dashed-casing'], DF = S['dashed-fill-full'];
+// Off-road (official, 2026-11-10): the Unpaved pattern, only darker. Darker fill (offTint) in the grain fill, centre line and
+// casing; darker dashes (offDash) in the two dashed fills. Dark mode has no measured tints yet: falls back to the dash colour.
+const offTint = (c) => c.offTint ?? c.dash;
+const offDash = (c) => c.offDash ?? c.casing;
 export const STYLES = {
   grain: {
     name: GR.name, note: GR.note, minWidth: 6,
     draw: (level, c, w, brown, ctx) => level === 'paved' ? {} : {
-      fill: { color: grain(ctx, c.grainBg, c.grainDot, GR.scale) },
-      over: off(level) ? [{ color: grain(ctx, null, c.grainDot, GR.offroadScale, GR.offroadShift), width: w, cap: 'butt' }] : [],
+      fill: { color: grain(ctx, off(level) ? offTint(c) : c.grainBg, c.grainDot, GR.scale) },
     },
   },
   'centre-line': {
     name: CL.name, note: CL.note, minWidth: 5,
-    draw: (level, c, w, brown) => ({
-      over: level === 'paved' ? [] : [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: off(level) ? CL.offroadDash : CL.unpavedDash, cap: 'butt' }],
-    }),
+    draw: (level, c, w, brown) => level === 'paved' ? {} : {
+      fill: off(level) ? { color: offTint(c) } : undefined,
+      over: [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: CL.unpavedDash, cap: 'butt' }],
+    },
   },
   'dashed-fill': {
     name: DA.name, note: DA.note, minWidth: 3,
     draw: (level, c, w) => ({
-      over: level === 'paved' ? [] : [{ color: c.dash, width: w < DA.bandFromWidth ? w : w * DA.band, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: off(level) ? offDash(c) : c.dash, width: w < DA.bandFromWidth ? w : w * DA.band, dash: DA.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
     }),
   },
   'dashed-casing': {
     name: GA.name, note: GA.note, minWidth: 3,
     draw: (level, c) => level === 'paved' ? {} : {
-      casing: { dash: off(level) ? GA.offroad : GA.unpaved, cap: 'butt', color: c.gapCasing }, // the fill stays continuous
+      casing: { dash: GA.unpaved, cap: 'butt', color: c.gapCasing },
+      fill: off(level) ? { color: offTint(c) } : undefined,
     },
+  },
+  'dashed-fill-full': {
+    name: DF.name, note: DF.note, minWidth: 3,
+    draw: (level, c, w) => ({
+      over: level === 'paved' ? [] : [{ color: off(level) ? offDash(c) : c.dash, width: w, dash: DF.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
+    }),
   },
 };

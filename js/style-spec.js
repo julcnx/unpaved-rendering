@@ -61,7 +61,7 @@ export default {
   "styles": {
     "centre-line": {
       "name": "2. Dashed centre line",
-      "note": "Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), medium dashes = Off-road (grade3). Slightly thicker than contour lines.",
+      "note": "Thin brown line down the middle in long dashes (OSM Carto grade2 rhythm). Off-road: the same line on a darker tint of the road.",
       "color": "#8a6440",
       "width": 1.8,
       "narrowWidth": 1,
@@ -77,7 +77,7 @@ export default {
     },
     "grain": {
       "name": "1. Grain fill",
-      "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: big grain added on top.",
+      "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: the same grain on a darker tint.",
       "scale": 1.5,
       "offroadScale": 3,
       "offroadShift": [
@@ -87,7 +87,7 @@ export default {
     },
     "dashed-fill": {
       "name": "3. Dashed fill",
-      "note": "Darker class tint in the fill (as DMD2 draws unpaved roads; light brown on white): long dashes = Unpaved, medium dashes = Off-road.",
+      "note": "Long dashes in a darker class tint, in a centred band (as DMD2; light brown on white). Off-road: the same dashes, darker.",
       "unpavedXWidth": [
         3.6,
         0.98
@@ -99,9 +99,21 @@ export default {
       "band": 0.6,
       "bandFromWidth": 6
     },
+    "dashed-fill-full": {
+      "name": "5. Dashed fill, full width",
+      "note": "Long dashes in a darker class tint over the whole road width (as Americana). Off-road: the same dashes, darker.",
+      "unpavedXWidth": [
+        3.6,
+        0.98
+      ],
+      "offroadXWidth": [
+        1.31,
+        1.47
+      ]
+    },
     "dashed-casing": {
       "name": "4. Dashed casing",
-      "note": "Class-coloured fill, dashed outline (as Gaia GPS tracks, class kept): long dashes = Unpaved, medium dashes = Off-road.",
+      "note": "Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept). Off-road: the same outline on a darker tint.",
       "unpaved": [
         22,
         6
