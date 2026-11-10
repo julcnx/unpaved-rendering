@@ -8,11 +8,11 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 2. `wood`, `concrete:lanes` and `grass_paver`: Unpaved unless `smoothness` is bad or better (only `very_bad` and worse mean Off-road). Done in all three ports, 68 tests pass (C-statistics decision 10).
 3. `4wd_only` keeps raising the Off-road mark.
 4. Stats are not rerun: the new rule moves only about 300 km out of 20 million.
-5. Styles: four left after the mockups (numbered by preference, 2026-11-09: 1 Dashed centre line, 2 Dashed casing, which replaced open gaps, 3 Grain fill, 4 Dashed fill; renamed 2026-11-09 so each name says the signal and where it is drawn); brown fill and tint dropped, too hard to see or they change the class you see. Pick the default after the screenshot loop.
+5. Styles: four left after the mockups (ordered from faint to strong, 2026-11-10: 1 Grain fill, 2 Dashed centre line, 3 Dashed fill, 4 Dashed casing, which replaced open gaps; no preference, the right one depends on the provider); brown fill and tint dropped, too hard to see or they change the class you see. No single default: each provider picks the style that fits its map.
 6. Repo: a new local repo `~/Workspaces/OSM/unpaved-rendering`, pushed to `julcnx/unpaved-rendering` only after Julien's OK.
 7. Screenshot spots: one per continent, no Antarctica. North America = Alberta Hwy 40 (spot 6, added 2026-11-09); backups Alberta Hwy 68 and Mexico QR 15.
 8. The proposal stays OSM-specific: no generic styling guide for other data sources.
-9. One pattern ladder for roads now and tracks later: Paved solid, Unpaved long dashes (Carto `grade2` rhythm), Off-road medium dashes (`grade3`); used by the dashed centre line, dashed casing and dashed fill. Style 4 (dashed fill) follows the same rule (not reversed).
+9. One pattern ladder for roads now and tracks later: Paved solid, Unpaved long dashes (Carto `grade2` rhythm), Off-road medium dashes (`grade3`); used by the dashed centre line, dashed casing and dashed fill. The dashed fill follows the same rule (not reversed).
 
 ## Demo and colour tests
 
