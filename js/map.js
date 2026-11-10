@@ -81,7 +81,9 @@ export class MapView {
   zoomAt(px, py, dz) {
     const z = Math.min(18, Math.max(8, this.view.z + dz));
     const s0 = TILE * 2 ** this.view.z, s1 = TILE * 2 ** z;
-    const dx = px - this.canvas.clientWidth / 2, dy = py - this.canvas.clientHeight / 2;
+    // Each grid cell centres the view on its own centre: measure from the centre of the cell under the cursor.
+    const { w: cw, h: ch } = this.cell ?? { w: this.canvas.clientWidth, h: this.canvas.clientHeight };
+    const dx = px - (Math.floor(px / cw) + 0.5) * cw, dy = py - (Math.floor(py / ch) + 0.5) * ch;
     this.view.x += dx / s0 - dx / s1;
     this.view.y += dy / s0 - dy / s1;
     this.view.z = z;
@@ -108,6 +110,7 @@ export class MapView {
       : [{ style, bg }];
     const cols = panels.length > 4 ? 3 : panels.length > 1 ? 2 : 1, rows = Math.ceil(panels.length / cols);
     const cw = W / cols, ch = H / rows;
+    this.cell = { w: cw, h: ch };
     // Fill the whole canvas first, so an empty grid cell (5 backgrounds in 3 x 2) does not show old pixels.
     ctx.fillStyle = BACKGROUNDS[panels[0].bg].land; ctx.fillRect(0, 0, W, H);
     panels.forEach((p, i) => {
