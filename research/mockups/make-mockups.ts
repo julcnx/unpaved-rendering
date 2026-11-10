@@ -37,7 +37,7 @@ const SPEC = {
     'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
     grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
     'dashed-fill': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad) },
-    // Dashed casing, the fill stays continuous (as Gaia GPS draws tracks and DMD2 unpaved roads).
+    // Dashed casing, the fill stays continuous: the dashed outline of Gaia GPS tracks, with the class kept.
     // Casing colour for the dashed outline: darker on red and orange (the normal casing is close to the fill),
     // darker on white (OSM Carto tertiary casing), or the dashes fade.
     'dashed-casing': { unpaved: RHYTHM.unpaved, offroad: RHYTHM.offroad, casing: { trunk: '#a33b20', primary: '#7d5400', minor: '#8f8f8f' } },
@@ -88,7 +88,7 @@ const OPTIONS: Record<string, Option> = {
   },
   'dashed-casing': {
     title: '2. Dashed casing',
-    note: 'Continuous class-coloured fill, dashed outline (as Gaia GPS draws tracks and DMD2 unpaved roads): long dashes = Unpaved, medium dashes = Off-road, the same rhythm as the centre line.',
+    note: 'Class-coloured fill, dashed outline (as Gaia GPS tracks, class kept): long dashes = Unpaved, medium dashes = Off-road.',
     road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
   grain: {
@@ -98,7 +98,7 @@ const OPTIONS: Record<string, Option> = {
   },
   'dashed-fill': {
     title: '4. Dashed fill',
-    note: 'The shared ladder across the road, in a darker class tint (light brown on white): long dashes = Unpaved, medium dashes = Off-road.',
+    note: 'Darker class tint in the fill (as DMD2 draws unpaved roads; light brown on white): long dashes = Unpaved, medium dashes = Off-road.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
 };
