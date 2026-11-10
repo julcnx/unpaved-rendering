@@ -7,7 +7,10 @@ import puppeteer from 'puppeteer-core';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const ZOOM = Number(process.env.ZOOM ?? 15); // other zooms write to screenshots/<spot>-z<zoom>/
-const VIEW = { width: 1200, height: 800 };
+// PORTRAIT=1: 1080 x 1350 (4:5, the tallest Facebook shows uncropped in the feed), for the Facebook spots;
+// writes to screenshots/<spot>-z<zoom>-portrait/.
+const PORTRAIT = process.env.PORTRAIT === '1';
+const VIEW = PORTRAIT ? { width: 1080, height: 1350 } : { width: 1200, height: 800 };
 
 const SPOTS: Record<string, [number, number]> = {
   namibia: [-18.81068, 16.9415],
@@ -16,6 +19,12 @@ const SPOTS: Record<string, [number, number]> = {
   iceland: [64.99903, -22.7612],
   australia: [-17.15373, 144.51059],
   alberta: [51.30019, -114.94517],
+  // Facebook post spots, not continent spots (todo item 29)
+  chiangdao: [19.313093, 98.897597],
+  // The bend between Sop Gai and Mueang Khong (Mae Taeng to Mueang Khong road), view picked by Julien (2026-11-10).
+  muangkhong: [19.297374, 98.740096],
+  // Pai to Mueang Noi to Wiang Haeng (MS.4014, the road on the AdvOSM comparison image), view picked by Julien at z13 (2026-11-10).
+  pai: [19.540403, 98.548539],
 };
 
 const osm = (layer: string) => (la: number, lo: number) => `https://www.openstreetmap.org/#map=${ZOOM}/${la}/${lo}&layers=${layer}`;
@@ -132,7 +141,7 @@ const browser = await puppeteer.launch({
 const only = process.env.APPS?.split(/\s+/).filter(Boolean);
 for (const spot of spots.length ? spots : ['namibia', 'bolivia']) {
   const [la, lo] = SPOTS[spot];
-  const dir = new URL(`./screenshots/${spot}${ZOOM === 15 ? '' : `-z${ZOOM}`}/`, import.meta.url);
+  const dir = new URL(`./screenshots/${spot}${ZOOM === 15 && !PORTRAIT ? '' : `-z${ZOOM}`}${PORTRAIT ? '-portrait' : ''}/`, import.meta.url);
   mkdirSync(dir, { recursive: true });
   for (const [name, app] of Object.entries(APPS)) {
     if (only && !only.includes(name)) continue;
