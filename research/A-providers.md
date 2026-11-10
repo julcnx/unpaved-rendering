@@ -224,7 +224,7 @@ What to change in the fork (our model):
 
 1. **Keep the class on roads**: do not repaint roads in track colour and width. Keep the class colour and width, and add our Unpaved signal (dashed centre line or dashed casing) on top. Tracks can keep the five categories.
 2. **`surface=unpaved` is not bare ground**: it is 75% of unpaved km on main roads and says nothing about roughness. In the fork it is plain Unpaved (no Off-road mark), not green.
-3. **Off-road from evidence only**: `smoothness` very_bad or worse, `tracktype` grade3 or worse, `4wd_only` (our classifier). Note that the style puts `grade3` in the easy brown group, while our classifier gives it the Off-road mark: to align with Julien before the fork.
+3. **Off-road from evidence only**: `smoothness` very_bad or worse, `tracktype` grade3 or worse, `4wd_only` (our classifier). The style puts `grade3` in the easy brown group; our classifier keeps the Off-road mark for it (decision 11 in C-statistics: `grade3` is considered high clearance), so the fork moves `grade3` out of the easy group.
 4. **Explicit lists**: values in no list fall through to the normal road look (paved). Use a paved whitelist, as in our classifier.
 5. **Match the shared ladder** (decision 9): solid, long dashes, medium dashes, so the phone demo looks like the web demo.
 
