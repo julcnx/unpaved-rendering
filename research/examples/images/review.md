@@ -1,7 +1,7 @@
 # Street-level image review
 
-Reviewed 2026-11-02 by looking at every downloaded image (contact sheets: `sheets/`, kept locally, not committed because they include Google images).
-Images: `mapillary/` (CC BY-SA 4.0: reusable on the wiki with author credit on the File page) and `google/` (copyrighted: for checking only, never upload, not committed). Authors and capture dates: [credits.json](credits.json).
+Reviewed 2026-11-02 by looking at every downloaded image (contact sheets: `sheets/`, kept locally, not committed).
+Images: `mapillary/` (CC BY-SA 4.0: reusable on the wiki with author credit on the File page). The round 1 Google Street View images (`google/` below) were deleted on 2026-11-10, when Google was dropped; the verdicts made from them stay. Authors and capture dates: [credits.json](credits.json).
 
 Verdict: does the image match the class the rule gives the road?
 

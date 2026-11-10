@@ -97,7 +97,7 @@ Comparison grids (2026-11-09): [examples/screenshots/](examples/screenshots/) `<
 
 ## D1b. Street-level imagery check
 
-Satellite alone is not enough evidence, so each example needs Mapillary or Google Street View. [examples/imagery-check.ts](examples/imagery-check.ts) samples points along each way (8 in round 1, 4 in later screenings) and looks for the nearest image within 50 m, with the same lookups as `unpaved-app/app/js/street-view.js`. Keys are read from `unpaved-app` at run time, never stored here. `GOOGLE=0` skips Google entirely (Google Static images cost money; metadata calls are free). Candidates: [examples/candidates.txt](examples/candidates.txt) (wiki and famous roads) plus the longest Unpaved major roads per country from the stats. Full table: [examples/imagery.md](examples/imagery.md).
+Satellite alone is not enough evidence, so each example needs street-level imagery: Mapillary only since 2026-11-10 (Google Street View dropped, its images deleted; Google data removed from `imagery.json` and `imagery.md`). [examples/imagery-check.ts](examples/imagery-check.ts) samples points along each way (8 in round 1, 4 in later screenings) and looks for the nearest image within 50 m, with the same lookups as `unpaved-app/app/js/street-view.js`. Keys are read from `unpaved-app` at run time, never stored here. Candidates: [examples/candidates.txt](examples/candidates.txt) (wiki and famous roads) plus the longest Unpaved major roads per country from the stats. Full table: [examples/imagery.md](examples/imagery.md).
 
 Rounds:
 

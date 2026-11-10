@@ -1,7 +1,7 @@
-// Street-level imagery coverage of example roads (Mapillary and Google Street View).
+// Street-level imagery coverage of example roads (Mapillary only: Google Street View dropped 2026-11-10).
 // Same lookups as unpaved-app/app/js/street-view.js: nearest image within 50 m of a point.
-// Usage: MAPILLARY_TOKEN=... GOOGLE_SV_KEY=... [AUTO_PER_COUNTRY=3] [SAMPLES=8] node examples/imagery-check.ts
-// COUNTRIES="na ci": only add stats candidates from these countries. GOOGLE=0: Mapillary only, no Google calls.
+// Usage: MAPILLARY_TOKEN=... [AUTO_PER_COUNTRY=3] [SAMPLES=8] node examples/imagery-check.ts
+// COUNTRIES="na ci": only add stats candidates from these countries.
 // Roads already in examples/imagery.json are kept and not checked again.
 // Writes examples/imagery.json and examples/imagery.md.
 
@@ -11,10 +11,9 @@ import { classifyDetailed } from '../classifier/classify.ts';
 const SAMPLES = Number(process.env.SAMPLES ?? 8);
 const RADIUS_M = 50;
 const AUTO_PER_COUNTRY = Number(process.env.AUTO_PER_COUNTRY ?? 3);
-const USE_GOOGLE = process.env.GOOGLE !== '0';
 const COUNTRIES = process.env.COUNTRIES?.split(/\s+/).filter(Boolean);
-const { MAPILLARY_TOKEN, GOOGLE_SV_KEY } = process.env;
-if (!MAPILLARY_TOKEN || (USE_GOOGLE && !GOOGLE_SV_KEY)) throw new Error('set MAPILLARY_TOKEN and GOOGLE_SV_KEY (or GOOGLE=0)');
+const { MAPILLARY_TOKEN } = process.env;
+if (!MAPILLARY_TOKEN) throw new Error('set MAPILLARY_TOKEN');
 
 type Candidate = { id: string; country: string; label: string; origin: string };
 type Point = { lat: number; lon: number };
@@ -67,14 +66,6 @@ async function mapillary(p: Point) {
   return img ? { url: `https://www.mapillary.com/app/?pKey=${img.id}`, date: new Date(img.captured_at).toISOString().slice(0, 10) } : null;
 }
 
-async function google(p: Point) {
-  const q = new URLSearchParams({ location: `${p.lat},${p.lon}`, radius: String(RADIUS_M), source: 'outdoor', key: GOOGLE_SV_KEY! });
-  const res = await fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?${q}`);
-  const m = await res.json();
-  if (m.status !== 'OK') return null;
-  return { url: `https://www.google.com/maps/@?api=1&map_action=pano&pano=${m.pano_id}`, date: m.date ?? '', official: /google/i.test(m.copyright ?? '') };
-}
-
 const jsonFile = new URL('./imagery.json', import.meta.url);
 const out: any[] = existsSync(jsonFile) ? JSON.parse(readFileSync(jsonFile, 'utf8')).roads : [];
 const done = new Set(out.map((r) => r.id));
@@ -88,24 +79,20 @@ for (const c of candidates) {
   const line: Point[] = way.nodes.map((id: number) => nodes.get(id));
   const km = line.slice(1).reduce((s, p, i) => s + distKm(line[i], p), 0);
   const points = samplePoints(line, SAMPLES);
-  const mly = [], gsv = [];
-  for (const p of points) {
-    mly.push(await mapillary(p));
-    gsv.push(USE_GOOGLE ? await google(p) : null);
-  }
+  const mly = [];
+  for (const p of points) mly.push(await mapillary(p));
   const { level, source } = classifyDetailed(way.tags);
   const latest = (xs: any[]) => xs.filter(Boolean).map((x) => x.date).sort().pop() ?? '';
   const row = {
     ...c, km: Math.round(km * 10) / 10, level, source, checked_at: new Date().toISOString().slice(0, 10), samples_checked: SAMPLES,
     tags: Object.fromEntries(['highway', 'ref', 'surface', 'smoothness', 'tracktype', '4wd_only'].filter((k) => way.tags[k]).map((k) => [k, way.tags[k]])),
     mapillary: { covered: mly.filter(Boolean).length, latest: latest(mly), first: mly.find(Boolean)?.url ?? '' },
-    google: { covered: gsv.filter(Boolean).length, official: gsv.filter((g) => g?.official).length, latest: latest(gsv), first: gsv.find(Boolean)?.url ?? '' },
-    samples: points.map((p, i) => ({ ...p, mapillary: mly[i]?.url ?? '', google: gsv[i]?.url ?? '' })),
+    samples: points.map((p, i) => ({ ...p, mapillary: mly[i]?.url ?? '' })),
   };
   out.push(row);
   // Saved after every road, so a stopped run resumes where it left off.
   writeFileSync(jsonFile, JSON.stringify({ radius_m: RADIUS_M, roads: out }, null, 1));
-  console.error(`${c.id} ${c.country} ${c.label}: Mapillary ${row.mapillary.covered}/${SAMPLES}, Google ${row.google.covered}/${SAMPLES}`);
+  console.error(`${c.id} ${c.country} ${c.label}: Mapillary ${row.mapillary.covered}/${SAMPLES}`);
   await sleep(500);
 }
 
@@ -113,12 +100,12 @@ writeFileSync(jsonFile, JSON.stringify({ radius_m: RADIUS_M, roads: out }, null,
 
 const cell = (s: { covered: number; latest: string; first: string }, n: number) =>
   s.covered ? `${s.covered}/${n} ([${s.latest || 'view'}](${s.first}))` : `0/${n}`;
-const share = (r: any) => (r.mapillary.covered + r.google.covered) / (r.samples_checked ?? 8);
+const share = (r: any) => r.mapillary.covered / (r.samples_checked ?? 8);
 const rows = out.filter((r) => share(r) > 0).sort((a, b) => share(b) - share(a))
-  .map((r) => `| ${r.country.toUpperCase()} | [${r.label}](https://www.openstreetmap.org/way/${r.id.slice(1)}) | ${r.km} | ${r.level} (${r.source}) | ${Object.entries(r.tags).map(([k, v]) => `\`${k}=${v}\``).join(' ')} | ${cell(r.mapillary, r.samples_checked ?? 8)} | ${cell(r.google, r.samples_checked ?? 8)}${r.google.covered && r.google.official < r.google.covered ? `, ${r.google.official} official` : ''} | ${r.origin} |`);
+  .map((r) => `| ${r.country.toUpperCase()} | [${r.label}](https://www.openstreetmap.org/way/${r.id.slice(1)}) | ${r.km} | ${r.level} (${r.source}) | ${Object.entries(r.tags).map(([k, v]) => `\`${k}=${v}\``).join(' ')} | ${cell(r.mapillary, r.samples_checked ?? 8)} | ${r.origin} |`);
 writeFileSync(new URL('./imagery.md', import.meta.url), [
   '# Street-level imagery coverage of example roads', '',
-  `Generated by \`examples/imagery-check.ts\`: points evenly spaced along each way (8 for the first list, 4 for the wider screening), nearest image within ${RADIUS_M} m. Links open the first covered point and show the newest capture date. "official" = Google car imagery (others are user photospheres). Only roads with some coverage are listed: ${out.filter((r) => share(r) > 0).length} of ${out.length} checked.`, '',
-  '| Country | Road | km | Class | Tags | Mapillary | Google Street View | From |',
-  '|---|---|--:|---|---|---|---|---|', ...rows, '',
+  `Generated by \`examples/imagery-check.ts\`: points evenly spaced along each way (8 for the first list, 4 for the wider screening), nearest image within ${RADIUS_M} m. Links open the first covered point and show the newest capture date. Only roads with some coverage are listed: ${out.filter((r) => share(r) > 0).length} of ${out.length} checked.`, '',
+  '| Country | Road | km | Class | Tags | Mapillary | From |',
+  '|---|---|--:|---|---|---|---|', ...rows, '',
 ].join('\n'));
