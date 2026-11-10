@@ -118,8 +118,8 @@ function addWay(id: string, tags: Tags, len: number) {
   }
 
   const unknown: string[] = [];
-  if (tags.smoothness && !(tags.smoothness in SMOOTHNESS)) unknown.push(`smoothness=${tags.smoothness}`);
-  if (tags.tracktype && !(tags.tracktype in TRACKTYPE_MARK)) unknown.push(`tracktype=${tags.tracktype}`);
+  if (tags.smoothness && !Object.hasOwn(SMOOTHNESS, tags.smoothness)) unknown.push(`smoothness=${tags.smoothness}`);
+  if (tags.tracktype && !Object.hasOwn(TRACKTYPE_MARK, tags.tracktype)) unknown.push(`tracktype=${tags.tracktype}`);
   if (tags['4wd_only'] && !FOUR_WD_ONLY[tags['4wd_only']] && tags['4wd_only'] !== 'no') unknown.push(`4wd_only=${tags['4wd_only']}`);
   if (tags.surface && r.base === 'unpaved') {
     const parts = tags.surface.split(';').map((s) => s.trim());

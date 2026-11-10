@@ -48,6 +48,9 @@ export const FOUR_WD_ONLY: Record<string, Mark> = {
 
 export type Tags = Record<string, string | undefined>;
 
+// Own keys only: a tag value like "constructor" or "toString" must not match the object's built-in properties.
+const has = (table: object, value: string | undefined): value is string => value !== undefined && Object.hasOwn(table, value);
+
 // Multiple values (e.g. "asphalt;concrete") are paved only if every part is.
 export function surfaceBase(surface: string, smoothness?: string): Base {
   const smooth = smoothness !== undefined && SMOOTH_ENOUGH.has(smoothness);
@@ -63,7 +66,7 @@ export function classifyDetailed(tags: Tags): Result {
   if (tags.surface) {
     base = surfaceBase(tags.surface, tags.smoothness);
     baseSource = 'surface';
-  } else if (tags.tracktype && tags.tracktype in TRACKTYPE_MARK) {
+  } else if (has(TRACKTYPE_MARK, tags.tracktype)) {
     base = tags.tracktype === 'grade1' ? 'paved' : 'unpaved';
     baseSource = 'tracktype';
   } else {
@@ -75,14 +78,14 @@ export function classifyDetailed(tags: Tags): Result {
 
   let mark: Mark | null = null;
   let markSource: MarkSource | null = null;
-  if (tags.smoothness && tags.smoothness in SMOOTHNESS) {
+  if (has(SMOOTHNESS, tags.smoothness)) {
     mark = SMOOTHNESS[tags.smoothness];
     markSource = mark && 'smoothness';
-  } else if (tags.tracktype && tags.tracktype in TRACKTYPE_MARK) {
+  } else if (has(TRACKTYPE_MARK, tags.tracktype)) {
     mark = TRACKTYPE_MARK[tags.tracktype];
     markSource = mark && 'tracktype';
   }
-  const fourWd = tags['4wd_only'] && FOUR_WD_ONLY[tags['4wd_only']];
+  const fourWd = has(FOUR_WD_ONLY, tags['4wd_only']) && FOUR_WD_ONLY[tags['4wd_only']];
   if (fourWd && (!mark || RANK[fourWd] > RANK[mark])) {
     mark = fourWd;
     markSource = '4wd_only';

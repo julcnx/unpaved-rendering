@@ -14,3 +14,11 @@ for (const c of cases) {
     assert.deepEqual(classifyDetailed(tags), expected);
   });
 }
+
+// TypeScript only: tag values that are names of built-in object properties are unknown values, not matches.
+test('values named like built-in properties are ignored', () => {
+  for (const v of ['constructor', 'toString', 'valueOf', '__proto__']) {
+    assert.equal(classifyDetailed({ highway: 'tertiary', surface: 'gravel', smoothness: v, tracktype: v, '4wd_only': v }).level, 'unpaved');
+    assert.equal(classifyDetailed({ highway: 'tertiary', tracktype: v }).baseSource, 'default');
+  }
+});
