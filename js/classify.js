@@ -23,7 +23,7 @@ const SMOOTHNESS = {
 // grade6-8 are an Australian local extension.
 const TRACKTYPE_MARK = {
   grade1: null, grade2: null,
-  grade3: 'offroad', grade4: 'offroad', grade5: 'offroad', grade6: 'offroad', grade7: 'offroad',
+  grade3: null, grade4: 'offroad', grade5: 'offroad', grade6: 'offroad', grade7: 'offroad',
   grade8: 'specialized',
 };
 const FOUR_WD_ONLY = { recommended: 'offroad', yes: 'offroad', extreme: 'specialized' };
