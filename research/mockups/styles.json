@@ -94,7 +94,9 @@
       "offroadXWidth": [
         1.31,
         1.47
-      ]
+      ],
+      "band": 0.6,
+      "bandFromWidth": 6
     },
     "dashed-casing": {
       "name": "2. Dashed casing",
