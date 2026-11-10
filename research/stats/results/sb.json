@@ -3,16 +3,14 @@
  "name": "Solomon Islands",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:51.680Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T04:24:45.249Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "solomon-islands-latest.osm.pbf",
   "boundary": "r1857436",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T04:24:45.249Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -45,7 +43,7 @@
   },
   "tertiary": {
    "untagged": 548.5,
-   "unpaved": 148.8,
+   "unpaved": 148.7,
    "paved_tagged": 5.8,
    "offroad": 0,
    "specialized": 0
@@ -90,7 +88,7 @@
   "residential": {
    "surface": 121.2,
    "smoothness": 2.5,
-   "tracktype": 0.4
+   "tracktype": 0.3
   },
   "all": {
    "surface": 1138.5,
@@ -136,7 +134,7 @@
   },
   "residential": {
    "smoothness": 1.7,
-   "tracktype": 0.4
+   "tracktype": 0.3
   },
   "all": {
    "tracktype": 14.6,
@@ -167,8 +165,7 @@
   "tertiary": {
    "unpaved": {
     "surface=unpaved": 144.3,
-    "surface=fine_gravel": 4.4,
-    "surface=wood": 0
+    "surface=fine_gravel": 4.4
    },
    "offroad": {},
    "specialized": {}
@@ -196,7 +193,7 @@
    },
    "offroad": {
     "smoothness=very_bad": 1.6,
-    "tracktype=grade4": 0.4,
+    "tracktype=grade4": 0.3,
     "smoothness=horrible": 0.1
    },
    "specialized": {}
@@ -209,8 +206,7 @@
     "surface=ground": 6.4,
     "surface=fine_gravel": 4.4,
     "surface=compacted": 4.2,
-    "surface=gravel": 0.9,
-    "surface=wood": 0
+    "surface=gravel": 0.9
    },
    "offroad": {
     "tracktype=grade4": 14.6,
@@ -289,6 +285,5 @@
   ],
   "conflict": [],
   "unknown_value": []
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

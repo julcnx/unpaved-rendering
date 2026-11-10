@@ -3,16 +3,14 @@
  "name": "Chile",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:49.154Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T04:10:27.390Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "chile-latest.osm.pbf",
   "boundary": "r167454",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T04:10:27.390Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -24,51 +22,51 @@
   },
   "trunk": {
    "paved_tagged": 6024.5,
-   "unpaved": 461.7,
+   "unpaved": 461.6,
    "untagged": 37,
    "offroad": 0,
    "specialized": 0
   },
   "primary": {
-   "paved_tagged": 9745.4,
-   "unpaved": 387,
+   "paved_tagged": 9745.6,
+   "unpaved": 386.8,
    "untagged": 51.4,
    "offroad": 0,
    "specialized": 0
   },
   "secondary": {
-   "paved_tagged": 9818.1,
-   "unpaved": 566.6,
+   "paved_tagged": 9818.2,
+   "unpaved": 566.4,
    "untagged": 88.5,
    "offroad": 0,
    "specialized": 0
   },
   "tertiary": {
-   "paved_tagged": 23262.6,
-   "unpaved": 20734.7,
+   "paved_tagged": 23266.4,
+   "unpaved": 20705.1,
    "untagged": 324.1,
-   "offroad": 102.5,
+   "offroad": 128.3,
    "specialized": 54.4
   },
   "unclassified": {
-   "unpaved": 61096.6,
-   "paved_tagged": 4970.1,
+   "unpaved": 60572.6,
+   "paved_tagged": 4974.2,
    "untagged": 4392.2,
-   "offroad": 275,
+   "offroad": 794.9,
    "specialized": 63.8
   },
   "residential": {
-   "unpaved": 23857.1,
-   "paved_tagged": 19032.6,
+   "unpaved": 23826.2,
+   "paved_tagged": 19033.1,
    "untagged": 6617.4,
-   "offroad": 16.4,
+   "offroad": 46.7,
    "specialized": 3.6
   },
   "all": {
-   "unpaved": 107103.7,
-   "paved_tagged": 79137.7,
+   "unpaved": 106518.9,
+   "paved_tagged": 79146.5,
    "untagged": 11525.8,
-   "offroad": 393.9,
+   "offroad": 969.9,
    "specialized": 121.9
   }
  },
@@ -92,7 +90,7 @@
   },
   "tertiary": {
    "surface": 44154.2,
-   "smoothness": 356.3,
+   "smoothness": 356.4,
    "tracktype": 127.1,
    "4wd_only": 12.9
   },
@@ -103,7 +101,7 @@
    "4wd_only": 30.8
   },
   "residential": {
-   "surface": 42908.4,
+   "surface": 42908.5,
    "tracktype": 209.1,
    "smoothness": 74,
    "4wd_only": 0.7
@@ -143,7 +141,7 @@
    "tracktype": 25.2
   },
   "residential": {
-   "surface": 42908.4,
+   "surface": 42908.5,
    "default": 6617.4,
    "tracktype": 1.3
   },
@@ -160,23 +158,23 @@
   "secondary": {},
   "tertiary": {
    "smoothness": 149.8,
-   "4wd_only": 6.9,
-   "tracktype": 0.2
+   "tracktype": 26,
+   "4wd_only": 6.9
   },
   "unclassified": {
+   "tracktype": 591.4,
    "smoothness": 236.5,
-   "tracktype": 71.4,
    "4wd_only": 30.8
   },
   "residential": {
+   "tracktype": 37.7,
    "smoothness": 11.9,
-   "tracktype": 7.4,
    "4wd_only": 0.7
   },
   "all": {
+   "tracktype": 655.1,
    "smoothness": 398.3,
-   "tracktype": 79,
-   "4wd_only": 38.5
+   "4wd_only": 38.4
   }
  },
  "value_km": {
@@ -192,8 +190,7 @@
     "surface=gravel": 83,
     "surface=fine_gravel": 48.2,
     "surface=pebblestone": 0.9,
-    "surface=unhewn_cobblestone": 0.1,
-    "surface=wood": 0
+    "surface=unhewn_cobblestone": 0.1
    },
    "offroad": {},
    "specialized": {}
@@ -204,8 +201,7 @@
     "surface=fine_gravel": 79.1,
     "surface=dirt": 41.8,
     "surface=gravel": 28.8,
-    "surface=unpaved": 19.9,
-    "surface=wood": 0.2
+    "surface=unpaved": 19.9
    },
    "offroad": {},
    "specialized": {}
@@ -217,7 +213,6 @@
     "surface=fine_gravel": 140.1,
     "surface=gravel": 60.2,
     "surface=dirt": 19.4,
-    "surface=wood": 0.2,
     "surface=concrete:lanes": 0.2
    },
    "offroad": {},
@@ -233,7 +228,6 @@
     "surface=ground": 84.9,
     "surface=pebblestone": 32.6,
     "surface=sand": 6.6,
-    "surface=wood": 3.8,
     "surface=earth": 3.8,
     "surface=concrete:lanes": 2.3,
     "surface=unhewn_cobblestone": 0.1,
@@ -245,6 +239,7 @@
    "offroad": {
     "smoothness=very_bad": 68.9,
     "smoothness=horrible": 26.5,
+    "tracktype=grade3": 25.8,
     "4wd_only=recommended": 5.8,
     "4wd_only=yes": 1.1,
     "tracktype=grade5": 0.2
@@ -257,7 +252,7 @@
   "unclassified": {
    "unpaved": {
     "surface=unpaved": 48707.3,
-    "surface=dirt": 6056.6,
+    "surface=dirt": 6056.5,
     "surface=gravel": 2261.3,
     "surface=compacted": 1804.5,
     "surface=ground": 1670.1,
@@ -270,7 +265,6 @@
     "surface=clay": 4.9,
     "surface=dirt/sand": 4.6,
     "tracktype=grade3": 4.6,
-    "surface=wood": 4.1,
     "surface=un}": 4.1,
     "surface=grass": 3.3,
     "tracktype=grade4": 3.3,
@@ -284,12 +278,13 @@
     "surface=water": 0
    },
    "offroad": {
+    "tracktype=grade3": 520,
     "smoothness=very_bad": 102.5,
     "smoothness=horrible": 70.2,
     "tracktype=grade5": 39.5,
     "tracktype=grade4": 31.9,
-    "4wd_only=recommended": 26.9,
-    "4wd_only=yes": 4
+    "4wd_only=recommended": 26.8,
+    "4wd_only=yes": 3.9
    },
    "specialized": {
     "smoothness=very_horrible": 63.8,
@@ -310,7 +305,6 @@
     "surface=unhewn_cobblestone": 4.8,
     "surface=us": 0.9,
     "tracktype=grade2": 0.6,
-    "surface=wood": 0.5,
     "tracktype=grade3": 0.3,
     "surface=concrete:lanes": 0.3,
     "surface=acrylic": 0.1,
@@ -320,6 +314,7 @@
     "surface=block": 0
    },
    "offroad": {
+    "tracktype=grade3": 30.4,
     "tracktype=grade4": 5.5,
     "smoothness=horrible": 5.3,
     "smoothness=very_bad": 3,
@@ -342,7 +337,6 @@
     "surface=earth": 58.3,
     "surface=pebblestone": 48.7,
     "tracktype=grade2": 17.9,
-    "surface=wood": 8.8,
     "surface=Gavilla": 8.3,
     "surface=unhewn_cobblestone": 5.5,
     "surface=clay": 4.9,
@@ -367,11 +361,12 @@
     "surface=alternating": 0
    },
    "offroad": {
+    "tracktype=grade3": 576.1,
     "smoothness=very_bad": 174.3,
     "smoothness=horrible": 102,
     "tracktype=grade5": 41.6,
     "tracktype=grade4": 37.4,
-    "4wd_only=recommended": 33.5,
+    "4wd_only=recommended": 33.4,
     "4wd_only=yes": 5
    },
    "specialized": {
@@ -408,6 +403,8 @@
   "paved (surface=asphalt) + smoothness=very_horrible": 0.4,
   "paved (surface=concrete) + smoothness=very_horrible": 0.3,
   "paved (no surface) + smoothness=very_bad": 0.2,
+  "paved (surface=wood) + 4wd_only=recommended": 0,
+  "paved (surface=wood) + tracktype=grade3": 0,
   "paved (surface=paved) + smoothness=impassable": 0
  },
  "odd": {
@@ -649,6 +646,17 @@
   ],
   "offroad_mark": [
    {
+    "id": "w236676422",
+    "highway": "unclassified",
+    "km": 56.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt",
+     "tracktype": "grade3"
+    }
+   },
+   {
     "id": "w278369472",
     "highway": "unclassified",
     "km": 33.4,
@@ -657,6 +665,17 @@
      "highway": "unclassified",
      "smoothness": "horrible",
      "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w307087538",
+    "highway": "unclassified",
+    "km": 27.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt",
+     "tracktype": "grade3"
     }
    },
    {
@@ -673,6 +692,17 @@
      "smoothness": "horrible",
      "source:ref": "Vialidad",
      "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w819188397",
+    "highway": "unclassified",
+    "km": 23.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt",
+     "tracktype": "grade3"
     }
    },
    {
@@ -706,6 +736,44 @@
      "smoothness": "very_horrible",
      "source:ref": "Vialidad",
      "surface": "dirt"
+    }
+   },
+   {
+    "id": "w520012230",
+    "highway": "tertiary",
+    "km": 18.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Ruta A-855",
+     "official_name": "Cruce Ruta 5 (Salar de Llamara) - Tamentica - Huatacondo - Copaquiri - Quebrada Blanca - Cruce A-97-B (Ruta Andina)",
+     "ref": "A-855",
+     "source:ref": "Vialidad",
+     "surface": "dirt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w612359423",
+    "highway": "unclassified",
+    "km": 17.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w379225998",
+    "highway": "unclassified",
+    "km": 17.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt",
+     "tracktype": "grade3"
     }
    },
    {
@@ -1155,6 +1223,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

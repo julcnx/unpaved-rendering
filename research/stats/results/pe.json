@@ -3,16 +3,14 @@
  "name": "Peru",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:51.416Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T03:04:35.569Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "peru-latest.osm.pbf",
   "boundary": "r288247",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T03:04:35.569Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -23,52 +21,52 @@
    "specialized": 0
   },
   "trunk": {
-   "paved_tagged": 16801.3,
+   "paved_tagged": 16801.6,
    "untagged": 3181,
-   "unpaved": 1607.7,
+   "unpaved": 1607.3,
    "offroad": 86.2,
    "specialized": 0
   },
   "primary": {
-   "unpaved": 9141.3,
+   "unpaved": 9141.2,
    "untagged": 7273.4,
-   "paved_tagged": 6561.9,
+   "paved_tagged": 6562.1,
    "offroad": 143.4,
    "specialized": 0.9
   },
   "secondary": {
-   "unpaved": 9371.1,
+   "unpaved": 9371,
    "untagged": 6791.3,
-   "paved_tagged": 4655.2,
+   "paved_tagged": 4655.4,
    "offroad": 83.8,
    "specialized": 0
   },
   "tertiary": {
-   "unpaved": 42149.8,
+   "unpaved": 42031.5,
    "untagged": 31670.6,
-   "paved_tagged": 3991,
-   "offroad": 77.8,
+   "paved_tagged": 3991.2,
+   "offroad": 196,
    "specialized": 0
   },
   "unclassified": {
-   "unpaved": 70516.7,
+   "unpaved": 70450.3,
    "untagged": 52540.9,
-   "paved_tagged": 497.7,
-   "offroad": 167.7,
+   "paved_tagged": 498.1,
+   "offroad": 233.8,
    "specialized": 1.9
   },
   "residential": {
    "untagged": 53176.2,
-   "unpaved": 30221.9,
-   "paved_tagged": 8791.3,
-   "offroad": 25.6,
+   "unpaved": 30185.9,
+   "paved_tagged": 8791.4,
+   "offroad": 61.4,
    "specialized": 0.5
   },
   "all": {
-   "unpaved": 163008.5,
+   "unpaved": 162787.1,
    "untagged": 154645.4,
-   "paved_tagged": 42727.8,
-   "offroad": 584.5,
+   "paved_tagged": 42729.1,
+   "offroad": 804.6,
    "specialized": 3.2
   }
  },
@@ -167,20 +165,20 @@
    "4wd_only": 12.3
   },
   "tertiary": {
-   "tracktype": 40.6,
+   "tracktype": 158.8,
    "smoothness": 37.2
   },
   "unclassified": {
-   "smoothness": 90.8,
-   "tracktype": 78.9
+   "tracktype": 144.9,
+   "smoothness": 90.8
   },
   "residential": {
-   "tracktype": 22.6,
+   "tracktype": 58.5,
    "smoothness": 3.5
   },
   "all": {
    "smoothness": 429,
-   "tracktype": 146.5,
+   "tracktype": 366.6,
    "4wd_only": 12.3
   }
  },
@@ -199,7 +197,6 @@
     "surface=dirt": 53.2,
     "surface=unhewn_cobblestone": 1.3,
     "surface=sand": 0.5,
-    "surface=wood": 0.3,
     "surface=concrete:lanes": 0.1
    },
    "offroad": {
@@ -217,7 +214,6 @@
     "surface=sand": 87.2,
     "tracktype=grade4": 4.4,
     "surface=unhewn_cobblestone": 0.3,
-    "surface=wood": 0.2,
     "surface=mud": 0.1,
     "tracktype=grade2": 0
    },
@@ -239,8 +235,7 @@
     "surface=ground": 249,
     "surface=fine_gravel": 32.6,
     "surface=sand": 20.2,
-    "surface=earth": 1.2,
-    "surface=wood": 0.2
+    "surface=earth": 1.2
    },
    "offroad": {
     "smoothness=very_bad": 64.7,
@@ -265,10 +260,10 @@
     "surface=grass": 3.7,
     "tracktype=grade2": 2.3,
     "surface=unhewn_cobblestone": 0.2,
-    "surface=wood": 0.1,
     "surface=mud": 0
    },
    "offroad": {
+    "tracktype=grade3": 118.2,
     "tracktype=grade4": 36,
     "smoothness=horrible": 29.1,
     "smoothness=very_bad": 8.1,
@@ -296,12 +291,12 @@
     "surface=pebblestone": 1.4,
     "surface=dirt/sand": 1,
     "surface=sin_pavimentar2": 0.7,
-    "surface=wood": 0.4,
     "surface=unspecified": 0.3,
     "surface=sin_pavimentar3": 0.3,
     "surface=sin_pavimentar": 0
    },
    "offroad": {
+    "tracktype=grade3": 66.1,
     "smoothness=very_bad": 64.1,
     "tracktype=grade4": 50.5,
     "tracktype=grade5": 28.4,
@@ -337,12 +332,12 @@
     "surface=mud": 0.3,
     "surface=clay": 0.3,
     "surface=sin_pavimentarjj": 0.2,
-    "surface=wood": 0.2,
     "surface=stone": 0.1,
     "surface=sin_pavimentarj": 0,
     "surface=asfaltow": 0
    },
    "offroad": {
+    "tracktype=grade3": 35.9,
     "tracktype=grade4": 12.5,
     "tracktype=grade5": 10,
     "smoothness=horrible": 1.8,
@@ -372,7 +367,6 @@
     "surface=pebblestone": 6.2,
     "surface=concrete:lanes": 5.2,
     "surface=mud": 2,
-    "surface=wood": 1.3,
     "surface=dirt/sand": 1,
     "surface=jr._eladio_tapullima": 0.9,
     "surface=pista": 0.7,
@@ -390,6 +384,7 @@
    },
    "offroad": {
     "smoothness=very_bad": 279.8,
+    "tracktype=grade3": 220.1,
     "smoothness=horrible": 146,
     "tracktype=grade4": 103.5,
     "tracktype=grade5": 43,
@@ -429,8 +424,10 @@
   "paved (surface=paved) + tracktype=grade5": 0.4,
   "smoothness=excellent + surface=dirt": 0.1,
   "paved (no surface) + smoothness=impassable": 0,
+  "paved (surface=wood) + tracktype=grade3": 0,
   "paved (surface=concrete) + smoothness=horrible": 0,
-  "paved (surface=concrete) + smoothness=very_bad": 0
+  "paved (surface=concrete) + smoothness=very_bad": 0,
+  "paved (surface=wood) + smoothness=very_bad": 0
  },
  "odd": {
   "major_unpaved": [
@@ -628,6 +625,18 @@
   ],
   "offroad_mark": [
    {
+    "id": "w379813677",
+    "highway": "tertiary",
+    "km": 30.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "AN-588",
+     "surface": "sand",
+     "tracktype": "grade3"
+    }
+   },
+   {
     "id": "w431081383",
     "highway": "primary",
     "km": 23.1,
@@ -797,6 +806,18 @@
      "highway": "unclassified",
      "surface": "unpaved",
      "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w229977383",
+    "highway": "tertiary",
+    "km": 11.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "source": "bing",
+     "surface": "ground",
+     "tracktype": "grade3"
     }
    },
    {
@@ -1128,6 +1149,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

@@ -3,16 +3,14 @@
  "name": "Bolivia",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:48.822Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T04:51:01.656Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "bolivia-latest.osm.pbf",
   "boundary": "r252645",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T04:51:01.656Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -24,50 +22,50 @@
   },
   "trunk": {
    "paved_tagged": 10667.2,
-   "unpaved": 2580.5,
-   "offroad": 336.6,
+   "unpaved": 2574.1,
+   "offroad": 342.9,
    "untagged": 89.5,
    "specialized": 0
   },
   "primary": {
-   "unpaved": 1964.9,
-   "paved_tagged": 1575.6,
-   "offroad": 372.7,
+   "unpaved": 1963.8,
+   "paved_tagged": 1575.7,
+   "offroad": 373.8,
    "untagged": 121.4,
    "specialized": 0
   },
   "secondary": {
-   "unpaved": 6132.2,
+   "unpaved": 6053.9,
    "paved_tagged": 2726.9,
-   "offroad": 2233.6,
+   "offroad": 2311.9,
    "untagged": 534,
    "specialized": 0
   },
   "tertiary": {
-   "unpaved": 17152.5,
-   "offroad": 10323.4,
-   "paved_tagged": 2094.2,
+   "unpaved": 17055.3,
+   "offroad": 10420.6,
+   "paved_tagged": 2094.3,
    "untagged": 1148,
    "specialized": 13.1
   },
   "unclassified": {
-   "unpaved": 62875,
-   "offroad": 45689.5,
+   "unpaved": 59170.4,
+   "offroad": 49394,
    "untagged": 4828.1,
-   "paved_tagged": 65.6,
+   "paved_tagged": 65.7,
    "specialized": 21.8
   },
   "residential": {
-   "unpaved": 25545.6,
+   "unpaved": 25008.7,
    "untagged": 14377.7,
-   "paved_tagged": 4905.9,
-   "offroad": 457.3,
+   "paved_tagged": 4906,
+   "offroad": 994.1,
    "specialized": 1.9
   },
   "all": {
-   "unpaved": 116250.8,
-   "offroad": 59413.1,
-   "paved_tagged": 22057.7,
+   "unpaved": 111826.2,
+   "offroad": 63837.3,
+   "paved_tagged": 22058.2,
    "untagged": 21098.7,
    "specialized": 36.8
   }
@@ -155,30 +153,31 @@
   "motorway": {},
   "trunk": {
    "smoothness": 260.4,
-   "tracktype": 76.2
+   "tracktype": 82.6
   },
   "primary": {
-   "smoothness": 372.7
+   "smoothness": 372.7,
+   "tracktype": 1.1
   },
   "secondary": {
    "smoothness": 2158,
-   "tracktype": 75.6
+   "tracktype": 153.9
   },
   "tertiary": {
    "smoothness": 10286,
-   "tracktype": 50.5
+   "tracktype": 147.7
   },
   "unclassified": {
    "smoothness": 45276.8,
-   "tracktype": 434.5
+   "tracktype": 4139
   },
   "residential": {
-   "smoothness": 441.3,
-   "tracktype": 17.8
+   "tracktype": 554.7,
+   "smoothness": 441.3
   },
   "all": {
    "smoothness": 58795.2,
-   "tracktype": 654.7
+   "tracktype": 5078.8
   }
  },
  "value_km": {
@@ -198,12 +197,12 @@
     "surface=concrete:lanes": 1.3,
     "surface=fine_gravel": 0.7,
     "surface=unhewn_cobblestone": 0.5,
-    "surface=dirt": 0.1,
-    "surface=wood": 0.1
+    "surface=dirt": 0.1
    },
    "offroad": {
     "smoothness=very_bad": 260.4,
-    "tracktype=grade4": 76.2
+    "tracktype=grade4": 76.2,
+    "tracktype=grade3": 6.3
    },
    "specialized": {}
   },
@@ -215,11 +214,11 @@
     "surface=unhewn_cobblestone": 18,
     "surface=gravel": 17.8,
     "surface=dirt": 0.3,
-    "surface=mud": 0.2,
-    "surface=wood": 0.1
+    "surface=mud": 0.2
    },
    "offroad": {
     "smoothness=very_bad": 372.7,
+    "tracktype=grade3": 1.1,
     "smoothness=horrible": 0
    },
    "specialized": {}
@@ -230,15 +229,15 @@
     "surface=ground": 2730.6,
     "surface=compacted": 420.7,
     "surface=dirt": 180.5,
-    "surface=fine_gravel": 63.6,
+    "surface=fine_gravel": 63.5,
     "surface=unhewn_cobblestone": 62.8,
     "surface=gravel": 21.6,
     "surface=sand": 0.8,
-    "surface=wood": 0.1,
     "surface=earth": 0
    },
    "offroad": {
     "smoothness=very_bad": 2110.9,
+    "tracktype=grade3": 78.3,
     "tracktype=grade4": 75.5,
     "smoothness=horrible": 47.1,
     "tracktype=grade5": 0.1
@@ -263,12 +262,12 @@
     "surface=clay": 0.4,
     "surface=mud": 0.3,
     "surface=dirt/sand": 0.3,
-    "surface=concrete:lanes": 0.1,
-    "surface=wood": 0
+    "surface=concrete:lanes": 0.1
    },
    "offroad": {
     "smoothness=very_bad": 9926.6,
     "smoothness=horrible": 346.4,
+    "tracktype=grade3": 97.2,
     "tracktype=grade4": 46.9,
     "tracktype=grade5": 3.6
    },
@@ -297,11 +296,11 @@
     "surface=unpaved; ground": 1.2,
     "surface=persistently_muddy": 0.9,
     "surface=dirt/sand": 0.8,
-    "surface=mud": 0.8,
-    "surface=wood": 0.2
+    "surface=mud": 0.8
    },
    "offroad": {
     "smoothness=very_bad": 44172.8,
+    "tracktype=grade3": 3704.4,
     "smoothness=horrible": 1082.2,
     "tracktype=grade4": 387.6,
     "tracktype=grade5": 47
@@ -324,7 +323,7 @@
     "surface=fine_gravel": 15.8,
     "tracktype=grade2": 15.6,
     "surface=clay": 3.6,
-    "tracktype=grade4": 2.5,
+    "tracktype=grade4": 2.4,
     "surface=pebblestone": 2,
     "surface=artificial_turf": 1.9,
     "surface=grass": 1.7,
@@ -336,18 +335,18 @@
     "surface=Tierra": 0.4,
     "surface=concrete:lanes": 0.4,
     "surface=unpavedqs": 0.4,
-    "surface=Enlosetado": 0.2,
-    "surface=wood": 0.1
+    "surface=Enlosetado": 0.2
    },
    "offroad": {
+    "tracktype=grade3": 536.8,
     "smoothness=very_bad": 421.7,
     "smoothness=horrible": 17.7,
     "tracktype=grade5": 10.7,
-    "tracktype=grade4": 7.2
+    "tracktype=grade4": 7.1
    },
    "specialized": {
     "smoothness=very_horrible": 1.3,
-    "smoothness=impassable": 0.7
+    "smoothness=impassable": 0.6
    }
   },
   "all": {
@@ -380,7 +379,6 @@
     "surface=stone": 0.7,
     "surface=empedrado": 0.6,
     "surface=grass_paver": 0.5,
-    "surface=wood": 0.4,
     "surface=concrete:plates;unpaved": 0.4,
     "surface=Tierra": 0.4,
     "surface=unpavedqs": 0.4,
@@ -388,13 +386,14 @@
    },
    "offroad": {
     "smoothness=very_bad": 57265,
+    "tracktype=grade3": 4424.2,
     "smoothness=horrible": 1493.4,
     "tracktype=grade4": 593.3,
     "tracktype=grade5": 61.3
    },
    "specialized": {
     "smoothness=very_horrible": 36.1,
-    "smoothness=impassable": 0.7
+    "smoothness=impassable": 0.6
    }
   }
  },
@@ -430,7 +429,11 @@
   "paved (no surface) + smoothness=very_bad": 4.7,
   "paved (surface=paved) + smoothness=very_bad": 4.6,
   "smoothness=good + surface=unpaved": 1.9,
+  "paved (surface=asphalt) + tracktype=grade3": 0.9,
+  "paved (surface=concrete) + tracktype=grade3": 0.7,
+  "paved (surface=paved) + tracktype=grade3": 0.3,
   "paved (surface=concrete:plates) + tracktype=grade5": 0.3,
+  "paved (surface=concrete:plates) + tracktype=grade3": 0.1,
   "paved (surface=concrete) + smoothness=horrible": 0.1,
   "paved (surface=concrete) + tracktype=grade4": 0,
   "paved (surface=paving_stones) + smoothness=very_bad": 0
@@ -1275,6 +1278,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

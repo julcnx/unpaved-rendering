@@ -3,16 +3,14 @@
  "name": "Colombia",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:49.287Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T03:07:51.696Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "colombia-latest.osm.pbf",
   "boundary": "r120027",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T03:07:51.696Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -32,43 +30,43 @@
   "primary": {
    "paved_tagged": 5535.3,
    "untagged": 2573.5,
-   "unpaved": 604.3,
-   "offroad": 0,
+   "unpaved": 587.3,
+   "offroad": 17,
    "specialized": 0
   },
   "secondary": {
-   "paved_tagged": 6679.6,
+   "paved_tagged": 6679.9,
    "untagged": 4605.3,
-   "unpaved": 2218.8,
-   "offroad": 15,
+   "unpaved": 2200.9,
+   "offroad": 32.6,
    "specialized": 0.4
   },
   "tertiary": {
-   "unpaved": 12407.7,
+   "unpaved": 12288.2,
    "untagged": 9791.8,
    "paved_tagged": 7930.5,
-   "offroad": 302.2,
+   "offroad": 421.8,
    "specialized": 18.4
   },
   "unclassified": {
    "untagged": 83095.7,
-   "unpaved": 67030.3,
-   "offroad": 3277.9,
-   "paved_tagged": 3066.7,
+   "unpaved": 62955.9,
+   "offroad": 7385.8,
+   "paved_tagged": 3033.1,
    "specialized": 176
   },
   "residential": {
    "untagged": 54556.5,
-   "paved_tagged": 11035.5,
-   "unpaved": 9903.1,
-   "offroad": 161.5,
+   "paved_tagged": 11033.4,
+   "unpaved": 9401.3,
+   "offroad": 665.4,
    "specialized": 5.8
   },
   "all": {
    "untagged": 155018.3,
-   "unpaved": 92619.8,
-   "paved_tagged": 45539.9,
-   "offroad": 3881,
+   "unpaved": 87889.2,
+   "paved_tagged": 45504.6,
+   "offroad": 8646.9,
    "specialized": 200.7
   }
  },
@@ -151,26 +149,28 @@
   "trunk": {
    "smoothness": 124.4
   },
-  "primary": {},
+  "primary": {
+   "tracktype": 17
+  },
   "secondary": {
-   "smoothness": 11.4,
-   "tracktype": 4.1
+   "tracktype": 21.6,
+   "smoothness": 11.4
   },
   "tertiary": {
    "smoothness": 290.2,
-   "tracktype": 30.5
+   "tracktype": 150
   },
   "unclassified": {
-   "tracktype": 1769.5,
+   "tracktype": 5877.4,
    "smoothness": 1684.4
   },
   "residential": {
-   "tracktype": 118.1,
+   "tracktype": 621.9,
    "smoothness": 49.3
   },
   "all": {
-   "smoothness": 2159.6,
-   "tracktype": 1922.1
+   "tracktype": 6688,
+   "smoothness": 2159.6
   }
  },
  "value_km": {
@@ -203,7 +203,9 @@
     "surface=pavimentado": 5.7,
     "surface=concrete:lanes": 3.2
    },
-   "offroad": {},
+   "offroad": {
+    "tracktype=grade3": 17
+   },
    "specialized": {}
   },
   "secondary": {
@@ -214,10 +216,10 @@
     "surface=compacted": 72,
     "surface=dirt": 36,
     "tracktype=grade3": 11.5,
-    "surface=concrete:lanes": 0.3,
-    "surface=wood": 0.3
+    "surface=concrete:lanes": 0.3
    },
    "offroad": {
+    "tracktype=grade3": 17.6,
     "smoothness=horrible": 10.9,
     "tracktype=grade4": 4.1
    },
@@ -247,6 +249,7 @@
    },
    "offroad": {
     "smoothness=very_bad": 182.8,
+    "tracktype=grade3": 119.6,
     "smoothness=horrible": 88.9,
     "tracktype=grade4": 29.2,
     "tracktype=grade5": 1.3
@@ -270,7 +273,7 @@
     "surface=sand": 125.5,
     "surface=pebblestone": 98.3,
     "surface=earth": 82.8,
-    "surface=concrete:lanes": 41.7,
+    "surface=concrete:lanes": 76.1,
     "surface=mud": 18,
     "surface=grass": 11,
     "surface=laterite": 3.3,
@@ -279,7 +282,6 @@
     "surface=gru": 2.4,
     "surface=tierrastart_with_a_tight_close-up_of_the_living_statue_performer_—_\"the_angel_of_la_rambla\"_—_framed_at_eye_level._the_camera_begins_a_slow_zoom-out,_revealing_the_full_elegance_of_her_angelic_wings_and_dramatic_costume._set_the_zoom_speed_to_cinematic_pa": 1.6,
     "surface=unhewn_cobblestone": 1,
-    "surface=wood": 0.8,
     "surface=transversal_1_santuario_bajo": 0.3,
     "surface=unP": 0.2,
     "surface=metal_grid": 0.1,
@@ -287,6 +289,7 @@
     "surface=sueli": 0
    },
    "offroad": {
+    "tracktype=grade3": 4108,
     "tracktype=grade4": 1241.6,
     "smoothness=very_bad": 832.3,
     "smoothness=horrible": 676.1,
@@ -309,7 +312,7 @@
     "tracktype=grade2": 48.4,
     "surface=sand": 46.9,
     "tracktype=grade5": 34.3,
-    "surface=concrete:lanes": 26.8,
+    "surface=concrete:lanes": 29.3,
     "surface=grass": 14.9,
     "surface=earth": 14.7,
     "surface=unhewn_cobblestone": 11.8,
@@ -323,7 +326,6 @@
     "surface=un[": 0.6,
     "surface=dirt/sand": 0.5,
     "surface=rock": 0.5,
-    "surface=wood": 0.4,
     "surface=destapada": 0.2,
     "surface=non2": 0.2,
     "surface=brick": 0.2,
@@ -341,6 +343,7 @@
     "surface=UN": 0
    },
    "offroad": {
+    "tracktype=grade3": 503.8,
     "tracktype=grade4": 77.6,
     "tracktype=grade5": 40.4,
     "smoothness=very_bad": 27.5,
@@ -364,9 +367,9 @@
     "tracktype=grade5": 324.2,
     "surface=fine_gravel": 255.6,
     "surface=sand": 217.6,
+    "surface=concrete:lanes": 115.7,
     "surface=pebblestone": 104.9,
     "surface=earth": 97.5,
-    "surface=concrete:lanes": 78.8,
     "surface=grass": 47,
     "surface=unhewn_cobblestone": 24.9,
     "surface=mud": 20.4,
@@ -377,7 +380,6 @@
     "surface=césped_tierra": 2.6,
     "surface=gru": 2.4,
     "surface=tierrastart_with_a_tight_close-up_of_the_living_statue_performer_—_\"the_angel_of_la_rambla\"_—_framed_at_eye_level._the_camera_begins_a_slow_zoom-out,_revealing_the_full_elegance_of_her_angelic_wings_and_dramatic_costume._set_the_zoom_speed_to_cinematic_pa": 1.6,
-    "surface=wood": 1.6,
     "surface=w": 0.8,
     "surface=afirmado": 0.8,
     "surface=stone": 0.7,
@@ -408,6 +410,7 @@
     "surface=UN": 0
    },
    "offroad": {
+    "tracktype=grade3": 4765.9,
     "tracktype=grade4": 1352.6,
     "smoothness=very_bad": 1042.7,
     "smoothness=horrible": 916.2,
@@ -456,24 +459,31 @@
  },
  "conflict_km": {
   "smoothness=good + surface=gravel": 77.9,
+  "paved (surface=paved) + tracktype=grade3": 30.8,
   "smoothness=good + surface=unpaved": 25.6,
   "smoothness=good + surface=dirt": 17.8,
   "paved (surface=asphalt) + smoothness=very_bad": 12.5,
   "smoothness=excellent + surface=gravel": 11,
+  "paved (surface=asphalt) + tracktype=grade3": 10.4,
   "paved (surface=asphalt) + smoothness=very_horrible": 9.3,
   "smoothness=excellent + surface=unpaved": 6.8,
   "paved (surface=asphalt) + smoothness=horrible": 6.7,
+  "paved (surface=concrete) + tracktype=grade3": 6.2,
   "paved (surface=paved) + smoothness=horrible": 5.3,
   "paved (no surface) + smoothness=very_bad": 4.4,
+  "paved (surface=paving_stones) + tracktype=grade3": 3.5,
   "paved (surface=paved) + smoothness=very_bad": 2.8,
   "smoothness=good + surface=ground": 2.5,
+  "smoothness=good + surface=concrete:lanes": 2.4,
   "paved (no surface) + smoothness=horrible": 2.2,
   "smoothness=good + surface=compacted": 2,
   "paved (surface=asphalt) + tracktype=grade4": 1.7,
   "paved (surface=concrete) + tracktype=grade4": 1.6,
   "paved (surface=paving_stones) + smoothness=very_bad": 1,
   "paved (surface=paving_stones) + tracktype=grade4": 1,
+  "paved (surface=cobblestone) + tracktype=grade3": 0.8,
   "smoothness=good + surface=stone": 0.7,
+  "paved (surface=concrete:plates) + tracktype=grade3": 0.7,
   "paved (surface=paved) + smoothness=very_horrible": 0.4,
   "paved (surface=sett) + smoothness=very_bad": 0.3,
   "paved (surface=paved) + tracktype=grade4": 0.2,
@@ -717,6 +727,20 @@
     }
    },
    {
+    "id": "w835098894",
+    "highway": "unclassified",
+    "km": 69.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "La Cristalina",
+     "source": "Bing, Landsat",
+     "surface": "gravel",
+     "tracktype": "grade3"
+    }
+   },
+   {
     "id": "w607952000",
     "highway": "unclassified",
     "km": 66.6,
@@ -727,6 +751,20 @@
      "name": "Via La Catorce - El Capricho",
      "surface": "ground",
      "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w57870460",
+    "highway": "unclassified",
+    "km": 66,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "La Cristalina",
+     "source": "Bing, Landsat",
+     "surface": "gravel",
+     "tracktype": "grade3"
     }
    },
    {
@@ -757,6 +795,20 @@
      "source": "Bing",
      "surface": "ground",
      "width": "4"
+    }
+   },
+   {
+    "id": "w562607036",
+    "highway": "unclassified",
+    "km": 48.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "source": "Bing, Landsat",
+     "surface": "ground",
+     "tracktype": "grade3",
+     "width": "3"
     }
    },
    {
@@ -865,6 +917,18 @@
    }
   ],
   "conflict": [
+   {
+    "id": "w817662862",
+    "highway": "unclassified",
+    "km": 27,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
    {
     "id": "w395028028",
     "highway": "tertiary",
@@ -1242,6 +1306,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

@@ -3,16 +3,14 @@
  "name": "Kyrgyzstan",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:50.447Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T04:25:18.680Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "kyrgyzstan-latest.osm.pbf",
   "boundary": "r178009",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T04:25:18.680Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -45,30 +43,30 @@
   },
   "tertiary": {
    "untagged": 4265.6,
-   "unpaved": 1970.8,
+   "unpaved": 1821.6,
    "paved_tagged": 845.2,
-   "offroad": 117.9,
+   "offroad": 267.2,
    "specialized": 45.2
   },
   "unclassified": {
    "untagged": 6318.9,
-   "unpaved": 2868.3,
-   "paved_tagged": 144.9,
-   "offroad": 119.3,
+   "unpaved": 2797.7,
+   "offroad": 182.7,
+   "paved_tagged": 152,
    "specialized": 0.4
   },
   "residential": {
    "untagged": 22826.2,
-   "unpaved": 1807.5,
+   "unpaved": 1802.8,
    "paved_tagged": 605.1,
-   "offroad": 5.1,
+   "offroad": 9.9,
    "specialized": 3
   },
   "all": {
    "untagged": 35027,
-   "unpaved": 8022.6,
-   "paved_tagged": 6489.8,
-   "offroad": 267,
+   "unpaved": 7797.9,
+   "paved_tagged": 6496.9,
+   "offroad": 484.5,
    "specialized": 48.6
   }
  },
@@ -162,21 +160,21 @@
    "tracktype": 0.5
   },
   "tertiary": {
+   "tracktype": 183,
    "smoothness": 125.7,
-   "tracktype": 33.7,
    "4wd_only": 3.8
   },
   "unclassified": {
-   "smoothness": 87.9,
-   "tracktype": 31.8
+   "tracktype": 95.2,
+   "smoothness": 87.9
   },
   "residential": {
    "smoothness": 7.5,
-   "tracktype": 0.6
+   "tracktype": 5.4
   },
   "all": {
+   "tracktype": 284.1,
    "smoothness": 245.2,
-   "tracktype": 66.6,
    "4wd_only": 3.8
   }
  },
@@ -212,8 +210,7 @@
     "surface=compacted": 112.4,
     "surface=ground": 72.2,
     "tracktype=grade4": 0.5,
-    "surface=concrete:bridge": 0,
-    "surface=wood": 0
+    "surface=concrete:bridge": 0
    },
    "offroad": {
     "tracktype=grade4": 0.5
@@ -229,10 +226,10 @@
     "tracktype=grade5": 29.8,
     "surface=dirt": 26.1,
     "tracktype=grade3": 3.5,
-    "tracktype=grade4": 0.3,
-    "surface=wood": 0
+    "tracktype=grade4": 0.3
    },
    "offroad": {
+    "tracktype=grade3": 149.3,
     "smoothness=very_bad": 73.6,
     "tracktype=grade5": 29.8,
     "smoothness=horrible": 6.9,
@@ -253,7 +250,6 @@
     "surface=earth": 49.2,
     "tracktype=grade4": 30.4,
     "surface=fine_gravel": 18.5,
-    "surface=wood": 7.1,
     "surface=dirt/sand": 4.5,
     "surface=unhewn_cobblestone": 2.2,
     "tracktype=grade3": 2,
@@ -262,6 +258,7 @@
     "tracktype=grade5": 0.2
    },
    "offroad": {
+    "tracktype=grade3": 63.5,
     "smoothness=horrible": 51.9,
     "smoothness=very_bad": 35.6,
     "tracktype=grade4": 31.5,
@@ -295,6 +292,7 @@
     "tracktype=grade2": 0.2
    },
    "offroad": {
+    "tracktype=grade3": 4.8,
     "smoothness=very_bad": 4.5,
     "tracktype=grade4": 0.6
    },
@@ -315,7 +313,6 @@
     "tracktype=grade5": 30.1,
     "surface=fine_gravel": 23.9,
     "tracktype=grade3": 9.6,
-    "surface=wood": 7.2,
     "surface=sand": 5,
     "surface=dirt/sand": 4.5,
     "surface=pebblestone": 2.7,
@@ -333,6 +330,7 @@
     "surface=concrete:bridge": 0
    },
    "offroad": {
+    "tracktype=grade3": 217.5,
     "smoothness=very_bad": 137.8,
     "smoothness=horrible": 58.8,
     "tracktype=grade4": 36.6,
@@ -543,6 +541,19 @@
   ],
   "offroad_mark": [
    {
+    "id": "w496090202",
+    "highway": "unclassified",
+    "km": 46.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
     "id": "w401456133",
     "highway": "tertiary",
     "km": 24,
@@ -567,6 +578,32 @@
      "ref": "М-058",
      "smoothness": "very_bad",
      "surface": "gravel"
+    }
+   },
+   {
+    "id": "w303783161",
+    "highway": "tertiary",
+    "km": 20.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Каркыра – Турук – Сары-Жаз",
+     "ref": "М-050",
+     "source": "gps+bing",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w454157831",
+    "highway": "tertiary",
+    "km": 18.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "М-088",
+     "surface": "compacted",
+     "tracktype": "grade3"
     }
    },
    {
@@ -635,6 +672,31 @@
      "lanes": "1",
      "smoothness": "very_bad",
      "surface": "ground"
+    }
+   },
+   {
+    "id": "w721649138",
+    "highway": "tertiary",
+    "km": 15.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Кегеты - Восточный Каракол",
+     "ref": "М-006",
+     "surface": "gravel",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w150847211",
+    "highway": "tertiary",
+    "km": 14.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "М-088",
+     "surface": "compacted",
+     "tracktype": "grade3"
     }
    },
    {
@@ -959,6 +1021,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

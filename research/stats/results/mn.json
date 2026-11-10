@@ -3,16 +3,14 @@
  "name": "Mongolia",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:50.963Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T02:39:16.427Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "mongolia-latest.osm.pbf",
   "boundary": "r161033",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T02:39:16.427Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -44,31 +42,31 @@
    "specialized": 14.7
   },
   "tertiary": {
-   "unpaved": 20510.6,
+   "unpaved": 20425.5,
    "untagged": 3930.4,
    "paved_tagged": 1135.9,
-   "offroad": 679.9,
+   "offroad": 765,
    "specialized": 0
   },
   "unclassified": {
-   "unpaved": 37925.8,
+   "unpaved": 37620.9,
    "untagged": 17265.4,
-   "offroad": 2519.4,
-   "paved_tagged": 1515.5,
+   "offroad": 2824.1,
+   "paved_tagged": 1515.7,
    "specialized": 23.6
   },
   "residential": {
    "untagged": 9237.2,
-   "unpaved": 3772.5,
+   "unpaved": 3764.7,
    "paved_tagged": 270.4,
-   "offroad": 48.8,
+   "offroad": 56.6,
    "specialized": 0
   },
   "all": {
-   "unpaved": 66042.1,
+   "unpaved": 65644.4,
    "untagged": 31368.9,
-   "paved_tagged": 12787.6,
-   "offroad": 3278.8,
+   "paved_tagged": 12787.8,
+   "offroad": 3676.4,
    "specialized": 38.3
   }
  },
@@ -157,19 +155,19 @@
   },
   "tertiary": {
    "smoothness": 439.5,
-   "tracktype": 240.4
+   "tracktype": 325.5
   },
   "unclassified": {
    "smoothness": 1686.5,
-   "tracktype": 856.6
+   "tracktype": 1161.3
   },
   "residential": {
-   "tracktype": 36.7,
+   "tracktype": 44.5,
    "smoothness": 12.1
   },
   "all": {
    "smoothness": 2183.5,
-   "tracktype": 1133.7
+   "tracktype": 1531.2
   }
  },
  "value_km": {
@@ -223,13 +221,13 @@
     "surface=compacted": 80.4,
     "tracktype=grade3": 43.4,
     "surface=ground,_sand": 17.4,
-    "surface=wood": 0,
     "surface=4": 0
    },
    "offroad": {
     "smoothness=very_bad": 243.9,
     "smoothness=horrible": 195.6,
     "tracktype=grade5": 165.3,
+    "tracktype=grade3": 85.1,
     "tracktype=grade4": 75.1
    },
    "specialized": {}
@@ -253,14 +251,14 @@
     "surface=ground,_mud": 5.8,
     "surface=fine_gravel": 1.8,
     "surface=2": 0.5,
-    "surface=dirt/sand": 0.3,
-    "surface=wood": 0.2
+    "surface=dirt/sand": 0.3
    },
    "offroad": {
     "smoothness=horrible": 876.8,
     "smoothness=very_bad": 786,
     "tracktype=grade4": 532.9,
-    "tracktype=grade5": 323.7
+    "tracktype=grade5": 323.7,
+    "tracktype=grade3": 304.7
    },
    "specialized": {
     "smoothness=very_horrible": 23.6
@@ -290,6 +288,7 @@
    "offroad": {
     "tracktype=grade4": 36.7,
     "smoothness=horrible": 11.5,
+    "tracktype=grade3": 7.8,
     "smoothness=very_bad": 0.6
    },
    "specialized": {}
@@ -318,7 +317,6 @@
     "surface=2": 0.5,
     "surface=earth": 0.3,
     "surface=artificial_turf": 0.3,
-    "surface=wood": 0.2,
     "surface=d": 0.2,
     "surface=unsaved": 0.1,
     "surface=ground,_dirt": 0,
@@ -328,7 +326,8 @@
     "smoothness=horrible": 1114.6,
     "smoothness=very_bad": 1030.5,
     "tracktype=grade4": 644.7,
-    "tracktype=grade5": 489
+    "tracktype=grade5": 489,
+    "tracktype=grade3": 397.5
    },
    "specialized": {
     "smoothness=very_horrible": 38.3
@@ -351,6 +350,7 @@
   "surface=4": 0
  },
  "conflict_km": {
+  "paved (surface=asphalt) + tracktype=grade3": 19,
   "paved (no surface) + smoothness=very_bad": 16.2,
   "paved (surface=asphalt) + smoothness=very_bad": 8.1,
   "paved (surface=paved) + tracktype=grade5": 2.4,
@@ -644,6 +644,18 @@
     }
    },
    {
+    "id": "w227748568",
+    "highway": "unclassified",
+    "km": 51.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "motorcar": "yes",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
     "id": "w1479804416",
     "highway": "unclassified",
     "km": 49.2,
@@ -749,6 +761,24 @@
     }
    },
    {
+    "id": "w476087609",
+    "highway": "secondary",
+    "km": 8.9,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "mtb:scale": "2",
+     "parking:both": "no",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
     "id": "w62363686",
     "highway": "unclassified",
     "km": 8.1,
@@ -761,6 +791,40 @@
      "smoothness": "very_bad",
      "source": "gpx",
      "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w587020096",
+    "highway": "tertiary",
+    "km": 7.8,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "name": "Zuunmod to Airport",
+     "oneway": "no",
+     "source": "bing",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w297062896",
+    "highway": "tertiary",
+    "km": 2.3,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "name": "Борнуур",
+     "surface": "asphalt",
+     "tracktype": "grade3",
+     "width": "6"
     }
    },
    {
@@ -904,6 +968,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

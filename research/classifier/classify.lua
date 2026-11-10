@@ -33,11 +33,10 @@ M.SMOOTHNESS = {
   very_horrible = 'specialized', impassable = 'specialized',
 }
 
--- tracktype is firmness, not difficulty: grade2-3 unpaved with no mark; grade4-5 mostly soft earth, likely off-road.
 -- grade6-8 are an Australian local extension (Australian Tagging Guidelines/Roads).
 M.TRACKTYPE_MARK = {
   grade1 = false, grade2 = false,
-  grade3 = false, grade4 = 'offroad', grade5 = 'offroad', grade6 = 'offroad', grade7 = 'offroad',
+  grade3 = 'offroad', grade4 = 'offroad', grade5 = 'offroad', grade6 = 'offroad', grade7 = 'offroad',
   grade8 = 'specialized',
 }
 

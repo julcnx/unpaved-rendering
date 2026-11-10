@@ -3,16 +3,14 @@
  "name": "Antarctica (not a country)",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:48.626Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T04:27:17.383Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "antarctica-latest.osm.pbf",
   "boundary": "south of 60S",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T04:27:17.383Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -773,6 +771,5 @@
   ],
   "conflict": [],
   "unknown_value": []
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

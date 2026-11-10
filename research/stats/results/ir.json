@@ -3,16 +3,14 @@
  "name": "Iran",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:50.254Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T04:39:32.776Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "iran-latest.osm.pbf",
   "boundary": "r304938",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T04:39:32.776Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -46,29 +44,29 @@
   "tertiary": {
    "untagged": 89756.9,
    "paved_tagged": 19507,
-   "unpaved": 4695.5,
-   "offroad": 12.7,
+   "unpaved": 4680.6,
+   "offroad": 27.7,
    "specialized": 0
   },
   "unclassified": {
    "untagged": 78039.7,
-   "unpaved": 27709.8,
+   "unpaved": 27603.2,
    "paved_tagged": 2750.6,
-   "offroad": 250.1,
+   "offroad": 356.7,
    "specialized": 4
   },
   "residential": {
    "untagged": 181514.5,
-   "paved_tagged": 15571.5,
-   "unpaved": 10188.9,
-   "offroad": 25.1,
+   "paved_tagged": 15571.6,
+   "unpaved": 10168.5,
+   "offroad": 45.4,
    "specialized": 0.3
   },
   "all": {
    "untagged": 424581.8,
-   "paved_tagged": 104048.3,
-   "unpaved": 42816,
-   "offroad": 287.9,
+   "paved_tagged": 104048.4,
+   "unpaved": 42674.1,
+   "offroad": 429.8,
    "specialized": 4.3
   }
  },
@@ -103,11 +101,11 @@
   "residential": {
    "surface": 25715.1,
    "tracktype": 209.9,
-   "smoothness": 131.9,
+   "smoothness": 132,
    "4wd_only": 0.1
   },
   "all": {
-   "surface": 146795.5,
+   "surface": 146795.6,
    "smoothness": 1324.7,
    "tracktype": 1322.6,
    "4wd_only": 3
@@ -148,7 +146,7 @@
   },
   "all": {
    "default": 424581.8,
-   "surface": 146795.5,
+   "surface": 146795.6,
    "tracktype": 361
   }
  },
@@ -158,20 +156,20 @@
   "primary": {},
   "secondary": {},
   "tertiary": {
-   "tracktype": 8.5,
+   "tracktype": 23.5,
    "smoothness": 4.2
   },
   "unclassified": {
-   "smoothness": 173.3,
-   "tracktype": 80.8
+   "tracktype": 187.4,
+   "smoothness": 173.3
   },
   "residential": {
-   "tracktype": 12.9,
+   "tracktype": 33.3,
    "smoothness": 12.4
   },
   "all": {
-   "smoothness": 189.9,
-   "tracktype": 102.3
+   "tracktype": 244.2,
+   "smoothness": 189.9
   }
  },
  "value_km": {
@@ -233,6 +231,7 @@
     "surface=zx": 0.3
    },
    "offroad": {
+    "tracktype=grade3": 15,
     "tracktype=grade4": 4.6,
     "smoothness=very_bad": 4.2,
     "tracktype=grade5": 4
@@ -255,7 +254,7 @@
     "tracktype=grade3": 47,
     "surface=soil": 22.4,
     "surface=dirt/sand": 21.7,
-    "tracktype=grade4": 16.3,
+    "tracktype=grade4": 16.2,
     "surface=clay": 2,
     "surface=سنگ": 1.2,
     "surface=خاکی": 1.1,
@@ -266,6 +265,7 @@
    },
    "offroad": {
     "smoothness=very_bad": 120.1,
+    "tracktype=grade3": 106.6,
     "tracktype=grade4": 60.6,
     "smoothness=horrible": 49.2,
     "tracktype=grade5": 20.2
@@ -307,7 +307,6 @@
     "surface=اسفالت": 0.2,
     "surface=امام_حسن_۸-_شهید_جاویدی_۳": 0.1,
     "surface=2": 0.1,
-    "surface=wood": 0.1,
     "surface=sandy_road": 0.1,
     "surface=۱": 0.1,
     "surface=آسفالت": 0.1,
@@ -316,6 +315,7 @@
     "surface=جمهوری_۲": 0
    },
    "offroad": {
+    "tracktype=grade3": 20.3,
     "tracktype=grade4": 12.2,
     "smoothness=horrible": 6.1,
     "smoothness=very_bad": 6,
@@ -365,7 +365,6 @@
     "surface=میدان_فلق": 0.1,
     "surface=امام_حسن_۸-_شهید_جاویدی_۳": 0.1,
     "surface=2": 0.1,
-    "surface=wood": 0.1,
     "surface=sandy_road": 0.1,
     "surface=roun": 0.1,
     "surface=۱": 0.1,
@@ -376,6 +375,7 @@
     "surface=آسفالت11": 0
    },
    "offroad": {
+    "tracktype=grade3": 141.9,
     "smoothness=very_bad": 130.3,
     "tracktype=grade4": 77.3,
     "smoothness=horrible": 55.3,
@@ -420,10 +420,12 @@
   "paved (no surface) + smoothness=very_bad": 41.3,
   "paved (surface=asphalt) + tracktype=grade5": 20.2,
   "paved (no surface) + smoothness=very_horrible": 5.7,
+  "paved (surface=paved) + tracktype=grade3": 5,
   "smoothness=good + surface=ground": 3.9,
   "smoothness=good + surface=fine_gravel": 3.1,
   "smoothness=good + surface=compacted": 2.7,
   "paved (surface=asphalt) + smoothness=horrible": 0.5,
+  "paved (surface=asphalt) + tracktype=grade3": 0.4,
   "paved (surface=paved) + 4wd_only=recommended": 0.3,
   "paved (surface=asphalt) + smoothness=very_bad": 0.3,
   "paved (no surface) + 4wd_only=yes": 0.1
@@ -635,6 +637,18 @@
     }
    },
    {
+    "id": "w198691005",
+    "highway": "unclassified",
+    "km": 20.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
     "id": "w440557049",
     "highway": "unclassified",
     "km": 19.9,
@@ -663,6 +677,27 @@
      "ref": "86",
      "surface": "dirt",
      "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w31338414",
+    "highway": "unclassified",
+    "km": 14.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w379300550",
+    "highway": "tertiary",
+    "km": 14,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "tracktype": "grade3"
     }
    },
    {
@@ -744,6 +779,40 @@
      "source": "GPS;survey",
      "surface": "unpaved"
     }
+   },
+   {
+    "id": "w672387092",
+    "highway": "unclassified",
+    "km": 10,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w564595557",
+    "highway": "unclassified",
+    "km": 9,
+    "level": "offroad",
+    "tags": {
+     "description": "جاده خاکی",
+     "highway": "unclassified",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w722752747",
+    "highway": "unclassified",
+    "km": 8.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده روستای ورجه",
+     "surface": "dirt",
+     "tracktype": "grade3"
+    }
    }
   ],
   "conflict": [
@@ -803,6 +872,19 @@
      "source": "DigitalGlobal Premium Image 28-01-18",
      "surface": "asphalt",
      "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w1386648021",
+    "highway": "tertiary",
+    "km": 4.8,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "جاده روستای سم سام",
+     "surface": "paved",
+     "tracktype": "grade3",
+     "width": "0"
     }
    },
    {
@@ -1131,6 +1213,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

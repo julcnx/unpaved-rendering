@@ -3,16 +3,14 @@
  "name": "Kenya",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-10T01:29:50.384Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-03T03:09:28.974Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "kenya-latest.osm.pbf",
   "boundary": "r192798",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-03T03:09:28.974Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -44,31 +42,31 @@
    "specialized": 0
   },
   "tertiary": {
-   "unpaved": 14313.8,
+   "unpaved": 14059.2,
    "untagged": 8388.4,
    "paved_tagged": 1677.4,
-   "offroad": 238.6,
+   "offroad": 493.1,
    "specialized": 0
   },
   "unclassified": {
    "untagged": 102839.3,
-   "unpaved": 60192.1,
-   "offroad": 1613.3,
+   "unpaved": 59928.9,
+   "offroad": 1876.5,
    "paved_tagged": 1037.5,
    "specialized": 28.2
   },
   "residential": {
    "untagged": 94885.3,
-   "unpaved": 10285.2,
-   "paved_tagged": 701.5,
-   "offroad": 100.5,
+   "unpaved": 10263,
+   "paved_tagged": 701.7,
+   "offroad": 122.6,
    "specialized": 8.6
   },
   "all": {
    "untagged": 211824.7,
-   "unpaved": 92139,
-   "paved_tagged": 12136.7,
-   "offroad": 2108.6,
+   "unpaved": 91599,
+   "paved_tagged": 12136.8,
+   "offroad": 2648.4,
    "specialized": 36.8
   }
  },
@@ -160,20 +158,20 @@
    "smoothness": 54.9
   },
   "tertiary": {
-   "tracktype": 137.9,
+   "tracktype": 392.5,
    "smoothness": 100.6
   },
   "unclassified": {
    "smoothness": 1028.4,
-   "tracktype": 613
+   "tracktype": 876.3
   },
   "residential": {
    "smoothness": 79.6,
-   "tracktype": 29.6
+   "tracktype": 51.6
   },
   "all": {
    "smoothness": 1364.8,
-   "tracktype": 780.5
+   "tracktype": 1320.3
   }
  },
  "value_km": {
@@ -249,6 +247,7 @@
     "surface=tarmac": 0.1
    },
    "offroad": {
+    "tracktype=grade3": 254.5,
     "tracktype=grade4": 107.5,
     "smoothness=very_bad": 100.6,
     "tracktype=grade5": 30.4
@@ -292,6 +291,7 @@
    "offroad": {
     "smoothness=very_bad": 786.2,
     "tracktype=grade4": 555.7,
+    "tracktype=grade3": 263.3,
     "smoothness=horrible": 214.1,
     "tracktype=grade5": 57.4
    },
@@ -328,13 +328,13 @@
     "surface=pebblestone": 0.3,
     "surface=compacted:lanes": 0.2,
     "surface=cabroworks": 0.2,
-    "surface=wood": 0.2,
     "surface=Soil graded": 0.1,
     "surface=wearth": 0.1,
     "surface=unhewn_cobblestone": 0
    },
    "offroad": {
     "smoothness=very_bad": 68.4,
+    "tracktype=grade3": 22,
     "tracktype=grade5": 17.2,
     "tracktype=grade4": 12.4,
     "smoothness=horrible": 2.6
@@ -387,7 +387,6 @@
     "surface=this section may be unpassable by 4WVs": 0.3,
     "surface=compacted:lanes": 0.2,
     "surface=cabroworks": 0.2,
-    "surface=wood": 0.2,
     "surface=wearth": 0.1,
     "surface=unhewn_cobblestone": 0,
     "surface=metal_grid": 0
@@ -395,6 +394,7 @@
    "offroad": {
     "smoothness=very_bad": 1010.1,
     "tracktype=grade4": 675.5,
+    "tracktype=grade3": 539.8,
     "smoothness=horrible": 318,
     "tracktype=grade5": 105
    },
@@ -437,6 +437,7 @@
   "paved (surface=asphalt) + smoothness=very_bad": 16.6,
   "paved (no surface) + smoothness=very_bad": 11.2,
   "smoothness=good + surface=ground": 5.8,
+  "paved (surface=cobblestone) + tracktype=grade3": 4.4,
   "paved (surface=paved) + tracktype=grade4": 2.1,
   "smoothness=excellent + surface=ground": 2.1,
   "paved (no surface) + smoothness=horrible": 1.8,
@@ -447,6 +448,7 @@
   "smoothness=excellent + surface=unpaved": 0.1,
   "paved (surface=sett) + smoothness=very_bad": 0.1,
   "paved (surface=concrete) + smoothness=impassable": 0.1,
+  "paved (surface=concrete) + tracktype=grade3": 0,
   "paved (surface=concrete) + smoothness=very_bad": 0
  },
  "odd": {
@@ -633,6 +635,21 @@
    }
   ],
   "offroad_mark": [
+   {
+    "id": "w34357586",
+    "highway": "tertiary",
+    "km": 165,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "surface": "gravel",
+     "tracktype": "grade3",
+     "width": "4"
+    }
+   },
    {
     "id": "w370042801",
     "highway": "unclassified",
@@ -954,6 +971,23 @@
     }
    },
    {
+    "id": "w48082280",
+    "highway": "trunk",
+    "km": 2.3,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "trunk",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "name": "Kisii-Kisumu Road",
+     "ref": "A1",
+     "surface": "cobblestone",
+     "tracktype": "grade3",
+     "width": "4"
+    }
+   },
+   {
     "id": "w405457871",
     "highway": "residential",
     "km": 2.3,
@@ -987,6 +1021,23 @@
      "name": "mukuyu-Gunga rd",
      "surface": "paved",
      "tracktype": "grade4",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w702592950",
+    "highway": "trunk",
+    "km": 2.1,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "trunk",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "name": "Kisii-Kisumu Road",
+     "ref": "A1",
+     "surface": "cobblestone",
+     "tracktype": "grade3",
      "width": "4"
     }
    },
@@ -1212,6 +1263,5 @@
     }
    }
   ]
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }

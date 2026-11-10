@@ -3,16 +3,14 @@
  "name": "French Guiana",
  "data_date": "2026-11-01",
  "run": {
-  "generated_at": "2026-11-10T01:29:49.800Z",
-  "classifier_sha256": "03ef28e8e6a7",
-  "pipeline_sha256": "8f04d3152792",
+  "generated_at": "2026-11-02T16:45:28.145Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "guyane-latest.osm.pbf",
   "boundary": "r1260551",
   "data_date_source": "header",
-  "from_combos": true,
-  "rerun_date": "2026-11-10",
-  "extract_generated_at": "2026-11-02T16:45:28.145Z"
+  "from_combos": false
  },
  "km": {
   "motorway": {
@@ -51,24 +49,24 @@
    "specialized": 0
   },
   "unclassified": {
-   "unpaved": 174,
+   "unpaved": 172.9,
    "untagged": 152.7,
    "paved_tagged": 138.2,
-   "offroad": 0,
+   "offroad": 1.1,
    "specialized": 0
   },
   "residential": {
    "paved_tagged": 436.1,
    "untagged": 410.8,
-   "unpaved": 183,
-   "offroad": 0,
+   "unpaved": 180.5,
+   "offroad": 2.5,
    "specialized": 0
   },
   "all": {
    "paved_tagged": 1274.2,
    "untagged": 854.2,
-   "unpaved": 360.5,
-   "offroad": 9.2,
+   "unpaved": 356.9,
+   "offroad": 12.8,
    "specialized": 0
   }
  },
@@ -142,10 +140,15 @@
    "smoothness": 9.2
   },
   "tertiary": {},
-  "unclassified": {},
-  "residential": {},
+  "unclassified": {
+   "tracktype": 1.1
+  },
+  "residential": {
+   "tracktype": 2.5
+  },
   "all": {
-   "smoothness": 9.2
+   "smoothness": 9.2,
+   "tracktype": 3.6
   }
  },
  "value_km": {
@@ -186,10 +189,11 @@
     "tracktype=grade3": 20,
     "surface=ground": 13.1,
     "tracktype=grade2": 13.1,
-    "surface=compacted": 4.6,
-    "surface=wood": 0
+    "surface=compacted": 4.6
    },
-   "offroad": {},
+   "offroad": {
+    "tracktype=grade3": 1.1
+   },
    "specialized": {}
   },
   "residential": {
@@ -204,10 +208,11 @@
     "surface=sand": 0.6,
     "surface=concrete:lanes": 0.2,
     "surface=grass": 0.1,
-    "surface=fine_gravel": 0.1,
-    "surface=wood": 0
+    "surface=fine_gravel": 0.1
    },
-   "offroad": {},
+   "offroad": {
+    "tracktype=grade3": 2.5
+   },
    "specialized": {}
   },
   "all": {
@@ -222,11 +227,11 @@
     "surface=sand": 0.6,
     "surface=concrete:lanes": 0.2,
     "surface=grass": 0.1,
-    "surface=fine_gravel": 0.1,
-    "surface=wood": 0
+    "surface=fine_gravel": 0.1
    },
    "offroad": {
-    "smoothness=very_bad": 9.2
+    "smoothness=very_bad": 9.2,
+    "tracktype=grade3": 3.6
    },
    "specialized": {}
   }
@@ -287,10 +292,45 @@
      "smoothness": "very_bad",
      "surface": "unpaved"
     }
+   },
+   {
+    "id": "w98382561",
+    "highway": "residential",
+    "km": 1.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "name": "Impasse des Wassaïs",
+     "name:etymology:wikidata": "Q33943",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w289104374",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "Bing",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1418733939",
+    "highway": "residential",
+    "km": 0.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "name": "Impasse Pitaya",
+     "name:etymology:wikidata": "Q232755",
+     "tracktype": "grade3"
+    }
    }
   ],
   "conflict": [],
   "unknown_value": []
- },
- "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
+ }
 }
