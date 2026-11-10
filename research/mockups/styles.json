@@ -18,10 +18,10 @@
       "casing": "#c84e2f",
       "grainBg": "#f6b598",
       "grainDot": "#511d0f",
-      "dash": "#ec9479",
+      "dash": "#ea8b6e",
       "tunnel": "#fbd3c6",
       "offTint": "#eb9074",
-      "offDash": "#e56f4a"
+      "offDash": "#e3643d"
     },
     "primary": {
       "name": "Orange",
@@ -29,10 +29,10 @@
       "casing": "#a06b00",
       "grainBg": "#f6d29c",
       "grainDot": "#563d12",
-      "dash": "#ebb876",
+      "dash": "#e9b066",
       "tunnel": "#fde7c9",
       "offTint": "#ebb470",
-      "offDash": "#e19533"
+      "offDash": "#df8d23"
     },
     "secondary": {
       "name": "Yellow",
