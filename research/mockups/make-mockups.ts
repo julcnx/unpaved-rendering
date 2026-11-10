@@ -13,7 +13,7 @@ const LAND = '#f2efe9';
 // fill and casing; grain dots (symbols/unpaved/unpaved_<class>-fill.svg) on a background tinted a little toward brown
 // (Carto's own background is only a lighter fill); white roads stay white, with warm brown dots instead of Carto's grey; tunnel fill (Carto: lighter fill, darker for white roads);
 // dash colour: a slightly darker tint of the class colour, light brown on white roads (grey would look like Carto construction).
-type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string; offTint: string };
+type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string; offTint: string; offDash: string };
 // One track rhythm for the line styles (centre line and dashed casing), from OSM Carto tracks scaled to our lines:
 // One ladder for roads now and tracks later (Julien's choice, 2026-11-09): Paved solid, Unpaved = long dashes
 // (Carto tracktype=grade2 order), Off-road = medium dashes (grade3 order), with a bigger step than Carto between the
@@ -26,11 +26,11 @@ const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 
 const SPEC = {
   // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
   classes: {
-    motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#dc7c8f', tunnel: '#efb3be', offTint: '#dc7c8f' },
-    trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ef9a80', tunnel: '#fbd3c6', offTint: '#eb9074' },
-    primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#f0bd7c', tunnel: '#fde7c9', offTint: '#ebb470' },
-    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#555a28', dash: '#dfe48a', tunnel: '#fbfdd8', offTint: '#d4da61' },
-    minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#5e4a35', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#d9c1a3' },
+    motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#dc7c8f', tunnel: '#efb3be', offTint: '#dc7c8f', offDash: '#d25870' },
+    trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ef9a80', tunnel: '#fbd3c6', offTint: '#eb9074', offDash: '#e67653' },
+    primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#f0bd7c', tunnel: '#fde7c9', offTint: '#ebb470', offDash: '#e49b3f' },
+    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#555a28', dash: '#dfe48a', tunnel: '#fbfdd8', offTint: '#d4da61', offDash: '#bfc82e' },
+    minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#5e4a35', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#d9c1a3', offDash: '#c8ac84' },
   },
   // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
   styles: {
@@ -51,7 +51,9 @@ const mix = (a: string, b: string, t: number) => '#' + [1, 3, 5].map((i) =>
 // Tint variant (to compare, 2026-11-10): Off-road keeps the Unpaved pattern and gets a darker class tint in the fill
 // (offTint: same hue as the class, luminance contrast 1.35 or more against the fill and 1.3 against the land, 1.5 for white,
 // whose tint is tan so it does not melt into the beige land). Grain background to match.
+// Dashed fill: the fill stays normal (a dark fill is too heavy) and the dashes get darker (offDash, 1.35 or more against the dash).
 const tinted = (c: Klass): Klass => ({ ...c, id: `${c.id}-t`, fill: c.offTint, grainBg: c.offTint });
+const tintedDash = (c: Klass): Klass => ({ ...c, dash: c.offDash });
 const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles['dashed-fill'], GA = SPEC.styles['dashed-casing'];
 const BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
 const TRACK = '#996600'; // OSM Carto @track-fill
@@ -161,12 +163,13 @@ function render(suffix: string) {
     keys.map((key, i) => box(LABEL_W + i * (CELL_W + 10), y(r), OPTIONS[key].road(s, c))).join('')).join('');
   out(`options-comparison${suffix}`, svg(w, h, header + rows));
   // Tint variant: same grid, Off-road = the Unpaved pattern on the darker class tint.
-  // The dashed fill already carries a tint, so it keeps its medium dashes for Off-road.
-  const tintRoad = (key: string, s: State, c: Klass) => offroad(s) && key !== 'dashed-fill' ? OPTIONS[key].road('Unpaved', tinted(c)) : OPTIONS[key].road(s, c);
+  // Off-road = the Unpaved pattern, only darker, in every style.
+  const tintRoad = (key: string, s: State, c: Klass) => !offroad(s) ? OPTIONS[key].road(s, c)
+    : OPTIONS[key].road('Unpaved', key === 'dashed-fill' ? tintedDash(c) : tinted(c));
   const rowsT = ROWS.map(({ c, s }, r) => text(10, y(r) + CELL_H / 2 + 5, `${c.name}: ${s}`, 14, 700) +
     keys.map((key, i) => box(LABEL_W + i * (CELL_W + 10), y(r), tintRoad(key, s, c))).join('')).join('');
   out(`options-comparison-tint${suffix}`, svg(w, h + 30, header + rowsT +
-    text(10, h + 18, 'Tint variant: in styles 1-3, Off-road uses the same pattern as Unpaved on a darker tint of the class colour (tan on white); style 4 keeps medium dashes.', 13)));
+    text(10, h + 18, 'Tint variant: Off-road = the Unpaved pattern, only darker (darker fill in styles 1-3, tan on white; darker dashes in style 4).', 13)));
 
   // OSM Carto features the styles must not look like: own file.
   const refTop = 40;
