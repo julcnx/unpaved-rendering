@@ -6,3 +6,8 @@ node_modules/
 borders/
 examples/images/google/
 examples/images/sheets/
+
+# Inherited from osm-wiki root .gitignore
+*.pbf
+__pycache__/
+*.log
