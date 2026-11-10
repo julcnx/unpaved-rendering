@@ -8,7 +8,7 @@
 
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const LAND = '#f2efe9';
+let LAND = '#f2efe9';
 // Per road class (OSM Carto road-colors-generated.mss and roads.mss):
 // fill and casing; grain dots (symbols/unpaved/unpaved_<class>-fill.svg) on a background tinted a little toward brown
 // (Carto's own background is only a lighter fill); white roads stay white, with warm brown dots instead of Carto's grey; tunnel fill (Carto: lighter fill, darker for white roads);
@@ -34,6 +34,19 @@ const SPEC = {
   },
   // Below this fill width (px) every style draws a plain tint: lowTint for Unpaved, offTint for Off-road (patterns blur there).
   lowZoom: { below: 6 },
+  // Dark mode (2026-11-10): on a dark map Off-road is the LIGHTER step. Fills from the demo's dark palette, primary more orange
+  // (it read brown). Steps measured the same way as in light mode, going lighter: lowTint and offTint 1.25 each, dash 1.3,
+  // offDash 1.35 above it, fullDash 1.25. White roads are a warm grey-tan, as the tan of light mode.
+  dark: {
+    land: '#202124', centreLine: '#d4a46c',
+    classes: {
+      motorway: { name: 'Pink', fill: '#8f4456', casing: '#c86a82', grainBg: '#8f4456', grainDot: '#d2a2ad', dash: '#ab5167', offTint: '#b56477', offDash: '#ba6d80', lowTint: '#a75065', fullDash: '#a75065', tunnel: '#8f4456' },
+      trunk: { name: 'Red', fill: '#8c4d3a', casing: '#c27358', grainBg: '#8c4d3a', grainDot: '#cfa89c', dash: '#a75c45', offTint: '#b76952', offDash: '#bc745e', lowTint: '#a35a44', fullDash: '#a35a44', tunnel: '#8c4d3a' },
+      primary: { name: 'Orange', fill: '#956123', casing: '#c8954a', grainBg: '#956123', grainDot: '#d6c1a9', dash: '#b07229', offTint: '#c37f2d', offDash: '#cf8732', lowTint: '#ac7028', fullDash: '#ac7028', tunnel: '#956123' },
+      secondary: { name: 'Yellow', fill: '#5e6238', casing: '#93985a', grainBg: '#5e6238', grainDot: '#b1b86c', dash: '#717543', offTint: '#7f844b', offDash: '#878c50', lowTint: '#6e7241', fullDash: '#6e7241', tunnel: '#5e6238' },
+      minor: { name: 'White', fill: '#4b4b4f', casing: '#6d6d72', grainBg: '#4b4b4f', grainDot: '#d2c1ac', dash: '#685b4b', offTint: '#776856', offDash: '#7f705c', lowTint: '#655949', fullDash: '#655949', tunnel: '#4b4b4f' },
+    },
+  },
   // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
   styles: {
     'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
@@ -49,7 +62,7 @@ const SPEC = {
   },
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
-const CLASSES: Klass[] = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
+let CLASSES: Klass[] = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
 // Mix two #rrggbb colours: t = 0 gives a, t = 1 gives b.
 const mix = (a: string, b: string, t: number) => '#' + [1, 3, 5].map((i) =>
   Math.round(parseInt(a.slice(i, i + 2), 16) * (1 - t) + parseInt(b.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
@@ -60,7 +73,7 @@ const mix = (a: string, b: string, t: number) => '#' + [1, 3, 5].map((i) =>
 const tinted = (c: Klass): Klass => ({ ...c, id: `${c.id}-t`, fill: c.offTint, grainBg: c.offTint });
 const tintedDash = (c: Klass): Klass => ({ ...c, dash: c.offDash, fullDash: c.offDash });
 const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles['dashed-fill'], DF = SPEC.styles['dashed-fill-full'], GA = SPEC.styles['dashed-casing'];
-const BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
+let BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
 const TRACK = '#996600'; // OSM Carto @track-fill
 const MINOR_CONSTRUCTION = '#aaa'; // OSM Carto @minor-construction
 const STATES = ['Paved', 'Unpaved', 'Unpaved + Off-road'] as const;
@@ -79,14 +92,16 @@ const GRAIN = readFileSync(new URL('./carto-unpaved-grain.svg', import.meta.url)
 const grain = (c: Klass) =>
   `<pattern id="grain-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(${GR.scale})"><rect width="64" height="64" fill="${c.grainBg}"/><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>` +
   `<pattern id="grain2-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(${GR.offroadShift.join(' ')}) scale(${GR.offroadScale})"><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>`;
-const DEFS = `<defs>${[...CLASSES, ...CLASSES.map(tinted)].map(grain).join('')}</defs>`;
+const defs = () => `<defs>${[...CLASSES, ...CLASSES.map(tinted)].map(grain).join('')}</defs>`;
+let DEFS = defs();
 
 const line = (stroke: string, width: number, dash = '', cap = 'butt', extra = '') =>
   `<path d="${ROAD}" fill="none" stroke="${stroke}" stroke-width="${width}" stroke-linecap="${cap}"${dash ? ` stroke-dasharray="${dash}"` : ''}${extra}/>`;
 const road = (fill: string, casing: string, extra = '') => line(casing, W + CAS, '') + line(fill, W) + extra;
 // Dashed casing: only the outline is broken, the fill stays continuous.
 // White roads get a darker casing (OSM Carto tertiary casing), or the dashes vanish into the land.
-const gapCasing = (c: Klass) => (GA.casing as Record<string, string>)[c.id.replace(/-t$/, '')] ?? c.casing;
+let DARK_MODE = false; // dark map: the outline is the class casing, already lighter than the fill
+const gapCasing = (c: Klass) => DARK_MODE ? c.casing : (GA.casing as Record<string, string>)[c.id.replace(/-t$/, '')] ?? c.casing;
 const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) + line(c.fill, W);
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
@@ -152,14 +167,15 @@ const REFERENCES = () => [
   ] },
 ];
 
+let INK = '#333', PAGE = '#fff';
 const text = (x: number, y: number, s: string, size = 14, weight = 400, anchor = 'start') =>
-  `<text x="${x}" y="${y}" font-family="Helvetica, Arial, sans-serif" font-size="${size}" font-weight="${weight}" fill="#333" text-anchor="${anchor}">${s}</text>`;
+  `<text x="${x}" y="${y}" font-family="Helvetica, Arial, sans-serif" font-size="${size}" font-weight="${weight}" fill="${INK}" text-anchor="${anchor}">${s}</text>`;
 
 const box = (x: number, y: number, inner: string) =>
   `<g transform="translate(${x} ${y})"><rect width="${CELL_W}" height="${CELL_H}" fill="${LAND}" rx="4"/>${inner}</g>`;
 
 const svg = (w: number, h: number, body: string) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${DEFS}<rect width="${w}" height="${h}" fill="#fff"/>${body}</svg>\n`;
+  `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${DEFS}<rect width="${w}" height="${h}" fill="${PAGE}"/>${body}</svg>\n`;
 
 const out = (name: string, content: string) => writeFileSync(new URL(`./${name}.svg`, import.meta.url), content);
 
@@ -200,11 +216,32 @@ function render(suffix: string) {
   out(`references${suffix}`, svg(w, hr, refs));
 }
 
+// Comparison grid only (used for the dark version).
+function renderComparison(suffix: string) {
+  const LABEL_W = 290, keys = Object.keys(OPTIONS);
+  const ROWS = CLASSES.flatMap((c) => STATES.map((s) => ({ c, s })));
+  const w = LABEL_W + keys.length * (CELL_W + 10) + 10, y = (r: number) => 40 + r * (CELL_H + 10), h = y(ROWS.length);
+  const header = keys.map((key, i) => text(LABEL_W + i * (CELL_W + 10) + CELL_W / 2, 26, OPTIONS[key].title, 15, 700, 'middle')).join('');
+  const rows = ROWS.map(({ c, s }, r) => text(10, y(r) + CELL_H / 2 + 5, `${c.name}: ${s}`, 14, 700) +
+    keys.map((key, i) => box(LABEL_W + i * (CELL_W + 10), y(r), official(key, s, c))).join('')).join('');
+  out(`options-comparison${suffix}`, svg(w, h + 30, header + rows + text(10, h + 18,
+    W < SPEC.lowZoom.below ? 'Dark map, below 6 px: plain tints, Unpaved lighter than the road, Off-road lighter again.'
+      : 'Dark map: Off-road = the Unpaved pattern, only LIGHTER (lighter fill in styles 1, 2 and 4, lighter dashes in styles 3 and 5).', 13)));
+}
+
 render('');
 W = 5;
 CAS = 2;
 render('-narrow');
 
+// Dark version: same styles on the dark palette, comparison grids only.
+LAND = SPEC.dark.land;
+BROWN = SPEC.dark.centreLine;
+CLASSES = MOCKUP_CLASSES.map((id) => ({ id, ...(SPEC.dark.classes as any)[id] }));
+DEFS = defs();
+INK = '#e8e8e8'; PAGE = '#18181a'; DARK_MODE = true;
+for (const [w, cas, suffix] of [[11, 4, '-dark'], [5, 2, '-dark-narrow']] as const) { W = w; CAS = cas; renderComparison(suffix); }
+
 // Style values for the demo, with the titles and notes shown in its menu and legend.
 const styles = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, { name: OPTIONS[k].title, note: OPTIONS[k].note, ...v }]));
-writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'osm-wiki/unpaved-rendering/mockups/make-mockups.ts', lowZoom: SPEC.lowZoom, classes: SPEC.classes, styles }, null, 2) + '\n');
+writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'osm-wiki/unpaved-rendering/mockups/make-mockups.ts', lowZoom: SPEC.lowZoom, classes: SPEC.classes, dark: SPEC.dark, styles }, null, 2) + '\n');

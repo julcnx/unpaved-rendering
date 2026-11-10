@@ -37,7 +37,6 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 25. Allies: HOT, local mapping communities, the laterite-discussion contacts.
 
 ## Low priority
-- Dark mode: on dark maps Off-road is the lighter step; measure dark tints only if a provider with a night mode (OsmAnd, Organic Maps, DMD2) asks.
 - Track rendering per app (double line, dashed, continuous), for the future-work section.
 - Paved `highway=track` (`tracktype=grade1` or a paved surface) drawn as a continuous line, matching the track rhythms now used by the centre line (OSM Carto already draws grade1 solid). For the future-work section, after the road classes.
 - OsmAnd default vs Motorcycle screenshot at one spot (the difference is already described in A0; Komoot phone app check not needed).
