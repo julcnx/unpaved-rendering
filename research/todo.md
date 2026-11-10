@@ -19,8 +19,8 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 15. Static demo page: first version done 2026-11-09 in `~/Workspaces/OSM/unpaved-rendering` (canvas, 4 styles from the mockups, side by side, 5 backgrounds incl. hillshade/contours/labels, legend, live Overpass from z14, Nominatim search, OSM attribution). Cached data for all spots done. Styles synced from the mockups (`mockups/styles.json`, 2026-11-09), style chips, live Overpass anywhere (main roads from z11). Still to do: refetch the spot data with way ids when Overpass has capacity; dark-mode primary looks brown (see LOG.md).
 16. Backgrounds: white, forest green, sand/desert, dark mode, and a realistic one with hillshade, contours and labels.
 17. Zoom behaviour: where each style starts working, and how it looks on thin roads.
-18. Colour tests: several earthy browns against every background, distinct from contour and boundary browns; dark-mode variant per style; colour-blindness simulation; write down why the colours were picked.
-19. Playwright loop: screenshot every area x style x background x zoom, adjust, repeat, and keep a short change log.
+18. (dark mode moved to Low priority) Colour tests: several earthy browns against every background, distinct from contour and boundary browns; dark-mode variant per style; colour-blindness simulation; write down why the colours were picked.
+19. Screenshot loop: first run done 2026-11-10 (5 styles x 6 spots x white, terrain x z12, 14, 16; findings in the demo LOG.md). Still to do: screenshot every area x style x background x zoom, adjust, repeat, and keep a short change log.
 
 ## Repo, article and publishing (ask before anything public)
 
@@ -37,6 +37,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 25. Allies: HOT, local mapping communities, the laterite-discussion contacts.
 
 ## Low priority
+- Dark mode: on dark maps Off-road is the lighter step; measure dark tints only if a provider with a night mode (OsmAnd, Organic Maps, DMD2) asks.
 - Track rendering per app (double line, dashed, continuous), for the future-work section.
 - Paved `highway=track` (`tracktype=grade1` or a paved surface) drawn as a continuous line, matching the track rhythms now used by the centre line (OSM Carto already draws grade1 solid). For the future-work section, after the road classes.
 - OsmAnd default vs Motorcycle screenshot at one spot (the difference is already described in A0; Komoot phone app check not needed).
