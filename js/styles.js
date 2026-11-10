@@ -15,13 +15,11 @@ const LIGHT = {
   secondary: withGapCasing('secondary', secondary), minor: withGapCasing('minor', minor),
   brown: S['centre-line'].color,
 };
+// Dark palette from the mockups too (SPEC.dark): on a dark map Off-road is the lighter step; the dashed outline uses the
+// class casing, already lighter than the fill.
 const DARK = {
-  motorway: { fill: '#8f4456', casing: '#c86a82', grainBg: '#8f4456', grainDot: '#f2c4cf', dash: '#b56b7d' },
-  trunk: { fill: '#8c4d3a', casing: '#c27358', grainBg: '#8c4d3a', grainDot: '#f6cdbd', dash: '#b37360' },
-  primary: { fill: '#7c6236', casing: '#b08c4c', grainBg: '#7c6236', grainDot: '#f2dcb4', dash: '#a3895d' },
-  secondary: { fill: '#5e6238', casing: '#93985a', grainBg: '#5e6238', grainDot: '#eef0c4', dash: '#868a5d' },
-  minor: { fill: '#4b4b4f', casing: '#6d6d72', grainBg: '#4b4b4f', grainDot: '#e2e2e2', dash: '#78787c' },
-  brown: '#d4a46c',
+  ...Object.fromEntries(Object.entries(SPEC.dark.classes).map(([k, c]) => [k, { ...c, gapCasing: c.casing }])),
+  brown: SPEC.dark.centreLine,
 };
 export const palette = (dark) => (dark ? DARK : LIGHT);
 

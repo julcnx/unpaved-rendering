@@ -43,3 +43,4 @@
 - z16 (14.6 px): all clear. Style 5 is the loudest, especially in towns (Bolivia, Namibia) where many minor unpaved roads get full-width dashes; style 3 (band) is calmer there.
 - Wait in scripts/shots.mjs changed from network idle to a fixed delay (live Overpass loading kept the network busy).
 - Yellow tints stronger for low zoom: lowTint #dfe389, offTint #c7ce31 (steps of contrast 1.25, were 1.2).
+- Dark background uses the measured dark palette from the mockups (SPEC.dark): Off-road is the lighter step; primary more orange (no longer brown). Checked on Nepal NH48.

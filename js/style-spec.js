@@ -71,6 +71,77 @@ export default {
       "fullDash": "#dccab0"
     }
   },
+  "dark": {
+    "land": "#202124",
+    "centreLine": "#d4a46c",
+    "classes": {
+      "motorway": {
+        "name": "Pink",
+        "fill": "#8f4456",
+        "casing": "#c86a82",
+        "grainBg": "#8f4456",
+        "grainDot": "#d2a2ad",
+        "dash": "#ab5167",
+        "offTint": "#b56477",
+        "offDash": "#ba6d80",
+        "lowTint": "#a75065",
+        "fullDash": "#a75065",
+        "tunnel": "#8f4456"
+      },
+      "trunk": {
+        "name": "Red",
+        "fill": "#8c4d3a",
+        "casing": "#c27358",
+        "grainBg": "#8c4d3a",
+        "grainDot": "#cfa89c",
+        "dash": "#a75c45",
+        "offTint": "#b76952",
+        "offDash": "#bc745e",
+        "lowTint": "#a35a44",
+        "fullDash": "#a35a44",
+        "tunnel": "#8c4d3a"
+      },
+      "primary": {
+        "name": "Orange",
+        "fill": "#956123",
+        "casing": "#c8954a",
+        "grainBg": "#956123",
+        "grainDot": "#d6c1a9",
+        "dash": "#b07229",
+        "offTint": "#c37f2d",
+        "offDash": "#cf8732",
+        "lowTint": "#ac7028",
+        "fullDash": "#ac7028",
+        "tunnel": "#956123"
+      },
+      "secondary": {
+        "name": "Yellow",
+        "fill": "#5e6238",
+        "casing": "#93985a",
+        "grainBg": "#5e6238",
+        "grainDot": "#b1b86c",
+        "dash": "#717543",
+        "offTint": "#7f844b",
+        "offDash": "#878c50",
+        "lowTint": "#6e7241",
+        "fullDash": "#6e7241",
+        "tunnel": "#5e6238"
+      },
+      "minor": {
+        "name": "White",
+        "fill": "#4b4b4f",
+        "casing": "#6d6d72",
+        "grainBg": "#4b4b4f",
+        "grainDot": "#d2c1ac",
+        "dash": "#685b4b",
+        "offTint": "#776856",
+        "offDash": "#7f705c",
+        "lowTint": "#655949",
+        "fullDash": "#655949",
+        "tunnel": "#4b4b4f"
+      }
+    }
+  },
   "styles": {
     "centre-line": {
       "name": "2. Dashed centre line",
