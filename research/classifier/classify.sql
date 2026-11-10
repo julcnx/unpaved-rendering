@@ -45,7 +45,7 @@ RETURNS text AS $$
       WHEN smoothness IN ('very_bad', 'horrible') THEN 'offroad'
       WHEN smoothness IN ('very_horrible', 'impassable') THEN 'specialized'
       WHEN smoothness IN ('excellent', 'good', 'intermediate', 'bad') THEN NULL
-      WHEN tracktype IN ('grade3', 'grade4', 'grade5', 'grade6', 'grade7') THEN 'offroad'
+      WHEN tracktype IN ('grade4', 'grade5', 'grade6', 'grade7') THEN 'offroad'
       WHEN tracktype = 'grade8' THEN 'specialized'
     END AS mark,
     CASE fourwd_only WHEN 'recommended' THEN 'offroad' WHEN 'yes' THEN 'offroad' WHEN 'extreme' THEN 'specialized' END AS fourwd

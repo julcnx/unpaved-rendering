@@ -3,14 +3,16 @@
  "name": "Philippines",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-03T03:40:28.728Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-10T01:29:51.547Z",
+  "classifier_sha256": "03ef28e8e6a7",
+  "pipeline_sha256": "8f04d3152792",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "philippines-latest.osm.pbf",
   "boundary": "r443174",
   "data_date_source": "header",
-  "from_combos": false
+  "from_combos": true,
+  "rerun_date": "2026-11-10",
+  "extract_generated_at": "2026-11-03T03:40:28.728Z"
  },
  "km": {
   "motorway": {
@@ -37,36 +39,36 @@
   "secondary": {
    "paved_tagged": 13055.2,
    "untagged": 8131,
-   "unpaved": 1133.7,
-   "offroad": 73.2,
+   "unpaved": 1148.4,
+   "offroad": 58.4,
    "specialized": 3.6
   },
   "tertiary": {
    "untagged": 34155.3,
-   "paved_tagged": 12862.5,
-   "unpaved": 8285.7,
-   "offroad": 329.8,
+   "paved_tagged": 12862.1,
+   "unpaved": 8411,
+   "offroad": 205,
    "specialized": 29.8
   },
   "unclassified": {
    "untagged": 65784.3,
-   "unpaved": 19396.2,
-   "paved_tagged": 5213.5,
-   "offroad": 887.1,
+   "unpaved": 19754.2,
+   "paved_tagged": 5211.9,
+   "offroad": 530.7,
    "specialized": 56.5
   },
   "residential": {
    "untagged": 113149.2,
-   "paved_tagged": 14577.2,
-   "unpaved": 12756.2,
-   "offroad": 298.6,
+   "paved_tagged": 14576.1,
+   "unpaved": 12924.6,
+   "offroad": 131.3,
    "specialized": 12.8
   },
   "all": {
    "untagged": 228026.8,
-   "paved_tagged": 64638.9,
-   "unpaved": 41722.4,
-   "offroad": 1596.5,
+   "paved_tagged": 64635.8,
+   "unpaved": 42388.7,
+   "offroad": 933.2,
    "specialized": 102.6
   }
  },
@@ -77,7 +79,7 @@
   },
   "trunk": {
    "surface": 7286.5,
-   "smoothness": 462.2
+   "smoothness": 462.1
   },
   "primary": {
    "surface": 10759.3,
@@ -95,7 +97,7 @@
   },
   "unclassified": {
    "surface": 24976.3,
-   "smoothness": 1236.5,
+   "smoothness": 1236.6,
    "tracktype": 840.2
   },
   "residential": {
@@ -155,24 +157,23 @@
    "smoothness": 7.8
   },
   "secondary": {
-   "smoothness": 62,
-   "tracktype": 14.7
+   "smoothness": 62
   },
   "tertiary": {
-   "smoothness": 219,
-   "tracktype": 140.6
+   "smoothness": 219.1,
+   "tracktype": 15.6
   },
   "unclassified": {
    "smoothness": 535,
-   "tracktype": 408.6
+   "tracktype": 52.2
   },
   "residential": {
-   "tracktype": 222,
-   "smoothness": 89.4
+   "smoothness": 89.4,
+   "tracktype": 54.7
   },
   "all": {
-   "smoothness": 913.2,
-   "tracktype": 785.9
+   "smoothness": 913.3,
+   "tracktype": 122.6
   }
  },
  "value_km": {
@@ -223,9 +224,8 @@
     "surface=mixed": 0
    },
    "offroad": {
-    "smoothness=horrible": 41.7,
-    "smoothness=very_bad": 16.7,
-    "tracktype=grade3": 14.7
+    "smoothness=horrible": 41.8,
+    "smoothness=very_bad": 16.7
    },
    "specialized": {
     "smoothness=very_horrible": 3.6
@@ -252,6 +252,7 @@
     "surface=concrete;gravel": 1.5,
     "surface=grass": 0.7,
     "surface=concrete/asphalt": 0.5,
+    "surface=wood": 0.4,
     "surface=construction": 0.2,
     "surface=unhewn_cobblestone": 0.1,
     "surface=c": 0.1,
@@ -259,9 +260,8 @@
     "surface=box": 0
    },
    "offroad": {
-    "tracktype=grade3": 124.9,
     "smoothness=horrible": 95.7,
-    "smoothness=very_bad": 93.6,
+    "smoothness=very_bad": 93.7,
     "tracktype=grade4": 13.9,
     "tracktype=grade5": 1.7
    },
@@ -289,6 +289,7 @@
     "surface=pebblestone": 4.6,
     "surface=12.50530/121.30882": 3.7,
     "surface=mixed_paved_and_unpaved": 2.7,
+    "surface=wood": 1.6,
     "surface=partially_paved": 1.4,
     "surface=n": 1.2,
     "surface=concrete,_gravel": 0.6,
@@ -298,7 +299,6 @@
    },
    "offroad": {
     "smoothness=horrible": 380,
-    "tracktype=grade3": 356.4,
     "smoothness=very_bad": 98.5,
     "tracktype=grade4": 39.5,
     "tracktype=grade5": 12.7
@@ -327,6 +327,7 @@
     "surface=mud": 3,
     "surface=dirt/sand": 1.6,
     "surface=pebblestone": 1.1,
+    "surface=wood": 1.1,
     "surface=n": 1,
     "surface=concrete/asphalt": 0.7,
     "surface=clay": 0.6,
@@ -347,7 +348,6 @@
     "surface=residential": 0
    },
    "offroad": {
-    "tracktype=grade3": 167.3,
     "smoothness=horrible": 44.7,
     "tracktype=grade4": 36.2,
     "smoothness=very_bad": 31.8,
@@ -379,6 +379,7 @@
     "surface=pebblestone": 14.4,
     "surface=concreted,_paved": 6.3,
     "surface=12.50530/121.30882": 3.7,
+    "surface=wood": 3.1,
     "surface=mixed_paved_and_unpaved": 2.9,
     "surface=n": 2.2,
     "surface=dirt/sand": 1.7,
@@ -411,9 +412,8 @@
     "surface=box": 0
    },
    "offroad": {
-    "tracktype=grade3": 663.4,
-    "smoothness=horrible": 563.3,
-    "smoothness=very_bad": 247.2,
+    "smoothness=horrible": 563.4,
+    "smoothness=very_bad": 247.3,
     "tracktype=grade4": 89.6,
     "tracktype=grade5": 32.9
    },
@@ -457,11 +457,9 @@
   "surface=box": 0
  },
  "conflict_km": {
-  "paved (surface=concrete) + tracktype=grade3": 16.9,
   "paved (surface=concrete) + smoothness=very_bad": 6.2,
   "smoothness=good + surface=unpaved": 5.8,
   "paved (no surface) + smoothness=very_bad": 5.4,
-  "paved (surface=paved) + tracktype=grade3": 4.2,
   "paved (no surface) + smoothness=horrible": 3.2,
   "paved (surface=concrete) + tracktype=grade4": 2,
   "paved (surface=paved) + smoothness=horrible": 1.4,
@@ -474,10 +472,8 @@
   "paved (surface=asphalt) + smoothness=horrible": 0.1,
   "smoothness=excellent + surface=ground": 0.1,
   "paved (surface=asphalt) + tracktype=grade5": 0.1,
-  "paved (surface=wood) + smoothness=very_bad": 0.1,
   "paved (surface=paved) + tracktype=grade5": 0.1,
-  "smoothness=good + surface=dirt": 0.1,
-  "paved (surface=wood) + smoothness=horrible": 0
+  "smoothness=good + surface=dirt": 0.1
  },
  "odd": {
   "major_unpaved": [
@@ -724,18 +720,6 @@
     }
    },
    {
-    "id": "w475658196",
-    "highway": "unclassified",
-    "km": 9.4,
-    "level": "offroad",
-    "tags": {
-     "description": "Gravel quarry trucks route - lot of fords ! 4WD recommended, rainy season IMPASSABLE",
-     "highway": "unclassified",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w1117949119",
     "highway": "unclassified",
     "km": 9.1,
@@ -774,16 +758,6 @@
     }
    },
    {
-    "id": "w245451251",
-    "highway": "unclassified",
-    "km": 8.1,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w223366124",
     "highway": "unclassified",
     "km": 8.1,
@@ -806,16 +780,6 @@
     }
    },
    {
-    "id": "w308625248",
-    "highway": "tertiary",
-    "km": 7.5,
-    "level": "offroad",
-    "tags": {
-     "highway": "tertiary",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w838405630",
     "highway": "secondary",
     "km": 7.5,
@@ -828,17 +792,6 @@
      "smoothness": "horrible",
      "surface": "unpaved",
      "tracktype": "grade2"
-    }
-   },
-   {
-    "id": "w245234466",
-    "highway": "tertiary",
-    "km": 7.2,
-    "level": "offroad",
-    "tags": {
-     "highway": "tertiary",
-     "surface": "unpaved",
-     "tracktype": "grade3"
     }
    },
    {
@@ -855,30 +808,6 @@
   ],
   "conflict": [
    {
-    "id": "w112549781",
-    "highway": "unclassified",
-    "km": 6.6,
-    "level": "paved",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Kenakin Road",
-     "surface": "concrete",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w245408133",
-    "highway": "unclassified",
-    "km": 3.2,
-    "level": "paved",
-    "tags": {
-     "highway": "unclassified",
-     "source": "Bing, 2010-11",
-     "surface": "paved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w826834620",
     "highway": "unclassified",
     "km": 2.2,
@@ -888,20 +817,6 @@
      "lanes": "1",
      "smoothness": "good",
      "surface": "unpaved"
-    }
-   },
-   {
-    "id": "w247135691",
-    "highway": "secondary",
-    "km": 2.1,
-    "level": "paved",
-    "tags": {
-     "highway": "secondary",
-     "lanes": "2",
-     "name": "Dagami - Pastrana Road",
-     "nat_name": "Jaro-Dagami-Burauen-Lapaz Road",
-     "surface": "concrete",
-     "tracktype": "grade3"
     }
    },
    {
@@ -924,32 +839,6 @@
      "name": "A.M. Arcilla",
      "note": "jeep can pass, car can not pass",
      "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w247902548",
-    "highway": "tertiary",
-    "km": 1.9,
-    "level": "paved",
-    "tags": {
-     "highway": "tertiary",
-     "source": "Bing",
-     "surface": "concrete",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w247135688",
-    "highway": "secondary",
-    "km": 1.8,
-    "level": "paved",
-    "tags": {
-     "highway": "secondary",
-     "lanes": "2",
-     "name": "Dagami - Pastrana Road",
-     "nat_name": "Jaro-Dagami-Burauen-Lapaz Road",
-     "surface": "concrete",
-     "tracktype": "grade3"
     }
    },
    {
@@ -997,18 +886,6 @@
     }
    },
    {
-    "id": "w1085038262",
-    "highway": "unclassified",
-    "km": 1.5,
-    "level": "paved",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Kenakin Road",
-     "surface": "concrete",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w534204072",
     "highway": "secondary",
     "km": 1.2,
@@ -1037,23 +914,6 @@
      "survey:date": "2021-02-02",
      "survey:name": "PDC PhilAWARE",
      "width": "3"
-    }
-   },
-   {
-    "id": "w439827364",
-    "highway": "tertiary",
-    "km": 1.2,
-    "level": "paved",
-    "tags": {
-     "bicycle": "yes",
-     "description": "Apolong to Japanese Shrine",
-     "destination:forward": "Japanese Shrine",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "motor_vehicle": "yes",
-     "surface": "concrete",
-     "tracktype": "grade3"
     }
    }
   ],
@@ -1233,5 +1093,6 @@
     }
    }
   ]
- }
+ },
+ "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
 }

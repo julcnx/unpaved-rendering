@@ -3,14 +3,16 @@
  "name": "Finland",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-03T04:33:18.073Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-10T01:29:49.610Z",
+  "classifier_sha256": "03ef28e8e6a7",
+  "pipeline_sha256": "8f04d3152792",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "finland-latest.osm.pbf",
   "boundary": "r54224",
   "data_date_source": "header",
-  "from_combos": false
+  "from_combos": true,
+  "rerun_date": "2026-11-10",
+  "extract_generated_at": "2026-11-03T04:33:18.073Z"
  },
  "km": {
   "motorway": {
@@ -42,31 +44,31 @@
    "specialized": 0
   },
   "tertiary": {
-   "paved_tagged": 24370.1,
-   "unpaved": 21871.6,
+   "paved_tagged": 24367.1,
+   "unpaved": 21874.6,
    "untagged": 7698.1,
    "offroad": 11.7,
    "specialized": 0
   },
   "unclassified": {
-   "unpaved": 70399.3,
+   "unpaved": 70881.7,
    "untagged": 37880.9,
-   "paved_tagged": 3587.2,
-   "offroad": 633.9,
+   "paved_tagged": 3584.7,
+   "offroad": 154,
    "specialized": 3.9
   },
   "residential": {
-   "unpaved": 21250.4,
+   "unpaved": 21310,
    "untagged": 18879.9,
-   "paved_tagged": 11659.9,
-   "offroad": 76.7,
+   "paved_tagged": 11658.4,
+   "offroad": 18.6,
    "specialized": 0
   },
   "all": {
-   "unpaved": 113925.9,
-   "paved_tagged": 70107.2,
+   "unpaved": 114471,
+   "paved_tagged": 70100.1,
    "untagged": 65975.9,
-   "offroad": 722.3,
+   "offroad": 184.4,
    "specialized": 3.9
   }
  },
@@ -155,15 +157,15 @@
    "smoothness": 4.7
   },
   "unclassified": {
-   "tracktype": 595.2,
+   "tracktype": 115.3,
    "smoothness": 42.6
   },
   "residential": {
-   "tracktype": 72.5,
+   "tracktype": 14.5,
    "smoothness": 4.2
   },
   "all": {
-   "tracktype": 674.8,
+   "tracktype": 136.8,
    "smoothness": 51.5
   }
  },
@@ -208,6 +210,7 @@
     "surface=ice": 13.8,
     "surface=clay": 11.3,
     "tracktype=grade2": 11,
+    "surface=wood": 3,
     "surface=composite": 2.5,
     "surface=pebblestone": 2.3,
     "surface=paved;unpaved": 2.1,
@@ -241,6 +244,7 @@
     "surface=päällystämätön----": 3,
     "surface=paved/unpaved(fixme)": 2.9,
     "surface=snow": 2.9,
+    "surface=wood": 2.5,
     "surface=unpaved;gravel": 2.4,
     "surface=unhewn_cobblestone": 2,
     "tracktype=grade5": 1.4,
@@ -253,7 +257,6 @@
     "surface=metal_grid": 0
    },
    "offroad": {
-    "tracktype=grade3": 479.9,
     "tracktype=grade4": 85.1,
     "smoothness=very_bad": 32.1,
     "tracktype=grade5": 30.2,
@@ -279,7 +282,8 @@
     "surface=rock": 3.6,
     "surface=grass": 2.8,
     "surface=mud": 1.8,
-    "surface=dirt/sand": 1.6,
+    "surface=dirt/sand": 1.7,
+    "surface=wood": 1.5,
     "surface=earth": 1.5,
     "surface=Mostly_Solid:_gravel/rock_with_some_soft_material_mixed_in": 1.1,
     "surface=paved;unpaved": 0.8,
@@ -292,7 +296,6 @@
     "surface=stone": 0
    },
    "offroad": {
-    "tracktype=grade3": 58.1,
     "tracktype=grade4": 7.7,
     "tracktype=grade5": 6.7,
     "smoothness=very_bad": 4.1,
@@ -318,6 +321,7 @@
     "surface=clay": 11.3,
     "surface=unhewn_cobblestone": 10.2,
     "surface=grass": 7.1,
+    "surface=wood": 7.1,
     "surface=earth": 6.6,
     "surface=mud": 5.4,
     "surface=rock": 3.7,
@@ -342,7 +346,6 @@
     "surface=stone": 0
    },
    "offroad": {
-    "tracktype=grade3": 538,
     "tracktype=grade4": 92.9,
     "tracktype=grade5": 43.9,
     "smoothness=very_bad": 40.9,
@@ -375,11 +378,9 @@
   "paved (surface=asphalt) + tracktype=grade5": 0.6,
   "smoothness=good + surface=fine_gravel": 0.4,
   "paved (surface=paved) + tracktype=grade4": 0.3,
-  "paved (surface=asphalt) + tracktype=grade3": 0.1,
   "paved (surface=sett) + smoothness=very_bad": 0.1,
   "smoothness=excellent + surface=gravel": 0.1,
   "paved (surface=asphalt) + smoothness=very_bad": 0,
-  "paved (surface=concrete) + tracktype=grade3": 0,
   "paved (no surface) + smoothness=very_horrible": 0
  },
  "odd": {
@@ -638,125 +639,6 @@
   ],
   "offroad_mark": [
    {
-    "id": "w23649347",
-    "highway": "unclassified",
-    "km": 21.3,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Venkaantie",
-     "name:fi": "Venkaantie",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w24580211",
-    "highway": "unclassified",
-    "km": 15.3,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Härkämaantie",
-     "name:fi": "Härkämaantie",
-     "note": "In public domain (original Kekoil work)",
-     "source": "Landsat",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w24726664",
-    "highway": "unclassified",
-    "km": 14.9,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w126814795",
-    "highway": "unclassified",
-    "km": 11.6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "maxspeed": "40",
-     "name": "Keihäskankaantie",
-     "note": "iBlue 747 A+",
-     "source": "survey",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w660673041",
-    "highway": "unclassified",
-    "km": 8.5,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Venkaantie",
-     "name:fi": "Venkaantie",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w28212769",
-    "highway": "unclassified",
-    "km": 8.2,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "mtb:scale": "0",
-     "name": "Kivirannantie",
-     "name:fi": "Kivirannantie",
-     "surface": "compacted",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w669745375",
-    "highway": "unclassified",
-    "km": 8,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "source": "OpenAerialMap",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w168932882",
-    "highway": "unclassified",
-    "km": 7.2,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Knaappilantie",
-     "name:fi": "Knaappilantie",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w659734806",
-    "highway": "unclassified",
-    "km": 7.2,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Naurismäentie",
-     "name:fi": "Naurismäentie",
-     "surface": "compacted",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w364886421",
     "highway": "tertiary",
     "km": 7,
@@ -772,42 +654,6 @@
     }
    },
    {
-    "id": "w122169602",
-    "highway": "unclassified",
-    "km": 7,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "compacted",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w66479704",
-    "highway": "unclassified",
-    "km": 6.6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "lit": "no",
-     "source": "survey",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w29209982",
-    "highway": "unclassified",
-    "km": 6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "mtb:scale": "0",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w257625820",
     "highway": "unclassified",
     "km": 5.8,
@@ -820,18 +666,6 @@
      "source": "MML Orthofoto",
      "surface": "sand",
      "tracktype": "grade2"
-    }
-   },
-   {
-    "id": "w279068992",
-    "highway": "residential",
-    "km": 5.1,
-    "level": "offroad",
-    "tags": {
-     "highway": "residential",
-     "name": "Mujusenniementie",
-     "surface": "gravel",
-     "tracktype": "grade3"
     }
    }
   ],
@@ -1233,5 +1067,6 @@
     }
    }
   ]
- }
+ },
+ "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
 }

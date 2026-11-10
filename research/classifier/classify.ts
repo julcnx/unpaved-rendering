@@ -33,10 +33,12 @@ export const SMOOTHNESS: Record<string, Mark | null> = {
   very_horrible: 'specialized', impassable: 'specialized',
 };
 
+// tracktype is firmness (it lines up with surface), not difficulty: grade2-3 are unpaved with no mark, the
+// difference between them is hard to know; grade4-5 are mostly soft earth (mud when wet), so likely off-road.
 // grade6-8 are an Australian local extension (Australian Tagging Guidelines/Roads).
 export const TRACKTYPE_MARK: Record<string, Mark | null> = {
   grade1: null, grade2: null,
-  grade3: 'offroad', grade4: 'offroad', grade5: 'offroad', grade6: 'offroad', grade7: 'offroad',
+  grade3: null, grade4: 'offroad', grade5: 'offroad', grade6: 'offroad', grade7: 'offroad',
   grade8: 'specialized',
 };
 

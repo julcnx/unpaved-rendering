@@ -3,14 +3,16 @@
  "name": "Timor-Leste",
  "data_date": "2026-11-01",
  "run": {
-  "generated_at": "2026-11-02T16:42:23.988Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-10T01:29:51.874Z",
+  "classifier_sha256": "03ef28e8e6a7",
+  "pipeline_sha256": "8f04d3152792",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "east-timor-latest.osm.pbf",
   "boundary": "r305142",
   "data_date_source": "header",
-  "from_combos": false
+  "from_combos": true,
+  "rerun_date": "2026-11-10",
+  "extract_generated_at": "2026-11-02T16:42:23.988Z"
  },
  "km": {
   "motorway": {
@@ -57,16 +59,16 @@
   },
   "residential": {
    "untagged": 1217.7,
-   "unpaved": 204,
+   "unpaved": 204.1,
    "paved_tagged": 24.4,
-   "offroad": 0.8,
+   "offroad": 0.7,
    "specialized": 0
   },
   "all": {
    "untagged": 6799.7,
-   "unpaved": 2115.5,
+   "unpaved": 2115.6,
    "paved_tagged": 554.2,
-   "offroad": 21.6,
+   "offroad": 21.5,
    "specialized": 0.6
   }
  },
@@ -153,12 +155,11 @@
    "tracktype": 6.5
   },
   "residential": {
-   "smoothness": 0.7,
-   "tracktype": 0.1
+   "smoothness": 0.7
   },
   "all": {
    "smoothness": 15.7,
-   "tracktype": 6.6
+   "tracktype": 6.5
   }
  },
  "value_km": {
@@ -237,8 +238,7 @@
     "tracktype=grade3": 0.1
    },
    "offroad": {
-    "smoothness=very_bad": 0.7,
-    "tracktype=grade3": 0.1
+    "smoothness=very_bad": 0.7
    },
    "specialized": {}
   },
@@ -260,8 +260,7 @@
    },
    "offroad": {
     "smoothness=very_bad": 15.1,
-    "tracktype=grade4": 6.5,
-    "tracktype=grade3": 0.1
+    "tracktype=grade4": 6.5
    },
    "specialized": {
     "smoothness=very_horrible": 0.6
@@ -578,5 +577,6 @@
    }
   ],
   "unknown_value": []
- }
+ },
+ "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
 }

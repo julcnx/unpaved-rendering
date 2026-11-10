@@ -12,7 +12,7 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 6. Repo: a new local repo `~/Workspaces/OSM/unpaved-rendering`, pushed to `julcnx/unpaved-rendering` only after Julien's OK.
 7. Screenshot spots: one per continent, no Antarctica. North America = Alberta Hwy 40 (spot 6, added 2026-11-09); backups Alberta Hwy 68 and Mexico QR 15.
 8. The proposal stays OSM-specific: no generic styling guide for other data sources.
-9. One pattern ladder for roads now and tracks later: Paved solid, Unpaved long dashes (Carto `grade2` rhythm), Off-road medium dashes (`grade3`); used by the dashed centre line, dashed casing and dashed fill. Style 4 (dashed fill) follows the same rule (not reversed).
+9. One pattern ladder for roads now and tracks later: Paved solid, Unpaved long dashes (Carto `grade2` rhythm), Off-road medium dashes (Carto's `grade3` rhythm, a dash pattern only: the Off-road mark itself comes from `tracktype` grade4 or worse, decision 11 in C-statistics); used by the dashed centre line, dashed casing and dashed fill. Style 4 (dashed fill) follows the same rule (not reversed).
 
 ## Demo and colour tests
 

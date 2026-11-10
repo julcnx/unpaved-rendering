@@ -3,14 +3,16 @@
  "name": "Georgia",
  "data_date": "2026-11-01",
  "run": {
-  "generated_at": "2026-11-03T04:36:43.532Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-10T01:29:49.738Z",
+  "classifier_sha256": "03ef28e8e6a7",
+  "pipeline_sha256": "8f04d3152792",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "georgia-latest.osm.pbf",
   "boundary": "r28699",
   "data_date_source": "header",
-  "from_combos": false
+  "from_combos": true,
+  "rerun_date": "2026-11-10",
+  "extract_generated_at": "2026-11-03T04:36:43.532Z"
  },
  "km": {
   "motorway": {
@@ -42,31 +44,31 @@
    "specialized": 0
   },
   "tertiary": {
-   "paved_tagged": 3438.7,
-   "unpaved": 2530.3,
+   "paved_tagged": 3438.4,
+   "unpaved": 2551.9,
    "untagged": 1970.8,
-   "offroad": 201.8,
+   "offroad": 180.6,
    "specialized": 2.8
   },
   "unclassified": {
-   "unpaved": 6071.3,
+   "unpaved": 6304.8,
    "untagged": 4458.4,
    "paved_tagged": 899.5,
-   "offroad": 499.3,
+   "offroad": 265.8,
    "specialized": 1.4
   },
   "residential": {
    "untagged": 15676.1,
-   "unpaved": 8136.4,
-   "paved_tagged": 2480.9,
-   "offroad": 214.6,
+   "unpaved": 8286.6,
+   "paved_tagged": 2480.8,
+   "offroad": 64.5,
    "specialized": 0.9
   },
   "all": {
    "untagged": 22626.6,
-   "unpaved": 16882.9,
-   "paved_tagged": 13239.2,
-   "offroad": 941.8,
+   "unpaved": 17288.2,
+   "paved_tagged": 13238.8,
+   "offroad": 536.9,
    "specialized": 5
   }
  },
@@ -161,27 +163,26 @@
   },
   "secondary": {
    "smoothness": 26.1,
-   "tracktype": 0,
    "4wd_only": 0
   },
   "tertiary": {
    "smoothness": 176.4,
-   "tracktype": 24.5,
-   "4wd_only": 3.7
+   "4wd_only": 3.7,
+   "tracktype": 3.2
   },
   "unclassified": {
-   "tracktype": 354.5,
    "smoothness": 128.7,
+   "tracktype": 121.1,
    "4wd_only": 17.4
   },
   "residential": {
-   "tracktype": 179.4,
    "smoothness": 35.5,
+   "tracktype": 29.3,
    "4wd_only": 0.6
   },
   "all": {
-   "tracktype": 558.4,
    "smoothness": 366.7,
+   "tracktype": 153.5,
    "4wd_only": 21.7
   }
  },
@@ -220,7 +221,6 @@
    "offroad": {
     "smoothness=very_bad": 14.2,
     "smoothness=horrible": 11.9,
-    "tracktype=grade3": 0,
     "4wd_only=yes": 0
    },
    "specialized": {}
@@ -238,11 +238,11 @@
     "tracktype=grade3": 6.6,
     "surface=pebblestone": 1.4,
     "tracktype=grade4": 1.1,
-    "surface=sand": 0.8
+    "surface=sand": 0.8,
+    "surface=wood": 0.3
    },
    "offroad": {
     "smoothness=very_bad": 155.4,
-    "tracktype=grade3": 21.3,
     "smoothness=horrible": 18.3,
     "4wd_only=yes": 3.7,
     "tracktype=grade5": 1.6,
@@ -274,10 +274,10 @@
     "surface=asphalt; asphalt; ground": 0.8,
     "surface=natural": 0.5,
     "surface=rock": 0.2,
-    "surface=unhewn_cobblestone": 0.1
+    "surface=unhewn_cobblestone": 0.1,
+    "surface=wood": 0
    },
    "offroad": {
-    "tracktype=grade3": 233.5,
     "tracktype=grade4": 115.9,
     "smoothness=very_bad": 69.6,
     "smoothness=horrible": 57.7,
@@ -310,10 +310,10 @@
     "surface=paved; unpaved": 0.9,
     "surface=dirt_and_rock": 0.4,
     "surface=paved;unpaved": 0.2,
+    "surface=wood": 0.1,
     "surface=living_street": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 150.1,
     "smoothness=very_bad": 31.9,
     "tracktype=grade4": 23.9,
     "tracktype=grade5": 5.3,
@@ -349,11 +349,11 @@
     "surface=paved; unpaved": 0.9,
     "surface=asphalt; asphalt; ground": 0.8,
     "surface=natural": 0.5,
+    "surface=wood": 0.4,
     "surface=paved;unpaved": 0.2,
     "surface=living_street": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 404.9,
     "smoothness=very_bad": 271.1,
     "tracktype=grade4": 141.4,
     "smoothness=horrible": 90.6,
@@ -379,18 +379,15 @@
   "paved (surface=concrete) + 4wd_only=yes": 4.5,
   "paved (surface=paved) + tracktype=grade5": 3.4,
   "paved (surface=asphalt) + smoothness=very_horrible": 2.1,
-  "paved (surface=paved) + tracktype=grade3": 1.8,
   "smoothness=excellent + surface=unpaved": 1.7,
   "paved (surface=concrete) + tracktype=grade4": 1.4,
   "paved (surface=concrete:plates) + smoothness=horrible": 1.1,
   "paved (surface=paved) + smoothness=very_bad": 0.8,
   "paved (no surface) + smoothness=very_horrible": 0.8,
-  "paved (surface=asphalt) + tracktype=grade3": 0.6,
   "paved (surface=sett) + smoothness=very_bad": 0.5,
   "paved (no surface) + smoothness=impassable": 0.4,
   "paved (surface=asphalt) + tracktype=grade4": 0.4,
   "paved (surface=asphalt) + smoothness=horrible": 0.4,
-  "paved (surface=concrete) + tracktype=grade3": 0.2,
   "paved (surface=concrete) + smoothness=very_bad": 0.1,
   "paved (no surface) + smoothness=very_bad": 0.1
  },
@@ -645,18 +642,6 @@
   ],
   "offroad_mark": [
    {
-    "id": "w1327196456",
-    "highway": "unclassified",
-    "km": 18.9,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Taribana-Chachuna-Eldari",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w202654804",
     "highway": "unclassified",
     "km": 17.8,
@@ -761,17 +746,6 @@
     }
    },
    {
-    "id": "w676777550",
-    "highway": "unclassified",
-    "km": 9.5,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w127581955",
     "highway": "unclassified",
     "km": 9.4,
@@ -806,26 +780,6 @@
     }
    },
    {
-    "id": "w82021590",
-    "highway": "tertiary",
-    "km": 7.7,
-    "level": "offroad",
-    "tags": {
-     "access": "yes",
-     "bicycle": "yes",
-     "cycleway": "no",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "lanes": "2",
-     "lit": "no",
-     "oneway": "no",
-     "source": "ScanEx",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w707272787",
     "highway": "tertiary",
     "km": 7.3,
@@ -836,18 +790,6 @@
      "ref": "შ 158",
      "smoothness": "very_bad",
      "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w547988836",
-    "highway": "unclassified",
-    "km": 7,
-    "level": "offroad",
-    "tags": {
-     "comment": "Тропа от турбазы Аджара на хребет Ацетука",
-     "highway": "unclassified",
-     "surface": "ground",
      "tracktype": "grade3"
     }
    },
@@ -1147,17 +1089,6 @@
     }
    },
    {
-    "id": "w864991000",
-    "highway": "residential",
-    "km": 0.9,
-    "level": "paved",
-    "tags": {
-     "highway": "residential",
-     "surface": "paved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w1409442115",
     "highway": "tertiary",
     "km": 0.9,
@@ -1215,5 +1146,6 @@
     }
    }
   ]
- }
+ },
+ "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
 }

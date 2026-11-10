@@ -3,14 +3,16 @@
  "name": "Malaysia",
  "data_date": "2026-11-02",
  "run": {
-  "generated_at": "2026-11-03T03:00:21.815Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-10T01:29:51.094Z",
+  "classifier_sha256": "03ef28e8e6a7",
+  "pipeline_sha256": "8f04d3152792",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "malaysia-singapore-brunei-latest.osm.pbf",
   "boundary": "r2108121",
   "data_date_source": "header",
-  "from_combos": false
+  "from_combos": true,
+  "rerun_date": "2026-11-10",
+  "extract_generated_at": "2026-11-03T03:00:21.815Z"
  },
  "km": {
   "motorway": {
@@ -37,36 +39,36 @@
   "secondary": {
    "untagged": 6826.5,
    "paved_tagged": 5941.5,
-   "unpaved": 291.6,
-   "offroad": 46.8,
+   "unpaved": 338.4,
+   "offroad": 0,
    "specialized": 0
   },
   "tertiary": {
    "untagged": 14813.2,
    "paved_tagged": 6403.6,
-   "unpaved": 515.2,
-   "offroad": 8.7,
+   "unpaved": 523.6,
+   "offroad": 0.3,
    "specialized": 0
   },
   "unclassified": {
    "untagged": 53873.1,
-   "unpaved": 8612.4,
-   "paved_tagged": 6296.7,
-   "offroad": 188.8,
+   "unpaved": 8733.6,
+   "paved_tagged": 6296.6,
+   "offroad": 67.8,
    "specialized": 1
   },
   "residential": {
    "untagged": 86280,
-   "paved_tagged": 10292.7,
-   "unpaved": 1563.7,
-   "offroad": 15.9,
+   "paved_tagged": 10288.5,
+   "unpaved": 1579.6,
+   "offroad": 4.2,
    "specialized": 0
   },
   "all": {
    "untagged": 171039.6,
-   "paved_tagged": 44149.7,
-   "unpaved": 10994.4,
-   "offroad": 260.1,
+   "paved_tagged": 44145.4,
+   "unpaved": 11186.6,
+   "offroad": 72.3,
    "specialized": 1
   }
  },
@@ -154,24 +156,21 @@
   "motorway": {},
   "trunk": {},
   "primary": {},
-  "secondary": {
-   "tracktype": 46.8
-  },
+  "secondary": {},
   "tertiary": {
-   "tracktype": 8.3,
    "smoothness": 0.3
   },
   "unclassified": {
-   "tracktype": 140,
-   "smoothness": 49.8
+   "smoothness": 49.8,
+   "tracktype": 18.9
   },
   "residential": {
-   "tracktype": 14.5,
+   "tracktype": 2.8,
    "smoothness": 1.4
   },
   "all": {
-   "tracktype": 209.6,
-   "smoothness": 51.5
+   "smoothness": 51.5,
+   "tracktype": 21.7
   }
  },
  "value_km": {
@@ -209,9 +208,7 @@
     "surface=compacted": 1.4,
     "surface=flash flood": 0.2
    },
-   "offroad": {
-    "tracktype=grade3": 46.8
-   },
+   "offroad": {},
    "specialized": {}
   },
   "tertiary": {
@@ -226,7 +223,6 @@
     "tracktype=grade2": 0
    },
    "offroad": {
-    "tracktype=grade3": 8.3,
     "smoothness=very_bad": 0.3
    },
    "specialized": {}
@@ -246,9 +242,10 @@
     "surface=sand": 5.3,
     "tracktype=grade5": 4.6,
     "surface=earth": 3.2,
-    "surface=pebblestone": 1.1,
+    "surface=pebblestone": 1.2,
     "surface=grass": 0.7,
-    "surface=tar_road": 0.1,
+    "surface=tar_road": 0.2,
+    "surface=wood": 0.1,
     "surface=Tar_road": 0.1,
     "surface=dirt/sand": 0.1,
     "surface=flash flood": 0.1,
@@ -256,7 +253,6 @@
     "surface=stone": 0
    },
    "offroad": {
-    "tracktype=grade3": 121,
     "smoothness=horrible": 43.9,
     "tracktype=grade4": 14.3,
     "smoothness=very_bad": 4.9,
@@ -276,6 +272,7 @@
     "surface=compacted": 11.7,
     "tracktype=grade3": 8.8,
     "surface=tar_road": 5.6,
+    "surface=wood": 4.2,
     "surface=fine_gravel": 2.1,
     "tracktype=grade4": 1.6,
     "surface=earth": 1.6,
@@ -299,7 +296,6 @@
     "surface=dirt/sand": 0
    },
    "offroad": {
-    "tracktype=grade3": 11.7,
     "tracktype=grade4": 1.6,
     "smoothness=very_bad": 1.4,
     "tracktype=grade5": 1.1
@@ -324,6 +320,7 @@
     "tracktype=grade5": 5.8,
     "surface=tar_road": 5.8,
     "surface=earth": 4.8,
+    "surface=wood": 4.3,
     "surface=grass": 1.8,
     "surface=pebblestone": 1.6,
     "surface=asphalt:lanes": 0.9,
@@ -346,7 +343,6 @@
     "surface=stone": 0
    },
    "offroad": {
-    "tracktype=grade3": 187.9,
     "smoothness=horrible": 43.9,
     "tracktype=grade4": 15.9,
     "smoothness=very_bad": 6.6,
@@ -381,15 +377,12 @@
   "paved (no surface) + 4wd_only=yes": 8.8,
   "paved (no surface) + smoothness=very_bad": 6.3,
   "paved (surface=asphalt) + smoothness=horrible": 5.2,
-  "paved (surface=asphalt) + tracktype=grade3": 4.3,
-  "paved (surface=paved) + tracktype=grade3": 4.2,
   "paved (surface=asphalt) + smoothness=very_bad": 3.8,
   "paved (surface=paved) + smoothness=very_bad": 3.5,
   "paved (surface=concrete) + smoothness=very_bad": 1.4,
   "paved (no surface) + smoothness=horrible": 0.6,
   "paved (surface=asphalt) + smoothness=very_horrible": 0.4,
   "paved (surface=asphalt) + smoothness=impassable": 0.4,
-  "paved (surface=concrete) + tracktype=grade3": 0.2,
   "smoothness=good + surface=fine_gravel": 0.1
  },
  "odd": {
@@ -523,7 +516,7 @@
     "id": "w762192093",
     "highway": "secondary",
     "km": 8.7,
-    "level": "offroad",
+    "level": "unpaved",
     "tags": {
      "highway": "secondary",
      "name": "Shin Yang Road",
@@ -578,18 +571,6 @@
     }
    },
    {
-    "id": "w386101113",
-    "highway": "unclassified",
-    "km": 12.9,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "source": "digitalglobe",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w749662189",
     "highway": "unclassified",
     "km": 12.2,
@@ -602,85 +583,6 @@
     }
    },
    {
-    "id": "w762192093",
-    "highway": "secondary",
-    "km": 8.7,
-    "level": "offroad",
-    "tags": {
-     "highway": "secondary",
-     "name": "Shin Yang Road",
-     "surface": "dirt",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w153984706",
-    "highway": "unclassified",
-    "km": 8.6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w261337000",
-    "highway": "secondary",
-    "km": 7.7,
-    "level": "offroad",
-    "tags": {
-     "highway": "secondary",
-     "name": "Jalan Long Bemang",
-     "source": "digitalglobe",
-     "surface": "dirt",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w755853393",
-    "highway": "secondary",
-    "km": 7.7,
-    "level": "offroad",
-    "tags": {
-     "highway": "secondary",
-     "name": "Shin Yang Road",
-     "surface": "dirt",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w609284256",
-    "highway": "unclassified",
-    "km": 7.6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w256042093",
-    "highway": "secondary",
-    "km": 7.1,
-    "level": "offroad",
-    "tags": {
-     "highway": "secondary",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w319511568",
-    "highway": "unclassified",
-    "km": 6.3,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w518957362",
     "highway": "unclassified",
     "km": 6.3,
@@ -689,50 +591,6 @@
      "highway": "unclassified",
      "smoothness": "horrible",
      "surface": "unpaved"
-    }
-   },
-   {
-    "id": "w746584567",
-    "highway": "tertiary",
-    "km": 5.8,
-    "level": "offroad",
-    "tags": {
-     "highway": "tertiary",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w230348918",
-    "highway": "secondary",
-    "km": 5.4,
-    "level": "offroad",
-    "tags": {
-     "highway": "secondary",
-     "name": "Long Lama - Long Bemang",
-     "surface": "dirt",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w153533295",
-    "highway": "unclassified",
-    "km": 5.3,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w776673482",
-    "highway": "secondary",
-    "km": 4.8,
-    "level": "offroad",
-    "tags": {
-     "highway": "secondary",
-     "source": "digitalglobe",
-     "surface": "ground",
-     "tracktype": "grade3"
     }
    }
   ],
@@ -829,21 +687,6 @@
     }
    },
    {
-    "id": "w240279369",
-    "highway": "residential",
-    "km": 1.2,
-    "level": "paved",
-    "tags": {
-     "access": "yes",
-     "highway": "residential",
-     "motor_vehicle": "yes",
-     "motorcar": "yes",
-     "motorcycle": "yes",
-     "surface": "paved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w715630086",
     "highway": "unclassified",
     "km": 1.1,
@@ -882,42 +725,6 @@
     }
    },
    {
-    "id": "w240279373",
-    "highway": "residential",
-    "km": 1,
-    "level": "paved",
-    "tags": {
-     "highway": "residential",
-     "motor_vehicle": "yes",
-     "motorcar": "yes",
-     "motorcycle": "yes",
-     "surface": "paved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w399567545",
-    "highway": "tertiary",
-    "km": 1,
-    "level": "paved",
-    "tags": {
-     "access": "yes",
-     "bicycle": "yes",
-     "cycleway": "no",
-     "foot": "yes",
-     "highway": "tertiary",
-     "int_name": "Persiaran Astana",
-     "lanes": "2",
-     "maxspeed": "60",
-     "name": "Persiaran Astana / KU 2",
-     "oneway": "yes",
-     "sidewalk": "no",
-     "source": "Mapbox Satellite, Google Maps",
-     "surface": "asphalt",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w370147245",
     "highway": "unclassified",
     "km": 0.9,
@@ -930,18 +737,6 @@
      "smoothness": "very_bad",
      "surface": "asphalt",
      "tracktype": "grade1"
-    }
-   },
-   {
-    "id": "w286531301",
-    "highway": "unclassified",
-    "km": 0.9,
-    "level": "paved",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Jalan Kampung Pencalang",
-     "surface": "asphalt",
-     "tracktype": "grade3"
     }
    }
   ],
@@ -1002,5 +797,6 @@
     }
    }
   ]
- }
+ },
+ "odd_note": "odd-way lists from the full run of the extract, filtered after the 2026-11-10 rule change (tracktype grade3 no longer gives the Off-road mark)"
 }
