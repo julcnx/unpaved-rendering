@@ -101,6 +101,8 @@ export class MapView {
     const styles = this.opts.compare ? Object.keys(STYLES) : [this.opts.style];
     const cols = styles.length > 4 ? 3 : styles.length > 1 ? 2 : 1, rows = Math.ceil(styles.length / cols);
     const cw = W / cols, ch = H / rows;
+    // Fill the whole canvas with the land colour first, so an empty grid cell (5 styles in 3 x 2) matches the background.
+    ctx.fillStyle = BACKGROUNDS[this.opts.bg].land; ctx.fillRect(0, 0, W, H);
     styles.forEach((key, i) => {
       const rect = { x: (i % cols) * cw, y: Math.floor(i / cols) * ch, w: cw, h: ch };
       ctx.save();

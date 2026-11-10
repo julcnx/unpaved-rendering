@@ -44,3 +44,4 @@
 - Wait in scripts/shots.mjs changed from network idle to a fixed delay (live Overpass loading kept the network busy).
 - Yellow tints stronger for low zoom: lowTint #dfe389, offTint #c7ce31 (steps of contrast 1.25, were 1.2).
 - Dark background uses the measured dark palette from the mockups (SPEC.dark): Off-road is the lighter step; primary more orange (no longer brown). Checked on Nepal NH48.
+- Selected chip has a white ring (visible on dark maps); the empty side-by-side cell uses the land colour.
