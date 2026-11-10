@@ -1,0 +1,1045 @@
+{
+ "country": "kh",
+ "name": "Cambodia",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-02T14:42:54.182Z",
+  "classifier_sha256": "892814b74563",
+  "pipeline_sha256": "fa32fb9837bf",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "cambodia-latest.osm.pbf",
+  "boundary": "r49898",
+  "data_date_source": "header"
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 242.1,
+   "untagged": 132.3,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "untagged": 1718.9,
+   "paved_tagged": 866.7,
+   "rough": 113.3,
+   "offroad": 10.6,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 2036.6,
+   "untagged": 1864.7,
+   "rough": 62.7,
+   "offroad": 5.1,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 3809.7,
+   "paved_tagged": 1915.3,
+   "offroad": 288.2,
+   "rough": 184.1,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 7284.6,
+   "offroad": 1664,
+   "paved_tagged": 1429,
+   "rough": 270.9,
+   "specialized": 6.4
+  },
+  "unclassified": {
+   "untagged": 25297.9,
+   "offroad": 3535.7,
+   "paved_tagged": 424,
+   "rough": 391.5,
+   "specialized": 0
+  },
+  "residential": {
+   "untagged": 42998.6,
+   "offroad": 2588.8,
+   "paved_tagged": 1125.9,
+   "rough": 427.4,
+   "specialized": 0.2
+  },
+  "all": {
+   "untagged": 83106.7,
+   "offroad": 8092.3,
+   "paved_tagged": 8039.6,
+   "rough": 1449.8,
+   "specialized": 6.6
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 242.1
+  },
+  "trunk": {
+   "surface": 986.7,
+   "smoothness": 440.6
+  },
+  "primary": {
+   "surface": 2103.5,
+   "smoothness": 257.9
+  },
+  "secondary": {
+   "surface": 2370.5,
+   "smoothness": 254.3,
+   "tracktype": 22.2
+  },
+  "tertiary": {
+   "surface": 3364.1,
+   "smoothness": 303,
+   "tracktype": 41.6,
+   "4wd_only": 9.1
+  },
+  "unclassified": {
+   "surface": 4322.1,
+   "tracktype": 244.7,
+   "smoothness": 138.4
+  },
+  "residential": {
+   "surface": 4110.6,
+   "tracktype": 298,
+   "smoothness": 113.8
+  },
+  "all": {
+   "surface": 17499.5,
+   "smoothness": 1507.9,
+   "tracktype": 606.5,
+   "4wd_only": 9.1
+  }
+ },
+ "source_km": {
+  "motorway": {
+   "surface": 242.1,
+   "default": 132.3
+  },
+  "trunk": {
+   "default": 1718.9,
+   "surface": 550,
+   "smoothness": 440.6
+  },
+  "primary": {
+   "default": 1864.7,
+   "surface": 1846.4,
+   "smoothness": 257.9
+  },
+  "secondary": {
+   "default": 3809.7,
+   "surface": 2111.1,
+   "smoothness": 254.3,
+   "tracktype": 22.2
+  },
+  "tertiary": {
+   "default": 7284.6,
+   "surface": 3025.7,
+   "smoothness": 303,
+   "tracktype": 41.6
+  },
+  "unclassified": {
+   "default": 25297.9,
+   "surface": 3982.1,
+   "tracktype": 230.8,
+   "smoothness": 138.4
+  },
+  "residential": {
+   "default": 42998.6,
+   "surface": 3749.3,
+   "tracktype": 279.2,
+   "smoothness": 113.8
+  },
+  "all": {
+   "default": 83106.7,
+   "surface": 15506.6,
+   "smoothness": 1507.9,
+   "tracktype": 573.8
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "paved": {
+    "surface=asphalt": 241.6,
+    "surface=paved": 0.4
+   },
+   "rough": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "paved": {
+    "surface=asphalt": 522.8,
+    "smoothness=good": 326.6,
+    "surface=paved": 16.6,
+    "smoothness=excellent": 0.7,
+    "surface=concrete": 0.1
+   },
+   "rough": {
+    "smoothness=intermediate": 113.3
+   },
+   "offroad": {
+    "surface=ground": 8.1,
+    "surface=dirt": 2.4
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "paved": {
+    "surface=asphalt": 1277,
+    "surface=paved": 365.1,
+    "smoothness=good": 192.6,
+    "surface=concrete": 180.9,
+    "surface=concrete:plates": 18.4,
+    "smoothness=excellent": 2.6
+   },
+   "rough": {
+    "smoothness=intermediate": 62.7
+   },
+   "offroad": {
+    "surface=unpaved": 5.1
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "paved": {
+    "surface=asphalt": 1433.6,
+    "surface=paved": 210.3,
+    "surface=concrete": 199.6,
+    "smoothness=good": 61.3,
+    "tracktype=grade1": 8.6,
+    "smoothness=excellent": 0.7,
+    "surface=metal": 0.7,
+    "surface=concrete:plates": 0.5
+   },
+   "rough": {
+    "smoothness=intermediate": 132,
+    "smoothness=bad": 36.3,
+    "tracktype=grade2": 6.5,
+    "surface=compacted": 5.2,
+    "surface=gravel": 4.1
+   },
+   "offroad": {
+    "surface=unpaved": 194.1,
+    "surface=dbst": 35.7,
+    "smoothness=very_bad": 24,
+    "surface=sand": 19.5,
+    "surface=dirt": 7.8,
+    "tracktype=grade4": 5.3,
+    "tracktype=grade3": 1.8
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "paved": {
+    "surface=asphalt": 930.3,
+    "surface=concrete": 193.8,
+    "smoothness=good": 154,
+    "surface=paved": 122.7,
+    "smoothness=excellent": 20.2,
+    "surface=concrete:plates": 6.8,
+    "surface=paving_stones": 1.1,
+    "surface=metal": 0
+   },
+   "rough": {
+    "surface=gravel": 130.8,
+    "smoothness=intermediate": 65.6,
+    "smoothness=bad": 39.3,
+    "tracktype=grade2": 17.7,
+    "surface=compacted": 17.4
+   },
+   "offroad": {
+    "surface=unpaved": 1356.2,
+    "surface=dirt": 97.2,
+    "surface=dbst": 70.4,
+    "surface=ground": 32.8,
+    "tracktype=grade3": 19.6,
+    "smoothness=very_bad": 17.5,
+    "surface=laterite": 14.2,
+    "surface=dbst_and_concreate": 14,
+    "surface=dbst_pavement": 13.4,
+    "surface=mud": 8.6,
+    "surface=double_bitumenous_surface_treatment": 6.8,
+    "surface=DBST": 5.9,
+    "tracktype=grade4": 4.3,
+    "surface=concrete,_gravel": 3.1,
+    "surface=concrete:lanes": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 6.4
+   }
+  },
+  "unclassified": {
+   "paved": {
+    "surface=asphalt": 183.3,
+    "surface=concrete": 129.2,
+    "surface=paved": 104.9,
+    "smoothness=excellent": 3.7,
+    "smoothness=good": 2,
+    "surface=concrete:plates": 0.7,
+    "surface=wood": 0.2,
+    "surface=metal": 0.1
+   },
+   "rough": {
+    "tracktype=grade2": 134.2,
+    "smoothness=bad": 93.6,
+    "surface=compacted": 86,
+    "surface=gravel": 46.3,
+    "smoothness=intermediate": 30,
+    "surface=unhewn_cobblestone": 1.4
+   },
+   "offroad": {
+    "surface=unpaved": 2747.9,
+    "surface=dirt": 466.3,
+    "surface=ground": 179.8,
+    "tracktype=grade3": 86.3,
+    "surface=laterite": 13.1,
+    "surface=sand": 11.7,
+    "smoothness=very_bad": 6.7,
+    "tracktype=grade5": 5.3,
+    "tracktype=grade4": 5,
+    "surface=dbst": 3.8,
+    "surface=earth": 3.2,
+    "smoothness=horrible": 2.3,
+    "surface=dirt/sand": 1.8,
+    "surface=dbst_pavement": 1.6,
+    "surface=bamboo": 0.7,
+    "surface=concrete,_gravel": 0.2
+   },
+   "specialized": {}
+  },
+  "residential": {
+   "paved": {
+    "surface=concrete": 548.1,
+    "surface=paved": 293.9,
+    "surface=asphalt": 265.8,
+    "tracktype=grade1": 9.3,
+    "surface=concrete:plates": 4.4,
+    "surface=paving_stones": 2.7,
+    "smoothness=good": 1.2,
+    "smoothness=excellent": 0.4,
+    "surface=wood": 0.1
+   },
+   "rough": {
+    "surface=compacted": 198.3,
+    "tracktype=grade2": 89.4,
+    "smoothness=intermediate": 59.6,
+    "smoothness=bad": 48.1,
+    "surface=gravel": 26.9,
+    "surface=fine_gravel": 5,
+    "surface=unhewn_cobblestone": 0.1
+   },
+   "offroad": {
+    "surface=unpaved": 1803,
+    "surface=ground": 282.9,
+    "surface=dirt": 261.7,
+    "tracktype=grade3": 160,
+    "surface=laterite": 19.4,
+    "tracktype=grade4": 13.5,
+    "surface=sand": 13.3,
+    "surface=concrete:lanes": 7.7,
+    "tracktype=grade5": 7.1,
+    "surface=residential": 5.7,
+    "smoothness=very_bad": 4.2,
+    "surface=DBST": 2.8,
+    "surface=grass": 2.6,
+    "surface=dirt/sand": 1.6,
+    "surface=dbst_and_gravek": 1.2,
+    "surface=dbst": 0.6,
+    "surface=unpa": 0.4,
+    "surface=paved/sand": 0.3,
+    "surface=steel": 0.2,
+    "surface=pebblestone": 0.1,
+    "surface=upaved": 0.1,
+    "surface=una": 0.1,
+    "surface=base_course": 0.1,
+    "surface=paved_slop": 0.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.2
+   }
+  },
+  "all": {
+   "paved": {
+    "surface=asphalt": 4854.5,
+    "surface=concrete": 1251.7,
+    "surface=paved": 1113.9,
+    "smoothness=good": 737.8,
+    "surface=concrete:plates": 30.7,
+    "smoothness=excellent": 28.3,
+    "tracktype=grade1": 17.8,
+    "surface=paving_stones": 3.8,
+    "surface=metal": 0.8,
+    "surface=wood": 0.2
+   },
+   "rough": {
+    "smoothness=intermediate": 463.1,
+    "surface=compacted": 306.8,
+    "tracktype=grade2": 247.9,
+    "smoothness=bad": 217.3,
+    "surface=gravel": 208.1,
+    "surface=fine_gravel": 5,
+    "surface=unhewn_cobblestone": 1.5
+   },
+   "offroad": {
+    "surface=unpaved": 6106.3,
+    "surface=dirt": 835.5,
+    "surface=ground": 503.6,
+    "tracktype=grade3": 267.7,
+    "surface=dbst": 110.4,
+    "smoothness=very_bad": 52.5,
+    "surface=laterite": 46.7,
+    "surface=sand": 44.5,
+    "tracktype=grade4": 28.1,
+    "surface=dbst_pavement": 15,
+    "surface=dbst_and_concreate": 14,
+    "tracktype=grade5": 12.3,
+    "surface=DBST": 8.7,
+    "surface=mud": 8.6,
+    "surface=concrete:lanes": 7.7,
+    "surface=double_bitumenous_surface_treatment": 6.8,
+    "surface=residential": 5.7,
+    "surface=concrete,_gravel": 3.4,
+    "surface=dirt/sand": 3.3,
+    "surface=earth": 3.2,
+    "surface=grass": 2.6,
+    "smoothness=horrible": 2.3,
+    "surface=dbst_and_gravek": 1.2,
+    "surface=bamboo": 0.7,
+    "surface=unpa": 0.4,
+    "surface=paved/sand": 0.3,
+    "surface=steel": 0.2,
+    "surface=pebblestone": 0.1,
+    "surface=upaved": 0.1,
+    "surface=una": 0.1,
+    "surface=base_course": 0.1,
+    "surface=paved_slop": 0.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 6.6
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=dbst": 110.4,
+  "surface=dbst_pavement": 15,
+  "surface=dbst_and_concreate": 14,
+  "surface=DBST": 8.7,
+  "surface=double_bitumenous_surface_treatment": 6.8,
+  "surface=residential": 5.7,
+  "surface=concrete,_gravel": 3.4,
+  "surface=dirt/sand": 3.3,
+  "surface=dbst_and_gravek": 1.2,
+  "surface=bamboo": 0.7,
+  "surface=unpa": 0.4,
+  "surface=paved/sand": 0.3,
+  "surface=steel": 0.2,
+  "surface=upaved": 0.1,
+  "surface=una": 0.1,
+  "surface=base_course": 0.1,
+  "surface=paved_slop": 0.1
+ },
+ "conflict_km": {
+  "smoothness=very_bad + surface=asphalt": 20,
+  "smoothness=very_horrible + surface=concrete": 0.2
+ },
+ "odd": {
+  "major_offroad": [
+   {
+    "id": "w764575856",
+    "highway": "secondary",
+    "km": 29.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Road 50C",
+     "name:en": "Road 50C",
+     "ref": "50C",
+     "source": "gps",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w346430318",
+    "highway": "secondary",
+    "km": 22.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "name": "National Road 95",
+     "ref": "95",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w194623015",
+    "highway": "secondary",
+    "km": 21.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "SKT-KPT 014-T2-35.1km(MRD)",
+     "oneway": "yes",
+     "service": "driveway",
+     "smoothness": "very_bad",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w158537356",
+    "highway": "secondary",
+    "km": 21.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w53571968",
+    "highway": "secondary",
+    "km": 15.9,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "301",
+     "source": "osm-gpx",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w524557800",
+    "highway": "secondary",
+    "km": 14.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w257768953",
+    "highway": "secondary",
+    "km": 12.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "78A",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1016782918",
+    "highway": "secondary",
+    "km": 9.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "bicycle": "yes",
+     "description": "Bamnok <=> Phnom Toteung Tngai",
+     "highway": "secondary",
+     "source": "strava cycling heat map",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1022153404",
+    "highway": "secondary",
+    "km": 9.4,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "National Road 43",
+     "ref": "43",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w207077623",
+    "highway": "secondary",
+    "km": 9.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "access": "permit",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "NR62(Svay Pat Village)- Sdao Commune",
+     "name:km": "ផ្លូវស្វាយប៉ាត-ស្តៅ 24គ.ម",
+     "ref": "004-T2 MRD (24 km)",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w207077627",
+    "highway": "secondary",
+    "km": 7.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w806124872",
+    "highway": "secondary",
+    "km": 7.1,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "113",
+     "surface": "sand"
+    }
+   },
+   {
+    "id": "w572283935",
+    "highway": "secondary",
+    "km": 6.7,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ankorian Highway westwards",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w334077928",
+    "highway": "secondary",
+    "km": 6.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "113",
+     "surface": "sand"
+    }
+   },
+   {
+    "id": "w671175888",
+    "highway": "secondary",
+    "km": 5.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w389984012",
+    "highway": "tertiary",
+    "km": 2.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w214562676",
+    "highway": "secondary",
+    "km": 2.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "description": "Regularly used by locals on scooters. Deep ruts and washed out passages may turn the few steeper sections impassable for cars depending on season and maintenance.",
+     "highway": "secondary",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389984008",
+    "highway": "tertiary",
+    "km": 1.9,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389984011",
+    "highway": "tertiary",
+    "km": 1.7,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389984009",
+    "highway": "tertiary",
+    "km": 1.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389983985",
+    "highway": "tertiary",
+    "km": 1.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389983987",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389983983",
+    "highway": "tertiary",
+    "km": 1,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389984010",
+    "highway": "tertiary",
+    "km": 0.9,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389983981",
+    "highway": "tertiary",
+    "km": 0.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389984021",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389983979",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389984015",
+    "highway": "tertiary",
+    "km": 0.6,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w389983980",
+    "highway": "tertiary",
+    "km": 0.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w194615397",
+    "highway": "tertiary",
+    "km": 33.9,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "ភូមិតាសែងកណ្តាល-ពាមអាទិត្យ(ព្រំប្រទល់ខេត្តកំពង់ធំ) 349-T2",
+     "ref": "349-T2",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w346430318",
+    "highway": "secondary",
+    "km": 22.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "name": "National Road 95",
+     "ref": "95",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w255434144",
+    "highway": "tertiary",
+    "km": 14,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "003-T2-13.98km (MRD) 2025",
+     "surface": "dbst_and_concreate"
+    }
+   },
+   {
+    "id": "w374346334",
+    "highway": "tertiary",
+    "km": 10.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40,60",
+     "name": "Boh to Reussei Srok (RID4CAM Project 2023)",
+     "source:geometry": "mapbox",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w320763591",
+    "highway": "tertiary",
+    "km": 9.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40, 60",
+     "name": "Prey Deum Thneung - Prey Chheang",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w207077623",
+    "highway": "secondary",
+    "km": 9.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "access": "permit",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "NR62(Svay Pat Village)- Sdao Commune",
+     "name:km": "ផ្លូវស្វាយប៉ាត-ស្តៅ 24គ.ម",
+     "ref": "004-T2 MRD (24 km)",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w477833815",
+    "highway": "tertiary",
+    "km": 8.4,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "description": "10 km of roads in Kratie Province (road lines KR3 from PK 0+000 to 10+000) including 5 new box culverts, 14 new pipe culverts and 4 new bridges of span 20m and 30m. (Sambour–Svay Chek) under Cambodia Southeast Asia Disaster Risk Management Project",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40, 60",
+     "name": "Sambour–Svay Chek (MRD-CDRM-ICB-RW02-LOT2-10km)",
+     "surface": "dbst_pavement"
+    }
+   },
+   {
+    "id": "w374346327",
+    "highway": "tertiary",
+    "km": 6.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40, 60",
+     "name": "S'ang to Khyang (RID4CAM Project 2023)",
+     "source:geometry": "mapbox",
+     "surface": "double_bitumenous_surface_treatment"
+    }
+   },
+   {
+    "id": "w320763592",
+    "highway": "tertiary",
+    "km": 6.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "Svay Teab - Prey Chheang - Bati",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w434958969",
+    "highway": "tertiary",
+    "km": 5.9,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "colour": "#ff0000",
+     "highway": "tertiary",
+     "surface": "DBST"
+    }
+   },
+   {
+    "id": "w983091487",
+    "highway": "tertiary",
+    "km": 5.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40,60",
+     "name": "S'ang to Samrong (RID4CAM Project 2023)",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w1205664308",
+    "highway": "tertiary",
+    "km": 5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "description": "10 km of roads in Kratie Province (road lines KR3 from PK 0+000 to 10+000) including 5 new box culverts, 14 new pipe culverts and 4 new bridges of span 20m and 30m. (Sambour–Svay Chek) under Cambodia Southeast Asia Disaster Risk Management Project",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40, 60",
+     "name": "Sambour–Svay Chek (MRD-CDRM-ICB-RW02-LOT2-10km)",
+     "surface": "dbst_pavement"
+    }
+   },
+   {
+    "id": "w765196028",
+    "highway": "residential",
+    "km": 5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "residential",
+     "surface": "residential"
+    }
+   },
+   {
+    "id": "w163580620",
+    "highway": "unclassified",
+    "km": 3.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "access": "yes",
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "(MRD)018-T2-3.75km",
+     "surface": "dbst"
+    }
+   },
+   {
+    "id": "w1205662359",
+    "highway": "secondary",
+    "km": 3.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "40,60",
+     "name": "Phsa Oraing Ov - Boung Proul (MRD-CDRM-ICB-RW03)",
+     "surface": "dbst"
+    }
+   }
+  ]
+ }
+}

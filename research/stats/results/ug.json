@@ -1,0 +1,1130 @@
+{
+ "country": "ug",
+ "name": "Uganda",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:43:00.022Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "uganda-latest.osm.pbf",
+  "boundary": "r192796",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "untagged": 47.1,
+   "paved_tagged": 45.6,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 697.8,
+   "untagged": 169.5,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 2555.4,
+   "untagged": 454.6,
+   "unpaved": 426.9,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "unpaved": 5624.3,
+   "untagged": 4115.7,
+   "paved_tagged": 1246.8,
+   "offroad": 16.3,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 10772.8,
+   "unpaved": 10665.3,
+   "paved_tagged": 408.3,
+   "offroad": 80.7,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 79293.2,
+   "unpaved": 35098.1,
+   "paved_tagged": 174.6,
+   "offroad": 70.5,
+   "specialized": 0.3
+  },
+  "residential": {
+   "untagged": 41070.4,
+   "unpaved": 6037.7,
+   "paved_tagged": 145.5,
+   "offroad": 50.8,
+   "specialized": 2.2
+  },
+  "all": {
+   "untagged": 135923.3,
+   "unpaved": 57852.2,
+   "paved_tagged": 5274.1,
+   "offroad": 218.4,
+   "specialized": 2.5
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 45.6,
+   "smoothness": 6.1
+  },
+  "trunk": {
+   "surface": 697.8,
+   "smoothness": 3.8
+  },
+  "primary": {
+   "surface": 2982.3,
+   "smoothness": 119.8,
+   "tracktype": 50.3
+  },
+  "secondary": {
+   "surface": 6887.4,
+   "smoothness": 200.3,
+   "tracktype": 85
+  },
+  "tertiary": {
+   "surface": 11150.6,
+   "smoothness": 264,
+   "tracktype": 65.4
+  },
+  "unclassified": {
+   "surface": 35298.2,
+   "smoothness": 145.7,
+   "tracktype": 105.2
+  },
+  "residential": {
+   "surface": 6225.7,
+   "smoothness": 159.9,
+   "tracktype": 32.6
+  },
+  "all": {
+   "surface": 63287.5,
+   "smoothness": 899.6,
+   "tracktype": 338.6
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "default": 47.1,
+   "surface": 45.6
+  },
+  "trunk": {
+   "surface": 697.8,
+   "default": 169.5
+  },
+  "primary": {
+   "surface": 2982.3,
+   "default": 454.6
+  },
+  "secondary": {
+   "surface": 6887.4,
+   "default": 4115.7
+  },
+  "tertiary": {
+   "surface": 11150.6,
+   "default": 10772.8,
+   "tracktype": 3.8
+  },
+  "unclassified": {
+   "default": 79293.2,
+   "surface": 35298.2,
+   "tracktype": 45.5
+  },
+  "residential": {
+   "default": 41070.4,
+   "surface": 6225.7,
+   "tracktype": 10.5
+  },
+  "all": {
+   "default": 135923.3,
+   "surface": 63287.5,
+   "tracktype": 59.7
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "tracktype": 16.3
+  },
+  "tertiary": {
+   "smoothness": 62.7,
+   "tracktype": 18
+  },
+  "unclassified": {
+   "tracktype": 53,
+   "smoothness": 17.9
+  },
+  "residential": {
+   "smoothness": 28.7,
+   "tracktype": 24.3
+  },
+  "all": {
+   "tracktype": 111.6,
+   "smoothness": 109.3
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 329.6,
+    "surface=dirt": 37.7,
+    "surface=ground": 27.5,
+    "surface=compacted": 23.9,
+    "surface=earth": 7.9,
+    "surface=fine_gravel": 0.2
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 4230.4,
+    "surface=ground": 470.4,
+    "surface=compacted": 339.6,
+    "surface=dirt": 290.8,
+    "surface=gravel": 272.5,
+    "surface=soil": 17,
+    "surface=sand": 14.7,
+    "surface=marum": 3.7,
+    "surface=earth": 1.2,
+    "surface=fine_gravel": 0.1,
+    "surface=tarmac": 0.1
+   },
+   "offroad": {
+    "tracktype=grade4": 16.3
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 8543.8,
+    "surface=ground": 1217.4,
+    "surface=dirt": 428.3,
+    "surface=compacted": 367.6,
+    "surface=gravel": 170.5,
+    "surface=sand": 12.6,
+    "surface=grass_paver": 4,
+    "tracktype=grade2": 1.3,
+    "surface=earth": 0.6,
+    "surface=fine_gravel": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 44.5,
+    "smoothness=horrible": 18.2,
+    "tracktype=grade5": 15.5,
+    "tracktype=grade3": 2.6
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 30795.8,
+    "surface=ground": 3043.2,
+    "surface=dirt": 830.3,
+    "surface=gravel": 288.4,
+    "surface=compacted": 127.9,
+    "tracktype=grade2": 28.2,
+    "surface=sand": 25,
+    "tracktype=grade5": 8.9,
+    "surface=earth": 8.7,
+    "tracktype=grade3": 7.6,
+    "surface=clay": 2.6,
+    "surface=surface": 1,
+    "surface=grass": 0.9,
+    "tracktype=grade4": 0.4,
+    "surface=unpaved_dirt": 0.1,
+    "surface=2": 0.1
+   },
+   "offroad": {
+    "tracktype=grade5": 23.7,
+    "tracktype=grade3": 23.4,
+    "smoothness=very_bad": 13.1,
+    "tracktype=grade4": 5.9,
+    "smoothness=horrible": 4.5
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.3
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 5129.7,
+    "surface=ground": 473.8,
+    "surface=dirt": 388.2,
+    "surface=gravel": 43.7,
+    "surface=compacted": 26.2,
+    "tracktype=grade3": 5.9,
+    "surface=tarmac": 5.5,
+    "surface=earth": 4.5,
+    "tracktype=grade4": 2.6,
+    "surface=murrum": 2,
+    "surface=sand": 1.6,
+    "surface=laterite": 1.4,
+    "surface=pebblestone": 1.2,
+    "tracktype=grade5": 1.1,
+    "tracktype=grade2": 0.8,
+    "surface=marum": 0.7,
+    "surface=grass": 0.3,
+    "surface=fine_gravel": 0.3,
+    "surface=road": 0.2,
+    "surface=clay": 0.2,
+    "surface=ohne_straßenbelag3": 0.2,
+    "surface=mud": 0.2,
+    "surface=1": 0.1,
+    "surface=residential": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 19.3,
+    "tracktype=grade3": 16.6,
+    "smoothness=horrible": 7.1,
+    "tracktype=grade4": 4.8,
+    "tracktype=grade5": 2.9
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.2
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 49029.4,
+    "surface=ground": 5232.3,
+    "surface=dirt": 1975.2,
+    "surface=compacted": 885.3,
+    "surface=gravel": 775.1,
+    "surface=sand": 53.8,
+    "tracktype=grade2": 30.3,
+    "surface=earth": 23,
+    "surface=soil": 17,
+    "tracktype=grade3": 13.5,
+    "tracktype=grade5": 10,
+    "surface=tarmac": 5.5,
+    "surface=marum": 4.4,
+    "surface=grass_paver": 4,
+    "tracktype=grade4": 3,
+    "surface=clay": 2.8,
+    "surface=murrum": 2,
+    "surface=laterite": 1.4,
+    "surface=grass": 1.2,
+    "surface=pebblestone": 1.2,
+    "surface=surface": 1,
+    "surface=fine_gravel": 0.7,
+    "surface=road": 0.2,
+    "surface=ohne_straßenbelag3": 0.2,
+    "surface=mud": 0.2,
+    "surface=unpaved_dirt": 0.1,
+    "surface=2": 0.1,
+    "surface=1": 0.1,
+    "surface=residential": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 76.9,
+    "tracktype=grade3": 42.6,
+    "tracktype=grade5": 42,
+    "smoothness=horrible": 29.8,
+    "tracktype=grade4": 27
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.5
+   }
+  }
+ },
+ "unknown_value_km": {
+  "smoothness=ok": 46.6,
+  "smoothness=rough": 26.9,
+  "surface=soil": 17,
+  "smoothness=poor": 16.1,
+  "surface=tarmac": 5.5,
+  "surface=marum": 4.4,
+  "surface=murrum": 2,
+  "tracktype=Ways": 1.6,
+  "surface=surface": 1,
+  "smoothness=5": 0.4,
+  "surface=road": 0.2,
+  "surface=ohne_straßenbelag3": 0.2,
+  "surface=unpaved_dirt": 0.1,
+  "surface=2": 0.1,
+  "surface=1": 0.1,
+  "surface=residential": 0.1
+ },
+ "conflict_km": {
+  "smoothness=good + surface=unpaved": 100.6,
+  "smoothness=good + surface=gravel": 43.6,
+  "paved (no surface) + smoothness=horrible": 17.6,
+  "smoothness=good + surface=compacted": 4.9,
+  "paved (no surface) + smoothness=very_bad": 4.1,
+  "smoothness=good + surface=ground": 3.7,
+  "paved (surface=asphalt) + smoothness=very_bad": 2.1,
+  "paved (surface=asphalt) + smoothness=horrible": 1.7,
+  "smoothness=excellent + surface=unpaved": 1.7,
+  "smoothness=good + surface=dirt": 1.6,
+  "smoothness=good + surface=sand": 0.6,
+  "paved (no surface) + smoothness=impassable": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w28103719",
+    "highway": "secondary",
+    "km": 79.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "source": "GPS survey",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w252379429",
+    "highway": "secondary",
+    "km": 74.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w316621384",
+    "highway": "secondary",
+    "km": 63.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "source": "msd.or.tz & deliver.jsi.com",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w27995433",
+    "highway": "secondary",
+    "km": 62,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Moyo Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w251771843",
+    "highway": "secondary",
+    "km": 58.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w518566598",
+    "highway": "secondary",
+    "km": 57.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Akokoro Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w217820063",
+    "highway": "secondary",
+    "km": 54.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w322456297",
+    "highway": "secondary",
+    "km": 52.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Karenga - Kaabong Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w27578650",
+    "highway": "secondary",
+    "km": 47.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "kalaki road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w27567283",
+    "highway": "secondary",
+    "km": 43,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w553106006",
+    "highway": "secondary",
+    "km": 42.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Gulu - Lira Road",
+     "oneway": "no",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w532939583",
+    "highway": "secondary",
+    "km": 41.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w28139220",
+    "highway": "secondary",
+    "km": 41.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w458356988",
+    "highway": "secondary",
+    "km": 40.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w383126580",
+    "highway": "secondary",
+    "km": 40.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Bukwiri - Kyankwanzi Road",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w376319023",
+    "highway": "tertiary",
+    "km": 17.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "50",
+     "smoothness": "horrible",
+     "source": "Bing",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w28140190",
+    "highway": "secondary",
+    "km": 16.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w285163738",
+    "highway": "tertiary",
+    "km": 15.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "unpaved",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w587885189",
+    "highway": "tertiary",
+    "km": 12.7,
+    "level": "offroad",
+    "tags": {
+     "abutters": "rural",
+     "easy_overtaking": "no",
+     "foot": "yes",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "maxspeed:agricultural": "40",
+     "maxspeed:hgv": "60",
+     "maxspeed:psv": "60",
+     "maxspeed:type": "national",
+     "nat_ref:colour_bg": "cyan",
+     "nat_ref:colour_tx": "black",
+     "oneway": "no",
+     "priority": "yes",
+     "ref:colour_bg": "cyan",
+     "ref:colour_tx": "black",
+     "smoothness": "very_bad",
+     "source:maxspeed": "UG:rural",
+     "source_ref": "http://www.ubos.org/onlinefiles/uploads/ubos/2009_HLG_%20Abstract_printed/CIS+UPLOADS/Higher%20Local%20Government%20Statistical%20Abstracts_2012/Isingiro.pdf",
+     "surface": "unpaved",
+     "tracktype": "grade2",
+     "width": "8"
+    }
+   },
+   {
+    "id": "w494026561",
+    "highway": "tertiary",
+    "km": 7.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w712510720",
+    "highway": "tertiary",
+    "km": 7.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Balabala - Buganga Road",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w728276204",
+    "highway": "tertiary",
+    "km": 5.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Balabala - Koya Road",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w854530239",
+    "highway": "unclassified",
+    "km": 5.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w686906496",
+    "highway": "unclassified",
+    "km": 4.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w728264851",
+    "highway": "tertiary",
+    "km": 4.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Buganga - Buyamba Road",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w625066737",
+    "highway": "unclassified",
+    "km": 3.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w285163756",
+    "highway": "unclassified",
+    "km": 3.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w891193553",
+    "highway": "tertiary",
+    "km": 3.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w948845061",
+    "highway": "unclassified",
+    "km": 2.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w949434375",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade5"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w401194869",
+    "highway": "secondary",
+    "km": 30.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Namayingo - Bumeru (Namayingo - Lugala)",
+     "operator": "UNRA - Uganda National Roads Authority - Tororo station",
+     "ref": "C813-01",
+     "smoothness": "good",
+     "source": "UNRA - Uganda National Roads Authority",
+     "surface": "unpaved",
+     "width": "7"
+    }
+   },
+   {
+    "id": "w217813296",
+    "highway": "secondary",
+    "km": 17,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Namayingo - Lugala",
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Lugala Road",
+     "operator": "UNRA - Uganda National Roads Authority - Tororo station",
+     "ref": "C783-01",
+     "smoothness": "good",
+     "source": "UNRA - Uganda National Roads Authority",
+     "surface": "unpaved",
+     "width": "9"
+    }
+   },
+   {
+    "id": "w217981015",
+    "highway": "tertiary",
+    "km": 9.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Buyonge Road",
+     "smoothness": "good",
+     "surface": "unpaved",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w188341926",
+    "highway": "tertiary",
+    "km": 7.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w137137981",
+    "highway": "tertiary",
+    "km": 7.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Busiu Road",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w217832661",
+    "highway": "tertiary",
+    "km": 6.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Hasyule - Butula",
+     "smoothness": "good",
+     "surface": "unpaved",
+     "width": "15"
+    }
+   },
+   {
+    "id": "w108079980",
+    "highway": "unclassified",
+    "km": 6.1,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "continues",
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w992070364",
+    "highway": "secondary",
+    "km": 5.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Lwangosha - Lufudu",
+     "operator": "UNRA - Uganda National Roads Authority - Tororo station",
+     "ref": "C801-01",
+     "smoothness": "good",
+     "source": "UNRA - Uganda National Roads Authority",
+     "surface": "unpaved",
+     "width": "7.5"
+    }
+   },
+   {
+    "id": "w159335783",
+    "highway": "unclassified",
+    "km": 5.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w217830448",
+    "highway": "secondary",
+    "km": 4.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Lwangosha - Lufudu",
+     "operator": "UNRA - Uganda National Roads Authority - Tororo station",
+     "ref": "C801-01",
+     "smoothness": "good",
+     "source": "UNRA - Uganda National Roads Authority",
+     "surface": "unpaved",
+     "width": "7.5"
+    }
+   },
+   {
+    "id": "w672302047",
+    "highway": "secondary",
+    "km": 4.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w327682979",
+    "highway": "tertiary",
+    "km": 4.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Buyanga Road",
+     "smoothness": "good",
+     "surface": "unpaved",
+     "width": "5.5"
+    }
+   },
+   {
+    "id": "w690096924",
+    "highway": "tertiary",
+    "km": 4.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Mukina - Lumuli",
+     "smoothness": "good",
+     "surface": "unpaved",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w756548603",
+    "highway": "unclassified",
+    "km": 3.2,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w252581186",
+    "highway": "unclassified",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "access": "permissive",
+     "bicycle": "yes",
+     "cutting": "fine",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "1",
+     "maxspeed": "30",
+     "motor_vehicle": "yes",
+     "name": "Sungira 1 Road",
+     "smoothness": "good",
+     "surface": "compacted"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w43233496",
+    "highway": "secondary",
+    "km": 14.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1.5",
+     "name": "Bududa Ring",
+     "route": "road",
+     "smoothness": "ok",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w27881584",
+    "highway": "tertiary",
+    "km": 7.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Busano Road",
+     "smoothness": "ok",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w160219942",
+    "highway": "secondary",
+    "km": 7.1,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "Precise location of this road needs to be checked",
+     "highway": "secondary",
+     "name": "Bugobero-Nabumali Road",
+     "smoothness": "poor",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w353026735",
+    "highway": "secondary",
+    "km": 7.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "soil"
+    }
+   },
+   {
+    "id": "w353028917",
+    "highway": "secondary",
+    "km": 5.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "soil"
+    }
+   },
+   {
+    "id": "w171223731",
+    "highway": "unclassified",
+    "km": 5.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "rough",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w98704123",
+    "highway": "residential",
+    "km": 5.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "Mt. Wati Road",
+     "surface": "tarmac"
+    }
+   },
+   {
+    "id": "w161413871",
+    "highway": "unclassified",
+    "km": 5.1,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "rough"
+    }
+   },
+   {
+    "id": "w165878209",
+    "highway": "residential",
+    "km": 4.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "rough",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w161680705",
+    "highway": "secondary",
+    "km": 4.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Bududa Ring",
+     "route": "road",
+     "smoothness": "ok",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w394948241",
+    "highway": "tertiary",
+    "km": 4.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Nauyo Road",
+     "smoothness": "ok",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w287684687",
+    "highway": "secondary",
+    "km": 4.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "soil"
+    }
+   },
+   {
+    "id": "w660356715",
+    "highway": "secondary",
+    "km": 3.4,
+    "level": "unpaved",
+    "tags": {
+     "destination:forward": "Namagoma village",
+     "highway": "secondary",
+     "name": "St.Marks College Road",
+     "surface": "marum",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w159530620",
+    "highway": "secondary",
+    "km": 3.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "ok",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w165878208",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "rough",
+     "surface": "ground"
+    }
+   }
+  ]
+ }
+}

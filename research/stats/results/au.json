@@ -1,0 +1,1344 @@
+{
+ "country": "au",
+ "name": "Australia",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:44:21.501Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "australia-latest.osm.pbf",
+  "boundary": "r80500",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 7551.7,
+   "untagged": 57.4,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 42748.5,
+   "offroad": 573.7,
+   "untagged": 350.8,
+   "unpaved": 109.3,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 41120.6,
+   "unpaved": 4284.4,
+   "untagged": 310,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 69924.3,
+   "unpaved": 20510.5,
+   "offroad": 1439.8,
+   "untagged": 436.2,
+   "specialized": 0
+  },
+  "tertiary": {
+   "paved_tagged": 76439.9,
+   "unpaved": 58771.3,
+   "offroad": 4667.5,
+   "untagged": 2313,
+   "specialized": 0
+  },
+  "unclassified": {
+   "unpaved": 342533,
+   "paved_tagged": 56192.1,
+   "untagged": 20574.4,
+   "offroad": 9591.2,
+   "specialized": 2.1
+  },
+  "residential": {
+   "paved_tagged": 98569.2,
+   "untagged": 27899.3,
+   "unpaved": 16826.5,
+   "offroad": 53.1,
+   "specialized": 0
+  },
+  "all": {
+   "unpaved": 443034.9,
+   "paved_tagged": 392546.2,
+   "untagged": 51941.2,
+   "offroad": 16325.2,
+   "specialized": 2.1
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 7551.7,
+   "smoothness": 163.5
+  },
+  "trunk": {
+   "surface": 43431.4,
+   "4wd_only": 597.1,
+   "smoothness": 183.4
+  },
+  "primary": {
+   "surface": 45405,
+   "smoothness": 594.9,
+   "tracktype": 70.7
+  },
+  "secondary": {
+   "surface": 91874.3,
+   "4wd_only": 1214.9,
+   "tracktype": 900.8,
+   "smoothness": 775.8
+  },
+  "tertiary": {
+   "surface": 139870.4,
+   "4wd_only": 4240.1,
+   "tracktype": 1536.3,
+   "smoothness": 1178.3
+  },
+  "unclassified": {
+   "surface": 407466.2,
+   "tracktype": 8214.9,
+   "4wd_only": 6045.2,
+   "smoothness": 1835.1
+  },
+  "residential": {
+   "surface": 115428.5,
+   "smoothness": 2012.7,
+   "tracktype": 200.1,
+   "4wd_only": 22.4
+  },
+  "all": {
+   "surface": 851027.5,
+   "4wd_only": 12119.8,
+   "tracktype": 10922.9,
+   "smoothness": 6743.8
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 7551.7,
+   "default": 57.4
+  },
+  "trunk": {
+   "surface": 43431.4,
+   "default": 350.8
+  },
+  "primary": {
+   "surface": 45405,
+   "default": 310
+  },
+  "secondary": {
+   "surface": 91874.3,
+   "default": 436.2,
+   "tracktype": 0.2
+  },
+  "tertiary": {
+   "surface": 139870.4,
+   "default": 2313,
+   "tracktype": 8.3
+  },
+  "unclassified": {
+   "surface": 407466.2,
+   "default": 20574.4,
+   "tracktype": 852.2
+  },
+  "residential": {
+   "surface": 115428.5,
+   "default": 27899.3,
+   "tracktype": 20.2
+  },
+  "all": {
+   "surface": 851027.5,
+   "default": 51941.2,
+   "tracktype": 880.9
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {
+   "4wd_only": 573.7
+  },
+  "primary": {},
+  "secondary": {
+   "4wd_only": 1148.6,
+   "tracktype": 278.1,
+   "smoothness": 13.1
+  },
+  "tertiary": {
+   "4wd_only": 3660.5,
+   "tracktype": 940.9,
+   "smoothness": 66.1
+  },
+  "unclassified": {
+   "4wd_only": 4917.8,
+   "tracktype": 4271.1,
+   "smoothness": 404.4
+  },
+  "residential": {
+   "tracktype": 32,
+   "4wd_only": 18.6,
+   "smoothness": 2.6
+  },
+  "all": {
+   "4wd_only": 10319,
+   "tracktype": 5522.1,
+   "smoothness": 486.2
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 672.3,
+    "surface=compacted": 10.7
+   },
+   "offroad": {
+    "4wd_only=recommended": 573.7
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 4003.1,
+    "surface=gravel": 238.8,
+    "surface=compacted": 22.7,
+    "surface=dirt": 11.1,
+    "surface=fine_gravel": 8.6
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 18585.7,
+    "surface=gravel": 2473.4,
+    "surface=dirt": 759.8,
+    "surface=compacted": 129.8,
+    "surface=ground": 1.1,
+    "surface=sand": 0.3,
+    "surface=mud": 0
+   },
+   "offroad": {
+    "4wd_only=recommended": 728.8,
+    "4wd_only=yes": 419.8,
+    "tracktype=grade4": 126.6,
+    "tracktype=grade3": 112.3,
+    "tracktype=grade5": 39.1,
+    "smoothness=very_bad": 13.1
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 55423.1,
+    "surface=gravel": 5763.7,
+    "surface=dirt": 1831.1,
+    "surface=compacted": 263.4,
+    "surface=ground": 109.9,
+    "surface=fine_gravel": 19,
+    "surface=sand": 15.1,
+    "tracktype=grade2": 6.1,
+    "surface=sand/gravel/stones": 4.6,
+    "surface=bitumen_seal": 2.2,
+    "surface=unhewn_cobblestone": 0.3,
+    "tracktype=grade3": 0.1,
+    "surface=acrylic": 0.1
+   },
+   "offroad": {
+    "4wd_only=yes": 2027.9,
+    "4wd_only=recommended": 1632.6,
+    "tracktype=grade3": 328.5,
+    "tracktype=grade5": 224.9,
+    "tracktype=grade7": 203.4,
+    "tracktype=grade6": 124.7,
+    "tracktype=grade4": 59.4,
+    "smoothness=horrible": 33.5,
+    "smoothness=very_bad": 32.7
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 304295.3,
+    "surface=gravel": 28659.5,
+    "surface=dirt": 10730.3,
+    "surface=compacted": 3953.4,
+    "surface=ground": 1922.3,
+    "surface=sand": 1473.3,
+    "tracktype=grade3": 438.5,
+    "surface=fine_gravel": 181.7,
+    "tracktype=grade2": 177.3,
+    "tracktype=grade4": 146.1,
+    "surface=grass": 40.4,
+    "tracktype=grade5": 26.4,
+    "surface=earth": 15.9,
+    "surface=paved;dirt": 14.2,
+    "surface=dirt_gravel_ground": 10.6,
+    "surface=unpaved;asphalt": 9.1,
+    "surface=dirt/sand": 8,
+    "surface=mud": 6.2,
+    "surface=unpaved,_gravel,_rough": 5.5,
+    "surface=clay": 3.7,
+    "surface=pebblestone": 1.6,
+    "surface=asphalt;gravel": 1.6,
+    "surface=sealed": 1.5,
+    "surface=sand/gravel/stones": 1.3,
+    "surface=unpave": 1.1,
+    "surface=unpaved; paved": 0.9,
+    "surface=cow_manure": 0.3,
+    "surface=brick": 0.2,
+    "surface=rocks": 0.1,
+    "surface=unhewn_cobblestone": 0
+   },
+   "offroad": {
+    "4wd_only=yes": 3816.4,
+    "tracktype=grade3": 2668.8,
+    "4wd_only=recommended": 1101.4,
+    "tracktype=grade4": 851,
+    "tracktype=grade5": 377.7,
+    "tracktype=grade6": 373.5,
+    "smoothness=very_bad": 256.3,
+    "smoothness=horrible": 146
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.1,
+    "smoothness=impassable": 0
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 14067.6,
+    "surface=gravel": 1759.8,
+    "surface=compacted": 445.1,
+    "surface=dirt": 425,
+    "surface=ground": 59.6,
+    "surface=fine_gravel": 48.2,
+    "surface=sand": 33.5,
+    "tracktype=grade4": 7.3,
+    "surface=grass": 7,
+    "tracktype=grade2": 6,
+    "tracktype=grade3": 4,
+    "surface=pebblestone": 3.4,
+    "surface=bitumen_seal": 2.8,
+    "surface=gravel;asphalt": 2,
+    "surface=earth": 1.5,
+    "surface=dirt;unpaved": 1.3,
+    "tracktype=grade5": 1.1,
+    "surface=dirt/sand": 1,
+    "surface=unhewn_cobblestone": 0.9,
+    "surface=brick": 0.9,
+    "surface=asphalt:lanes": 0.5,
+    "surface=mud": 0.4,
+    "surface=grass_paver": 0.2,
+    "surface=paved;unpaved": 0.1,
+    "surface=concrete:lanes": 0.1,
+    "surface=brick_weave": 0.1,
+    "surface=mulch": 0,
+    "surface=w": 0,
+    "surface=pat": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 18.6,
+    "4wd_only=yes": 17.9,
+    "tracktype=grade4": 10.7,
+    "tracktype=grade5": 2.7,
+    "smoothness=very_bad": 1.4,
+    "smoothness=horrible": 1.2,
+    "4wd_only=recommended": 0.6
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 397047.2,
+    "surface=gravel": 38895.2,
+    "surface=dirt": 13757.4,
+    "surface=compacted": 4825.1,
+    "surface=ground": 2093,
+    "surface=sand": 1522.4,
+    "tracktype=grade3": 442.6,
+    "surface=fine_gravel": 257.6,
+    "tracktype=grade2": 189.3,
+    "tracktype=grade4": 153.4,
+    "surface=grass": 47.4,
+    "tracktype=grade5": 27.5,
+    "surface=earth": 17.4,
+    "surface=paved;dirt": 14.2,
+    "surface=dirt_gravel_ground": 10.6,
+    "surface=unpaved;asphalt": 9.1,
+    "surface=dirt/sand": 9,
+    "surface=mud": 6.6,
+    "surface=sand/gravel/stones": 5.9,
+    "surface=unpaved,_gravel,_rough": 5.5,
+    "surface=pebblestone": 5.1,
+    "surface=bitumen_seal": 5,
+    "surface=clay": 3.7,
+    "surface=gravel;asphalt": 2,
+    "surface=asphalt;gravel": 1.6,
+    "surface=sealed": 1.5,
+    "surface=dirt;unpaved": 1.3,
+    "surface=unhewn_cobblestone": 1.3,
+    "surface=unpave": 1.1,
+    "surface=brick": 1.1,
+    "surface=unpaved; paved": 0.9,
+    "surface=asphalt:lanes": 0.5,
+    "surface=cow_manure": 0.3,
+    "surface=grass_paver": 0.2,
+    "surface=paved;unpaved": 0.1,
+    "surface=concrete:lanes": 0.1,
+    "surface=brick_weave": 0.1,
+    "surface=acrylic": 0.1,
+    "surface=rocks": 0.1,
+    "surface=mulch": 0,
+    "surface=w": 0,
+    "surface=pat": 0
+   },
+   "offroad": {
+    "4wd_only=yes": 6282,
+    "4wd_only=recommended": 4037,
+    "tracktype=grade3": 3128.2,
+    "tracktype=grade4": 1047.8,
+    "tracktype=grade5": 644.4,
+    "tracktype=grade6": 498.3,
+    "smoothness=very_bad": 303.5,
+    "tracktype=grade7": 203.4,
+    "smoothness=horrible": 180.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.1,
+    "smoothness=impassable": 0
+   }
+  }
+ },
+ "unknown_value_km": {
+  "smoothness=poor": 17.5,
+  "surface=dirt_gravel_ground": 10.6,
+  "surface=dirt/sand": 9,
+  "surface=sand/gravel/stones": 5.9,
+  "tracktype=fixme": 5.9,
+  "surface=unpaved,_gravel,_rough": 5.5,
+  "surface=bitumen_seal": 5,
+  "surface=sealed": 1.5,
+  "surface=unpave": 1.1,
+  "surface=brick": 1.1,
+  "surface=asphalt:lanes": 0.5,
+  "surface=cow_manure": 0.3,
+  "smoothness=robust_wheels": 0.2,
+  "surface=brick_weave": 0.1,
+  "surface=acrylic": 0.1,
+  "surface=rocks": 0.1,
+  "surface=mulch": 0,
+  "surface=w": 0,
+  "surface=pat": 0
+ },
+ "conflict_km": {
+  "smoothness=good + surface=gravel": 398.6,
+  "paved (surface=asphalt) + 4wd_only=yes": 75.5,
+  "paved (no surface) + 4wd_only=yes": 41.8,
+  "paved (surface=asphalt) + tracktype=grade3": 41.7,
+  "paved (surface=asphalt) + 4wd_only=recommended": 25.7,
+  "paved (surface=paved) + tracktype=grade3": 23.7,
+  "smoothness=good + surface=unpaved": 15.4,
+  "paved (no surface) + smoothness=horrible": 14.9,
+  "smoothness=good + surface=compacted": 12.8,
+  "paved (surface=paved) + smoothness=very_bad": 12.7,
+  "paved (surface=asphalt) + tracktype=grade4": 10,
+  "paved (surface=asphalt) + smoothness=very_bad": 5.3,
+  "paved (no surface) + 4wd_only=recommended": 4.7,
+  "paved (surface=asphalt) + smoothness=horrible": 3.1,
+  "paved (surface=asphalt) + smoothness=very_horrible": 2.9,
+  "paved (surface=paved) + tracktype=grade5": 2.7,
+  "smoothness=excellent + surface=gravel": 1.8,
+  "paved (surface=paved) + 4wd_only=yes": 1.2,
+  "paved (surface=paved) + tracktype=grade4": 1.1,
+  "smoothness=good + surface=ground": 0.9,
+  "paved (surface=concrete) + tracktype=grade4": 0.9,
+  "paved (no surface) + smoothness=very_bad": 0.8,
+  "paved (surface=paved) + 4wd_only=recommended": 0.8,
+  "paved (surface=concrete) + tracktype=grade3": 0.5,
+  "paved (surface=asphalt) + tracktype=grade5": 0.3,
+  "paved (surface=wood) + tracktype=grade3": 0.1,
+  "paved (surface=concrete) + 4wd_only=yes": 0,
+  "paved (surface=concrete) + smoothness=very_bad": 0,
+  "smoothness=excellent + surface=unpaved": 0,
+  "paved (surface=wood) + smoothness=very_bad": 0,
+  "paved (surface=wood) + 4wd_only=yes": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w186428588",
+    "highway": "secondary",
+    "km": 503.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "100",
+     "name": "Birdsville Track",
+     "network": "AU:SA",
+     "oneway": "no",
+     "ref": "D83",
+     "render_as": "primary",
+     "source": "survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w174644417",
+    "highway": "secondary",
+    "km": 370.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "secondary",
+     "name": "Sandover Highway",
+     "network": "AU:NT:S",
+     "note": "http://www.ocpe.nt.gov.au/__data/assets/pdf_file/0020/53174/nt_ps_remote_localities_as_at_March_2010.pdf lists it as secondary hwy",
+     "oneway": "no",
+     "ref": "14",
+     "source": "landsat",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w241943842",
+    "highway": "primary",
+    "km": 212.2,
+    "level": "unpaved",
+    "tags": {
+     "access": "permit",
+     "description": "A Ngaanyatjarra transmit permit (3 days, 2 nights) is required.",
+     "highway": "primary",
+     "name": "Great Central Road",
+     "source": "landsat",
+     "source:geometry": "Esri World Imagery",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w198378947",
+    "highway": "secondary",
+    "km": 210.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "80",
+     "name": "Maningrida Access",
+     "source": "bing",
+     "source:geometry": "Maxar Premium Imagery (Beta)",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w172620251",
+    "highway": "primary",
+    "km": 202.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Plenty Highway",
+     "network": "AU:NT",
+     "ref": "C12",
+     "source": "bing; existing nodes",
+     "source:geometry": "Esri World Imagery",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w186252950",
+    "highway": "secondary",
+    "km": 199.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "110",
+     "name": "Oodnadatta Track",
+     "network": "AU:SA",
+     "ref": "D95",
+     "source": "survey",
+     "source:geometry": "Bing Aerial Imagery",
+     "source:name": "data.sa.gov.au",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w195532459",
+    "highway": "secondary",
+    "km": 190.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Wongawol Road",
+     "source": "Bing",
+     "source:geometry": "Esri World Imagery",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w254434623",
+    "highway": "secondary",
+    "km": 181.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "110",
+     "name": "Carnarvon Mullewa Road",
+     "oneway": "no",
+     "source:geometry": "Esri World Imagery",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w29132396",
+    "highway": "primary",
+    "km": 176.7,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Nicholson East Road",
+     "highway": "primary",
+     "name": "Buntine Highway",
+     "network": "AU:NT",
+     "ref": "B96",
+     "source:alt_name": "Main Roads Western Australia",
+     "source:name": "Unknown",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w173665688",
+    "highway": "primary",
+    "km": 172.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "name": "Buchanan Highway",
+     "network": "AU:NT",
+     "oneway": "no",
+     "ref": "C80",
+     "surface": "unpaved",
+     "wikidata": "Q942429",
+     "wikipedia": "en:Buchanan Highway"
+    }
+   },
+   {
+    "id": "w98755026",
+    "highway": "secondary",
+    "km": 156,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Cobra-Dairy Creek Road",
+     "source": "Bing",
+     "source:geometry": "Esri World Imagery",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w44153655",
+    "highway": "secondary",
+    "km": 149.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Sandover Highway",
+     "network": "AU:NT:S",
+     "note": "http://www.ocpe.nt.gov.au/__data/assets/pdf_file/0020/53174/nt_ps_remote_localities_as_at_March_2010.pdf lists it as secondary hwy",
+     "ref": "14",
+     "source": "landsat",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w182320135",
+    "highway": "secondary",
+    "km": 144.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "William Creek Road",
+     "source": "Bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w36941861",
+    "highway": "secondary",
+    "km": 140.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Bullfinch-Evanstone Road",
+     "oneway": "no",
+     "source": "GPS",
+     "source:geometry": "Esri World Imagery",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w231663144",
+    "highway": "secondary",
+    "km": 136.5,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "access:conditional": "no @ (wet)",
+     "highway": "secondary",
+     "name": "Diamantina River Road",
+     "source": "survey",
+     "source:name": "sign at Kennedy Developmental Road",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w174644417",
+    "highway": "secondary",
+    "km": 370.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "secondary",
+     "name": "Sandover Highway",
+     "network": "AU:NT:S",
+     "note": "http://www.ocpe.nt.gov.au/__data/assets/pdf_file/0020/53174/nt_ps_remote_localities_as_at_March_2010.pdf lists it as secondary hwy",
+     "oneway": "no",
+     "ref": "14",
+     "source": "landsat",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w672319853",
+    "highway": "tertiary",
+    "km": 313.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "permit",
+     "highway": "tertiary",
+     "name": "Connie Sue Highway",
+     "render_as": "secondary",
+     "source:geometry": "Esri World Imagery",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w373866983",
+    "highway": "unclassified",
+    "km": 308.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "access": "permit",
+     "alt_name": "Wapet Road",
+     "description": "Permit requried (AUD55)",
+     "fee": "$55",
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "Nyangumarta Highway",
+     "old_name": "Kidson Track",
+     "oneway": "no",
+     "source:name": "http://ymac.org.au/wp-content/uploads/2015/07/150521-NYA-Highway1.pdf",
+     "surface": "gravel",
+     "toll": "yes",
+     "tracktype": "grade6",
+     "website": "https://4wda.org.au/kidson/terms_conditions.php",
+     "wikidata": "Q2548591"
+    }
+   },
+   {
+    "id": "w187380535",
+    "highway": "unclassified",
+    "km": 209.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "permit",
+     "highway": "unclassified",
+     "name": "Anne Beadell Highway",
+     "oneway": "no",
+     "render_as": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w93255081",
+    "highway": "tertiary",
+    "km": 208,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "alt_name": "Binns Track",
+     "highway": "tertiary",
+     "name": "Old Andado Track (Binns Track)",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w187356371",
+    "highway": "unclassified",
+    "km": 181,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "name": "Cable Haul Highway",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w194574385",
+    "highway": "tertiary",
+    "km": 174,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "comment": "This road is now closed to public to Orientos station, use new road",
+     "highway": "tertiary",
+     "maxspeed": "100",
+     "name": "Nappa Merrie - Santos Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w188166576",
+    "highway": "unclassified",
+    "km": 170.3,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "permit",
+     "highway": "unclassified",
+     "name": "Anne Beadell Highway",
+     "oneway": "no",
+     "render_as": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w29477902",
+    "highway": "unclassified",
+    "km": 161.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "name": "Lake King - Norseman Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w862980609",
+    "highway": "tertiary",
+    "km": 148.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "tertiary",
+     "maxspeed": "100",
+     "name": "Cordillo Downs Road",
+     "source": "survey",
+     "source:name": "data.sa.gov.au",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w187134677",
+    "highway": "unclassified",
+    "km": 144.3,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access": "permit",
+     "description": "A Ngaanyatjarra access permit is required. Great Central Road, Heather Highway and Gunbarrel Highways have 3 day passes. All other roads have stricter requirements",
+     "highway": "unclassified",
+     "name": "Sandy Blight Junction Road",
+     "render_as": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w112642329",
+    "highway": "tertiary",
+    "km": 139.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "description": "Desert Parks Pass required",
+     "fee:motor_vehicle": "yes",
+     "fixme": "details missing",
+     "highway": "tertiary",
+     "lanes": "1",
+     "motor_vehicle": "permit",
+     "name": "Rig Road",
+     "source": "survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w231663144",
+    "highway": "secondary",
+    "km": 136.5,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "access:conditional": "no @ (wet)",
+     "highway": "secondary",
+     "name": "Diamantina River Road",
+     "source": "survey",
+     "source:name": "sign at Kennedy Developmental Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w93976612",
+    "highway": "tertiary",
+    "km": 132.8,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Finke Road",
+     "oneway": "no",
+     "source": "survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w596600032",
+    "highway": "tertiary",
+    "km": 127.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Gunbarrel Highway",
+     "source": "GPS",
+     "surface": "dirt"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w319391869",
+    "highway": "tertiary",
+    "km": 46.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "100",
+     "name": "The Great Top Road",
+     "network": "AU:QLD:NR",
+     "oneway": "no",
+     "ref": "1",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w687553152",
+    "highway": "tertiary",
+    "km": 37.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Endeavour Battlecamp Road",
+     "oneway": "no",
+     "smoothness": "good",
+     "source": "survey",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w397544742",
+    "highway": "unclassified",
+    "km": 35.3,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Gingerella-Fossilbrook Road",
+     "highway": "unclassified",
+     "maxspeed": "100",
+     "name": "Gingerella-Fossilbrook Road",
+     "oneway": "no",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w28345187",
+    "highway": "tertiary",
+    "km": 31.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Wills Road",
+     "smoothness": "good",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w685224806",
+    "highway": "tertiary",
+    "km": 25.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "100",
+     "name": "The Great Top Road",
+     "network": "AU:QLD:NR",
+     "oneway": "no",
+     "ref": "1",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w195057223",
+    "highway": "unclassified",
+    "km": 24.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "100",
+     "name": "Ootann Road",
+     "oneway": "no",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w176092422",
+    "highway": "tertiary",
+    "km": 23.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Wills Road",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w114290565",
+    "highway": "unclassified",
+    "km": 23,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "source": "survey"
+    }
+   },
+   {
+    "id": "w741157646",
+    "highway": "unclassified",
+    "km": 20.2,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "maxspeed": "60",
+     "name": "Banjima Road",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w47069452",
+    "highway": "trunk",
+    "km": 17.3,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "recommended",
+     "access": "permit",
+     "highway": "trunk",
+     "limit": "80",
+     "name": "Central Arnhem Highway",
+     "network": "AU:NT",
+     "ref": "C24",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w173255743",
+    "highway": "primary",
+    "km": 15.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "maxspeed": "100",
+     "name": "Peninsula Developmental Road",
+     "network": "AU:QLD:S",
+     "oneway": "no",
+     "ref": "81",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w130538316",
+    "highway": "unclassified",
+    "km": 15.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Point Ann Road",
+     "seasonal": "yes",
+     "smoothness": "good",
+     "source": "survey",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w865789360",
+    "highway": "secondary",
+    "km": 14.3,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "attribution": "Emmertex 2010",
+     "highway": "secondary",
+     "name": "Bamaga Road (Southern Bypass Road)",
+     "source": "GPS",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w686828685",
+    "highway": "primary",
+    "km": 14.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Peninsula Developmental Road",
+     "network": "AU:QLD:S",
+     "ref": "81",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w290283879",
+    "highway": "unclassified",
+    "km": 13.5,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "alt_name": "North East Dundas Tramway",
+     "bicycle": "yes",
+     "highway": "unclassified",
+     "mtb": "yes",
+     "name": "North East Dundas Tramway",
+     "sac_scale": "hiking",
+     "smoothness": "horrible",
+     "source": "GPS",
+     "trail_visibility": "excellent"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w191168628",
+    "highway": "unclassified",
+    "km": 10.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "surface": "dirt_gravel_ground"
+    }
+   },
+   {
+    "id": "w78494550",
+    "highway": "tertiary",
+    "km": 9.1,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Spear Creek Road",
+     "oneway": "no",
+     "operator": "DISTRICT COUNCIL OF MOUNT REMARKABLE",
+     "operator:type": "council",
+     "smoothness": "poor",
+     "source": "GPS",
+     "source:name": "data.sa.gov.au",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w1161212936",
+    "highway": "tertiary",
+    "km": 8.3,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Spear Creek Road",
+     "oneway": "no",
+     "operator": "PORT AUGUSTA CITY COUNCIL",
+     "operator:type": "council",
+     "smoothness": "poor",
+     "source": "GPS",
+     "source:name": "data.sa.gov.au",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w310350935",
+    "highway": "unclassified",
+    "km": 5.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Portland Roads Road",
+     "source:name": "State of Queensland (Department of Natural Resources, Mines and Energy) 2019",
+     "surface": "unpaved,_gravel,_rough"
+    }
+   },
+   {
+    "id": "w609299343",
+    "highway": "unclassified",
+    "km": 5.3,
+    "level": "unpaved",
+    "tags": {
+     "access": "fixme",
+     "highway": "unclassified",
+     "name": "Gibb River - Kalumburu Road",
+     "source": "bing",
+     "source:name": "MRWA-514",
+     "surface": "unpaved",
+     "tracktype": "fixme"
+    }
+   },
+   {
+    "id": "w823973165",
+    "highway": "tertiary",
+    "km": 4.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Chilli Beach Road",
+     "source:name": "State of Queensland (Department of Natural Resources, Mines and Energy) 2019",
+     "surface": "sand/gravel/stones"
+    }
+   },
+   {
+    "id": "w333869689",
+    "highway": "unclassified",
+    "km": 2.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Hoad Quarry Road",
+     "smoothness": "bad",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w1150061411",
+    "highway": "unclassified",
+    "km": 1.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w1120935742",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Eatha Road",
+     "surface": "sealed"
+    }
+   },
+   {
+    "id": "w1150061212",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w1150061410",
+    "highway": "unclassified",
+    "km": 1.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w50059241",
+    "highway": "residential",
+    "km": 1.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "maxspeed": "50",
+     "name": "Eldridge Drive",
+     "oneway": "no",
+     "surface": "bitumen_seal"
+    }
+   },
+   {
+    "id": "w499473633",
+    "highway": "tertiary",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "100",
+     "name": "Dingee-Rochester Road",
+     "source": "nearmap",
+     "surface": "bitumen_seal"
+    }
+   },
+   {
+    "id": "w766849058",
+    "highway": "unclassified",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "50",
+     "name": "Shirley Road",
+     "source:geometry": "Esri World Imagery",
+     "source:name": "State of Queensland (Department of Natural Resources, Mines and Energy) 2019",
+     "surface": "unpave"
+    }
+   },
+   {
+    "id": "w557647304",
+    "highway": "tertiary",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "maxspeed:source": "default residential speed limit in Australia",
+     "name": "Lake Terrace East",
+     "oneway": "no",
+     "surface": "bitumen_seal"
+    }
+   }
+  ]
+ }
+}

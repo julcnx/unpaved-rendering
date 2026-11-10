@@ -1,0 +1,60 @@
+# ISO 3166-1 alpha-2, OSM relation id of the country border. Used by stats/boundary.sh.
+# Found with Overpass 2026-11-02 (ISO3166-1 tag, lowest admin_level). French Guiana is admin_level=3 (French overseas region).
+GF 1260551 French Guiana
+TL 305142 East Timor
+GA 192793 Gabon
+CG 192794 Congo-Brazzaville
+KH 49898 Cambodia
+LA 49903 Laos
+PG 307866 Papua New Guinea
+MN 161033 Mongolia
+CU 307833 Cuba
+IS 299133 Iceland
+SN 192775 Senegal
+GM 192774 The Gambia
+GH 192781 Ghana
+BO 252645 Bolivia
+CM 192830 Cameroon
+MY 2108121 Malaysia
+PE 288247 Peru
+MM 50371 Myanmar
+CO 120027 Colombia
+KE 192798 Kenya
+MG 447325 Madagascar
+NP 184633 Nepal
+CD 192795 Democratic Republic of the Congo
+ZA 87565 South Africa
+AR 286393 Argentina
+PH 443174 Philippines
+AU 80500 Australia
+IN 304716 India
+ID 304751 Indonesia
+BR 59470 Brazil
+FI 54224 Finland
+CZ 51684 Czechia
+FR 2202162 France
+TH 2067731 Thailand
+VN 49915 Vietnam
+LK 536807 Sri Lanka
+CI 192779 Ivory Coast
+NZ 556706 New Zealand
+CL 167454 Chile
+NA 195266 Namibia
+DK 50046 Denmark
+GT 1521463 Guatemala
+HN 287670 Honduras
+MA 3630439 Morocco
+KG 178009 Kyrgyzstan
+ET 192800 Ethiopia
+SB 1857436 Solomon Islands
+AQ - Antarctica (no country relation: everything south of 60S)
+MX 114686 Mexico
+RO 90689 Romania
+GE 28699 Georgia
+ML 192785 Mali
+UG 192796 Uganda
+OM 305138 Oman
+AL 53292 Albania
+IR 304938 Iran
+UA 60199 Ukraine
+CA 1428125 Canada

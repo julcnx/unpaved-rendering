@@ -1,0 +1,1310 @@
+{
+ "country": "co",
+ "name": "Colombia",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:07:51.696Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "colombia-latest.osm.pbf",
+  "boundary": "r120027",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 11292.3,
+   "unpaved": 455.7,
+   "untagged": 395.5,
+   "offroad": 124.4,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 5535.3,
+   "untagged": 2573.5,
+   "unpaved": 587.3,
+   "offroad": 17,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 6679.9,
+   "untagged": 4605.3,
+   "unpaved": 2200.9,
+   "offroad": 32.6,
+   "specialized": 0.4
+  },
+  "tertiary": {
+   "unpaved": 12288.2,
+   "untagged": 9791.8,
+   "paved_tagged": 7930.5,
+   "offroad": 421.8,
+   "specialized": 18.4
+  },
+  "unclassified": {
+   "untagged": 83095.7,
+   "unpaved": 62955.9,
+   "offroad": 7385.8,
+   "paved_tagged": 3033.1,
+   "specialized": 176
+  },
+  "residential": {
+   "untagged": 54556.5,
+   "paved_tagged": 11033.4,
+   "unpaved": 9401.3,
+   "offroad": 665.4,
+   "specialized": 5.8
+  },
+  "all": {
+   "untagged": 155018.3,
+   "unpaved": 87889.2,
+   "paved_tagged": 45504.6,
+   "offroad": 8646.9,
+   "specialized": 200.7
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 11872.4,
+   "smoothness": 1395.6,
+   "tracktype": 5.9
+  },
+  "primary": {
+   "surface": 6139.6,
+   "smoothness": 184.6,
+   "tracktype": 108.3
+  },
+  "secondary": {
+   "surface": 8900.7,
+   "smoothness": 180.9,
+   "tracktype": 33.7
+  },
+  "tertiary": {
+   "surface": 20549.2,
+   "smoothness": 986.7,
+   "tracktype": 337.6
+  },
+  "unclassified": {
+   "surface": 69377.8,
+   "tracktype": 8608.3,
+   "smoothness": 4172.4
+  },
+  "residential": {
+   "surface": 20516.9,
+   "tracktype": 786.2,
+   "smoothness": 375.5
+  },
+  "all": {
+   "surface": 137356.6,
+   "tracktype": 9879.9,
+   "smoothness": 7295.6
+  }
+ },
+ "base_source_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 11872.4,
+   "default": 395.5
+  },
+  "primary": {
+   "surface": 6139.6,
+   "default": 2573.5
+  },
+  "secondary": {
+   "surface": 8900.7,
+   "default": 4605.3,
+   "tracktype": 13.1
+  },
+  "tertiary": {
+   "surface": 20549.2,
+   "default": 9791.8,
+   "tracktype": 109.7
+  },
+  "unclassified": {
+   "default": 83095.7,
+   "surface": 69377.8,
+   "tracktype": 4173.1
+  },
+  "residential": {
+   "default": 54556.5,
+   "surface": 20516.9,
+   "tracktype": 589
+  },
+  "all": {
+   "default": 155018.3,
+   "surface": 137356.6,
+   "tracktype": 4884.8
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {
+   "smoothness": 124.4
+  },
+  "primary": {
+   "tracktype": 17
+  },
+  "secondary": {
+   "tracktype": 21.6,
+   "smoothness": 11.4
+  },
+  "tertiary": {
+   "smoothness": 290.2,
+   "tracktype": 150
+  },
+  "unclassified": {
+   "tracktype": 5877.4,
+   "smoothness": 1684.4
+  },
+  "residential": {
+   "tracktype": 621.9,
+   "smoothness": 49.3
+  },
+  "all": {
+   "tracktype": 6688,
+   "smoothness": 2159.6
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=ground": 303.1,
+    "surface=unpaved": 154.2,
+    "surface=gravel": 120.7,
+    "surface=compacted": 1.1,
+    "surface=dirt": 1
+   },
+   "offroad": {
+    "smoothness=horrible": 124.4
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 491,
+    "surface=compacted": 33,
+    "surface=fine_gravel": 31.3,
+    "surface=ground": 18.2,
+    "surface=dirt": 13.6,
+    "surface=gravel": 8.4,
+    "surface=pavimentado": 5.7,
+    "surface=concrete:lanes": 3.2
+   },
+   "offroad": {
+    "tracktype=grade3": 17
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 1248.3,
+    "surface=gravel": 704.8,
+    "surface=ground": 160.9,
+    "surface=compacted": 72,
+    "surface=dirt": 36,
+    "tracktype=grade3": 11.5,
+    "surface=concrete:lanes": 0.3
+   },
+   "offroad": {
+    "tracktype=grade3": 17.6,
+    "smoothness=horrible": 10.9,
+    "tracktype=grade4": 4.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.4
+   }
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 7336.1,
+    "surface=gravel": 2566.2,
+    "surface=ground": 1768.5,
+    "surface=compacted": 619.6,
+    "surface=dirt": 239,
+    "tracktype=grade3": 45.5,
+    "surface=sand": 45.2,
+    "tracktype=grade2": 36,
+    "surface=grass": 21,
+    "tracktype=grade4": 16.4,
+    "surface=fine_gravel": 13,
+    "surface=unhewn_cobblestone": 12,
+    "surface=concrete:lanes": 6.8,
+    "surface=césped_tierra": 2.6,
+    "tracktype=grade5": 0.6,
+    "surface=pved": 0,
+    "surface=artificial_turf": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 182.8,
+    "tracktype=grade3": 119.6,
+    "smoothness=horrible": 88.9,
+    "tracktype=grade4": 29.2,
+    "tracktype=grade5": 1.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 18.4
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 38699.7,
+    "surface=ground": 11794.3,
+    "surface=gravel": 9407.5,
+    "surface=compacted": 3217.5,
+    "surface=dirt": 2782.8,
+    "tracktype=grade3": 2634.7,
+    "tracktype=grade4": 648.2,
+    "tracktype=grade2": 413.8,
+    "tracktype=grade5": 289.4,
+    "surface=fine_gravel": 203.4,
+    "surface=sand": 125.5,
+    "surface=pebblestone": 98.3,
+    "surface=earth": 82.8,
+    "surface=concrete:lanes": 76.1,
+    "surface=mud": 18,
+    "surface=grass": 11,
+    "surface=laterite": 3.3,
+    "surface=grass_paver": 3.1,
+    "surface=Bing": 2.8,
+    "surface=gru": 2.4,
+    "surface=tierrastart_with_a_tight_close-up_of_the_living_statue_performer_—_\"the_angel_of_la_rambla\"_—_framed_at_eye_level._the_camera_begins_a_slow_zoom-out,_revealing_the_full_elegance_of_her_angelic_wings_and_dramatic_costume._set_the_zoom_speed_to_cinematic_pa": 1.6,
+    "surface=unhewn_cobblestone": 1,
+    "surface=transversal_1_santuario_bajo": 0.3,
+    "surface=unP": 0.2,
+    "surface=metal_grid": 0.1,
+    "surface=gra": 0.1,
+    "surface=sueli": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 4108,
+    "tracktype=grade4": 1241.6,
+    "smoothness=very_bad": 832.3,
+    "smoothness=horrible": 676.1,
+    "tracktype=grade5": 527.8
+   },
+   "specialized": {
+    "smoothness=very_horrible": 175.3,
+    "smoothness=impassable": 0.7
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 7095.1,
+    "surface=ground": 816.9,
+    "surface=gravel": 714.6,
+    "surface=dirt": 457.2,
+    "tracktype=grade3": 429.4,
+    "surface=compacted": 273.6,
+    "tracktype=grade4": 61.9,
+    "tracktype=grade2": 48.4,
+    "surface=sand": 46.9,
+    "tracktype=grade5": 34.3,
+    "surface=concrete:lanes": 29.3,
+    "surface=grass": 14.9,
+    "surface=earth": 14.7,
+    "surface=unhewn_cobblestone": 11.8,
+    "surface=fine_gravel": 8,
+    "surface=pebblestone": 6.6,
+    "surface=mud": 2.4,
+    "surface=w": 0.8,
+    "surface=afirmado": 0.8,
+    "surface=stone": 0.7,
+    "surface=Bing": 0.7,
+    "surface=un[": 0.6,
+    "surface=dirt/sand": 0.5,
+    "surface=rock": 0.5,
+    "surface=destapada": 0.2,
+    "surface=non2": 0.2,
+    "surface=brick": 0.2,
+    "surface=asfaltoc": 0.2,
+    "surface=G": 0.1,
+    "surface=gron": 0.1,
+    "surface=pavimento": 0.1,
+    "surface=calle_2_sur": 0.1,
+    "surface=sin": 0.1,
+    "surface=tierra22": 0.1,
+    "surface=D": 0.1,
+    "surface=sol22": 0.1,
+    "surface=A": 0.1,
+    "surface=sin_pavimentar22": 0.1,
+    "surface=UN": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 503.8,
+    "tracktype=grade4": 77.6,
+    "tracktype=grade5": 40.4,
+    "smoothness=very_bad": 27.5,
+    "smoothness=horrible": 15.9
+   },
+   "specialized": {
+    "smoothness=very_horrible": 5.2,
+    "smoothness=impassable": 0.7
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 55024.3,
+    "surface=ground": 14861.9,
+    "surface=gravel": 13522.1,
+    "surface=compacted": 4216.8,
+    "surface=dirt": 3529.7,
+    "tracktype=grade3": 3121.1,
+    "tracktype=grade4": 726.4,
+    "tracktype=grade2": 498.1,
+    "tracktype=grade5": 324.2,
+    "surface=fine_gravel": 255.6,
+    "surface=sand": 217.6,
+    "surface=concrete:lanes": 115.7,
+    "surface=pebblestone": 104.9,
+    "surface=earth": 97.5,
+    "surface=grass": 47,
+    "surface=unhewn_cobblestone": 24.9,
+    "surface=mud": 20.4,
+    "surface=pavimentado": 5.7,
+    "surface=Bing": 3.4,
+    "surface=laterite": 3.3,
+    "surface=grass_paver": 3.1,
+    "surface=césped_tierra": 2.6,
+    "surface=gru": 2.4,
+    "surface=tierrastart_with_a_tight_close-up_of_the_living_statue_performer_—_\"the_angel_of_la_rambla\"_—_framed_at_eye_level._the_camera_begins_a_slow_zoom-out,_revealing_the_full_elegance_of_her_angelic_wings_and_dramatic_costume._set_the_zoom_speed_to_cinematic_pa": 1.6,
+    "surface=w": 0.8,
+    "surface=afirmado": 0.8,
+    "surface=stone": 0.7,
+    "surface=un[": 0.6,
+    "surface=dirt/sand": 0.5,
+    "surface=rock": 0.5,
+    "surface=transversal_1_santuario_bajo": 0.3,
+    "surface=destapada": 0.2,
+    "surface=unP": 0.2,
+    "surface=non2": 0.2,
+    "surface=brick": 0.2,
+    "surface=asfaltoc": 0.2,
+    "surface=G": 0.1,
+    "surface=gron": 0.1,
+    "surface=pavimento": 0.1,
+    "surface=metal_grid": 0.1,
+    "surface=calle_2_sur": 0.1,
+    "surface=gra": 0.1,
+    "surface=sin": 0.1,
+    "surface=tierra22": 0.1,
+    "surface=D": 0.1,
+    "surface=sol22": 0.1,
+    "surface=A": 0.1,
+    "surface=sin_pavimentar22": 0.1,
+    "surface=pved": 0,
+    "surface=sueli": 0,
+    "surface=artificial_turf": 0,
+    "surface=UN": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 4765.9,
+    "tracktype=grade4": 1352.6,
+    "smoothness=very_bad": 1042.7,
+    "smoothness=horrible": 916.2,
+    "tracktype=grade5": 569.5
+   },
+   "specialized": {
+    "smoothness=very_horrible": 199.3,
+    "smoothness=impassable": 1.4
+   }
+  }
+ },
+ "unknown_value_km": {
+  "smoothness=poor": 24.9,
+  "surface=pavimentado": 5.7,
+  "surface=Bing": 3.4,
+  "surface=césped_tierra": 2.6,
+  "surface=gru": 2.4,
+  "surface=tierrastart_with_a_tight_close-up_of_the_living_statue_performer_—_\"the_angel_of_la_rambla\"_—_framed_at_eye_level._the_camera_begins_a_slow_zoom-out,_revealing_the_full_elegance_of_her_angelic_wings_and_dramatic_costume._set_the_zoom_speed_to_cinematic_pa": 1.6,
+  "surface=w": 0.8,
+  "surface=afirmado": 0.8,
+  "surface=stone": 0.7,
+  "surface=un[": 0.6,
+  "surface=dirt/sand": 0.5,
+  "surface=transversal_1_santuario_bajo": 0.3,
+  "surface=destapada": 0.2,
+  "surface=unP": 0.2,
+  "surface=non2": 0.2,
+  "surface=brick": 0.2,
+  "surface=asfaltoc": 0.2,
+  "surface=G": 0.1,
+  "surface=gron": 0.1,
+  "surface=pavimento": 0.1,
+  "surface=metal_grid": 0.1,
+  "surface=calle_2_sur": 0.1,
+  "surface=gra": 0.1,
+  "surface=sin": 0.1,
+  "surface=tierra22": 0.1,
+  "surface=D": 0.1,
+  "surface=sol22": 0.1,
+  "surface=A": 0.1,
+  "surface=sin_pavimentar22": 0.1,
+  "surface=pved": 0,
+  "surface=sueli": 0,
+  "surface=artificial_turf": 0,
+  "surface=UN": 0
+ },
+ "conflict_km": {
+  "smoothness=good + surface=gravel": 77.9,
+  "paved (surface=paved) + tracktype=grade3": 30.8,
+  "smoothness=good + surface=unpaved": 25.6,
+  "smoothness=good + surface=dirt": 17.8,
+  "paved (surface=asphalt) + smoothness=very_bad": 12.5,
+  "smoothness=excellent + surface=gravel": 11,
+  "paved (surface=asphalt) + tracktype=grade3": 10.4,
+  "paved (surface=asphalt) + smoothness=very_horrible": 9.3,
+  "smoothness=excellent + surface=unpaved": 6.8,
+  "paved (surface=asphalt) + smoothness=horrible": 6.7,
+  "paved (surface=concrete) + tracktype=grade3": 6.2,
+  "paved (surface=paved) + smoothness=horrible": 5.3,
+  "paved (no surface) + smoothness=very_bad": 4.4,
+  "paved (surface=paving_stones) + tracktype=grade3": 3.5,
+  "paved (surface=paved) + smoothness=very_bad": 2.8,
+  "smoothness=good + surface=ground": 2.5,
+  "smoothness=good + surface=concrete:lanes": 2.4,
+  "paved (no surface) + smoothness=horrible": 2.2,
+  "smoothness=good + surface=compacted": 2,
+  "paved (surface=asphalt) + tracktype=grade4": 1.7,
+  "paved (surface=concrete) + tracktype=grade4": 1.6,
+  "paved (surface=paving_stones) + smoothness=very_bad": 1,
+  "paved (surface=paving_stones) + tracktype=grade4": 1,
+  "paved (surface=cobblestone) + tracktype=grade3": 0.8,
+  "smoothness=good + surface=stone": 0.7,
+  "paved (surface=concrete:plates) + tracktype=grade3": 0.7,
+  "paved (surface=paved) + smoothness=very_horrible": 0.4,
+  "paved (surface=sett) + smoothness=very_bad": 0.3,
+  "paved (surface=paved) + tracktype=grade4": 0.2,
+  "paved (surface=paved) + smoothness=impassable": 0.1,
+  "paved (surface=concrete) + tracktype=grade5": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w28293889",
+    "highway": "trunk",
+    "km": 76.8,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Ruta Nacional 40",
+     "highway": "trunk",
+     "name": "Puerto Carreño - La Primavera",
+     "nat_name": "Transversal Buenaventura - Villavicencio - Puerto Carreño",
+     "ref": "40",
+     "source": "Bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w166673145",
+    "highway": "trunk",
+    "km": 71.2,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Ruta Nacional 40",
+     "highway": "trunk",
+     "name": "Puerto Carreño - La Primavera",
+     "nat_name": "Transversal Buenaventura - Villavicencio - Puerto Carreño",
+     "ref": "40",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w123898329",
+    "highway": "trunk",
+    "km": 63.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "maxspeed": "40",
+     "name": "Ruta Nacional 40",
+     "ref": "40",
+     "smoothness": "horrible",
+     "source": "Bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w372250387",
+    "highway": "trunk",
+    "km": 38.7,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Vía Puerto Gaitán - San Pedro de Arimena",
+     "highway": "trunk",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "Ruta Nacional 40",
+     "ref": "40",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w35771683",
+    "highway": "primary",
+    "km": 28.1,
+    "level": "unpaved",
+    "tags": {
+     "description": "Trampolina del Muerte",
+     "highway": "primary",
+     "name": "Vía San Francisco - el Pepino - Villa Garzon",
+     "ref": "10",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w782726530",
+    "highway": "primary",
+    "km": 27.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "name": "Vía Curos - Málaga",
+     "oneway": "no",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w350006007",
+    "highway": "trunk",
+    "km": 27.8,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Ruta Nacional 40",
+     "highway": "trunk",
+     "name": "Puerto Carreño - La Primavera",
+     "nat_name": "Transversal Buenaventura - Villavicencio - Puerto Carreño",
+     "ref": "40",
+     "source": "Bing;bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w914980593",
+    "highway": "trunk",
+    "km": 27.2,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Ruta Nacional 40",
+     "highway": "trunk",
+     "name": "Puerto Carreño - La Primavera",
+     "nat_name": "Transversal Buenaventura - Villavicencio - Puerto Carreño",
+     "ref": "40",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w510293189",
+    "highway": "secondary",
+    "km": 26.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "source": "MapBox",
+     "surface": "gravel",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w361437725",
+    "highway": "secondary",
+    "km": 26.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Campoalegre-Paraiso",
+     "ref": "20440",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w336967969",
+    "highway": "primary",
+    "km": 26,
+    "level": "unpaved",
+    "tags": {
+     "description": "Trampolina del Muerte",
+     "highway": "primary",
+     "name": "Vía San Francisco - el Pepino - Villa Garzon",
+     "ref": "10",
+     "sidewalk": "no",
+     "smoothness": "bad",
+     "surface": "fine_gravel"
+    }
+   },
+   {
+    "id": "w914961462",
+    "highway": "trunk",
+    "km": 25.7,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Ruta Nacional 40",
+     "highway": "trunk",
+     "name": "Puerto Carreño - La Primavera",
+     "nat_name": "Transversal Buenaventura - Villavicencio - Puerto Carreño",
+     "ref": "40",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w350154041",
+    "highway": "trunk",
+    "km": 22.5,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "El Porvenir - Cumaribo",
+     "embankment": "yes",
+     "highway": "trunk",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "Ruta Nacional 40",
+     "ref": "40",
+     "smoothness": "bad",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w235717081",
+    "highway": "trunk",
+    "km": 22.4,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Vía Puerto Gaitán - San Pedro de Arimena",
+     "highway": "trunk",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "Ruta Nacional 40",
+     "ref": "40",
+     "smoothness": "bad",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w169377524",
+    "highway": "secondary",
+    "km": 21.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "40",
+     "oneway": "no",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w351219877",
+    "highway": "unclassified",
+    "km": 75.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "Via Chaparral - Santa Rita",
+     "smoothness": "horrible",
+     "source": "Bing",
+     "surface": "ground",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w835098894",
+    "highway": "unclassified",
+    "km": 69.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "La Cristalina",
+     "source": "Bing, Landsat",
+     "surface": "gravel",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w607952000",
+    "highway": "unclassified",
+    "km": 66.6,
+    "level": "offroad",
+    "tags": {
+     "description": "Trocha, requiere 4x4",
+     "highway": "unclassified",
+     "name": "Via La Catorce - El Capricho",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w57870460",
+    "highway": "unclassified",
+    "km": 66,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "La Cristalina",
+     "source": "Bing, Landsat",
+     "surface": "gravel",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w123898329",
+    "highway": "trunk",
+    "km": 63.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "maxspeed": "40",
+     "name": "Ruta Nacional 40",
+     "ref": "40",
+     "smoothness": "horrible",
+     "source": "Bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w612099978",
+    "highway": "unclassified",
+    "km": 50.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "name": "Via Palmarito - Chaparral",
+     "smoothness": "horrible",
+     "source": "Bing",
+     "surface": "ground",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w562607036",
+    "highway": "unclassified",
+    "km": 48.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "source": "Bing, Landsat",
+     "surface": "ground",
+     "tracktype": "grade3",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w261965033",
+    "highway": "unclassified",
+    "km": 35.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "Maxar Premium Imagery (Beta)",
+     "surface": "gravel",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w234182828",
+    "highway": "unclassified",
+    "km": 27.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "source": "Bing, Landsat",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w51129502",
+    "highway": "unclassified",
+    "km": 25.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "30",
+     "smoothness": "very_bad",
+     "source": "Bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w689257999",
+    "highway": "unclassified",
+    "km": 22.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "smoothness": "very_bad",
+     "source": "Bing",
+     "surface": "compacted",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w52022730",
+    "highway": "unclassified",
+    "km": 22.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "Bing",
+     "surface": "unpaved",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w39171231",
+    "highway": "unclassified",
+    "km": 20.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "sentinel 2",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w155340282",
+    "highway": "unclassified",
+    "km": 20.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "Bing",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w102486608",
+    "highway": "unclassified",
+    "km": 20.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "Bing",
+     "tracktype": "grade4"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w817662862",
+    "highway": "unclassified",
+    "km": 27,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w395028028",
+    "highway": "tertiary",
+    "km": 11.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Concordia - Balsamo",
+     "sidewalk": "no",
+     "smoothness": "good",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w396333433",
+    "highway": "secondary",
+    "km": 11.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Via caicedo",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w100011194",
+    "highway": "tertiary",
+    "km": 11.3,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Berlín - San Diego",
+     "smoothness": "very_bad",
+     "source": "Bing",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w36993416",
+    "highway": "tertiary",
+    "km": 9.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "32VL04",
+     "smoothness": "excellent",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w129369442",
+    "highway": "trunk",
+    "km": 5.9,
+    "level": "paved",
+    "tags": {
+     "alt_name": "Vía Puerto Gaitán - San Pedro de Arimena",
+     "highway": "trunk",
+     "lanes": "2",
+     "maxspeed": "80",
+     "name": "Ruta Nacional 40",
+     "ref": "40",
+     "smoothness": "horrible",
+     "source": "Bing, Landsat",
+     "surface": "asphalt",
+     "tracktype": "grade1"
+    }
+   },
+   {
+    "id": "w165662646",
+    "highway": "tertiary",
+    "km": 5.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "30",
+     "maxspeed:backward": "30",
+     "maxspeed:forward": "30",
+     "name": "via los Chivos",
+     "smoothness": "good",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w396459443",
+    "highway": "unclassified",
+    "km": 5.6,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Vía Caicedo",
+     "highway": "unclassified",
+     "lanes": "2",
+     "name": "Vía a Vereda Anocozca",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w575417911",
+    "highway": "unclassified",
+    "km": 5.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "source": "Bing y Geoporatal IGAC",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w737378762",
+    "highway": "tertiary",
+    "km": 5.1,
+    "level": "paved",
+    "tags": {
+     "embankment": "yes",
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Campo de la Cruz - Algodonal - Santa Lucía",
+     "oneway": "no",
+     "smoothness": "very_horrible",
+     "source": "Bing;survey",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w243228894",
+    "highway": "unclassified",
+    "km": 4.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w822065098",
+    "highway": "unclassified",
+    "km": 3.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w183931377",
+    "highway": "unclassified",
+    "km": 3.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w553356118",
+    "highway": "unclassified",
+    "km": 3.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "40",
+     "noname": "yes",
+     "sidewalk": "no",
+     "smoothness": "good",
+     "surface": "gravel",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w262478282",
+    "highway": "unclassified",
+    "km": 3.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w976781046",
+    "highway": "primary",
+    "km": 5.7,
+    "level": "unpaved",
+    "tags": {
+     "bridge:name": "Puente Río Mira",
+     "highway": "primary",
+     "lanes": "1",
+     "maxspeed": "60",
+     "name": "Espriella - Río Mataje",
+     "ref": "05",
+     "surface": "pavimentado"
+    }
+   },
+   {
+    "id": "w313510132",
+    "highway": "tertiary",
+    "km": 5.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Via a Buenos Aires",
+     "smoothness": "poor",
+     "surface": "gravel",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w643231720",
+    "highway": "unclassified",
+    "km": 2.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "Bing"
+    }
+   },
+   {
+    "id": "w468944432",
+    "highway": "tertiary",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "2",
+     "name": "Filo de los Arboledas- El Cajón",
+     "surface": "césped_tierra"
+    }
+   },
+   {
+    "id": "w370794609",
+    "highway": "tertiary",
+    "km": 2.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Via a Buenos Aires",
+     "smoothness": "poor",
+     "surface": "gravel",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w709862866",
+    "highway": "unclassified",
+    "km": 2.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "gru"
+    }
+   },
+   {
+    "id": "w1314277192",
+    "highway": "tertiary",
+    "km": 2.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "poor",
+     "surface": "ground",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w1314277180",
+    "highway": "tertiary",
+    "km": 1.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "poor",
+     "surface": "ground",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w834332233",
+    "highway": "unclassified",
+    "km": 1.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "tierrastart_with_a_tight_close-up_of_the_living_statue_performer_—_\"the_angel_of_la_rambla\"_—_framed_at_eye_level._the_camera_begins_a_slow_zoom-out,_revealing_the_full_elegance_of_her_angelic_wings_and_dramatic_costume._set_the_zoom_speed_to_cinematic_pa"
+    }
+   },
+   {
+    "id": "w311784731",
+    "highway": "tertiary",
+    "km": 1.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "poor",
+     "surface": "ground",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w1314277226",
+    "highway": "tertiary",
+    "km": 1.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Via a Buenos Aires",
+     "smoothness": "poor",
+     "surface": "gravel",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w313419447",
+    "highway": "tertiary",
+    "km": 1.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "poor",
+     "surface": "gravel",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w313510129",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Via a Buenos Aires",
+     "smoothness": "poor",
+     "surface": "gravel",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w391429364",
+    "highway": "tertiary",
+    "km": 1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "poor",
+     "surface": "ground",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   },
+   {
+    "id": "w313510133",
+    "highway": "tertiary",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Via a Buenos Aires",
+     "smoothness": "poor",
+     "surface": "gravel",
+     "unsigned_ref": "60 AN 04-1-1"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,1420 @@
+{
+ "country": "id",
+ "name": "Indonesia",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:58:42.737Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "indonesia-latest.osm.pbf",
+  "boundary": "r304751",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "untagged": 4024.2,
+   "paved_tagged": 2317.1,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "untagged": 34696.6,
+   "paved_tagged": 16040.1,
+   "unpaved": 1650.5,
+   "offroad": 16.3,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 17692.1,
+   "paved_tagged": 7975.3,
+   "unpaved": 1245.1,
+   "offroad": 19.1,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 31369.9,
+   "paved_tagged": 9148.1,
+   "unpaved": 2514.5,
+   "offroad": 29.2,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 91456,
+   "paved_tagged": 13499.4,
+   "unpaved": 4790,
+   "offroad": 158,
+   "specialized": 6.2
+  },
+  "unclassified": {
+   "untagged": 202102.1,
+   "unpaved": 20076.1,
+   "paved_tagged": 8050.9,
+   "offroad": 672.5,
+   "specialized": 22.7
+  },
+  "residential": {
+   "untagged": 602058.2,
+   "paved_tagged": 24869.8,
+   "unpaved": 13226,
+   "offroad": 325.9,
+   "specialized": 15.8
+  },
+  "all": {
+   "untagged": 983399.1,
+   "paved_tagged": 81900.9,
+   "unpaved": 43502.1,
+   "offroad": 1221.1,
+   "specialized": 44.7
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 2317.1,
+   "smoothness": 309.5
+  },
+  "trunk": {
+   "surface": 17702.3,
+   "smoothness": 1482.6,
+   "tracktype": 24.9,
+   "4wd_only": 1.7
+  },
+  "primary": {
+   "surface": 9239.5,
+   "smoothness": 2118.3,
+   "tracktype": 19.4,
+   "4wd_only": 1.5
+  },
+  "secondary": {
+   "surface": 11672.8,
+   "smoothness": 2448,
+   "tracktype": 41.3
+  },
+  "tertiary": {
+   "surface": 18389.9,
+   "smoothness": 3940,
+   "tracktype": 137,
+   "4wd_only": 1
+  },
+  "unclassified": {
+   "surface": 28332.5,
+   "smoothness": 2887.7,
+   "tracktype": 753.9,
+   "4wd_only": 34.5
+  },
+  "residential": {
+   "surface": 38189.5,
+   "smoothness": 13733.7,
+   "tracktype": 339.3,
+   "4wd_only": 0.3
+  },
+  "all": {
+   "surface": 125843.7,
+   "smoothness": 26919.7,
+   "tracktype": 1315.7,
+   "4wd_only": 39
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "default": 4024.2,
+   "surface": 2317.1
+  },
+  "trunk": {
+   "default": 34696.6,
+   "surface": 17702.3,
+   "tracktype": 4.7
+  },
+  "primary": {
+   "default": 17692.1,
+   "surface": 9239.5
+  },
+  "secondary": {
+   "default": 31369.9,
+   "surface": 11672.8,
+   "tracktype": 19
+  },
+  "tertiary": {
+   "default": 91456,
+   "surface": 18389.9,
+   "tracktype": 63.7
+  },
+  "unclassified": {
+   "default": 202102.1,
+   "surface": 28332.5,
+   "tracktype": 489.7
+  },
+  "residential": {
+   "default": 602058.2,
+   "surface": 38189.5,
+   "tracktype": 248
+  },
+  "all": {
+   "default": 983399.1,
+   "surface": 125843.7,
+   "tracktype": 825.1
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {
+   "smoothness": 10,
+   "tracktype": 4.7,
+   "4wd_only": 1.7
+  },
+  "primary": {
+   "smoothness": 17.6,
+   "4wd_only": 1.5
+  },
+  "secondary": {
+   "smoothness": 17.1,
+   "tracktype": 12.1
+  },
+  "tertiary": {
+   "smoothness": 100.1,
+   "tracktype": 63.8,
+   "4wd_only": 0.3
+  },
+  "unclassified": {
+   "tracktype": 482.2,
+   "smoothness": 212.2,
+   "4wd_only": 0.8
+  },
+  "residential": {
+   "tracktype": 230.1,
+   "smoothness": 111.6
+  },
+  "all": {
+   "tracktype": 792.9,
+   "smoothness": 468.5,
+   "4wd_only": 4.3
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 1500.9,
+    "surface=gravel": 79.7,
+    "surface=dirt": 53.5,
+    "surface=compacted": 10,
+    "surface=dirt/sand": 9.3,
+    "surface=sand": 6.6,
+    "tracktype=grade3": 4.7,
+    "surface=mud": 1.7,
+    "surface=pebblestone": 0.5
+   },
+   "offroad": {
+    "smoothness=very_bad": 10,
+    "tracktype=grade3": 4.7,
+    "4wd_only=yes": 1.7
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 1059.8,
+    "surface=compacted": 89,
+    "surface=dirt": 33.8,
+    "surface=concrete:lanes": 26.2,
+    "surface=gravel": 22.2,
+    "surface=ground": 15.2,
+    "surface=088": 9,
+    "surface=rock": 7.2,
+    "surface=mud": 1.4,
+    "surface=pebblestone": 0.5,
+    "surface=012.8": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 17.6,
+    "4wd_only=yes": 1.5
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 1973,
+    "surface=ground": 230.6,
+    "surface=gravel": 131.2,
+    "surface=dirt": 112.9,
+    "surface=compacted": 65.4,
+    "surface=grass": 16,
+    "tracktype=grade3": 12,
+    "surface=pebblestone": 2.4,
+    "surface=mud": 0.4
+   },
+   "offroad": {
+    "smoothness=very_bad": 17.1,
+    "tracktype=grade3": 12,
+    "tracktype=grade5": 0.1
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 3441.4,
+    "surface=ground": 670.1,
+    "surface=gravel": 384.3,
+    "surface=dirt": 123.5,
+    "surface=compacted": 88.8,
+    "surface=sand": 65.4,
+    "tracktype=grade3": 39.8,
+    "surface=pebblestone": 38.5,
+    "surface=concrete:lanes": 18.6,
+    "surface=asphalt_ruts": 18.6,
+    "tracktype=grade2": 12.9,
+    "tracktype=grade4": 11,
+    "surface=unhewn_cobblestone": 9.5,
+    "surface=asphalt,dull": 8.3,
+    "surface=earth": 8.1,
+    "surface=fine_gravel": 7.4,
+    "surface=Tanah dan Aspal": 4.3,
+    "surface=asphalt_&_Ground": 1.1,
+    "surface=mud": 1,
+    "surface=rock": 0.9,
+    "surface=tartan": 0.8
+   },
+   "offroad": {
+    "smoothness=very_bad": 82.6,
+    "tracktype=grade3": 52.7,
+    "smoothness=horrible": 11.2,
+    "tracktype=grade4": 11,
+    "4wd_only=yes": 0.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 6.2
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 16315.7,
+    "surface=ground": 2340.9,
+    "surface=dirt": 505.5,
+    "surface=gravel": 489.6,
+    "tracktype=grade3": 306.6,
+    "surface=compacted": 222.9,
+    "surface=sand": 140.8,
+    "surface=concrete:lanes": 87.4,
+    "tracktype=grade2": 62,
+    "surface=fine_gravel": 61.9,
+    "tracktype=grade4": 58.3,
+    "surface=pebblestone": 31.5,
+    "surface=rock": 30.7,
+    "surface=stone": 27,
+    "surface=earth": 23.7,
+    "surface=grass": 16.4,
+    "surface=asphalt_ruts": 13.3,
+    "surface=mud": 8,
+    "surface=TANAH KANCING": 4.5,
+    "surface=unhewn_cobblestone": 3.3,
+    "surface=clay": 3.2,
+    "tracktype=grade5": 2.7,
+    "surface=grass_paver": 2.6,
+    "surface=Hotmix dan Tanah": 2.1,
+    "surface=yes": 2,
+    "surface=Tanah dan Beton": 1.4,
+    "surface=ground;asphalt": 1.4,
+    "surface=Rabat": 1,
+    "surface=Tanah": 0.9,
+    "surface=laterite": 0.8,
+    "surface=Asphalt,_teilweise": 0.8,
+    "surface=com": 0.8,
+    "surface=Asphalt_mit_Löchern": 0.7,
+    "surface=Asphalt,_sehr_schlechter Zustand": 0.4,
+    "surface=rocky": 0.2,
+    "surface=cement": 0.2,
+    "surface=boardwalk": 0.1,
+    "surface=dirt/sand": 0,
+    "surface=Semen": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 372.8,
+    "smoothness=very_bad": 143.3,
+    "tracktype=grade4": 100.3,
+    "smoothness=horrible": 46.2,
+    "tracktype=grade5": 9.1,
+    "4wd_only=yes": 0.8
+   },
+   "specialized": {
+    "smoothness=impassable": 12.7,
+    "smoothness=very_horrible": 10
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 10543.2,
+    "surface=ground": 1454.3,
+    "surface=gravel": 580.7,
+    "surface=compacted": 221.1,
+    "surface=dirt": 200.3,
+    "tracktype=grade3": 144.4,
+    "surface=fine_gravel": 62.9,
+    "surface=sand": 60.5,
+    "surface=pebblestone": 54.4,
+    "surface=concrete:lanes": 42.8,
+    "tracktype=grade4": 37.9,
+    "tracktype=grade2": 32.1,
+    "surface=earth": 23.4,
+    "surface=rock": 21.7,
+    "surface=grass": 20.1,
+    "tracktype=grade5": 9.6,
+    "surface=mud": 7.9,
+    "surface=clay": 7,
+    "surface=asphalt_&_Ground": 6.4,
+    "surface=stone": 6.2,
+    "surface=grass_paver": 3.2,
+    "surface=dirt/sand": 2.4,
+    "surface=asphalt_ruts": 2.1,
+    "surface=unhewn_cobblestone": 2.1,
+    "surface=concrete_and_batu": 1.5,
+    "surface=Paving": 1.4,
+    "surface=concrete_brick": 1.1,
+    "surface=Semen": 1,
+    "surface=concrete_made_paving_stones": 1,
+    "surface=gravel;paved": 0.9,
+    "surface=concrete_made_stones": 0.9,
+    "surface=Tanah": 0.9,
+    "surface=Paving Blok": 0.8,
+    "surface=rough_asphalt": 0.8,
+    "surface=pabblestone": 0.7,
+    "surface=asphalt:lanes": 0.7,
+    "surface=Lobang_and_asphalt": 0.7,
+    "surface=MAKADAM": 0.6,
+    "surface=pengerasan": 0.6,
+    "surface=rabat_beton": 0.6,
+    "surface=laterite": 0.6,
+    "surface=residential": 0.5,
+    "surface=asphalt,_partly_conrete_made_stones": 0.5,
+    "surface=soil": 0.4,
+    "surface=Paving Block": 0.4,
+    "surface=batu_dan_cor_blok": 0.4,
+    "surface=semen": 0.4,
+    "surface=TANAH KANCING": 0.3,
+    "surface=Trotoar": 0.3,
+    "surface=asphalt_mit_Löchern": 0.3,
+    "surface=sirtu": 0.2,
+    "surface=corn_block": 0.2,
+    "surface=originally_asphalt,_holes_filled_with_concrete_and_many_holes": 0.2,
+    "surface=asphalt,_few_holes": 0.2,
+    "surface=rigid": 0.2,
+    "surface=boardwalk": 0.2,
+    "surface=cement": 0.2,
+    "surface=interlock": 0.2,
+    "surface=concrete;ground": 0.2,
+    "surface=ads": 0.1,
+    "surface=very_bad": 0.1,
+    "surface=PAVING BLOK": 0.1,
+    "surface=G.": 0.1,
+    "surface=roman_paving": 0.1,
+    "surface=o": 0.1,
+    "surface=semenisasi": 0.1,
+    "surface=2.5": 0.1,
+    "surface=2": 0,
+    "surface=Batu_Hampar": 0,
+    "surface=track": 0,
+    "surface=tiles": 0,
+    "surface=asphalt_with_holes": 0,
+    "surface=yes": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 158,
+    "smoothness=very_bad": 85.1,
+    "tracktype=grade4": 53.3,
+    "tracktype=grade5": 18.8,
+    "smoothness=horrible": 10.7
+   },
+   "specialized": {
+    "smoothness=impassable": 11,
+    "smoothness=very_horrible": 4.8
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 34834,
+    "surface=ground": 4711.1,
+    "surface=gravel": 1687.6,
+    "surface=dirt": 1029.5,
+    "surface=compacted": 697.1,
+    "tracktype=grade3": 507.4,
+    "surface=sand": 273.3,
+    "surface=concrete:lanes": 175.1,
+    "surface=fine_gravel": 132.2,
+    "surface=pebblestone": 127.7,
+    "tracktype=grade4": 107.2,
+    "tracktype=grade2": 107,
+    "surface=rock": 60.4,
+    "surface=earth": 55.2,
+    "surface=grass": 52.4,
+    "surface=asphalt_ruts": 34,
+    "surface=stone": 33.1,
+    "surface=mud": 20.3,
+    "surface=unhewn_cobblestone": 14.9,
+    "tracktype=grade5": 12.2,
+    "surface=dirt/sand": 11.7,
+    "surface=clay": 10.2,
+    "surface=088": 9,
+    "surface=asphalt,dull": 8.3,
+    "surface=asphalt_&_Ground": 7.5,
+    "surface=grass_paver": 5.8,
+    "surface=TANAH KANCING": 4.8,
+    "surface=Tanah dan Aspal": 4.3,
+    "surface=Hotmix dan Tanah": 2.1,
+    "surface=yes": 2,
+    "surface=Tanah": 1.7,
+    "surface=concrete_and_batu": 1.5,
+    "surface=Tanah dan Beton": 1.4,
+    "surface=ground;asphalt": 1.4,
+    "surface=laterite": 1.4,
+    "surface=Paving": 1.4,
+    "surface=concrete_brick": 1.1,
+    "surface=Semen": 1,
+    "surface=Rabat": 1,
+    "surface=concrete_made_paving_stones": 1,
+    "surface=gravel;paved": 0.9,
+    "surface=concrete_made_stones": 0.9,
+    "surface=Paving Blok": 0.8,
+    "surface=Asphalt,_teilweise": 0.8,
+    "surface=com": 0.8,
+    "surface=tartan": 0.8,
+    "surface=rough_asphalt": 0.8,
+    "surface=Asphalt_mit_Löchern": 0.7,
+    "surface=pabblestone": 0.7,
+    "surface=asphalt:lanes": 0.7,
+    "surface=Lobang_and_asphalt": 0.7,
+    "surface=MAKADAM": 0.6,
+    "surface=pengerasan": 0.6,
+    "surface=rabat_beton": 0.6,
+    "surface=residential": 0.5,
+    "surface=asphalt,_partly_conrete_made_stones": 0.5,
+    "surface=soil": 0.4,
+    "surface=Asphalt,_sehr_schlechter Zustand": 0.4,
+    "surface=Paving Block": 0.4,
+    "surface=batu_dan_cor_blok": 0.4,
+    "surface=cement": 0.4,
+    "surface=semen": 0.4,
+    "surface=boardwalk": 0.3,
+    "surface=Trotoar": 0.3,
+    "surface=asphalt_mit_Löchern": 0.3,
+    "surface=rocky": 0.2,
+    "surface=sirtu": 0.2,
+    "surface=corn_block": 0.2,
+    "surface=originally_asphalt,_holes_filled_with_concrete_and_many_holes": 0.2,
+    "surface=asphalt,_few_holes": 0.2,
+    "surface=rigid": 0.2,
+    "surface=interlock": 0.2,
+    "surface=concrete;ground": 0.2,
+    "surface=ads": 0.1,
+    "surface=very_bad": 0.1,
+    "surface=PAVING BLOK": 0.1,
+    "surface=G.": 0.1,
+    "surface=roman_paving": 0.1,
+    "surface=o": 0.1,
+    "surface=semenisasi": 0.1,
+    "surface=2.5": 0.1,
+    "surface=2": 0,
+    "surface=Batu_Hampar": 0,
+    "surface=track": 0,
+    "surface=012.8": 0,
+    "surface=tiles": 0,
+    "surface=asphalt_with_holes": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 600.2,
+    "smoothness=very_bad": 355.7,
+    "tracktype=grade4": 164.6,
+    "smoothness=horrible": 68.1,
+    "tracktype=grade5": 28.1,
+    "4wd_only=yes": 4.3
+   },
+   "specialized": {
+    "smoothness=impassable": 23.7,
+    "smoothness=very_horrible": 21
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=asphalt_ruts": 34,
+  "surface=stone": 33.1,
+  "smoothness=good;intermediate": 18.1,
+  "surface=dirt/sand": 11.7,
+  "smoothness=12": 10,
+  "surface=088": 9,
+  "surface=asphalt,dull": 8.3,
+  "surface=asphalt_&_Ground": 7.5,
+  "smoothness=intermediate;good": 6.5,
+  "surface=TANAH KANCING": 4.8,
+  "surface=Tanah dan Aspal": 4.3,
+  "surface=Hotmix dan Tanah": 2.1,
+  "surface=yes": 2,
+  "surface=Tanah": 1.7,
+  "smoothness=bad;good": 1.6,
+  "surface=concrete_and_batu": 1.5,
+  "surface=Tanah dan Beton": 1.4,
+  "surface=Paving": 1.4,
+  "surface=concrete_brick": 1.1,
+  "surface=Semen": 1,
+  "surface=Rabat": 1,
+  "surface=concrete_made_paving_stones": 1,
+  "surface=concrete_made_stones": 0.9,
+  "surface=Paving Blok": 0.8,
+  "surface=Asphalt,_teilweise": 0.8,
+  "surface=com": 0.8,
+  "surface=tartan": 0.8,
+  "surface=rough_asphalt": 0.8,
+  "surface=Asphalt_mit_Löchern": 0.7,
+  "surface=pabblestone": 0.7,
+  "surface=asphalt:lanes": 0.7,
+  "smoothness=excellent;good": 0.7,
+  "surface=Lobang_and_asphalt": 0.7,
+  "surface=MAKADAM": 0.6,
+  "surface=pengerasan": 0.6,
+  "surface=rabat_beton": 0.6,
+  "surface=residential": 0.5,
+  "smoothness=Mulus": 0.5,
+  "surface=asphalt,_partly_conrete_made_stones": 0.5,
+  "smoothness=poor": 0.5,
+  "smoothness=2": 0.5,
+  "surface=soil": 0.4,
+  "surface=Asphalt,_sehr_schlechter Zustand": 0.4,
+  "surface=Paving Block": 0.4,
+  "surface=batu_dan_cor_blok": 0.4,
+  "surface=cement": 0.4,
+  "smoothness=medium": 0.4,
+  "surface=semen": 0.4,
+  "surface=boardwalk": 0.3,
+  "surface=Trotoar": 0.3,
+  "smoothness=intermediate;good;bad": 0.3,
+  "surface=asphalt_mit_Löchern": 0.3,
+  "surface=rocky": 0.2,
+  "surface=sirtu": 0.2,
+  "surface=corn_block": 0.2,
+  "surface=originally_asphalt,_holes_filled_with_concrete_and_many_holes": 0.2,
+  "surface=asphalt,_few_holes": 0.2,
+  "surface=rigid": 0.2,
+  "surface=interlock": 0.2,
+  "smoothness=baik": 0.2,
+  "surface=ads": 0.1,
+  "smoothness=7": 0.1,
+  "surface=very_bad": 0.1,
+  "surface=PAVING BLOK": 0.1,
+  "surface=G.": 0.1,
+  "surface=roman_paving": 0.1,
+  "surface=o": 0.1,
+  "surface=semenisasi": 0.1,
+  "surface=2.5": 0.1,
+  "surface=2": 0,
+  "smoothness=Baik": 0,
+  "surface=Batu_Hampar": 0,
+  "surface=track": 0,
+  "surface=012.8": 0,
+  "surface=tiles": 0,
+  "surface=asphalt_with_holes": 0
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + smoothness=very_bad": 50.1,
+  "paved (no surface) + smoothness=horrible": 36.5,
+  "smoothness=good + surface=unpaved": 33.7,
+  "paved (surface=asphalt) + tracktype=grade3": 33,
+  "paved (no surface) + 4wd_only=yes": 31.8,
+  "paved (surface=paved) + smoothness=very_bad": 27.9,
+  "paved (surface=asphalt) + smoothness=horrible": 22,
+  "paved (surface=concrete) + smoothness=very_bad": 16.7,
+  "smoothness=good + surface=ground": 16.2,
+  "smoothness=good + surface=compacted": 14.7,
+  "paved (no surface) + smoothness=very_bad": 12.5,
+  "paved (no surface) + smoothness=impassable": 12.4,
+  "paved (surface=paving_stones) + smoothness=very_bad": 10.9,
+  "paved (surface=asphalt) + tracktype=grade5": 8.3,
+  "smoothness=good + surface=gravel": 6.3,
+  "paved (surface=cobblestone) + smoothness=very_bad": 4.8,
+  "smoothness=good + surface=sand": 4.3,
+  "smoothness=good + surface=dirt": 3.8,
+  "paved (surface=sett) + smoothness=very_bad": 3.4,
+  "smoothness=good + surface=pebblestone": 3.3,
+  "paved (surface=concrete) + tracktype=grade3": 3.1,
+  "paved (surface=concrete) + smoothness=horrible": 3,
+  "paved (surface=concrete) + tracktype=grade4": 2,
+  "paved (no surface) + 4wd_only=recommended": 1.9,
+  "paved (surface=asphalt) + tracktype=grade4": 1.9,
+  "paved (surface=paved) + smoothness=very_horrible": 1.8,
+  "smoothness=good + surface=clay": 1.4,
+  "paved (surface=paving_stones) + smoothness=horrible": 1.4,
+  "paved (surface=concrete) + tracktype=grade5": 1.1,
+  "paved (surface=concrete) + smoothness=impassable": 1,
+  "paved (surface=cobblestone) + tracktype=grade3": 0.8,
+  "paved (surface=paved) + smoothness=horrible": 0.8,
+  "smoothness=good + surface=Paving Blok": 0.6,
+  "paved (surface=paved) + tracktype=grade3": 0.5,
+  "paved (surface=paving_stones) + smoothness=impassable": 0.5,
+  "smoothness=excellent + surface=Tanah": 0.5,
+  "smoothness=good + surface=grass": 0.4,
+  "paved (surface=paved) + smoothness=impassable": 0.3,
+  "paved (surface=paving_stones) + tracktype=grade3": 0.3,
+  "smoothness=excellent + surface=unpaved": 0.2,
+  "paved (no surface) + smoothness=very_horrible": 0.2,
+  "paved (surface=asphalt) + smoothness=very_horrible": 0.1,
+  "paved (surface=wood) + smoothness=very_bad": 0,
+  "paved (surface=wood) + smoothness=impassable": 0,
+  "paved (surface=wood) + smoothness=horrible": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w308693362",
+    "highway": "secondary",
+    "km": 58.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Jalan Poros RAPP",
+     "source": "GPS Track",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w1061693681",
+    "highway": "secondary",
+    "km": 52.9,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Jalan Paralel Perbatasan",
+     "highway": "secondary",
+     "name": "Jalan Poros Sesua - Long Loreh - Pujungan - Long Nawang",
+     "planned:highway": "trunk",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w614638623",
+    "highway": "secondary",
+    "km": 45.5,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Jalan Paralel Perbatasan",
+     "highway": "secondary",
+     "import": "yes",
+     "name": "Jalan Poros Sesua - Long Loreh - Pujungan - Long Nawang",
+     "planned:highway": "trunk",
+     "source": "digitalglobe",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w604673076",
+    "highway": "trunk",
+    "km": 42.4,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Jl. Paralel Perbatasan",
+     "highway": "trunk",
+     "name": "Jalan Trans Kalimantan",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w582395794",
+    "highway": "secondary",
+    "km": 37.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Jalan Poros Tanjung Harapan",
+     "source": "digitalglobe",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w596774292",
+    "highway": "primary",
+    "km": 37.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w628495950",
+    "highway": "secondary",
+    "km": 32.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Jalan Lintas Kalimantan Poros Tengah",
+     "planned:highway": "trunk",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w577385815",
+    "highway": "primary",
+    "km": 30,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Jalan Akses Perbatasan 1",
+     "highway": "primary",
+     "name": "Jalan Paralel Perbatasan Krayan",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w584103445",
+    "highway": "trunk",
+    "km": 29.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Jalan Gimbis - Elelim - Trans Papua",
+     "ref": "B05",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w366387037",
+    "highway": "secondary",
+    "km": 28,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w428475892",
+    "highway": "trunk",
+    "km": 28,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Jalan Trans Papua Muri - Kwatisore",
+     "ref": "B07",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w596782691",
+    "highway": "secondary",
+    "km": 26.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w768395441",
+    "highway": "secondary",
+    "km": 26,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w983463869",
+    "highway": "secondary",
+    "km": 26,
+    "level": "unpaved",
+    "tags": {
+     "alt_name:en": "Mumugu-Kenyam Road",
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Jalan Trans Papua Batas Batu - Mumugu",
+     "oneway": "no",
+     "ref": "B17",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w604109109",
+    "highway": "primary",
+    "km": 24.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "import": "yes",
+     "name": "Jalan Poros Labuan—Ereke",
+     "smoothness": "bad",
+     "source": "digitalglobe",
+     "surface": "compacted"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w547228128",
+    "highway": "unclassified",
+    "km": 17.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "digitalglobe",
+     "surface": "stone",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w587311198",
+    "highway": "tertiary",
+    "km": 17,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Jalan Matanga-Kelapalima-Lambako",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w625233072",
+    "highway": "unclassified",
+    "km": 15.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "name": "Rencana Jalan Lintas Waduk Riam Kanan",
+     "source": "digitalglobe",
+     "surface": "unpaved",
+     "tracktype": "grade4",
+     "width": "6"
+    }
+   },
+   {
+    "id": "w227532919",
+    "highway": "unclassified",
+    "km": 13.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Jalan Cikajang - Gunung Papandayan",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w989282075",
+    "highway": "secondary",
+    "km": 13.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w549451390",
+    "highway": "unclassified",
+    "km": 13.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w151304647",
+    "highway": "unclassified",
+    "km": 13,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w332379279",
+    "highway": "residential",
+    "km": 12.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w661674385",
+    "highway": "tertiary",
+    "km": 11.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "import": "yes",
+     "smoothness": "very_bad",
+     "source": "digitalglobe",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1172709603",
+    "highway": "tertiary",
+    "km": 11.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Jalan Kajong - Labuan Bajo",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "source": "GPS",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w552844827",
+    "highway": "unclassified",
+    "km": 11.2,
+    "level": "offroad",
+    "tags": {
+     "fixme": "needs verifications",
+     "highway": "unclassified",
+     "name": "Jalan Lintas Selatan",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "width": "16"
+    }
+   },
+   {
+    "id": "w276731541",
+    "highway": "tertiary",
+    "km": 10.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w806269710",
+    "highway": "unclassified",
+    "km": 10.3,
+    "level": "offroad",
+    "tags": {
+     "fixme": "needs verifications",
+     "highway": "unclassified",
+     "name": "Jalan Lintas Selatan",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "width": "16"
+    }
+   },
+   {
+    "id": "w682831325",
+    "highway": "unclassified",
+    "km": 9.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "source": "digitalglobe",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1526398536",
+    "highway": "unclassified",
+    "km": 9.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "name": "Rencana Jalan Lintas Waduk Riam Kanan",
+     "source": "digitalglobe",
+     "surface": "unpaved",
+     "tracktype": "grade4",
+     "width": "6"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w666005698",
+    "highway": "unclassified",
+    "km": 31.8,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "import": "yes",
+     "name": "Jalan Hutagalung Kebun Tele",
+     "source": "digitalglobe"
+    }
+   },
+   {
+    "id": "w686141000",
+    "highway": "tertiary",
+    "km": 12.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "smoothness": "good",
+     "surface": "compacted",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w393303212",
+    "highway": "tertiary",
+    "km": 10.7,
+    "level": "unpaved",
+    "tags": {
+     "check_date": "2026-09-07",
+     "highway": "tertiary",
+     "smoothness": "good",
+     "source": "osm-gpx",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w680294940",
+    "highway": "residential",
+    "km": 10,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "import": "yes",
+     "smoothness": "horrible",
+     "source": "digitalglobe"
+    }
+   },
+   {
+    "id": "w551012386",
+    "highway": "tertiary",
+    "km": 9.8,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "import": "yes",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "digitalglobe",
+     "surface": "asphalt",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w683816818",
+    "highway": "residential",
+    "km": 8.1,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "impassable"
+    }
+   },
+   {
+    "id": "w189249874",
+    "highway": "unclassified",
+    "km": 7.5,
+    "level": "unpaved",
+    "tags": {
+     "check_date": "2026-07-18",
+     "highway": "unclassified",
+     "lane_markings": "no",
+     "lit": "no",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w228482494",
+    "highway": "trunk",
+    "km": 6.5,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Jalan Lintas Selatan",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w701496358",
+    "highway": "unclassified",
+    "km": 6.4,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "digitalglobe",
+     "surface": "asphalt",
+     "width": "2.5"
+    }
+   },
+   {
+    "id": "w652770404",
+    "highway": "residential",
+    "km": 6.3,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w652769073",
+    "highway": "residential",
+    "km": 5.7,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w702332556",
+    "highway": "unclassified",
+    "km": 5.6,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "digitalglobe",
+     "surface": "asphalt",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w1534583265",
+    "highway": "tertiary",
+    "km": 5.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w166613226",
+    "highway": "unclassified",
+    "km": 5.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "motorcycle": "yes",
+     "smoothness": "good",
+     "surface": "asphalt",
+     "tracktype": "grade3",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w587075308",
+    "highway": "secondary",
+    "km": 5.2,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "4",
+     "motorcycle": "yes",
+     "name": "Jalan Susilo Bambang Yudoyono (SBY)",
+     "oneway": "yes",
+     "smoothness": "intermediate",
+     "surface": "asphalt",
+     "tracktype": "grade3"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w547228128",
+    "highway": "unclassified",
+    "km": 17.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "digitalglobe",
+     "surface": "stone",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w189249898",
+    "highway": "tertiary",
+    "km": 15,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "asphalt_ruts"
+    }
+   },
+   {
+    "id": "w596466119",
+    "highway": "trunk",
+    "km": 9.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Jalan Lintas Barat Sumatera",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w662265950",
+    "highway": "primary",
+    "km": 9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "import": "yes",
+     "name": "Jalan Tegal Mukti - Tajab",
+     "source": "digitalglobe",
+     "surface": "088"
+    }
+   },
+   {
+    "id": "w586139832",
+    "highway": "tertiary",
+    "km": 5.8,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Jalan Wanagiri",
+     "smoothness": "good;intermediate",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w554443393",
+    "highway": "unclassified",
+    "km": 4.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "stone",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w172155659",
+    "highway": "tertiary",
+    "km": 3.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Batu Keruk-Gelumpang",
+     "surface": "asphalt,dull"
+    }
+   },
+   {
+    "id": "w586139833",
+    "highway": "tertiary",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Jalan Munduk",
+     "smoothness": "good;intermediate",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w158205135",
+    "highway": "tertiary",
+    "km": 3.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Jalan Sidutan - Pendua",
+     "surface": "Tanah dan Aspal"
+    }
+   },
+   {
+    "id": "w192121399",
+    "highway": "unclassified",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "bad",
+     "surface": "asphalt_ruts"
+    }
+   },
+   {
+    "id": "w1503939234",
+    "highway": "unclassified",
+    "km": 2.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "lanes": "1",
+     "smoothness": "horrible",
+     "source": "digitalglobe",
+     "surface": "stone",
+     "width": "2.5"
+    }
+   },
+   {
+    "id": "w608891104",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Batu Keruk-Gelumpang",
+     "surface": "asphalt,dull"
+    }
+   },
+   {
+    "id": "w630807421",
+    "highway": "residential",
+    "km": 2.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "surface": "asphalt_&_Ground"
+    }
+   },
+   {
+    "id": "w177092081",
+    "highway": "unclassified",
+    "km": 2.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "TANAH KANCING"
+    }
+   },
+   {
+    "id": "w705321745",
+    "highway": "unclassified",
+    "km": 2.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "import": "yes",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "digitalglobe",
+     "surface": "stone",
+     "width": "3"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,215 @@
+{
+  "source": "osm-wiki/unpaved-rendering/mockups/make-mockups.ts",
+  "lowZoom": {
+    "below": 6
+  },
+  "classes": {
+    "motorway": {
+      "name": "Pink",
+      "fill": "#e892a2",
+      "casing": "#dc2a67",
+      "grainBg": "#ea98a2",
+      "grainDot": "#420015",
+      "dash": "#da768a",
+      "tunnel": "#efb3be",
+      "offTint": "#d7697e",
+      "offDash": "#d0526b",
+      "lowTint": "#dd7f91",
+      "fullDash": "#db7b8e"
+    },
+    "trunk": {
+      "name": "Red",
+      "fill": "#f9b29c",
+      "casing": "#c84e2f",
+      "grainBg": "#f6b598",
+      "grainDot": "#511d0f",
+      "dash": "#ea8b6e",
+      "tunnel": "#fbd3c6",
+      "offTint": "#e98667",
+      "offDash": "#e3643d",
+      "lowTint": "#ed9d84",
+      "fullDash": "#ed9980"
+    },
+    "primary": {
+      "name": "Orange",
+      "fill": "#fcd6a4",
+      "casing": "#a06b00",
+      "grainBg": "#f6d29c",
+      "grainDot": "#563d12",
+      "dash": "#e9b066",
+      "tunnel": "#fde7c9",
+      "offTint": "#e8ac61",
+      "offDash": "#df8d23",
+      "lowTint": "#eec28b",
+      "fullDash": "#ecbc7e"
+    },
+    "secondary": {
+      "name": "Yellow",
+      "fill": "#f7fabf",
+      "casing": "#707d05",
+      "grainBg": "#f3efb2",
+      "grainDot": "#3f4318",
+      "dash": "#d9df75",
+      "tunnel": "#fbfdd8",
+      "offTint": "#c7ce31",
+      "offDash": "#b9c12d",
+      "lowTint": "#dfe389",
+      "fullDash": "#dee387"
+    },
+    "minor": {
+      "name": "White",
+      "fill": "#ffffff",
+      "casing": "#bbbbbb",
+      "grainBg": "#ffffff",
+      "grainDot": "#46362a",
+      "dash": "#dccab0",
+      "tunnel": "#f2f2f2",
+      "offTint": "#d6bc9b",
+      "offDash": "#c8ac84",
+      "lowTint": "#e2cfb8",
+      "fullDash": "#dccab0"
+    }
+  },
+  "dark": {
+    "land": "#202124",
+    "centreLine": "#d4a46c",
+    "classes": {
+      "motorway": {
+        "name": "Pink",
+        "fill": "#8f4456",
+        "casing": "#c86a82",
+        "grainBg": "#8f4456",
+        "grainDot": "#d2a2ad",
+        "dash": "#ab5167",
+        "offTint": "#b56477",
+        "offDash": "#ba6d80",
+        "lowTint": "#a75065",
+        "fullDash": "#a75065",
+        "tunnel": "#8f4456"
+      },
+      "trunk": {
+        "name": "Red",
+        "fill": "#8c4d3a",
+        "casing": "#c27358",
+        "grainBg": "#8c4d3a",
+        "grainDot": "#cfa89c",
+        "dash": "#a75c45",
+        "offTint": "#b76952",
+        "offDash": "#bc745e",
+        "lowTint": "#a35a44",
+        "fullDash": "#a35a44",
+        "tunnel": "#8c4d3a"
+      },
+      "primary": {
+        "name": "Orange",
+        "fill": "#956123",
+        "casing": "#c8954a",
+        "grainBg": "#956123",
+        "grainDot": "#d6c1a9",
+        "dash": "#b07229",
+        "offTint": "#c37f2d",
+        "offDash": "#cf8732",
+        "lowTint": "#ac7028",
+        "fullDash": "#ac7028",
+        "tunnel": "#956123"
+      },
+      "secondary": {
+        "name": "Yellow",
+        "fill": "#5e6238",
+        "casing": "#93985a",
+        "grainBg": "#5e6238",
+        "grainDot": "#b1b86c",
+        "dash": "#717543",
+        "offTint": "#7f844b",
+        "offDash": "#878c50",
+        "lowTint": "#6e7241",
+        "fullDash": "#6e7241",
+        "tunnel": "#5e6238"
+      },
+      "minor": {
+        "name": "White",
+        "fill": "#4b4b4f",
+        "casing": "#6d6d72",
+        "grainBg": "#4b4b4f",
+        "grainDot": "#d2c1ac",
+        "dash": "#685b4b",
+        "offTint": "#776856",
+        "offDash": "#7f705c",
+        "lowTint": "#655949",
+        "fullDash": "#655949",
+        "tunnel": "#4b4b4f"
+      }
+    }
+  },
+  "styles": {
+    "centre-line": {
+      "name": "2. Dashed centre line",
+      "note": "Thin brown line down the middle in long dashes (OSM Carto grade2 rhythm). Off-road: the same line on a darker tint of the road.",
+      "color": "#8a6440",
+      "width": 1.8,
+      "narrowWidth": 1,
+      "narrowBelow": 6,
+      "unpavedDash": [
+        22,
+        6
+      ],
+      "offroadDash": [
+        8,
+        9
+      ]
+    },
+    "grain": {
+      "name": "1. Grain fill",
+      "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: the same grain on a darker tint.",
+      "scale": 1.5,
+      "offroadScale": 3,
+      "offroadShift": [
+        21,
+        37
+      ]
+    },
+    "dashed-fill": {
+      "name": "3. Dashed fill",
+      "note": "Long dashes in a darker class tint, in a centred band (as DMD2; light brown on white). Off-road: the same dashes, darker.",
+      "unpavedXWidth": [
+        3.6,
+        0.98
+      ],
+      "offroadXWidth": [
+        1.31,
+        1.47
+      ],
+      "band": 0.6,
+      "bandFromWidth": 6
+    },
+    "dashed-fill-full": {
+      "name": "5. Dashed fill, full width",
+      "note": "Long dashes in a darker class tint over the whole road width (as Americana). Off-road: the same dashes, darker.",
+      "unpavedXWidth": [
+        3.6,
+        0.98
+      ],
+      "offroadXWidth": [
+        1.31,
+        1.47
+      ]
+    },
+    "dashed-casing": {
+      "name": "4. Dashed casing",
+      "note": "Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept). Off-road: the same outline on a darker tint.",
+      "unpaved": [
+        22,
+        6
+      ],
+      "offroad": [
+        8,
+        9
+      ],
+      "casing": {
+        "trunk": "#a33b20",
+        "primary": "#7d5400",
+        "minor": "#8f8f8f"
+      }
+    }
+  }
+}

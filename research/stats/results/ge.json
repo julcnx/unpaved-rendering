@@ -1,0 +1,1219 @@
+{
+ "country": "ge",
+ "name": "Georgia",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-03T04:36:43.532Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "georgia-latest.osm.pbf",
+  "boundary": "r28699",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 623.1,
+   "untagged": 18.1,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 1224,
+   "untagged": 64.9,
+   "unpaved": 1,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 1564.5,
+   "untagged": 107,
+   "unpaved": 20,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 3008.6,
+   "untagged": 331.2,
+   "unpaved": 123.9,
+   "offroad": 26.1,
+   "specialized": 0
+  },
+  "tertiary": {
+   "paved_tagged": 3438.7,
+   "unpaved": 2530.3,
+   "untagged": 1970.8,
+   "offroad": 201.8,
+   "specialized": 2.8
+  },
+  "unclassified": {
+   "unpaved": 6071.3,
+   "untagged": 4458.4,
+   "paved_tagged": 899.5,
+   "offroad": 499.3,
+   "specialized": 1.4
+  },
+  "residential": {
+   "untagged": 15676.1,
+   "unpaved": 8136.4,
+   "paved_tagged": 2480.9,
+   "offroad": 214.6,
+   "specialized": 0.9
+  },
+  "all": {
+   "untagged": 22626.6,
+   "unpaved": 16882.9,
+   "paved_tagged": 13239.2,
+   "offroad": 941.8,
+   "specialized": 5
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 623.1,
+   "smoothness": 29.7
+  },
+  "trunk": {
+   "surface": 1225,
+   "smoothness": 229
+  },
+  "primary": {
+   "surface": 1584.5,
+   "smoothness": 218.3,
+   "tracktype": 0.1
+  },
+  "secondary": {
+   "surface": 3158.7,
+   "smoothness": 424.9,
+   "4wd_only": 15.2,
+   "tracktype": 5.4
+  },
+  "tertiary": {
+   "surface": 6146.3,
+   "smoothness": 376.6,
+   "tracktype": 167.3,
+   "4wd_only": 81.2
+  },
+  "unclassified": {
+   "surface": 7234.1,
+   "tracktype": 939.3,
+   "smoothness": 302.4,
+   "4wd_only": 17.4
+  },
+  "residential": {
+   "surface": 10652.9,
+   "tracktype": 267.4,
+   "smoothness": 194.4,
+   "4wd_only": 1.2
+  },
+  "all": {
+   "surface": 30624.7,
+   "smoothness": 1775.4,
+   "tracktype": 1379.5,
+   "4wd_only": 115.1
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 623.1,
+   "default": 18.1
+  },
+  "trunk": {
+   "surface": 1225,
+   "default": 64.9
+  },
+  "primary": {
+   "surface": 1584.5,
+   "default": 107
+  },
+  "secondary": {
+   "surface": 3158.7,
+   "default": 331.2
+  },
+  "tertiary": {
+   "surface": 6146.3,
+   "default": 1970.8,
+   "tracktype": 27.2
+  },
+  "unclassified": {
+   "surface": 7234.1,
+   "default": 4458.4,
+   "tracktype": 237.3
+  },
+  "residential": {
+   "default": 15676.1,
+   "surface": 10652.9,
+   "tracktype": 179.7
+  },
+  "all": {
+   "surface": 30624.7,
+   "default": 22626.6,
+   "tracktype": 444.3
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {
+   "smoothness": 0
+  },
+  "secondary": {
+   "smoothness": 26.1,
+   "tracktype": 0,
+   "4wd_only": 0
+  },
+  "tertiary": {
+   "smoothness": 176.4,
+   "tracktype": 24.5,
+   "4wd_only": 3.7
+  },
+  "unclassified": {
+   "tracktype": 354.5,
+   "smoothness": 128.7,
+   "4wd_only": 17.4
+  },
+  "residential": {
+   "tracktype": 179.4,
+   "smoothness": 35.5,
+   "4wd_only": 0.6
+  },
+  "all": {
+   "tracktype": 558.4,
+   "smoothness": 366.7,
+   "4wd_only": 21.7
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=gravel": 1
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=gravel": 14.5,
+    "surface=compacted": 3.6,
+    "surface=earth": 1.9,
+    "surface=unpaved": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 0
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=gravel": 106.2,
+    "surface=unpaved": 32.9,
+    "surface=compacted": 9.2,
+    "surface=ground": 1.6
+   },
+   "offroad": {
+    "smoothness=very_bad": 14.2,
+    "smoothness=horrible": 11.9,
+    "tracktype=grade3": 0,
+    "4wd_only=yes": 0
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 1672.4,
+    "surface=gravel": 651.3,
+    "surface=ground": 218.3,
+    "surface=compacted": 85.6,
+    "surface=dirt": 40.4,
+    "surface=fine_gravel": 29.8,
+    "tracktype=grade2": 18.6,
+    "surface=unhewn_cobblestone": 8.6,
+    "tracktype=grade3": 6.6,
+    "surface=pebblestone": 1.4,
+    "tracktype=grade4": 1.1,
+    "surface=sand": 0.8
+   },
+   "offroad": {
+    "smoothness=very_bad": 155.4,
+    "tracktype=grade3": 21.3,
+    "smoothness=horrible": 18.3,
+    "4wd_only=yes": 3.7,
+    "tracktype=grade5": 1.6,
+    "tracktype=grade4": 1.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.8
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 4821,
+    "surface=gravel": 901.8,
+    "surface=ground": 358.4,
+    "surface=compacted": 140.4,
+    "tracktype=grade2": 112.2,
+    "surface=dirt": 95.9,
+    "tracktype=grade3": 94,
+    "tracktype=grade4": 17.1,
+    "surface=grass": 8.2,
+    "surface=Maxar Premium": 5,
+    "tracktype=grade5": 4.2,
+    "surface=mud": 3.6,
+    "surface=fine_gravel": 2.8,
+    "surface=earth": 2.3,
+    "surface=pebblestone": 1.7,
+    "surface=dirt_and_rock": 0.9,
+    "surface=sand": 0.9,
+    "surface=asphalt; asphalt; ground": 0.8,
+    "surface=natural": 0.5,
+    "surface=rock": 0.2,
+    "surface=unhewn_cobblestone": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 233.5,
+    "tracktype=grade4": 115.9,
+    "smoothness=very_bad": 69.6,
+    "smoothness=horrible": 57.7,
+    "4wd_only=yes": 17.4,
+    "tracktype=grade5": 5.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 1.4
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 5514.2,
+    "surface=gravel": 1710.5,
+    "surface=ground": 803,
+    "tracktype=grade3": 111.4,
+    "surface=compacted": 68.3,
+    "surface=dirt": 46.1,
+    "tracktype=grade2": 39,
+    "tracktype=grade4": 18.7,
+    "surface=unhewn_cobblestone": 9.3,
+    "surface=pebblestone": 9.1,
+    "surface=fine_gravel": 8,
+    "tracktype=grade5": 3.8,
+    "surface=grass": 3.4,
+    "surface=earth": 1.8,
+    "surface=rock": 1.5,
+    "surface=mud": 1.2,
+    "surface=sand": 1.1,
+    "surface=paved; unpaved": 0.9,
+    "surface=dirt_and_rock": 0.4,
+    "surface=paved;unpaved": 0.2,
+    "surface=living_street": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 150.1,
+    "smoothness=very_bad": 31.9,
+    "tracktype=grade4": 23.9,
+    "tracktype=grade5": 5.3,
+    "smoothness=horrible": 2.7,
+    "4wd_only=yes": 0.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.5,
+    "smoothness=impassable": 0.4
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 12040.5,
+    "surface=gravel": 3385.3,
+    "surface=ground": 1381.3,
+    "surface=compacted": 307.1,
+    "tracktype=grade3": 212.1,
+    "surface=dirt": 182.3,
+    "tracktype=grade2": 169.7,
+    "surface=fine_gravel": 40.6,
+    "tracktype=grade4": 36.9,
+    "surface=unhewn_cobblestone": 18,
+    "surface=pebblestone": 12.3,
+    "surface=grass": 11.6,
+    "tracktype=grade5": 8,
+    "surface=earth": 6,
+    "surface=Maxar Premium": 5,
+    "surface=mud": 4.8,
+    "surface=sand": 2.7,
+    "surface=rock": 1.7,
+    "surface=dirt_and_rock": 1.3,
+    "surface=paved; unpaved": 0.9,
+    "surface=asphalt; asphalt; ground": 0.8,
+    "surface=natural": 0.5,
+    "surface=paved;unpaved": 0.2,
+    "surface=living_street": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 404.9,
+    "smoothness=very_bad": 271.1,
+    "tracktype=grade4": 141.4,
+    "smoothness=horrible": 90.6,
+    "4wd_only=yes": 21.7,
+    "tracktype=grade5": 12.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 4.6,
+    "smoothness=impassable": 0.4
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=Maxar Premium": 5,
+  "surface=dirt_and_rock": 1.3,
+  "smoothness=very_good": 0.9,
+  "surface=natural": 0.5,
+  "surface=living_street": 0.1
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + 4wd_only=yes": 9,
+  "paved (surface=asphalt) + smoothness=very_bad": 6.4,
+  "paved (surface=concrete) + 4wd_only=yes": 4.5,
+  "paved (surface=paved) + tracktype=grade5": 3.4,
+  "paved (surface=asphalt) + smoothness=very_horrible": 2.1,
+  "paved (surface=paved) + tracktype=grade3": 1.8,
+  "smoothness=excellent + surface=unpaved": 1.7,
+  "paved (surface=concrete) + tracktype=grade4": 1.4,
+  "paved (surface=concrete:plates) + smoothness=horrible": 1.1,
+  "paved (surface=paved) + smoothness=very_bad": 0.8,
+  "paved (no surface) + smoothness=very_horrible": 0.8,
+  "paved (surface=asphalt) + tracktype=grade3": 0.6,
+  "paved (surface=sett) + smoothness=very_bad": 0.5,
+  "paved (no surface) + smoothness=impassable": 0.4,
+  "paved (surface=asphalt) + tracktype=grade4": 0.4,
+  "paved (surface=asphalt) + smoothness=horrible": 0.4,
+  "paved (surface=concrete) + tracktype=grade3": 0.2,
+  "paved (surface=concrete) + smoothness=very_bad": 0.1,
+  "paved (no surface) + smoothness=very_bad": 0.1
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w102655777",
+    "highway": "secondary",
+    "km": 11.7,
+    "level": "offroad",
+    "tags": {
+     "check_date": "2025-06-18",
+     "highway": "secondary",
+     "maxspeed": "30",
+     "name": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:en": "Borjomi — Bakuriani — Akhalkalaki",
+     "name:ka": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:ru": "Боржоми — Бакуриани — Ахалкалаки",
+     "oneway": "no",
+     "ref": "შ 20",
+     "smoothness": "horrible",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w207548396",
+    "highway": "secondary",
+    "km": 10.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lit": "no",
+     "name": "მარნეული — თეთრიწყარო — წალკა",
+     "name:en": "Marneuli — Tetritskaro — Tsalka",
+     "name:ka": "მარნეული — თეთრიწყარო — წალკა",
+     "name:ru": "Марнеули — Тетрицкаро — Цалка",
+     "note": "Mixed surface - old broken asphalt and gravel so overall can be considered as gravel",
+     "ref": "შ 33",
+     "smoothness": "bad",
+     "source": "JumpStart International",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w358875616",
+    "highway": "secondary",
+    "km": 9.8,
+    "level": "offroad",
+    "tags": {
+     "check_date": "2025-06-18",
+     "highway": "secondary",
+     "maxspeed": "20",
+     "name": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:en": "Borjomi — Bakuriani — Akhalkalaki",
+     "name:ka": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:ru": "Боржоми — Бакуриани — Ахалкалаки",
+     "oneway": "no",
+     "ref": "შ 20",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w204644784",
+    "highway": "secondary",
+    "km": 8.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name:ka": "მაჭარა — სამხრეთ თავშესაფარი",
+     "nat_ref:Georgia": "შ 10",
+     "ref": "შ 10",
+     "ref:Georgia": "შ 10",
+     "source": "trek",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w111431030",
+    "highway": "primary",
+    "km": 7.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "ბათუმი — ახალციხე",
+     "name:en": "Batumi — Akhaltsikhe",
+     "name:ka": "ბათუმი — ახალციხე",
+     "name:ru": "Батуми — Ахалцихе",
+     "ref": "შ 1",
+     "source": "JumpStart International",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w203690054",
+    "highway": "secondary",
+    "km": 6.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name:ka": "მაჭარა — სამხრეთ თავშესაფარი",
+     "nat_ref:Georgia": "შ 10",
+     "ref": "შ 10",
+     "ref:Georgia": "შ 10",
+     "smoothness": "bad",
+     "source": "trek",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w111431197",
+    "highway": "primary",
+    "km": 6.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "ბათუმი — ახალციხე",
+     "name:en": "Batumi — Akhaltsikhe",
+     "name:ka": "ბათუმი — ახალციხე",
+     "name:ru": "Батуми — Ахалцихе",
+     "ref": "შ 1",
+     "source": "JumpStart International",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w81287807",
+    "highway": "secondary",
+    "km": 5.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name:ka": "მაჭარა — სამხრეთ თავშესაფარი",
+     "nat_ref:Georgia": "შ 10",
+     "ref": "შ 10",
+     "ref:Georgia": "შ 10",
+     "smoothness": "bad",
+     "source": "trek",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w101712284",
+    "highway": "secondary",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
+     "name:ka": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
+     "ref": "შ 68",
+     "source": "JumpStart International",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w1030018826",
+    "highway": "secondary",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "20",
+     "name": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:en": "Borjomi — Bakuriani — Akhalkalaki",
+     "name:ka": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:ru": "Боржоми — Бакуриани — Ахалкалаки",
+     "ref": "შ 20",
+     "seasonal": "yes",
+     "source": "Soviet Military topomap",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w204239673",
+    "highway": "secondary",
+    "km": 4.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
+     "name:ka": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
+     "ref": "შ 68",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w85750149",
+    "highway": "secondary",
+    "km": 4.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "mountain_pass": "yes",
+     "name:ka": "მაჭარა — სამხრეთ თავშესაფარი",
+     "nat_ref:Georgia": "შ 10",
+     "ref": "შ 10",
+     "ref:Georgia": "შ 10",
+     "source": "IRS",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w101476262",
+    "highway": "secondary",
+    "km": 4.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "გუფთა — ონი",
+     "name:en": "Gupta — Oni",
+     "name:ka": "გუფთა — ონი",
+     "name:ru": "Гупта — Они",
+     "ref": "შ 25",
+     "source": "JumpStart International",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w102201636",
+    "highway": "secondary",
+    "km": 4.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lit": "no",
+     "name": "მარნეული — თეთრიწყარო — წალკა",
+     "name:en": "Marneuli — Tetritskaro — Tsalka",
+     "name:ka": "მარნეული — თეთრიწყარო — წალკა",
+     "name:ru": "Марнеули — Тетрицкаро — Цалка",
+     "ref": "შ 33",
+     "source": "JumpStart International",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w86097161",
+    "highway": "secondary",
+    "km": 3.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "mountain_pass": "yes",
+     "name:ka": "მაჭარა — სამხრეთ თავშესაფარი",
+     "nat_ref:Georgia": "შ 10",
+     "ref": "შ 10",
+     "ref:Georgia": "შ 10",
+     "source": "trek",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w1327196456",
+    "highway": "unclassified",
+    "km": 18.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Taribana-Chachuna-Eldari",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w202654804",
+    "highway": "unclassified",
+    "km": 17.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w723115023",
+    "highway": "tertiary",
+    "km": 14.6,
+    "level": "offroad",
+    "tags": {
+     "grade": "3",
+     "highway": "tertiary",
+     "name": "Damaged main road. Avoid it",
+     "note": "Damaged main road. Avoid it",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1010635637",
+    "highway": "unclassified",
+    "km": 13.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w104120292",
+    "highway": "tertiary",
+    "km": 12.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "source": "JumpStart International",
+     "surface": "fine_gravel"
+    }
+   },
+   {
+    "id": "w102655777",
+    "highway": "secondary",
+    "km": 11.7,
+    "level": "offroad",
+    "tags": {
+     "check_date": "2025-06-18",
+     "highway": "secondary",
+     "maxspeed": "30",
+     "name": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:en": "Borjomi — Bakuriani — Akhalkalaki",
+     "name:ka": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:ru": "Боржоми — Бакуриани — Ахалкалаки",
+     "oneway": "no",
+     "ref": "შ 20",
+     "smoothness": "horrible",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w171866741",
+    "highway": "unclassified",
+    "km": 11.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "ქუთაისი — ბაღდათი — აბასთუმანი — ბენარა",
+     "name:en": "Kutaisi — Baghdati — Abastumani — Benara",
+     "name:ka": "ქუთაისი — ბაღდათი — აბასთუმანი — ბენარა",
+     "name:ru": "Кутаиси — Багдати — Абастумани — Бенара",
+     "note": "switch to primary once construction is complete",
+     "proposed:highway": "primary",
+     "ref": "შ 14",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w358875616",
+    "highway": "secondary",
+    "km": 9.8,
+    "level": "offroad",
+    "tags": {
+     "check_date": "2025-06-18",
+     "highway": "secondary",
+     "maxspeed": "20",
+     "name": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:en": "Borjomi — Bakuriani — Akhalkalaki",
+     "name:ka": "ბორჯომი — ბაკურიანი — ახალქალაქი",
+     "name:ru": "Боржоми — Бакуриани — Ахалкалаки",
+     "oneway": "no",
+     "ref": "შ 20",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w676777550",
+    "highway": "unclassified",
+    "km": 9.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w127581955",
+    "highway": "unclassified",
+    "km": 9.4,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "source": "GPS",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w153973447",
+    "highway": "tertiary",
+    "km": 8.5,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "hazard": "curves;landslide",
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "ჟინვალი — ბარისახო — შატილი",
+     "name:en": "Zhinvali — Barisakho — Shatili",
+     "name:ka": "ჟინვალი — ბარისახო — შატილი",
+     "name:ru": "Жинвали — Барисахо — Шатили",
+     "ref": "შ 26",
+     "sac_scale": "strolling",
+     "smoothness": "very_bad",
+     "source": "GPS",
+     "surface": "gravel",
+     "wikidata": "Q3493036"
+    }
+   },
+   {
+    "id": "w82021590",
+    "highway": "tertiary",
+    "km": 7.7,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "bicycle": "yes",
+     "cycleway": "no",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "lanes": "2",
+     "lit": "no",
+     "oneway": "no",
+     "source": "ScanEx",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w707272787",
+    "highway": "tertiary",
+    "km": 7.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "ref": "შ 158",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w547988836",
+    "highway": "unclassified",
+    "km": 7,
+    "level": "offroad",
+    "tags": {
+     "comment": "Тропа от турбазы Аджара на хребет Ацетука",
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1527437482",
+    "highway": "tertiary",
+    "km": 6.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "recommended",
+     "hazard": "curves;landslide",
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "ჟინვალი — ბარისახო — შატილი",
+     "name:en": "Zhinvali — Barisakho — Shatili",
+     "name:ka": "ჟინვალი — ბარისახო — შატილი",
+     "name:ru": "Жинвали — Барисахо — Шатили",
+     "ref": "შ 26",
+     "smoothness": "very_bad",
+     "source": "GPS",
+     "surface": "gravel",
+     "wikidata": "Q3493036"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w102534737",
+    "highway": "tertiary",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "bicycle": "no",
+     "highway": "tertiary",
+     "name": "მე-2 ქუჩა",
+     "name:en": "2nd Street",
+     "name:ru": "2-я улица",
+     "source": "JumpStart International",
+     "surface": "paved",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w102151129",
+    "highway": "secondary",
+    "km": 3.1,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "check_date:surface": "2024-08-30",
+     "description": "September 2023: Mostly construction site which is driveable but offroady.Open only June to October.",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "ქუთაისი — წყალტუბო — ცაგერი — ლენტეხი — ლასდილი",
+     "name:en": "Kutaisi — Tsqaltubo — Tsageri — Lentekhi — Lasdili",
+     "name:ka": "ქუთაისი — წყალტუბო — ცაგერი — ლენტეხი — ლასდილი",
+     "name:ru": "Кутаиси — Цхалтубо — Цагери — Лентехи — Ласдили",
+     "ref": "შ 15",
+     "smoothness": "intermediate",
+     "source": "GPS",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w28089103",
+    "highway": "tertiary",
+    "km": 2.6,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "access:conditional": "no @ (Nov-Jun)",
+     "hazard": "curves;landslide",
+     "highway": "tertiary",
+     "name": "ფშაველი — აბანო — ომალო",
+     "name:en": "Pshaveli — Abano — Omalo",
+     "name:ka": "ფშაველი — აბანო — ომალო",
+     "name:ru": "Пшавели — Абано — Омало",
+     "ref": "შ 44",
+     "smoothness": "good",
+     "source": "GPS;streetlevel imagery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w655580814",
+    "highway": "unclassified",
+    "km": 2.4,
+    "level": "paved",
+    "tags": {
+     "access": "permissive",
+     "highway": "unclassified",
+     "lanes": "2",
+     "name:ka": "ტირძნისი-დიცი-ერედვი-ხეითი",
+     "old_ref": "შ 72",
+     "oneway": "no",
+     "ref": "შ 72",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w117220540",
+    "highway": "secondary",
+    "km": 1.7,
+    "level": "unpaved",
+    "tags": {
+     "access": "yes",
+     "bicycle": "yes",
+     "cycleway": "no",
+     "foot": "yes",
+     "highway": "secondary",
+     "incline": "down",
+     "lanes": "2",
+     "lit": "automatic",
+     "maxspeed": "30",
+     "name": "თბილისის ქუჩა",
+     "name:de": "Tifliser Straße",
+     "name:en": "Tbilisi Street",
+     "name:ka": "თბილისის ქუჩა",
+     "name:ru": "улица Тбилиси",
+     "name:tr": "Tiflis caddesinde",
+     "nat_ref": "Sh 130",
+     "old_ref": "ს2",
+     "oneway": "no",
+     "ref": "შ 130",
+     "smoothness": "excellent",
+     "source": "bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w123865168",
+    "highway": "unclassified",
+    "km": 1.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "source": "JumpStart International",
+     "surface": "concrete",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w106762664",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "bicycle": "yes",
+     "cycleway": "no",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "lanes": "2",
+     "lit": "no",
+     "maxspeed": "70",
+     "motor_vehicle": "yes",
+     "name": "улица Чанба",
+     "name:ab": "Ҷанба имҩа",
+     "name:ka": "სოხუმი — ბესლეთი",
+     "name:ru": "улица Чанба",
+     "oneway": "no",
+     "ref": "შ 187",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w102602969",
+    "highway": "residential",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "lane_markings": "no",
+     "lit": "yes",
+     "name": "თეთრი გიორგის ქუჩა",
+     "name:en": "Tetri Giorgi Street",
+     "name:ka": "თეთრი გიორგის ქუჩა",
+     "name:ru": "улица Тетри Гиорги",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "source": "JumpStart International",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1436177337",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "access:conditional": "no @ (Nov-Apr)",
+     "hazard": "curves",
+     "highway": "tertiary",
+     "name": "ფშაველი — აბანო — ომალო",
+     "name:en": "Pshaveli — Abano — Omalo",
+     "name:ka": "ფშაველი — აბანო — ომალო",
+     "name:ru": "Пшавели — Абано — Омало",
+     "ref": "შ 44",
+     "smoothness": "very_horrible",
+     "source": "GPS;streetlevel imagery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1312761853",
+    "highway": "tertiary",
+    "km": 1.1,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "foot": "permissive",
+     "highway": "tertiary",
+     "incline": "8%",
+     "lanes": "2",
+     "lit": "no",
+     "maxspeed": "50",
+     "name": "სტეფანწმინდა-სამება",
+     "name:en": "Stepantsminda-Sameba",
+     "name:ka": "სტეფანწმინდა-სამება",
+     "name:ru": "Степанцминда - Самеба",
+     "nat_ref": "შ 146",
+     "overtaking": "no",
+     "ref": "შ 146",
+     "sidewalk": "no",
+     "smoothness": "excellent",
+     "surface": "asphalt",
+     "tracktype": "grade1"
+    }
+   },
+   {
+    "id": "w1312761846",
+    "highway": "tertiary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "fixme": "resurvey",
+     "highway": "tertiary",
+     "incline": "12%",
+     "lanes": "2",
+     "lit": "no",
+     "maxspeed": "30",
+     "name": "სტეფანწმინდა-სამება",
+     "name:en": "Stepantsminda-Sameba",
+     "name:ka": "სტეფანწმინდა-სამება",
+     "name:ru": "Степанцминда - Самеба",
+     "ref": "შ 146",
+     "sidewalk": "no",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w587168279",
+    "highway": "tertiary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "incline": "down",
+     "lanes": "2",
+     "lit": "no",
+     "maxspeed": "40",
+     "name": "სტეფანწმინდა-სამება",
+     "name:en": "Stepantsminda-Sameba",
+     "name:ka": "სტეფანწმინდა-სამება",
+     "name:ru": "Степанцминда - Самеба",
+     "ref": "შ 146",
+     "sidewalk": "no",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1210704871",
+    "highway": "secondary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "check_date:surface": "2024-08-30",
+     "description": "September 2023: Mostly construction site which is driveable but offroady. Open only June to October.",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "ქუთაისი — წყალტუბო — ცაგერი — ლენტეხი — ლასდილი",
+     "name:en": "Kutaisi — Tsqaltubo — Tsageri — Lentekhi — Lasdili",
+     "name:ka": "ქუთაისი — წყალტუბო — ცაგერი — ლენტეხი — ლასდილი",
+     "name:ru": "Кутаиси — Цхалтубо — Цагери — Лентехи — Ласдили",
+     "ref": "შ 15",
+     "smoothness": "intermediate",
+     "source": "GPS",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w864991000",
+    "highway": "residential",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "surface": "paved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1409442115",
+    "highway": "tertiary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "access:conditional": "no @ (Nov-Jun)",
+     "fixme": "bad gps coverage - fix needed",
+     "hazard": "curves;landslide",
+     "highway": "tertiary",
+     "name": "ფშაველი — აბანო — ომალო",
+     "name:en": "Pshaveli — Abano — Omalo",
+     "name:ka": "ფშაველი — აბანო — ომალო",
+     "name:ru": "Пшавели — Абано — Омало",
+     "ref": "შ 44",
+     "smoothness": "good",
+     "source": "GPS;streetlevel imagery",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w101698112",
+    "highway": "unclassified",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "source": "JumpStart International",
+     "surface": "Maxar Premium"
+    }
+   },
+   {
+    "id": "w102661375",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "20",
+     "oneway": "no",
+     "source": "JumpStart International",
+     "surface": "dirt_and_rock"
+    }
+   },
+   {
+    "id": "w1103247402",
+    "highway": "unclassified",
+    "km": 0.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "natural"
+    }
+   }
+  ]
+ }
+}

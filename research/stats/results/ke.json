@@ -1,0 +1,1267 @@
+{
+ "country": "ke",
+ "name": "Kenya",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:09:28.974Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "kenya-latest.osm.pbf",
+  "boundary": "r192798",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 50.2,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 5702.2,
+   "unpaved": 2672.2,
+   "untagged": 2229.7,
+   "offroad": 101.3,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 954.2,
+   "paved_tagged": 891,
+   "unpaved": 730.4,
+   "specialized": 0,
+   "offroad": 0
+  },
+  "secondary": {
+   "unpaved": 3945.3,
+   "untagged": 2527.7,
+   "paved_tagged": 2076.9,
+   "offroad": 54.9,
+   "specialized": 0
+  },
+  "tertiary": {
+   "unpaved": 14059.2,
+   "untagged": 8388.4,
+   "paved_tagged": 1677.4,
+   "offroad": 493.1,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 102839.3,
+   "unpaved": 59928.9,
+   "offroad": 1876.5,
+   "paved_tagged": 1037.5,
+   "specialized": 28.2
+  },
+  "residential": {
+   "untagged": 94885.3,
+   "unpaved": 10263,
+   "paved_tagged": 701.7,
+   "offroad": 122.6,
+   "specialized": 8.6
+  },
+  "all": {
+   "untagged": 211824.7,
+   "unpaved": 91599,
+   "paved_tagged": 12136.8,
+   "offroad": 2648.4,
+   "specialized": 36.8
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 50.2
+  },
+  "trunk": {
+   "surface": 8475.7,
+   "smoothness": 400.5,
+   "tracktype": 20.9
+  },
+  "primary": {
+   "surface": 1621.5,
+   "smoothness": 82.5,
+   "tracktype": 5
+  },
+  "secondary": {
+   "surface": 6077.1,
+   "smoothness": 231.5
+  },
+  "tertiary": {
+   "surface": 16215.8,
+   "tracktype": 504.5,
+   "smoothness": 218.2
+  },
+  "unclassified": {
+   "surface": 62789.7,
+   "tracktype": 1610.8,
+   "smoothness": 1188.6
+  },
+  "residential": {
+   "surface": 11058.5,
+   "smoothness": 867.6,
+   "tracktype": 87.8
+  },
+  "all": {
+   "surface": 106288.4,
+   "smoothness": 2988.9,
+   "tracktype": 2229
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 50.2
+  },
+  "trunk": {
+   "surface": 8475.7,
+   "default": 2229.7
+  },
+  "primary": {
+   "surface": 1621.5,
+   "default": 954.2
+  },
+  "secondary": {
+   "surface": 6077.1,
+   "default": 2527.7
+  },
+  "tertiary": {
+   "surface": 16215.8,
+   "default": 8388.4,
+   "tracktype": 13.9
+  },
+  "unclassified": {
+   "default": 102839.3,
+   "surface": 62789.7,
+   "tracktype": 81.4
+  },
+  "residential": {
+   "default": 94885.3,
+   "surface": 11058.5,
+   "tracktype": 37.3
+  },
+  "all": {
+   "default": 211824.7,
+   "surface": 106288.4,
+   "tracktype": 132.6
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {
+   "smoothness": 101.3
+  },
+  "primary": {
+   "smoothness": 0
+  },
+  "secondary": {
+   "smoothness": 54.9
+  },
+  "tertiary": {
+   "tracktype": 392.5,
+   "smoothness": 100.6
+  },
+  "unclassified": {
+   "smoothness": 1028.4,
+   "tracktype": 876.3
+  },
+  "residential": {
+   "smoothness": 79.6,
+   "tracktype": 51.6
+  },
+  "all": {
+   "smoothness": 1364.8,
+   "tracktype": 1320.3
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 2205.1,
+    "surface=ground": 204.3,
+    "surface=gravel": 161.9,
+    "surface=sand": 132.7,
+    "surface=dirt": 68.3,
+    "surface=earth": 1.2
+   },
+   "offroad": {
+    "smoothness=horrible": 101.3
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 552.7,
+    "surface=gravel": 103.8,
+    "surface=ground": 46.3,
+    "surface=sand": 18,
+    "surface=dirt": 9.4,
+    "surface=compacted": 0.2
+   },
+   "offroad": {},
+   "specialized": {
+    "smoothness=very_horrible": 0
+   }
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 2641.3,
+    "surface=ground": 411.7,
+    "surface=sand": 296.9,
+    "surface=gravel": 292.1,
+    "surface=compacted": 206.1,
+    "surface=dirt": 115.9,
+    "surface=dirt/sand": 26,
+    "surface=earth": 10.1,
+    "surface=grass": 0,
+    "surface=metal_grid": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 54.9
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 9878.2,
+    "surface=ground": 2446.4,
+    "surface=gravel": 1087.6,
+    "surface=dirt": 554.5,
+    "surface=sand": 349,
+    "surface=compacted": 111.1,
+    "surface=dirt/sand": 42.8,
+    "surface=sand/gravel/stones": 24.8,
+    "surface=groung": 13.7,
+    "tracktype=grade3": 13.1,
+    "surface=rock": 12.1,
+    "surface=fine_gravel": 9.8,
+    "surface=earth": 4,
+    "surface=Soil graded": 2.8,
+    "surface=sand;gravel;stones": 1.5,
+    "tracktype=grade4": 0.8,
+    "surface=tarmac": 0.1
+   },
+   "offroad": {
+    "tracktype=grade3": 254.5,
+    "tracktype=grade4": 107.5,
+    "smoothness=very_bad": 100.6,
+    "tracktype=grade5": 30.4
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 43831.5,
+    "surface=ground": 11133,
+    "surface=dirt": 2877.4,
+    "surface=gravel": 2115,
+    "surface=sand": 1050.9,
+    "surface=compacted": 348.7,
+    "surface=earth": 146.5,
+    "surface=Dirt_&_Rock": 74.9,
+    "surface=dirt/sand": 59.1,
+    "surface=sand/gravel/stones": 57.1,
+    "tracktype=grade3": 30.2,
+    "tracktype=grade4": 18.4,
+    "tracktype=grade2": 18.1,
+    "surface=dirt,_rock": 17.8,
+    "surface=pebblestone": 14.3,
+    "tracktype=grade5": 11.2,
+    "surface=2": 5.3,
+    "surface=goud": 4.1,
+    "surface=dirt/rock": 3.4,
+    "surface=clay": 2.9,
+    "surface=Graded Soil": 2.4,
+    "surface=black_cotton_soil_type": 2.2,
+    "surface=grass": 2,
+    "surface=laterite": 1.4,
+    "surface=ground;dirt/sand": 1.2,
+    "surface=mud": 1.1,
+    "surface=grass_paver": 1.1,
+    "surface=dirt;ground": 1,
+    "surface=fine_gravel": 0.7,
+    "surface=rough_roads": 0.4,
+    "surface=this section may be unpassable by 4WVs": 0.3
+   },
+   "offroad": {
+    "smoothness=very_bad": 786.2,
+    "tracktype=grade4": 555.7,
+    "tracktype=grade3": 263.3,
+    "smoothness=horrible": 214.1,
+    "tracktype=grade5": 57.4
+   },
+   "specialized": {
+    "smoothness=very_horrible": 27.2,
+    "smoothness=impassable": 1
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 7452.9,
+    "surface=ground": 1452.3,
+    "surface=compacted": 559.8,
+    "surface=dirt": 522.8,
+    "surface=gravel": 113.5,
+    "surface=dirt/sand": 107.5,
+    "surface=sand": 57,
+    "surface=sand/gravel/stones": 43.5,
+    "surface=earth": 37.7,
+    "tracktype=grade5": 15.8,
+    "tracktype=grade4": 8.9,
+    "tracktype=grade3": 7,
+    "surface=grass": 4.6,
+    "surface=fine_gravel": 2.6,
+    "tracktype=grade2": 1.8,
+    "surface=mud": 1.4,
+    "surface=grass_paver": 1.1,
+    "surface=unpaved/_Dirt": 0.7,
+    "surface=tarmac": 0.6,
+    "surface=laterite": 0.5,
+    "surface=unpaved;dirt/sand": 0.4,
+    "surface=tarred": 0.4,
+    "surface=dirt/unpaved": 0.3,
+    "surface=pebblestone": 0.3,
+    "surface=compacted:lanes": 0.2,
+    "surface=cabroworks": 0.2,
+    "surface=Soil graded": 0.1,
+    "surface=wearth": 0.1,
+    "surface=unhewn_cobblestone": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 68.4,
+    "tracktype=grade3": 22,
+    "tracktype=grade5": 17.2,
+    "tracktype=grade4": 12.4,
+    "smoothness=horrible": 2.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 8.6
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 66561.7,
+    "surface=ground": 15694.1,
+    "surface=dirt": 4148.4,
+    "surface=gravel": 3873.9,
+    "surface=sand": 1904.4,
+    "surface=compacted": 1225.9,
+    "surface=dirt/sand": 235.5,
+    "surface=earth": 199.3,
+    "surface=sand/gravel/stones": 125.3,
+    "surface=Dirt_&_Rock": 74.9,
+    "tracktype=grade3": 50.2,
+    "tracktype=grade4": 28.1,
+    "tracktype=grade5": 27,
+    "tracktype=grade2": 19.9,
+    "surface=dirt,_rock": 17.8,
+    "surface=pebblestone": 14.6,
+    "surface=groung": 13.7,
+    "surface=fine_gravel": 13.1,
+    "surface=rock": 12.1,
+    "surface=grass": 6.6,
+    "surface=2": 5.3,
+    "surface=goud": 4.1,
+    "surface=dirt/rock": 3.4,
+    "surface=Soil graded": 3,
+    "surface=clay": 2.9,
+    "surface=mud": 2.5,
+    "surface=Graded Soil": 2.4,
+    "surface=black_cotton_soil_type": 2.2,
+    "surface=grass_paver": 2.2,
+    "surface=laterite": 1.9,
+    "surface=sand;gravel;stones": 1.5,
+    "surface=ground;dirt/sand": 1.2,
+    "surface=dirt;ground": 1,
+    "surface=unpaved/_Dirt": 0.7,
+    "surface=tarmac": 0.7,
+    "surface=unpaved;dirt/sand": 0.4,
+    "surface=rough_roads": 0.4,
+    "surface=tarred": 0.4,
+    "surface=dirt/unpaved": 0.3,
+    "surface=this section may be unpassable by 4WVs": 0.3,
+    "surface=compacted:lanes": 0.2,
+    "surface=cabroworks": 0.2,
+    "surface=wearth": 0.1,
+    "surface=unhewn_cobblestone": 0,
+    "surface=metal_grid": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 1010.1,
+    "tracktype=grade4": 675.5,
+    "tracktype=grade3": 539.8,
+    "smoothness=horrible": 318,
+    "tracktype=grade5": 105
+   },
+   "specialized": {
+    "smoothness=very_horrible": 35.8,
+    "smoothness=impassable": 1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=dirt/sand": 235.5,
+  "surface=sand/gravel/stones": 125.3,
+  "surface=Dirt_&_Rock": 74.9,
+  "surface=dirt,_rock": 17.8,
+  "surface=groung": 13.7,
+  "surface=2": 5.3,
+  "surface=goud": 4.1,
+  "smoothness=very_good": 3.7,
+  "surface=dirt/rock": 3.4,
+  "surface=Soil graded": 3,
+  "surface=Graded Soil": 2.4,
+  "surface=black_cotton_soil_type": 2.2,
+  "surface=sand;gravel;stones": 1.5,
+  "surface=ground;dirt/sand": 1.2,
+  "surface=unpaved/_Dirt": 0.7,
+  "surface=tarmac": 0.7,
+  "surface=unpaved;dirt/sand": 0.4,
+  "surface=rough_roads": 0.4,
+  "surface=tarred": 0.4,
+  "surface=dirt/unpaved": 0.3,
+  "surface=this section may be unpassable by 4WVs": 0.3,
+  "surface=compacted:lanes": 0.2,
+  "surface=cabroworks": 0.2,
+  "surface=wearth": 0.1,
+  "surface=metal_grid": 0
+ },
+ "conflict_km": {
+  "smoothness=good + surface=compacted": 33.6,
+  "smoothness=good + surface=unpaved": 32.9,
+  "paved (surface=asphalt) + smoothness=very_bad": 16.6,
+  "paved (no surface) + smoothness=very_bad": 11.2,
+  "smoothness=good + surface=ground": 5.8,
+  "paved (surface=cobblestone) + tracktype=grade3": 4.4,
+  "paved (surface=paved) + tracktype=grade4": 2.1,
+  "smoothness=excellent + surface=ground": 2.1,
+  "paved (no surface) + smoothness=horrible": 1.8,
+  "paved (no surface) + smoothness=very_horrible": 0.7,
+  "paved (surface=paved) + smoothness=very_bad": 0.5,
+  "paved (surface=asphalt) + smoothness=horrible": 0.4,
+  "smoothness=good + surface=grass": 0.4,
+  "smoothness=excellent + surface=unpaved": 0.1,
+  "paved (surface=sett) + smoothness=very_bad": 0.1,
+  "paved (surface=concrete) + smoothness=impassable": 0.1,
+  "paved (surface=concrete) + tracktype=grade3": 0,
+  "paved (surface=concrete) + smoothness=very_bad": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w680241875",
+    "highway": "trunk",
+    "km": 257.5,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "designated",
+     "highway": "trunk",
+     "lanes": "1",
+     "name": "Isiolo-Mandera Road",
+     "old_ref": "B9",
+     "ref": "A13",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w279571921",
+    "highway": "secondary",
+    "km": 139.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "E847",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w703051364",
+    "highway": "trunk",
+    "km": 123.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Isiolo-Mandera Road",
+     "old_ref": "B9",
+     "ref": "A13",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w367393757",
+    "highway": "secondary",
+    "km": 98.3,
+    "level": "unpaved",
+    "tags": {
+     "AUTO_ID": "6675",
+     "highway": "secondary",
+     "name": "Wajir-Dif Road",
+     "source": "Africover",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1239066300",
+    "highway": "secondary",
+    "km": 94.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "source": "Africover;landsat",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w33402204",
+    "highway": "secondary",
+    "km": 86.7,
+    "level": "unpaved",
+    "tags": {
+     "AUTO_ID": "7176",
+     "highway": "secondary",
+     "source": "Africover",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w172176241",
+    "highway": "trunk",
+    "km": 83.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "old_ref": "B9",
+     "ref": "B84",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w33402624",
+    "highway": "trunk",
+    "km": 79.5,
+    "level": "unpaved",
+    "tags": {
+     "AUTO_ID": "7098",
+     "highway": "trunk",
+     "ref": "A3",
+     "source": "Africover & Cnes/Spot Image",
+     "surface": "sand"
+    }
+   },
+   {
+    "id": "w218335291",
+    "highway": "secondary",
+    "km": 76.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Dadajabulla Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w173599640",
+    "highway": "secondary",
+    "km": 56.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "E822",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w466412738",
+    "highway": "secondary",
+    "km": 55.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "C113",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w219061063",
+    "highway": "trunk",
+    "km": 54.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "ref": "B54",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w328970127",
+    "highway": "trunk",
+    "km": 54.3,
+    "level": "unpaved",
+    "tags": {
+     "AUTO_ID": "8047",
+     "highway": "trunk",
+     "ref": "B54",
+     "source": "survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1390764409",
+    "highway": "secondary",
+    "km": 54.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w976323261",
+    "highway": "trunk",
+    "km": 53.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "trunk",
+     "name": "Isiolo-Mandera Road",
+     "old_ref": "B9",
+     "ref": "A13",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w34357586",
+    "highway": "tertiary",
+    "km": 165,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "highway": "tertiary",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "surface": "gravel",
+     "tracktype": "grade3",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w370042801",
+    "highway": "unclassified",
+    "km": 77.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w238043556",
+    "highway": "unclassified",
+    "km": 77,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "ref": "E672",
+     "source": "survey",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w246435653",
+    "highway": "unclassified",
+    "km": 57.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "ref": "E1883",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w181029836",
+    "highway": "unclassified",
+    "km": 48.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w555999732",
+    "highway": "unclassified",
+    "km": 47.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "name": "NPB Tsavo - C105 Voi",
+     "ref": "E682",
+     "surface": "unpaved",
+     "surface_1": "earth",
+     "tracktype": "grade4",
+     "width": "8"
+    }
+   },
+   {
+    "id": "w370042800",
+    "highway": "unclassified",
+    "km": 46.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w328986898",
+    "highway": "unclassified",
+    "km": 45.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w33409679",
+    "highway": "secondary",
+    "km": 41.3,
+    "level": "offroad",
+    "tags": {
+     "AUTO_ID": "7405",
+     "highway": "secondary",
+     "smoothness": "very_bad",
+     "source": "Africover",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w886408121",
+    "highway": "unclassified",
+    "km": 40.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w331971947",
+    "highway": "trunk",
+    "km": 40,
+    "level": "offroad",
+    "tags": {
+     "fixme": "add bridges to intermittent streams",
+     "highway": "trunk",
+     "ref": "A4",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w36837958",
+    "highway": "tertiary",
+    "km": 39.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "50",
+     "name": "Mara Triangle Main Road",
+     "ref": "E176",
+     "source": "survey",
+     "surface": "gravel",
+     "tracktype": "grade4",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w677266229",
+    "highway": "unclassified",
+    "km": 35.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w34357823",
+    "highway": "unclassified",
+    "km": 35.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "name": "NPB Tsavo - C105 Voi",
+     "ref": "E682",
+     "surface": "unpaved",
+     "surface_1": "earth",
+     "tracktype": "grade4",
+     "width": "8"
+    }
+   },
+   {
+    "id": "w181032774",
+    "highway": "unclassified",
+    "km": 35,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w133104971",
+    "highway": "unclassified",
+    "km": 13.8,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "80",
+     "name": "Mbaruk Road",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w485900036",
+    "highway": "tertiary",
+    "km": 11.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Otunga Road",
+     "smoothness": "good",
+     "surface": "unpaved",
+     "width": "5.8"
+    }
+   },
+   {
+    "id": "w692265866",
+    "highway": "residential",
+    "km": 4.2,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "noname": "yes",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w683587238",
+    "highway": "secondary",
+    "km": 4.1,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w117867038",
+    "highway": "residential",
+    "km": 3.7,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "residential",
+     "motor_vehicle": "yes",
+     "smoothness": "good",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w244061550",
+    "highway": "primary",
+    "km": 3.5,
+    "level": "unpaved",
+    "tags": {
+     "destination:backward": "Ngenyi",
+     "destination:forward": "C863-C864 junction",
+     "distance": "3.524",
+     "highway": "primary",
+     "lanes": "2",
+     "name": "Kendu Bay-Kosele- Oyugis-Rioma-Marani- Nyabioto",
+     "ref": "C864",
+     "smoothness": "good",
+     "source:name": "Kenya Roads Board (KRB)",
+     "source:ref": "Kenya Roads Board (KRB);ENERGYDATA.INFO;World Bank Group",
+     "surface": "unpaved",
+     "width": "5"
+    }
+   },
+   {
+    "id": "w699912633",
+    "highway": "secondary",
+    "km": 3.4,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Kisii-Nyatieko Road",
+     "destination:backward": "A1 Chabera",
+     "destination:forward": "Kiomara",
+     "distance": "3.439",
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Kisii-Kegogi- Miruka-Nyamusi- Chabera",
+     "ref": "C863",
+     "smoothness": "good",
+     "source": "Africover",
+     "source:name": "Kenya Roads Board (KRB)",
+     "source:ref": "Kenya Roads Board (KRB); ENERGYDATA.INFO; World Bank Group",
+     "surface": "unpaved",
+     "width": "7"
+    }
+   },
+   {
+    "id": "w628730114",
+    "highway": "tertiary",
+    "km": 3.1,
+    "level": "unpaved",
+    "tags": {
+     "destination:backward": "Isanta Bridge in Geseika",
+     "destination:forward": "Roga",
+     "distance": "3.15",
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Roga-Gesieka Road 2",
+     "ref": "E6219",
+     "smoothness": "good",
+     "source:name": "Kenya Roads Board (KRB)",
+     "source:ref": "Kenya Roads Board (KRB); ENERGYDATA.INFO; World Bank Group",
+     "surface": "unpaved",
+     "width": "7.5"
+    }
+   },
+   {
+    "id": "w117867029",
+    "highway": "residential",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "residential",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "smoothness": "good",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w48082280",
+    "highway": "trunk",
+    "km": 2.3,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "trunk",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "name": "Kisii-Kisumu Road",
+     "ref": "A1",
+     "surface": "cobblestone",
+     "tracktype": "grade3",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w405457871",
+    "highway": "residential",
+    "km": 2.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1006700060",
+    "highway": "residential",
+    "km": 2.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "noname": "yes",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1193932059",
+    "highway": "unclassified",
+    "km": 2.1,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "unclassified",
+     "name": "mukuyu-Gunga rd",
+     "surface": "paved",
+     "tracktype": "grade4",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w702592950",
+    "highway": "trunk",
+    "km": 2.1,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "trunk",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "name": "Kisii-Kisumu Road",
+     "ref": "A1",
+     "surface": "cobblestone",
+     "tracktype": "grade3",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w239553453",
+    "highway": "secondary",
+    "km": 1.8,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Kisii-Nyatieko Road",
+     "destination:backward": "Nyasero",
+     "destination:forward": "Miruka",
+     "distance": "1.848",
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "Kisii-Kegogi- Miruka-Nyamusi- Chabera",
+     "ref": "C863",
+     "smoothness": "good",
+     "source:name": "Kenya Roads Board (KRB)",
+     "source:ref": "Kenya Roads Board (KRB); ENERGYDATA.INFO; World Bank Group",
+     "surface": "unpaved",
+     "width": "6"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w694495848",
+    "highway": "unclassified",
+    "km": 47.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "surface": "Dirt_&_Rock"
+    }
+   },
+   {
+    "id": "w747137372",
+    "highway": "unclassified",
+    "km": 22.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "surface": "Dirt_&_Rock"
+    }
+   },
+   {
+    "id": "w694495553",
+    "highway": "tertiary",
+    "km": 18.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Kuresoi-Chepsir Road",
+     "practicability": "heavy_truck_less_than_20mt",
+     "project:eurosha_2012": "yes",
+     "ref": "D315",
+     "source": "Bing, survey",
+     "source:date": "2013/02/13",
+     "surface": "dirt/sand",
+     "surface_condition": "smooth_greater_than_40kph"
+    }
+   },
+   {
+    "id": "w173346330",
+    "highway": "tertiary",
+    "km": 18,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "name": "Kuresoi-Chepsir Road",
+     "practicability": "heavy_truck_less_than_20mt",
+     "project:eurosha_2012": "yes",
+     "ref": "D315",
+     "source": "Bing, survey",
+     "source:date": "2013/02/13",
+     "surface": "dirt/sand",
+     "surface_condition": "smooth_greater_than_40kph"
+    }
+   },
+   {
+    "id": "w202540434",
+    "highway": "secondary",
+    "km": 15.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "practicability": "light_truck_less_than_10mt",
+     "project:eurosha_2012": "yes",
+     "source": "Bing & Survey;bing;Bing",
+     "source:date": "2013/12/18;2004-03-03",
+     "surface": "dirt/sand",
+     "surface_condition": "smooth_greater_than_40kph"
+    }
+   },
+   {
+    "id": "w848697815",
+    "highway": "unclassified",
+    "km": 14.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Toricha-Bori Road",
+     "surface": "dirt,_rock"
+    }
+   },
+   {
+    "id": "w26836280",
+    "highway": "tertiary",
+    "km": 13.7,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "LAPSSET Corridor",
+     "highway": "tertiary",
+     "name": "Lamu-Garissa Highway",
+     "ref": "A10",
+     "source": "Bing",
+     "surface": "groung"
+    }
+   },
+   {
+    "id": "w668917861",
+    "highway": "tertiary",
+    "km": 8.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "name": "road",
+     "surface": "sand/gravel/stones"
+    }
+   },
+   {
+    "id": "w668926072",
+    "highway": "unclassified",
+    "km": 7.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Kiplus Sergoit Road",
+     "surface": "sand/gravel/stones"
+    }
+   },
+   {
+    "id": "w313815148",
+    "highway": "secondary",
+    "km": 7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "practicability": "4wd_less_than_3.5mt",
+     "project:eurosha_2012": "yes",
+     "source": "Bing; Survey",
+     "source:date": "2012-11-14",
+     "surface": "dirt/sand",
+     "surface_condition": "rough_less_than_40kph"
+    }
+   },
+   {
+    "id": "w668917857",
+    "highway": "tertiary",
+    "km": 6.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Somongi Road",
+     "surface": "sand/gravel/stones"
+    }
+   },
+   {
+    "id": "w668931573",
+    "highway": "unclassified",
+    "km": 6.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "sand/gravel/stones"
+    }
+   },
+   {
+    "id": "w204091794",
+    "highway": "unclassified",
+    "km": 5.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "lit": "no",
+     "practicability": "4wd_less_than_3.5mt",
+     "project:eurosha_2012": "yes",
+     "source": "Field Survey",
+     "source:date": "2013-01-15",
+     "surface": "dirt/sand",
+     "surface_condition": "mud"
+    }
+   },
+   {
+    "id": "w859394653",
+    "highway": "unclassified",
+    "km": 5.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "surface": "Dirt_&_Rock"
+    }
+   },
+   {
+    "id": "w693331624",
+    "highway": "tertiary",
+    "km": 4.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "sand/gravel/stones"
+    }
+   }
+  ]
+ }
+}

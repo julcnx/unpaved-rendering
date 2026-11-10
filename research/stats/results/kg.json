@@ -1,0 +1,1025 @@
+{
+ "country": "kg",
+ "name": "Kyrgyzstan",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:25:18.680Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "kyrgyzstan-latest.osm.pbf",
+  "boundary": "r178009",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 24.9,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 3140,
+   "untagged": 181.8,
+   "unpaved": 4.5,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 921.7,
+   "unpaved": 668.9,
+   "untagged": 496.9,
+   "offroad": 24.1,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 937.7,
+   "paved_tagged": 808,
+   "unpaved": 702.5,
+   "offroad": 0.5,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 4265.6,
+   "unpaved": 1821.6,
+   "paved_tagged": 845.2,
+   "offroad": 267.2,
+   "specialized": 45.2
+  },
+  "unclassified": {
+   "untagged": 6318.9,
+   "unpaved": 2797.7,
+   "offroad": 182.7,
+   "paved_tagged": 152,
+   "specialized": 0.4
+  },
+  "residential": {
+   "untagged": 22826.2,
+   "unpaved": 1802.8,
+   "paved_tagged": 605.1,
+   "offroad": 9.9,
+   "specialized": 3
+  },
+  "all": {
+   "untagged": 35027,
+   "unpaved": 7797.9,
+   "paved_tagged": 6496.9,
+   "offroad": 484.5,
+   "specialized": 48.6
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 24.9
+  },
+  "trunk": {
+   "surface": 3144.5,
+   "smoothness": 698
+  },
+  "primary": {
+   "surface": 1614.8,
+   "smoothness": 452.3,
+   "tracktype": 19.3
+  },
+  "secondary": {
+   "surface": 1510.5,
+   "smoothness": 145.9,
+   "tracktype": 12.8
+  },
+  "tertiary": {
+   "surface": 2923.2,
+   "smoothness": 407.6,
+   "tracktype": 294.5,
+   "4wd_only": 58.3
+  },
+  "unclassified": {
+   "surface": 3100.2,
+   "smoothness": 211.7,
+   "tracktype": 148.3
+  },
+  "residential": {
+   "surface": 2413,
+   "smoothness": 52.6,
+   "tracktype": 21.1,
+   "4wd_only": 10.1
+  },
+  "all": {
+   "surface": 14731.2,
+   "smoothness": 1968.1,
+   "tracktype": 496.1,
+   "4wd_only": 68.5
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 24.9
+  },
+  "trunk": {
+   "surface": 3144.5,
+   "default": 181.8
+  },
+  "primary": {
+   "surface": 1614.8,
+   "default": 496.9
+  },
+  "secondary": {
+   "surface": 1510.5,
+   "default": 937.7,
+   "tracktype": 0.5
+  },
+  "tertiary": {
+   "default": 4265.6,
+   "surface": 2923.2,
+   "tracktype": 56
+  },
+  "unclassified": {
+   "default": 6318.9,
+   "surface": 3100.2,
+   "tracktype": 32.6
+  },
+  "residential": {
+   "default": 22826.2,
+   "surface": 2413,
+   "tracktype": 7.7
+  },
+  "all": {
+   "default": 35027,
+   "surface": 14731.2,
+   "tracktype": 96.8
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {
+   "smoothness": 24.1
+  },
+  "secondary": {
+   "tracktype": 0.5
+  },
+  "tertiary": {
+   "tracktype": 183,
+   "smoothness": 125.7,
+   "4wd_only": 3.8
+  },
+  "unclassified": {
+   "tracktype": 95.2,
+   "smoothness": 87.9
+  },
+  "residential": {
+   "smoothness": 7.5,
+   "tracktype": 5.4
+  },
+  "all": {
+   "tracktype": 284.1,
+   "smoothness": 245.2,
+   "4wd_only": 3.8
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=compacted": 4.5
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=gravel": 446.5,
+    "surface=unpaved": 98.4,
+    "surface=ground": 82.2,
+    "surface=compacted": 65.9
+   },
+   "offroad": {
+    "smoothness=very_bad": 24.1
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=gravel": 346.8,
+    "surface=unpaved": 171.1,
+    "surface=compacted": 112.4,
+    "surface=ground": 72.2,
+    "tracktype=grade4": 0.5,
+    "surface=concrete:bridge": 0
+   },
+   "offroad": {
+    "tracktype=grade4": 0.5
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=gravel": 1032.9,
+    "surface=unpaved": 676.6,
+    "surface=ground": 199.6,
+    "surface=compacted": 165.1,
+    "tracktype=grade5": 29.8,
+    "surface=dirt": 26.1,
+    "tracktype=grade3": 3.5,
+    "tracktype=grade4": 0.3
+   },
+   "offroad": {
+    "tracktype=grade3": 149.3,
+    "smoothness=very_bad": 73.6,
+    "tracktype=grade5": 29.8,
+    "smoothness=horrible": 6.9,
+    "tracktype=grade4": 3.9,
+    "4wd_only=yes": 3.8
+   },
+   "specialized": {
+    "smoothness=very_horrible": 45.2
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=ground": 1128.9,
+    "surface=unpaved": 1082,
+    "surface=gravel": 294.3,
+    "surface=dirt": 190.8,
+    "surface=compacted": 177.1,
+    "surface=earth": 49.2,
+    "tracktype=grade4": 30.4,
+    "surface=fine_gravel": 18.5,
+    "surface=dirt/sand": 4.5,
+    "surface=unhewn_cobblestone": 2.2,
+    "tracktype=grade3": 2,
+    "surface=grass": 0.5,
+    "surface=sand": 0.2,
+    "tracktype=grade5": 0.2
+   },
+   "offroad": {
+    "tracktype=grade3": 63.5,
+    "smoothness=horrible": 51.9,
+    "smoothness=very_bad": 35.6,
+    "tracktype=grade4": 31.5,
+    "tracktype=grade5": 0.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.4
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 821.4,
+    "surface=ground": 534.4,
+    "surface=gravel": 280.1,
+    "surface=compacted": 110.8,
+    "surface=dirt": 42.5,
+    "surface=fine_gravel": 5.5,
+    "surface=sand": 4.7,
+    "tracktype=grade3": 4.1,
+    "surface=pebblestone": 2.7,
+    "surface=mud": 1.9,
+    "surface=полевая_дорога": 1.3,
+    "surface=earth": 1.3,
+    "tracktype=grade4": 0.9,
+    "surface=unpaved;asphalt": 0.9,
+    "surface=asphalt;unpaved": 0.8,
+    "surface=rock": 0.7,
+    "surface=гравий": 0.7,
+    "surface=таш_жол": 0.6,
+    "surface=dirt_(грунт)": 0.4,
+    "tracktype=grade2": 0.2
+   },
+   "offroad": {
+    "tracktype=grade3": 4.8,
+    "smoothness=very_bad": 4.5,
+    "tracktype=grade4": 0.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 1.9,
+    "smoothness=impassable": 1.1
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 2849.4,
+    "surface=gravel": 2400.8,
+    "surface=ground": 2017.2,
+    "surface=compacted": 635.8,
+    "surface=dirt": 259.4,
+    "surface=earth": 50.4,
+    "tracktype=grade4": 32.2,
+    "tracktype=grade5": 30.1,
+    "surface=fine_gravel": 23.9,
+    "tracktype=grade3": 9.6,
+    "surface=sand": 5,
+    "surface=dirt/sand": 4.5,
+    "surface=pebblestone": 2.7,
+    "surface=unhewn_cobblestone": 2.2,
+    "surface=mud": 1.9,
+    "surface=полевая_дорога": 1.3,
+    "surface=unpaved;asphalt": 0.9,
+    "surface=asphalt;unpaved": 0.8,
+    "surface=rock": 0.7,
+    "surface=гравий": 0.7,
+    "surface=таш_жол": 0.6,
+    "surface=grass": 0.5,
+    "surface=dirt_(грунт)": 0.4,
+    "tracktype=grade2": 0.2,
+    "surface=concrete:bridge": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 217.5,
+    "smoothness=very_bad": 137.8,
+    "smoothness=horrible": 58.8,
+    "tracktype=grade4": 36.6,
+    "tracktype=grade5": 30.1,
+    "4wd_only=yes": 3.8
+   },
+   "specialized": {
+    "smoothness=very_horrible": 47.5,
+    "smoothness=impassable": 1.1
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=dirt/sand": 4.5,
+  "surface=полевая_дорога": 1.3,
+  "smoothness=2": 1.1,
+  "surface=гравий": 0.7,
+  "surface=таш_жол": 0.6,
+  "surface=dirt_(грунт)": 0.4,
+  "surface=concrete:bridge": 0
+ },
+ "conflict_km": {
+  "paved (no surface) + 4wd_only=yes": 34.9,
+  "paved (no surface) + smoothness=very_bad": 22.2,
+  "paved (surface=asphalt) + smoothness=very_bad": 4.4,
+  "smoothness=good + surface=compacted": 0.8,
+  "paved (no surface) + smoothness=horrible": 0.7,
+  "paved (no surface) + smoothness=impassable": 0.6,
+  "smoothness=good + surface=gravel": 0.2,
+  "paved (surface=concrete) + tracktype=grade4": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w178849850",
+    "highway": "primary",
+    "km": 49.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "oneway": "no",
+     "ref": "M-037",
+     "scenic": "yes",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w171802981",
+    "highway": "primary",
+    "km": 48.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "oneway": "no",
+     "ref": "М-109",
+     "source": "landsat",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w531406937",
+    "highway": "secondary",
+    "km": 41.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Михайловка – Николаевка – Токтоян – Сары-Тологой",
+     "ref": "М-051",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w236055805",
+    "highway": "secondary",
+    "km": 35.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w236157805",
+    "highway": "primary",
+    "km": 35.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "ЭМ-13;M-080",
+     "smoothness": "bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w27351002",
+    "highway": "secondary",
+    "km": 32.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "M-067",
+     "smoothness": "bad",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w1148357732",
+    "highway": "secondary",
+    "km": 28.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "М-074",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w153956000",
+    "highway": "primary",
+    "km": 27.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w352620397",
+    "highway": "secondary",
+    "km": 26.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "М-082",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w258292396",
+    "highway": "primary",
+    "km": 23.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "M-037",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w27278607",
+    "highway": "secondary",
+    "km": 22.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "М-082",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w352615659",
+    "highway": "secondary",
+    "km": 21.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Ак-Сай-Рават",
+     "source": "bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w281502180",
+    "highway": "secondary",
+    "km": 21.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "М-089",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1422780378",
+    "highway": "secondary",
+    "km": 19.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "M-067",
+     "smoothness": "bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w524071288",
+    "highway": "secondary",
+    "km": 18.4,
+    "level": "unpaved",
+    "tags": {
+     "fixme": "yes",
+     "highway": "secondary",
+     "ref": "М-069",
+     "source": "Yahoo",
+     "surface": "compacted"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w496090202",
+    "highway": "unclassified",
+    "km": 46.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "40",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w401456133",
+    "highway": "tertiary",
+    "km": 24,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w308031233",
+    "highway": "tertiary",
+    "km": 21,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "М-058",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w303783161",
+    "highway": "tertiary",
+    "km": 20.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Каркыра – Турук – Сары-Жаз",
+     "ref": "М-050",
+     "source": "gps+bing",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w454157831",
+    "highway": "tertiary",
+    "km": 18.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "М-088",
+     "surface": "compacted",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w391308321",
+    "highway": "unclassified",
+    "km": 17.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w27404208",
+    "highway": "tertiary",
+    "km": 16.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "60",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1077727905",
+    "highway": "unclassified",
+    "km": 16.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w23257152",
+    "highway": "unclassified",
+    "km": 16.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w178826518",
+    "highway": "unclassified",
+    "km": 16.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w220020611",
+    "highway": "tertiary",
+    "km": 15.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w721649138",
+    "highway": "tertiary",
+    "km": 15.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Кегеты - Восточный Каракол",
+     "ref": "М-006",
+     "surface": "gravel",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w150847211",
+    "highway": "tertiary",
+    "km": 14.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "М-088",
+     "surface": "compacted",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w134999291",
+    "highway": "unclassified",
+    "km": 12,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "4X4 road to Köl-Suu",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w1148051368",
+    "highway": "tertiary",
+    "km": 10.6,
+    "level": "specialized",
+    "tags": {
+     "highway": "tertiary",
+     "name": "Семиз-Бел - Оттук",
+     "ref": "М-054",
+     "smoothness": "very_horrible",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w667532326",
+    "highway": "tertiary",
+    "km": 18.2,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "motor_vehicle": "yes",
+     "smoothness": "very_bad",
+     "tracktype": "grade1",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w340061326",
+    "highway": "residential",
+    "km": 10.1,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "residential",
+     "layer": "1"
+    }
+   },
+   {
+    "id": "w991347051",
+    "highway": "tertiary",
+    "km": 4.6,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106",
+     "source": "mapbox"
+    }
+   },
+   {
+    "id": "w660768288",
+    "highway": "tertiary",
+    "km": 4,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106",
+     "source": "mapbox"
+    }
+   },
+   {
+    "id": "w667535594",
+    "highway": "tertiary",
+    "km": 4,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "motor_vehicle": "yes",
+     "name": "араван          кок жар",
+     "smoothness": "very_bad",
+     "tracktype": "grade1",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w357671306",
+    "highway": "secondary",
+    "km": 3.6,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "ref": "М-047",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w660768274",
+    "highway": "tertiary",
+    "km": 3.1,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106"
+    }
+   },
+   {
+    "id": "w401458676",
+    "highway": "tertiary",
+    "km": 2.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106"
+    }
+   },
+   {
+    "id": "w913399254",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106"
+    }
+   },
+   {
+    "id": "w660885590",
+    "highway": "tertiary",
+    "km": 2,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "ref": "М-106"
+    }
+   },
+   {
+    "id": "w1451542325",
+    "highway": "tertiary",
+    "km": 1.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "ref": "М-106"
+    }
+   },
+   {
+    "id": "w660885598",
+    "highway": "tertiary",
+    "km": 1.8,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "ref": "М-106",
+     "source": "mapbox"
+    }
+   },
+   {
+    "id": "w913399256",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106"
+    }
+   },
+   {
+    "id": "w191171910",
+    "highway": "residential",
+    "km": 0.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "Ченкил улица",
+     "sidewalk:both": "no",
+     "smoothness": "good",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w660768270",
+    "highway": "tertiary",
+    "km": 0.8,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "name": "Үч-Коргон - Дароот-Коргон жоли",
+     "name:en": "Uch-Korgon - Daroot-Korgon Road",
+     "name:ru": "Уч-Курган - Дароот-Курган",
+     "ref": "М-106"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w296767744",
+    "highway": "unclassified",
+    "km": 3.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w1100769384",
+    "highway": "residential",
+    "km": 1.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "Алыбаков көчөсү",
+     "name:en": "Alybakova Street",
+     "name:ru": "Алыбакова улица",
+     "smoothness": "2",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w337600899",
+    "highway": "unclassified",
+    "km": 1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w330273450",
+    "highway": "residential",
+    "km": 0.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "1",
+     "maxspeed": "20",
+     "name": "Ленин көчөсү",
+     "surface": "полевая_дорога"
+    }
+   },
+   {
+    "id": "w624986257",
+    "highway": "residential",
+    "km": 0.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "surface": "гравий"
+    }
+   },
+   {
+    "id": "w193591203",
+    "highway": "residential",
+    "km": 0.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "Сейдакмат кечосу",
+     "surface": "таш_жол"
+    }
+   },
+   {
+    "id": "w330273447",
+    "highway": "residential",
+    "km": 0.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "1",
+     "maxspeed": "20",
+     "name": "Ысык-Көл көчөсү",
+     "surface": "полевая_дорога"
+    }
+   }
+  ]
+ }
+}

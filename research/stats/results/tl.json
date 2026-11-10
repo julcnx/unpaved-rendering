@@ -1,0 +1,582 @@
+{
+ "country": "tl",
+ "name": "Timor-Leste",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-02T16:42:23.988Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "east-timor-latest.osm.pbf",
+  "boundary": "r305142",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "untagged": 61.5,
+   "paved_tagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 38.7,
+   "untagged": 1,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 620.9,
+   "paved_tagged": 356.1,
+   "unpaved": 212.1,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 254.2,
+   "unpaved": 79.6,
+   "paved_tagged": 24.7,
+   "offroad": 0.3,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 690.6,
+   "unpaved": 263,
+   "paved_tagged": 33.8,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 3953.8,
+   "unpaved": 1356.8,
+   "paved_tagged": 76.4,
+   "offroad": 20.5,
+   "specialized": 0.6
+  },
+  "residential": {
+   "untagged": 1217.7,
+   "unpaved": 204,
+   "paved_tagged": 24.4,
+   "offroad": 0.8,
+   "specialized": 0
+  },
+  "all": {
+   "untagged": 6799.7,
+   "unpaved": 2115.5,
+   "paved_tagged": 554.2,
+   "offroad": 21.6,
+   "specialized": 0.6
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 38.7
+  },
+  "primary": {
+   "surface": 568.1,
+   "smoothness": 60.9
+  },
+  "secondary": {
+   "surface": 104.6,
+   "smoothness": 3.2
+  },
+  "tertiary": {
+   "surface": 296.9,
+   "tracktype": 18.5,
+   "smoothness": 10.1
+  },
+  "unclassified": {
+   "surface": 1439.3,
+   "tracktype": 41.9,
+   "smoothness": 30.3
+  },
+  "residential": {
+   "surface": 229,
+   "smoothness": 2,
+   "tracktype": 1.6
+  },
+  "all": {
+   "surface": 2676.7,
+   "smoothness": 106.4,
+   "tracktype": 62
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "default": 61.5
+  },
+  "trunk": {
+   "surface": 38.7,
+   "default": 1
+  },
+  "primary": {
+   "default": 620.9,
+   "surface": 568.1
+  },
+  "secondary": {
+   "default": 254.2,
+   "surface": 104.6
+  },
+  "tertiary": {
+   "default": 690.6,
+   "surface": 296.9
+  },
+  "unclassified": {
+   "default": 3953.8,
+   "surface": 1439.3,
+   "tracktype": 15
+  },
+  "residential": {
+   "default": 1217.7,
+   "surface": 229,
+   "tracktype": 0.3
+  },
+  "all": {
+   "default": 6799.7,
+   "surface": 2676.7,
+   "tracktype": 15.3
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "smoothness": 0.3
+  },
+  "tertiary": {},
+  "unclassified": {
+   "smoothness": 14.7,
+   "tracktype": 6.5
+  },
+  "residential": {
+   "smoothness": 0.7,
+   "tracktype": 0.1
+  },
+  "all": {
+   "smoothness": 15.7,
+   "tracktype": 6.6
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 191.4,
+    "surface=gravel": 20.4,
+    "surface=ground": 0.2
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 68.7,
+    "surface=compacted": 8.3,
+    "surface=gravel": 1.8,
+    "surface=ground": 1.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 0.3
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 147.1,
+    "surface=ground": 74.7,
+    "surface=dirt": 28.6,
+    "surface=gravel": 12.6
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=ground": 746.5,
+    "surface=unpaved": 586.7,
+    "surface=dirt": 21.8,
+    "surface=gravel": 10.4,
+    "tracktype=grade4": 6.5,
+    "surface=mud": 4.6,
+    "surface=sand": 0.9,
+    "surface=grass": 0.3,
+    "surface=ohne": 0.2,
+    "surface=בלתי_סלול": 0.1,
+    "surface=unpaved_pathway": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 14.1,
+    "tracktype=grade4": 6.5
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.6
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=ground": 106.7,
+    "surface=unpaved": 77.6,
+    "surface=gravel": 17.9,
+    "surface=dirt": 0.8,
+    "surface=mud": 0.7,
+    "surface=compacted": 0.6,
+    "surface=sand": 0.5,
+    "tracktype=grade3": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 0.7,
+    "tracktype=grade3": 0.1
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 1071.5,
+    "surface=ground": 929.2,
+    "surface=gravel": 63.1,
+    "surface=dirt": 51.2,
+    "surface=compacted": 8.9,
+    "tracktype=grade4": 6.5,
+    "surface=mud": 5.3,
+    "surface=sand": 1.4,
+    "surface=grass": 0.3,
+    "surface=ohne": 0.2,
+    "tracktype=grade3": 0.1,
+    "surface=בלתי_סלול": 0.1,
+    "surface=unpaved_pathway": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 15.1,
+    "tracktype=grade4": 6.5,
+    "tracktype=grade3": 0.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.6
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=ohne": 0.2,
+  "surface=בלתי_סלול": 0.1,
+  "surface=unpaved_pathway": 0
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + tracktype=grade4": 8.3
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w40678552",
+    "highway": "primary",
+    "km": 23.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Viqueque - Baucau",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w170259503",
+    "highway": "secondary",
+    "km": 15.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Estrada Lospalos - Malahara-Mehara",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w40678547",
+    "highway": "primary",
+    "km": 13.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Díli - Manatuto",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w168739844",
+    "highway": "primary",
+    "km": 11.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Iliomar - Lospalos",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w432830293",
+    "highway": "secondary",
+    "km": 11.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "40",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w371812497",
+    "highway": "primary",
+    "km": 10.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Umaboco - Viqueque",
+     "source": "UN-OCHA;GPS",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w40619777",
+    "highway": "secondary",
+    "km": 8.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "80",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w40628111",
+    "highway": "primary",
+    "km": 8.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w150773592",
+    "highway": "primary",
+    "km": 7.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Loti - Betano",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w550548492",
+    "highway": "primary",
+    "km": 7.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Umaboco - Viqueque",
+     "source": "UN-OCHA;GPS",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w40628148",
+    "highway": "primary",
+    "km": 7.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Baucau - Lautém",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w40619771",
+    "highway": "primary",
+    "km": 7.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "maxspeed": "40",
+     "name": "Estrada Baukau - Lospalos",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w167839763",
+    "highway": "primary",
+    "km": 6.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Iliomar - Viqueque",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w432830289",
+    "highway": "primary",
+    "km": 6.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Estrada Lospalos - Viqueque - Iliomar",
+     "note": "Corrigir o traçado desta estrada",
+     "source": "UN-OCHA",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w560598972",
+    "highway": "primary",
+    "km": 5.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w650377682",
+    "highway": "unclassified",
+    "km": 7,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "mtb:scale": "4",
+     "smoothness": "very_bad",
+     "surface": "dirt",
+     "tracktype": "grade2",
+     "width": "2"
+    }
+   },
+   {
+    "id": "w296128192",
+    "highway": "unclassified",
+    "km": 5.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w1003341065",
+    "highway": "unclassified",
+    "km": 3.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w650837122",
+    "highway": "unclassified",
+    "km": 3.5,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "mtb:scale": "2",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "tracktype": "grade2",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w1086017771",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w917236343",
+    "highway": "residential",
+    "km": 0.7,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "residential",
+     "horse": "yes",
+     "mtb:scale": "4",
+     "smoothness": "very_bad",
+     "surface": "dirt",
+     "tracktype": "grade2",
+     "width": "2"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w1104497784",
+    "highway": "unclassified",
+    "km": 3.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w1083681969",
+    "highway": "unclassified",
+    "km": 2.2,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w1126287032",
+    "highway": "unclassified",
+    "km": 1.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w1104497789",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade4"
+    }
+   }
+  ],
+  "unknown_value": []
+ }
+}

@@ -1,0 +1,1294 @@
+{
+ "country": "al",
+ "name": "Albania",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:36:10.758Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "albania-latest.osm.pbf",
+  "boundary": "r53292",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 402.9,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 442.5,
+   "untagged": 3,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 1425.1,
+   "untagged": 74.2,
+   "unpaved": 0.3,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 2140.5,
+   "untagged": 177,
+   "offroad": 45.7,
+   "unpaved": 18,
+   "specialized": 0
+  },
+  "tertiary": {
+   "paved_tagged": 2027.7,
+   "untagged": 777,
+   "unpaved": 710,
+   "offroad": 211.1,
+   "specialized": 15.8
+  },
+  "unclassified": {
+   "untagged": 3567.1,
+   "unpaved": 3075.7,
+   "offroad": 1371.2,
+   "paved_tagged": 751.2,
+   "specialized": 83.3
+  },
+  "residential": {
+   "untagged": 9540.5,
+   "unpaved": 2963.3,
+   "paved_tagged": 1898.6,
+   "offroad": 310.2,
+   "specialized": 12.1
+  },
+  "all": {
+   "untagged": 14138.9,
+   "paved_tagged": 9088.5,
+   "unpaved": 6767.3,
+   "offroad": 1938.1,
+   "specialized": 111.2
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 402.9,
+   "smoothness": 284.6
+  },
+  "trunk": {
+   "surface": 442.5,
+   "smoothness": 337.9
+  },
+  "primary": {
+   "surface": 1425.3,
+   "smoothness": 907.1
+  },
+  "secondary": {
+   "surface": 2204.2,
+   "smoothness": 1346.5,
+   "tracktype": 80,
+   "4wd_only": 42.8
+  },
+  "tertiary": {
+   "surface": 2956.5,
+   "smoothness": 1169.7,
+   "tracktype": 287.2,
+   "4wd_only": 118
+  },
+  "unclassified": {
+   "surface": 4922.7,
+   "smoothness": 1477.5,
+   "tracktype": 1428.8,
+   "4wd_only": 673.1
+  },
+  "residential": {
+   "surface": 4910.9,
+   "smoothness": 1029,
+   "tracktype": 466.8,
+   "4wd_only": 61
+  },
+  "all": {
+   "surface": 17265.1,
+   "smoothness": 6552.3,
+   "tracktype": 2262.9,
+   "4wd_only": 894.8
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 402.9
+  },
+  "trunk": {
+   "surface": 442.5,
+   "default": 3
+  },
+  "primary": {
+   "surface": 1425.3,
+   "default": 74.2
+  },
+  "secondary": {
+   "surface": 2204.2,
+   "default": 177
+  },
+  "tertiary": {
+   "surface": 2956.5,
+   "default": 777,
+   "tracktype": 8.1
+  },
+  "unclassified": {
+   "surface": 4922.7,
+   "default": 3567.1,
+   "tracktype": 358.7
+  },
+  "residential": {
+   "default": 9540.5,
+   "surface": 4910.9,
+   "tracktype": 273.2
+  },
+  "all": {
+   "surface": 17265.1,
+   "default": 14138.9,
+   "tracktype": 640
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {
+   "tracktype": 40.2,
+   "smoothness": 5.5
+  },
+  "tertiary": {
+   "smoothness": 125.3,
+   "tracktype": 98,
+   "4wd_only": 3.6
+  },
+  "unclassified": {
+   "tracktype": 653.2,
+   "smoothness": 621.6,
+   "4wd_only": 179.7
+  },
+  "residential": {
+   "tracktype": 198.5,
+   "smoothness": 90.7,
+   "4wd_only": 33.2
+  },
+  "all": {
+   "tracktype": 989.9,
+   "smoothness": 843,
+   "4wd_only": 216.5
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=compacted": 0.3
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 45.3,
+    "surface=gravel": 18,
+    "surface=compacted": 0.5
+   },
+   "offroad": {
+    "tracktype=grade3": 40.2,
+    "smoothness=horrible": 4.3,
+    "smoothness=very_bad": 1.2
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 556.4,
+    "surface=gravel": 232.7,
+    "surface=ground": 100.8,
+    "surface=compacted": 30.9,
+    "surface=fine_gravel": 7.2,
+    "tracktype=grade2": 4,
+    "surface=dirt": 3.2,
+    "tracktype=grade4": 1.1,
+    "surface=pebblestone": 0.4
+   },
+   "offroad": {
+    "smoothness=very_bad": 94.2,
+    "tracktype=grade3": 44.4,
+    "tracktype=grade4": 42.8,
+    "smoothness=horrible": 15.3,
+    "tracktype=grade5": 10.8,
+    "4wd_only=yes": 3.4,
+    "4wd_only=recommended": 0.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 15.8
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 2627.6,
+    "surface=gravel": 746.1,
+    "surface=ground": 702.6,
+    "tracktype=grade3": 141.4,
+    "tracktype=grade4": 89.7,
+    "surface=dirt": 80.9,
+    "surface=compacted": 56.1,
+    "tracktype=grade2": 51.7,
+    "tracktype=grade5": 18.1,
+    "surface=sand": 5.8,
+    "surface=fallen_rocks_on_dirt": 4.1,
+    "surface=pebblestone": 3,
+    "surface=fine_gravel": 1.1,
+    "surface=grass": 1,
+    "surface=gravel;stones": 0.9,
+    "surface=dirtq": 0.1,
+    "surface=unhewn_cobblestone": 0.1,
+    "surface=iron": 0,
+    "surface=mud": 0,
+    "surface=rotting_wood": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 338.4,
+    "smoothness=very_bad": 317.8,
+    "tracktype=grade4": 249.3,
+    "smoothness=horrible": 220.5,
+    "4wd_only=yes": 178.8,
+    "tracktype=grade5": 65.5,
+    "4wd_only=recommended": 0.9
+   },
+   "specialized": {
+    "smoothness=very_horrible": 57.4,
+    "smoothness=impassable": 25.8
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 1997.2,
+    "surface=gravel": 427.7,
+    "surface=ground": 391.2,
+    "surface=compacted": 163.2,
+    "tracktype=grade3": 81.5,
+    "surface=dirt": 75.7,
+    "tracktype=grade2": 69.7,
+    "tracktype=grade4": 31.8,
+    "tracktype=grade5": 21.8,
+    "surface=grass_paver": 4.8,
+    "surface=unhewn_cobblestone": 4.7,
+    "surface=fine_gravel": 4.1,
+    "surface=pebblestone": 2.9,
+    "surface=earth": 2.9,
+    "surface=sand": 2.6,
+    "surface=grass": 2.6,
+    "surface=paving;gravel": 0.6,
+    "surface=rock": 0.3,
+    "surface=ground;stones": 0.1,
+    "surface=gravel;grass": 0.1,
+    "surface=asphalt:lanes": 0.1,
+    "surface=concrete:lanes": 0.1,
+    "surface=gravel;rock": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 119.5,
+    "smoothness=very_bad": 65.5,
+    "tracktype=grade4": 46.5,
+    "tracktype=grade5": 32.4,
+    "4wd_only=recommended": 16.6,
+    "4wd_only=yes": 16.6,
+    "smoothness=horrible": 13
+   },
+   "specialized": {
+    "smoothness=very_horrible": 12.1
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 5226.5,
+    "surface=gravel": 1424.4,
+    "surface=ground": 1194.6,
+    "surface=compacted": 250.9,
+    "tracktype=grade3": 222.9,
+    "surface=dirt": 159.8,
+    "tracktype=grade2": 125.3,
+    "tracktype=grade4": 122.6,
+    "tracktype=grade5": 39.9,
+    "surface=fine_gravel": 12.4,
+    "surface=sand": 8.4,
+    "surface=pebblestone": 6.4,
+    "surface=grass_paver": 4.8,
+    "surface=unhewn_cobblestone": 4.8,
+    "surface=fallen_rocks_on_dirt": 4.1,
+    "surface=grass": 3.5,
+    "surface=earth": 2.9,
+    "surface=gravel;stones": 0.9,
+    "surface=paving;gravel": 0.6,
+    "surface=rock": 0.3,
+    "surface=ground;stones": 0.1,
+    "surface=gravel;grass": 0.1,
+    "surface=dirtq": 0.1,
+    "surface=asphalt:lanes": 0.1,
+    "surface=concrete:lanes": 0.1,
+    "surface=iron": 0,
+    "surface=mud": 0,
+    "surface=rotting_wood": 0,
+    "surface=gravel;rock": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 542.5,
+    "smoothness=very_bad": 478.7,
+    "tracktype=grade4": 338.7,
+    "smoothness=horrible": 253.1,
+    "4wd_only=yes": 198.7,
+    "tracktype=grade5": 108.7,
+    "4wd_only=recommended": 17.7
+   },
+   "specialized": {
+    "smoothness=very_horrible": 85.3,
+    "smoothness=impassable": 25.8
+   }
+  }
+ },
+ "unknown_value_km": {
+  "smoothness=very_good": 36.8,
+  "surface=fallen_rocks_on_dirt": 4.1,
+  "surface=gravel;stones": 0.9,
+  "surface=paving;gravel": 0.6,
+  "surface=ground;stones": 0.1,
+  "surface=dirtq": 0.1,
+  "surface=asphalt:lanes": 0.1,
+  "surface=iron": 0,
+  "surface=rotting_wood": 0
+ },
+ "conflict_km": {
+  "paved (no surface) + 4wd_only=yes": 9.7,
+  "paved (no surface) + smoothness=very_horrible": 6.3,
+  "paved (no surface) + smoothness=impassable": 5.5,
+  "paved (surface=asphalt) + 4wd_only=yes": 5.1,
+  "paved (surface=asphalt) + tracktype=grade4": 5,
+  "smoothness=good + surface=gravel": 4.8,
+  "paved (surface=asphalt) + smoothness=very_bad": 4.3,
+  "paved (surface=asphalt) + tracktype=grade3": 4.1,
+  "paved (no surface) + 4wd_only=recommended": 4,
+  "paved (surface=asphalt) + 4wd_only=recommended": 2.9,
+  "paved (surface=paved) + smoothness=very_bad": 2.1,
+  "smoothness=good + surface=compacted": 1.8,
+  "paved (surface=asphalt) + smoothness=horrible": 1.7,
+  "smoothness=good + surface=unpaved": 1.2,
+  "smoothness=excellent + surface=unpaved": 1.1,
+  "smoothness=good + surface=ground": 0.9,
+  "paved (surface=asphalt) + tracktype=grade5": 0.7,
+  "smoothness=excellent + surface=compacted": 0.7,
+  "smoothness=excellent + surface=gravel": 0.5,
+  "smoothness=excellent + surface=ground": 0.5,
+  "smoothness=good + surface=dirt": 0.4,
+  "paved (no surface) + smoothness=horrible": 0.4,
+  "paved (surface=cobblestone) + smoothness=very_bad": 0.2,
+  "paved (surface=wood) + smoothness=very_bad": 0.1,
+  "paved (surface=wood) + 4wd_only=yes": 0,
+  "paved (surface=concrete) + smoothness=horrible": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w43655886",
+    "highway": "secondary",
+    "km": 8.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "ref": "SH36",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w262250987",
+    "highway": "secondary",
+    "km": 7.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "ref": "SH36",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w244405453",
+    "highway": "secondary",
+    "km": 6.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "name": "Kalaja e Stelushit",
+     "ref": "SH36",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w262250979",
+    "highway": "secondary",
+    "km": 5.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "ref": "SH36",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1566449489",
+    "highway": "secondary",
+    "km": 5.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "ref": "SH36",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w152583728",
+    "highway": "secondary",
+    "km": 4.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "ref": "SH76",
+     "smoothness": "horrible",
+     "surface": "gravel",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w262250965",
+    "highway": "secondary",
+    "km": 3.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "ref": "SH36",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w152583725",
+    "highway": "secondary",
+    "km": 3.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "ref": "SH76",
+     "surface": "gravel",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w152583727",
+    "highway": "secondary",
+    "km": 3.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "ref": "SH76",
+     "surface": "gravel",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w534883052",
+    "highway": "secondary",
+    "km": 2.4,
+    "level": "unpaved",
+    "tags": {
+     "check_date:smoothness": "2020-02",
+     "check_date:surface": "2020-02",
+     "hgv": "no",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "SH76",
+     "smoothness": "bad",
+     "surface": "gravel",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w171935099",
+    "highway": "secondary",
+    "km": 2.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Mbretit",
+     "ref": "SH36",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w43518749",
+    "highway": "secondary",
+    "km": 2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Lis",
+     "ref": "SH36",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1443062098",
+    "highway": "secondary",
+    "km": 1.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "name": "Lis",
+     "ref": "SH36",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w1375890108",
+    "highway": "secondary",
+    "km": 1.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "ref": "SH76",
+     "surface": "gravel",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w534883062",
+    "highway": "secondary",
+    "km": 1.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "ref": "SH76",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "width": "3"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w173724941",
+    "highway": "tertiary",
+    "km": 27.2,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "check_date:surface": "2025-09-06",
+     "highway": "tertiary",
+     "oneway": "no",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w277155951",
+    "highway": "unclassified",
+    "km": 23.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w168672602",
+    "highway": "unclassified",
+    "km": 22,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w125823018",
+    "highway": "unclassified",
+    "km": 20.7,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "smoothness": "very_horrible",
+     "source": "bing;mapbox;digitalglobe-satellite",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w246418919",
+    "highway": "unclassified",
+    "km": 20.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "1",
+     "motorcycle": "yes",
+     "sidewalk": "no",
+     "smoothness": "bad",
+     "source": "bing;mapbox;digitalglobe-satellite",
+     "surface": "unpaved",
+     "tourist_bus": "no"
+    }
+   },
+   {
+    "id": "w172252574",
+    "highway": "unclassified",
+    "km": 19.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "surface": "ground",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w659951105",
+    "highway": "unclassified",
+    "km": 18.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "name": "Bize - Zabzun",
+     "ref": "SH54",
+     "surface": "dirt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w548084636",
+    "highway": "unclassified",
+    "km": 17.7,
+    "level": "specialized",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "smoothness": "impassable",
+     "surface": "unpaved",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w181419801",
+    "highway": "unclassified",
+    "km": 17.6,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "30",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "source": "bing;mapbox;digitalglobe-satellite",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w134230661",
+    "highway": "tertiary",
+    "km": 17.3,
+    "level": "offroad",
+    "tags": {
+     "destination:forward": "Lurë",
+     "destination:ref:backward": "SH34;K34",
+     "highway": "tertiary",
+     "maxspeed": "25",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w197581992",
+    "highway": "unclassified",
+    "km": 15.9,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "unclassified",
+     "lanes": "1",
+     "mtb:scale": "2",
+     "name": "Bajram Curr-Markaj-Llozhen",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "source": "bing;mapbox-satellite;survey;knowledge;local-info",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w30455720",
+    "highway": "tertiary",
+    "km": 14.7,
+    "level": "specialized",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w344913524",
+    "highway": "unclassified",
+    "km": 13.6,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "1",
+     "motorcycle": "yes",
+     "mtb:scale": "1",
+     "mtb:scale:uphill": "2",
+     "sac_scale": "mountain_hiking",
+     "sidewalk": "no",
+     "ski": "no",
+     "smoothness": "bad",
+     "snowmobile": "no",
+     "source": "bing;mapbox-satellite;survey;knowledge;local-info",
+     "surface": "gravel",
+     "tracktype": "grade1",
+     "trail_visibility": "intermediate",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "id": "w181543571",
+    "highway": "unclassified",
+    "km": 13.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "horse": "yes",
+     "motorcycle": "yes",
+     "mtb:scale": "0",
+     "smoothness": "very_bad",
+     "source": "bing;mapbox;digitalglobe satellite",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w204558135",
+    "highway": "unclassified",
+    "km": 13.1,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "class:bicycle:mtb": "2",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "1",
+     "motorcycle": "yes",
+     "mtb:scale": "1",
+     "name": "Razem - Rrapsh Starje",
+     "sac_scale": "mountain_hiking",
+     "sidewalk": "no",
+     "smoothness": "bad",
+     "source": "Bing Aerial Imagery",
+     "surface": "gravel",
+     "tracktype": "grade2",
+     "trail_visibility": "intermediate"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w397480259",
+    "highway": "residential",
+    "km": 5.6,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "bicycle": "no",
+     "foot": "yes",
+     "highway": "residential",
+     "horse": "yes",
+     "lanes": "1",
+     "maxspeed": "10",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "mtb": "yes",
+     "name": "Istrefaj",
+     "sac_scale": "mountain_hiking",
+     "sidewalk": "no",
+     "source": "bing;mapbox-satellite;survey;gps;knowledge;local-info",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania",
+     "tourist_bus": "no",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "id": "w993225381",
+    "highway": "unclassified",
+    "km": 4.8,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "impassable"
+    }
+   },
+   {
+    "id": "w173243499",
+    "highway": "tertiary",
+    "km": 4.7,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "asphalt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w30455941",
+    "highway": "unclassified",
+    "km": 3.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible"
+    }
+   },
+   {
+    "id": "w184654682",
+    "highway": "unclassified",
+    "km": 3.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1185405371",
+    "highway": "tertiary",
+    "km": 2.9,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "Rranzë",
+     "oneway": "no",
+     "sidewalk": "no",
+     "smoothness": "intermediate",
+     "surface": "asphalt",
+     "width": "3.4"
+    }
+   },
+   {
+    "id": "w688711617",
+    "highway": "residential",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "2",
+     "lanes:backward": "1",
+     "lanes:forward": "1",
+     "sidewalk": "no",
+     "smoothness": "good",
+     "source": "bing;mapbox;digitalglobe-satellite;arrsh(autoriteti-rrugor-shqiptar)",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w241827621",
+    "highway": "tertiary",
+    "km": 1.7,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "incline": "down",
+     "lanes": "1",
+     "maxspeed": "30",
+     "maxweight": "3.5",
+     "maxwidth": "2.3",
+     "smoothness": "intermediate",
+     "source": "bing;mapbox;digitalglobe satellite;survey;knowledge;local-info",
+     "source:surface": "survey",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania",
+     "surface": "asphalt",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "id": "w173981438",
+    "highway": "tertiary",
+    "km": 1.6,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "smoothness": "good",
+     "source": "bing;mapbox;digitalglobe satellite;survey;knowledge;local-info",
+     "source:surface": "survey",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania",
+     "surface": "asphalt",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "id": "w963939093",
+    "highway": "residential",
+    "km": 1.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "2",
+     "lanes:backward": "1",
+     "lanes:forward": "1",
+     "sidewalk": "no",
+     "smoothness": "good",
+     "source": "bing;mapbox;digitalglobe-satellite;arrsh(autoriteti-rrugor-shqiptar)",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w1492740024",
+    "highway": "tertiary",
+    "km": 1.6,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "SH74",
+     "sidewalk": "no",
+     "smoothness": "intermediate",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w229253698",
+    "highway": "residential",
+    "km": 1.5,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "foot": "yes",
+     "highway": "residential",
+     "lanes": "1",
+     "maxspeed": "30",
+     "source": "bing;mapbox;digitalglobe satellite;survey;knowledge;local-info",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "id": "w1006431486",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_horrible"
+    }
+   },
+   {
+    "id": "w1006431485",
+    "highway": "residential",
+    "km": 1.5,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "very_horrible"
+    }
+   },
+   {
+    "id": "w337060307",
+    "highway": "residential",
+    "km": 1.3,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "yes",
+     "bicycle": "no",
+     "foot": "yes",
+     "highway": "residential",
+     "horse": "yes",
+     "lanes": "1",
+     "maxspeed": "10",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "mtb": "yes",
+     "sac_scale": "mountain_hiking",
+     "sidewalk": "no",
+     "source": "bing;mapbox-satellite;survey;gps;knowledge;local-info",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania",
+     "tourist_bus": "no",
+     "wheelchair": "no"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w302668689",
+    "highway": "secondary",
+    "km": 11.5,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "lanes:backward": "1",
+     "lanes:forward": "1",
+     "maxspeed": "50",
+     "ref": "SH71",
+     "sidewalk": "no",
+     "smoothness": "very_good",
+     "source": "bing;mapbox;digitalglobe-satellite;arrsh(autoriteti-rrugor-shqiptar)",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w182445016",
+    "highway": "tertiary",
+    "km": 6.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1119750874",
+    "highway": "secondary",
+    "km": 4.4,
+    "level": "paved",
+    "tags": {
+     "hazard": "bump",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "name": "Rruga e Hekal",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w440169142",
+    "highway": "unclassified",
+    "km": 4.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "smoothness": "intermediate",
+     "surface": "fallen_rocks_on_dirt"
+    }
+   },
+   {
+    "id": "w233133206",
+    "highway": "tertiary",
+    "km": 3.6,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "40",
+     "smoothness": "very_good",
+     "source": "bing;mapbox;digitalglobe satellite;",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania/albums",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w233133218",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "40",
+     "smoothness": "very_good",
+     "source": "bing;mapbox;digitalglobe satellite;",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania/albums",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w233133199",
+    "highway": "tertiary",
+    "km": 2.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "40",
+     "smoothness": "very_good",
+     "source": "bing;mapbox;digitalglobe satellite",
+     "source_ref:url": "https://www.flickr.com/photos/openstreetmap-albania/albums",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w233530696",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "oneway": "no",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w370557644",
+    "highway": "tertiary",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "goods": "yes",
+     "hgv": "no",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "sidewalk": "no",
+     "smoothness": "very_good",
+     "source": "Bing Aerial Imagery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w223011058",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "gravel;stones"
+    }
+   },
+   {
+    "id": "w446506525",
+    "highway": "secondary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "goods": "yes",
+     "hgv": "no",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "sidewalk": "no",
+     "smoothness": "very_good",
+     "source": "Bing Aerial Imagery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w173325416",
+    "highway": "tertiary",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "goods": "yes",
+     "hgv": "no",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "sidewalk": "no",
+     "smoothness": "very_good",
+     "source": "Bing Aerial Imagery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w370537561",
+    "highway": "secondary",
+    "km": 0.7,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "goods": "yes",
+     "hgv": "no",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "motorcar": "yes",
+     "motorcycle": "yes",
+     "sidewalk": "no",
+     "smoothness": "very_good",
+     "source": "Bing Aerial Imagery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w171046804",
+    "highway": "residential",
+    "km": 0.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "very_bad",
+     "surface": "paving;gravel",
+     "tracktype": "grade3"
+    }
+   }
+  ]
+ }
+}

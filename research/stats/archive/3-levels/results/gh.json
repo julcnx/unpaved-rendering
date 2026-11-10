@@ -1,0 +1,857 @@
+{
+ "country": "gh",
+ "name": "Ghana",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-02T15:18:20.906Z",
+  "classifier_sha256": "892814b74563",
+  "pipeline_sha256": "fa32fb9837bf",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "ghana-latest.osm.pbf",
+  "boundary": "r192781",
+  "data_date_source": "header"
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 40.5,
+   "untagged": 0.1,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 2979.5,
+   "untagged": 837.2,
+   "offroad": 302.7,
+   "rough": 41.2,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 1773,
+   "untagged": 1335.8,
+   "offroad": 537.7,
+   "rough": 163.5,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 2431.2,
+   "paved_tagged": 2360.8,
+   "offroad": 1359.9,
+   "rough": 331.5,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 6428.6,
+   "offroad": 5319.5,
+   "paved_tagged": 2070.5,
+   "rough": 1016.7,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 28351.5,
+   "offroad": 16335.1,
+   "paved_tagged": 645.4,
+   "rough": 550.3,
+   "specialized": 0.1
+  },
+  "residential": {
+   "untagged": 52355.3,
+   "offroad": 4117.6,
+   "paved_tagged": 1233.7,
+   "rough": 580.2,
+   "specialized": 0.6
+  },
+  "all": {
+   "untagged": 91739.5,
+   "offroad": 27972.4,
+   "paved_tagged": 11103.5,
+   "rough": 2683.3,
+   "specialized": 0.7
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 40.5
+  },
+  "trunk": {
+   "surface": 3246.5,
+   "smoothness": 607.9,
+   "4wd_only": 9.1
+  },
+  "primary": {
+   "surface": 2023,
+   "smoothness": 659.6
+  },
+  "secondary": {
+   "surface": 3525.8,
+   "smoothness": 779.5
+  },
+  "tertiary": {
+   "surface": 7344.3,
+   "smoothness": 1581,
+   "tracktype": 15.8
+  },
+  "unclassified": {
+   "surface": 16274.4,
+   "smoothness": 1642.1,
+   "tracktype": 117.4
+  },
+  "residential": {
+   "surface": 5903.5,
+   "smoothness": 149.2,
+   "tracktype": 20.1
+  },
+  "all": {
+   "surface": 38357.9,
+   "smoothness": 5419.2,
+   "tracktype": 153.2,
+   "4wd_only": 9.1
+  }
+ },
+ "source_km": {
+  "motorway": {
+   "surface": 40.5,
+   "default": 0.1
+  },
+  "trunk": {
+   "surface": 2723.5,
+   "default": 837.2,
+   "smoothness": 590.7,
+   "4wd_only": 9.1
+  },
+  "primary": {
+   "surface": 1814.7,
+   "default": 1335.8,
+   "smoothness": 659.6
+  },
+  "secondary": {
+   "surface": 3272.8,
+   "default": 2431.2,
+   "smoothness": 779.5
+  },
+  "tertiary": {
+   "surface": 6809.9,
+   "default": 6428.6,
+   "smoothness": 1581,
+   "tracktype": 15.8
+  },
+  "unclassified": {
+   "default": 28351.5,
+   "surface": 15771.4,
+   "smoothness": 1642.1,
+   "tracktype": 117.4
+  },
+  "residential": {
+   "default": 52355.3,
+   "surface": 5762.9,
+   "smoothness": 149.2,
+   "tracktype": 19.9
+  },
+  "all": {
+   "default": 91739.5,
+   "surface": 36195.7,
+   "smoothness": 5402,
+   "tracktype": 153,
+   "4wd_only": 9.1
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "paved": {
+    "surface=asphalt": 24.6,
+    "surface=paved": 14.2,
+    "surface=concrete": 1.8
+   },
+   "rough": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "paved": {
+    "surface=asphalt": 1905.3,
+    "surface=paved": 532,
+    "smoothness=good": 520.2,
+    "smoothness=excellent": 18.6,
+    "surface=paving_stones": 3,
+    "surface=concrete": 0.4,
+    "surface=metal": 0,
+    "surface=wood": 0
+   },
+   "rough": {
+    "surface=compacted": 33.9,
+    "smoothness=bad": 7.3
+   },
+   "offroad": {
+    "surface=unpaved": 203.2,
+    "smoothness=very_bad": 44.6,
+    "surface=ground": 42.6,
+    "4wd_only=yes": 9.1,
+    "surface=dirt": 3.1
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "paved": {
+    "surface=asphalt": 1170,
+    "smoothness=good": 293.7,
+    "surface=paved": 268.2,
+    "smoothness=excellent": 39.3,
+    "surface=paving_stones": 1.6,
+    "surface=concrete": 0.1,
+    "surface=sett": 0
+   },
+   "rough": {
+    "smoothness=bad": 93.6,
+    "smoothness=intermediate": 44.4,
+    "surface=gravel": 16.7,
+    "surface=compacted": 8.8
+   },
+   "offroad": {
+    "surface=unpaved": 262.4,
+    "smoothness=very_bad": 188.5,
+    "surface=ground": 86.8
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "paved": {
+    "surface=asphalt": 1503.8,
+    "surface=paved": 547,
+    "smoothness=good": 268,
+    "smoothness=excellent": 38.2,
+    "surface=concrete": 3.3,
+    "surface=paving_stones": 0.3,
+    "surface=metal": 0
+   },
+   "rough": {
+    "surface=compacted": 140.1,
+    "smoothness=bad": 139.6,
+    "smoothness=intermediate": 33.3,
+    "surface=gravel": 18.5
+   },
+   "offroad": {
+    "surface=ground": 510,
+    "surface=unpaved": 490.3,
+    "smoothness=very_bad": 263.5,
+    "smoothness=horrible": 36.9,
+    "surface=dirt": 33.8,
+    "surface=sand": 25.5
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "paved": {
+    "surface=asphalt": 1125.1,
+    "surface=paved": 681.6,
+    "smoothness=good": 194.6,
+    "smoothness=excellent": 68.7,
+    "surface=concrete": 0.3,
+    "surface=paving_stones": 0.1,
+    "surface=metal": 0
+   },
+   "rough": {
+    "surface=compacted": 692.7,
+    "smoothness=bad": 248.5,
+    "smoothness=intermediate": 43,
+    "surface=gravel": 26.2,
+    "tracktype=grade2": 6.1,
+    "surface=fine_gravel": 0.1
+   },
+   "offroad": {
+    "surface=unpaved": 3104.1,
+    "smoothness=very_bad": 989.1,
+    "surface=ground": 941.3,
+    "surface=dirt": 229.8,
+    "smoothness=horrible": 37,
+    "tracktype=grade4": 8.3,
+    "surface=mud": 7.9,
+    "tracktype=grade3": 1.3,
+    "surface=earth": 0.4,
+    "surface=sand": 0.3
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "paved": {
+    "surface=asphalt": 473.6,
+    "surface=paved": 117.7,
+    "smoothness=good": 29.4,
+    "smoothness=excellent": 18.9,
+    "surface=concrete": 4.3,
+    "surface=paving_stones": 0.9,
+    "surface=concrete:plates": 0.7,
+    "tracktype=grade1": 0
+   },
+   "rough": {
+    "surface=compacted": 279.4,
+    "smoothness=bad": 183.2,
+    "surface=gravel": 31.2,
+    "smoothness=intermediate": 23.3,
+    "tracktype=grade2": 21.6,
+    "surface=fine_gravel": 11.6
+   },
+   "offroad": {
+    "surface=unpaved": 11803.9,
+    "surface=ground": 2799.6,
+    "smoothness=very_bad": 1169,
+    "surface=dirt": 220.4,
+    "smoothness=horrible": 218.2,
+    "tracktype=grade4": 48.3,
+    "tracktype=grade3": 47.5,
+    "surface=earth": 11.8,
+    "surface=clay": 8.9,
+    "surface=sand": 7.5,
+    "surface=metal_grate": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 0.1
+   }
+  },
+  "residential": {
+   "paved": {
+    "surface=asphalt": 941.9,
+    "surface=paved": 204.3,
+    "smoothness=excellent": 33.4,
+    "surface=concrete": 21.7,
+    "smoothness=good": 20.4,
+    "surface=paving_stones": 9.8,
+    "surface=sett": 1.6,
+    "surface=cobblestone": 0.4,
+    "surface=wood": 0.1,
+    "surface=concrete:plates": 0.1,
+    "tracktype=grade1": 0.1
+   },
+   "rough": {
+    "surface=compacted": 449.8,
+    "surface=fine_gravel": 54.5,
+    "smoothness=intermediate": 36.8,
+    "smoothness=bad": 23.1,
+    "surface=gravel": 15,
+    "tracktype=grade2": 0.9
+   },
+   "offroad": {
+    "surface=unpaved": 2945.5,
+    "surface=dirt": 527.3,
+    "surface=ground": 480.6,
+    "surface=sand": 62.1,
+    "surface=earth": 42.3,
+    "smoothness=very_bad": 27.7,
+    "tracktype=grade4": 7.3,
+    "smoothness=horrible": 7.2,
+    "tracktype=grade3": 6.7,
+    "tracktype=grade5": 4.9,
+    "surface=mud": 1.7,
+    "surface=pebblestone": 1.5,
+    "surface=grass": 0.8,
+    "surface=artificial_turf": 0.7,
+    "surface=woodchips": 0.4,
+    "surface=soil": 0.4,
+    "surface=Bing": 0.4,
+    "surface=rock": 0.1
+   },
+   "specialized": {
+    "smoothness=impassable": 0.5,
+    "smoothness=very_horrible": 0.1
+   }
+  },
+  "all": {
+   "paved": {
+    "surface=asphalt": 7144.1,
+    "surface=paved": 2365.1,
+    "smoothness=good": 1326.3,
+    "smoothness=excellent": 217.1,
+    "surface=concrete": 32,
+    "surface=paving_stones": 15.7,
+    "surface=sett": 1.7,
+    "surface=concrete:plates": 0.8,
+    "surface=cobblestone": 0.4,
+    "surface=wood": 0.1,
+    "surface=metal": 0.1,
+    "tracktype=grade1": 0.1
+   },
+   "rough": {
+    "surface=compacted": 1604.7,
+    "smoothness=bad": 695.3,
+    "smoothness=intermediate": 180.9,
+    "surface=gravel": 107.6,
+    "surface=fine_gravel": 66.2,
+    "tracktype=grade2": 28.6
+   },
+   "offroad": {
+    "surface=unpaved": 18809.4,
+    "surface=ground": 4860.8,
+    "smoothness=very_bad": 2682.4,
+    "surface=dirt": 1014.4,
+    "smoothness=horrible": 299.2,
+    "surface=sand": 95.4,
+    "tracktype=grade4": 63.8,
+    "tracktype=grade3": 55.6,
+    "surface=earth": 54.5,
+    "surface=mud": 9.6,
+    "4wd_only=yes": 9.1,
+    "surface=clay": 8.9,
+    "tracktype=grade5": 4.9,
+    "surface=pebblestone": 1.5,
+    "surface=grass": 0.8,
+    "surface=artificial_turf": 0.7,
+    "surface=woodchips": 0.4,
+    "surface=soil": 0.4,
+    "surface=Bing": 0.4,
+    "surface=rock": 0.1,
+    "surface=metal_grate": 0
+   },
+   "specialized": {
+    "smoothness=impassable": 0.5,
+    "smoothness=very_horrible": 0.2
+   }
+  }
+ },
+ "unknown_value_km": {
+  "smoothness=very_good": 8,
+  "surface=artificial_turf": 0.7,
+  "surface=soil": 0.4,
+  "surface=Bing": 0.4,
+  "surface=metal_grate": 0
+ },
+ "conflict_km": {
+  "smoothness=very_bad + surface=asphalt": 114.2,
+  "smoothness=good + surface=unpaved": 30.7,
+  "smoothness=very_bad + surface=paved": 23.2,
+  "smoothness=good + surface=ground": 17.3,
+  "smoothness=excellent + surface=sand": 1,
+  "smoothness=good + surface=grass_paver": 0
+ },
+ "odd": {
+  "major_offroad": [
+   {
+    "id": "w166252951",
+    "highway": "primary",
+    "km": 67.4,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "primary",
+     "ref": "IR11",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w164461564",
+    "highway": "secondary",
+    "km": 53.4,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "R54",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w79123562",
+    "highway": "secondary",
+    "km": 48.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Tumu - Hamile Road",
+     "ref": "R131",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w29972739",
+    "highway": "trunk",
+    "km": 43.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "trunk",
+     "name": "Wa -Tumu Road",
+     "ref": "N13",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w170674905",
+    "highway": "secondary",
+    "km": 42.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "80",
+     "name": "Karaga Road",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w169253519",
+    "highway": "secondary",
+    "km": 39.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "source": "Microsoft Bing orbital imagery",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w510857040",
+    "highway": "secondary",
+    "km": 38.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "name": "Mamekrobo To Agogo Road",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w164461570",
+    "highway": "secondary",
+    "km": 36.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w164461566",
+    "highway": "secondary",
+    "km": 35.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w166303683",
+    "highway": "secondary",
+    "km": 33.3,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "ref": "R72",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w253992473",
+    "highway": "secondary",
+    "km": 32,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "R126",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w169445213",
+    "highway": "secondary",
+    "km": 30.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "ref": "R212",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w240464670",
+    "highway": "secondary",
+    "km": 30.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "foot": "yes",
+     "highway": "secondary",
+     "lanes": "1",
+     "name": "Offuman - Wenchi",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w475170619",
+    "highway": "secondary",
+    "km": 30.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Daboase - Twifo Praso",
+     "ref": "N10",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w521249468",
+    "highway": "secondary",
+    "km": 29.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Abokyea-Samreboi Road",
+     "ref": "R121",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w337482155",
+    "highway": "secondary",
+    "km": 24.6,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w168135061",
+    "highway": "tertiary",
+    "km": 14.7,
+    "level": "paved",
+    "source": "smoothness",
+    "tags": {
+     "check_date": "2026-09-26",
+     "highway": "tertiary",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w170306278",
+    "highway": "tertiary",
+    "km": 14,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w447310814",
+    "highway": "primary",
+    "km": 11.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "check_date": "2026-09-25",
+     "highway": "primary",
+     "name": "Asesewa - Koforidua Road",
+     "ref": "IR3",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w970590575",
+    "highway": "secondary",
+    "km": 11.4,
+    "level": "paved",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "ref": "R61",
+     "smoothness": "good",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w337490711",
+    "highway": "trunk",
+    "km": 9.1,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "trunk",
+     "ref": "N2",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w13286035",
+    "highway": "secondary",
+    "km": 9,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "name": "St. Johns - Dome - Kwabenya - Brekusu Road",
+     "smoothness": "very_bad",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w168261025",
+    "highway": "primary",
+    "km": 8.8,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "ref": "R41",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w168135029",
+    "highway": "secondary",
+    "km": 8.3,
+    "level": "paved",
+    "source": "smoothness",
+    "tags": {
+     "check_date": "2026-09-25",
+     "highway": "secondary",
+     "ref": "R32",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w447291156",
+    "highway": "trunk",
+    "km": 7.3,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "2",
+     "oneway": "no",
+     "ref": "N13",
+     "smoothness": "very_bad",
+     "source": "landsat",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w314446124",
+    "highway": "tertiary",
+    "km": 6.5,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1560126565",
+    "highway": "secondary",
+    "km": 6.5,
+    "level": "paved",
+    "source": "smoothness",
+    "tags": {
+     "check_date": "2026-09-25",
+     "highway": "secondary",
+     "ref": "R32",
+     "smoothness": "good",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1024656286",
+    "highway": "primary",
+    "km": 6.4,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "primary",
+     "lanes": "2",
+     "ref": "R41",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1024885157",
+    "highway": "secondary",
+    "km": 6.3,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "smoothness": "very_bad",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w170306286",
+    "highway": "tertiary",
+    "km": 6,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "check_date": "2026-09-24",
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w623962641",
+    "highway": "trunk",
+    "km": 5.3,
+    "level": "paved",
+    "source": "surface",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "2",
+     "lit": "no",
+     "name": "Navrongo-Paga Road",
+     "oneway": "no",
+     "ref": "N10",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w406732161",
+    "highway": "trunk",
+    "km": 2.7,
+    "level": "paved",
+    "source": "surface",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "2",
+     "lit": "no",
+     "name": "Navrongo-Paga Road",
+     "oneway": "no",
+     "ref": "N10",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   }
+  ]
+ }
+}

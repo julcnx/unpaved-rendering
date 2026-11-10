@@ -1,0 +1,1522 @@
+{
+ "country": "ro",
+ "name": "Romania",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-03T04:52:04.687Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "romania-latest.osm.pbf",
+  "boundary": "r90689",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 2695.7,
+   "untagged": 9.7,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 5301.8,
+   "untagged": 10,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 13052,
+   "offroad": 36.8,
+   "unpaved": 20.1,
+   "untagged": 19.4,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 29039.6,
+   "untagged": 541.5,
+   "unpaved": 471.7,
+   "offroad": 83.2,
+   "specialized": 0
+  },
+  "tertiary": {
+   "paved_tagged": 17300.8,
+   "unpaved": 3724.7,
+   "untagged": 3004.5,
+   "offroad": 267.5,
+   "specialized": 3.2
+  },
+  "unclassified": {
+   "unpaved": 10366,
+   "untagged": 4287.6,
+   "paved_tagged": 2874.4,
+   "offroad": 1307.1,
+   "specialized": 74.6
+  },
+  "residential": {
+   "untagged": 38246.5,
+   "unpaved": 28853.1,
+   "paved_tagged": 23205.2,
+   "offroad": 331.1,
+   "specialized": 8.8
+  },
+  "all": {
+   "paved_tagged": 93469.4,
+   "untagged": 46119.2,
+   "unpaved": 43435.5,
+   "offroad": 2025.8,
+   "specialized": 86.6
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 2695.7,
+   "smoothness": 2533.1
+  },
+  "trunk": {
+   "surface": 5301.8,
+   "smoothness": 5250.4
+  },
+  "primary": {
+   "surface": 13108.9,
+   "smoothness": 12747.1
+  },
+  "secondary": {
+   "surface": 29570.1,
+   "smoothness": 25879.5,
+   "tracktype": 164.4
+  },
+  "tertiary": {
+   "surface": 21252,
+   "smoothness": 13258.5,
+   "tracktype": 268.6
+  },
+  "unclassified": {
+   "surface": 14457,
+   "smoothness": 4267.3,
+   "tracktype": 1423.6
+  },
+  "residential": {
+   "surface": 52211.2,
+   "smoothness": 6205,
+   "tracktype": 678
+  },
+  "all": {
+   "surface": 138596.6,
+   "smoothness": 70141,
+   "tracktype": 2534.7
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 2695.7,
+   "default": 9.7
+  },
+  "trunk": {
+   "surface": 5301.8,
+   "default": 10
+  },
+  "primary": {
+   "surface": 13108.9,
+   "default": 19.4
+  },
+  "secondary": {
+   "surface": 29570.1,
+   "default": 541.5,
+   "tracktype": 24.4
+  },
+  "tertiary": {
+   "surface": 21252,
+   "default": 3004.5,
+   "tracktype": 44.2
+  },
+  "unclassified": {
+   "surface": 14457,
+   "default": 4287.6,
+   "tracktype": 165.2
+  },
+  "residential": {
+   "surface": 52211.2,
+   "default": 38246.5,
+   "tracktype": 187
+  },
+  "all": {
+   "surface": 138596.6,
+   "default": 46119.2,
+   "tracktype": 420.8
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {
+   "smoothness": 36.8
+  },
+  "secondary": {
+   "smoothness": 82.8,
+   "tracktype": 0.4
+  },
+  "tertiary": {
+   "smoothness": 249.4,
+   "tracktype": 21.3
+  },
+  "unclassified": {
+   "smoothness": 1144.1,
+   "tracktype": 237.7
+  },
+  "residential": {
+   "smoothness": 180.5,
+   "tracktype": 159.4
+  },
+  "all": {
+   "smoothness": 1693.6,
+   "tracktype": 418.7
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=gravel": 40.9,
+    "surface=dirt": 15.7,
+    "surface=ground": 0.2
+   },
+   "offroad": {
+    "smoothness=very_bad": 21.4,
+    "smoothness=horrible": 15.4
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=gravel": 385.2,
+    "surface=unpaved": 64,
+    "surface=compacted": 39.5,
+    "surface=fine_gravel": 28.7,
+    "surface=dirt": 24.2,
+    "surface=asphalt, ros la suprafata": 4.1,
+    "tracktype=grade2": 3.2,
+    "surface=concrete:lanes": 3.1,
+    "surface=ground": 1.8,
+    "surface=concrete tiles": 0.5,
+    "surface=pebblestone": 0.4,
+    "tracktype=grade3": 0.4
+   },
+   "offroad": {
+    "smoothness=very_bad": 76.7,
+    "smoothness=horrible": 6.1,
+    "tracktype=grade3": 0.4
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=gravel": 2667.8,
+    "surface=unpaved": 382.5,
+    "surface=dirt": 352.1,
+    "surface=compacted": 278.1,
+    "surface=ground": 134.7,
+    "surface=fine_gravel": 92.1,
+    "surface=mixed": 19,
+    "surface=pebblestone": 8.6,
+    "surface=grass": 8.3,
+    "surface=earth": 7.4,
+    "surface=concrete tiles": 6.5,
+    "surface=d": 4.8,
+    "tracktype=grade3": 4.3,
+    "tracktype=grade2": 4.2,
+    "surface=gravel;fine_gravel": 3.9,
+    "surface=sand": 3.5,
+    "surface=asfalt fara indicatoare": 2.5,
+    "surface=no real road": 2.4,
+    "surface=asphalt/gravel": 2.3,
+    "tracktype=grade5": 2.3,
+    "surface=paved concrete": 2,
+    "surface=asphalt;gravel": 2,
+    "surface=dc69a": 1.2,
+    "surface=asfalt cu indicatoare": 0.9,
+    "surface=unhewn_cobblestone": 0.8,
+    "surface=drum de pamant si piatra": 0.8,
+    "surface=mud": 0.3,
+    "surface=asphalt;unpaved": 0.1
+   },
+   "offroad": {
+    "smoothness=very_bad": 198.7,
+    "smoothness=horrible": 47.5,
+    "tracktype=grade4": 9.4,
+    "tracktype=grade5": 6.6,
+    "tracktype=grade3": 5.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 2.3,
+    "smoothness=impassable": 0.8
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=gravel": 6429.1,
+    "surface=dirt": 1939.1,
+    "surface=unpaved": 1925.4,
+    "surface=ground": 692.6,
+    "surface=compacted": 416.5,
+    "surface=fine_gravel": 100.6,
+    "tracktype=grade2": 70.7,
+    "tracktype=grade3": 45.5,
+    "surface=earth": 28.9,
+    "surface=pebblestone": 24.1,
+    "surface=mud": 15.8,
+    "surface=d": 15.6,
+    "surface=sand": 10.6,
+    "surface=grass": 10.6,
+    "tracktype=grade5": 10.5,
+    "surface=dirt/sand": 3.7,
+    "tracktype=grade4": 3.2,
+    "surface=unhewn_cobblestone": 2.8,
+    "surface=ashalpt": 1.3,
+    "surface=piatra/balast": 0.7,
+    "surface=concrete:lanes": 0.2,
+    "surface=piatra": 0.2,
+    "surface=stone": 0.1,
+    "surface=fine_gravel;unpaved;compacted;asphalt": 0.1,
+    "surface=woodchips": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 810.9,
+    "smoothness=horrible": 258.6,
+    "tracktype=grade3": 165.7,
+    "tracktype=grade4": 50.4,
+    "tracktype=grade5": 21.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 65.5,
+    "smoothness=impassable": 9.1
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=gravel": 20707.9,
+    "surface=dirt": 2778.2,
+    "surface=unpaved": 2751.8,
+    "surface=compacted": 1440.3,
+    "surface=ground": 998.9,
+    "surface=fine_gravel": 220.2,
+    "tracktype=grade2": 82.9,
+    "surface=pebblestone": 74.7,
+    "tracktype=grade3": 30.9,
+    "surface=grass": 22.2,
+    "surface=sand": 15.5,
+    "tracktype=grade4": 9.9,
+    "surface=earth": 7.3,
+    "surface=unhewn_cobblestone": 5.7,
+    "surface=mud": 4.7,
+    "tracktype=grade5": 4,
+    "surface=paved concrete": 3.7,
+    "surface=rock": 2.9,
+    "surface=mixed": 2.9,
+    "surface=asphalt; gravel": 2.7,
+    "surface=gravel; asphalt": 2.6,
+    "surface=dirt/sand": 2.2,
+    "surface=gravel; unpaved": 1.8,
+    "surface=asfalt bun, se circula bine": 1.6,
+    "surface=d": 1.6,
+    "surface=gravel;fine_gravel": 1.5,
+    "surface=grass_paver": 1.4,
+    "surface=dirt; gravel": 1.3,
+    "surface=Strada_Bazei": 1.3,
+    "surface=asphalt; ground": 1,
+    "surface=concrete tiles": 1,
+    "surface=artificial_turf": 0.9,
+    "surface=gravel; paved": 0.9,
+    "surface=pamant": 0.8,
+    "surface=gravel;asphalt": 0.7,
+    "surface=asphalt;gravel": 0.7,
+    "surface=asfalt cu denivelari": 0.6,
+    "surface=stone": 0.6,
+    "surface=asphalt,_unpaved": 0.5,
+    "surface=concrete:lanes": 0.5,
+    "surface=paved; gravel": 0.5,
+    "surface=gravel;dirt": 0.4,
+    "surface=concrete paved": 0.3,
+    "surface=asphalt:lanes": 0.2,
+    "surface=asf": 0.2,
+    "surface=Piatră": 0.2,
+    "surface=paved_concrete": 0.2,
+    "surface=1": 0.1,
+    "surface=res": 0.1,
+    "surface=clay": 0.1,
+    "surface=w": 0.1,
+    "surface=LEMN": 0.1,
+    "surface=cement": 0.1,
+    "surface=steel": 0,
+    "surface=macadam cu gropi ici colo.": 0,
+    "surface=woodchips": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 119.7,
+    "tracktype=grade3": 81.5,
+    "smoothness=horrible": 52.1,
+    "tracktype=grade4": 49.8,
+    "tracktype=grade5": 28
+   },
+   "specialized": {
+    "smoothness=very_horrible": 5.9,
+    "smoothness=impassable": 2.8
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=gravel": 30230.9,
+    "surface=unpaved": 5123.6,
+    "surface=dirt": 5109.4,
+    "surface=compacted": 2174.3,
+    "surface=ground": 1828.2,
+    "surface=fine_gravel": 441.6,
+    "tracktype=grade2": 161,
+    "surface=pebblestone": 107.7,
+    "tracktype=grade3": 81,
+    "surface=earth": 43.6,
+    "surface=grass": 41.1,
+    "surface=sand": 29.6,
+    "surface=d": 21.9,
+    "surface=mixed": 21.9,
+    "surface=mud": 20.8,
+    "tracktype=grade5": 16.8,
+    "tracktype=grade4": 13.1,
+    "surface=unhewn_cobblestone": 9.3,
+    "surface=concrete tiles": 7.9,
+    "surface=dirt/sand": 5.9,
+    "surface=paved concrete": 5.7,
+    "surface=gravel;fine_gravel": 5.4,
+    "surface=asphalt, ros la suprafata": 4.1,
+    "surface=concrete:lanes": 3.8,
+    "surface=rock": 2.9,
+    "surface=asphalt; gravel": 2.7,
+    "surface=asphalt;gravel": 2.6,
+    "surface=gravel; asphalt": 2.6,
+    "surface=asfalt fara indicatoare": 2.5,
+    "surface=no real road": 2.4,
+    "surface=asphalt/gravel": 2.3,
+    "surface=gravel; unpaved": 1.8,
+    "surface=asfalt bun, se circula bine": 1.6,
+    "surface=grass_paver": 1.4,
+    "surface=dirt; gravel": 1.3,
+    "surface=ashalpt": 1.3,
+    "surface=Strada_Bazei": 1.3,
+    "surface=dc69a": 1.2,
+    "surface=asphalt; ground": 1,
+    "surface=artificial_turf": 0.9,
+    "surface=gravel; paved": 0.9,
+    "surface=asfalt cu indicatoare": 0.9,
+    "surface=drum de pamant si piatra": 0.8,
+    "surface=pamant": 0.8,
+    "surface=stone": 0.7,
+    "surface=gravel;asphalt": 0.7,
+    "surface=piatra/balast": 0.7,
+    "surface=asfalt cu denivelari": 0.6,
+    "surface=asphalt,_unpaved": 0.5,
+    "surface=paved; gravel": 0.5,
+    "surface=gravel;dirt": 0.4,
+    "surface=concrete paved": 0.3,
+    "surface=piatra": 0.2,
+    "surface=asphalt:lanes": 0.2,
+    "surface=asf": 0.2,
+    "surface=Piatră": 0.2,
+    "surface=paved_concrete": 0.2,
+    "surface=1": 0.1,
+    "surface=asphalt;unpaved": 0.1,
+    "surface=res": 0.1,
+    "surface=clay": 0.1,
+    "surface=fine_gravel;unpaved;compacted;asphalt": 0.1,
+    "surface=w": 0.1,
+    "surface=LEMN": 0.1,
+    "surface=cement": 0.1,
+    "surface=steel": 0,
+    "surface=macadam cu gropi ici colo.": 0,
+    "surface=woodchips": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 1227.4,
+    "smoothness=horrible": 379.6,
+    "tracktype=grade3": 252.8,
+    "tracktype=grade4": 109.6,
+    "tracktype=grade5": 56.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 73.8,
+    "smoothness=impassable": 12.8
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=d": 21.9,
+  "surface=mixed": 21.9,
+  "smoothness=very_good": 11.8,
+  "surface=concrete tiles": 7.9,
+  "surface=dirt/sand": 5.9,
+  "surface=paved concrete": 5.7,
+  "surface=asphalt, ros la suprafata": 4.1,
+  "surface=asfalt fara indicatoare": 2.5,
+  "surface=no real road": 2.4,
+  "surface=asphalt/gravel": 2.3,
+  "smoothness=dirt": 1.9,
+  "surface=asfalt bun, se circula bine": 1.6,
+  "surface=ashalpt": 1.3,
+  "surface=Strada_Bazei": 1.3,
+  "surface=dc69a": 1.2,
+  "smoothness=average": 1.1,
+  "surface=artificial_turf": 0.9,
+  "surface=asfalt cu indicatoare": 0.9,
+  "surface=drum de pamant si piatra": 0.8,
+  "surface=pamant": 0.8,
+  "surface=stone": 0.7,
+  "surface=piatra/balast": 0.7,
+  "surface=asfalt cu denivelari": 0.6,
+  "surface=asphalt,_unpaved": 0.5,
+  "surface=concrete paved": 0.3,
+  "surface=piatra": 0.2,
+  "surface=asphalt:lanes": 0.2,
+  "surface=asf": 0.2,
+  "surface=Piatră": 0.2,
+  "surface=paved_concrete": 0.2,
+  "tracktype=unknown": 0.2,
+  "surface=1": 0.1,
+  "surface=res": 0.1,
+  "surface=w": 0.1,
+  "surface=LEMN": 0.1,
+  "surface=cement": 0.1,
+  "surface=steel": 0,
+  "surface=macadam cu gropi ici colo.": 0
+ },
+ "conflict_km": {
+  "paved (surface=asphalt) + smoothness=very_bad": 205.2,
+  "smoothness=good + surface=gravel": 149.6,
+  "paved (surface=asphalt) + smoothness=horrible": 66.5,
+  "paved (surface=asphalt) + tracktype=grade3": 33.5,
+  "smoothness=good + surface=dirt": 21.4,
+  "smoothness=good + surface=compacted": 17.9,
+  "paved (surface=asphalt) + tracktype=grade4": 17.4,
+  "paved (surface=asphalt) + smoothness=very_horrible": 17.2,
+  "smoothness=excellent + surface=gravel": 17,
+  "paved (surface=concrete) + smoothness=very_bad": 16.4,
+  "smoothness=good + surface=unpaved": 13.7,
+  "paved (surface=concrete:plates) + smoothness=very_bad": 13.3,
+  "paved (no surface) + smoothness=very_bad": 12.4,
+  "paved (surface=asphalt) + smoothness=impassable": 9.5,
+  "paved (surface=asphalt) + tracktype=grade5": 7,
+  "smoothness=good + surface=ground": 5.7,
+  "smoothness=good + surface=fine_gravel": 3,
+  "paved (no surface) + smoothness=very_horrible": 2.7,
+  "paved (surface=paved) + tracktype=grade4": 2.7,
+  "smoothness=good + surface=asfalt fara indicatoare": 2.5,
+  "smoothness=good + surface=asphalt/gravel": 2.3,
+  "paved (surface=paved) + tracktype=grade3": 1.9,
+  "smoothness=good + surface=asfalt bun, se circula bine": 1.6,
+  "smoothness=good + surface=ashalpt": 1.2,
+  "paved (surface=cobblestone) + smoothness=very_bad": 1.1,
+  "paved (no surface) + smoothness=horrible": 1,
+  "smoothness=excellent + surface=compacted": 1,
+  "smoothness=good + surface=asfalt cu indicatoare": 0.9,
+  "paved (no surface) + smoothness=impassable": 0.8,
+  "paved (surface=sett) + tracktype=grade3": 0.6,
+  "paved (surface=sett) + smoothness=very_bad": 0.5,
+  "paved (surface=cobblestone) + smoothness=horrible": 0.3,
+  "smoothness=excellent + surface=mud": 0.3,
+  "paved (surface=concrete) + smoothness=horrible": 0.2,
+  "smoothness=good + surface=grass": 0.1,
+  "paved (surface=sett) + smoothness=very_horrible": 0.1,
+  "smoothness=excellent + surface=dirt": 0.1,
+  "paved (surface=metal) + tracktype=grade4": 0,
+  "paved (surface=concrete) + smoothness=very_horrible": 0,
+  "smoothness=excellent + surface=unpaved": 0,
+  "paved (surface=concrete) + tracktype=grade3": 0,
+  "paved (surface=wood) + tracktype=grade3": 0,
+  "paved (surface=wood) + smoothness=very_bad": 0,
+  "paved (surface=concrete) + tracktype=grade4": 0
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w291739088",
+    "highway": "secondary",
+    "km": 13.1,
+    "level": "offroad",
+    "tags": {
+     "hgv": "no",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "DJ102I",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "gravel",
+     "surface_survey": "2019OCT_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w476343044",
+    "highway": "secondary",
+    "km": 12.6,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "hgv": "no",
+     "highway": "secondary",
+     "horse": "yes",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "DJ203K",
+     "smoothness": "bad",
+     "surface": "dirt",
+     "surface_survey": "2019MAR_IonutPaduretu_Mapillary"
+    }
+   },
+   {
+    "id": "w167057741",
+    "highway": "secondary",
+    "km": 11.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "30",
+     "name": "Izvoru-Babaroaga",
+     "oneway": "no",
+     "ref": "DJ679C",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w43847351",
+    "highway": "primary",
+    "km": 11.3,
+    "level": "offroad",
+    "tags": {
+     "hazard": "curves",
+     "highway": "primary",
+     "lanes": "1",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DN66A",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "surface_survey": "2017JUN_Mapillary"
+    }
+   },
+   {
+    "id": "w70223541",
+    "highway": "secondary",
+    "km": 10.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "DJ205J",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w255415335",
+    "highway": "secondary",
+    "km": 8.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "oneway": "no",
+     "ref": "DJ552D",
+     "source": "Bing",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w43846772",
+    "highway": "primary",
+    "km": 7.7,
+    "level": "unpaved",
+    "tags": {
+     "hgv": "no",
+     "highway": "primary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DN66A",
+     "smoothness": "bad",
+     "surface": "gravel",
+     "surface_survey": "2019OCT_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w342739997",
+    "highway": "secondary",
+    "km": 7.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "ref": "DJ131A",
+     "surface": "gravel",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w341161712",
+    "highway": "secondary",
+    "km": 7.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "oneway": "no",
+     "ref": "DJ672C",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "surface_survey": "2017JUN_IonutPaduretu_Mapillary",
+     "symbol": "red triangle"
+    }
+   },
+   {
+    "id": "w256967490",
+    "highway": "secondary",
+    "km": 6.8,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "yes",
+     "cycleway": "no",
+     "foot": "yes",
+     "hazard": "damaged_road",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "50",
+     "maxspeed:type": "hazard",
+     "oneway": "no",
+     "ref": "DJ291D",
+     "sidewalk": "no",
+     "source": "survey",
+     "surface": "compacted",
+     "surface_survey": "2021APR_"
+    }
+   },
+   {
+    "id": "w241894289",
+    "highway": "secondary",
+    "km": 6.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "oneway": "no",
+     "ref": "DJ544",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w158852936",
+    "highway": "secondary",
+    "km": 6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DJ212",
+     "reg_ref": "DJ212",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w188475261",
+    "highway": "primary",
+    "km": 5.9,
+    "level": "offroad",
+    "tags": {
+     "hazard": "curves",
+     "highway": "primary",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DN66A",
+     "smoothness": "horrible",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w833428097",
+    "highway": "secondary",
+    "km": 5.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DJ203A",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w306751049",
+    "highway": "secondary",
+    "km": 5.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "name": "Cenade-Broșteni",
+     "oneway": "no",
+     "ref": "DJ141C",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w217769124",
+    "highway": "unclassified",
+    "km": 38.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w188133662",
+    "highway": "unclassified",
+    "km": 25.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Drum Agricol Plaiul Nedeiului",
+     "smoothness": "horrible",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w235048673",
+    "highway": "unclassified",
+    "km": 16.3,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "description": "ATV route",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "1",
+     "maxspeed": "RO:rural",
+     "motor_vehicle": "yes",
+     "oneway": "no",
+     "ref": "DJ684",
+     "sidewalk": "no",
+     "smoothness": "horrible",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w83630677",
+    "highway": "unclassified",
+    "km": 15.1,
+    "level": "offroad",
+    "tags": {
+     "hgv": "no",
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "30",
+     "ref": "DJ153C",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "surface_survey": "2019SEPT_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w694015922",
+    "highway": "unclassified",
+    "km": 14.2,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "30",
+     "maxweight": "3.5",
+     "ref": "DJ213A",
+     "smoothness": "very_horrible",
+     "surface": "dirt",
+     "survey_date": "2018AUG_igp",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w70201971",
+    "highway": "unclassified",
+    "km": 14,
+    "level": "specialized",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "20",
+     "name": "Slănic Moldova-Poiana Sărată",
+     "ref": "DC116B",
+     "smoothness": "very_horrible",
+     "surface": "unpaved",
+     "surface_survey": "2023AUG_"
+    }
+   },
+   {
+    "id": "w229960349",
+    "highway": "unclassified",
+    "km": 13.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "earth",
+     "surface_survey": "offroad"
+    }
+   },
+   {
+    "id": "w291739088",
+    "highway": "secondary",
+    "km": 13.1,
+    "level": "offroad",
+    "tags": {
+     "hgv": "no",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "DJ102I",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "gravel",
+     "surface_survey": "2019OCT_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w737512934",
+    "highway": "unclassified",
+    "km": 11.8,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "condition": "only 4x4, checked June 2010",
+     "foot": "yes",
+     "hgv": "no",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "2",
+     "maxspeed": "50",
+     "motor_vehicle": "yes",
+     "mtb:scale": "0",
+     "name": "Transcindrel",
+     "ref": "DJ106N",
+     "smoothness": "very_bad",
+     "smoothness:date": "2019OCT_IonutPaduretu",
+     "source": "bing;gps;GPS;survey",
+     "surface": "gravel",
+     "surface_survey": "2019OCT_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w167057743",
+    "highway": "unclassified",
+    "km": 11.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "50",
+     "maxweight": "3.5",
+     "ref": "DJ679D",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "surface_survey": "2018OCT_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w43847351",
+    "highway": "primary",
+    "km": 11.3,
+    "level": "offroad",
+    "tags": {
+     "hazard": "curves",
+     "highway": "primary",
+     "lanes": "1",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DN66A",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "surface_survey": "2017JUN_Mapillary"
+    }
+   },
+   {
+    "id": "w286241705",
+    "highway": "unclassified",
+    "km": 10.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w255973270",
+    "highway": "unclassified",
+    "km": 10.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "ref": "DC86",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w88691379",
+    "highway": "unclassified",
+    "km": 10.5,
+    "level": "offroad",
+    "tags": {
+     "hgv": "no",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "DJ309",
+     "smoothness": "very_bad",
+     "source": "bing",
+     "surface": "dirt",
+     "surface_survey": "2019FEB_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w274782824",
+    "highway": "tertiary",
+    "km": 9.9,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "cycleway": "no",
+     "foot": "yes",
+     "hazard": "damaged_road",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "maxspeed:type": "hazard",
+     "oneway": "no",
+     "ref": "DJ281D",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "surface": "compacted",
+     "surface_survey": "2021APR_"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w158021453",
+    "highway": "unclassified",
+    "km": 15.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DJ224",
+     "smoothness": "good",
+     "smoothness:date": "2020AUG_",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w104693307",
+    "highway": "unclassified",
+    "km": 14.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "90",
+     "name": "Poeni - Roata de Jos",
+     "oneway": "no",
+     "smoothness": "good",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w219823263",
+    "highway": "secondary",
+    "km": 11.2,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "ref": "DJ682",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "surface_survey": "2022MAY_klaus"
+    }
+   },
+   {
+    "id": "w709605614",
+    "highway": "unclassified",
+    "km": 9.9,
+    "level": "paved",
+    "tags": {
+     "hgv": "no",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "50",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "surface_survey": "2023SEP_"
+    }
+   },
+   {
+    "id": "w476981999",
+    "highway": "tertiary",
+    "km": 7.4,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "lanes:backward": "1",
+     "lanes:forward": "1",
+     "maxspeed": "30",
+     "old_ref": "DJ183B",
+     "oneway": "no",
+     "ref": "DJ183",
+     "smoothness": "horrible",
+     "surface": "asphalt",
+     "surface_survey": "2024JUN_"
+    }
+   },
+   {
+    "id": "w661526471",
+    "highway": "secondary",
+    "km": 7.2,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "ref": "DJ705A",
+     "smoothness": "excellent",
+     "surface": "asphalt",
+     "surface_survey": "2016APR_",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w737493313",
+    "highway": "secondary",
+    "km": 5.6,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "oneway": "no",
+     "ref": "DJ504",
+     "smoothness": "excellent",
+     "surface": "asphalt",
+     "surface_survey": "2019OCT_IonutPaduretu",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w948446229",
+    "highway": "tertiary",
+    "km": 5.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DJ244A",
+     "smoothness": "good",
+     "surface": "unpaved",
+     "surface_survey": "2019AUG_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w102490079",
+    "highway": "tertiary",
+    "km": 5.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "DC11",
+     "smoothness": "good",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w262655706",
+    "highway": "tertiary",
+    "km": 5.3,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "maxweight": "7.5",
+     "oneway": "no",
+     "ref": "DJ601B",
+     "smoothness": "horrible",
+     "surface": "asphalt",
+     "surface_survey": "2018AUG_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w130631209",
+    "highway": "tertiary",
+    "km": 5.3,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "surface_survey": "2024MAY_"
+    }
+   },
+   {
+    "id": "w287500469",
+    "highway": "unclassified",
+    "km": 4.7,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "yes",
+     "hazard": "curves",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "1",
+     "lit": "no",
+     "maxspeed": "50",
+     "maxspeed:type": "hazard",
+     "motor_vehicle": "yes",
+     "oneway": "no",
+     "shoulder": "no",
+     "sidewalk": "no",
+     "smoothness": "good",
+     "source": "survey",
+     "surface": "gravel",
+     "surface_survey": "2024FEB_",
+     "tracktype": "grade1"
+    }
+   },
+   {
+    "id": "w917984599",
+    "highway": "unclassified",
+    "km": 4.6,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "description": "Drum forestier Pârâul Canciu 1",
+     "foot": "yes",
+     "hgv": "no",
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "30",
+     "old_ref": "DJ704",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "surface_survey": "2022FEB_"
+    }
+   },
+   {
+    "id": "w149464145",
+    "highway": "secondary",
+    "km": 4.5,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "oneway": "no",
+     "ref": "DJ102H",
+     "smoothness": "horrible",
+     "source": "Bing",
+     "surface": "asphalt",
+     "surface_survey": "2024MAY"
+    }
+   },
+   {
+    "id": "w40727632",
+    "highway": "unclassified",
+    "km": 4,
+    "level": "paved",
+    "tags": {
+     "description": "Cumpăna-Movilița",
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "90",
+     "ref": "DC1A",
+     "smoothness": "very_bad",
+     "source": "survey",
+     "surface": "asphalt",
+     "surface_survey": "2023SEP_"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w148165194",
+    "highway": "tertiary",
+    "km": 8.4,
+    "level": "offroad",
+    "tags": {
+     "description": "Dângeni-Vlăsinești",
+     "highway": "tertiary",
+     "ref": "DC19",
+     "smoothness": "very_bad",
+     "surface": "mixed",
+     "surface_survey": "2020AUG_supremealex@peundemerg.ro"
+    }
+   },
+   {
+    "id": "w147541488",
+    "highway": "unclassified",
+    "km": 6.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "30",
+     "oneway": "no",
+     "ref": "DJ582C",
+     "smoothness": "very_bad",
+     "surface": "d",
+     "surface_survey": "2019AUG_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w257932376",
+    "highway": "tertiary",
+    "km": 5.5,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "cycleway": "no",
+     "description": "Stânca-Negrești",
+     "foot": "yes",
+     "highway": "tertiary",
+     "maxspeed": "90",
+     "oneway": "no",
+     "ref": "DC23",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "surface": "mixed",
+     "surface_survey": "2020AUG_supremealex@peundemerg.ro"
+    }
+   },
+   {
+    "id": "w212735500",
+    "highway": "unclassified",
+    "km": 4.8,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "bicycle": "yes",
+     "foot": "yes",
+     "hgv": "no",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "DC92",
+     "smoothness": "very_bad",
+     "source": "geometry: strava.com/heatmap 2023-08-02",
+     "surface": "d",
+     "surface_survey": "2019AUG_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w149619967",
+    "highway": "tertiary",
+    "km": 4.8,
+    "level": "unpaved",
+    "tags": {
+     "hgv": "no",
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "50",
+     "ref": "DC162",
+     "smoothness": "bad",
+     "source": "Bing",
+     "surface": "d",
+     "surface_survey": "2019FEB_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w808038388",
+    "highway": "tertiary",
+    "km": 3.3,
+    "level": "offroad",
+    "tags": {
+     "description": "Dângeni-Vlăsinești",
+     "highway": "tertiary",
+     "ref": "DC19",
+     "smoothness": "very_bad",
+     "surface": "mixed",
+     "surface_survey": "2020AUG_supremealex@peundemerg.ro"
+    }
+   },
+   {
+    "id": "w147390985",
+    "highway": "secondary",
+    "km": 3.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "old_ref": "DJ593",
+     "ref": "DN59D",
+     "smoothness": "intermediate",
+     "surface": "asphalt, ros la suprafata",
+     "surface_survey": "2023AUG_"
+    }
+   },
+   {
+    "id": "w301624379",
+    "highway": "tertiary",
+    "km": 3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "50",
+     "oneway": "no",
+     "ref": "DJ572B",
+     "smoothness": "very_bad",
+     "surface": "concrete tiles",
+     "surface_survey": "2017NOV_"
+    }
+   },
+   {
+    "id": "w676048494",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "offroad",
+    "tags": {
+     "hgv": "no",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "DC24",
+     "smoothness": "very_bad",
+     "surface": "d",
+     "surface_survey": "2019AUG_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w27885316",
+    "highway": "tertiary",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "name": "Strada Cociocului",
+     "oneway": "no",
+     "smoothness": "bad",
+     "surface": "concrete tiles",
+     "surface_survey": "2017NOV_"
+    }
+   },
+   {
+    "id": "w258953081",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "DC92D",
+     "smoothness": "good",
+     "surface": "asfalt fara indicatoare",
+     "surface_survey": "2021AUG_"
+    }
+   },
+   {
+    "id": "w118311340",
+    "highway": "tertiary",
+    "km": 2.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "DJ142B-Velț",
+     "ref": "DC16",
+     "smoothness": "intermediate",
+     "surface": "no real road",
+     "surface_survey": "2017DEC_"
+    }
+   },
+   {
+    "id": "w45338639",
+    "highway": "tertiary",
+    "km": 2.3,
+    "level": "unpaved",
+    "tags": {
+     "bicycle": "yes",
+     "cycleway": "no",
+     "foot": "yes",
+     "hgv": "no",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "50",
+     "maxspeed:type": "RO:urban",
+     "oneway": "no",
+     "ref": "DC54",
+     "sidewalk": "no",
+     "smoothness": "good",
+     "surface": "asphalt/gravel",
+     "surface_survey": "2024MAR_"
+    }
+   },
+   {
+    "id": "w258353659",
+    "highway": "tertiary",
+    "km": 2,
+    "level": "offroad",
+    "tags": {
+     "description": "Cristești-Priza Prut",
+     "highway": "tertiary",
+     "ref": "DC22",
+     "smoothness": "very_bad",
+     "surface": "paved concrete",
+     "surface_survey": "2023JUN_supremealex@peundemerg.ro"
+    }
+   },
+   {
+    "id": "w1425095441",
+    "highway": "secondary",
+    "km": 1.9,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "maxspeed": "50",
+     "name": "Strada Morii",
+     "ref": "DJ101G",
+     "smoothness": "very_good",
+     "surface": "asphalt"
+    }
+   }
+  ]
+ }
+}

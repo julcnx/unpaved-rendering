@@ -1,0 +1,1217 @@
+{
+ "country": "ir",
+ "name": "Iran",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T04:39:32.776Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "iran-latest.osm.pbf",
+  "boundary": "r304938",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 4067.5,
+   "untagged": 2155.5,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 26442.1,
+   "untagged": 16717.6,
+   "unpaved": 0.3,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 17852.8,
+   "paved_tagged": 16594.7,
+   "unpaved": 13.3,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 38544.8,
+   "paved_tagged": 19114.9,
+   "unpaved": 208.2,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 89756.9,
+   "paved_tagged": 19507,
+   "unpaved": 4680.6,
+   "offroad": 27.7,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 78039.7,
+   "unpaved": 27603.2,
+   "paved_tagged": 2750.6,
+   "offroad": 356.7,
+   "specialized": 4
+  },
+  "residential": {
+   "untagged": 181514.5,
+   "paved_tagged": 15571.6,
+   "unpaved": 10168.5,
+   "offroad": 45.4,
+   "specialized": 0.3
+  },
+  "all": {
+   "untagged": 424581.8,
+   "paved_tagged": 104048.4,
+   "unpaved": 42674.1,
+   "offroad": 429.8,
+   "specialized": 4.3
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 4067.5
+  },
+  "trunk": {
+   "surface": 26442.3,
+   "smoothness": 454.8
+  },
+  "primary": {
+   "surface": 16607.9,
+   "smoothness": 54.3
+  },
+  "secondary": {
+   "surface": 19322.3,
+   "smoothness": 119.9,
+   "tracktype": 48.9
+  },
+  "tertiary": {
+   "surface": 24165.8,
+   "tracktype": 165.8,
+   "smoothness": 136.7
+  },
+  "unclassified": {
+   "surface": 30474.6,
+   "tracktype": 898.1,
+   "smoothness": 427,
+   "4wd_only": 2.9
+  },
+  "residential": {
+   "surface": 25715.1,
+   "tracktype": 209.9,
+   "smoothness": 132,
+   "4wd_only": 0.1
+  },
+  "all": {
+   "surface": 146795.6,
+   "smoothness": 1324.7,
+   "tracktype": 1322.6,
+   "4wd_only": 3
+  }
+ },
+ "base_source_km": {
+  "motorway": {
+   "surface": 4067.5,
+   "default": 2155.5
+  },
+  "trunk": {
+   "surface": 26442.3,
+   "default": 16717.6
+  },
+  "primary": {
+   "default": 17852.8,
+   "surface": 16607.9
+  },
+  "secondary": {
+   "default": 38544.8,
+   "surface": 19322.3,
+   "tracktype": 0.8
+  },
+  "tertiary": {
+   "default": 89756.9,
+   "surface": 24165.8,
+   "tracktype": 49.5
+  },
+  "unclassified": {
+   "default": 78039.7,
+   "surface": 30474.6,
+   "tracktype": 240
+  },
+  "residential": {
+   "default": 181514.5,
+   "surface": 25715.1,
+   "tracktype": 70.7
+  },
+  "all": {
+   "default": 424581.8,
+   "surface": 146795.6,
+   "tracktype": 361
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {},
+  "secondary": {},
+  "tertiary": {
+   "tracktype": 23.5,
+   "smoothness": 4.2
+  },
+  "unclassified": {
+   "tracktype": 187.4,
+   "smoothness": 173.3
+  },
+  "residential": {
+   "tracktype": 33.3,
+   "smoothness": 12.4
+  },
+  "all": {
+   "tracktype": 244.2,
+   "smoothness": 189.9
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=compacted": 0.2,
+    "surface=آسفالت11": 0
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=compacted": 6.6,
+    "surface=dirt": 4.8,
+    "surface=gravel": 1.8
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=dirt": 96.6,
+    "surface=compacted": 43.2,
+    "surface=sand": 29.7,
+    "surface=unpaved": 19.6,
+    "surface=ground": 11.1,
+    "surface=خاکی": 4.2,
+    "surface=gravel": 2.7,
+    "surface=earth": 0.8,
+    "surface=میدان_فلق": 0.1,
+    "surface=roun": 0.1
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 2271.2,
+    "surface=dirt": 796.7,
+    "surface=ground": 755.6,
+    "surface=compacted": 439.4,
+    "surface=gravel": 179.8,
+    "surface=earth": 102.7,
+    "surface=sand": 66,
+    "tracktype=grade2": 23.1,
+    "surface=dirt/sand": 19.1,
+    "surface=pebblestone": 16.7,
+    "tracktype=grade3": 15,
+    "surface=آسفالته": 7.3,
+    "surface=شن_ریزی": 6.5,
+    "surface=fine_gravel": 4.7,
+    "surface=soil": 4.3,
+    "surface=zx": 0.3
+   },
+   "offroad": {
+    "tracktype=grade3": 15,
+    "tracktype=grade4": 4.6,
+    "smoothness=very_bad": 4.2,
+    "tracktype=grade5": 4
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=dirt": 11338.1,
+    "surface=unpaved": 10171.7,
+    "surface=ground": 3675.6,
+    "surface=compacted": 909.1,
+    "surface=gravel": 797.6,
+    "surface=sand": 368.7,
+    "surface=earth": 317.7,
+    "tracktype=grade2": 89.4,
+    "surface=pebblestone": 73.8,
+    "surface=fine_gravel": 58,
+    "tracktype=grade5": 50.7,
+    "tracktype=grade3": 47,
+    "surface=soil": 22.4,
+    "surface=dirt/sand": 21.7,
+    "tracktype=grade4": 16.2,
+    "surface=clay": 2,
+    "surface=سنگ": 1.2,
+    "surface=خاکی": 1.1,
+    "surface=grass_paver": 1,
+    "surface=mud": 0.6,
+    "surface=stone": 0.1,
+    "surface=grass": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 120.1,
+    "tracktype=grade3": 106.6,
+    "tracktype=grade4": 60.6,
+    "smoothness=horrible": 49.2,
+    "tracktype=grade5": 20.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 4
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=dirt": 6442.2,
+    "surface=unpaved": 1592.1,
+    "surface=ground": 927.2,
+    "surface=compacted": 719,
+    "surface=gravel": 171.7,
+    "surface=sand": 123,
+    "surface=earth": 67.5,
+    "surface=fine_gravel": 50,
+    "tracktype=grade2": 33.9,
+    "surface=pebblestone": 24.7,
+    "surface=dirt/sand": 19.2,
+    "tracktype=grade3": 16.1,
+    "surface=soil": 12.8,
+    "tracktype=grade4": 4.1,
+    "surface=asphalt:lanes": 3,
+    "surface=mud": 1.4,
+    "surface=concrete:lanes": 0.9,
+    "surface=stone": 0.8,
+    "tracktype=grade5": 0.8,
+    "surface=خاکی": 0.6,
+    "surface=unhewn_cobblestone": 0.5,
+    "surface=grass": 0.5,
+    "surface=کوی_ویلائی_بهاران_آبریز": 0.3,
+    "surface=شن_ریزی_شده": 0.3,
+    "surface=cement": 0.2,
+    "surface=ایراذ_نام": 0.2,
+    "surface=woodchips": 0.2,
+    "surface=زاگرس_دوم": 0.2,
+    "surface=اسفالت": 0.2,
+    "surface=امام_حسن_۸-_شهید_جاویدی_۳": 0.1,
+    "surface=2": 0.1,
+    "surface=sandy_road": 0.1,
+    "surface=۱": 0.1,
+    "surface=آسفالت": 0.1,
+    "surface=کشوری۳": 0.1,
+    "surface=dirt; sand": 0.1,
+    "surface=جمهوری_۲": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 20.3,
+    "tracktype=grade4": 12.2,
+    "smoothness=horrible": 6.1,
+    "smoothness=very_bad": 6,
+    "tracktype=grade5": 0.8
+   },
+   "specialized": {
+    "smoothness=impassable": 0.3
+   }
+  },
+  "all": {
+   "unpaved": {
+    "surface=dirt": 18678.4,
+    "surface=unpaved": 14054.6,
+    "surface=ground": 5369.5,
+    "surface=compacted": 2117.6,
+    "surface=gravel": 1153.6,
+    "surface=sand": 587.4,
+    "surface=earth": 488.8,
+    "tracktype=grade2": 146.3,
+    "surface=pebblestone": 115.1,
+    "surface=fine_gravel": 112.6,
+    "tracktype=grade3": 78.1,
+    "surface=dirt/sand": 60,
+    "tracktype=grade5": 51.5,
+    "surface=soil": 39.6,
+    "tracktype=grade4": 20.4,
+    "surface=آسفالته": 7.3,
+    "surface=شن_ریزی": 6.5,
+    "surface=خاکی": 6,
+    "surface=asphalt:lanes": 3,
+    "surface=mud": 2,
+    "surface=clay": 2,
+    "surface=سنگ": 1.2,
+    "surface=grass_paver": 1,
+    "surface=stone": 1,
+    "surface=concrete:lanes": 0.9,
+    "surface=unhewn_cobblestone": 0.5,
+    "surface=grass": 0.5,
+    "surface=کوی_ویلائی_بهاران_آبریز": 0.3,
+    "surface=شن_ریزی_شده": 0.3,
+    "surface=zx": 0.3,
+    "surface=cement": 0.2,
+    "surface=ایراذ_نام": 0.2,
+    "surface=woodchips": 0.2,
+    "surface=زاگرس_دوم": 0.2,
+    "surface=اسفالت": 0.2,
+    "surface=میدان_فلق": 0.1,
+    "surface=امام_حسن_۸-_شهید_جاویدی_۳": 0.1,
+    "surface=2": 0.1,
+    "surface=sandy_road": 0.1,
+    "surface=roun": 0.1,
+    "surface=۱": 0.1,
+    "surface=آسفالت": 0.1,
+    "surface=کشوری۳": 0.1,
+    "surface=dirt; sand": 0.1,
+    "surface=جمهوری_۲": 0,
+    "surface=آسفالت11": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 141.9,
+    "smoothness=very_bad": 130.3,
+    "tracktype=grade4": 77.3,
+    "smoothness=horrible": 55.3,
+    "tracktype=grade5": 25
+   },
+   "specialized": {
+    "smoothness=very_horrible": 4,
+    "smoothness=impassable": 0.3
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=dirt/sand": 60,
+  "surface=soil": 39.6,
+  "surface=آسفالته": 7.3,
+  "surface=شن_ریزی": 6.5,
+  "surface=خاکی": 6,
+  "smoothness=medium": 6,
+  "surface=asphalt:lanes": 3,
+  "4wd_only=only": 2.7,
+  "surface=سنگ": 1.2,
+  "surface=stone": 1,
+  "surface=کوی_ویلائی_بهاران_آبریز": 0.3,
+  "surface=شن_ریزی_شده": 0.3,
+  "surface=zx": 0.3,
+  "surface=cement": 0.2,
+  "surface=ایراذ_نام": 0.2,
+  "surface=زاگرس_دوم": 0.2,
+  "surface=اسفالت": 0.2,
+  "surface=میدان_فلق": 0.1,
+  "surface=امام_حسن_۸-_شهید_جاویدی_۳": 0.1,
+  "surface=2": 0.1,
+  "surface=sandy_road": 0.1,
+  "surface=roun": 0.1,
+  "surface=۱": 0.1,
+  "surface=آسفالت": 0.1,
+  "surface=کشوری۳": 0.1,
+  "surface=جمهوری_۲": 0,
+  "surface=آسفالت11": 0
+ },
+ "conflict_km": {
+  "paved (no surface) + smoothness=very_bad": 41.3,
+  "paved (surface=asphalt) + tracktype=grade5": 20.2,
+  "paved (no surface) + smoothness=very_horrible": 5.7,
+  "paved (surface=paved) + tracktype=grade3": 5,
+  "smoothness=good + surface=ground": 3.9,
+  "smoothness=good + surface=fine_gravel": 3.1,
+  "smoothness=good + surface=compacted": 2.7,
+  "paved (surface=asphalt) + smoothness=horrible": 0.5,
+  "paved (surface=asphalt) + tracktype=grade3": 0.4,
+  "paved (surface=paved) + 4wd_only=recommended": 0.3,
+  "paved (surface=asphalt) + smoothness=very_bad": 0.3,
+  "paved (no surface) + 4wd_only=yes": 0.1
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w449926569",
+    "highway": "secondary",
+    "km": 28.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "motor_vehicle": "yes",
+     "name": "جاده شهیون _ آبشار شوی",
+     "name:en": "Shevi Waterfall Road",
+     "surface": "sand"
+    }
+   },
+   {
+    "id": "w409446250",
+    "highway": "secondary",
+    "km": 19.4,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "جاده بره سر - لوشان",
+     "highway": "secondary",
+     "name": "جاده لوشان - بره سر",
+     "name:en": "Lowshan - Barehsar RD",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w132963035",
+    "highway": "secondary",
+    "km": 8.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "جاده زنجان -دندی",
+     "source": "Bing",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w457651347",
+    "highway": "secondary",
+    "km": 8.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "جاده حسین آباد کالپوش - دوزین",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w320761603",
+    "highway": "secondary",
+    "km": 7.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "جاده بره سر - کلیشم",
+     "name:en": "Barehsar - Kelishom RD",
+     "name:fa": "جاده بره سر - کلیشم",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w410661965",
+    "highway": "secondary",
+    "km": 7.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w346547532",
+    "highway": "secondary",
+    "km": 7.3,
+    "level": "unpaved",
+    "tags": {
+     "hazard": "curves",
+     "highway": "secondary",
+     "source": "Bing",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w207512851",
+    "highway": "secondary",
+    "km": 5.7,
+    "level": "unpaved",
+    "tags": {
+     "hazard": "curves",
+     "highway": "secondary",
+     "source": "Bing",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w1186483901",
+    "highway": "secondary",
+    "km": 5.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "95",
+     "name": "خلخال - پونل",
+     "name:en": "Khalkhal - Ponel",
+     "ref": "22",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w1552802310",
+    "highway": "secondary",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w835679037",
+    "highway": "secondary",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "جاده بره سر - کلیشم",
+     "name:en": "Barehsar - Kelishom RD",
+     "name:fa": "جاده بره سر - کلیشم",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w1201064778",
+    "highway": "secondary",
+    "km": 5,
+    "level": "unpaved",
+    "tags": {
+     "hazard": "curves",
+     "highway": "secondary",
+     "name": "جاده لوشان - جیرنده - بره سر",
+     "name:en": "Barehsar - Loshan - Jirandeh Road",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w1186803539",
+    "highway": "secondary",
+    "km": 4.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "name": "شاهین دژ - بوکان",
+     "source": "bing",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w855397175",
+    "highway": "secondary",
+    "km": 4.3,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "جاده بره سر - لوشان",
+     "highway": "secondary",
+     "name": "جاده لوشان - بره سر",
+     "name:en": "Lowshan - Barehsar RD",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w1186803550",
+    "highway": "secondary",
+    "km": 3.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "جاده زنجان به دندی",
+     "source": "gps",
+     "surface": "compacted"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w378025948",
+    "highway": "unclassified",
+    "km": 44.8,
+    "level": "offroad",
+    "tags": {
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "name": "راه نیریز - پشتکوه",
+     "smoothness": "very_bad",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w198691005",
+    "highway": "unclassified",
+    "km": 20.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w440557049",
+    "highway": "unclassified",
+    "km": 19.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "incline": "up",
+     "lanes": "1",
+     "maxspeed": "5",
+     "name": "مسیر دریاچه ارواح",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "tracktype": "grade2",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w684916761",
+    "highway": "unclassified",
+    "km": 15.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده بهبهبان-امیدیه",
+     "ref": "86",
+     "surface": "dirt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w31338414",
+    "highway": "unclassified",
+    "km": 14.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "unpaved",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w379300550",
+    "highway": "tertiary",
+    "km": 14,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w835231213",
+    "highway": "unclassified",
+    "km": 13.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w420346899",
+    "highway": "unclassified",
+    "km": 11.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "10",
+     "name": "مسیر روستای باغلار",
+     "smoothness": "horrible",
+     "surface": "dirt",
+     "tracktype": "grade3",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w1009579490",
+    "highway": "unclassified",
+    "km": 11.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w576431366",
+    "highway": "unclassified",
+    "km": 10.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده بهبهبان-امیدیه",
+     "ref": "86",
+     "surface": "dirt",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w629642481",
+    "highway": "unclassified",
+    "km": 10.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "source": "bing",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w72514772",
+    "highway": "unclassified",
+    "km": 10.3,
+    "level": "offroad",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "name": "مسیر پناهگاه شرقی سبلان",
+     "smoothness": "horrible",
+     "source": "GPS;survey",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w672387092",
+    "highway": "unclassified",
+    "km": 10,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "source": "bing",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w564595557",
+    "highway": "unclassified",
+    "km": 9,
+    "level": "offroad",
+    "tags": {
+     "description": "جاده خاکی",
+     "highway": "unclassified",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w722752747",
+    "highway": "unclassified",
+    "km": 8.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده روستای ورجه",
+     "surface": "dirt",
+     "tracktype": "grade3"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w42918039",
+    "highway": "tertiary",
+    "km": 13.7,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "source": "DigitalGlobal Premium Image 28-01-18",
+     "surface": "asphalt",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w456211682",
+    "highway": "unclassified",
+    "km": 12.1,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "bing"
+    }
+   },
+   {
+    "id": "w485895653",
+    "highway": "unclassified",
+    "km": 9.6,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "source": "bing"
+    }
+   },
+   {
+    "id": "w485895608",
+    "highway": "unclassified",
+    "km": 7.6,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "source": "bing"
+    }
+   },
+   {
+    "id": "w42918042",
+    "highway": "tertiary",
+    "km": 6.5,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "source": "DigitalGlobal Premium Image 28-01-18",
+     "surface": "asphalt",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w1386648021",
+    "highway": "tertiary",
+    "km": 4.8,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "name": "جاده روستای سم سام",
+     "surface": "paved",
+     "tracktype": "grade3",
+     "width": "0"
+    }
+   },
+   {
+    "id": "w781549253",
+    "highway": "tertiary",
+    "km": 4.3,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "smoothness": "very_horrible"
+    }
+   },
+   {
+    "id": "w407920192",
+    "highway": "tertiary",
+    "km": 3.2,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "maxspeed": "90",
+     "name": "راه نیریز - هرگان",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w581624818",
+    "highway": "residential",
+    "km": 3.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "lanes": "2",
+     "lit": "no",
+     "maxspeed": "30",
+     "name": "جاده روستای لورچال",
+     "smoothness": "good",
+     "surface": "fine_gravel"
+    }
+   },
+   {
+    "id": "w725055570",
+    "highway": "residential",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "ford": "yes",
+     "highway": "residential",
+     "incline": "down",
+     "mtb:scale": "1",
+     "name": "میاب - خانه سر",
+     "smoothness": "good",
+     "surface": "ground",
+     "tracktype": "grade4",
+     "width": "2.5"
+    }
+   },
+   {
+    "id": "w407920183",
+    "highway": "tertiary",
+    "km": 2.2,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "maxspeed": "90",
+     "motor_vehicle": "yes",
+     "name": "راه نیریز - هرگان",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w407920190",
+    "highway": "tertiary",
+    "km": 2,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "maxspeed": "90",
+     "name": "راه نیریز - هرگان",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w1176151446",
+    "highway": "unclassified",
+    "km": 1.4,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "lanes": "2",
+     "maxspeed": "20",
+     "motor_vehicle": "yes",
+     "name": "جاده روستای دوه بوینی",
+     "smoothness": "very_horrible",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w407920181",
+    "highway": "tertiary",
+    "km": 1.4,
+    "level": "paved",
+    "tags": {
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "tertiary",
+     "horse": "yes",
+     "maxspeed": "90",
+     "motor_vehicle": "yes",
+     "name": "راه نیریز - هرگان",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w429665318",
+    "highway": "unclassified",
+    "km": 1.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "good",
+     "surface": "ground"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w490623460",
+    "highway": "tertiary",
+    "km": 18.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w449856343",
+    "highway": "unclassified",
+    "km": 14,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "مسیر سه قلات",
+     "surface": "soil"
+    }
+   },
+   {
+    "id": "w560266947",
+    "highway": "tertiary",
+    "km": 7.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxheight": "none",
+     "maxspeed": "50",
+     "name": "جاده لاجیم",
+     "surface": "آسفالته"
+    }
+   },
+   {
+    "id": "w440754737",
+    "highway": "unclassified",
+    "km": 5.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w440006921",
+    "highway": "unclassified",
+    "km": 5.2,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "40",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w180251313",
+    "highway": "tertiary",
+    "km": 3.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "source": "DigitalGlobal Premium Image 28-01-18",
+     "surface": "soil",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w440006922",
+    "highway": "unclassified",
+    "km": 3.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "maxspeed": "30",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w181200680",
+    "highway": "tertiary",
+    "km": 3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "maxspeed": "95",
+     "name": "جاده قدیم اهواز",
+     "ref": "86",
+     "surface": "شن_ریزی",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w1273840564",
+    "highway": "residential",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "access": "permissive",
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "residential",
+     "horse": "yes",
+     "lanes": "1",
+     "maxspeed": "50",
+     "motor_vehicle": "yes",
+     "name": "جاده لوشاده ده جان",
+     "surface": "asphalt:lanes"
+    }
+   },
+   {
+    "id": "w1337170302",
+    "highway": "secondary",
+    "km": 2.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "30",
+     "name": "پرورش ماهی سید هاشم زاده",
+     "surface": "خاکی"
+    }
+   },
+   {
+    "id": "w442427717",
+    "highway": "residential",
+    "km": 2.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "name": "کرکزلو",
+     "surface": "dirt/sand"
+    }
+   },
+   {
+    "id": "w617508375",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "only",
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "mtb:scale": "1",
+     "smoothness": "horrible",
+     "surface": "pebblestone",
+     "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w822786797",
+    "highway": "unclassified",
+    "km": 2.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده روستای چلمبر",
+     "surface": "soil"
+    }
+   },
+   {
+    "id": "w822786800",
+    "highway": "unclassified",
+    "km": 2.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده روستای چلمبر",
+     "surface": "soil"
+    }
+   },
+   {
+    "id": "w501079853",
+    "highway": "unclassified",
+    "km": 2.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده آرامگاه حضرت یوشع بن نوح",
+     "name:en": "Tomb of Joshua Bin Noah Rd",
+     "surface": "dirt/sand"
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,319 @@
+{
+ "country": "gf",
+ "name": "French Guiana",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-02T15:31:19.297Z",
+  "classifier_sha256": "892814b74563",
+  "pipeline_sha256": "fa32fb9837bf",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "guyane-latest.osm.pbf",
+  "boundary": "r1260551",
+  "data_date_source": "header"
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 422.8,
+   "untagged": 61.9,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "secondary": {
+   "paved_tagged": 91.4,
+   "offroad": 9.2,
+   "rough": 0.4,
+   "untagged": 0.1,
+   "specialized": 0
+  },
+  "tertiary": {
+   "untagged": 228.7,
+   "paved_tagged": 184.7,
+   "offroad": 3.5,
+   "rough": 0.7,
+   "specialized": 0
+  },
+  "unclassified": {
+   "untagged": 152.7,
+   "paved_tagged": 136.9,
+   "offroad": 134.6,
+   "rough": 40.8,
+   "specialized": 0
+  },
+  "residential": {
+   "paved_tagged": 430.8,
+   "untagged": 410.8,
+   "offroad": 162.2,
+   "rough": 26.2,
+   "specialized": 0
+  },
+  "all": {
+   "paved_tagged": 1266.5,
+   "untagged": 854.2,
+   "offroad": 309.5,
+   "rough": 68,
+   "specialized": 0
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {
+   "surface": 422.8,
+   "smoothness": 47.6
+  },
+  "secondary": {
+   "surface": 100.9,
+   "smoothness": 30.2
+  },
+  "tertiary": {
+   "surface": 188.9,
+   "smoothness": 16.9
+  },
+  "unclassified": {
+   "surface": 279.1,
+   "tracktype": 38.6,
+   "smoothness": 26.7
+  },
+  "residential": {
+   "surface": 610.9,
+   "smoothness": 54.9,
+   "tracktype": 12.5
+  },
+  "all": {
+   "surface": 1602.6,
+   "smoothness": 176.3,
+   "tracktype": 51.2
+  }
+ },
+ "source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {
+   "surface": 375.2,
+   "default": 61.9,
+   "smoothness": 47.6
+  },
+  "secondary": {
+   "surface": 70.7,
+   "smoothness": 30.2,
+   "default": 0.1
+  },
+  "tertiary": {
+   "default": 228.7,
+   "surface": 172,
+   "smoothness": 16.9
+  },
+  "unclassified": {
+   "surface": 266.6,
+   "default": 152.7,
+   "smoothness": 26.7,
+   "tracktype": 18.9
+  },
+  "residential": {
+   "surface": 551.8,
+   "default": 410.8,
+   "smoothness": 54.9,
+   "tracktype": 12.4
+  },
+  "all": {
+   "surface": 1436.4,
+   "default": 854.2,
+   "smoothness": 176.3,
+   "tracktype": 31.3
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "paved": {},
+   "rough": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "paved": {},
+   "rough": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "paved": {
+    "surface=asphalt": 375.1,
+    "smoothness=excellent": 37,
+    "smoothness=good": 10.6,
+    "surface=metal": 0
+   },
+   "rough": {
+    "smoothness=intermediate": 0
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "secondary": {
+   "paved": {
+    "surface=asphalt": 50.7,
+    "surface=paved": 20,
+    "smoothness=excellent": 13.1,
+    "smoothness=good": 7.6
+   },
+   "rough": {
+    "smoothness=intermediate": 0.4
+   },
+   "offroad": {
+    "smoothness=very_bad": 9.2
+   },
+   "specialized": {}
+  },
+  "tertiary": {
+   "paved": {
+    "surface=asphalt": 164.4,
+    "smoothness=excellent": 10.3,
+    "smoothness=good": 5.9,
+    "surface=concrete": 2.2,
+    "surface=paved": 1.9
+   },
+   "rough": {
+    "smoothness=intermediate": 0.7,
+    "smoothness=bad": 0
+   },
+   "offroad": {
+    "surface=unpaved": 3.5
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "paved": {
+    "surface=asphalt": 111.9,
+    "surface=paved": 19.4,
+    "smoothness=excellent": 5.5,
+    "smoothness=good": 0.1,
+    "surface=concrete": 0,
+    "surface=wood": 0
+   },
+   "rough": {
+    "smoothness=bad": 21.1,
+    "tracktype=grade2": 17.8,
+    "surface=compacted": 1.9
+   },
+   "offroad": {
+    "surface=unpaved": 120.4,
+    "surface=ground": 13.1,
+    "tracktype=grade3": 1.1
+   },
+   "specialized": {}
+  },
+  "residential": {
+   "paved": {
+    "surface=asphalt": 337.3,
+    "surface=concrete": 28,
+    "smoothness=excellent": 25.3,
+    "smoothness=good": 23.5,
+    "surface=paved": 11.9,
+    "tracktype=grade1": 4.7,
+    "surface=paving_stones": 0.2,
+    "surface=wood": 0
+   },
+   "rough": {
+    "surface=compacted": 13.9,
+    "tracktype=grade2": 5.2,
+    "smoothness=intermediate": 4.9,
+    "smoothness=bad": 1.1,
+    "surface=gravel": 1.1,
+    "surface=fine_gravel": 0.1
+   },
+   "offroad": {
+    "surface=unpaved": 142.3,
+    "surface=dirt": 10.3,
+    "surface=ground": 6,
+    "tracktype=grade3": 2.5,
+    "surface=sand": 0.6,
+    "smoothness=very_bad": 0.2,
+    "surface=concrete:lanes": 0.2,
+    "surface=grass": 0.1
+   },
+   "specialized": {}
+  },
+  "all": {
+   "paved": {
+    "surface=asphalt": 1039.4,
+    "smoothness=excellent": 91.1,
+    "surface=paved": 53.2,
+    "smoothness=good": 47.6,
+    "surface=concrete": 30.3,
+    "tracktype=grade1": 4.7,
+    "surface=paving_stones": 0.2,
+    "surface=wood": 0,
+    "surface=metal": 0
+   },
+   "rough": {
+    "tracktype=grade2": 23,
+    "smoothness=bad": 22.2,
+    "surface=compacted": 15.8,
+    "smoothness=intermediate": 5.9,
+    "surface=gravel": 1.1,
+    "surface=fine_gravel": 0.1
+   },
+   "offroad": {
+    "surface=unpaved": 266.1,
+    "surface=ground": 19.2,
+    "surface=dirt": 10.3,
+    "smoothness=very_bad": 9.4,
+    "tracktype=grade3": 3.6,
+    "surface=sand": 0.6,
+    "surface=concrete:lanes": 0.2,
+    "surface=grass": 0.1
+   },
+   "specialized": {}
+  }
+ },
+ "unknown_value_km": {},
+ "conflict_km": {
+  "smoothness=very_bad + surface=concrete": 0.2
+ },
+ "odd": {
+  "major_offroad": [
+   {
+    "id": "w285854418",
+    "highway": "secondary",
+    "km": 6.2,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "name": "Avenue Jean Granger",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1302654315",
+    "highway": "secondary",
+    "km": 3,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "highway": "secondary",
+     "name": "Avenue Jean Granger",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   }
+  ],
+  "conflict": [],
+  "unknown_value": []
+ }
+}

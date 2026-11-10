@@ -1,0 +1,749 @@
+{
+ "country": "mn",
+ "name": "Mongolia",
+ "data_date": "2026-11-01",
+ "run": {
+  "generated_at": "2026-11-02T15:11:07.389Z",
+  "classifier_sha256": "892814b74563",
+  "pipeline_sha256": "fa32fb9837bf",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "mongolia-latest.osm.pbf",
+  "boundary": "r161033",
+  "data_date_source": "header"
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 60.5,
+   "untagged": 0,
+   "rough": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "paved_tagged": 6116.6,
+   "untagged": 192.3,
+   "rough": 84.5,
+   "offroad": 77.8,
+   "specialized": 0
+  },
+  "primary": {
+   "paved_tagged": 2596.1,
+   "offroad": 1139.5,
+   "rough": 406.9,
+   "untagged": 263.2,
+   "specialized": 0
+  },
+  "secondary": {
+   "offroad": 1163,
+   "rough": 1084.3,
+   "paved_tagged": 1015.8,
+   "untagged": 464.2,
+   "specialized": 14.7
+  },
+  "tertiary": {
+   "offroad": 18837.1,
+   "untagged": 3929.5,
+   "rough": 2367.4,
+   "paved_tagged": 1075.6,
+   "specialized": 0
+  },
+  "unclassified": {
+   "offroad": 38807.9,
+   "untagged": 17258.8,
+   "rough": 1690.1,
+   "paved_tagged": 1469.5,
+   "specialized": 23.6
+  },
+  "residential": {
+   "untagged": 9241.9,
+   "offroad": 3788.8,
+   "paved_tagged": 292.1,
+   "rough": 50.1,
+   "specialized": 0
+  },
+  "all": {
+   "offroad": 63814,
+   "untagged": 31349.9,
+   "paved_tagged": 12626.2,
+   "rough": 5683.2,
+   "specialized": 38.3
+  }
+ },
+ "coverage_km": {
+  "motorway": {
+   "surface": 60.5
+  },
+  "trunk": {
+   "surface": 6278.9,
+   "smoothness": 352.6
+  },
+  "primary": {
+   "surface": 4142.5,
+   "smoothness": 149.5,
+   "tracktype": 3.8
+  },
+  "secondary": {
+   "surface": 3261.6,
+   "smoothness": 70.6,
+   "tracktype": 17.9
+  },
+  "tertiary": {
+   "surface": 22236.6,
+   "smoothness": 1042.9,
+   "tracktype": 506.4
+  },
+  "unclassified": {
+   "surface": 41859.7,
+   "smoothness": 1945.6,
+   "tracktype": 1518.8
+  },
+  "residential": {
+   "surface": 4126.6,
+   "tracktype": 48.1,
+   "smoothness": 14.2
+  },
+  "all": {
+   "surface": 81966.4,
+   "smoothness": 3575.3,
+   "tracktype": 2094.9
+  }
+ },
+ "source_km": {
+  "motorway": {
+   "surface": 60.5
+  },
+  "trunk": {
+   "surface": 5926.3,
+   "smoothness": 352.6,
+   "default": 192.3
+  },
+  "primary": {
+   "surface": 3989.2,
+   "default": 263.2,
+   "smoothness": 149.5,
+   "tracktype": 3.8
+  },
+  "secondary": {
+   "surface": 3198.4,
+   "default": 464.2,
+   "smoothness": 70.6,
+   "tracktype": 8.9
+  },
+  "tertiary": {
+   "surface": 20861,
+   "default": 3929.5,
+   "smoothness": 1042.9,
+   "tracktype": 376.1
+  },
+  "unclassified": {
+   "surface": 38759.5,
+   "default": 17258.8,
+   "smoothness": 1945.6,
+   "tracktype": 1286.1
+  },
+  "residential": {
+   "default": 9241.9,
+   "surface": 4069.9,
+   "tracktype": 46.9,
+   "smoothness": 14.2
+  },
+  "all": {
+   "surface": 76864.8,
+   "default": 31349.9,
+   "smoothness": 3575.3,
+   "tracktype": 1721.7
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "paved": {
+    "surface=asphalt": 60.5
+   },
+   "rough": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "paved": {
+    "surface=asphalt": 5686.6,
+    "smoothness=excellent": 241.3,
+    "surface=paved": 146.6,
+    "smoothness=good": 41.8,
+    "surface=concrete": 0.3
+   },
+   "rough": {
+    "smoothness=bad": 69.4,
+    "surface=compacted": 8.1,
+    "surface=gravel": 6.9
+   },
+   "offroad": {
+    "surface=ground": 77.1,
+    "surface=dirt": 0.6,
+    "surface=unpaved": 0.1
+   },
+   "specialized": {}
+  },
+  "primary": {
+   "paved": {
+    "surface=asphalt": 2450.5,
+    "surface=paved": 95.1,
+    "smoothness=good": 34.6,
+    "surface=concrete": 11.4,
+    "tracktype=grade1": 3.8,
+    "smoothness=excellent": 0.8
+   },
+   "rough": {
+    "surface=gravel": 292.5,
+    "smoothness=bad": 105.1,
+    "smoothness=intermediate": 9,
+    "surface=compacted": 0.2
+   },
+   "offroad": {
+    "surface=ground": 608.1,
+    "surface=unpaved": 531.4
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "paved": {
+    "surface=asphalt": 963.7,
+    "surface=paved": 51.5,
+    "surface=concrete": 0.3,
+    "surface=paving_stones": 0.3
+   },
+   "rough": {
+    "surface=gravel": 1075.3,
+    "smoothness=bad": 9.1
+   },
+   "offroad": {
+    "surface=ground": 754.5,
+    "surface=unpaved": 228.8,
+    "surface=dirt": 124,
+    "smoothness=horrible": 30.6,
+    "smoothness=very_bad": 16.2,
+    "tracktype=grade3": 8.9
+   },
+   "specialized": {
+    "smoothness=very_horrible": 14.7
+   }
+  },
+  "tertiary": {
+   "paved": {
+    "surface=asphalt": 893.6,
+    "surface=paved": 110.7,
+    "smoothness=excellent": 53,
+    "smoothness=good": 14.7,
+    "surface=concrete": 2.4,
+    "tracktype=grade1": 0.9,
+    "surface=metal": 0.1,
+    "surface=wood": 0
+   },
+   "rough": {
+    "surface=gravel": 1760.4,
+    "smoothness=bad": 534.3,
+    "tracktype=grade2": 37.1,
+    "surface=compacted": 34.3,
+    "smoothness=intermediate": 1.2
+   },
+   "offroad": {
+    "surface=ground": 15009.1,
+    "surface=unpaved": 2059.5,
+    "surface=dirt": 716.8,
+    "surface=sand": 256.6,
+    "smoothness=very_bad": 244,
+    "smoothness=horrible": 195.6,
+    "tracktype=grade5": 167.8,
+    "tracktype=grade3": 95.3,
+    "tracktype=grade4": 75.1,
+    "surface=ground,_sand": 17.4,
+    "surface=4": 0
+   },
+   "specialized": {}
+  },
+  "unclassified": {
+   "paved": {
+    "surface=asphalt": 1366.5,
+    "surface=paved": 82.3,
+    "tracktype=grade1": 19.2,
+    "surface=concrete": 0.9,
+    "surface=paving_stones": 0.2,
+    "surface=wood": 0.2,
+    "smoothness=good": 0.2
+   },
+   "rough": {
+    "surface=gravel": 1241.5,
+    "smoothness=bad": 244.8,
+    "tracktype=grade2": 105.6,
+    "surface=compacted": 93,
+    "smoothness=intermediate": 5.1
+   },
+   "offroad": {
+    "surface=ground": 29669.4,
+    "surface=unpaved": 4297.4,
+    "surface=dirt": 1390.6,
+    "smoothness=horrible": 877.7,
+    "smoothness=very_bad": 794.1,
+    "tracktype=grade4": 532.9,
+    "surface=sand": 438.2,
+    "tracktype=grade5": 323.7,
+    "tracktype=grade3": 304.7,
+    "surface=ground,_sand": 96.7,
+    "surface=grass": 37.6,
+    "surface=offroad": 31.8,
+    "surface=ground,_dirt,_mud": 6.5,
+    "surface=ground,_mud": 5.8,
+    "surface=2": 0.5,
+    "surface=dirt/sand": 0.3
+   },
+   "specialized": {
+    "smoothness=very_horrible": 23.6
+   }
+  },
+  "residential": {
+   "paved": {
+    "surface=asphalt": 219.1,
+    "surface=paved": 64.2,
+    "surface=concrete": 7.6,
+    "surface=cobblestone": 0.8,
+    "surface=paving_stones": 0.5
+   },
+   "rough": {
+    "surface=gravel": 43.7,
+    "tracktype=grade2": 2.4,
+    "smoothness=bad": 1.6,
+    "surface=compacted": 0.9,
+    "surface=fine_gravel": 0.9,
+    "smoothness=intermediate": 0.5
+   },
+   "offroad": {
+    "surface=unpaved": 1819.3,
+    "surface=dirt": 1231.7,
+    "surface=ground": 660.8,
+    "tracktype=grade4": 36.7,
+    "surface=sand": 16.1,
+    "smoothness=horrible": 11.5,
+    "tracktype=grade3": 7.8,
+    "surface=unpaved,_dirt": 1.3,
+    "surface=grass": 1.1,
+    "surface=unpvaed,_dirt": 0.7,
+    "smoothness=very_bad": 0.6,
+    "surface=earth": 0.3,
+    "surface=artificial_turf": 0.3,
+    "surface=dirt/sand": 0.3,
+    "surface=d": 0.2,
+    "surface=unsaved": 0.1,
+    "surface=ground,_dirt": 0
+   },
+   "specialized": {}
+  },
+  "all": {
+   "paved": {
+    "surface=asphalt": 11640.6,
+    "surface=paved": 550.5,
+    "smoothness=excellent": 295.1,
+    "smoothness=good": 91.3,
+    "tracktype=grade1": 23.9,
+    "surface=concrete": 22.8,
+    "surface=paving_stones": 0.9,
+    "surface=cobblestone": 0.8,
+    "surface=wood": 0.2,
+    "surface=metal": 0.1
+   },
+   "rough": {
+    "surface=gravel": 4420.4,
+    "smoothness=bad": 964.4,
+    "tracktype=grade2": 145.1,
+    "surface=compacted": 136.6,
+    "smoothness=intermediate": 15.9,
+    "surface=fine_gravel": 0.9
+   },
+   "offroad": {
+    "surface=ground": 46779,
+    "surface=unpaved": 8936.5,
+    "surface=dirt": 3463.7,
+    "smoothness=horrible": 1115.5,
+    "smoothness=very_bad": 1054.9,
+    "surface=sand": 710.9,
+    "tracktype=grade4": 644.7,
+    "tracktype=grade5": 491.5,
+    "tracktype=grade3": 416.6,
+    "surface=ground,_sand": 114.1,
+    "surface=grass": 38.7,
+    "surface=offroad": 31.8,
+    "surface=ground,_dirt,_mud": 6.5,
+    "surface=ground,_mud": 5.8,
+    "surface=unpaved,_dirt": 1.3,
+    "surface=unpvaed,_dirt": 0.7,
+    "surface=dirt/sand": 0.6,
+    "surface=2": 0.5,
+    "surface=earth": 0.3,
+    "surface=artificial_turf": 0.3,
+    "surface=d": 0.2,
+    "surface=unsaved": 0.1,
+    "surface=ground,_dirt": 0,
+    "surface=4": 0
+   },
+   "specialized": {
+    "smoothness=very_horrible": 38.3
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=ground,_sand": 114.1,
+  "surface=offroad": 31.8,
+  "surface=ground,_dirt,_mud": 6.5,
+  "surface=ground,_mud": 5.8,
+  "surface=unpaved,_dirt": 1.3,
+  "surface=unpvaed,_dirt": 0.7,
+  "surface=dirt/sand": 0.6,
+  "surface=2": 0.5,
+  "surface=artificial_turf": 0.3,
+  "surface=d": 0.2,
+  "surface=unsaved": 0.1,
+  "surface=ground,_dirt": 0,
+  "surface=4": 0
+ },
+ "conflict_km": {
+  "smoothness=very_bad + surface=asphalt": 8.1
+ },
+ "odd": {
+  "major_offroad": [
+   {
+    "id": "w76695032",
+    "highway": "primary",
+    "km": 142.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "primary",
+     "name": "Choibalsan - Chuluunkhoroot, Чойбалсан - Чулуунхороот",
+     "ref": "A0503",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w28925732",
+    "highway": "secondary",
+    "km": 133.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "ford": "level_crossing",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "80",
+     "name": "Шалын хоолойн зам",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w560753121",
+    "highway": "secondary",
+    "km": 132,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Tumentsogt - Baruun Urt",
+     "name:en": "Tumentsogt - Baruun Urt",
+     "source": "bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w226326914",
+    "highway": "primary",
+    "km": 126.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "primary",
+     "name:en": "Burgastain boomt - Tseel",
+     "source": "bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w835447040",
+    "highway": "primary",
+    "km": 106.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "primary",
+     "maxspeed": "80",
+     "name": "Uliastay-Altai Road",
+     "ref": "A1103",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w382236654",
+    "highway": "primary",
+    "km": 79.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "primary",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w524291607",
+    "highway": "secondary",
+    "km": 78.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Bayankhangai - Burenkhangai",
+     "name:en": "Bayankhangai - Burenkhangai",
+     "ref": "A0901",
+     "source": "bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w188189597",
+    "highway": "secondary",
+    "km": 73.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Munkhkhaan - Tumentsogt",
+     "name:en": "Munkhkhaan - Tumentsogt",
+     "source": "bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w380563931",
+    "highway": "secondary",
+    "km": 66.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "1",
+     "name": "Bulgan - Duut",
+     "source": "bing",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1259511363",
+    "highway": "primary",
+    "km": 60.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "fixme": "highway",
+     "highway": "primary",
+     "ref": "A1701",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w77667049",
+    "highway": "secondary",
+    "km": 59.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "secondary",
+     "name": "Choibalsan - Undurkhaan shoroon zam ch.Ankhbayar",
+     "name:en": "Choibalsan - Undurkhaan shoroon zam ch.Ankhbayar",
+     "ref": "A0502",
+     "surface": "dirt"
+    }
+   },
+   {
+    "id": "w189015486",
+    "highway": "secondary",
+    "km": 56.6,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "ford": "yes",
+     "highway": "secondary",
+     "lanes": "1",
+     "maxspeed": "40",
+     "name": "Дуут сум",
+     "name:en": "Duut Road",
+     "name:fr": "Route Duut",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w206522897",
+    "highway": "primary",
+    "km": 55.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "primary",
+     "source": "bing",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w1086896588",
+    "highway": "primary",
+    "km": 51.3,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "fixme": "highway",
+     "highway": "primary",
+     "ref": "A1701",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w1449651789",
+    "highway": "trunk",
+    "km": 50,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "Тамын 50 km",
+     "oneway": "no",
+     "source": "Yahoo",
+     "surface": "ground"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w62363686",
+    "highway": "unclassified",
+    "km": 8.1,
+    "level": "offroad",
+    "source": "smoothness",
+    "tags": {
+     "foot": "yes",
+     "highway": "unclassified",
+     "horse": "yes",
+     "motor_vehicle": "yes",
+     "smoothness": "very_bad",
+     "source": "gpx",
+     "surface": "asphalt"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w1215920788",
+    "highway": "unclassified",
+    "km": 52.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Khamariin khiid, Ulaanbadrakh",
+     "surface": "ground,_sand"
+    }
+   },
+   {
+    "id": "w999823018",
+    "highway": "unclassified",
+    "km": 31.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "foot": "no",
+     "highway": "unclassified",
+     "lanes": "2",
+     "maxspeed": "60",
+     "name": "Huld- Ulziit",
+     "surface": "offroad"
+    }
+   },
+   {
+    "id": "w1215919874",
+    "highway": "unclassified",
+    "km": 25.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Khamariin khiid, Ulaanbadrakh",
+     "surface": "ground,_sand"
+    }
+   },
+   {
+    "id": "w1215907278",
+    "highway": "tertiary",
+    "km": 17,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "tertiary",
+     "surface": "ground,_sand"
+    }
+   },
+   {
+    "id": "w1215921170",
+    "highway": "unclassified",
+    "km": 10.2,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Khamariin khiid, Ulaanbadrakh",
+     "surface": "ground,_sand"
+    }
+   },
+   {
+    "id": "w1215931052",
+    "highway": "unclassified",
+    "km": 6.5,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground,_dirt,_mud"
+    }
+   },
+   {
+    "id": "w1215928269",
+    "highway": "unclassified",
+    "km": 5.8,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "ground,_mud"
+    }
+   },
+   {
+    "id": "w1215920821",
+    "highway": "unclassified",
+    "km": 5.7,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Khamariin khiid, Ulaanbadrakh",
+     "surface": "ground,_sand"
+    }
+   },
+   {
+    "id": "w1215921321",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "offroad",
+    "source": "surface",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Khamariin khiid, Ulaanbadrakh",
+     "surface": "ground,_sand"
+    }
+   }
+  ]
+ }
+}

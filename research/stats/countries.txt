@@ -1,0 +1,74 @@
+# Geofabrik path, ISO 3166-1 alpha-2, name. Processed in this order by stats/run-all.sh.
+# Combined extracts: list each country on its own line, consecutively, with the same path.
+# Order: smallest download first (Geofabrik sizes 2026-11-02), Western contrast last.
+
+# Developing countries, Australia and extras
+europe/france/guyane GF French Guiana
+asia/east-timor TL Timor-Leste
+africa/gabon GA Gabon
+africa/congo-brazzaville CG Congo-Brazzaville
+asia/cambodia KH Cambodia
+asia/laos LA Laos
+australia-oceania/papua-new-guinea PG Papua New Guinea
+africa/namibia NA Namibia
+asia/mongolia MN Mongolia
+central-america/cuba CU Cuba
+europe/iceland IS Iceland
+africa/ivory-coast CI Ivory Coast
+africa/senegal-and-gambia SN Senegal
+africa/senegal-and-gambia GM Gambia
+africa/ghana GH Ghana
+asia/sri-lanka LK Sri Lanka
+south-america/bolivia BO Bolivia
+africa/cameroon CM Cameroon
+asia/malaysia-singapore-brunei MY Malaysia
+asia/thailand TH Thailand
+south-america/peru PE Peru
+asia/myanmar MM Myanmar
+asia/vietnam VN Vietnam
+south-america/colombia CO Colombia
+africa/kenya KE Kenya
+africa/madagascar MG Madagascar
+asia/nepal NP Nepal
+africa/congo-democratic-republic CD DR Congo
+africa/south-africa ZA South Africa
+south-america/argentina AR Argentina
+asia/philippines PH Philippines
+australia-oceania/australia AU Australia
+asia/india IN India
+asia/indonesia ID Indonesia
+south-america/brazil BR Brazil
+
+# Regional gaps (added 2026-11-03)
+australia-oceania/solomon-islands SB Solomon Islands
+central-america/honduras HN Honduras
+asia/kyrgyzstan KG Kyrgyzstan
+central-america/guatemala GT Guatemala
+africa/ethiopia ET Ethiopia
+africa/morocco MA Morocco
+
+# Special case, not a country (added 2026-11-03)
+antarctica AQ Antarctica (not a country)
+
+# Regional gaps, second round, smallest first (added 2026-11-03)
+europe/albania AL Albania
+europe/georgia GE Georgia
+africa/mali ML Mali
+asia/iran IR Iran
+asia/gcc-states OM Oman
+europe/romania RO Romania
+africa/uganda UG Uganda
+north-america/mexico MX Mexico
+# europe/ukraine UA Ukraine   (on hold 2026-11-03)
+
+# Developed countries with unpaved highways (added 2026-11-03)
+south-america/chile CL Chile
+australia-oceania/new-zealand NZ New Zealand
+
+# Western contrast
+europe/finland FI Finland
+europe/czech-republic CZ Czechia
+europe/denmark DK Denmark
+
+# Last: biggest download (6.2 GB)
+# north-america/canada CA Canada   (on hold 2026-11-03)

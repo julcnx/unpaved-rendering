@@ -1,0 +1,14 @@
+{
+ "note": "Hand-kept totals of examples/images/review.md (all three rounds), read by stats/report.ts for key-numbers.md. Update when review.md changes.",
+ "updated": "2026-11-03",
+ "roads_reviewed": 55,
+ "unpaved_confirmed": 41,
+ "paved_now": 9,
+ "paved_after_tagging": 6,
+ "tagged_unpaved_after_paving": 3,
+ "mixed": 5,
+ "malaysia_untagged_visible": 16,
+ "malaysia_untagged_visible_paved": 16,
+ "malaysia_untagged_tried": 872,
+ "malaysia_untagged_with_imagery": 17
+}

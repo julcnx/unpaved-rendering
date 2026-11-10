@@ -1,0 +1,1408 @@
+{
+ "country": "np",
+ "name": "Nepal",
+ "data_date": "2026-11-02",
+ "run": {
+  "generated_at": "2026-11-03T03:14:44.350Z",
+  "classifier_sha256": "0a018a8853bb",
+  "pipeline_sha256": "9767283de3b6",
+  "osmium": "osmium version 1.19.1",
+  "source_pbf": "nepal-latest.osm.pbf",
+  "boundary": "r184633",
+  "data_date_source": "header",
+  "from_combos": false
+ },
+ "km": {
+  "motorway": {
+   "paved_tagged": 0,
+   "untagged": 0,
+   "unpaved": 0,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "trunk": {
+   "untagged": 1157.9,
+   "paved_tagged": 970.6,
+   "unpaved": 3.1,
+   "offroad": 0,
+   "specialized": 0
+  },
+  "primary": {
+   "untagged": 2966.6,
+   "paved_tagged": 1611.4,
+   "unpaved": 387.2,
+   "offroad": 35.1,
+   "specialized": 0
+  },
+  "secondary": {
+   "untagged": 2797.4,
+   "paved_tagged": 1177.5,
+   "unpaved": 525.3,
+   "offroad": 38.1,
+   "specialized": 18
+  },
+  "tertiary": {
+   "untagged": 11213.2,
+   "unpaved": 3152.6,
+   "paved_tagged": 725.5,
+   "offroad": 147.3,
+   "specialized": 13.6
+  },
+  "unclassified": {
+   "untagged": 61746.8,
+   "unpaved": 11087.1,
+   "offroad": 722,
+   "paved_tagged": 537,
+   "specialized": 12.6
+  },
+  "residential": {
+   "untagged": 24443.7,
+   "unpaved": 2393.5,
+   "paved_tagged": 633.9,
+   "offroad": 91.8,
+   "specialized": 0
+  },
+  "all": {
+   "untagged": 104325.6,
+   "unpaved": 17548.9,
+   "paved_tagged": 5656,
+   "offroad": 1034.2,
+   "specialized": 44.2
+  }
+ },
+ "coverage_km": {
+  "motorway": {},
+  "trunk": {
+   "surface": 971.2,
+   "smoothness": 38.3,
+   "tracktype": 2.4
+  },
+  "primary": {
+   "surface": 2020,
+   "smoothness": 100,
+   "tracktype": 48.2
+  },
+  "secondary": {
+   "surface": 1724.8,
+   "smoothness": 119.8,
+   "tracktype": 53.8
+  },
+  "tertiary": {
+   "surface": 3911.9,
+   "smoothness": 262.6,
+   "tracktype": 256,
+   "4wd_only": 1.6
+  },
+  "unclassified": {
+   "surface": 11487.9,
+   "smoothness": 2165.7,
+   "tracktype": 1209.7,
+   "4wd_only": 22.9
+  },
+  "residential": {
+   "surface": 2910.2,
+   "tracktype": 278.7,
+   "smoothness": 222
+  },
+  "all": {
+   "surface": 23026.1,
+   "smoothness": 2908.5,
+   "tracktype": 1848.8,
+   "4wd_only": 24.5
+  }
+ },
+ "base_source_km": {
+  "motorway": {},
+  "trunk": {
+   "default": 1157.9,
+   "surface": 971.2,
+   "tracktype": 2.4
+  },
+  "primary": {
+   "default": 2966.6,
+   "surface": 2020,
+   "tracktype": 13.7
+  },
+  "secondary": {
+   "default": 2797.4,
+   "surface": 1724.8,
+   "tracktype": 34.2
+  },
+  "tertiary": {
+   "default": 11213.2,
+   "surface": 3911.9,
+   "tracktype": 127.1
+  },
+  "unclassified": {
+   "default": 61746.8,
+   "surface": 11487.9,
+   "tracktype": 870.8
+  },
+  "residential": {
+   "default": 24443.7,
+   "surface": 2910.2,
+   "tracktype": 209
+  },
+  "all": {
+   "default": 104325.6,
+   "surface": 23026.1,
+   "tracktype": 1257.2
+  }
+ },
+ "mark_source_km": {
+  "motorway": {},
+  "trunk": {},
+  "primary": {
+   "smoothness": 28.2,
+   "tracktype": 6.8
+  },
+  "secondary": {
+   "tracktype": 28.3,
+   "smoothness": 27.8
+  },
+  "tertiary": {
+   "smoothness": 119.9,
+   "tracktype": 40.9
+  },
+  "unclassified": {
+   "tracktype": 385.3,
+   "smoothness": 349.3
+  },
+  "residential": {
+   "tracktype": 85.5,
+   "smoothness": 6.3
+  },
+  "all": {
+   "tracktype": 547,
+   "smoothness": 531.5
+  }
+ },
+ "value_km": {
+  "motorway": {
+   "unpaved": {},
+   "offroad": {},
+   "specialized": {}
+  },
+  "trunk": {
+   "unpaved": {
+    "surface=unpaved": 2.1,
+    "surface=gravel": 0.6,
+    "surface=ground": 0.4
+   },
+   "offroad": {},
+   "specialized": {}
+  },
+  "primary": {
+   "unpaved": {
+    "surface=unpaved": 253.2,
+    "surface=gravel": 91,
+    "surface=compacted": 22.9,
+    "surface=earth": 17.4,
+    "surface=ground": 14.1,
+    "surface=dirt": 13.2,
+    "tracktype=grade2": 8.8,
+    "tracktype=grade3": 1,
+    "surface=black_topped": 0.3,
+    "surface=black topped": 0.2,
+    "surface=RCC": 0.2
+   },
+   "offroad": {
+    "smoothness=horrible": 15.4,
+    "smoothness=very_bad": 12.8,
+    "tracktype=grade3": 6.3,
+    "tracktype=grade5": 0.6
+   },
+   "specialized": {}
+  },
+  "secondary": {
+   "unpaved": {
+    "surface=unpaved": 198.2,
+    "surface=gravel": 156.7,
+    "surface=dirt": 52.8,
+    "surface=compacted": 52.8,
+    "surface=ground": 31.1,
+    "surface=ottaseal": 21.7,
+    "tracktype=grade3": 15.6,
+    "surface=bitumin": 15,
+    "surface=earth": 14.5,
+    "tracktype=grade4": 12.7,
+    "surface=mud": 5,
+    "surface=premix": 4,
+    "surface=sand": 0.6,
+    "surface=ghattekulo": 0.4,
+    "surface=black_topped": 0.2,
+    "tracktype=grade2": 0.2
+   },
+   "offroad": {
+    "tracktype=grade3": 15.6,
+    "tracktype=grade4": 12.7,
+    "smoothness=horrible": 8.5,
+    "smoothness=very_bad": 1.2
+   },
+   "specialized": {
+    "smoothness=very_horrible": 18
+   }
+  },
+  "tertiary": {
+   "unpaved": {
+    "surface=unpaved": 1185.4,
+    "surface=ground": 1002.2,
+    "surface=gravel": 442.8,
+    "surface=earth": 347.9,
+    "surface=dirt": 130,
+    "tracktype=grade2": 102.8,
+    "surface=ottaseal": 41.7,
+    "surface=compacted": 12,
+    "surface=3.5": 10.5,
+    "surface=Blacktopped": 10.1,
+    "surface=mud": 9.1,
+    "surface=pebblestone": 8.1,
+    "tracktype=grade3": 5.4,
+    "surface=sand": 3.9,
+    "tracktype=grade4": 1.4
+   },
+   "offroad": {
+    "smoothness=very_bad": 105.8,
+    "tracktype=grade3": 37.9,
+    "tracktype=grade4": 3,
+    "smoothness=horrible": 0.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 13.6
+   }
+  },
+  "unclassified": {
+   "unpaved": {
+    "surface=unpaved": 5990.6,
+    "surface=ground": 3838.5,
+    "surface=gravel": 505.5,
+    "surface=dirt": 470.3,
+    "tracktype=grade2": 431.5,
+    "tracktype=grade3": 221.5,
+    "surface=earth": 156.8,
+    "surface=compacted": 75.2,
+    "tracktype=grade4": 46.4,
+    "surface=mud": 28.2,
+    "surface=G": 12.9,
+    "tracktype=grade5": 10.4,
+    "surface=pebblestone": 8.4,
+    "surface=sand": 6.3,
+    "surface=fine_gravel": 4.4,
+    "surface=rock": 3.2,
+    "surface=clay": 2.6,
+    "surface=stone": 2.5,
+    "surface=dryriver": 2,
+    "surface=grass": 1.7,
+    "surface=steel": 1.6,
+    "surface=uneven_flagstones": 0.4,
+    "surface=bing": 0.2,
+    "surface=unhewn_cobblestone": 0.2,
+    "surface=Blacktopped": 0.1,
+    "surface=road": 0.1,
+    "surface=grass_paver": 0.1,
+    "surface=dirt/sand": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 298.5,
+    "tracktype=grade3": 297.4,
+    "tracktype=grade4": 84.3,
+    "smoothness=horrible": 38.2,
+    "tracktype=grade5": 3.6
+   },
+   "specialized": {
+    "smoothness=very_horrible": 12.2,
+    "smoothness=impassable": 0.3
+   }
+  },
+  "residential": {
+   "unpaved": {
+    "surface=unpaved": 1017.3,
+    "surface=ground": 945.8,
+    "surface=gravel": 152.5,
+    "tracktype=grade2": 108.2,
+    "surface=dirt": 98.8,
+    "tracktype=grade3": 51.8,
+    "surface=earth": 30.1,
+    "surface=Blacktopped": 26.2,
+    "surface=compacted": 10.8,
+    "surface=grass": 9.8,
+    "surface=pebblestone": 9.4,
+    "tracktype=grade4": 9,
+    "surface=fine_gravel": 4.5,
+    "surface=sand": 2.7,
+    "surface=mud": 2.3,
+    "tracktype=grade5": 1.9,
+    "surface=EarthenTE228": 0.7,
+    "surface=blacktop": 0.7,
+    "surface=G": 0.6,
+    "surface=Cemantary": 0.4,
+    "surface=pitch": 0.4,
+    "surface=tartan": 0.3,
+    "surface=brick": 0.2,
+    "surface=black_topped": 0.2,
+    "surface=partially_paved": 0.2,
+    "surface=interlock": 0.1,
+    "surface=clay": 0.1,
+    "surface=asphalt:lanes": 0.1,
+    "surface=unhewn_cobblestone": 0.1,
+    "surface=grass_paver": 0
+   },
+   "offroad": {
+    "tracktype=grade3": 64.8,
+    "tracktype=grade4": 15.8,
+    "smoothness=very_bad": 5.9,
+    "tracktype=grade5": 4.9,
+    "smoothness=horrible": 0.4
+   },
+   "specialized": {}
+  },
+  "all": {
+   "unpaved": {
+    "surface=unpaved": 8646.9,
+    "surface=ground": 5832,
+    "surface=gravel": 1349.2,
+    "surface=dirt": 765.1,
+    "tracktype=grade2": 651.5,
+    "surface=earth": 566.7,
+    "tracktype=grade3": 295.3,
+    "surface=compacted": 173.7,
+    "tracktype=grade4": 69.5,
+    "surface=ottaseal": 63.4,
+    "surface=mud": 44.6,
+    "surface=Blacktopped": 36.4,
+    "surface=pebblestone": 25.9,
+    "surface=bitumin": 15,
+    "surface=G": 13.5,
+    "surface=sand": 13.4,
+    "tracktype=grade5": 12.3,
+    "surface=grass": 11.5,
+    "surface=3.5": 10.5,
+    "surface=fine_gravel": 8.9,
+    "surface=premix": 4,
+    "surface=rock": 3.2,
+    "surface=clay": 2.7,
+    "surface=stone": 2.5,
+    "surface=dryriver": 2,
+    "surface=steel": 1.6,
+    "surface=black_topped": 0.8,
+    "surface=EarthenTE228": 0.7,
+    "surface=blacktop": 0.7,
+    "surface=uneven_flagstones": 0.4,
+    "surface=Cemantary": 0.4,
+    "surface=ghattekulo": 0.4,
+    "surface=pitch": 0.4,
+    "surface=tartan": 0.3,
+    "surface=bing": 0.2,
+    "surface=brick": 0.2,
+    "surface=unhewn_cobblestone": 0.2,
+    "surface=black topped": 0.2,
+    "surface=partially_paved": 0.2,
+    "surface=RCC": 0.2,
+    "surface=interlock": 0.1,
+    "surface=grass_paver": 0.1,
+    "surface=road": 0.1,
+    "surface=asphalt:lanes": 0.1,
+    "surface=dirt/sand": 0
+   },
+   "offroad": {
+    "smoothness=very_bad": 424.2,
+    "tracktype=grade3": 422.1,
+    "tracktype=grade4": 115.7,
+    "smoothness=horrible": 63.1,
+    "tracktype=grade5": 9.1
+   },
+   "specialized": {
+    "smoothness=very_horrible": 43.8,
+    "smoothness=impassable": 0.3
+   }
+  }
+ },
+ "unknown_value_km": {
+  "surface=ottaseal": 63.4,
+  "surface=Blacktopped": 36.4,
+  "surface=bitumin": 15,
+  "surface=G": 13.5,
+  "surface=3.5": 10.5,
+  "smoothness=off_road_wheels": 5.7,
+  "surface=premix": 4,
+  "surface=stone": 2.5,
+  "surface=dryriver": 2,
+  "surface=steel": 1.6,
+  "surface=black_topped": 0.8,
+  "surface=EarthenTE228": 0.7,
+  "surface=blacktop": 0.7,
+  "surface=uneven_flagstones": 0.4,
+  "surface=Cemantary": 0.4,
+  "surface=ghattekulo": 0.4,
+  "surface=pitch": 0.4,
+  "surface=tartan": 0.3,
+  "smoothness=smooth": 0.3,
+  "surface=bing": 0.2,
+  "surface=brick": 0.2,
+  "surface=black topped": 0.2,
+  "surface=partially_paved": 0.2,
+  "surface=RCC": 0.2,
+  "surface=interlock": 0.1,
+  "surface=road": 0.1,
+  "surface=asphalt:lanes": 0.1,
+  "surface=dirt/sand": 0
+ },
+ "conflict_km": {
+  "paved (no surface) + smoothness=horrible": 41.4,
+  "paved (surface=asphalt) + smoothness=very_bad": 23.8,
+  "paved (no surface) + smoothness=very_bad": 16,
+  "smoothness=good + surface=gravel": 9.7,
+  "smoothness=good + surface=ground": 9.1,
+  "paved (surface=paving_stones) + smoothness=very_bad": 6,
+  "paved (surface=asphalt) + tracktype=grade3": 5.5,
+  "smoothness=excellent + surface=ground": 5.2,
+  "paved (surface=asphalt) + smoothness=horrible": 4.2,
+  "paved (no surface) + smoothness=very_horrible": 3.9,
+  "smoothness=good + surface=fine_gravel": 2.6,
+  "paved (surface=paved) + tracktype=grade3": 2.5,
+  "paved (surface=paved) + smoothness=very_bad": 1,
+  "smoothness=good + surface=unpaved": 1,
+  "smoothness=excellent + surface=compacted": 0.9,
+  "paved (surface=asphalt) + tracktype=grade4": 0.7,
+  "paved (surface=concrete) + smoothness=very_bad": 0.5,
+  "paved (surface=paving_stones) + tracktype=grade3": 0.5,
+  "paved (no surface) + smoothness=impassable": 0.3,
+  "paved (surface=sett) + smoothness=very_bad": 0.1
+ },
+ "odd": {
+  "major_unpaved": [
+   {
+    "id": "w304271768",
+    "highway": "secondary",
+    "km": 27.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "name": "Devisthan- Murkuti-Ghorahi Road",
+     "oneway": "no",
+     "ref": "NH09",
+     "ref:old": "F14",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w342736414",
+    "highway": "primary",
+    "km": 21.8,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Mahakali Highway",
+     "ref": "NH66",
+     "ref:old": "H14",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w257116613",
+    "highway": "secondary",
+    "km": 20.7,
+    "level": "unpaved",
+    "tags": {
+     "cutting": "yes",
+     "description": "this road is joining the hilly district of province 7 with Kanchanpur district in tarai in shortest way.",
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "40",
+     "name": "Daijee- Jogbuda Road",
+     "oneway": "no",
+     "ref": "F151",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w363255785",
+    "highway": "secondary",
+    "km": 19.5,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "secondary",
+     "lanes": "1",
+     "name": "Tikkar- Buddhi- Bijgauri-Taulihawa Road",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "50A002R",
+     "ref:old": "50DR015",
+     "resurfaced:date": "2013",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:year": "2014",
+     "surveyor:name": "Ujjwal Dahal",
+     "width": "3.5",
+     "width:ROW": "7",
+     "width:carriage": "3.5",
+     "width:shoulder": "1.5"
+    }
+   },
+   {
+    "id": "w316243261",
+    "highway": "primary",
+    "km": 17,
+    "level": "unpaved",
+    "tags": {
+     "alt_name": "Triveni - Seribajar",
+     "highway": "primary",
+     "name": "Karnali Highway",
+     "oneway": "no",
+     "ref": "NH61",
+     "ref:old": "H13",
+     "surface": "gravel",
+     "width": "6.5"
+    }
+   },
+   {
+    "id": "w378016995",
+    "highway": "secondary",
+    "km": 16.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "NH09",
+     "ref:old": "F14",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w449352052",
+    "highway": "secondary",
+    "km": 15.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "ref": "H18",
+     "smoothness": "bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w330470159",
+    "highway": "secondary",
+    "km": 15,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "lanes:backward": "1",
+     "lanes:forward": "1",
+     "maxspeed": "60",
+     "name": "Mid Hilly Highway",
+     "surface": "bitumin"
+    }
+   },
+   {
+    "id": "w180604179",
+    "highway": "primary",
+    "km": 14.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "name": "Jeep Road Beni-Lo Manthang",
+     "ref": "NH48",
+     "ref:old": "F42",
+     "source": "knowledge;photo;survey",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w357846464",
+    "highway": "primary",
+    "km": 13.6,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "NH09",
+     "ref:old": "F57",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w943854656",
+    "highway": "secondary",
+    "km": 13.5,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "ref": "NH16",
+     "ref:old": "H09",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w481787546",
+    "highway": "primary",
+    "km": 13.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "primary",
+     "ref": "NH03",
+     "ref:old": "H18",
+     "smoothness": "bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w453093939",
+    "highway": "primary",
+    "km": 12,
+    "level": "unpaved",
+    "tags": {
+     "check_date:surface": "2025-09-26",
+     "classification:np": "MH",
+     "highway": "primary",
+     "ref": "NH03",
+     "ref:old": "H18",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w335759934",
+    "highway": "secondary",
+    "km": 11.9,
+    "level": "specialized",
+    "tags": {
+     "highway": "secondary",
+     "name": "Way to Ramaroshan Lake",
+     "ref": "69DR016",
+     "smoothness": "very_horrible",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w314892661",
+    "highway": "secondary",
+    "km": 11.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "ref": "NH16",
+     "ref:old": "H09",
+     "surface": "gravel"
+    }
+   }
+  ],
+  "offroad_mark": [
+   {
+    "id": "w419681786",
+    "highway": "tertiary",
+    "km": 17.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "incline": "up",
+     "lanes": "1",
+     "lit": "no",
+     "name": "Road to Myanlung",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "width": "4"
+    }
+   },
+   {
+    "id": "w1049518676",
+    "highway": "tertiary",
+    "km": 12.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "F183",
+     "surface": "ground",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w335759934",
+    "highway": "secondary",
+    "km": 11.9,
+    "level": "specialized",
+    "tags": {
+     "highway": "secondary",
+     "name": "Way to Ramaroshan Lake",
+     "ref": "69DR016",
+     "smoothness": "very_horrible",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w378206430",
+    "highway": "tertiary",
+    "km": 11.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "20",
+     "name": "Machchi-Thulabesi",
+     "ref": "52A001R",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "width": "3.50 m"
+    }
+   },
+   {
+    "id": "w343216435",
+    "highway": "tertiary",
+    "km": 10.8,
+    "level": "specialized",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Road to Yasok",
+     "ref": "02DR022",
+     "smoothness": "very_horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w689050026",
+    "highway": "unclassified",
+    "km": 10.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w344160419",
+    "highway": "primary",
+    "km": 10.7,
+    "level": "offroad",
+    "tags": {
+     "damage:event": "nepal_earthquake_2015",
+     "highway": "primary",
+     "name": "Pasang Lhamu Highway",
+     "note": "No previous smoothness tag. Only small vehicles (4 x 4 jeeps) are allowed. Caution due to risk of landslides. Not advised to travel the route at night. Relief vehicles should register with the police in Kalikasthan before driving to Dhunche.",
+     "ref": "NH18",
+     "ref:old": "F21",
+     "smoothness": "horrible",
+     "source:smoothness": "DFID RMO survey post nepal_earthquake_2015",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w378203948",
+    "highway": "tertiary",
+    "km": 9.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "25",
+     "name": "Bagdula-Machchi",
+     "ref": "52A001R",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "surface": "gravel",
+     "width": "3.50 m"
+    }
+   },
+   {
+    "id": "w330491912",
+    "highway": "secondary",
+    "km": 9.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "ref": "NH66",
+     "ref:old": "H14",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w316953818",
+    "highway": "tertiary",
+    "km": 9.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "ref": "23DR015",
+     "smoothness": "very_bad",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w255910681",
+    "highway": "primary",
+    "km": 9.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "ref": "NH58",
+     "ref:old": "F172",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w335759936",
+    "highway": "secondary",
+    "km": 8.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "name": "Way to Ramaroshan Lake",
+     "ref": "69DR016",
+     "smoothness": "horrible",
+     "surface": "compacted"
+    }
+   },
+   {
+    "id": "w364077536",
+    "highway": "tertiary",
+    "km": 8.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "15",
+     "name": "Narikot-Pathihalna-Khung-Pokhra-Gulmi",
+     "ref": "52A011R",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "surface": "unpaved",
+     "width": "3.50 m"
+    }
+   },
+   {
+    "id": "w480646523",
+    "highway": "unclassified",
+    "km": 7.3,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "ref": "02DR002",
+     "source": "bing 2017",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w481332654",
+    "highway": "unclassified",
+    "km": 6.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "ref": "44DR013",
+     "surface": "unpaved",
+     "tracktype": "grade4"
+    }
+   }
+  ],
+  "conflict": [
+   {
+    "id": "w574783596",
+    "highway": "unclassified",
+    "km": 10,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "ref": "61DR015",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w246173479",
+    "highway": "primary",
+    "km": 7.1,
+    "level": "paved",
+    "tags": {
+     "highway": "primary",
+     "lane_markings": "no",
+     "name": "Pasang Lhamu Highway",
+     "ref": "NH18",
+     "ref:old": "F21",
+     "smoothness": "very_bad",
+     "source": "2 GPS Tracks, Bing Sat",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w28836698",
+    "highway": "primary",
+    "km": 4.8,
+    "level": "paved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "lit": "no",
+     "name": "Taulihawa Road",
+     "oneway": "yes",
+     "parking:both": "no",
+     "ref": "NH05",
+     "ref:old": "F44",
+     "sidewalk:both": "no",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w1430236631",
+    "highway": "primary",
+    "km": 4.8,
+    "level": "paved",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "lit": "no",
+     "name": "Taulihawa Road",
+     "oneway": "yes",
+     "parking:both": "no",
+     "ref": "NH05",
+     "ref:old": "F44",
+     "sidewalk:both": "no",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w341151347",
+    "highway": "residential",
+    "km": 4.7,
+    "level": "unpaved",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "excellent",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w341660113",
+    "highway": "trunk",
+    "km": 4.7,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "int_ref": "AH42",
+     "note": "No previous smoothness tag. Only small vehicles (4 x 4 jeeps) allowed. Caution due to risk of landslides. Not advised to travel route at night.",
+     "ref": "NH34",
+     "ref:old": "H03",
+     "smoothness": "horrible",
+     "source": "GPS",
+     "source:smoothness": "DFID RMO survey post nepal_earthquake_2015"
+    }
+   },
+   {
+    "id": "w310001586",
+    "highway": "unclassified",
+    "km": 4.6,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "unclassified",
+     "ref": "40DR012",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w425291499",
+    "highway": "tertiary",
+    "km": 3.8,
+    "level": "paved",
+    "tags": {
+     "donkey": "yes",
+     "highway": "tertiary",
+     "ref": "40DR001",
+     "smoothness": "very_bad",
+     "surface": "paving_stones",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w488379203",
+    "highway": "unclassified",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "unclassified",
+     "ref": "40DR012",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w361655785",
+    "highway": "tertiary",
+    "km": 3.4,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "tertiary",
+     "name": "Rajapur Ring Road",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "58DR001",
+     "smoothness": "good",
+     "source": "ILO transportation mapping",
+     "surface": "gravel",
+     "width": "5 m",
+     "width:ROW": "10 m",
+     "width:carriage": "4 m",
+     "width:shoulder": "1 m"
+    }
+   },
+   {
+    "id": "w685257752",
+    "highway": "unclassified",
+    "km": 3.3,
+    "level": "paved",
+    "tags": {
+     "4wd_only": "recommended",
+     "highway": "unclassified",
+     "ref": "40DR012",
+     "smoothness": "very_horrible"
+    }
+   },
+   {
+    "id": "w1235395048",
+    "highway": "unclassified",
+    "km": 3.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w345318855",
+    "highway": "trunk",
+    "km": 3.2,
+    "level": "paved",
+    "tags": {
+     "highway": "trunk",
+     "int_ref": "AH42",
+     "note": "No previous smoothness tag. Only small vehicles (4 x 4 jeeps) allowed. Caution due to risk of landslides. Not advised to travel route at night.",
+     "ref": "NH34",
+     "ref:old": "H03",
+     "smoothness": "horrible",
+     "source": "GPS",
+     "source:smoothness": "DFID RMO survey post nepal_earthquake_2015"
+    }
+   },
+   {
+    "id": "w748016394",
+    "highway": "unclassified",
+    "km": 3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible"
+    }
+   },
+   {
+    "id": "w1235321264",
+    "highway": "unclassified",
+    "km": 2.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible"
+    }
+   }
+  ],
+  "unknown_value": [
+   {
+    "id": "w363255785",
+    "highway": "secondary",
+    "km": 19.5,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "secondary",
+     "lanes": "1",
+     "name": "Tikkar- Buddhi- Bijgauri-Taulihawa Road",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "50A002R",
+     "ref:old": "50DR015",
+     "resurfaced:date": "2013",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:year": "2014",
+     "surveyor:name": "Ujjwal Dahal",
+     "width": "3.5",
+     "width:ROW": "7",
+     "width:carriage": "3.5",
+     "width:shoulder": "1.5"
+    }
+   },
+   {
+    "id": "w330470159",
+    "highway": "secondary",
+    "km": 15,
+    "level": "unpaved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "lanes:backward": "1",
+     "lanes:forward": "1",
+     "maxspeed": "60",
+     "name": "Mid Hilly Highway",
+     "surface": "bitumin"
+    }
+   },
+   {
+    "id": "w336384441",
+    "highway": "tertiary",
+    "km": 10.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "ref": "52A002R",
+     "surface": "3.5"
+    }
+   },
+   {
+    "id": "w363250756",
+    "highway": "tertiary",
+    "km": 10.1,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "Good",
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Jahadi-Bikuli-Bungchi Road",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "50A003R",
+     "ref:old": "50DR029",
+     "resurfaced:date": "2013",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:year": "2014",
+     "surveyor:name": "Ujjwal Dahal",
+     "width": "3.5 m",
+     "width:ROW": "7 m",
+     "width:carriage": "3.5 m",
+     "width:shoulder": "1 m"
+    }
+   },
+   {
+    "id": "w377893237",
+    "highway": "tertiary",
+    "km": 8,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "पवननगर - पुरन्धारा सडक",
+     "name:en": "Pawan Nagar - Purandhara Road",
+     "name:ne": "पवननगर - पुरन्धारा सडक",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "56A003",
+     "ref:old": "56DR001",
+     "resurfaced:date": "2070",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:date": "2071",
+     "survey:year": "2071",
+     "surveyor:name": "drdangi",
+     "width": "6",
+     "width:ROW": "20",
+     "width:carriage": "3.5",
+     "width:shoulder": "1.5"
+    }
+   },
+   {
+    "id": "w522970295",
+    "highway": "tertiary",
+    "km": 7.9,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "पवननगर - पुरन्धारा सडक",
+     "name:en": "Pawan Nagar - Purandhara Road",
+     "name:ne": "पवननगर - पुरन्धारा सडक",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "56A003",
+     "ref:old": "56DR001",
+     "resurfaced:date": "2070",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:date": "2071",
+     "survey:year": "2071",
+     "surveyor:name": "drdangi",
+     "width": "6",
+     "width:ROW": "20",
+     "width:carriage": "3.5",
+     "width:shoulder": "1.5"
+    }
+   },
+   {
+    "id": "w363249935",
+    "highway": "tertiary",
+    "km": 6.1,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Bargadwa-Bhawapur-Titirkhi Road",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "50A004R",
+     "ref:old": "50DR019",
+     "resurfaced:date": "2014",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:year": "2014",
+     "surveyor:name": "Ujjwal Dahal",
+     "width": "3.5 m",
+     "width:ROW": "7 m",
+     "width:carriage": "3.5 m",
+     "width:shoulder": "1 m"
+    }
+   },
+   {
+    "id": "w628619990",
+    "highway": "unclassified",
+    "km": 4.3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "G"
+    }
+   },
+   {
+    "id": "w961716082",
+    "highway": "unclassified",
+    "km": 3.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "G"
+    }
+   },
+   {
+    "id": "w612839033",
+    "highway": "tertiary",
+    "km": 3,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "length": "2978.0264885",
+     "noname": "yes",
+     "surface": "Blacktopped",
+     "width": "28.0"
+    }
+   },
+   {
+    "id": "w628619998",
+    "highway": "unclassified",
+    "km": 2.9,
+    "level": "unpaved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "G"
+    }
+   },
+   {
+    "id": "w378652388",
+    "highway": "tertiary",
+    "km": 2.7,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "tertiary",
+     "lanes": "1",
+     "name": "Bargadwa-Bhawapur-Titirkhi Road",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "50A004R",
+     "ref:old": "50DR019",
+     "resurfaced:date": "2014",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:year": "2014",
+     "surveyor:name": "Ujjwal Dahal",
+     "width": "3.5 m",
+     "width:ROW": "7 m",
+     "width:carriage": "3.5 m",
+     "width:shoulder": "1 m"
+    }
+   },
+   {
+    "id": "w363252180",
+    "highway": "tertiary",
+    "km": 2.5,
+    "level": "unpaved",
+    "tags": {
+     "access_status": "all_weather",
+     "condition": "good",
+     "highway": "tertiary",
+     "lanes": "1",
+     "maxspeed": "30",
+     "name": "पवननगर - पुरन्धारा सडक",
+     "name:en": "Pawan Nagar - Purandhara Road",
+     "name:ne": "पवननगर - पुरन्धारा सडक",
+     "project:url": "https://github.com/MeghaStha/ILO-training",
+     "ref": "56A003",
+     "ref:old": "56DR001",
+     "resurfaced:date": "2070",
+     "source": "ILO transportation mapping",
+     "start_chainage": "0+000",
+     "surface": "ottaseal",
+     "survey:date": "2071",
+     "survey:year": "2071",
+     "surveyor:name": "drdangi",
+     "width": "6",
+     "width:ROW": "20",
+     "width:carriage": "3.5",
+     "width:shoulder": "1.5"
+    }
+   },
+   {
+    "id": "w612849949",
+    "highway": "tertiary",
+    "km": 2.4,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "length": "2352.05577999",
+     "name": "Banbatika West Road",
+     "surface": "Blacktopped",
+     "width": "24.0"
+    }
+   },
+   {
+    "id": "w612838427",
+    "highway": "tertiary",
+    "km": 2.1,
+    "level": "unpaved",
+    "tags": {
+     "highway": "tertiary",
+     "length": "2106.1573826",
+     "noname": "yes",
+     "surface": "Blacktopped"
+    }
+   }
+  ]
+ }
+}

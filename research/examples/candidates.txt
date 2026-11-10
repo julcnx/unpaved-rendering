@@ -1,0 +1,21 @@
+# Example road candidates: way id, country code, label. The top 3 "major roads Off-road" per country
+# from stats/results/ are added automatically by imagery-check.ts.
+
+# From the stats (checked earlier)
+w449286536 ga RN4 (trunk)
+w455824340 bo RN39 Cuatro Cañadas-San Miguel de Velasco (trunk)
+w319372206 is F26 Sprengisandsleið (secondary, 4wd_only=yes)
+w344160419 np NH18 (primary, note: only 4x4 jeeps)
+
+# Australia, well-known outback roads (longest non-paved way of each)
+w313519144 au Gibb River Road
+w186252950 au Oodnadatta Track
+w186428588 au Birdsville Track
+w188552693 au Tanami Road
+w596600032 au Gunbarrel Highway (4wd_only=yes)
+
+# Australia, examples linked from Australian Tagging Guidelines/Roads
+w373866983 au Nyangumarta Highway (tracktype=grade6 example)
+w320261711 au Rudall River Road (tracktype=grade7 example)
+w231792517 au Diamantina Developmental Road
+w158450100 au Kidson Track
