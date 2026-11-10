@@ -91,7 +91,7 @@ export const STYLES = {
   'dashed-fill-full': {
     name: DF.name, note: DF.note, minWidth: 3,
     draw: (level, c, w) => ({
-      over: level === 'paved' ? [] : [{ color: off(level) ? offDash(c) : c.dash, width: w, dash: DF.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: off(level) ? offDash(c) : (c.fullDash ?? c.dash), width: w, dash: DF.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
     }),
   },
 };

@@ -15,7 +15,8 @@ export default {
       "tunnel": "#efb3be",
       "offTint": "#d7697e",
       "offDash": "#d0526b",
-      "lowTint": "#dd7f91"
+      "lowTint": "#dd7f91",
+      "fullDash": "#db7b8e"
     },
     "trunk": {
       "name": "Red",
@@ -27,7 +28,8 @@ export default {
       "tunnel": "#fbd3c6",
       "offTint": "#e98667",
       "offDash": "#e3643d",
-      "lowTint": "#ed9d84"
+      "lowTint": "#ed9d84",
+      "fullDash": "#ed9980"
     },
     "primary": {
       "name": "Orange",
@@ -39,7 +41,8 @@ export default {
       "tunnel": "#fde7c9",
       "offTint": "#e8ac61",
       "offDash": "#df8d23",
-      "lowTint": "#eec28b"
+      "lowTint": "#eec28b",
+      "fullDash": "#ecbc7e"
     },
     "secondary": {
       "name": "Yellow",
@@ -51,7 +54,8 @@ export default {
       "tunnel": "#fbfdd8",
       "offTint": "#d0d651",
       "offDash": "#b9c12d",
-      "lowTint": "#e3e798"
+      "lowTint": "#e3e798",
+      "fullDash": "#dee387"
     },
     "minor": {
       "name": "White",
@@ -63,7 +67,8 @@ export default {
       "tunnel": "#f2f2f2",
       "offTint": "#d6bc9b",
       "offDash": "#c8ac84",
-      "lowTint": "#e2cfb8"
+      "lowTint": "#e2cfb8",
+      "fullDash": "#dccab0"
     }
   },
   "styles": {
