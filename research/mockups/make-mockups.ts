@@ -45,6 +45,12 @@ const SPEC = {
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
 const CLASSES: Klass[] = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
+// Mix two #rrggbb colours: t = 0 gives a, t = 1 gives b.
+const mix = (a: string, b: string, t: number) => '#' + [1, 3, 5].map((i) =>
+  Math.round(parseInt(a.slice(i, i + 2), 16) * (1 - t) + parseInt(b.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
+// Tint variant (to compare, 2026-11-10): Off-road keeps the Unpaved pattern and gets a darker class tint in the fill
+// (the dashed fill's tint), with darker grain background and dashes to match.
+const tinted = (c: Klass): Klass => ({ ...c, id: `${c.id}-t`, fill: c.dash, grainBg: c.dash, dash: mix(c.dash, c.casing, 0.45) });
 const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles['dashed-fill'], GA = SPEC.styles['dashed-casing'];
 const BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
 const TRACK = '#996600'; // OSM Carto @track-fill
@@ -65,14 +71,14 @@ const GRAIN = readFileSync(new URL('./carto-unpaved-grain.svg', import.meta.url)
 const grain = (c: Klass) =>
   `<pattern id="grain-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(${GR.scale})"><rect width="64" height="64" fill="${c.grainBg}"/><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>` +
   `<pattern id="grain2-${c.id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(${GR.offroadShift.join(' ')}) scale(${GR.offroadScale})"><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>`;
-const DEFS = `<defs>${CLASSES.map(grain).join('')}</defs>`;
+const DEFS = `<defs>${[...CLASSES, ...CLASSES.map(tinted)].map(grain).join('')}</defs>`;
 
 const line = (stroke: string, width: number, dash = '', cap = 'butt', extra = '') =>
   `<path d="${ROAD}" fill="none" stroke="${stroke}" stroke-width="${width}" stroke-linecap="${cap}"${dash ? ` stroke-dasharray="${dash}"` : ''}${extra}/>`;
 const road = (fill: string, casing: string, extra = '') => line(casing, W + CAS, '') + line(fill, W) + extra;
 // Dashed casing: only the outline is broken, the fill stays continuous.
 // White roads get a darker casing (OSM Carto tertiary casing), or the dashes vanish into the land.
-const gapCasing = (c: Klass) => (GA.casing as Record<string, string>)[c.id] ?? c.casing;
+const gapCasing = (c: Klass) => (GA.casing as Record<string, string>)[c.id.replace(/-t$/, '')] ?? c.casing;
 const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) + line(c.fill, W);
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
@@ -153,6 +159,12 @@ function render(suffix: string) {
   const rows = ROWS.map(({ c, s }, r) => text(10, y(r) + CELL_H / 2 + 5, `${c.name}: ${s}`, 14, 700) +
     keys.map((key, i) => box(LABEL_W + i * (CELL_W + 10), y(r), OPTIONS[key].road(s, c))).join('')).join('');
   out(`options-comparison${suffix}`, svg(w, h, header + rows));
+  // Tint variant: same grid, Off-road = the Unpaved pattern on the darker class tint.
+  const tintRoad = (key: string, s: State, c: Klass) => offroad(s) ? OPTIONS[key].road('Unpaved', tinted(c)) : OPTIONS[key].road(s, c);
+  const rowsT = ROWS.map(({ c, s }, r) => text(10, y(r) + CELL_H / 2 + 5, `${c.name}: ${s}`, 14, 700) +
+    keys.map((key, i) => box(LABEL_W + i * (CELL_W + 10), y(r), tintRoad(key, s, c))).join('')).join('');
+  out(`options-comparison-tint${suffix}`, svg(w, h + 30, header + rowsT +
+    text(10, h + 18, 'Tint variant: Off-road uses the same pattern as Unpaved, on a darker tint of the class colour.', 13)));
 
   // OSM Carto features the styles must not look like: own file.
   const refTop = 40;
