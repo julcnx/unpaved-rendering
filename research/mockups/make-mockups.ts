@@ -13,7 +13,7 @@ const LAND = '#f2efe9';
 // fill and casing; grain dots (symbols/unpaved/unpaved_<class>-fill.svg) on a background tinted a little toward brown
 // (Carto's own background is only a lighter fill); white roads stay white, with warm brown dots instead of Carto's grey; tunnel fill (Carto: lighter fill, darker for white roads);
 // dash colour (luminance contrast 1.3 or more against the fill, 1.4 on red and orange where the dashes looked soft; same hue): a slightly darker tint of the class colour, light brown on white roads (grey would look like Carto construction).
-type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string; offTint: string; offDash: string; lowTint: string };
+type Klass = { name: string; id: string; fill: string; casing: string; grainBg: string; grainDot: string; dash: string; tunnel: string; offTint: string; offDash: string; lowTint: string; fullDash: string };
 // One track rhythm for the line styles (centre line and dashed casing), from OSM Carto tracks scaled to our lines:
 // One ladder for roads now and tracks later (Julien's choice, 2026-11-09): Paved solid, Unpaved = long dashes
 // (Carto tracktype=grade2 order), Off-road = medium dashes (grade3 order), with a bigger step than Carto between the
@@ -26,11 +26,11 @@ const xWidth = (d: number[]) => d.map((v) => Math.round((v * 1.8 / 11) * 100) / 
 const SPEC = {
   // Keys are the demo's road classes; `name` is the mockup label. Motorway is not in the mockups, only in the demo.
   classes: {
-    motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#da768a', tunnel: '#efb3be', offTint: '#d7697e', offDash: '#d0526b', lowTint: '#dd7f91' },
-    trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ea8b6e', tunnel: '#fbd3c6', offTint: '#e98667', offDash: '#e3643d', lowTint: '#ed9d84' },
-    primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#e9b066', tunnel: '#fde7c9', offTint: '#e8ac61', offDash: '#df8d23', lowTint: '#eec28b' },
-    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#3f4318', dash: '#d9df75', tunnel: '#fbfdd8', offTint: '#d0d651', offDash: '#b9c12d', lowTint: '#e3e798' },
-    minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#46362a', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#d6bc9b', offDash: '#c8ac84', lowTint: '#e2cfb8' },
+    motorway: { name: 'Pink', fill: '#e892a2', casing: '#dc2a67', grainBg: '#ea98a2', grainDot: '#420015', dash: '#da768a', tunnel: '#efb3be', offTint: '#d7697e', offDash: '#d0526b', lowTint: '#dd7f91', fullDash: '#db7b8e' },
+    trunk: { name: 'Red', fill: '#f9b29c', casing: '#c84e2f', grainBg: '#f6b598', grainDot: '#511d0f', dash: '#ea8b6e', tunnel: '#fbd3c6', offTint: '#e98667', offDash: '#e3643d', lowTint: '#ed9d84', fullDash: '#ed9980' },
+    primary: { name: 'Orange', fill: '#fcd6a4', casing: '#a06b00', grainBg: '#f6d29c', grainDot: '#563d12', dash: '#e9b066', tunnel: '#fde7c9', offTint: '#e8ac61', offDash: '#df8d23', lowTint: '#eec28b', fullDash: '#ecbc7e' },
+    secondary: { name: 'Yellow', fill: '#f7fabf', casing: '#707d05', grainBg: '#f3efb2', grainDot: '#3f4318', dash: '#d9df75', tunnel: '#fbfdd8', offTint: '#d0d651', offDash: '#b9c12d', lowTint: '#e3e798', fullDash: '#dee387' },
+    minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#46362a', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#d6bc9b', offDash: '#c8ac84', lowTint: '#e2cfb8', fullDash: '#dccab0' },
   },
   // Below this fill width (px) every style draws a plain tint: lowTint for Unpaved, offTint for Off-road (patterns blur there).
   lowZoom: { below: 6 },
@@ -39,7 +39,8 @@ const SPEC = {
     'centre-line': { color: '#8a6440', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
     grain: { scale: 1.5, offroadScale: 3, offroadShift: [21, 37] },
     'dashed-fill': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad), band: 0.6, bandFromWidth: 6 },
-    // Full width, as Americana draws unpaved roads (and DMD2): same dashes and colours, no band.
+    // Full width, as Americana draws unpaved roads (and DMD2): same dashes, no band. Lighter Unpaved dash (fullDash, contrast
+    // 1.25 against the fill; white keeps the tan dash so it does not fade into the land): full width already covers most of the road.
     'dashed-fill-full': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad) },
     // Dashed casing, the fill stays continuous: the dashed outline of Gaia GPS tracks, with the class kept.
     // Casing colour for the dashed outline: darker on red and orange (the normal casing is close to the fill),
@@ -57,7 +58,7 @@ const mix = (a: string, b: string, t: number) => '#' + [1, 3, 5].map((i) =>
 // whose tint is tan so it does not melt into the beige land). Grain background to match.
 // Dashed fill: the fill stays normal (a dark fill is too heavy) and the dashes get darker (offDash, 1.35 or more against the dash).
 const tinted = (c: Klass): Klass => ({ ...c, id: `${c.id}-t`, fill: c.offTint, grainBg: c.offTint });
-const tintedDash = (c: Klass): Klass => ({ ...c, dash: c.offDash });
+const tintedDash = (c: Klass): Klass => ({ ...c, dash: c.offDash, fullDash: c.offDash });
 const CL = SPEC.styles['centre-line'], GR = SPEC.styles.grain, DA = SPEC.styles['dashed-fill'], DF = SPEC.styles['dashed-fill-full'], GA = SPEC.styles['dashed-casing'];
 const BROWN = CL.color; // a bit lighter than a contour-line brown, so it does not read as a third dark line
 const TRACK = '#996600'; // OSM Carto @track-fill
@@ -122,7 +123,7 @@ const OPTIONS: Record<string, Option> = {
   'dashed-fill-full': {
     title: '5. Dashed fill, full width',
     note: 'Long dashes in a darker class tint over the whole road width (as Americana). Off-road: the same dashes, darker.',
-    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W, (offroad(s) ? DF.offroadXWidth : DF.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
+    road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.fullDash, W, (offroad(s) ? DF.offroadXWidth : DF.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
 };
 
