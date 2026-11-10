@@ -2,13 +2,13 @@
 import { classify } from './classify.js';
 import { STYLES, palette, roadInfo, RANK, widthAt } from './styles.js';
 
-// Backgrounds: land colour, and whether the map is dark. "terrain" adds hillshade, contours and labels.
+// Backgrounds: land colour, and whether the map is dark. "terrain" adds hillshade and contours.
 export const BACKGROUNDS = {
   white: { name: 'White', land: '#ffffff' },
   forest: { name: 'Forest', land: '#add19e' },
   sand: { name: 'Sand / desert', land: '#e8d6ad' },
+  terrain: { name: 'Hillshade, contours', land: '#f2efe9', terrain: true },
   dark: { name: 'Dark', land: '#202124', dark: true },
-  terrain: { name: 'Hillshade, contours, labels', land: '#f2efe9', terrain: true },
 };
 
 // Tracks and paths: OSM Carto-like, to check that unpaved roads are not confused with them.
@@ -167,32 +167,6 @@ export class MapView {
     for (const r of roads) { path(r.f); stroke(r.d.fill?.color ?? r.c.fill, r.w, r.d.fill?.dash, r.d.fill?.cap); }
     for (const r of roads) for (const o of r.d.over ?? []) { path(r.f); stroke(o.color, o.width, o.dash, o.cap ?? 'round'); }
     ctx.setLineDash([]);
-
-    if (bg.terrain) this.drawLabels(ctx, roads, s, ox, oy, rect);
-  }
-
-  // Route numbers only (ref on trunk to tertiary), as small shields, like real maps at zoom 11-14.
-  // Street names are left out: they cover the roads being compared. Overlapping shields are skipped.
-  drawLabels(ctx, roads, s, ox, oy, rect) {
-    ctx.font = '600 11px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-    const MAIN = new Set(['trunk', 'primary', 'secondary', 'tertiary']);
-    const done = new Set(), boxes = [];
-    for (const r of [...roads].reverse()) {
-      const ref = r.f.tags.ref?.split(';')[0];
-      if (!ref || done.has(ref) || !MAIN.has(r.f.tags.highway)) continue;
-      // Middle of the part of the road inside the panel.
-      const vis = r.f.pts.map(([x, y]) => [x * s + ox, y * s + oy])
-        .filter(([x, y]) => x > rect.x + 30 && x < rect.x + rect.w - 30 && y > rect.y + 60 && y < rect.y + rect.h - 20);
-      if (!vis.length) continue;
-      const [x, y] = vis[Math.floor(vis.length / 2)];
-      const w = ctx.measureText(ref).width + 10, h = 16, box = [x - w / 2, y - h / 2, w, h];
-      if (boxes.some(([bx, by, bw, bh]) => x - w / 2 < bx + bw + 4 && bx < x + w / 2 + 4 && y - h / 2 < by + bh + 4 && by < y + h / 2 + 4)) continue;
-      boxes.push(box); done.add(ref);
-      ctx.fillStyle = '#fff'; ctx.strokeStyle = '#555'; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.roundRect(...box, 3); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = '#222'; ctx.fillText(ref, x, y + 0.5);
-    }
-    ctx.textAlign = 'start'; ctx.textBaseline = 'alphabetic';
   }
 
   // Hillshade and contours computed in the browser from Terrarium elevation tiles (AWS Terrain Tiles).

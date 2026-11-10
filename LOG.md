@@ -51,3 +51,4 @@
 - All styles grid: a sixth panel "No style (all paved)", the same map with no unpaved signal, as most maps today.
 - The Style select in the panel is hidden in All mode (it changed nothing there).
 - Backgrounds are chips at the bottom right of the map (the select is gone). With one style, an extra "All" chip shows every background side by side (`bg=all` in the URL), to see how the style fits each map. Not offered in All styles mode (too many panels).
+- Backgrounds reordered: Hillshade before Dark, Dark last. Route number labels removed (only a few shields showed, they read as missing labels); the background is now "Hillshade, contours".
