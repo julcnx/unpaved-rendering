@@ -27,19 +27,19 @@ Updated 2026-11-10. Open items from all the task files and the "Mind the Surface
 ## Repo, article and publishing (ask before anything public)
 
 20. Create the public repo `julcnx/unpaved-rendering` (description and topics mention OSM), with GitHub Pages for the demo and the article.
-21. Article "Mind the Surface: A Main Road Is Not Always Paved": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits (OpenMapTiles has no `surface` below z12, so Americana, MapTiler, Stadia and OpenFreeMap cannot show unpaved there; A4), how rare the Off-road evidence is (5.8% of Unpaved km), legend wording, known limitations, future work (tracks, paths, routing, Google and Apple), the iD `surface=laterite` conflict, credits to imagico and Sommerluk.
+21. Article "Mind the Surface: A Main Road Is Not Always Paved": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits (OpenMapTiles has no `surface` below z12, so Americana, MapTiler, Stadia and OpenFreeMap cannot show unpaved there; A4), how rare the Off-road evidence is (5.8% of Unpaved km), legend wording, known limitations, future work (tracks, paths, routing, Google and Apple; one sentence saying the same paved whitelist applies to tracks and paths, their rendering is a follow-up), the iD `surface=laterite` conflict, credits to imagico and Sommerluk.
 22. Short OSM wiki page for the tag mapping only, linking to the repo; OSM diary entry; Facebook post pointing to the diary. Get feedback on the community forum first.
 
 ## Outreach (drafts only, send nothing)
 
 - Spirit PR #93 (Julien's, open): before pinging again, switch to a paved whitelist and a style that does not dash the casing (the maintainer asked about tunnel confusion; see A-providers A5 and the Shortbread row).
 14. Contacts for the late-added countries (B); wiki table and sample countries (C); Western contrast countries: is `surface=unpaved` used there for roads a city car can drive?
+- Track rendering per app (double line, dashed, continuous), moved up from Low priority on 2026-11-10: needed before the issue drafts, so the style picked for each provider stays distinct from how it draws tracks (unpaved roads drawn as tracks is the failure seen in Ride with GPS, OsmAnd Motorcycle and Gaia GPS). Column "How tracks are drawn" added to A0; 15 rows still to check. Not a track proposal: tracks and paths stay future work.
 23. One issue draft per provider, adapted to its current rendering and tile schema. Open apps first (Organic Maps, OsmAnd, Americana), issue before PR, small first PR. A3 order: CyclOSM, OsmAnd #9465, Organic Maps #8485, OpenMapTiles whitelist, Kurviger forum, Tracestrack.
 24. Commercial apps through support or product teams: Komoot, Gaia GPS, Calimoto, Guru Maps, Ride with GPS and the others.
 25. Allies: HOT, local mapping communities, the laterite-discussion contacts.
 
 ## Low priority
-- Track rendering per app (double line, dashed, continuous), for the future-work section.
 - Paved `highway=track` (`tracktype=grade1` or a paved surface) drawn as a continuous line, matching the track rhythms now used by the centre line (OSM Carto already draws grade1 solid). For the future-work section, after the road classes.
 - OsmAnd default vs Motorcycle screenshot at one spot (the difference is already described in A0; Komoot phone app check not needed).
 28. OsmAnd Motorcycle (low priority, after everything else): the owner said yes on [discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) (2026-11-09) and suggests Julien forks it. Thanked in French on 2026-11-09 (said it comes later). Then fork and draw unpaved roads in their class colour, as the phone demo. Code review done (A-providers A6, 2026-11-10): GPL v3; roads primary to residential are repainted in track colour and width (class lost), motorway and trunk never; keep the brown/green track categories, change the road part. Find the OsmAnd plugin he mentions (F-Droid build).
