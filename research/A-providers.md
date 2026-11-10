@@ -24,7 +24,7 @@ Checked in each style's source code (commits as cloned in `osm-tag-support-track
 | **Humanitarian (HOT)** | **Yes, every class**, from z11 | Unpaved casing, and the fill becomes the residential colour ([roads.mss L80-L95, L221](https://github.com/hotosm/HDM-CartoCSS/blob/ff2bb32dc96e5e450dab052be0df0dff40f1c139/roads.mss#L80-L95)): an unpaved primary **loses its class colour**; screenshots: Australia 27, Alberta 40 and Iceland 54 (tiles only partly loaded, tile server slow) change to the thin land-coloured line on the unpaved side | Paved whitelist (4 values); untagged unclassified counts as unpaved | Keep the class colour; repo inactive since 2021 |
 | **CyclOSM** | **Yes, from z14**, as bike-type dashes (road / cyclocross / mtb) | `surface_type` in [views.sql L153-L172](https://github.com/cyclosm/cyclosm-cartocss-style/blob/588e9c7b/views.sql#L153-L172); screenshots: dashes on the Namibia gravel and Iceland `surface=compacted` sides; no mark on the Bolivia `surface=compacted`, Australia `surface=gravel` (secondary) and Alberta `surface=unpaved` sides. All three explained by the code (live tiles checked 2026-11-09): Alberta is the `unpaved` gap; the Bolivia unpaved side is `highway=trunk`, and motorway/trunk get no surface rule (dashes start at primary, [roads.mss L2432-L2530](https://github.com/cyclosm/cyclosm-cartocss-style/blob/7b446ca8/roads.mss#L2432-L2530)); the Australia road has `smoothness=good`, which CyclOSM ranks above `surface`, so gravel counts as "road" (a deliberate cycling choice) | Explicit lists; **`surface=unpaved` is in no list**, so 75% of unpaved km gets no mark; no surface rule on trunk and motorway | Add `unpaved` (or a whitelist), and the surface rule on trunk |
 | **OsmAnd** | **Optional only**: "Road surface" and "Road quality" overlays, **off by default**, from z14. The OsmAnd web map (osmand.net/map) shows a subtle texture like OSM Carto at all six screenshot spots (2026-11-09) | Coloured overlay line ([default.render.xml L99-L102](https://github.com/osmandapp/OsmAnd-resources/blob/85815c67803a53ed1e4e50b25337d678bac0fa16/rendering_styles/default.render.xml#L99-L102)) | Per-value colours | A default-on Unpaved signal on roads |
-| **OsmAnd Motorcycle styles** ([OsmAnd-Rendering/Motorcycle](https://github.com/OsmAnd-Rendering/Motorcycle), third-party) | **Yes, but the class is lost**: unpaved roads are drawn the same as tracks (checked in app 2026-11-09) | Track style | (not checked) | Keep the road class and add an Unpaved signal; asked in [discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) |
+| **OsmAnd Motorcycle styles** ([OsmAnd-Rendering/Motorcycle](https://github.com/OsmAnd-Rendering/Motorcycle), third-party) | **Yes, but the class is lost**: unpaved roads are drawn the same as tracks (checked in app 2026-11-09); in the code, primary to residential with gravel or dirt surfaces are repainted in track colour and width, motorway and trunk never (A6) | Track style | (not checked) | Keep the road class and add an Unpaved signal; asked in [discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) |
 | **Organic Maps / CoMaps** | **No** (confirmed in both apps 2026-11-09). No style file (default, outdoors, vehicle) uses `psurface` or `surface`; `psurface` is used for routing only | (none) | Paved whitelist exists in the generator | Render `psurface` paved vs unpaved: biggest gap among open apps. Corrects the earlier tracker note that said rendering used it |
 | **OpenTopoMap** | **No** on roads; `surface` only separates asphalt from non-asphalt on paths, footways, bridleways, plus ice and snow | `styles-otm/roads-*.xml` | (n/a) | Project only kept online |
 | **OSMF Shortbread** (vector.openstreetmap.org) | **No** in the deployed style | (none) | The Shortbread schema already exports the raw `surface` on streets from z11 ([schema 1.0](https://shortbread-tiles.org/schema/1.0/)) | Style change only, no schema change. [Spirit PR #93](https://github.com/pnorman/spirit/pull/93) (Julien's, open): dashes the road casing for an explicit unpaved list. The maintainer (2026-08-20) wants to check confusion with tunnels and with non-motorised ways first; a dashed casing is how OSM Carto draws tunnels (see the mockup references), and the list is not a paved whitelist |
@@ -193,3 +193,38 @@ What this changes:
 2. **CyclOSM is the one big data gap**: adding `unpaved` takes it from 26% to about 99% of Unpaved km. Still the best first PR.
 3. **Organic Maps needs styling only**: its data already matches ours.
 4. **HOT is a warning, not a model**: assuming untagged minor roads are unpaved turns 9 million km brown.
+
+## A6. OsmAnd Motorcycle style: code review for the fork (2026-11-10)
+
+Repo [OsmAnd-Rendering/Motorcycle](https://github.com/OsmAnd-Rendering/Motorcycle), commit `f0676ed` (2026-09-05), cloned in `osm-tag-support-tracker/sources/Motorcycle` (wiki in `Motorcycle.wiki`). Licence **GPL v3**: a fork is allowed and must stay GPL v3. Main file `enduro.render.xml` (about 5,000 lines), plus three routing profiles (`gros_trail.xml`, `petit_trail.xml`, `enduro.xml`) and an installer (`installation.osf`). French comments and option names.
+
+**How ways are sorted** ([wiki: hiérarchie des chemins](https://github.com/OsmAnd-Rendering/Motorcycle/wiki/hi%C3%A9rarchie-des-chemins)): five categories, used both for drawing and by the three routing profiles. Two signals: **colour** (brown = material added, green = bare earth) and **dashing** (dashed = looser within the colour).
+
+| Category | Look | Tags |
+|---|---|---|
+| 1. Easy, drivable | brown `#996600`, solid | `surface` paved, asphalt, concrete, compacted, fine_gravel, chipseal, paving_stones, metal, wood, unhewn_cobblestone; `tracktype=grade1/2` |
+| 2. Easy but looser | brown, dashed | `surface` gravel, rock, pebblestone, cobblestone; `grade3` |
+| 3. Depends on weather | green `#008800`, solid | `grade4` |
+| 4. Bare ground | green, dashed | `surface` dirt, earth, ground, grass, mud, sand, **unpaved**; `grade5`; `smoothness=horrible/very_horrible`; `ford=yes` |
+| 5. No information | as 4, or hidden | tracks with none of these tags (option "cacher chemin sans info") |
+
+Colours: `$piste` brown and `$chemin` green ([L242-L261](https://github.com/OsmAnd-Rendering/Motorcycle/blob/f0676ed/enduro.render.xml#L242-L261)), with night, greyscale, "IGN-like" and background-map variants. Tag classes for routing hints: [L520-L570](https://github.com/OsmAnd-Rendering/Motorcycle/blob/f0676ed/enduro.render.xml#L520-L570).
+
+**Roads, the part that loses the class** ([L3640-L3681](https://github.com/OsmAnd-Rendering/Motorcycle/blob/f0676ed/enduro.render.xml#L3640-L3681)): after the road blocks for primary, secondary, tertiary, unclassified and residential, two rules repaint any such road with gravel, compacted, fine_gravel or `grade2/3` in the track brown and track width (`$piste_trait`), and any with ground, dirt, earth, **unpaved** or `grade4/5` in the track green and width (`$chemin_trait`). The road's class colour and width are lost: an unpaved primary looks like a track. Motorway and trunk are in a separate block ([L3327-L3340](https://github.com/OsmAnd-Rendering/Motorcycle/blob/f0676ed/enduro.render.xml#L3327-L3340)) and are never repainted.
+
+What is worth keeping for the fork:
+
+1. **Two signals that read at once**: colour for the kind of surface, dashing for how loose it is. Clear on a phone in the sun (screenshots in the README and `photos.md`).
+2. **One classification for map and routing**: the same categories drive the drawing and the three profiles, so what you see is what the router avoids.
+3. **"If dry" routing switch** (`gros_trail`): moves categories up one level in dry weather. A good idea for the Off-road mark later.
+4. **Option to hide tracks with no information**, and the wiki asking mappers to add `tracktype`, `smoothness` and `surface`: the map as feedback for mapping.
+5. **Path difficulty dots** from `mtb:scale` and `sac_scale` (green, orange, red, black), and night, greyscale and iOS low-memory variants.
+
+What to change in the fork (our model):
+
+1. **Keep the class on roads**: do not repaint roads in track colour and width. Keep the class colour and width, and add our Unpaved signal (dashed centre line or dashed casing) on top. Tracks can keep the five categories.
+2. **`surface=unpaved` is not bare ground**: it is 75% of unpaved km on main roads and says nothing about roughness. In the fork it is plain Unpaved (no Off-road mark), not green.
+3. **Off-road from evidence only**: `smoothness` very_bad or worse, `tracktype` grade3 or worse, `4wd_only` (our classifier). Note that the style puts `grade3` in the easy brown group, while our classifier gives it the Off-road mark: to align with Julien before the fork.
+4. **Explicit lists**: values in no list fall through to the normal road look (paved). Use a paved whitelist, as in our classifier.
+5. **Match the shared ladder** (decision 9): solid, long dashes, medium dashes, so the phone demo looks like the web demo.
+
