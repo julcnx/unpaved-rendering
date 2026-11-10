@@ -95,3 +95,12 @@ export const STYLES = {
     }),
   },
 };
+
+// Below SPEC.lowZoom.below px of fill width every style is a plain tint (patterns blur there): lowTint for Unpaved,
+// offTint for Off-road. Dark mode has no measured tints yet: falls back to the dash colour.
+for (const st of Object.values(STYLES)) {
+  const draw = st.draw;
+  st.draw = (level, c, w, brown, ctx) => level !== 'paved' && w < SPEC.lowZoom.below
+    ? { fill: { color: off(level) ? offTint(c) : (c.lowTint ?? c.dash) } }
+    : draw(level, c, w, brown, ctx);
+}
