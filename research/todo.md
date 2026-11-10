@@ -1,6 +1,6 @@
 # To do
 
-Updated 2026-11-09. Open items from all the task files and the "Mind the Surface" brief, in one list.
+Updated 2026-11-10. Open items from all the task files and the "Mind the Surface" brief, in one list.
 
 ## Decisions (settled 2026-11-09)
 
@@ -12,17 +12,17 @@ Updated 2026-11-09. Open items from all the task files and the "Mind the Surface
 6. Repo: a new local repo `~/Workspaces/OSM/unpaved-rendering`, pushed to `julcnx/unpaved-rendering` only after Julien's OK.
 7. Screenshot spots: one per continent, no Antarctica. North America = Alberta Hwy 40 (spot 6, added 2026-11-09); backups Alberta Hwy 68 and Mexico QR 15.
 8. The proposal stays OSM-specific: no generic styling guide for other data sources.
-9. Off-road on roads (2026-11-10): the Unpaved pattern, only darker (measured tints), in all five styles; the "more broken" version is a backup only. The dash ladder (Paved solid, Unpaved long dashes, Off-road medium dashes, Carto `grade2`/`grade3` rhythms) is kept for tracks later.
+9. Off-road on roads (2026-11-10): the Unpaved pattern, only darker (measured tints), in all five styles; the "more broken" version is a backup only. Since the mockup review (2026-11-10) the signal follows the fill: darker centre line and outline in styles 2 and 4, grain twice as dense in style 1; white roads have bigger tint steps and a darker casing when their fill is tan. The dash ladder (Paved solid, Unpaved long dashes, Off-road medium dashes, Carto `grade2`/`grade3` rhythms) is kept for tracks later.
 10. No Google Street View any more (2026-11-10): Mapillary only. Google images deleted, Google fields removed from the imagery scripts and data.
 11. Do not rely on Overpass for now (2026-11-10): it breaks too easily. Spot data stays as cached.
 
 ## Demo and colour tests
 
-15. Static demo page: first version done 2026-11-09 in `~/Workspaces/OSM/unpaved-rendering` (canvas, 4 styles from the mockups, side by side, 5 backgrounds incl. hillshade/contours/labels, legend, live Overpass from z14, Nominatim search, OSM attribution). Cached data for all spots done. Styles synced from the mockups (`mockups/styles.json`, 2026-11-09), style chips, live Overpass anywhere (main roads from z11). Still to do: refetch the spot data with way ids (postponed: no Overpass for now, decision 11); dark-mode primary looks brown (see LOG.md).
+15. Static demo page: first version done 2026-11-09 in `~/Workspaces/OSM/unpaved-rendering` (canvas, 4 styles from the mockups, side by side, 5 backgrounds incl. hillshade/contours/labels, legend, live Overpass from z14, Nominatim search, OSM attribution). Cached data for all spots done. Styles synced from the mockups (`research/mockups/styles.json`, `node scripts/sync-styles.mjs`), style chips, live Overpass anywhere (main roads from z11). Still to do: refetch the spot data with way ids (postponed: no Overpass for now, decision 11); dark-mode primary looks brown (see LOG.md).
 16. Backgrounds: white, forest green, sand/desert, dark mode, and a realistic one with hillshade, contours and labels.
 17. Zoom behaviour: where each style starts working, and how it looks on thin roads.
 18. (dark mode moved to Low priority) Colour tests: several earthy browns against every background, distinct from contour and boundary browns; dark-mode variant per style; colour-blindness simulation (done 2026-11-10, D-examples-visuals); write down why the colours were picked.
-19. Screenshot loop: first run done 2026-11-10 (5 styles x 6 spots x white, terrain x z12, 14, 16; findings in the demo LOG.md). Still to do: screenshot every area x style x background x zoom, adjust, repeat, and keep a short change log.
+19. Screenshot loop: first run done 2026-11-10 (5 styles x 6 spots x white, terrain x z12, 14, 16); second run the same day after the mockup review (all five backgrounds, 90 shots; findings in LOG.md). Still to do: decide on the open points from the review (style 5 in towns and on short ways, white caramel dash against orange, yellow Off-road hue, dark mode steps), ideally with forum feedback.
 
 ## Repo, article and publishing (ask before anything public)
 

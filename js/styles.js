@@ -9,7 +9,8 @@ import SPEC from './style-spec.js';
 const { motorway, trunk, primary, secondary, minor } = SPEC.classes;
 const S = SPEC.styles;
 // Dashed casing: a darker outline where the normal casing is too close to the fill (red, orange, white).
-const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key] });
+// On the darker Off-road fill the outline and the centre line are darker too (offGapCasing, offLine), so they keep their contrast.
+const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor });
 const LIGHT = {
   motorway: withGapCasing('motorway', motorway), trunk: withGapCasing('trunk', trunk), primary: withGapCasing('primary', primary),
   secondary: withGapCasing('secondary', secondary), minor: withGapCasing('minor', minor),
@@ -18,7 +19,7 @@ const LIGHT = {
 // Dark palette from the mockups too (SPEC.dark): on a dark map Off-road is the lighter step; the dashed outline uses the
 // class casing, already lighter than the fill.
 const DARK = {
-  ...Object.fromEntries(Object.entries(SPEC.dark.classes).map(([k, c]) => [k, { ...c, gapCasing: c.casing }])),
+  ...Object.fromEntries(Object.entries(SPEC.dark.classes).map(([k, c]) => [k, { ...c, gapCasing: c.casing, offGapCasing: SPEC.dark.offCasing[k], offLine: SPEC.dark.centreLineOff }])),
   brown: SPEC.dark.centreLine,
 };
 export const palette = (dark) => (dark ? DARK : LIGHT);
@@ -64,13 +65,15 @@ export const STYLES = {
     name: GR.name, note: GR.note, minWidth: 6,
     draw: (level, c, w, brown, ctx) => level === 'paved' ? {} : {
       fill: { color: grain(ctx, off(level) ? offTint(c) : c.grainBg, c.grainDot, GR.scale) },
+      // Off-road: the same grain once more, shifted, so the dots are twice as dense.
+      over: off(level) ? [{ color: grain(ctx, null, c.grainDot, GR.scale, GR.denseShift), width: w, cap: 'butt' }] : [],
     },
   },
   'centre-line': {
     name: CL.name, note: CL.note, minWidth: 5,
     draw: (level, c, w, brown) => level === 'paved' ? {} : {
       fill: off(level) ? { color: offTint(c) } : undefined,
-      over: [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: CL.unpavedDash, cap: 'butt' }],
+      over: [{ color: off(level) ? (c.offLine ?? brown) : brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: CL.unpavedDash, cap: 'butt' }],
     },
   },
   'dashed-fill': {
@@ -82,13 +85,15 @@ export const STYLES = {
   'dashed-casing': {
     name: GA.name, note: GA.note, minWidth: 3,
     draw: (level, c) => level === 'paved' ? {} : {
-      casing: { dash: GA.unpaved, cap: 'butt', color: c.gapCasing },
+      casing: { dash: GA.unpaved, cap: 'butt', color: off(level) ? (c.offGapCasing ?? c.gapCasing) : c.gapCasing },
       fill: off(level) ? { color: offTint(c) } : undefined,
     },
   },
   'dashed-fill-full': {
     name: DF.name, note: DF.note, minWidth: 3,
     draw: (level, c, w) => ({
+      // White roads: the tan dashes cover most of the road, so the casing is the darker tintCasing, as for a tan fill.
+      casing: level !== 'paved' && c.tintCasing ? { color: c.tintCasing } : undefined,
       over: level === 'paved' ? [] : [{ color: off(level) ? offDash(c) : (c.fullDash ?? c.dash), width: w, dash: DF.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
     }),
   },
@@ -98,7 +103,10 @@ export const STYLES = {
 // offTint for Off-road. Dark mode has no measured tints yet: falls back to the dash colour.
 for (const st of Object.values(STYLES)) {
   const draw = st.draw;
-  st.draw = (level, c, w, brown, ctx) => level !== 'paved' && w < SPEC.lowZoom.below
-    ? { fill: { color: off(level) ? offTint(c) : (c.lowTint ?? c.dash) } }
-    : draw(level, c, w, brown, ctx);
+  st.draw = (level, c, w, brown, ctx) => {
+    const low = level !== 'paved' && w < SPEC.lowZoom.below;
+    const d = low ? { fill: { color: off(level) ? offTint(c) : (c.lowTint ?? c.dash) } } : draw(level, c, w, brown, ctx);
+    // White roads with a tan tint as fill get a darker casing (tintCasing), or they lose their outline and vanish on sand.
+    return c.tintCasing && (low || off(level)) && d.fill && !d.casing ? { ...d, casing: { color: c.tintCasing } } : d;
+  };
 }

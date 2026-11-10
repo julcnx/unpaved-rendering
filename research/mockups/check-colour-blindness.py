@@ -1,6 +1,7 @@
 # Colour-blindness check (Machado et al. 2009, severity 1.0, linear RGB): simulated images and the contrast of the tint steps.
 # Usage: python3 mockups/check-colour-blindness.py steps
 #        python3 mockups/check-colour-blindness.py images <out dir> <png ...>
+#        python3 mockups/check-colour-blindness.py sheet   (writes mockups/options-comparison-colour-blind.png: normal and the three simulations)
 import sys, numpy as np
 from PIL import Image
 M = {
@@ -19,9 +20,22 @@ if sys.argv[1] == 'images':
         im = np.asarray(Image.open(path).convert('RGB'))/255
         for name, m in M.items():
             Image.fromarray((sim(im, m)*255).round().astype('uint8')).save(f"{sys.argv[2]}/{path.split('/')[-1][:-4]}-{name}.png")
+elif sys.argv[1] == 'sheet':
+    from PIL import ImageDraw, ImageFont
+    here = __file__.rsplit('/', 1)[0]
+    src = Image.open(f'{here}/options-comparison.png').convert('RGB')
+    src = src.resize((1480, round(src.height * 1480 / src.width)), Image.LANCZOS)
+    im = np.asarray(src)/255
+    sheet = Image.new('RGB', (2960, 2 * (src.height + 30)), 'white')
+    font = ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc', 26)
+    for i, (name, m) in enumerate([('normal', np.eye(3)), ('deuteranopia', M['deuteranopia']), ('protanopia', M['protanopia']), ('tritanopia', M['tritanopia'])]):
+        x, y = (i % 2) * 1480, (i // 2) * (src.height + 30)
+        sheet.paste(Image.fromarray((sim(im, m)*255).round().astype('uint8')), (x, y + 30))
+        ImageDraw.Draw(sheet).text((x + 740, y + 15), name, fill='black', font=font, anchor='mm')
+    sheet.save(f'{here}/options-comparison-colour-blind.png')
 else:
     LAND='#f2efe9'
-    C={'Red':('#f9b29c','#ed9d84','#e98667'),'Orange':('#fcd6a4','#eec28b','#e8ac61'),'Yellow':('#f7fabf','#dfe389','#c7ce31'),'White':('#ffffff','#e2cfb8','#d6bc9b')}
+    C={'Red':('#f9b29c','#ed9d84','#e98667'),'Orange':('#fcd6a4','#eec28b','#e8ac61'),'Yellow':('#f7fabf','#e4e194','#d0cb44'),'White':('#ffffff','#e2cfb8','#cca979')}
     print(f"{'class':7} {'vision':13} fill>Unpaved  Unpaved>Off-road  Off-road vs land  | hue-only? (fill vs other class fills)")
     for k,(f,lo,of) in C.items():
         for name,m in [('normal',np.eye(3))]+list(M.items()):

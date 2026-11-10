@@ -52,3 +52,31 @@
 - The Style select in the panel is hidden in All mode (it changed nothing there).
 - Backgrounds are chips at the bottom right of the map (the select is gone). With one style, an extra "All" chip shows every background side by side (`bg=all` in the URL), to see how the style fits each map. Not offered in All styles mode (too many panels).
 - Backgrounds reordered: Hillshade before Dark, Dark last. Route number labels removed (only a few shields showed, they read as missing labels); the background is now "Hillshade, contours".
+
+## 2026-11-10: mockup review (Off-road contrast, yellow tints, bends and junctions)
+
+- Off-road in styles 2 and 4: the darker fill sat under a line or outline that kept its colour, so the rougher road had the fainter pattern (centre line 2.0 against the red Off-road fill, dashed outline 1.8 on white). The signal is now darker too: centre line `offColor` #5e4126 (3.6 to 5.4), outline `offCasing` per class (same contrast as on Unpaved). 
+- Yellow tints moved from hue 63 to 58, same contrast steps: the dark steps read as olive green, a different class.
+- Style 5 (full width): rhythm kept at 3.6 and 0.98 road widths. Wider gaps (2.4 and 1.2) were tried so short ways show a gap, and rejected: the blocks read as Carto construction, most of all on white roads (tan blocks, white gaps).
+- New mockup `options-junction`: one road per class going Paved, Unpaved, Off-road through an S-bend, with a white Unpaved side road. Tunnel row of `references` now has style 4 next to it.
+- Style 1 (grain): Off-road draws the same grain twice (second copy shifted), so the dots are twice as dense at the same size. The dots are already near black and could not get darker with the fill.
+- Dark mode: on the lighter Off-road fill the centre line (`centreLineOff` #f2dcbc) and the dashed outline (`dark.offCasing`) are lighter too. The outline was 1.05 to 1.3 against the fill and vanished; now 1.7 to 2.1, as on Unpaved.
+- `options-junction-forest` and `options-junction-sand`: the junction sheet on the demo's forest and sand backgrounds. Seen there: on sand the white Off-road tan was close to the land (1.27; 1.54 after the darker white tints below) and the low-zoom white Unpaved tint is nearly equal to it (1.06); on forest the yellow Off-road fill has the same luminance as the land (1.01), only hue and casing separate them.
+- Colour-blind sheet redone with the new colours: `python3 mockups/check-colour-blindness.py sheet`.
+- White roads with a tan tint as fill (low zoom, Off-road in styles 1 and 2) get a darker casing (`tintCasing` #8f8f8f, OSM Carto tertiary casing; #8f8f94 on dark). The light grey casing was 1.05 against the tan, so the road had no outline and nearly vanished on sand. Same casing for white Unpaved roads in style 5, where the tan dashes cover most of the road (seen in the demo, Namibia on sand).
+- Yellow Off-road on forest left as is: the fill matches the land in luminance, but the casing (3.9 against the fill) and the hue keep the road clear on the forest sheet.
+- Housekeeping: `scripts/sync-styles.mjs` now defaults to `research/mockups/styles.json` (was the old osm-wiki path); `research/mockups/svg2png.mjs` makes the PNGs (headless Chrome, 2 x).
+- White Off-road tints darker and more saturated (`offTint` #cca979, 1.45 over the Unpaved tint; `offDash` #c18f46, 1.8 over the Unpaved dash; outline #575757): the two pale tans were hard to tell apart in styles 3 and 5 and at low zoom. Light mode only.
+
+## 2026-11-10: screenshot loop, second run (after the mockup review)
+
+90 shots: 6 spots x 5 backgrounds x z12, 14, 16, five styles side by side (`node scripts/shots.mjs --compare --zooms 12,14,16 --out shots/review-2026-11-10`). No page errors.
+
+- z12 (plain tints): white Unpaved (tan) and white Off-road (darker tan) are now easy to tell apart (Bolivia). The step on orange stays the faintest (Namibia C38), as in the first run.
+- z14: most white roads are still under 6 px, so they are the same plain tan in all five styles; the styles only differ on the main road. With the grey casing they read clearly against the white "No style" panel.
+- z16: all five styles read at every spot on white, forest, sand and terrain. Style 5 stays the loudest in towns (Bolivia, Namibia).
+- Sand: white unpaved roads no longer vanish, but at z12 they read as thin grey lines (the casing carries them, the tan fill is 1.06 against the land).
+- Forest: nothing lost; yellow Off-road holds thanks to its casing.
+- Terrain: a narrow white Unpaved road (tan, about 3 px) is close in colour to the contour lines (Australia, z16). The grey casing separates them, but it is the pair to watch if contours get stronger.
+- Dark: Unpaved is faint in styles 1, 3 and 5 (dash 1.32 against the fill); styles 2 and 4 read well, Off-road reads in all five. Unchanged, dark stays low priority.
+
