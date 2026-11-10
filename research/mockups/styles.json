@@ -7,10 +7,10 @@
       "casing": "#dc2a67",
       "grainBg": "#ea98a2",
       "grainDot": "#420015",
-      "dash": "#dc7c8f",
+      "dash": "#da768a",
       "tunnel": "#efb3be",
       "offTint": "#dc7c8f",
-      "offDash": "#d25870"
+      "offDash": "#d0526b"
     },
     "trunk": {
       "name": "Red",
@@ -18,10 +18,10 @@
       "casing": "#c84e2f",
       "grainBg": "#f6b598",
       "grainDot": "#511d0f",
-      "dash": "#ef9a80",
+      "dash": "#ec9479",
       "tunnel": "#fbd3c6",
       "offTint": "#eb9074",
-      "offDash": "#e67653"
+      "offDash": "#e56f4a"
     },
     "primary": {
       "name": "Orange",
@@ -29,10 +29,10 @@
       "casing": "#a06b00",
       "grainBg": "#f6d29c",
       "grainDot": "#563d12",
-      "dash": "#f0bd7c",
+      "dash": "#ebb876",
       "tunnel": "#fde7c9",
       "offTint": "#ebb470",
-      "offDash": "#e49b3f"
+      "offDash": "#e19533"
     },
     "secondary": {
       "name": "Yellow",
@@ -40,10 +40,10 @@
       "casing": "#707d05",
       "grainBg": "#f3efb2",
       "grainDot": "#555a28",
-      "dash": "#dfe48a",
+      "dash": "#d9df75",
       "tunnel": "#fbfdd8",
       "offTint": "#d4da61",
-      "offDash": "#bfc82e"
+      "offDash": "#b9c12d"
     },
     "minor": {
       "name": "White",
@@ -94,7 +94,9 @@
       "offroadXWidth": [
         1.31,
         1.47
-      ]
+      ],
+      "band": 0.6,
+      "bandFromWidth": 6
     },
     "dashed-casing": {
       "name": "2. Dashed casing",
