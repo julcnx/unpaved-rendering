@@ -58,18 +58,6 @@ const off = (level) => level === 'offroad' || level === 'specialized';
 // A layer is { color, width, dash?, cap? }. Paved roads are the same in every style.
 const CL = S['centre-line'], GR = S.grain, DA = S['dashed-fill'], GA = S['dashed-casing'];
 export const STYLES = {
-  'centre-line': {
-    name: CL.name, note: CL.note, minWidth: 5,
-    draw: (level, c, w, brown) => ({
-      over: level === 'paved' ? [] : [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: off(level) ? CL.offroadDash : CL.unpavedDash, cap: 'butt' }],
-    }),
-  },
-  'dashed-casing': {
-    name: GA.name, note: GA.note, minWidth: 3,
-    draw: (level, c) => level === 'paved' ? {} : {
-      casing: { dash: off(level) ? GA.offroad : GA.unpaved, cap: 'butt', color: c.gapCasing }, // the fill stays continuous
-    },
-  },
   grain: {
     name: GR.name, note: GR.note, minWidth: 6,
     draw: (level, c, w, brown, ctx) => level === 'paved' ? {} : {
@@ -77,10 +65,22 @@ export const STYLES = {
       over: off(level) ? [{ color: grain(ctx, null, c.grainDot, GR.offroadScale, GR.offroadShift), width: w, cap: 'butt' }] : [],
     },
   },
+  'centre-line': {
+    name: CL.name, note: CL.note, minWidth: 5,
+    draw: (level, c, w, brown) => ({
+      over: level === 'paved' ? [] : [{ color: brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: off(level) ? CL.offroadDash : CL.unpavedDash, cap: 'butt' }],
+    }),
+  },
   'dashed-fill': {
     name: DA.name, note: DA.note, minWidth: 3,
     draw: (level, c, w) => ({
-      over: level === 'paved' ? [] : [{ color: c.dash, width: w, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: c.dash, width: w < DA.bandFromWidth ? w : w * DA.band, dash: (off(level) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * w), cap: 'butt' }],
     }),
+  },
+  'dashed-casing': {
+    name: GA.name, note: GA.note, minWidth: 3,
+    draw: (level, c) => level === 'paved' ? {} : {
+      casing: { dash: off(level) ? GA.offroad : GA.unpaved, cap: 'butt', color: c.gapCasing }, // the fill stays continuous
+    },
   },
 };

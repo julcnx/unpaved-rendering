@@ -8,8 +8,10 @@ export default {
       "casing": "#dc2a67",
       "grainBg": "#ea98a2",
       "grainDot": "#420015",
-      "dash": "#dc7c8f",
-      "tunnel": "#efb3be"
+      "dash": "#da768a",
+      "tunnel": "#efb3be",
+      "offTint": "#dc7c8f",
+      "offDash": "#d0526b"
     },
     "trunk": {
       "name": "Red",
@@ -17,8 +19,10 @@ export default {
       "casing": "#c84e2f",
       "grainBg": "#f6b598",
       "grainDot": "#511d0f",
-      "dash": "#ef9a80",
-      "tunnel": "#fbd3c6"
+      "dash": "#ea8b6e",
+      "tunnel": "#fbd3c6",
+      "offTint": "#eb9074",
+      "offDash": "#e3643d"
     },
     "primary": {
       "name": "Orange",
@@ -26,8 +30,10 @@ export default {
       "casing": "#a06b00",
       "grainBg": "#f6d29c",
       "grainDot": "#563d12",
-      "dash": "#f0bd7c",
-      "tunnel": "#fde7c9"
+      "dash": "#e9b066",
+      "tunnel": "#fde7c9",
+      "offTint": "#ebb470",
+      "offDash": "#df8d23"
     },
     "secondary": {
       "name": "Yellow",
@@ -35,8 +41,10 @@ export default {
       "casing": "#707d05",
       "grainBg": "#f3efb2",
       "grainDot": "#555a28",
-      "dash": "#dfe48a",
-      "tunnel": "#fbfdd8"
+      "dash": "#d9df75",
+      "tunnel": "#fbfdd8",
+      "offTint": "#d4da61",
+      "offDash": "#b9c12d"
     },
     "minor": {
       "name": "White",
@@ -45,12 +53,14 @@ export default {
       "grainBg": "#ffffff",
       "grainDot": "#5e4a35",
       "dash": "#dccab0",
-      "tunnel": "#f2f2f2"
+      "tunnel": "#f2f2f2",
+      "offTint": "#d9c1a3",
+      "offDash": "#c8ac84"
     }
   },
   "styles": {
     "centre-line": {
-      "name": "1. Dashed centre line",
+      "name": "2. Dashed centre line",
       "note": "Thin brown line down the middle, in OSM Carto track rhythms: long dashes = Unpaved (grade2), medium dashes = Off-road (grade3). Slightly thicker than contour lines.",
       "color": "#8a6440",
       "width": 1.8,
@@ -66,7 +76,7 @@ export default {
       ]
     },
     "grain": {
-      "name": "3. Grain fill",
+      "name": "1. Grain fill",
       "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: big grain added on top.",
       "scale": 1.5,
       "offroadScale": 3,
@@ -76,7 +86,7 @@ export default {
       ]
     },
     "dashed-fill": {
-      "name": "4. Dashed fill",
+      "name": "3. Dashed fill",
       "note": "Darker class tint in the fill (as DMD2 draws unpaved roads; light brown on white): long dashes = Unpaved, medium dashes = Off-road.",
       "unpavedXWidth": [
         3.6,
@@ -85,10 +95,12 @@ export default {
       "offroadXWidth": [
         1.31,
         1.47
-      ]
+      ],
+      "band": 0.6,
+      "bandFromWidth": 6
     },
     "dashed-casing": {
-      "name": "2. Dashed casing",
+      "name": "4. Dashed casing",
       "note": "Class-coloured fill, dashed outline (as Gaia GPS tracks, class kept): long dashes = Unpaved, medium dashes = Off-road.",
       "unpaved": [
         22,
