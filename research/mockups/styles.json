@@ -8,7 +8,8 @@
       "grainBg": "#ea98a2",
       "grainDot": "#420015",
       "dash": "#dc7c8f",
-      "tunnel": "#efb3be"
+      "tunnel": "#efb3be",
+      "offTint": "#dc7c8f"
     },
     "trunk": {
       "name": "Red",
@@ -17,7 +18,8 @@
       "grainBg": "#f6b598",
       "grainDot": "#511d0f",
       "dash": "#ef9a80",
-      "tunnel": "#fbd3c6"
+      "tunnel": "#fbd3c6",
+      "offTint": "#eb9074"
     },
     "primary": {
       "name": "Orange",
@@ -26,7 +28,8 @@
       "grainBg": "#f6d29c",
       "grainDot": "#563d12",
       "dash": "#f0bd7c",
-      "tunnel": "#fde7c9"
+      "tunnel": "#fde7c9",
+      "offTint": "#ebb470"
     },
     "secondary": {
       "name": "Yellow",
@@ -35,7 +38,8 @@
       "grainBg": "#f3efb2",
       "grainDot": "#555a28",
       "dash": "#dfe48a",
-      "tunnel": "#fbfdd8"
+      "tunnel": "#fbfdd8",
+      "offTint": "#d4da61"
     },
     "minor": {
       "name": "White",
@@ -44,7 +48,8 @@
       "grainBg": "#ffffff",
       "grainDot": "#5e4a35",
       "dash": "#dccab0",
-      "tunnel": "#f2f2f2"
+      "tunnel": "#f2f2f2",
+      "offTint": "#d9c1a3"
     }
   },
   "styles": {
