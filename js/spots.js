@@ -9,4 +9,6 @@ export const SPOTS = {
   // Facebook post spot (research/todo.md item 29), not a continent spot.
   // radius: cached area in degrees of latitude (default 0.06), wider here for portrait shots at zoom 13.
   pai: { name: 'Thailand, MS.4014 Pai to Wiang Haeng', center: [19.540403, 98.548539], radius: 0.12 },
+  // Article hero (2026-11-11): C48 (primary) changes from asphalt to gravel here, photo pair transition-na-9.
+  c48: { name: 'Namibia, C48 asphalt to gravel', center: [-18.12805, 21.64435] },
 };

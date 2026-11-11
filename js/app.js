@@ -1,10 +1,20 @@
 // Page wiring: controls, URL parameters, sample spots, live Overpass loading, legend.
-import { MapView, BACKGROUNDS, prepare } from './map.js';
+import { MapView, BACKGROUNDS, prepare, NONE } from './map.js';
 import { STYLES, palette, widthAt } from './styles.js';
 import { SPOTS } from './spots.js';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
+// No style: every road drawn as paved, as most maps today. Selectable on its own (article figures, comparisons).
+const NO_STYLE = { name: '0. No style (all paved)', note: 'Every road drawn as paved, as most maps today.', minWidth: 0, draw: () => ({}) };
+const styleOf = (k) => (k === NONE ? NO_STYLE : STYLES[k]);
+// embed=1: one large map for an iframe in the article: no sidebar, only the five style chips (no "No style", no "All"),
+// and the map takes input after a first click, so the page still scrolls.
+const embed = params.get('embed') === '1';
+if (embed) {
+  document.body.classList.add('embed');
+  document.getElementById('shield').addEventListener('click', (e) => e.currentTarget.remove());
+}
 // Live Overpass, anywhere: main roads only from zoom 11 in big cells, every highway from zoom 14 in small cells.
 const TIERS = [
   { minZoom: 14, cell: 0.02, query: 'way[highway]', label: 'roads' },
@@ -16,10 +26,10 @@ const options = (sel, entries, value) => {
   if (value) sel.value = value;
 };
 options($('spot'), [['', '(none: search or pan)'], ...Object.entries(SPOTS).map(([k, v]) => [k, v.name])], params.get('spot') ?? 'namibia');
-options($('style'), Object.entries(STYLES).map(([k, v]) => [k, v.name]), params.get('style'));
-$('compare').checked = params.get('compare') !== '0'; // all styles side by side by default
+options($('style'), [...Object.entries(STYLES).map(([k, v]) => [k, v.name]), [NONE, NO_STYLE.name]], params.get('style'));
+$('compare').checked = params.get('compare') !== '0' && !embed; // all styles side by side by default (not in embed)
 // Background: a key of BACKGROUNDS, or 'all' (every background side by side, one style only).
-let bg = BACKGROUNDS[params.get('bg')] || params.get('bg') === 'all' ? params.get('bg') : 'white';
+let bg = BACKGROUNDS[params.get('bg')] || (params.get('bg') === 'all' && !embed) ? params.get('bg') : 'white';
 if ($('compare').checked && bg === 'all') bg = 'white';
 
 const map = new MapView($('map'), () => { updateUrl(); loadLive(); updateNote(); });
@@ -116,7 +126,7 @@ function sample(canvas, styleKey, level, W = 90) {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   const bg = BACKGROUNDS[map.opts.bg] ?? BACKGROUNDS.white, pal = palette(bg.dark), c = pal.primary, w = 10;
   ctx.fillStyle = bg.land; ctx.fillRect(0, 0, W, H);
-  const d = STYLES[styleKey].draw(level, c, w, pal.brown, ctx);
+  const d = styleOf(styleKey).draw(level, c, w, pal.brown, ctx);
   const line = (color, width, dash, cap = 'round') => {
     ctx.beginPath(); ctx.moveTo(6, H / 2); ctx.lineTo(W - 6, H / 2);
     ctx.strokeStyle = color; ctx.lineWidth = width; ctx.lineCap = cap; ctx.setLineDash(dash ?? []); ctx.stroke();
@@ -141,7 +151,7 @@ function updateLegend() {
 }
 
 function updateNote() {
-  const st = STYLES[map.opts.style];
+  const st = styleOf(map.opts.style);
   const { z } = map.center();
   // Zoom from which a primary road is wide enough for the style.
   const from = 15 + Math.log2(st.minWidth / 10) / 0.55;
@@ -154,7 +164,7 @@ function updateNote() {
 
 // Style chips on the map, and keys 1-4 (A = all side by side): switch style in one click.
 function renderChips() {
-  const items = [...Object.entries(STYLES).map(([k, v], i) => [k, v.name.replace(/^\d+\.\s*/, ''), String(i + 1)]), ['all', 'All', 'A']];
+  const items = [...Object.entries(STYLES).map(([k, v], i) => [k, v.name.replace(/^\d+\.\s*/, ''), String(i + 1)]), ...(embed ? [] : [[NONE, 'No style', '0'], ['all', 'All', 'A']])];
   $('chips').innerHTML = items.map(([k, label, key]) => {
     const on = k === 'all' ? map.opts.compare : !map.opts.compare && map.opts.style === k;
     return `<button data-style="${k}" aria-pressed="${on}">${label}<kbd>${key}</kbd></button>`;
@@ -169,7 +179,7 @@ $('chips').addEventListener('click', (e) => { const b = e.target.closest('button
 
 // Background chips, bottom right. "All" (every background side by side) only when one style is shown.
 function renderBgChips() {
-  const items = [...Object.entries(BACKGROUNDS).map(([k, v]) => [k, v.name]), ...(map.opts.compare ? [] : [['all', 'All']])];
+  const items = [...Object.entries(BACKGROUNDS).map(([k, v]) => [k, v.name]), ...(map.opts.compare || embed ? [] : [['all', 'All']])];
   $('bgchips').innerHTML = items.map(([k, label]) => `<button data-bg="${k}" aria-pressed="${map.opts.bg === k}">${label}</button>`).join('');
 }
 $('bgchips').addEventListener('click', (e) => {
@@ -180,7 +190,8 @@ window.addEventListener('keydown', (e) => {
   if (e.target.matches('input, select, textarea') || e.metaKey || e.ctrlKey || e.altKey) return;
   const keys = Object.keys(STYLES);
   if (e.key >= '1' && e.key <= String(keys.length)) pickStyle(keys[+e.key - 1]);
-  else if (e.key.toLowerCase() === 'a') pickStyle('all');
+  else if (e.key === '0' && !embed) pickStyle(NONE);
+  else if (e.key.toLowerCase() === 'a' && !embed) pickStyle('all');
 });
 
 function refresh() {

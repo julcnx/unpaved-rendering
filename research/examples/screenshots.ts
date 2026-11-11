@@ -10,7 +10,11 @@ const ZOOM = Number(process.env.ZOOM ?? 15); // other zooms write to screenshots
 // PORTRAIT=1: 1080 x 1350 (4:5, the tallest Facebook shows uncropped in the feed), for the Facebook spots;
 // writes to screenshots/<spot>-z<zoom>-portrait/.
 const PORTRAIT = process.env.PORTRAIT === '1';
-const VIEW = PORTRAIT ? { width: 1080, height: 1350 } : { width: 1200, height: 800 };
+// SIZE=1600x900: another viewport (article hero, 2026-11-11); writes to screenshots/<spot>-z<zoom>-<size>/.
+const SIZE = process.env.SIZE?.split('x').map(Number);
+const VIEW = SIZE ? { width: SIZE[0], height: SIZE[1] } : PORTRAIT ? { width: 1080, height: 1350 } : { width: 1200, height: 800 };
+// CENTER=lat,lon: shoot another view than the spot centre (Komoot draws the point right of centre, see LOG.md 2026-11-11).
+const CENTER = process.env.CENTER?.split(',').map(Number) as [number, number] | undefined;
 
 const SPOTS: Record<string, [number, number]> = {
   namibia: [-18.81068, 16.9415],
@@ -25,6 +29,8 @@ const SPOTS: Record<string, [number, number]> = {
   muangkhong: [19.297374, 98.740096],
   // Pai to Mueang Noi to Wiang Haeng (MS.4014, the road on the AdvOSM comparison image), view picked by Julien at z13 (2026-11-10).
   pai: [19.540403, 98.548539],
+  // Article hero: Namibia C48 (primary), asphalt to gravel, photo pair transition-na-9 (2026-11-11).
+  c48: [-18.12805, 21.64435],
 };
 
 const osm = (layer: string) => (la: number, lo: number) => `https://www.openstreetmap.org/#map=${ZOOM}/${la}/${lo}&layers=${layer}`;
@@ -140,8 +146,8 @@ const browser = await puppeteer.launch({
 // APPS="komoot strava" limits the run to some apps.
 const only = process.env.APPS?.split(/\s+/).filter(Boolean);
 for (const spot of spots.length ? spots : ['namibia', 'bolivia']) {
-  const [la, lo] = SPOTS[spot];
-  const dir = new URL(`./screenshots/${spot}${ZOOM === 15 && !PORTRAIT ? '' : `-z${ZOOM}`}${PORTRAIT ? '-portrait' : ''}/`, import.meta.url);
+  const [la, lo] = CENTER ?? SPOTS[spot];
+  const dir = new URL(`./screenshots/${spot}${ZOOM === 15 && !PORTRAIT && !SIZE ? '' : `-z${ZOOM}`}${PORTRAIT ? '-portrait' : ''}${SIZE ? `-${SIZE.join('x')}` : ''}/`, import.meta.url);
   mkdirSync(dir, { recursive: true });
   for (const [name, app] of Object.entries(APPS)) {
     if (only && !only.includes(name)) continue;

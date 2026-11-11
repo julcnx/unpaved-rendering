@@ -20,7 +20,8 @@ const browser = await puppeteer.launch({ executablePath: '/Applications/Google C
 const page = await browser.newPage();
 // --portrait: 1080 x 1350 (4:5, Facebook feed); the all-styles grid then stacks as 2 columns x 3 rows.
 const portrait = process.argv.includes('--portrait');
-await page.setViewport({ width: portrait ? 1080 : 1200, height: portrait ? 1350 : 800, deviceScaleFactor: 1 });
+const size = arg('size', null); // --size 1600x900: another viewport (article hero)
+await page.setViewport({ width: size ? +size[0].split('x')[0] : portrait ? 1080 : 1200, height: size ? +size[0].split('x')[1] : portrait ? 1350 : 800, deviceScaleFactor: 1 });
 page.on('pageerror', (e) => console.error('page error:', e.message));
 // Cached spot data only: Overpass breaks too easily to make the shots depend on it.
 await page.setRequestInterception(true);
@@ -33,7 +34,9 @@ for (const spot of spots) for (const bg of bgs) for (const z of zooms) for (cons
   await page.addStyleTag({ content: `body { grid-template-columns: 1fr !important; } ${hide.join(', ')} { display: none !important; }` });
   await page.waitForFunction('window.mapReady === true', { timeout: 20000 });
   await page.evaluate(() => window.dispatchEvent(new Event('resize'))); // redraw at the full width
-  await new Promise((r) => setTimeout(r, bg === 'terrain' ? 3000 : 1200));
+  await new Promise((r) => setTimeout(r, 1200));
+  // Hillshade: wait until every elevation tile has loaded (a fixed 3 s once left a blank block), then let it redraw.
+  if (bg === 'terrain') { await page.waitForFunction('!(window.terrainPending > 0)', { timeout: 30000 }); await new Promise((r) => setTimeout(r, 500)); }
   const file = `${out}/${spot}-${style}-${bg}-z${z}.png`;
   await page.screenshot({ path: file });
   console.error(file);

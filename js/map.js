@@ -192,7 +192,11 @@ export class MapView {
     this.terrain.set(key, null);
     const img = new Image();
     img.crossOrigin = 'anonymous';
+    // Tiles still loading, for the screenshot loop: it waits for 0 instead of a fixed delay (a slow tile left a blank block).
+    window.terrainPending = (window.terrainPending ?? 0) + 1;
+    img.onerror = () => { window.terrainPending--; };
     img.onload = () => {
+      window.terrainPending--;
       const c = new OffscreenCanvas(TILE, TILE), g = c.getContext('2d', { willReadFrequently: true });
       g.drawImage(img, 0, 0);
       const src = g.getImageData(0, 0, TILE, TILE).data;

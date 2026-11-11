@@ -27,7 +27,7 @@ Updated 2026-11-10. Open items from all the task files and the "Mind the Surface
 ## Repo, article and publishing (ask before anything public)
 
 20. Create the public repo `julcnx/unpaved-rendering` (description and topics mention OSM), with GitHub Pages for the demo and the article.
-21. Article "Mind the Surface: A Main Road Is Not Always Paved": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits (OpenMapTiles has no `surface` below z12, so Americana, MapTiler, Stadia and OpenFreeMap cannot show unpaved there; A4), how rare the Off-road evidence is (5.8% of Unpaved km), legend wording, known limitations, future work (tracks, paths, routing, Google and Apple; one sentence saying the same paved whitelist applies to tracks and paths, their rendering is a follow-up), the iD `surface=laterite` conflict, credits to imagico and Sommerluk.
+21. Article "Mind the Surface: A Main Road Is Not Always Paved": the misconception, global evidence, the two-class ask, the optional third level, the styles, tile/zoom limits (OpenMapTiles has no `surface` below z12, so Americana, MapTiler, Stadia and OpenFreeMap cannot show unpaved there; A4), how rare the Off-road evidence is (5.8% of Unpaved km), legend wording, known limitations, future work (tracks, paths, routing, Google and Apple; one sentence saying the same paved whitelist applies to tracks and paths, their rendering is a follow-up), how to help, credits to imagico and Sommerluk. `laterite` only as an example under limits (OSM Carto's explicit lists render it as paved), no own section. The open style points of item 19 stay out of the article. Outline in `../article.md` (2026-11-11); hero image: the best-looking road photo from any spot, still to pick. Format: Markdown text, shown in an HTML site on GitHub Pages (article page with figures, Demo, App reports, Evidence).
 22. Short OSM wiki page for the tag mapping only, linking to the repo; OSM diary entry; Facebook post pointing to the diary. Get feedback on the community forum first.
 
 ## Outreach (drafts only, send nothing)
@@ -39,6 +39,8 @@ Updated 2026-11-10. Open items from all the task files and the "Mind the Surface
 24. Commercial apps through support or product teams: Komoot, Gaia GPS, Calimoto, Guru Maps, Ride with GPS and the others.
 25. Allies: HOT, local mapping communities, the laterite-discussion contacts.
 29. Facebook post, northern Thailand (2026-11-10): road MS.4014 Pai to Wiang Haeng (view 19.540403, 98.548539, z13 to z14), carousel of a road photo plus Komoot, Google Maps, OsmAnd Off-road style, Gaia GPS and DMD2. Web screenshots in [examples/screenshots/pai-z14-portrait/](examples/screenshots/pai-z14-portrait/) (`PORTRAIT=1 ZOOM=14 node examples/screenshots.ts pai`), demo shots in `../shots/pai-portrait/`. Post text now kept by Julien in his notes. Can go before the forum feedback of item 22.
+
+- Gaia GPS (2026-11-11): test which roads it draws as tracks (very bad `smoothness` on any class? the Bolivia F10 trunk stayed a normal road), then update the app report (A0) and the article, which says "some roads" for now.
 
 ## Low priority
 - Paved `highway=track` (`tracktype=grade1` or a paved surface) drawn as a continuous line, matching the track rhythms now used by the centre line (OSM Carto already draws grade1 solid). For the future-work section, after the road classes.

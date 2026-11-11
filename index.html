@@ -38,6 +38,13 @@
   .chips kbd, #chips kbd { font: inherit; opacity: 0.55; margin-left: 5px; }
   #msg { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); background: rgba(0,0,0,0.75); color: #fff; padding: 6px 12px; border-radius: 4px; display: none; }
   @media (max-width: 700px) { body { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { border-right: 0; border-bottom: 1px solid var(--line); } }
+  /* embed=1: map only (iframe in the article). The shield takes the first click, so scrolling the page never pans the map. */
+  body.embed { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+  body.embed aside { display: none; }
+  body.embed kbd { display: none; }
+  #shield { display: none; }
+  body.embed #shield { display: grid; place-items: center; position: absolute; inset: 0; cursor: pointer; background: transparent; }
+  body.embed #shield span { font: 600 13px system-ui, sans-serif; background: rgba(0,0,0,0.7); color: #fff; padding: 6px 12px; border-radius: 999px; }
 </style>
 </head>
 <body>
@@ -66,6 +73,7 @@
   <div id="chips" role="group" aria-label="Style"></div>
   <div id="bgchips" class="chips" role="group" aria-label="Background"></div>
   <div id="msg"></div>
+  <div id="shield"><span>Click to explore the map</span></div>
   <div id="attr">© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Terrain: AWS Terrain Tiles</div>
 </main>
 <script type="module" src="js/app.js"></script>
