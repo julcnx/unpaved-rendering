@@ -36,7 +36,7 @@ I classified 20.0 million km of road in 54 countries, from motorways to resident
 
 **The tags hold up on the ground.** I checked 55 roads tagged unpaved on street-level imagery: 41 are unpaved, 9 have been paved since (16%), 5 are mixed.
 
-<!-- FIGURE: bar chart, unpaved share by road class for 8 to 10 countries. -->
+<!-- FIGURE: chart, unpaved share by road class (trunk to tertiary) for 11 countries and Denmark for comparison, as a shaded table. -->
 <!-- FIGURE: photo grid, one confirmed unpaved road per country (about 12, across continents); caption per photo: road, class, author, CC BY-SA. Full grid on the Evidence page. -->
 
 ## 3. What apps show today
@@ -51,7 +51,7 @@ The third group shows why the class matters. A trunk road drawn like a track no 
 
 Gaia GPS shows the right instinct, a dashed outline, but applies it by turning roads into tracks. Keep the outline, keep the class.
 
-<!-- FIGURE: one spot (Namibia C38) in 8 to 12 apps, side by side. Full set per app on the App reports page. -->
+<!-- FIGURE: apps, Namibia C38 at Namutoni in six apps, two per group, cropped to the junction. Full set per app on the App reports page. -->
 
 ## 4. The ask: two levels
 
@@ -118,7 +118,7 @@ There is no single default: the right style depends on each map's design, and ab
 
 <!-- FIGURE: live demo (iframe, one map, five style chips, five backgrounds). Link: open the full demo. -->
 <!-- FIGURE: the five styles side by side (static 2 x 3 grid image, for the diary and print). -->
-<!-- FIGURE: one road at zoom 12, 14 and 16 (low-zoom tint). -->
+<!-- FIGURE: one road at zoom 13, 14 and 16 (low-zoom tint). -->
 
 ## 7. Limits
 
