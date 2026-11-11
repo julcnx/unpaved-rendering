@@ -335,6 +335,21 @@
 <li><strong>Map and app makers:</strong> pick a style, switch to a paved whitelist, and tell me what does not fit your map.</li>
 <li><strong>Map users:</strong> comment on or vote for the open issue of the app you use.</li>
 </ul>
+<h2 id="s-questions">Questions</h2>
+<h3>Isn't rendering up to each map maker?</h3>
+<p>It is, and this proposal keeps it that way. OpenStreetMap is a database; every map decides what to draw. This is not a tagging proposal or a rule, and it changes no tag. It is a feature request, made the usual way through each map's own channel (GitHub issues, forums, support), backed by data and five ready-made styles that each map can adapt or ignore. Several maps already show unpaved roads, and their users ask the others for it. The aim is to make the change easy for the map makers who want it.</p>
+<h3>Why not just tag better?</h3>
+<p>Mappers already have: 5.3 million km of road in the 54 countries are tagged unpaved. The gap is on the map side. Better tagging still helps, above all on main roads without a <code>surface</code> tag (<a href="#s-9-how-to-help">How to help</a>).</p>
+<h3>OSM Carto already does this. Why a proposal?</h3>
+<p>OSM Carto shows unpaved roads, and this proposal builds on its approach. But most people do not use openstreetmap.org to plan a trip: they use apps, and most of those show nothing (<a href="#s-3-what-apps-show-today">What apps show today</a>).</p>
+<h3>Untagged roads are not always paved. Why draw them as paved?</h3>
+<p>Because the map should only show what mappers have recorded. Guessing that a road is unpaved would be wrong as often as it is right, and would turn millions of km of untagged town streets brown (<a href="#s-7-limits">Limits</a>).</p>
+<h3>A gravel road in Finland is fine for any car. Isn't "Unpaved" alarmist?</h3>
+<p>Unpaved says what the surface is, not how hard the road is. The reader decides what it means for their vehicle and the season. The optional Off-road mark is for the roads the tags say are really rough (<a href="#s-4-the-ask-two-levels">The ask</a>).</p>
+<h3>Why not show smoothness or difficulty instead?</h3>
+<p>Three quarters of unpaved km are tagged only <code>surface=unpaved</code>, which says nothing about difficulty, and <code>smoothness</code> is rare. Routers, which see the whole route, judge difficulty better than a line on a map (<a href="#s-5-optional-the-off-road-mark">The Off-road mark</a>).</p>
+<h3>Won't dashes clutter the map, or look like tracks or tunnels?</h3>
+<p>They can, which is why the styles follow a few design principles and why there are five of them, from a quiet grain to full dashes. Each map picks the one that stays distinct from its own tracks, tunnels and construction (<a href="#s-6-how-to-draw-it">How to draw it</a>).</p>
 <h2 id="s-data-and-methods">Data and methods</h2>
 <p>The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. The rules, the code and every result are in the <a href="https://github.com/julcnx/unpaved-rendering">GitHub repository</a>:</p>
 <ul>
@@ -351,7 +366,7 @@
 <li>Map data © OpenStreetMap contributors (ODbL). Official road statistics: CIA World Factbook (public domain). Street-level photos: Mapillary contributors (CC BY-SA 4.0), credited with each photo.</li>
 </ul>
 </article>
-<nav class="toc" aria-label="Contents"><p>Contents</p><a href="#s-1-the-misconception">1. The misconception</a><a href="#s-2-how-common-unpaved-main-roads-are">2. How common unpaved main roads are</a><a href="#s-3-what-apps-show-today">3. What apps show today</a><a href="#s-4-the-ask-two-levels">4. The ask: two levels</a><a href="#s-5-optional-the-off-road-mark">5. Optional: the Off-road mark</a><a href="#s-6-how-to-draw-it">6. How to draw it</a><a href="#s-7-limits">7. Limits</a><a href="#s-8-future-work">8. Future work</a><a href="#s-9-how-to-help">9. How to help</a><a href="#s-data-and-methods">Data and methods</a><a href="#s-credits">Credits</a></nav>
+<nav class="toc" aria-label="Contents"><p>Contents</p><a href="#s-1-the-misconception">1. The misconception</a><a href="#s-2-how-common-unpaved-main-roads-are">2. How common unpaved main roads are</a><a href="#s-3-what-apps-show-today">3. What apps show today</a><a href="#s-4-the-ask-two-levels">4. The ask: two levels</a><a href="#s-5-optional-the-off-road-mark">5. Optional: the Off-road mark</a><a href="#s-6-how-to-draw-it">6. How to draw it</a><a href="#s-7-limits">7. Limits</a><a href="#s-8-future-work">8. Future work</a><a href="#s-9-how-to-help">9. How to help</a><a href="#s-questions">Questions</a><a href="#s-data-and-methods">Data and methods</a><a href="#s-credits">Credits</a></nav>
 
 <script>
   // Today / Proposed slider

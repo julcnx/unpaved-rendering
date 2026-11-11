@@ -139,6 +139,36 @@ There is no single default: the right style depends on each map's design, and ab
 - **Map and app makers:** pick a style, switch to a paved whitelist, and tell me what does not fit your map.
 - **Map users:** comment on or vote for the open issue of the app you use.
 
+## Questions
+
+### Isn't rendering up to each map maker?
+
+It is, and this proposal keeps it that way. OpenStreetMap is a database; every map decides what to draw. This is not a tagging proposal or a rule, and it changes no tag. It is a feature request, made the usual way through each map's own channel (GitHub issues, forums, support), backed by data and five ready-made styles that each map can adapt or ignore. Several maps already show unpaved roads, and their users ask the others for it. The aim is to make the change easy for the map makers who want it.
+
+### Why not just tag better?
+
+Mappers already have: 5.3 million km of road in the 54 countries are tagged unpaved. The gap is on the map side. Better tagging still helps, above all on main roads without a `surface` tag ([How to help](#s-9-how-to-help)).
+
+### OSM Carto already does this. Why a proposal?
+
+OSM Carto shows unpaved roads, and this proposal builds on its approach. But most people do not use openstreetmap.org to plan a trip: they use apps, and most of those show nothing ([What apps show today](#s-3-what-apps-show-today)).
+
+### Untagged roads are not always paved. Why draw them as paved?
+
+Because the map should only show what mappers have recorded. Guessing that a road is unpaved would be wrong as often as it is right, and would turn millions of km of untagged town streets brown ([Limits](#s-7-limits)).
+
+### A gravel road in Finland is fine for any car. Isn't "Unpaved" alarmist?
+
+Unpaved says what the surface is, not how hard the road is. The reader decides what it means for their vehicle and the season. The optional Off-road mark is for the roads the tags say are really rough ([The ask](#s-4-the-ask-two-levels)).
+
+### Why not show smoothness or difficulty instead?
+
+Three quarters of unpaved km are tagged only `surface=unpaved`, which says nothing about difficulty, and `smoothness` is rare. Routers, which see the whole route, judge difficulty better than a line on a map ([The Off-road mark](#s-5-optional-the-off-road-mark)).
+
+### Won't dashes clutter the map, or look like tracks or tunnels?
+
+They can, which is why the styles follow a few design principles and why there are five of them, from a quiet grain to full dashes. Each map picks the one that stays distinct from its own tracks, tunnels and construction ([How to draw it](#s-6-how-to-draw-it)).
+
 ## Data and methods
 
 The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. The rules, the code and every result are in the [GitHub repository](https://github.com/julcnx/unpaved-rendering):
