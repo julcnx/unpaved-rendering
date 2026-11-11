@@ -63,7 +63,7 @@ async function loadSpot(id) {
   const spot = SPOTS[id];
   if (!map.layers.has(`spot:${id}`)) {
     try {
-      const res = await fetch(`data/${id}.json`);
+      const res = await fetch(new URL(`../data/${id}.json`, import.meta.url)); // data/ next to js/, wherever the page is
       if (!res.ok) throw new Error();
       const data = await res.json();
       map.layers.set(`spot:${id}`, prepare(data.features));

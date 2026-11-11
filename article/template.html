@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mind the Surface</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23faf8f4%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%23e8a040%22 stroke-width=%227%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%236b4420%22 stroke-width=%227%22 stroke-dasharray=%224 4%22 opacity=%22.55%22/%3E%3C/svg%3E">
+<meta name="description" content="A proposal for OpenStreetMap-based maps: keep each road's class colour and add one subtle signal for unpaved roads.">
+<!-- Page template for article.md. Do not edit index.html: run `python3 scripts/build-article.py`. -->
+<style>
+  :root { --ink: #2b2620; --muted: #6f665b; --paper: #faf8f4; --line: #e4ded4; --asphalt: #3a3a3a; --gravel: #b07a3c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  header.wrap { padding-top: 56px; padding-bottom: 28px; }
+  .kicker { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  h1 { font: 700 clamp(40px, 6vw, 68px)/1.02 Georgia, "Times New Roman", serif; margin: 0; letter-spacing: -.01em; }
+  .sub { font: italic clamp(20px, 2.4vw, 28px)/1.3 Georgia, serif; color: var(--muted); margin: 8px 0 0; }
+  .byline { font-size: 15px; color: var(--muted); margin: 14px 0 0; }
+  .byline a { color: var(--ink); }
+
+  /* Hero: full-width map, photos placed in the empty land on each side of the road (Komoot, centred on the transition) */
+  .hero { position: relative; margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 2 / 1; }
+  .hero picture { display: block; width: 100%; height: 100%; }
+  .hero picture img { width: 100%; height: 100%; display: block; object-fit: cover; } /* 16:9 shot cropped to 2:1: empty land off top and bottom */
+  .leaders { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .leaders line { stroke-width: 2; vector-effect: non-scaling-stroke; }
+  .leaders.portrait { display: none; }
+  .pin { position: absolute; transform: translate(-50%, -50%); width: 32px; height: 32px; border-radius: 50%; border: 3px solid #fff;
+         box-shadow: 0 2px 6px rgba(0,0,0,.35); color: #fff; display: grid; place-items: center; font: 700 15px system-ui, sans-serif; }
+  .a { background: var(--asphalt); } .b { background: var(--gravel); }
+  .pin.a { left: 36.2%; top: 18.5%; } .pin.b { left: 63.8%; top: 81.5%; }
+  /* asphalt ends: a tick across the road (perpendicular to it) and a label on the empty side, left of the road */
+  .tick { position: absolute; left: 50%; top: 50%; width: 30px; height: 4px; border-radius: 2px; background: var(--ink); box-shadow: 0 0 0 2px #fff;
+          transform: translate(-50%, -50%) rotate(-41.3deg); }
+  .end { position: absolute; left: 50%; top: 50%; transform: translate(calc(-100% - 22px), -50%); font-size: 13px; font-weight: 600;
+         background: rgba(255,255,255,.94); border-radius: 4px; padding: 2px 8px; color: var(--ink); white-space: nowrap; }
+  .photo { position: absolute; width: 27%; aspect-ratio: 4 / 3; margin: 0; border-radius: 8px; overflow: hidden; border: 3px solid #fff;
+           box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo.pa { left: 4%; top: 45%; } .photo.pb { left: 69%; top: 11%; }
+  .tag { position: absolute; left: 8px; top: 8px; display: flex; gap: 7px; align-items: center; background: rgba(255,255,255,.94);
+         border-radius: 999px; padding: 3px 11px 3px 3px; font-weight: 600; font-size: 14px; }
+  .tag i { width: 22px; height: 22px; border-radius: 50%; color: #fff; display: grid; place-items: center; font: normal 700 12px system-ui; }
+  .applabel { position: absolute; right: 10px; bottom: 10px; background: rgba(255,255,255,.94); border-radius: 6px; padding: 3px 10px; font-size: 13px; color: var(--muted); }
+  .applabel b { color: var(--ink); }
+  .caption { text-align: center; font-size: 19px; margin: 16px 0 0; }
+  .credit { text-align: center; font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+
+  /* Article: text column left-aligned with the title and the hero; wide figures use the full width; contents fixed on the right */
+  .article { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; font-size: 18px; line-height: 1.65; }
+  .article > * { max-width: 780px; }
+  .article > .wide { max-width: none; }
+  .article > p:first-child { font-size: 21px; margin-top: 36px; }
+  .article h2 { font: 700 30px/1.2 Georgia, serif; margin: 56px 0 14px; }
+  .article table { border-collapse: collapse; width: 100%; font-size: 16px; margin: 18px 0; }
+  .article th, .article td { border-bottom: 1px solid var(--line); padding: 7px 8px; text-align: left; vertical-align: top; }
+  .article table.num td:not(:first-child), .article table.num th:not(:first-child) { text-align: right; }
+  .article code { font-size: .88em; background: #efe9df; padding: 1px 5px; border-radius: 4px; }
+  .article a { color: inherit; }
+  .toc { position: fixed; top: 32px; left: calc(50% - 590px + 24px + 780px + 64px); width: 250px; font-size: 14px; line-height: 1.35; transition: opacity .2s; }
+  .toc p { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  .toc a { display: block; color: var(--muted); text-decoration: none; padding: 5px 0 5px 12px; border-left: 2px solid var(--line); }
+  .toc a:hover { color: var(--ink); }
+  .toc a.on { color: var(--ink); font-weight: 600; border-left-color: var(--ink); }
+  .toc.hidden { opacity: 0; pointer-events: none; }
+  @media (max-width: 1180px) { .toc { display: none; } }
+
+  /* Figures */
+  .fig { margin: 28px 0; }
+  .fig > figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+  .fig img { display: block; width: 100%; border-radius: 8px; }
+  .slider { position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); --pos: 50%; }
+  .slider img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border-radius: 0; }
+  .slider .top { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .slider .bar { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 4px rgba(0,0,0,.4); pointer-events: none; }
+  .slider .knob { position: absolute; top: 50%; left: var(--pos); width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; background: #fff;
+                  box-shadow: 0 1px 6px rgba(0,0,0,.4); display: grid; place-items: center; font: 700 14px system-ui; color: var(--ink); pointer-events: none; }
+  .slider input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .slider .lab { position: absolute; top: 10px; background: rgba(255,255,255,.94); border-radius: 6px; padding: 3px 10px; font-size: 13px; pointer-events: none; }
+  .slider .l { left: 10px; } .slider .r { right: 10px; }
+  .demo { width: 100%; aspect-ratio: 16 / 10; border: 1px solid var(--line); border-radius: 10px; display: block; }
+  .heat .scroll { overflow-x: auto; }
+  .heat table { border-collapse: separate; border-spacing: 2px; width: 100%; margin: 0; font-size: 15px; }
+  .heat th, .heat td { border: 0; padding: 6px 8px; }
+  .heat tr:first-child th { font-weight: 600; color: var(--muted); text-align: center; font-size: 13px; }
+  .heat th:first-child { text-align: left; font-weight: 600; white-space: nowrap; }
+  .heat td { text-align: center; border-radius: 4px; font-variant-numeric: tabular-nums; }
+  .heat tr.base th, .heat tr.base td { border-top: 8px solid var(--paper); }
+  .photos .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .photos .grid figure, .apps .pair figure, .zoom .row figure { margin: 0; }
+  .photos .grid img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+  .photos .grid figcaption { font-size: 13px; margin-top: 4px; line-height: 1.3; }
+  .photos .grid figcaption span { display: block; color: var(--muted); font-size: 12px; }
+  .apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .apps > figcaption { grid-column: 1 / -1; }
+  .apps h3 { font: 600 13px/1.3 system-ui, sans-serif; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 8px; }
+  .apps .pair { display: grid; gap: 10px; }
+  .apps .pair img { aspect-ratio: 8 / 5; object-fit: cover; border: 1px solid var(--line); border-radius: 6px; }
+  .apps .pair figcaption, .zoom .row figcaption { font-size: 13px; margin-top: 3px; }
+  .zoom .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .zoom .row img { border: 1px solid var(--line); border-radius: 6px; }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 0 16px; }
+    header.wrap { padding-top: 32px; padding-bottom: 20px; }
+    /* Phone hero: the same composition on a portrait shot (900 x 1125, same centre and zoom); road from (0, 2.7%) to (100%, 97.7%) */
+    .hero { aspect-ratio: 4 / 5; }
+    .leaders.landscape { display: none; } .leaders.portrait { display: block; }
+    .photo { width: 55%; border-width: 2px; border-radius: 6px; }
+    .photo.pa { left: 4%; top: 63%; } .photo.pb { left: 41%; top: 4%; }
+    .pin.a { left: 22%; top: 23.6%; } .pin.b { left: 78%; top: 76.8%; }
+    .tick { transform: translate(-50%, -50%) rotate(-40.1deg); width: 24px; }
+    .end, .applabel { font-size: 12px; }
+    .pin { width: 26px; height: 26px; font-size: 13px; border-width: 2px; }
+    .tag { font-size: 12px; padding: 2px 8px 2px 2px; left: 6px; top: 6px; }
+    .tag i { width: 18px; height: 18px; font-size: 11px; }
+    .caption, .credit { text-align: left; }
+    .caption { font-size: 17px; }
+    .article { padding: 0 16px 60px; font-size: 17px; }
+    .slider .lab > span { display: none; }
+    .demo { aspect-ratio: 3 / 4; }
+    .photos .grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .apps { grid-template-columns: 1fr; gap: 16px; }
+    .apps .pair { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .zoom .row { grid-template-columns: 1fr; }
+    .heat table { font-size: 13px; }
+    .heat th, .heat td { padding: 5px 4px; }
+  }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <p class="kicker">A proposal for OpenStreetMap-based maps</p>
+  <h1>Mind the Surface</h1>
+  <p class="sub">A main road is not always paved</p>
+  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a></p>
+</header>
+
+<main class="wrap">
+  <figure class="hero">
+    <picture><source media="(max-width: 760px)" srcset="article/img/hero-komoot-portrait.png"><img src="article/img/hero-komoot.png" alt="Namibia C48 in Komoot: one orange line, paved and unpaved alike"></picture>
+    <!-- 2:1 crop: road from about (27%, 0) to (73%, 100%); the asphalt ends at the centre -->
+    <svg class="leaders landscape" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line x1="31" y1="45" x2="36.2" y2="18.5" stroke="#3a3a3a"/>
+      <line x1="69" y1="51.5" x2="63.8" y2="81.5" stroke="#b07a3c"/>
+    </svg>
+    <svg class="leaders portrait" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line x1="30" y1="63" x2="22" y2="23.6" stroke="#3a3a3a"/>
+      <line x1="70" y1="37" x2="78" y2="76.8" stroke="#b07a3c"/>
+    </svg>
+    <span class="tick"></span><span class="end">asphalt ends</span>
+    <span class="pin a">A</span>
+    <span class="pin b">B</span>
+    <figure class="photo pa"><img src="article/img/hero-paved.jpg" alt="C48, paved side (asphalt)"><span class="tag"><i class="a">A</i>Paved</span></figure>
+    <figure class="photo pb"><img src="article/img/hero-unpaved.jpg" alt="C48, unpaved side (graded gravel road)"><span class="tag"><i class="b">B</i>Unpaved</span></figure>
+    <span class="applabel"><b>Komoot</b>, today</span>
+  </figure>
+  <p class="caption">Namibia, C48, a primary road. The asphalt ends and 19 km of unpaved road begin (tagged <code>surface=gravel</code>).<br><b>On the map, it is the same orange line.</b></p>
+  <p class="credit">Photos: tallguy, Mapillary, 2019, CC BY-SA 4.0 · Map: Komoot, November 2026, © OpenStreetMap contributors</p>
+</main>
+
+<article class="article">
+{{BODY}}
+</article>
+{{TOC}}
+
+<script>
+  // Today / Proposed slider
+  for (const s of document.querySelectorAll('.slider')) {
+    s.querySelector('input').addEventListener('input', (e) => s.style.setProperty('--pos', e.target.value + '%'));
+  }
+  // Contents: highlight the current section; hidden over the title and hero, and while a wide figure passes under it.
+  const toc = document.querySelector('.toc');
+  const links = [...toc.querySelectorAll('a')];
+  const heads = links.map((a) => document.getElementById(a.hash.slice(1)));
+  const wides = [...document.querySelectorAll('.wide')];
+  function update() {
+    let cur = 0;
+    heads.forEach((h, i) => { if (h.getBoundingClientRect().top < 120) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === cur));
+    const t = toc.getBoundingClientRect();
+    const before = document.querySelector('.article').getBoundingClientRect().top > t.top;
+    toc.classList.toggle('hidden', before || wides.some((w) => { const r = w.getBoundingClientRect(); return r.top < t.bottom && r.bottom > t.top; }));
+  }
+  addEventListener('scroll', update, { passive: true }); update();
+</script>
+</body>
+</html>

@@ -7,14 +7,25 @@ A proposal asking map apps to show whether a road is paved or unpaved, as an ext
 - **Main ask:** two levels, **Paved** and **Unpaved**.
 - **Optional:** an **Off-road** mark on Unpaved roads, where `smoothness`, `tracktype` or `4wd_only` say a city car cannot pass.
 
+## Site
+
+Serve the repo with a local web server (`npm start`, which runs `python3 -m http.server 8765`), then:
+
+- http://localhost:8765/: the article.
+- http://localhost:8765/demo/: the demo.
+
+## Article
+
+Write in `article.md`, then run `npm run build` (`python3 scripts/build-article.py`, needs `pip install markdown`): it writes `index.html` from `article.md` and the page design in `article/template.html`. `FIGURE` comments in the Markdown become figures; the chart reads `research/stats/summary.csv` and the photo credits `research/examples/images/credits.json`. Images are in `article/img/`. Do not edit `index.html` by hand.
+
 ## Demo
 
-Open `index.html` through a local web server (`python3 -m http.server 8765`, then http://localhost:8765). Plain HTML, canvas and JavaScript: no build, no tile server.
+`demo/index.html`, plain HTML, canvas and JavaScript: no build, no tile server.
 
 - Sample spots: places where one road changes from paved to unpaved, cached in `data/` (`node scripts/fetch-spots.mjs`). They are the same spots as the screenshots of today's apps.
 - Search anywhere: roads load live from Overpass from zoom 14.
 - Styles: `js/styles.js`, one small function each. Side by side view, five backgrounds, legend.
-- URL parameters: `spot`, `style`, `bg` (`all` = every background, one style), `z`, `lat`, `lon`, `compare=1`.
+- URL parameters: `spot`, `style` (`none` = no surface signal), `bg` (`all` = every background, one style), `z`, `lat`, `lon`, `compare=1`, `embed=1` (one map for an iframe).
 
 ## Classifier
 

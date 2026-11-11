@@ -1,7 +1,7 @@
 // Screenshots of the demo for review: every spot x style x background x zoom, or a subset.
 // Usage: node scripts/shots.mjs [--spots a,b] [--styles a,b] [--bgs a,b] [--zooms 13,15,17] [--compare] [--portrait] [--center lat,lon] [--attribution] [--out dir]
 // Map only: sidebar, chips and messages hidden. --attribution keeps the OSM credit (needed on any published shot).
-// Needs the demo served on http://localhost:8765 (python3 -m http.server 8765).
+// Needs the repo served on http://localhost:8765 (python3 -m http.server 8765); the demo is at /demo/.
 import puppeteer from 'puppeteer-core';
 import { mkdirSync } from 'node:fs';
 
@@ -30,7 +30,7 @@ for (const spot of spots) for (const bg of bgs) for (const z of zooms) for (cons
   const q = new URLSearchParams({ spot, bg, z, style: compare ? 'centre-line' : style });
   q.set('compare', compare ? '1' : '0'); // the demo shows all styles unless compare=0
   if (center) { q.set('lat', center[0]); q.set('lon', center[1]); } // --center lat,lon: other view than the spot centre
-  await page.goto(`http://localhost:8765/?${q}`, { waitUntil: 'domcontentloaded' });
+  await page.goto(`http://localhost:8765/demo/?${q}`, { waitUntil: 'domcontentloaded' });
   await page.addStyleTag({ content: `body { grid-template-columns: 1fr !important; } ${hide.join(', ')} { display: none !important; }` });
   await page.waitForFunction('window.mapReady === true', { timeout: 20000 });
   await page.evaluate(() => window.dispatchEvent(new Event('resize'))); // redraw at the full width

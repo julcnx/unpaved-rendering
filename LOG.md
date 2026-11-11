@@ -110,3 +110,10 @@
 - Tests: the right command is `node --test test/classify.test.js` (67 pass); `node --test test/` fails to start, which an earlier check missed.
 - C48 hero: Google Street View, June 2024, shows the asphalt still ending at the same point and the road unpaved beyond it. The hero credit is dated (photos 2019, map November 2026).
 - Article: "I" instead of "we", byline julcnx, section 6 starts from design principles, explicit answers to "tagging for the renderer", "Carto already does this" and "unpaved is fine in Finland".
+
+## 2026-11-11: site in the repo
+
+- The article is now the site's home page: `index.html`, built from `article.md` and `article/template.html` by `scripts/build-article.py` (`npm run build`). The demo moved to `demo/index.html`; `js/app.js` loads `data/` relative to itself, so the demo works from any page path. `scripts/shots.mjs` opens `/demo/`.
+- Figures (all with a phone layout): hero (Komoot C48, landscape and portrait frames), unpaved share by class as a shaded table (11 countries and Denmark, one brown hue, number in every cell), photo grid (12 countries; Chile's 360° photo swapped for Guatemala), six apps at the Namutoni junction in three groups, Today / Proposed slider, live demo iframe, the five styles grid (landscape and portrait), zoom strip.
+- Zoom strip: zoom 13, 14 and 16, each the centre half of an 840 x 588 shot shown full width, so the low-zoom tint is readable (the full frame at text width was too small). Zoom 12 dropped: its frame is wider than the cached spot data.
+- Images in `article/img/` come from `research/examples/images/mapillary/`, `research/examples/screenshots/` and the demo shots (`shots/fig-grid*`, `shots/fig-zoom`, `shots/namibia-fig-w`, not committed).
