@@ -134,6 +134,7 @@ def build(src, out, title, description, kicker, h1, sub, hero, body_class=''):
     md = re.sub(r'^\*How .*\*\n', '', md, count=1, flags=re.M)
     md = re.sub(r'<!--\s*DRAFT.*?-->', '', md, flags=re.S)
     md = re.sub(r'<!--\s*FIGURE:?\s*(.*?)-->', figure, md, flags=re.S)
+    md = re.sub(r'<!-- BOX -->\s*(.*?)\s*<!-- /BOX -->', lambda m: '\n\n<aside class="box">' + markdown.markdown(m.group(1)) + '</aside>\n\n', md, flags=re.S)
     md = re.sub(r'<!--.*?-->', '', md, flags=re.S)  # other notes for editors
     body = markdown.markdown(md, extensions=['tables'])
     body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>Country)', r'<table class="num">\1', body)  # number tables align right

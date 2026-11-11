@@ -64,6 +64,8 @@
   .article > * { max-width: 780px; }
   .article > .wide { max-width: none; }
   .article > p:first-child { font-size: 21px; margin-top: 36px; }
+  .box { background: #f1ebe0; border-left: 4px solid var(--gravel); border-radius: 6px; padding: 14px 18px; font-size: 16px; line-height: 1.55; margin: 22px 0; }
+  .box p { margin: 0; }
   .article h2 { font: 700 30px/1.2 Georgia, serif; margin: 56px 0 14px; }
   .article > h3 { font: 700 19px/1.35 system-ui, sans-serif; margin: 30px 0 6px; }
   .article > h3 + p { margin-top: 0; }
@@ -441,6 +443,64 @@
 </tr>
 </tbody>
 </table></div>
+<h2 id="s-where-the-classifier-goes">Where the classifier goes</h2>
+<p>For open-source maps: where the surface is classified today, and which ready-made version of the paved whitelist fits. All versions pass the same <a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json">67 test cases</a>.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Where the surface is classified</th>
+<th>Version to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OSM Carto</td>
+<td>SQL lists in <code>project.mml</code></td>
+<td><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql">SQL</a></td>
+</tr>
+<tr>
+<td>CyclOSM</td>
+<td>SQL in <code>views.sql</code></td>
+<td><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql">SQL</a></td>
+</tr>
+<tr>
+<td>Humanitarian (HOT)</td>
+<td>Style rules with a paved list</td>
+<td><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql">SQL</a>, to check</td>
+</tr>
+<tr>
+<td>Any osm2pgsql flex or tilemaker pipeline</td>
+<td>Lua import script</td>
+<td><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua">Lua</a></td>
+</tr>
+<tr>
+<td>OSMF Shortbread (Spirit)</td>
+<td>The style itself: tiles carry the raw <code>surface</code></td>
+<td>A whitelist expression in the style; <a href="https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js">JavaScript</a> as reference</td>
+</tr>
+<tr>
+<td>Americana, MapTiler, Stadia, OpenFreeMap</td>
+<td>Upstream in OpenMapTiles (SQL) and Planetiler (Java)</td>
+<td>Whitelist upstream; <a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql">SQL</a> as reference</td>
+</tr>
+<tr>
+<td>OsmAnd</td>
+<td>Rendering style rules (the map files carry <code>surface</code>)</td>
+<td>Rules in the rendering style</td>
+</tr>
+<tr>
+<td>Organic Maps, CoMaps</td>
+<td>The map generator already has a paved whitelist</td>
+<td>Nothing: style change only</td>
+</tr>
+<tr>
+<td>Protomaps</td>
+<td>No surface in the tiles</td>
+<td>Schema change first</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="s-tile-schemas">Tile schemas</h2>
 <p>A style can only draw what its tiles carry.</p>
 <div class="scroll"><table>
@@ -492,7 +552,7 @@
 </tbody>
 </table></div>
 </article>
-<nav class="toc" aria-label="Contents"><p>Contents</p><a href="#s-show-it-keep-the-class">Show it, keep the class</a><a href="#s-show-it-partly">Show it, partly</a><a href="#s-show-it-lose-the-class">Show it, lose the class</a><a href="#s-do-not-show-it">Do not show it</a><a href="#s-tile-schemas">Tile schemas</a></nav>
+<nav class="toc" aria-label="Contents"><p>Contents</p><a href="#s-show-it-keep-the-class">Show it, keep the class</a><a href="#s-show-it-partly">Show it, partly</a><a href="#s-show-it-lose-the-class">Show it, lose the class</a><a href="#s-do-not-show-it">Do not show it</a><a href="#s-where-the-classifier-goes">Where the classifier goes</a><a href="#s-tile-schemas">Tile schemas</a></nav>
 
 <script>
   // Today / Proposed slider

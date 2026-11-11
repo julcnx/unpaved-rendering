@@ -135,3 +135,9 @@
 - Honesty: official figures also count rural tracks (part of the OSM gap is definition); Limits now says the styles are untested with readers and not yet in a real app.
 - Numbers in prose rounded; exact values stay in the tables and key-numbers.
 - Link previews: `og:` and `twitter:` tags with `article/img/og.jpg`, the hero captured at 1200 x 630.
+
+## 2026-11-11: map makers' box, classifier ports, reader test kit
+
+- Article: a short box for map makers under the opening (what to change, what it costs, where to start); the checklist and Data and methods link the Lua (osm2pgsql flex, tilemaker), SQL and JavaScript classifiers. The Lua port passes the 67 shared test cases (`node --test classifier/classify.test.ts classifier/ports.test.ts` in research/, luajit); the SQL test needs a database.
+- App reports: "Where the classifier goes", per open-source map.
+- `research/reader-test/`: three pictures of Namutoni (styles 4, 1, 3 as A, B, C), no legend, six roads numbered (unpaved: 1, 3, 5); post text, answer key and scoring. Result to go into section 6 and Limits.

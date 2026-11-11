@@ -15,6 +15,10 @@ Most map apps built on OpenStreetMap draw an unpaved main road exactly like an a
 
 [Live demo](demo/) · [App reports](apps/) · [Data and methods](#s-data-and-methods)
 
+<!-- BOX -->
+**For map makers, in short.** *What to change:* classify roads with a paved whitelist, draw unpaved ones with one of five styles in their own class colour, and add two legend words. *What it costs:* a style change for most maps; the data or tiles already carry the surface ([Limits](#s-7-limits) lists the exceptions), and the classifier is ready in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js). *Where to start:* find your map in the [App reports](apps/).
+<!-- /BOX -->
+
 ## 1. The misconception
 
 A red or orange road on a map reads as "a proper road". Most people take that to mean asphalt, and most maps agree with them: when a road has no `surface` tag it is drawn as paved, and when it does have one, most styles ignore it anyway.
@@ -138,7 +142,7 @@ The demo below draws the five styles on real data, at any of the sample spots or
 ## 9. How to help
 
 - **Mappers:** add `surface` to main roads, fix tags that are out of date, and add `smoothness` where a road really is rough. Tag what is on the ground, not what makes a map look right: the map should follow the tags, never the other way round.
-- **Map and app makers:** four steps. Classify with a paved whitelist. Pick the style that stays distinct from your tracks and tunnels. Keep the class colour. Add two words to the legend, Unpaved and Off-road. Then tell me what does not fit your map.
+- **Map and app makers:** four steps. Classify with a paved whitelist: it is ready in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua) (osm2pgsql flex, tilemaker), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) (PostgreSQL) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js), with shared tests. Pick the style that stays distinct from your tracks and tunnels. Keep the class colour. Add two words to the legend, Unpaved and Off-road. Then tell me what does not fit your map.
 - **Map users:** find your app in the [App reports](apps/) and ask for it through its channel; once a request is open, support it there.
 - **Everyone:** corrections and feedback are welcome as a [GitHub issue](https://github.com/julcnx/unpaved-rendering/issues).
 
@@ -181,7 +185,7 @@ The numbers come from OpenStreetMap extracts of 54 countries (November 2026), cl
 - [Key numbers](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/key-numbers.md): every figure quoted here, generated from the data.
 - [Full report](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/report.md): per country and road class, with the official figures.
 - [Image review](https://github.com/julcnx/unpaved-rendering/blob/master/research/examples/images/review.md): the 55 roads checked on street-level imagery.
-- [Classifier](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js) and its [tests](https://github.com/julcnx/unpaved-rendering/tree/master/test).
+- Classifier: [TypeScript reference](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.ts) and ports in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js), all checked against the same [67 test cases](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json).
 
 ## Credits
 

@@ -59,6 +59,22 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 | CalTopo | no | No | To check | To check | [Feature requests](https://help.caltopo.com/hc/en-us/community/topics/4416797631899-Feature-Requests) |
 | Protomaps basemap | yes | No | No surface in the tiles: a schema change comes first | To check | [GitHub](https://github.com/protomaps/basemaps/issues) |
 
+## Where the classifier goes
+
+For open-source maps: where the surface is classified today, and which ready-made version of the paved whitelist fits. All versions pass the same [67 test cases](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json).
+
+| Map | Where the surface is classified | Version to use |
+|---|---|---|
+| OSM Carto | SQL lists in `project.mml` | [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) |
+| CyclOSM | SQL in `views.sql` | [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) |
+| Humanitarian (HOT) | Style rules with a paved list | [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql), to check |
+| Any osm2pgsql flex or tilemaker pipeline | Lua import script | [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua) |
+| OSMF Shortbread (Spirit) | The style itself: tiles carry the raw `surface` | A whitelist expression in the style; [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js) as reference |
+| Americana, MapTiler, Stadia, OpenFreeMap | Upstream in OpenMapTiles (SQL) and Planetiler (Java) | Whitelist upstream; [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) as reference |
+| OsmAnd | Rendering style rules (the map files carry `surface`) | Rules in the rendering style |
+| Organic Maps, CoMaps | The map generator already has a paved whitelist | Nothing: style change only |
+| Protomaps | No surface in the tiles | Schema change first |
+
 ## Tile schemas
 
 A style can only draw what its tiles carry.
