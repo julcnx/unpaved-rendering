@@ -8,9 +8,10 @@ import { classify } from '../../js/classify.js';
 import { SPOTS } from '../../js/spots.js';
 
 const W = 1600, H = 900, MARGIN = 140, MIN_CLEAR = 18, MIN_APART = 140;
-// Five places, one style each. Alberta dropped: one main road in its frame. Iceland is sparse at 15, so 14 (its primary
-// and secondary roads keep the pattern there; minor and tertiary roads get the plain low-zoom tint).
-export const ZOOM = { bolivia: 15, nepal: 15, iceland: 14, namibia: 16, australia: 15 };
+// Five places, one style each. Alberta dropped: one main road in its frame. Zoom 15 or more everywhere: below it, tertiary
+// and minor roads are under 6 px and get the plain low-zoom tint instead of the style's pattern, which mixes two signals
+// in one picture (seen in the first Iceland picture at zoom 14).
+export const ZOOM = { bolivia: 15, nepal: 15, iceland: 15, namibia: 16, australia: 15 };
 // Namibia: the article's Namutoni view (moved west), which has three clear paved roads; the spot centre has one.
 // Nepal: 3 km south of the spot centre (found by find-frame.mjs), enough clear roads at zoom 15.
 export const CENTER = { namibia: [-18.81068, 16.9329], nepal: [28.77767, 83.72473] };

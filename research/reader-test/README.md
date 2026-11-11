@@ -8,7 +8,7 @@ Five pictures, A to E: five different places, each drawn in one of the five styl
 
 - **A different place per picture**, with its own answers, so nobody can carry an answer over from one picture to the next.
 - **Mixed order**: the letters do not follow the style numbers.
-- **Three or four unpaved roads per picture**, so nobody can guess a fixed number.
+- **Two to four unpaved roads per picture**, so nobody can guess a fixed number.
 - **Same white background** for all, so the background does not make one picture harder.
 
 Do not tell people which style is which, or what the article proposes, before they answer.
@@ -21,13 +21,13 @@ Limit: each place has its own roads, so some pictures are easier than others wha
 |---|---|---|---|---|---|
 | A | Bolivia, zoom 15 | 4. Dashed casing | **1, 4, 5, 6** | 2, 3 | 1 tertiary unpaved; 2 trunk asphalt; 3 trunk asphalt; 4 trunk compacted; 5 unclassified ground (Off-road); 6 tertiary ground (Off-road) |
 | B | Nepal, zoom 15 | 1. Grain fill | **1, 5, 6** | 2, 3, 4 | 1 primary gravel (Off-road); 2 primary concrete; 3 primary concrete; 4 unclassified asphalt; 5 primary gravel (Off-road); 6 unclassified unpaved |
-| C | Iceland, zoom 14 | 5. Dashed fill, full width | **1, 2, 4, 5** | 3, 6 | 1 tertiary gravel; 2 secondary compacted; 3 primary asphalt; 4 secondary compacted; 5 primary compacted; 6 primary asphalt |
+| C | Iceland, zoom 15 | 5. Dashed fill, full width | **1, 5** | 2, 3, 4, 6 | 1 secondary compacted; 2 primary asphalt; 3 primary asphalt; 4 primary asphalt; 5 primary compacted; 6 primary asphalt |
 | D | Namibia, zoom 16 | 2. Dashed centre line | **1, 3, 4, 5** | 2, 6 | 1 secondary gravel (Off-road); 2 unclassified; 3 unclassified (Off-road); 4 residential; 5 primary gravel; 6 primary asphalt |
 | E | Australia, zoom 15 | 3. Dashed fill | **1, 3, 6** | 2, 4, 5 | 1 secondary gravel; 2 secondary asphalt; 3 unclassified unpaved; 4 secondary asphalt; 5 secondary asphalt; 6 unclassified gravel |
 
 Generated from [labels.json](labels.json); if the pictures are rebuilt, regenerate this table too.
 
-Iceland (C) is at zoom 14, where tertiary and minor roads are under 6 pixels wide and show the plain low-zoom tint instead of the pattern, as on a real map; its primary and secondary roads keep the pattern. Nepal (B) uses a frame 3 km south of its spot centre, found by [find-frame.mjs](find-frame.mjs), because the centre has too few roads at zoom 15.
+All pictures are at zoom 15 or more, so every numbered road shows its style's pattern (below 6 pixels of road width a style becomes a plain tint, which would mix two signals). Nepal (B) uses a frame 3 km south of its spot centre, found by [find-frame.mjs](find-frame.mjs), because the centre has too few roads at zoom 15.
 
 ## How to run it
 
