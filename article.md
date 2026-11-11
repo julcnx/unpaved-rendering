@@ -41,7 +41,7 @@ I classified 20.0 million km of road in 54 countries, from motorways to resident
 
 ## 3. What apps show today
 
-I checked about 30 OSM-based maps and apps: the web maps on the same six roads, each changing from paved to unpaved, and the phone apps by hand. They fall into three groups.
+I checked about 30 OSM-based maps and apps: the web maps on the same six roads, each changing from paved to unpaved, and the phone apps by hand. They fall into three groups. Every app, with what its data carries and where to ask, is in the [App reports](apps/).
 
 1. **They show it and keep the class.** OSM Carto (the default map on openstreetmap.org), Americana and DMD2 draw unpaved roads in their class colour with an added pattern. CyclOSM does it from zoom 14, for cycling. OSM Carto has done this for years: this proposal builds on its approach and asks the other maps to catch up.
 2. **They do not show it, at least not by default.** Organic Maps, Komoot, AllTrails, MapTiler, Mapy.com and many more draw the paved and the unpaved part of the same road as one identical line. OsmAnd can show surfaces, but only with an overlay that is off by default.
@@ -131,7 +131,7 @@ There is no single default: the right style depends on each map's design, and ab
 - **Tracks and paths.** The same paved whitelist applies to them. How to draw them is a separate proposal. It will also cover the very worst roads (`smoothness=very_horrible` or `impassable`, `4wd_only=extreme`), which could be drawn like a path; until then they get the Off-road mark.
 - **Routing.** Routers already use `surface` and `smoothness`. The map should agree with the route.
 - **Google Maps and Apple Maps.** They do not use OpenStreetMap, but they have the same gap.
-- **One request per app.** I will open an issue for each app, adapted to its style and tiles. Progress is tracked on the App reports page.
+- **One request per app.** I will open an issue for each app, adapted to its style and tiles. Progress is tracked in the [App reports](apps/).
 
 ## 9. How to help
 
