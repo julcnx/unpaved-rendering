@@ -127,3 +127,11 @@
 - No Evidence page: the article's "Data and methods" section links to the generated key numbers, the full report, the image review and the classifier on GitHub.
 - Both pages show "Last updated", from the last commit of their Markdown (today when it has uncommitted changes).
 - `research/B-communities.md` (private outreach notes: mapper names and private replies) untracked and ignored; it stays local. Links to it removed from the public files. Still in the public git history until purged.
+
+## 2026-11-11: article review 2
+
+- Section 6: when each style fits; figures interleaved with the text (zoom strip next to "Quiet at low zoom"); the static 2 x 3 grid is off the web page (kept in `article/img/` for the diary and the forum post).
+- How to help: a four-step checklist for map makers, and "What happens next" (forum thread, then one request per app).
+- Honesty: official figures also count rural tracks (part of the OSM gap is definition); Limits now says the styles are untested with readers and not yet in a real app.
+- Numbers in prose rounded; exact values stay in the tables and key-numbers.
+- Link previews: `og:` and `twitter:` tags with `article/img/og.jpg`, the hero captured at 1200 x 630.

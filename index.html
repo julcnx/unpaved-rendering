@@ -6,6 +6,14 @@
 <title>Mind the Surface</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232b2620'/%3E%3Cpath d='M4 16 H14' stroke='%23f5b860' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M19 16 H22 M26 16 H28' stroke='%23f5b860' stroke-width='7'/%3E%3C/svg%3E">
 <meta name="description" content="A proposal for OpenStreetMap-based maps: keep each road's class colour and add one subtle signal for unpaved roads.">
+<!-- Link previews (forum, Facebook, Mastodon): the hero, captured at 1200 x 630 into article/img/og.jpg -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mind the Surface">
+<meta property="og:description" content="A proposal for OpenStreetMap-based maps: keep each road's class colour and add one subtle signal for unpaved roads.">
+<meta property="og:image" content="https://julcnx.github.io/unpaved-rendering/article/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <!-- Page template for article.md (index.html) and apps.md (apps/index.html). Do not edit the built pages: run `npm run build`. -->
 <style>
   :root { --ink: #2b2620; --muted: #6f665b; --paper: #faf8f4; --line: #e4ded4; --asphalt: #3a3a3a; --gravel: #b07a3c; }
@@ -174,17 +182,17 @@
 <p><a href="demo/">Live demo</a> · <a href="apps/">App reports</a> · <a href="#s-data-and-methods">Data and methods</a></p>
 <h2 id="s-1-the-misconception">1. The misconception</h2>
 <p>A red or orange road on a map reads as "a proper road". Most people take that to mean asphalt, and most maps agree with them: when a road has no <code>surface</code> tag it is drawn as paved, and when it does have one, most styles ignore it anyway.</p>
-<p>So the map tells the same story for the C48 in Namibia on both sides of the point where the asphalt stops. A driver in a rental car, a cyclist planning a day, a rider on a road bike, an aid convoy working out how long a trip will take: all of them see one orange line, and only find out on the ground that the next 19 km are gravel.</p>
+<p>So the map tells the same story for the C48 in Namibia on both sides of the point where the asphalt stops. A driver in a rental car, a cyclist planning a day, a motorcyclist on street tyres, an aid convoy working out how long a trip will take: all of them see one orange line, and only find out on the ground that the next 19 km are gravel.</p>
 <p>The data to tell them is already in OpenStreetMap. Mappers have tagged millions of kilometres of road as unpaved. The map just does not show it.</p>
 <h2 id="s-2-how-common-unpaved-main-roads-are">2. How common unpaved main roads are</h2>
 <p>I classified 20.0 million km of road in 54 countries, from motorways to residential streets (tracks and service roads left out).</p>
 <ul>
-<li><strong>At least 26.4% is unpaved.</strong> That counts every road without a <code>surface</code> tag as paved. Among the roads that do have a surface tag, 63.1% are unpaved.</li>
+<li><strong>At least 26.4% is unpaved.</strong> That counts every road without a <code>surface</code> tag as paved. Among the roads that do have a surface tag, 63.1% are unpaved. Motorways are the exception: 41 km out of about 129,000 km.</li>
 <li><strong>Main roads too.</strong> The share of unpaved primary roads is 87% in Gabon, 66% in Namibia, 64% in DR Congo and 58% in Bolivia. For secondary roads it reaches 95% in Namibia and 88% in Mali. In 18 of the 54 countries, more than half of the tertiary roads are unpaved.</li>
-<li><strong>In long distances.</strong> Brazil has 41,896 km of unpaved trunk, primary and secondary roads, Namibia 28,611 km, DR Congo 27,346 km and Australia 26,918 km.</li>
-<li><strong>Not only in Africa or South America.</strong> Iceland, Australia, Chile, New Zealand, Finland and Romania all have large unpaved shares on their secondary, tertiary or unclassified roads, and their data is well tagged, so the numbers are solid. Motorways are the exception: 41 km unpaved out of 128,817 km.</li>
+<li><strong>In absolute length.</strong> Brazil has about 42,000 km of unpaved trunk, primary and secondary roads, Namibia 28,600 km, DR Congo 27,300 km and Australia 26,900 km.</li>
+<li><strong>Not only in Africa or South America.</strong> Iceland, Australia, Chile, New Zealand, Finland and Romania all have large unpaved shares on their secondary, tertiary or unclassified roads, and their data is well tagged, so the numbers are solid.</li>
 </ul>
-<p><strong>These numbers are conservative.</strong> I compared them with the last official road statistics of the CIA World Factbook for 34 countries. In 15 the official unpaved share falls inside the OSM range, in 18 it is higher, in 1 it is lower. Where OSM and official figures disagree, the real world has more unpaved road, not less. And where tagging is weakest (India, Indonesia, Myanmar and Vietnam have no surface on 88 to 91% of their roads), the map looks most paved.</p>
+<p><strong>These numbers are conservative.</strong> I compared them with the last official road statistics of the CIA World Factbook for 34 countries. In 15 the official unpaved share falls inside the OSM range, in 18 it is higher, in 1 it is lower. Where OSM and official figures disagree, the real world has more unpaved road, not less (part of the gap is definition: official figures also count rural tracks that OSM maps as <code>highway=track</code>). And where tagging is weakest (India, Indonesia, Myanmar and Vietnam have no surface on 88 to 91% of their roads), the map looks most paved.</p>
 <p><strong>The tags hold up on the ground.</strong> I checked 55 roads tagged unpaved on street-level imagery: 41 are unpaved, 9 have been paved since (16%), 5 are mixed.</p>
 <figure class="fig heat"><div class="scroll"><table><tr><th></th><th>Trunk</th><th>Primary</th><th>Secondary</th><th>Tertiary</th></tr><tr><th>Gabon</th><td style="background:#b8a38e;color:var(--ink)" title="45% of km unpaved">45%</td><td style="background:#7e5b3b;color:#fff" title="86% of km unpaved">86%</td><td style="background:#7d5a3a;color:#fff" title="87% of km unpaved">87%</td><td style="background:#b29c86;color:var(--ink)" title="49% of km unpaved">49%</td></tr><tr><th>Namibia</th><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td><td style="background:#9a7e63;color:#fff" title="66% of km unpaved">66%</td><td style="background:#724d2a;color:#fff" title="95% of km unpaved">95%</td><td style="background:#795534;color:#fff" title="90% of km unpaved">90%</td></tr><tr><th>DR Congo</th><td style="background:#baa691;color:var(--ink)" title="43% of km unpaved">43%</td><td style="background:#9c8167;color:#fff" title="64% of km unpaved">64%</td><td style="background:#9e846a;color:#fff" title="63% of km unpaved">63%</td><td style="background:#a78e75;color:#fff" title="57% of km unpaved">57%</td></tr><tr><th>Bolivia</th><td style="background:#d8cbbd;color:var(--ink)" title="21% of km unpaved">21%</td><td style="background:#a68c74;color:#fff" title="58% of km unpaved">58%</td><td style="background:#927458;color:#fff" title="72% of km unpaved">72%</td><td style="background:#7a5635;color:#fff" title="89% of km unpaved">89%</td></tr><tr><th>Mali</th><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td><td style="background:#b19a84;color:var(--ink)" title="50% of km unpaved">50%</td><td style="background:#7b5837;color:#fff" title="88% of km unpaved">88%</td><td style="background:#734e2c;color:#fff" title="94% of km unpaved">94%</td></tr><tr><th>Mongolia</th><td style="background:#f4ede4;color:var(--ink)" title="2% of km unpaved">2%</td><td style="background:#c5b4a2;color:var(--ink)" title="35% of km unpaved">35%</td><td style="background:#a38970;color:#fff" title="60% of km unpaved">60%</td><td style="background:#866546;color:#fff" title="81% of km unpaved">81%</td></tr><tr><th>Peru</th><td style="background:#ebe3d7;color:var(--ink)" title="8% of km unpaved">8%</td><td style="background:#beab97;color:var(--ink)" title="40% of km unpaved">40%</td><td style="background:#b7a28d;color:var(--ink)" title="45% of km unpaved">45%</td><td style="background:#ab937b;color:#fff" title="54% of km unpaved">54%</td></tr><tr><th>Kenya</th><td style="background:#d2c3b3;color:var(--ink)" title="26% of km unpaved">26%</td><td style="background:#cfbfae;color:var(--ink)" title="28% of km unpaved">28%</td><td style="background:#b5a08a;color:var(--ink)" title="46% of km unpaved">46%</td><td style="background:#a48a71;color:#fff" title="59% of km unpaved">59%</td></tr><tr><th>Iceland</th><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td><td style="background:#ece4d9;color:var(--ink)" title="7% of km unpaved">7%</td><td style="background:#9c8166;color:#fff" title="65% of km unpaved">65%</td><td style="background:#8c6d50;color:#fff" title="76% of km unpaved">76%</td></tr><tr><th>Australia</th><td style="background:#f4ede4;color:var(--ink)" title="2% of km unpaved">2%</td><td style="background:#e9e0d4;color:var(--ink)" title="9% of km unpaved">9%</td><td style="background:#d5c7b8;color:var(--ink)" title="24% of km unpaved">24%</td><td style="background:#b8a38e;color:var(--ink)" title="45% of km unpaved">45%</td></tr><tr><th>Brazil</th><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td><td style="background:#f3ece3;color:var(--ink)" title="2% of km unpaved">2%</td><td style="background:#d3c5b5;color:var(--ink)" title="25% of km unpaved">25%</td><td style="background:#9f846b;color:#fff" title="62% of km unpaved">62%</td></tr><tr class="base"><th>Denmark</th><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td><td style="background:#f6f0e7;color:var(--ink)" title="0% of km unpaved">0%</td></tr></table></div><figcaption>Share of road length tagged unpaved, by road class. Roads without a surface tag count as paved, so these are minimums. Denmark for comparison. Source: OpenStreetMap, November 2026.</figcaption></figure>
 
@@ -212,7 +220,7 @@
 <tbody>
 <tr>
 <td><strong>Paved</strong></td>
-<td><code>surface</code> is a paved value, or there is no <code>surface</code> and <code>tracktype=grade1</code>, or there is no tag at all on a road</td>
+<td><code>surface</code> is a paved value, or there is no <code>surface</code> and <code>tracktype=grade1</code>, or neither <code>surface</code> nor <code>tracktype</code></td>
 </tr>
 <tr>
 <td><strong>Unpaved</strong></td>
@@ -221,7 +229,7 @@
 </tbody>
 </table>
 <p>The paved values are a whitelist: <code>paved</code>, <code>asphalt</code>, <code>chipseal</code>, <code>concrete</code>, <code>concrete:plates</code>, <code>paving_stones</code>, <code>sett</code>, <code>bricks</code>, <code>metal</code>, <code>cobblestone</code> and <code>cobblestone:flattened</code>. <code>wood</code>, <code>concrete:lanes</code> and <code>grass_paver</code> count as paved only when <code>smoothness</code> is <code>bad</code> or better. A value with several parts (<code>asphalt;gravel</code>) is unpaved if any part is.</p>
-<p><strong>Why a whitelist.</strong> Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. OSM Carto, for example, does not list <code>surface=laterite</code>, a common material in Africa and Asia, so 1,314 km of laterite main roads are drawn as paved. With a whitelist, such a value is drawn as unpaved, which is the safer mistake.</p>
+<p><strong>Why a whitelist.</strong> Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. OSM Carto, for example, does not list <code>surface=laterite</code>, a common material in Africa and Asia, so about 1,300 km of laterite main roads are drawn as paved. With a whitelist, such a value is drawn as unpaved, which is the safer mistake.</p>
 <p><strong>Why only two levels.</strong> Three quarters of all unpaved km (75.5%) are tagged simply <code>surface=unpaved</code>. On the ground that can mean a smooth graded road or a rough track; the photos confirm both. Any finer split on the map would mostly be a guess. Routers, which see the whole route and how much of it is unpaved, are better placed to judge how hard a trip is.</p>
 <p><strong>Unpaved does not mean bad.</strong> A graded gravel road in Finland or Namibia is fine for any car when it is dry. The map says what the surface is; the reader decides what that means for their vehicle and the season.</p>
 <p><strong>Untagged roads stay paved.</strong> The proposal only draws what mappers have tagged, and asks no one to change a tag.</p>
@@ -292,6 +300,16 @@
 <li><strong>Quiet at low zoom.</strong> On thin roads patterns blur, so below about 6 pixels of road width a plain tint of the class colour takes over.</li>
 <li><strong>For every reader, on every map.</strong> Colours are tuned per class on white, forest, sand, hillshade and dark backgrounds, and checked for colour blindness.</li>
 </ul>
+<figure class="fig wide zoom"><div class="row"><figure><img src="article/img/zoom-13.jpg" alt="Style 3 at zoom 13" loading="lazy"><figcaption>Zoom 13</figcaption></figure><figure><img src="article/img/zoom-14.jpg" alt="Style 3 at zoom 14" loading="lazy"><figcaption>Zoom 14</figcaption></figure><figure><img src="article/img/zoom-16.jpg" alt="Style 3 at zoom 16" loading="lazy"><figcaption>Zoom 16</figcaption></figure></div><figcaption>Style 3 from overview to detail, at Namutoni. At zoom 13 the road is under 6 pixels wide, so unpaved shows as a plain, darker tint; from zoom 14 the dashes take over. © OpenStreetMap contributors.</figcaption></figure>
+
+<p>Following these principles, I designed five styles, from faint to strong. Each fits some maps better than others:</p>
+<ol>
+<li><strong>Grain fill</strong>: a fine grain inside the road fill. The approach of OSM Carto, and the most subtle. For maps that can draw fill patterns; it needs a road wide enough to show the grain.</li>
+<li><strong>Dashed centre line</strong>: a thin dashed line along the middle of the road. For vector styles where fill patterns are hard to draw, and for maps with nothing else in the middle of the road (OSM Carto puts access restrictions there).</li>
+<li><strong>Dashed fill</strong>: dashes in a band along the middle of the fill. A calmer version of style 5, for maps with many minor roads.</li>
+<li><strong>Dashed casing</strong>: the outline is dashed, the fill stays continuous, so the road stays one line. Not for maps that draw tunnels with a dashed outline.</li>
+<li><strong>Dashed fill, full width</strong>: dashes across the whole road, as Americana does. The strongest, and loud in towns, so best where minor roads are few.</li>
+</ol>
 <figure class="fig wide"><div class="slider">
 <img src="article/img/slider-proposed.jpg" alt="Proposed: unpaved roads keep their class colour and get a dashed outline">
 <img class="top" src="article/img/slider-today.jpg" alt="Today: every road drawn as paved">
@@ -301,44 +319,35 @@
 <input type="range" min="0" max="100" value="50" aria-label="Drag to compare today and proposed">
 </div><figcaption>Drag to compare. Namibia, C38 at Namutoni (Etosha). Left: every road drawn as paved, as most maps do today. Right: the same map with style 4, a dashed outline on unpaved roads; the class colours stay.</figcaption></figure>
 
-<p>Following these principles, I designed five styles, from faint to strong:</p>
-<ol>
-<li><strong>Grain fill</strong>: a fine grain inside the road fill. This is the approach of OSM Carto, and the most subtle.</li>
-<li><strong>Dashed centre line</strong>: a thin dashed line along the middle of the road. Not meant for OSM Carto, which already uses the middle of the road for access restrictions, but a good fit for maps where fill patterns are hard to draw.</li>
-<li><strong>Dashed fill</strong>: dashes in a band along the middle of the fill.</li>
-<li><strong>Dashed casing</strong>: the outline is dashed, the fill stays continuous.</li>
-<li><strong>Dashed fill, full width</strong>: dashes across the whole road, as Americana does.</li>
-</ol>
 <p>There is no single default: the right style depends on each map's design, and above all on how it already draws tracks, tunnels and construction. The <strong>Off-road</strong> mark uses the same pattern, only darker. The legend needs two short words: <strong>Unpaved</strong> and <strong>Off-road</strong>.</p>
 <figure class="fig wide junction"><div class="scroll"><img src="article/img/junction.jpg" alt="Each class colour going Paved, Unpaved, then Off-road, in the five styles" loading="lazy"></div><figcaption>The four class colours in the five styles. Each road goes Paved, Unpaved (the S-bend), then Off-road; the side road is a white Unpaved road. Source: research/mockups.</figcaption></figure>
 
+<p>The demo below draws the five styles on real data, at any of the sample spots or anywhere else.</p>
 <figure class="fig wide">
 <iframe class="demo" src="demo/?embed=1&amp;spot=namibia&amp;style=dashed-casing&amp;bg=terrain&amp;z=16&amp;lat=-18.81068&amp;lon=16.9375" loading="lazy" title="Live demo: the five styles"></iframe>
 <figcaption>Live demo with real OpenStreetMap data. Switch between the five styles; pick a background at the bottom right. <a href="demo/?spot=namibia">Open the full demo</a>, with search and every sample spot.</figcaption></figure>
-
-<figure class="fig wide"><picture><source media="(max-width: 760px)" srcset="article/img/styles-grid-portrait.jpg"><img src="article/img/styles-grid.jpg" alt="The five styles and No style, side by side, at Namutoni" loading="lazy"></picture><figcaption>The five styles and the same map with no surface signal, at Namutoni (demo, hillshade, zoom 16).</figcaption></figure>
-
-<figure class="fig wide zoom"><div class="row"><figure><img src="article/img/zoom-13.jpg" alt="Style 3 at zoom 13" loading="lazy"><figcaption>Zoom 13</figcaption></figure><figure><img src="article/img/zoom-14.jpg" alt="Style 3 at zoom 14" loading="lazy"><figcaption>Zoom 14</figcaption></figure><figure><img src="article/img/zoom-16.jpg" alt="Style 3 at zoom 16" loading="lazy"><figcaption>Zoom 16</figcaption></figure></div><figcaption>Style 3 from overview to detail, at Namutoni. At zoom 13 the road is under 6 pixels wide, so unpaved shows as a plain, darker tint; from zoom 14 the dashes take over. © OpenStreetMap contributors.</figcaption></figure>
 
 <h2 id="s-7-limits">7. Limits</h2>
 <ul>
 <li><strong>Tile data.</strong> A style can only draw what its tiles carry. OpenMapTiles, used by Americana, MapTiler, Stadia and OpenFreeMap, has no surface below zoom 12, so these maps cannot show unpaved roads in an overview, whatever the style says. Protomaps has no surface at all. Shortbread, OsmAnd and Organic Maps already carry it, so for them it is a style change only.</li>
 <li><strong>The data.</strong> Roads without a surface tag are drawn as paved, and some unpaved tags are out of date (16% in the photo check). <code>surface=unpaved</code> says nothing about how rough a road is.</li>
+<li><strong>The styles.</strong> They exist as mockups and a demo, not yet in a real app at scale, and whether they read without a legend has not been tested with readers.</li>
 </ul>
 <h2 id="s-8-future-work">8. Future work</h2>
 <ul>
 <li><strong>Tracks and paths.</strong> The same paved whitelist applies to them. How to draw them is a separate proposal. It will also cover the very worst roads (<code>smoothness=very_horrible</code> or <code>impassable</code>, <code>4wd_only=extreme</code>), which could be drawn like a path; until then they get the Off-road mark.</li>
-<li><strong>Routing.</strong> Routers already use <code>surface</code> and <code>smoothness</code>. The map should agree with the route.</li>
+<li><strong>Routing.</strong> Routers already use <code>surface</code> and <code>smoothness</code>, and avoid unpaved roads when asked to. On a map that shows no surface, the detour they take looks inexplicable. The map should agree with the route.</li>
 <li><strong>Google Maps and Apple Maps</strong> have the same gap, but they do not use OpenStreetMap data, so they are outside this proposal.</li>
 <li><strong>One request per app.</strong> I will open an issue for each app, adapted to its style and tiles. Progress is tracked in the <a href="apps/">App reports</a>.</li>
 </ul>
 <h2 id="s-9-how-to-help">9. How to help</h2>
 <ul>
 <li><strong>Mappers:</strong> add <code>surface</code> to main roads, fix tags that are out of date, and add <code>smoothness</code> where a road really is rough. Tag what is on the ground, not what makes a map look right: the map should follow the tags, never the other way round.</li>
-<li><strong>Map and app makers:</strong> pick a style, switch to a paved whitelist, and tell me what does not fit your map.</li>
+<li><strong>Map and app makers:</strong> four steps. Classify with a paved whitelist. Pick the style that stays distinct from your tracks and tunnels. Keep the class colour. Add two words to the legend, Unpaved and Off-road. Then tell me what does not fit your map.</li>
 <li><strong>Map users:</strong> find your app in the <a href="apps/">App reports</a> and ask for it through its channel; once a request is open, support it there.</li>
 <li><strong>Everyone:</strong> corrections and feedback are welcome as a <a href="https://github.com/julcnx/unpaved-rendering/issues">GitHub issue</a>.</li>
 </ul>
+<p><strong>What happens next.</strong> A thread on the OpenStreetMap community forum to collect feedback on the styles, then one request per app, starting with the open-source ones. The <a href="apps/">App reports</a> will show where each stands.</p>
 <h2 id="s-questions">Questions</h2>
 <h3>Isn't rendering up to each map maker?</h3>
 <p>Yes, and it stays that way. This changes no tag and sets no rule: it is a feature request, with styles each map can use or ignore.</p>
