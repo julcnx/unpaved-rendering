@@ -46,6 +46,7 @@ function grain(ctx, bg, dot, scale, shift = [0, 0]) {
     g.fill(new Path2D(GRAIN_D));
     const p = ctx.createPattern(c, 'repeat');
     p.setTransform(new DOMMatrix().translate(...shift).scale(scale));
+    p.grain = { shift, scale }; // the map re-anchors the pattern to map coordinates on every frame (map.js)
     grainCache.set(key, p);
   }
   return grainCache.get(key);

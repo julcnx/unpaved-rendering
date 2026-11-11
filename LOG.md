@@ -103,3 +103,10 @@
 - Article "What the proposal looks like": a slider at Namibia C38 (Namutoni), hillshade, z16, `--center -18.81068,16.9329` (moved west so the unpaved C38 and D3646 cross the middle of the frame), No style vs style 4. The Komoot hero stays the problem picture: a proposal drawn by the demo next to Komoot did not match (other width, background, labels).
 - Embed mode is now one large map: only the five style chips (no "No style": the slider above it already shows today vs proposed; no "All"), no key hints, the `0` and `A` keys do nothing; all five backgrounds stay. The all-styles grid stays in the full demo and becomes a static 2 x 3 image in the article.
 - Fix: a hillshade shot had a blank block (one elevation tile still loading after the fixed 3 s wait). The map now counts loading tiles (`window.terrainPending`) and `scripts/shots.mjs` waits for 0 on the terrain background. Namibia slider pair re-shot.
+
+## 2026-11-11: zoom without crawling patterns, C48 still unpaved
+
+- Demo: during a zoom gesture the dashes (roads and tracks) and the grain scale with the map from the zoom where the gesture started, so they no longer crawl along the roads; 300 ms after the last wheel step they are redrawn at their normal size. The grain is also anchored to map coordinates instead of the canvas corner, so it no longer swims under the roads when panning. Checked with headless Chrome: a frame taken mid-zoom matches the start frame enlarged (dashes in place; only the road width differs, by design).
+- Tests: the right command is `node --test test/classify.test.js` (67 pass); `node --test test/` fails to start, which an earlier check missed.
+- C48 hero: Google Street View, June 2024, shows the asphalt still ending at the same point and the road unpaved beyond it. The hero credit is dated (photos 2019, map November 2026).
+- Article: "I" instead of "we", byline julcnx, section 6 starts from design principles, explicit answers to "tagging for the renderer", "Carto already does this" and "unpaved is fine in Finland".

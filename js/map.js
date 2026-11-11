@@ -79,6 +79,9 @@ export class MapView {
 
   // Zoom keeping the point under the cursor fixed.
   zoomAt(px, py, dz) {
+    // During a zoom gesture, dashes and grain scale with the map from the zoom where it started (zoomBase), so they do not
+    // crawl along the roads; 300 ms after the last step they are redrawn at their normal size.
+    this.zoomBase ??= this.view.z;
     const z = Math.min(18, Math.max(8, this.view.z + dz));
     const s0 = TILE * 2 ** this.view.z, s1 = TILE * 2 ** z;
     // Each grid cell centres the view on its own centre: measure from the centre of the cell under the cursor.
@@ -89,7 +92,7 @@ export class MapView {
     this.view.z = z;
     this.redraw();
     clearTimeout(this.zoomTimer);
-    this.zoomTimer = setTimeout(() => this.onChange?.(), 300);
+    this.zoomTimer = setTimeout(() => { this.zoomBase = null; this.redraw(); this.onChange?.(); }, 300);
   }
 
   redraw() {
@@ -150,13 +153,16 @@ export class MapView {
     };
 
     // Tracks and paths under the roads, with a light halo like OSM Carto.
-    const zf = Math.max(0.6, 2 ** (0.35 * (z - 15)));
+    // k: how much the map has grown since a zoom gesture started (1 when not zooming); patterns scale with it.
+    const zb = this.zoomBase ?? z, k = 2 ** (z - zb);
+    const zfAt = (zz) => Math.max(0.6, 2 ** (0.35 * (zz - 15)));
+    const zf = zfAt(z), zfDash = zfAt(zb) * k;
     for (const f of all) {
       const t = TRACKS[f.tags.highway];
       if (!t) continue;
       path(f);
       stroke(bg.dark ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.6)', (t.width + 2) * zf);
-      stroke(bg.dark ? t.dark : t.color, t.width * zf, t.dash.map((d) => d * zf), 'butt');
+      stroke(bg.dark ? t.dark : t.color, t.width * zf, t.dash.map((d) => d * zfDash), 'butt');
     }
 
     // Roads: casings, then fills by rank, then overlays.
@@ -165,8 +171,25 @@ export class MapView {
       const info = roadInfo(f.tags.highway);
       if (!info) return null;
       const c = pal[info[0]], w = widthAt(info[1], z);
-      return { f, c, w, rank: RANK.indexOf(f.tags.highway.replace(/_link$/, '')), d: style.draw(f.level, c, w, pal.brown, ctx) };
+      const d = style.draw(f.level, c, w, pal.brown, ctx);
+      // While zooming: the dash lengths of the start zoom, scaled with the map (same layers only; at the low-zoom
+      // threshold the layers differ and the current ones are kept).
+      if (k !== 1) {
+        const d0 = style.draw(f.level, c, widthAt(info[1], zb), pal.brown, ctx);
+        const fix = (a, b) => (a?.dash && b?.dash ? { ...a, dash: b.dash.map((x) => x * k) } : a);
+        d.casing = fix(d.casing, d0.casing); d.fill = fix(d.fill, d0.fill);
+        if (d.over && d0.over?.length === d.over.length) d.over = d.over.map((o, i) => fix(o, d0.over[i]));
+      }
+      return { f, c, w, rank: RANK.indexOf(f.tags.highway.replace(/_link$/, '')), d };
     }).filter(Boolean).sort((a, b) => a.rank - b.rank);
+    // Grain: anchor the pattern to map coordinates (not to the canvas corner), so it moves with the roads when panning and zooming.
+    for (const r of roads) for (const l of [r.d.fill, r.d.casing, ...(r.d.over ?? [])]) {
+      const g = l?.color?.grain;
+      if (!g) continue;
+      const sc = g.scale * k, period = 64 * sc;
+      const tx = ((ox % period) + period) % period, ty = ((oy % period) + period) % period;
+      l.color.setTransform(new DOMMatrix().translate(tx + g.shift[0] * k, ty + g.shift[1] * k).scale(sc));
+    }
     for (const r of roads) { path(r.f); stroke(r.d.casing?.color ?? r.c.casing, r.w + Math.max(1, r.w * 0.3), r.d.casing?.dash, r.d.casing?.cap); }
     for (const r of roads) { path(r.f); stroke(r.d.fill?.color ?? r.c.fill, r.w, r.d.fill?.dash, r.d.fill?.cap); }
     for (const r of roads) for (const o of r.d.over ?? []) { path(r.f); stroke(o.color, o.width, o.dash, o.cap ?? 'round'); }
