@@ -189,7 +189,7 @@ The numbers come from OpenStreetMap extracts of 54 countries (November 2026), cl
 
 ## Credits
 
-- Christoph Hormann (imagico), who designed the unpaved grain of OSM Carto and wrote about road styling in OSM maps.
-- Lukas Sommer (Sommerluk), for the fill pattern of OSM Carto (PR 3399).
-- The mappers and survey respondents of the `surface=laterite` discussion.
-- Map data © OpenStreetMap contributors (ODbL). Official road statistics: CIA World Factbook (public domain). Street-level photos: Mapillary contributors (CC BY-SA 4.0), credited with each photo.
+- Christoph Hormann (imagico), who designed the unpaved grain of OSM Carto and [wrote about road styling](https://imagico.de/blog/en/navigating-the-maze-part-2/) in OSM maps.
+- Lukas Sommer (Sommerluk), for the fill pattern of OSM Carto ([PR 3399](https://github.com/openstreetmap-carto/openstreetmap-carto/pull/3399)).
+- The mappers and survey respondents of the [`surface=laterite` discussion](https://wiki.openstreetmap.org/wiki/Proposal:Surface%3Dlaterite).
+- Map data [© OpenStreetMap contributors](https://www.openstreetmap.org/copyright) (ODbL). Official road statistics: CIA World Factbook, last edition with road data, via [factbook.json](https://github.com/factbook/factbook.json) (public domain). Street-level photos: [Mapillary](https://www.mapillary.com/) contributors ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)), credited with each photo.
