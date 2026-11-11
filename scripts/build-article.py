@@ -38,7 +38,7 @@ def heat_table():
 PHOTOS = [('na-w240603923-2', 'Namibia', 'C39', 'primary'), ('ma-w475929890-2', 'Morocco', 'RN23', 'primary'),
           ('cg-w338830884-3', 'Congo-Brazzaville', 'P45', 'secondary'), ('ug-w27567283-0', 'Uganda', '', 'secondary'),
           ('om-w241714242-2', 'Oman', '', 'secondary'), ('kg-w1422780378-1', 'Kyrgyzstan', 'M-067', 'secondary'),
-          ('ge-w81287807-0', 'Georgia', 'Sh10', 'secondary'), ('fi-w113796504-0', 'Finland', '522', 'secondary'),
+          ('ge-w81287807-2', 'Georgia', 'Sh10', 'secondary'), ('fi-w113796504-0', 'Finland', '522', 'secondary'),
           ('au-w313519144-1', 'Australia', 'Gibb River Road', 'secondary'), ('bo-w122604957-1', 'Bolivia', 'F34', 'secondary'),
           ('mx-w41680341-0', 'Mexico', 'QR 15', 'secondary'), ('gt-w293378392-0', 'Guatemala', 'RD PET-06', 'secondary')]
 

@@ -62,7 +62,7 @@ Under the two-level model the question is only: is the road really Unpaved?
 | 35 | Finland 522 ([w113796504](https://www.openstreetmap.org/way/113796504)) | secondary, `compacted` | Smooth gravel forest road | **Unpaved, confirmed**, car-drivable (Western example) |
 | 36 | Finland 522 ([w22733235](https://www.openstreetmap.org/way/22733235)) | secondary, `compacted` | **Asphalt** | **Tag out of date**: paved now |
 | 37 | Georgia Sh1 ([w111431030](https://www.openstreetmap.org/way/111431030)) | primary, `gravel` | Rough gravel mountain road | **Unpaved, confirmed** |
-| 38 | Georgia Sh10 ([w81287807](https://www.openstreetmap.org/way/81287807)) | secondary, `gravel` | Stony track with deep puddles | **Unpaved, confirmed**, off-road-like (no mark) |
+| 38 | Georgia Sh10 ([w81287807](https://www.openstreetmap.org/way/81287807)) | secondary, `gravel` | Stony track with deep puddles; the first frame (`-0`) looks like broken concrete (Julien, 2026-11-11), so part of the way may be old concrete | **Unpaved, confirmed**, off-road-like (no mark); article photo is frame `-2` |
 | 39 | Guatemala RD PET-06 ([w293378392](https://www.openstreetmap.org/way/293378392)) | secondary, `unpaved` | White compacted gravel through villages | **Unpaved, confirmed** |
 | 40 | Kyrgyzstan M-067 ([w1422780378](https://www.openstreetmap.org/way/1422780378)) | secondary, `gravel` | Gravel highway in a mountain valley | **Unpaved, confirmed** |
 | 41 | Morocco RN23 ([w475929890](https://www.openstreetmap.org/way/475929890)) | primary, `gravel` | Gravel mountain road, works in progress | **Unpaved, confirmed** |
