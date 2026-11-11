@@ -140,4 +140,4 @@
 
 - Article: a short box for map makers under the opening (what to change, what it costs, where to start); the checklist and Data and methods link the Lua (osm2pgsql flex, tilemaker), SQL and JavaScript classifiers. The Lua port passes the 67 shared test cases (`node --test classifier/classify.test.ts classifier/ports.test.ts` in research/, luajit); the SQL test needs a database.
 - App reports: "Where the classifier goes", per open-source map.
-- `research/reader-test/`: three pictures of Namutoni (styles 4, 1, 3 as A, B, C), no legend, six roads numbered (unpaved: 1, 3, 5); post text, answer key and scoring. Result to go into section 6 and Limits.
+- `research/reader-test/`: six pictures (A to F), each a different place in one style, plus a control with no surface signal; white background, no legend, five or six roads numbered, two to four unpaved per picture (the first version, one map in three styles, let readers carry answers over). Roads picked by `pick-roads.mjs` (clear of other lines, apart from each other); answer key from `labels.json`. Alberta replaced by Pai (one main road in its frame). Result to go into section 6 and Limits.

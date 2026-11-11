@@ -1,0 +1,511 @@
+{
+ "namibia": {
+  "zoom": 16,
+  "center": [
+   -18.81068,
+   16.9329
+  ],
+  "roads": [
+   {
+    "x": 567,
+    "y": 159,
+    "clear": 57,
+    "highway": "secondary",
+    "surface": "gravel",
+    "ref": "D3646",
+    "level": "offroad",
+    "unpaved": true,
+    "dx": 0,
+    "dy": -44,
+    "n": 1
+   },
+   {
+    "x": 1252,
+    "y": 240,
+    "clear": 28,
+    "highway": "unclassified",
+    "surface": null,
+    "ref": null,
+    "level": "paved",
+    "unpaved": false,
+    "dx": 31,
+    "dy": 31,
+    "n": 2
+   },
+   {
+    "x": 927,
+    "y": 400,
+    "clear": 74,
+    "highway": "unclassified",
+    "surface": null,
+    "ref": null,
+    "level": "offroad",
+    "unpaved": true,
+    "dx": 31,
+    "dy": 31,
+    "n": 3
+   },
+   {
+    "x": 1371,
+    "y": 460,
+    "clear": 43,
+    "highway": "residential",
+    "surface": null,
+    "ref": null,
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": -31,
+    "dy": -31,
+    "n": 4
+   },
+   {
+    "x": 913,
+    "y": 571,
+    "clear": 111,
+    "highway": "primary",
+    "surface": "gravel",
+    "ref": "C38",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": -31,
+    "dy": -31,
+    "n": 5
+   },
+   {
+    "x": 1338,
+    "y": 706,
+    "clear": 99,
+    "highway": "primary",
+    "surface": "asphalt",
+    "ref": "C38",
+    "level": "paved",
+    "unpaved": false,
+    "dx": -31,
+    "dy": 31,
+    "n": 6
+   }
+  ]
+ },
+ "bolivia": {
+  "zoom": 15,
+  "center": [
+   -14.87824,
+   -64.99758
+  ],
+  "roads": [
+   {
+    "x": 1209,
+    "y": 153,
+    "clear": 117,
+    "highway": "tertiary",
+    "surface": "unpaved",
+    "ref": "Camino Puerto Almacén-Mangalito del Río",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": 0,
+    "dy": 44,
+    "n": 1
+   },
+   {
+    "x": 1399,
+    "y": 237,
+    "clear": 45,
+    "highway": "trunk",
+    "surface": "asphalt",
+    "ref": "F3",
+    "level": "paved",
+    "unpaved": false,
+    "dx": 31,
+    "dy": 31,
+    "n": 2
+   },
+   {
+    "x": 1118,
+    "y": 271,
+    "clear": 138,
+    "highway": "trunk",
+    "surface": "asphalt",
+    "ref": "F3",
+    "level": "paved",
+    "unpaved": false,
+    "dx": -31,
+    "dy": -31,
+    "n": 3
+   },
+   {
+    "x": 223,
+    "y": 316,
+    "clear": 163,
+    "highway": "trunk",
+    "surface": "compacted",
+    "ref": "F3",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": 31,
+    "dy": -31,
+    "n": 4
+   },
+   {
+    "x": 725,
+    "y": 493,
+    "clear": 28,
+    "highway": "unclassified",
+    "surface": "ground",
+    "ref": null,
+    "level": "offroad",
+    "unpaved": true,
+    "dx": 0,
+    "dy": 44,
+    "n": 5
+   },
+   {
+    "x": 1140,
+    "y": 614,
+    "clear": 169,
+    "highway": "tertiary",
+    "surface": "ground",
+    "ref": "Camino Puerto Barador-Puerto Geralda",
+    "level": "offroad",
+    "unpaved": true,
+    "dx": -44,
+    "dy": 0,
+    "n": 6
+   }
+  ]
+ },
+ "nepal": {
+  "zoom": 14,
+  "center": [
+   28.80567,
+   83.76673
+  ],
+  "roads": [
+   {
+    "x": 973,
+    "y": 153,
+    "clear": 21,
+    "highway": "tertiary",
+    "surface": "asphalt",
+    "ref": null,
+    "level": "paved",
+    "unpaved": false,
+    "dx": -31,
+    "dy": -31,
+    "n": 1
+   },
+   {
+    "x": 610,
+    "y": 208,
+    "clear": 20,
+    "highway": "unclassified",
+    "surface": "dirt",
+    "ref": null,
+    "level": "offroad",
+    "unpaved": true,
+    "dx": 0,
+    "dy": 44,
+    "n": 2
+   },
+   {
+    "x": 1390,
+    "y": 214,
+    "clear": 121,
+    "highway": "primary",
+    "surface": null,
+    "ref": "F166",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": 0,
+    "dy": -44,
+    "n": 3
+   },
+   {
+    "x": 828,
+    "y": 377,
+    "clear": 57,
+    "highway": "primary",
+    "surface": "asphalt",
+    "ref": "NH48",
+    "level": "paved",
+    "unpaved": false,
+    "dx": -44,
+    "dy": 0,
+    "n": 4
+   },
+   {
+    "x": 341,
+    "y": 743,
+    "clear": 21,
+    "highway": "primary",
+    "surface": "concrete",
+    "ref": "NH48",
+    "level": "paved",
+    "unpaved": false,
+    "dx": -31,
+    "dy": -31,
+    "n": 5
+   }
+  ]
+ },
+ "iceland": {
+  "zoom": 14,
+  "center": [
+   64.99903,
+   -22.7612
+  ],
+  "roads": [
+   {
+    "x": 925,
+    "y": 142,
+    "clear": 58,
+    "highway": "tertiary",
+    "surface": "gravel",
+    "ref": "5770",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": 0,
+    "dy": 44,
+    "n": 1
+   },
+   {
+    "x": 456,
+    "y": 213,
+    "clear": 217,
+    "highway": "secondary",
+    "surface": "compacted",
+    "ref": "577",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": -31,
+    "dy": 31,
+    "n": 2
+   },
+   {
+    "x": 847,
+    "y": 358,
+    "clear": 103,
+    "highway": "primary",
+    "surface": "asphalt",
+    "ref": "58",
+    "level": "paved",
+    "unpaved": false,
+    "dx": 44,
+    "dy": 0,
+    "n": 3
+   },
+   {
+    "x": 675,
+    "y": 459,
+    "clear": 57,
+    "highway": "secondary",
+    "surface": "compacted",
+    "ref": "577",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": -31,
+    "dy": 31,
+    "n": 4
+   },
+   {
+    "x": 1087,
+    "y": 521,
+    "clear": 174,
+    "highway": "primary",
+    "surface": "compacted",
+    "ref": "54",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": 31,
+    "dy": 31,
+    "n": 5
+   },
+   {
+    "x": 609,
+    "y": 643,
+    "clear": 109,
+    "highway": "primary",
+    "surface": "asphalt",
+    "ref": "54",
+    "level": "paved",
+    "unpaved": false,
+    "dx": -31,
+    "dy": -31,
+    "n": 6
+   }
+  ]
+ },
+ "australia": {
+  "zoom": 15,
+  "center": [
+   -17.15373,
+   144.51059
+  ],
+  "roads": [
+   {
+    "x": 283,
+    "y": 381,
+    "clear": 122,
+    "highway": "secondary",
+    "surface": "gravel",
+    "ref": "27",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": 0,
+    "dy": -44,
+    "n": 1
+   },
+   {
+    "x": 999,
+    "y": 423,
+    "clear": 35,
+    "highway": "secondary",
+    "surface": "asphalt",
+    "ref": "27",
+    "level": "paved",
+    "unpaved": false,
+    "dx": 0,
+    "dy": -44,
+    "n": 2
+   },
+   {
+    "x": 622,
+    "y": 484,
+    "clear": 44,
+    "highway": "unclassified",
+    "surface": "unpaved",
+    "ref": null,
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": -44,
+    "dy": 0,
+    "n": 3
+   },
+   {
+    "x": 1139,
+    "y": 505,
+    "clear": 26,
+    "highway": "secondary",
+    "surface": "asphalt",
+    "ref": "27",
+    "level": "paved",
+    "unpaved": false,
+    "dx": -31,
+    "dy": 31,
+    "n": 4
+   },
+   {
+    "x": 1197,
+    "y": 658,
+    "clear": 57,
+    "highway": "secondary",
+    "surface": "asphalt",
+    "ref": "27",
+    "level": "paved",
+    "unpaved": false,
+    "dx": -44,
+    "dy": 0,
+    "n": 5
+   },
+   {
+    "x": 655,
+    "y": 746,
+    "clear": 172,
+    "highway": "unclassified",
+    "surface": "gravel",
+    "ref": "Bolwarra Station Road",
+    "level": "unpaved",
+    "unpaved": true,
+    "dx": -44,
+    "dy": 0,
+    "n": 6
+   }
+  ]
+ },
+ "pai": {
+  "zoom": 14,
+  "center": [
+   19.540403,
+   98.548539
+  ],
+  "roads": [
+   {
+    "x": 464,
+    "y": 156,
+    "clear": 37,
+    "highway": "tertiary",
+    "surface": "concrete",
+    "ref": "มส.6014",
+    "level": "paved",
+    "unpaved": false,
+    "dx": 44,
+    "dy": 0,
+    "n": 1
+   },
+   {
+    "x": 946,
+    "y": 353,
+    "clear": 341,
+    "highway": "tertiary",
+    "surface": "unpaved",
+    "ref": "มส.4014",
+    "level": "offroad",
+    "unpaved": true,
+    "dx": 0,
+    "dy": -44,
+    "n": 2
+   },
+   {
+    "x": 501,
+    "y": 365,
+    "clear": 91,
+    "highway": "tertiary",
+    "surface": "unpaved",
+    "ref": "มส.6014",
+    "level": "offroad",
+    "unpaved": true,
+    "dx": 44,
+    "dy": 0,
+    "n": 3
+   },
+   {
+    "x": 187,
+    "y": 491,
+    "clear": 57,
+    "highway": "unclassified",
+    "surface": "paved",
+    "ref": null,
+    "level": "paved",
+    "unpaved": false,
+    "dx": 44,
+    "dy": 0,
+    "n": 4
+   },
+   {
+    "x": 534,
+    "y": 508,
+    "clear": 51,
+    "highway": "tertiary",
+    "surface": "unpaved",
+    "ref": "มส.6014",
+    "level": "offroad",
+    "unpaved": true,
+    "dx": -31,
+    "dy": 31,
+    "n": 5
+   },
+   {
+    "x": 204,
+    "y": 754,
+    "clear": 21,
+    "highway": "unclassified",
+    "surface": "unpaved",
+    "ref": null,
+    "level": "offroad",
+    "unpaved": true,
+    "dx": 31,
+    "dy": -31,
+    "n": 6
+   }
+  ]
+ }
+}
