@@ -1,8 +1,8 @@
-# Reader test pictures: six spots, five styles plus a control with no surface signal, no legend, roads numbered.
+# Reader test pictures: five places, one style each, no legend, roads numbered.
 # Usage, from the repo root (served on :8765 for the shots):
 #   node research/reader-test/pick-roads.mjs        -> labels.json (roads, positions, answer key)
 #   render the shots: see README.md, "Rebuild"
-#   python3 research/reader-test/make-images.py     -> picture-A.jpg ... picture-F.jpg
+#   python3 research/reader-test/make-images.py     -> picture-A.jpg ... picture-E.jpg
 import json
 from pathlib import Path
 
@@ -10,10 +10,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-# Picture order mixes spots and styles: the control is not first, and neighbours do not share a pattern family.
+# Picture order mixes places and styles, and neighbours do not share a pattern family.
 # White background for all: equal conditions, and no hillshade noise in the mountain spots.
-PICTURES = {'A': ('bolivia', 'dashed-casing'), 'B': ('pai', 'none'), 'C': ('nepal', 'grain'),
-            'D': ('iceland', 'dashed-fill-full'), 'E': ('namibia', 'centre-line'), 'F': ('australia', 'dashed-fill')}
+PICTURES = {'A': ('bolivia', 'dashed-casing'), 'B': ('nepal', 'grain'), 'C': ('iceland', 'dashed-fill-full'),
+            'D': ('namibia', 'centre-line'), 'E': ('australia', 'dashed-fill')}
 FONT = ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc', 22)
 BIG = ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc', 34)
 BLUE = '#1d4ed8'

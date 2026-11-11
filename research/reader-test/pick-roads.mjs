@@ -8,12 +8,12 @@ import { classify } from '../../js/classify.js';
 import { SPOTS } from '../../js/spots.js';
 
 const W = 1600, H = 900, MARGIN = 140, MIN_CLEAR = 18, MIN_APART = 140;
-// Alberta replaced by Pai: one main road in its frame. Nepal, Iceland and Pai are sparse at 15, so 14: there minor and
-// tertiary roads are under 6 px and get the plain tint, but primary and secondary keep the pattern. Pai is the control
-// (no style), so it needs no pattern; the styled pictures are spots whose labelled main roads show their style.
-export const ZOOM = { namibia: 16, bolivia: 15, nepal: 14, iceland: 14, australia: 15, pai: 14 };
+// Five places, one style each. Alberta dropped: one main road in its frame. Iceland is sparse at 15, so 14 (its primary
+// and secondary roads keep the pattern there; minor and tertiary roads get the plain low-zoom tint).
+export const ZOOM = { bolivia: 15, nepal: 15, iceland: 14, namibia: 16, australia: 15 };
 // Namibia: the article's Namutoni view (moved west), which has three clear paved roads; the spot centre has one.
-export const CENTER = { namibia: [-18.81068, 16.9329] };
+// Nepal: 3 km south of the spot centre (found by find-frame.mjs), enough clear roads at zoom 15.
+export const CENTER = { namibia: [-18.81068, 16.9329], nepal: [28.77767, 83.72473] };
 const ROADS = /^(trunk|primary|secondary|tertiary|unclassified|residential)$/;
 const MIN_PAVED = 2; // every picture has paved roads to rule out; the number of unpaved ones follows each spot
 const RANK = ['trunk', 'primary', 'secondary', 'tertiary', 'unclassified', 'residential'];
@@ -26,9 +26,9 @@ const segDist = ([px, py], [ax, ay], [bx, by]) => {
   return Math.hypot(px - ax - t * dx, py - ay - t * dy);
 };
 
-const out = {};
-for (const spot of Object.keys(ZOOM)) {
-  const [lat, lon] = CENTER[spot] ?? SPOTS[spot].center, Z = ZOOM[spot], S = 256 * 2 ** Z;
+// Picks the numbered roads for one frame. Exported so find-frame.mjs can test other centres.
+export function pickRoads(spot, [lat, lon], Z) {
+  const S = 256 * 2 ** Z;
   const px = ([lo, la]) => [(lonX(lo) - lonX(lon)) * S + W / 2, (latY(la) - latY(lat)) * S + H / 2];
   const ways = JSON.parse(readFileSync(new URL(`../../data/${spot}.json`, import.meta.url))).features
     .map((f) => ({ tags: f.properties, pts: f.geometry.coordinates.map(px), level: classify(f.properties) }));
@@ -53,7 +53,6 @@ for (const spot of Object.keys(ZOOM)) {
         level, unpaved: level !== 'paved' });
     }
   });
-  if (process.env.DEBUG) console.log(spot, "candidates:", cands.filter((c) => c.unpaved).length, "unpaved,", cands.filter((c) => !c.unpaved).length, "paved");
   // Main roads first, then the clearest; greedy pick with distance between labels.
   cands.sort((a, b) => RANK.indexOf(a.highway) - RANK.indexOf(b.highway) || b.clear - a.clear);
   const pick = [];
@@ -75,8 +74,16 @@ for (const spot of Object.keys(ZOOM)) {
   }
   // Number them in reading order (top to bottom, left to right), so the order says nothing about the answer.
   pick.sort((a, b) => a.y - b.y || a.x - b.x).forEach((p, k) => { p.n = k + 1; });
-  const unp = pick.filter((p) => p.unpaved).map((p) => p.n);
-  console.log(spot.padEnd(10), `${pick.length} roads, unpaved: ${unp.join(', ')}`, pick.length < 6 ? '  (SHORT: relax limits)' : '');
-  out[spot] = { zoom: Z, center: [lat, lon], roads: pick };
+  return pick;
 }
-writeFileSync(new URL('labels.json', import.meta.url), JSON.stringify(out, null, 1));
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const out = {};
+  for (const spot of Object.keys(ZOOM)) {
+    const center = CENTER[spot] ?? SPOTS[spot].center, pick = pickRoads(spot, center, ZOOM[spot]);
+    const unp = pick.filter((p) => p.unpaved).map((p) => p.n);
+    console.log(spot.padEnd(10), `${pick.length} roads, unpaved: ${unp.join(', ')}`, pick.length < 5 ? '  (SHORT)' : '');
+    out[spot] = { zoom: ZOOM[spot], center, roads: pick };
+  }
+  writeFileSync(new URL('labels.json', import.meta.url), JSON.stringify(out, null, 1));
+}
