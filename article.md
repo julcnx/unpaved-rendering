@@ -180,7 +180,7 @@ That is why there are five styles: each map picks one that stays distinct ([How 
 
 ## Data and methods
 
-The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. Most were chosen because unpaved roads are common there (in Africa, Asia and Latin America), with developed countries that have unpaved main roads (such as Iceland, Australia, Chile and Finland) and two mostly paved ones for contrast (Denmark and Czechia). The shares describe these countries, not OpenStreetMap as a whole. The rules, the code and every result are in the [GitHub repository](https://github.com/julcnx/unpaved-rendering):
+The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. Most were chosen because unpaved roads are common there (in Africa, Asia and Latin America), with developed countries that have unpaved main roads (such as Iceland, Australia, Chile and Finland) and two mostly paved ones for contrast (Denmark and Czechia). The shares describe these countries, not OpenStreetMap as a whole. The two levels were shaped by replies from 44 mappers in the survey for my `surface=laterite` proposal. The rules, the code and every result are in the [GitHub repository](https://github.com/julcnx/unpaved-rendering):
 
 - [Key numbers](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/key-numbers.md): every figure quoted here, generated from the data.
 - [Full report](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/report.md): per country and road class, with the official figures.
@@ -191,5 +191,5 @@ The numbers come from OpenStreetMap extracts of 54 countries (November 2026), cl
 
 - Christoph Hormann (imagico), who designed the unpaved grain of OSM Carto and [wrote about road styling](https://imagico.de/blog/en/navigating-the-maze-part-2/) in OSM maps.
 - Lukas Sommer (Sommerluk), for the fill pattern of OSM Carto ([PR 3399](https://github.com/openstreetmap-carto/openstreetmap-carto/pull/3399)).
-- The mappers and survey respondents of the [`surface=laterite` discussion](https://wiki.openstreetmap.org/wiki/Proposal:Surface%3Dlaterite).
+- The mappers who answered my survey for the [`surface=laterite` proposal](https://wiki.openstreetmap.org/wiki/Proposal:Surface%3Dlaterite), above all on what "unpaved" means on the ground in their countries.
 - Map data [© OpenStreetMap contributors](https://www.openstreetmap.org/copyright) (ODbL). Official road statistics: CIA World Factbook, last edition with road data, via [factbook.json](https://github.com/factbook/factbook.json) (public domain). Street-level photos: [Mapillary](https://www.mapillary.com/) contributors ([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)), credited with each photo.
