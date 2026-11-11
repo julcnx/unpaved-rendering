@@ -35,7 +35,7 @@ def heat_table():
             'so these are minimums. Denmark for comparison. Source: OpenStreetMap, November 2026.</figcaption></figure>')
 
 
-PHOTOS = [('na-w240603923-2', 'Namibia', 'C39', 'primary'), ('ma-w475929890-2', 'Morocco', 'RN23', 'primary'),
+PHOTOS = [('na-w240603923-2', 'Namibia', 'C39', 'primary'), ('ma-w827183138-3', 'Morocco', 'RR704', 'secondary'),
           ('cg-w338830884-3', 'Congo-Brazzaville', 'P45', 'secondary'), ('ug-w27567283-0', 'Uganda', '', 'secondary'),
           ('om-w241714242-2', 'Oman', '', 'secondary'), ('kg-w1422780378-1', 'Kyrgyzstan', 'M-067', 'secondary'),
           ('ge-w81287807-2', 'Georgia', 'Sh10', 'secondary'), ('fi-w113796504-0', 'Finland', '522', 'secondary'),
