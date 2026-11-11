@@ -130,6 +130,7 @@
     .apps { grid-template-columns: 1fr; gap: 16px; }
     .apps .pair { grid-template-columns: 1fr 1fr; gap: 8px; }
     .zoom .row { grid-template-columns: 1fr; }
+    .junction .scroll img { width: 900px; max-width: none; } /* 20 panels: scroll sideways at a readable size */
     .heat table { font-size: 13px; }
     .heat th, .heat td { padding: 5px 4px; }
   }
@@ -169,7 +170,7 @@
 <!--/HERO-->
 
 <article class="article">
-<p>Most map apps built on OpenStreetMap draw an unpaved main road exactly like an asphalt one. In large parts of the world that is not a detail: a quarter of the roads mapped in OpenStreetMap are unpaved, including many of the primary and secondary roads that link towns. This proposal asks map makers to keep each road's class colour and add one subtle signal for <strong>Unpaved</strong>. An optional <strong>Off-road</strong> mark can show the roughest ones, where the data supports it.</p>
+<p>Most map apps built on OpenStreetMap draw an unpaved main road exactly like an asphalt one. In large parts of the world that is not a detail: in the 54 countries I studied, a quarter of the mapped roads are unpaved, including many of the primary and secondary roads that link towns. This proposal asks map makers to keep each road's class colour and add one subtle signal for <strong>Unpaved</strong>. An optional <strong>Off-road</strong> mark can show the roughest ones, where the data supports it.</p>
 <p><a href="demo/">Live demo</a> · <a href="apps/">App reports</a> · <a href="#s-data-and-methods">Data and methods</a></p>
 <h2 id="s-1-the-misconception">1. The misconception</h2>
 <p>A red or orange road on a map reads as "a proper road". Most people take that to mean asphalt, and most maps agree with them: when a road has no <code>surface</code> tag it is drawn as paved, and when it does have one, most styles ignore it anyway.</p>
@@ -194,10 +195,9 @@
 <ol>
 <li><strong>They show it and keep the class.</strong> OSM Carto (the default map on openstreetmap.org), Americana and DMD2 draw unpaved roads in their class colour with an added pattern. CyclOSM does it from zoom 14, for cycling. OSM Carto has done this for years: this proposal builds on its approach and asks the other maps to catch up.</li>
 <li><strong>They do not show it, at least not by default.</strong> Organic Maps, Komoot, AllTrails, MapTiler, Mapy.com and many more draw the paved and the unpaved part of the same road as one identical line. OsmAnd can show surfaces, but only with an overlay that is off by default.</li>
-<li><strong>They show it, but the class is lost.</strong> Ride with GPS and the OsmAnd Motorcycle styles draw unpaved roads like tracks. The Humanitarian style gives them the colour of residential streets. Gaia GPS draws some roads with very bad smoothness as tracks.</li>
+<li><strong>They show it, but the class is lost.</strong> Ride with GPS and the OsmAnd Motorcycle styles draw unpaved roads like tracks. The Humanitarian style gives them the colour of residential streets. Gaia GPS draws some roads with very bad smoothness as tracks: the right instinct, a dashed outline, but applied by turning the road into a track.</li>
 </ol>
-<p>The third group shows why the class matters. A trunk road drawn like a track no longer says that it is the main route between two towns. And when an important road looks like a track, mappers who want the map to look right may change its <code>highway</code> tag to match, which spreads wrong data. The road class says how important a road is; the surface says what it is like to drive. One signal for both makes both harder to read.</p>
-<p>Gaia GPS shows the right instinct, a dashed outline, but applies it by turning roads into tracks. Keep the outline, keep the class.</p>
+<p>The third group shows why the class matters. A trunk road drawn like a track no longer says that it is the main route between two towns. And when an important road looks like a track, mappers who want the map to look right may change its <code>highway</code> tag to match, which spreads wrong data. The road class says how important a road is; the surface says what it is like to drive. One signal for both makes both harder to read: keep the signal, keep the class.</p>
 <figure class="fig wide apps"><div class="group"><h3>Show it, keep the class</h3><div class="pair"><figure><img src="article/img/app-americana.png" alt="Americana at Namutoni" loading="lazy"><figcaption>Americana</figcaption></figure><figure><img src="article/img/app-dmd2.png" alt="DMD2 at Namutoni" loading="lazy"><figcaption>DMD2</figcaption></figure></div></div><div class="group"><h3>Do not show it</h3><div class="pair"><figure><img src="article/img/app-komoot.png" alt="Komoot at Namutoni" loading="lazy"><figcaption>Komoot</figcaption></figure><figure><img src="article/img/app-mapy-com.png" alt="Mapy.com at Namutoni" loading="lazy"><figcaption>Mapy.com</figcaption></figure></div></div><div class="group"><h3>Show it, lose the class</h3><div class="pair"><figure><img src="article/img/app-humanitarian.png" alt="Humanitarian at Namutoni" loading="lazy"><figcaption>Humanitarian</figcaption></figure><figure><img src="article/img/app-ridewithgps.png" alt="Ride with GPS at Namutoni" loading="lazy"><figcaption>Ride with GPS</figcaption></figure></div></div><figcaption>Namibia, C38 at Namutoni (Etosha): unpaved to the west and north, paved to the east. Screenshots of each web map, November 2026, © OpenStreetMap contributors. Every app: <a href="apps/">App reports</a>.</figcaption></figure>
 
 <h2 id="s-4-the-ask-two-levels">4. The ask: two levels</h2>
@@ -221,10 +221,10 @@
 </tbody>
 </table>
 <p>The paved values are a whitelist: <code>paved</code>, <code>asphalt</code>, <code>chipseal</code>, <code>concrete</code>, <code>concrete:plates</code>, <code>paving_stones</code>, <code>sett</code>, <code>bricks</code>, <code>metal</code>, <code>cobblestone</code> and <code>cobblestone:flattened</code>. <code>wood</code>, <code>concrete:lanes</code> and <code>grass_paver</code> count as paved only when <code>smoothness</code> is <code>bad</code> or better. A value with several parts (<code>asphalt;gravel</code>) is unpaved if any part is.</p>
-<p><strong>Why a whitelist.</strong> Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. With a whitelist, it is drawn as unpaved, which is the safer mistake.</p>
+<p><strong>Why a whitelist.</strong> Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. OSM Carto, for example, does not list <code>surface=laterite</code>, a common material in Africa and Asia, so 1,314 km of laterite main roads are drawn as paved. With a whitelist, such a value is drawn as unpaved, which is the safer mistake.</p>
 <p><strong>Why only two levels.</strong> Three quarters of all unpaved km (75.5%) are tagged simply <code>surface=unpaved</code>. On the ground that can mean a smooth graded road or a rough track; the photos confirm both. Any finer split on the map would mostly be a guess. Routers, which see the whole route and how much of it is unpaved, are better placed to judge how hard a trip is.</p>
 <p><strong>Unpaved does not mean bad.</strong> A graded gravel road in Finland or Namibia is fine for any car when it is dry. The map says what the surface is; the reader decides what that means for their vehicle and the season.</p>
-<p><strong>Untagged roads stay paved.</strong> The proposal only draws what mappers have tagged. It never guesses that a road is unpaved, and it asks no one to change a tag: the data is already there.</p>
+<p><strong>Untagged roads stay paved.</strong> The proposal only draws what mappers have tagged, and asks no one to change a tag.</p>
 <h2 id="s-5-optional-the-off-road-mark">5. Optional: the Off-road mark</h2>
 <p>On unpaved roads only, a map can add a mark for roads that need a high-clearance vehicle, when the tags say so:</p>
 <ul>
@@ -233,7 +233,7 @@
 <li><code>4wd_only=yes</code>, <code>recommended</code> or <code>extreme</code></li>
 </ul>
 <p>The mark is never shown on paved roads: a potholed asphalt road is still paved, and routers can still use its <code>smoothness</code>.</p>
-<p>The mark is optional because the evidence is rare. Only 5.8% of unpaved km carry <code>smoothness</code>, <code>tracktype</code> or <code>4wd_only</code>, and 3.6% get the mark. In some countries it is common (36% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged <code>4wd_only</code>); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the real ask.</p>
+<p>The mark is optional because the evidence is rare. Only 5.8% of unpaved km carry <code>smoothness</code>, <code>tracktype</code> or <code>4wd_only</code>, and 3.6% get the mark. In some countries it is common (36% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged <code>4wd_only</code>); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the real ask. How the mark looks in each style is shown under <a href="#s-6-how-to-draw-it">How to draw it</a>.</p>
 <table class="num">
 <thead>
 <tr>
@@ -287,7 +287,7 @@
 <ul>
 <li><strong>Keep the class colour.</strong> The colour says how important a road is, and readers rely on it to find the main route. The surface must never replace it.</li>
 <li><strong>Add one signal, not a new kind of road.</strong> Unpaved is a property of the road, so it shows as a pattern on the road, not as a different line.</li>
-<li><strong>Readable without a legend.</strong> A broken or grainy line already reads as "rougher" to most people, so the two base levels work at a glance.</li>
+<li><strong>Readable without a legend.</strong> A broken or grainy line is a common map convention for rougher roads, so the two base levels should read at a glance. This is a design goal; it has not been tested with readers yet.</li>
 <li><strong>Distinct from what maps already use.</strong> Many maps draw tracks with dashes, tunnels with a dashed outline, roads under construction with a dashed fill and restricted access with dots. An unpaved road must not look like any of them.</li>
 <li><strong>Quiet at low zoom.</strong> On thin roads patterns blur, so below about 6 pixels of road width a plain tint of the class colour takes over.</li>
 <li><strong>For every reader, on every map.</strong> Colours are tuned per class on white, forest, sand, hillshade and dark backgrounds, and checked for colour blindness.</li>
@@ -310,6 +310,8 @@
 <li><strong>Dashed fill, full width</strong>: dashes across the whole road, as Americana does.</li>
 </ol>
 <p>There is no single default: the right style depends on each map's design, and above all on how it already draws tracks, tunnels and construction. The <strong>Off-road</strong> mark uses the same pattern, only darker. The legend needs two short words: <strong>Unpaved</strong> and <strong>Off-road</strong>.</p>
+<figure class="fig wide junction"><div class="scroll"><img src="article/img/junction.jpg" alt="Each class colour going Paved, Unpaved, then Off-road, in the five styles" loading="lazy"></div><figcaption>The four class colours in the five styles. Each road goes Paved, Unpaved (the S-bend), then Off-road; the side road is a white Unpaved road. Source: research/mockups.</figcaption></figure>
+
 <figure class="fig wide">
 <iframe class="demo" src="demo/?embed=1&amp;spot=namibia&amp;style=dashed-casing&amp;bg=terrain&amp;z=16&amp;lat=-18.81068&amp;lon=16.9375" loading="lazy" title="Live demo: the five styles"></iframe>
 <figcaption>Live demo with real OpenStreetMap data. Switch between the five styles; pick a background at the bottom right. <a href="demo/?spot=namibia">Open the full demo</a>, with search and every sample spot.</figcaption></figure>
@@ -321,39 +323,39 @@
 <h2 id="s-7-limits">7. Limits</h2>
 <ul>
 <li><strong>Tile data.</strong> A style can only draw what its tiles carry. OpenMapTiles, used by Americana, MapTiler, Stadia and OpenFreeMap, has no surface below zoom 12, so these maps cannot show unpaved roads in an overview, whatever the style says. Protomaps has no surface at all. Shortbread, OsmAnd and Organic Maps already carry it, so for them it is a style change only.</li>
-<li><strong>Lists of unpaved values.</strong> OSM Carto lists unpaved values one by one. <code>surface=laterite</code>, a common material in Africa and Asia, is not on its list, so 1,314 km of laterite main roads are drawn as paved. A paved whitelist avoids this by default.</li>
 <li><strong>The data.</strong> Roads without a surface tag are drawn as paved, and some unpaved tags are out of date (16% in the photo check). <code>surface=unpaved</code> says nothing about how rough a road is.</li>
 </ul>
 <h2 id="s-8-future-work">8. Future work</h2>
 <ul>
 <li><strong>Tracks and paths.</strong> The same paved whitelist applies to them. How to draw them is a separate proposal. It will also cover the very worst roads (<code>smoothness=very_horrible</code> or <code>impassable</code>, <code>4wd_only=extreme</code>), which could be drawn like a path; until then they get the Off-road mark.</li>
 <li><strong>Routing.</strong> Routers already use <code>surface</code> and <code>smoothness</code>. The map should agree with the route.</li>
-<li><strong>Google Maps and Apple Maps.</strong> They do not use OpenStreetMap, but they have the same gap.</li>
+<li><strong>Google Maps and Apple Maps</strong> have the same gap, but they do not use OpenStreetMap data, so they are outside this proposal.</li>
 <li><strong>One request per app.</strong> I will open an issue for each app, adapted to its style and tiles. Progress is tracked in the <a href="apps/">App reports</a>.</li>
 </ul>
 <h2 id="s-9-how-to-help">9. How to help</h2>
 <ul>
 <li><strong>Mappers:</strong> add <code>surface</code> to main roads, fix tags that are out of date, and add <code>smoothness</code> where a road really is rough. Tag what is on the ground, not what makes a map look right: the map should follow the tags, never the other way round.</li>
 <li><strong>Map and app makers:</strong> pick a style, switch to a paved whitelist, and tell me what does not fit your map.</li>
-<li><strong>Map users:</strong> comment on or vote for the open issue of the app you use.</li>
+<li><strong>Map users:</strong> find your app in the <a href="apps/">App reports</a> and ask for it through its channel; once a request is open, support it there.</li>
+<li><strong>Everyone:</strong> corrections and feedback are welcome as a <a href="https://github.com/julcnx/unpaved-rendering/issues">GitHub issue</a>.</li>
 </ul>
 <h2 id="s-questions">Questions</h2>
 <h3>Isn't rendering up to each map maker?</h3>
 <p>Yes, and it stays that way. This changes no tag and sets no rule: it is a feature request, with styles each map can use or ignore.</p>
 <h3>Why not just tag better?</h3>
-<p>Mappers already did: 5.3 million km are tagged unpaved. The maps do not show it.</p>
+<p>Mappers already did: 5.3 million km are tagged unpaved in the 54 countries studied alone. The maps do not show it.</p>
 <h3>OSM Carto already does this. Why a proposal?</h3>
 <p>It builds on Carto. But most people use apps, and most apps show nothing.</p>
 <h3>Untagged roads are not always paved. Why draw them as paved?</h3>
 <p>The map shows what is tagged and never guesses (<a href="#s-7-limits">Limits</a>).</p>
 <h3>A gravel road in Finland is fine for any car. Isn't "Unpaved" alarmist?</h3>
-<p>Unpaved is the surface, not the difficulty. The reader decides what it means for their vehicle.</p>
+<p>No: Unpaved is the surface, not the difficulty (<a href="#s-4-the-ask-two-levels">The ask</a>).</p>
 <h3>Why not show difficulty instead?</h3>
-<p>Most unpaved roads are tagged only <code>surface=unpaved</code>, which says nothing about difficulty. Routers judge it better (<a href="#s-5-optional-the-off-road-mark">Off-road mark</a>).</p>
+<p>Most unpaved roads are tagged only <code>surface=unpaved</code>, which says nothing about difficulty (<a href="#s-4-the-ask-two-levels">The ask</a>).</p>
 <h3>Won't dashes clutter the map, or look like tracks or tunnels?</h3>
 <p>That is why there are five styles: each map picks one that stays distinct (<a href="#s-6-how-to-draw-it">How to draw it</a>).</p>
 <h2 id="s-data-and-methods">Data and methods</h2>
-<p>The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. The rules, the code and every result are in the <a href="https://github.com/julcnx/unpaved-rendering">GitHub repository</a>:</p>
+<p>The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. Most were chosen because unpaved roads are common there (in Africa, Asia and Latin America), with developed countries that have unpaved main roads (such as Iceland, Australia, Chile and Finland) and two mostly paved ones for contrast (Denmark and Czechia). The shares describe these countries, not OpenStreetMap as a whole. The rules, the code and every result are in the <a href="https://github.com/julcnx/unpaved-rendering">GitHub repository</a>:</p>
 <ul>
 <li><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/key-numbers.md">Key numbers</a>: every figure quoted here, generated from the data.</li>
 <li><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/report.md">Full report</a>: per country and road class, with the official figures.</li>

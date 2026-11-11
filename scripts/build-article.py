@@ -94,8 +94,13 @@ ZOOM_STRIP = ('<figure class="fig wide zoom"><div class="row">' + ''.join(
     '</div><figcaption>Style 3 from overview to detail, at Namutoni. At zoom 13 the road is under 6 pixels wide, so unpaved shows as a plain, '
     'darker tint; from zoom 14 the dashes take over. © OpenStreetMap contributors.</figcaption></figure>')
 
+JUNCTION = (f'<figure class="fig wide junction"><div class="scroll"><img src="{IMG}/junction.jpg" '
+            'alt="Each class colour going Paved, Unpaved, then Off-road, in the five styles" loading="lazy"></div>'
+            '<figcaption>The four class colours in the five styles. Each road goes Paved, Unpaved (the S-bend), then Off-road; '
+            'the side road is a white Unpaved road. Source: research/mockups.</figcaption></figure>')
+
 FIGURES = {'slider': SLIDER, 'live demo': EMBED, 'chart': heat_table, 'photo grid': photo_grid, 'apps': app_grid,
-           'the five styles side by side': STYLES_GRID, 'one road at zoom': ZOOM_STRIP}
+           'the five styles side by side': STYLES_GRID, 'one road at zoom': ZOOM_STRIP, 'junction': JUNCTION}
 
 
 def figure(m):
