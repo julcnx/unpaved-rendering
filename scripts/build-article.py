@@ -90,9 +90,9 @@ STYLES_GRID = (f'<figure class="fig wide"><picture><source media="(max-width: 76
                '<figcaption>The five styles and the same map with no surface signal, at Namutoni (demo, hillshade, zoom 16).</figcaption></figure>')
 
 ZOOM_STRIP = ('<figure class="fig wide zoom"><div class="row">' + ''.join(
-    f'<figure><img src="{IMG}/zoom-{z}.jpg" alt="Style 4 at zoom {z}" loading="lazy"><figcaption>Zoom {z}</figcaption></figure>' for z in (13, 14, 16)) +
-    '</div><figcaption>Style 4 from overview to detail, at Namutoni. At zoom 13 the road is under 6 pixels wide, so unpaved shows as a plain, '
-    'darker tint; the dashes appear from zoom 14. © OpenStreetMap contributors.</figcaption></figure>')
+    f'<figure><img src="{IMG}/zoom-{z}.jpg" alt="Style 3 at zoom {z}" loading="lazy"><figcaption>Zoom {z}</figcaption></figure>' for z in (13, 14, 16)) +
+    '</div><figcaption>Style 3 from overview to detail, at Namutoni. At zoom 13 the road is under 6 pixels wide, so unpaved shows as a plain, '
+    'darker tint; from zoom 14 the dashes take over. © OpenStreetMap contributors.</figcaption></figure>')
 
 FIGURES = {'slider': SLIDER, 'live demo': EMBED, 'chart': heat_table, 'photo grid': photo_grid, 'apps': app_grid,
            'the five styles side by side': STYLES_GRID, 'one road at zoom': ZOOM_STRIP}
