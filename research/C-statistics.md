@@ -32,7 +32,7 @@ Decisions:
 1. Unknown `smoothness` or `tracktype` values (typos, legacy like `smoothness=rough`) are ignored and the next tag decides.
 2. `4wd_only` is a minimum for the mark: it can raise it, never lower it.
 3. The spec says `smoothness=impossible`; the documented OSM value is `impassable`. The classifier uses `impassable`.
-4. `tracktype=grade6` to `grade8`: Australian local extension, see [B-communities.md](B-communities.md).
+4. `tracktype=grade6` to `grade8`: Australian local extension (from Australian mappers in the survey replies).
 5. Multiple surface values (`asphalt;concrete`) are Paved only if every part is paved.
 6. Smoothness no longer decides Paved vs Unpaved (decision 9): it only gives the mark. `smoothness=excellent` + `surface=unpaved` is Unpaved. Off-road evidence on a Paved road is ignored for rendering and listed as a conflict in the stats.
 7. `cobblestone` and `cobblestone:flattened` are Paved (legacy value mostly used for sett; OSM Carto and Organic Maps also treat it as paved).

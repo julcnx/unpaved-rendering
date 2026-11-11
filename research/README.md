@@ -5,7 +5,7 @@ Working folder for the proposal asking map apps to show whether a road is paved 
 | File | Content | Status |
 |---|---|---|
 | [A-providers.md](A-providers.md) | Providers, existing whitelist code, issues, ranking | done: main-road check (source code, web screenshots at 6 spots, phone apps), feedback channels, tile schemas, a z11 check and provider rules measured against ours (2026-11-09) |
-| [B-communities.md](B-communities.md) | Laterite survey respondents, allies, spec additions | done; contacts for late-added countries to do |
+| B-communities.md (private, not in the public repo) | Laterite survey respondents, allies, spec additions | done; contacts for late-added countries to do |
 | [C-statistics.md](C-statistics.md) | Classifier rules, stats method, findings | done for 55 rows (two levels + mark), Off-road evidence per country, spot check; wiki table and sample countries to do |
 | [D-examples-visuals.md](D-examples-visuals.md) | Styling mockups, sample roads, imagery review | mockups done (5 styles); screenshots and comparison grids for 6 spots in [examples/screenshots/](examples/screenshots/); demo in the repo root (`../index.html`), synced with the mockups |
 | [classifier/](classifier/) | Classifier in TypeScript, Lua and PostgreSQL, 67 shared test cases | done (two levels + mark) |

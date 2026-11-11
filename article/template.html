@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mind the Surface</title>
+<title>{{TITLE}}</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23faf8f4%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%23e8a040%22 stroke-width=%227%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%236b4420%22 stroke-width=%227%22 stroke-dasharray=%224 4%22 opacity=%22.55%22/%3E%3C/svg%3E">
-<meta name="description" content="A proposal for OpenStreetMap-based maps: keep each road's class colour and add one subtle signal for unpaved roads.">
-<!-- Page template for article.md. Do not edit index.html: run `python3 scripts/build-article.py`. -->
+<meta name="description" content="{{DESCRIPTION}}">
+<!-- Page template for article.md (index.html) and apps.md (apps/index.html). Do not edit the built pages: run `npm run build`. -->
 <style>
   :root { --ink: #2b2620; --muted: #6f665b; --paper: #faf8f4; --line: #e4ded4; --asphalt: #3a3a3a; --gravel: #b07a3c; }
   * { box-sizing: border-box; }
@@ -18,6 +18,10 @@
   .sub { font: italic clamp(20px, 2.4vw, 28px)/1.3 Georgia, serif; color: var(--muted); margin: 8px 0 0; }
   .byline { font-size: 15px; color: var(--muted); margin: 14px 0 0; }
   .byline a { color: var(--ink); }
+  .kicker a { color: inherit; }
+  .scroll { overflow-x: auto; }
+  .apps-page .article > .scroll { max-width: none; }
+  .apps-page .article table { font-size: 15px; min-width: 760px; }
 
   /* Hero: full-width map, photos placed in the empty land on each side of the road (Komoot, centred on the transition) */
   .hero { position: relative; margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 2 / 1; }
@@ -129,14 +133,10 @@
   }
 </style>
 </head>
-<body>
-<header class="wrap">
-  <p class="kicker">A proposal for OpenStreetMap-based maps</p>
-  <h1>Mind the Surface</h1>
-  <p class="sub">A main road is not always paved</p>
-  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a></p>
-</header>
+<body class="{{BODYCLASS}}">
+{{HEADER}}
 
+<!--HERO-->
 <main class="wrap">
   <figure class="hero">
     <picture><source media="(max-width: 760px)" srcset="article/img/hero-komoot-portrait.png"><img src="article/img/hero-komoot.png" alt="Namibia C48 in Komoot: one orange line, paved and unpaved alike"></picture>
@@ -159,6 +159,7 @@
   <p class="caption">Namibia, C48, a primary road. The asphalt ends and 19 km of unpaved road begin (tagged <code>surface=gravel</code>).<br><b>On the map, it is the same orange line.</b></p>
   <p class="credit">Photos: tallguy, Mapillary, 2019, CC BY-SA 4.0 · Map: Komoot, November 2026, © OpenStreetMap contributors</p>
 </main>
+<!--/HERO-->
 
 <article class="article">
 {{BODY}}

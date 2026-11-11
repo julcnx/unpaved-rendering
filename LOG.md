@@ -120,3 +120,10 @@
 - App comparison crops are now registered (`scripts/article-app-crops.py`): two C38 landmarks per screenshot (the Namutoni junction and the bend of the paved leg), scaled to the same length and cropped with the junction at the same point. Plain centre crops did not line up (Komoot and Americana use 512 px tiles; Komoot has its sidebar offset). Komoot and Americana retaken at zoom 14 (`screenshots/namibia-z14/`), which matches the others' zoom 15.
 - Photo grid: Georgia Sh10 frame `-2` (frame `-0` looked like broken concrete), Morocco RR704 instead of RN23 (under works in 2022, possibly paved now). Both noted in the image review.
 - Zoom strip in style 3 (dashed fill) instead of style 4: style 4's thin dashed outline barely changed between zoom 13 and 14 at figure size; style 3 goes clearly from tint (13) to a dashed band (14) to strong dashes (16). Crops: `scripts/article-zoom-strip.py`.
+
+## 2026-11-11: App reports page, Data and methods, Last updated
+
+- New page `apps/` (from `apps.md`, same template): one row per app in the article's groups (show it and keep the class, partly, lose the class, do not show it), with open source, what it shows on main roads, what its data carries, how it draws tracks, and where to ask; plus the tile schemas. Written for app makers to read their own row: facts only, "to check" where not verified.
+- No Evidence page: the article's "Data and methods" section links to the generated key numbers, the full report, the image review and the classifier on GitHub.
+- Both pages show "Last updated", from the last commit of their Markdown (today when it has uncommitted changes).
+- `research/B-communities.md` (private outreach notes: mapper names and private replies) untracked and ignored; it stays local. Links to it removed from the public files. Still in the public git history until purged.

@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App reports: Mind the Surface</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23faf8f4%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%23e8a040%22 stroke-width=%227%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%236b4420%22 stroke-width=%227%22 stroke-dasharray=%224 4%22 opacity=%22.55%22/%3E%3C/svg%3E">
+<meta name="description" content="How OpenStreetMap-based maps and apps draw unpaved roads today, app by app.">
+<!-- Page template for article.md (index.html) and apps.md (apps/index.html). Do not edit the built pages: run `npm run build`. -->
+<style>
+  :root { --ink: #2b2620; --muted: #6f665b; --paper: #faf8f4; --line: #e4ded4; --asphalt: #3a3a3a; --gravel: #b07a3c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  header.wrap { padding-top: 56px; padding-bottom: 28px; }
+  .kicker { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  h1 { font: 700 clamp(40px, 6vw, 68px)/1.02 Georgia, "Times New Roman", serif; margin: 0; letter-spacing: -.01em; }
+  .sub { font: italic clamp(20px, 2.4vw, 28px)/1.3 Georgia, serif; color: var(--muted); margin: 8px 0 0; }
+  .byline { font-size: 15px; color: var(--muted); margin: 14px 0 0; }
+  .byline a { color: var(--ink); }
+  .kicker a { color: inherit; }
+  .scroll { overflow-x: auto; }
+  .apps-page .article > .scroll { max-width: none; }
+  .apps-page .article table { font-size: 15px; min-width: 760px; }
+
+  /* Hero: full-width map, photos placed in the empty land on each side of the road (Komoot, centred on the transition) */
+  .hero { position: relative; margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 2 / 1; }
+  .hero picture { display: block; width: 100%; height: 100%; }
+  .hero picture img { width: 100%; height: 100%; display: block; object-fit: cover; } /* 16:9 shot cropped to 2:1: empty land off top and bottom */
+  .leaders { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .leaders line { stroke-width: 2; vector-effect: non-scaling-stroke; }
+  .leaders.portrait { display: none; }
+  .pin { position: absolute; transform: translate(-50%, -50%); width: 32px; height: 32px; border-radius: 50%; border: 3px solid #fff;
+         box-shadow: 0 2px 6px rgba(0,0,0,.35); color: #fff; display: grid; place-items: center; font: 700 15px system-ui, sans-serif; }
+  .a { background: var(--asphalt); } .b { background: var(--gravel); }
+  .pin.a { left: 36.2%; top: 18.5%; } .pin.b { left: 63.8%; top: 81.5%; }
+  /* asphalt ends: a tick across the road (perpendicular to it) and a label on the empty side, left of the road */
+  .tick { position: absolute; left: 50%; top: 50%; width: 30px; height: 4px; border-radius: 2px; background: var(--ink); box-shadow: 0 0 0 2px #fff;
+          transform: translate(-50%, -50%) rotate(-41.3deg); }
+  .end { position: absolute; left: 50%; top: 50%; transform: translate(calc(-100% - 22px), -50%); font-size: 13px; font-weight: 600;
+         background: rgba(255,255,255,.94); border-radius: 4px; padding: 2px 8px; color: var(--ink); white-space: nowrap; }
+  .photo { position: absolute; width: 27%; aspect-ratio: 4 / 3; margin: 0; border-radius: 8px; overflow: hidden; border: 3px solid #fff;
+           box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo.pa { left: 4%; top: 45%; } .photo.pb { left: 69%; top: 11%; }
+  .tag { position: absolute; left: 8px; top: 8px; display: flex; gap: 7px; align-items: center; background: rgba(255,255,255,.94);
+         border-radius: 999px; padding: 3px 11px 3px 3px; font-weight: 600; font-size: 14px; }
+  .tag i { width: 22px; height: 22px; border-radius: 50%; color: #fff; display: grid; place-items: center; font: normal 700 12px system-ui; }
+  .applabel { position: absolute; right: 10px; bottom: 10px; background: rgba(255,255,255,.94); border-radius: 6px; padding: 3px 10px; font-size: 13px; color: var(--muted); }
+  .applabel b { color: var(--ink); }
+  .caption { text-align: center; font-size: 19px; margin: 16px 0 0; }
+  .credit { text-align: center; font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+
+  /* Article: text column left-aligned with the title and the hero; wide figures use the full width; contents fixed on the right */
+  .article { max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; font-size: 18px; line-height: 1.65; }
+  .article > * { max-width: 780px; }
+  .article > .wide { max-width: none; }
+  .article > p:first-child { font-size: 21px; margin-top: 36px; }
+  .article h2 { font: 700 30px/1.2 Georgia, serif; margin: 56px 0 14px; }
+  .article table { border-collapse: collapse; width: 100%; font-size: 16px; margin: 18px 0; }
+  .article th, .article td { border-bottom: 1px solid var(--line); padding: 7px 8px; text-align: left; vertical-align: top; }
+  .article table.num td:not(:first-child), .article table.num th:not(:first-child) { text-align: right; }
+  .article code { font-size: .88em; background: #efe9df; padding: 1px 5px; border-radius: 4px; }
+  .article a { color: inherit; }
+  .toc { position: fixed; top: 32px; left: calc(50% - 590px + 24px + 780px + 64px); width: 250px; font-size: 14px; line-height: 1.35; transition: opacity .2s; }
+  .toc p { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  .toc a { display: block; color: var(--muted); text-decoration: none; padding: 5px 0 5px 12px; border-left: 2px solid var(--line); }
+  .toc a:hover { color: var(--ink); }
+  .toc a.on { color: var(--ink); font-weight: 600; border-left-color: var(--ink); }
+  .toc.hidden { opacity: 0; pointer-events: none; }
+  @media (max-width: 1180px) { .toc { display: none; } }
+
+  /* Figures */
+  .fig { margin: 28px 0; }
+  .fig > figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+  .fig img { display: block; width: 100%; border-radius: 8px; }
+  .slider { position: relative; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); --pos: 50%; }
+  .slider img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border-radius: 0; }
+  .slider .top { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+  .slider .bar { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 4px rgba(0,0,0,.4); pointer-events: none; }
+  .slider .knob { position: absolute; top: 50%; left: var(--pos); width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; background: #fff;
+                  box-shadow: 0 1px 6px rgba(0,0,0,.4); display: grid; place-items: center; font: 700 14px system-ui; color: var(--ink); pointer-events: none; }
+  .slider input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .slider .lab { position: absolute; top: 10px; background: rgba(255,255,255,.94); border-radius: 6px; padding: 3px 10px; font-size: 13px; pointer-events: none; }
+  .slider .l { left: 10px; } .slider .r { right: 10px; }
+  .demo { width: 100%; aspect-ratio: 16 / 10; border: 1px solid var(--line); border-radius: 10px; display: block; }
+  .heat .scroll { overflow-x: auto; }
+  .heat table { border-collapse: separate; border-spacing: 2px; width: 100%; margin: 0; font-size: 15px; }
+  .heat th, .heat td { border: 0; padding: 6px 8px; }
+  .heat tr:first-child th { font-weight: 600; color: var(--muted); text-align: center; font-size: 13px; }
+  .heat th:first-child { text-align: left; font-weight: 600; white-space: nowrap; }
+  .heat td { text-align: center; border-radius: 4px; font-variant-numeric: tabular-nums; }
+  .heat tr.base th, .heat tr.base td { border-top: 8px solid var(--paper); }
+  .photos .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .photos .grid figure, .apps .pair figure, .zoom .row figure { margin: 0; }
+  .photos .grid img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+  .photos .grid figcaption { font-size: 13px; margin-top: 4px; line-height: 1.3; }
+  .photos .grid figcaption span { display: block; color: var(--muted); font-size: 12px; }
+  .apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .apps > figcaption { grid-column: 1 / -1; }
+  .apps h3 { font: 600 13px/1.3 system-ui, sans-serif; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 8px; }
+  .apps .pair { display: grid; gap: 10px; }
+  .apps .pair img { aspect-ratio: 8 / 5; object-fit: cover; border: 1px solid var(--line); border-radius: 6px; }
+  .apps .pair figcaption, .zoom .row figcaption { font-size: 13px; margin-top: 3px; }
+  .zoom .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .zoom .row img { border: 1px solid var(--line); border-radius: 6px; }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 0 16px; }
+    header.wrap { padding-top: 32px; padding-bottom: 20px; }
+    /* Phone hero: the same composition on a portrait shot (900 x 1125, same centre and zoom); road from (0, 2.7%) to (100%, 97.7%) */
+    .hero { aspect-ratio: 4 / 5; }
+    .leaders.landscape { display: none; } .leaders.portrait { display: block; }
+    .photo { width: 55%; border-width: 2px; border-radius: 6px; }
+    .photo.pa { left: 4%; top: 63%; } .photo.pb { left: 41%; top: 4%; }
+    .pin.a { left: 22%; top: 23.6%; } .pin.b { left: 78%; top: 76.8%; }
+    .tick { transform: translate(-50%, -50%) rotate(-40.1deg); width: 24px; }
+    .end, .applabel { font-size: 12px; }
+    .pin { width: 26px; height: 26px; font-size: 13px; border-width: 2px; }
+    .tag { font-size: 12px; padding: 2px 8px 2px 2px; left: 6px; top: 6px; }
+    .tag i { width: 18px; height: 18px; font-size: 11px; }
+    .caption, .credit { text-align: left; }
+    .caption { font-size: 17px; }
+    .article { padding: 0 16px 60px; font-size: 17px; }
+    .slider .lab > span { display: none; }
+    .demo { aspect-ratio: 3 / 4; }
+    .photos .grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .apps { grid-template-columns: 1fr; gap: 16px; }
+    .apps .pair { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .zoom .row { grid-template-columns: 1fr; }
+    .heat table { font-size: 13px; }
+    .heat th, .heat td { padding: 5px 4px; }
+  }
+</style>
+</head>
+<body class="apps-page">
+<header class="wrap">
+  <p class="kicker"><a href="../">Mind the Surface</a></p>
+  <h1>App reports</h1>
+  <p class="sub">How OpenStreetMap-based maps draw unpaved roads, November 2026</p>
+  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 11 November 2026</p>
+</header>
+
+
+
+<article class="article">
+<p>How each map draws a road that changes from paved to unpaved. The web maps were compared on six such roads (Namibia C38, Bolivia RN3, Nepal NH48, Iceland 54, Australia 27, Alberta 40, zoom 15); the phone apps were checked by hand. The proposal and the five styles are in the <a href="../">article</a>.</p>
+<p><strong>Data</strong> says what the map's data or tiles know about the surface, so whether a change is a style change only. <strong>Tracks</strong> says how the map draws <code>highway=track</code>, which an Unpaved signal on roads must not look like. "To check" means not verified yet; corrections are welcome as a <a href="https://github.com/julcnx/unpaved-rendering/issues">GitHub issue</a>.</p>
+<h2 id="s-show-it-keep-the-class">Show it, keep the class</h2>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Open source</th>
+<th>Unpaved on main roads</th>
+<th>Data</th>
+<th>Tracks</th>
+<th>Where to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OSM Carto (openstreetmap.org)</td>
+<td>yes</td>
+<td>Every class from zoom 6: a fine grain in the class colour</td>
+<td>Full <code>surface</code>; explicit lists of unpaved values, so unknown values such as <code>laterite</code> are drawn as paved</td>
+<td>Brown dashes, rhythm by <code>tracktype</code></td>
+<td><a href="https://github.com/openstreetmap-carto/openstreetmap-carto/issues">GitHub</a></td>
+</tr>
+<tr>
+<td>Americana</td>
+<td>yes</td>
+<td>Every class from zoom 12: lighter dashes of the class colour</td>
+<td>Paved or unpaved, from OpenMapTiles, only from zoom 12</td>
+<td>To check</td>
+<td><a href="https://github.com/osm-americana/openstreetmap-americana/issues">GitHub</a></td>
+</tr>
+<tr>
+<td>DMD2</td>
+<td>no</td>
+<td>Every class seen: dark dashes in the fill</td>
+<td>To check</td>
+<td>Many coloured dashes</td>
+<td><a href="https://drivemodedashboard.com/forums/">DMD forum</a></td>
+</tr>
+<tr>
+<td>CyclOSM</td>
+<td>yes</td>
+<td>From zoom 14, primary and below, as cycling surface dashes. <code>surface=unpaved</code> is in none of its lists (75% of unpaved km) and trunks get no surface rule</td>
+<td>Full <code>surface</code> and <code>smoothness</code> (explicit lists)</td>
+<td>To check</td>
+<td><a href="https://github.com/cyclosm/cyclosm-cartocss-style/issues">GitHub</a></td>
+</tr>
+<tr>
+<td>Tracestrack Topo</td>
+<td>partly</td>
+<td>Secondary and below: a dashed outline. Primary and trunk: no difference</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://github.com/tracestrack/tracestrack-maps/issues">GitHub</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s-show-it-partly">Show it, partly</h2>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Open source</th>
+<th>Unpaved on main roads</th>
+<th>Data</th>
+<th>Tracks</th>
+<th>Where to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AdvOSM (Garmin maps)</td>
+<td>not stated</td>
+<td>Every class except service: dashes across the road. Minor roads stay white; the one tertiary checked turned from orange to yellow</td>
+<td><code>surface</code>, <code>smoothness</code>, <code>tracktype</code> and width</td>
+<td>To check</td>
+<td>Contact form on <a href="https://rex8475.wixsite.com/advosm">the site</a></td>
+</tr>
+<tr>
+<td>Calimoto</td>
+<td>no</td>
+<td>Unpaved sections drawn thinner</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://support.calimoto.com/hc/en-us">Help center</a></td>
+</tr>
+<tr>
+<td>OsmAnd</td>
+<td>yes</td>
+<td>Only with the "Road surface" or "Road quality" overlay, off by default, from zoom 14</td>
+<td>Full <code>surface</code>, <code>smoothness</code> and <code>tracktype</code></td>
+<td>To check</td>
+<td><a href="https://github.com/osmandapp/OsmAnd/issues">GitHub</a> (<a href="https://github.com/osmandapp/OsmAnd/issues/9465">#9465</a>)</td>
+</tr>
+<tr>
+<td>Locus Map</td>
+<td>no</td>
+<td>Depends on the map theme; not on the LoMaps web map</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://help.locusmap.eu">Helpdesk ideas</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s-show-it-lose-the-class">Show it, lose the class</h2>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Open source</th>
+<th>Unpaved on main roads</th>
+<th>Data</th>
+<th>Tracks</th>
+<th>Where to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Humanitarian (HOT)</td>
+<td>yes</td>
+<td>Every class from zoom 11, but the road takes the residential colour, so an unpaved primary looks like a minor street</td>
+<td>Paved whitelist; untagged unclassified and residential roads count as unpaved</td>
+<td>To check</td>
+<td><a href="https://github.com/hotosm/HDM-CartoCSS/issues">GitHub</a> (<a href="https://github.com/hotosm/HDM-CartoCSS/issues/104">#104</a>)</td>
+</tr>
+<tr>
+<td>Ride with GPS</td>
+<td>no</td>
+<td>Drawn as dashed brown lines, like tracks</td>
+<td>To check</td>
+<td>Dashed brown line</td>
+<td><a href="https://support.ridewithgps.com">Help center</a></td>
+</tr>
+<tr>
+<td>OsmAnd Motorcycle styles</td>
+<td>yes</td>
+<td>Primary to residential with a gravel or dirt surface drawn like tracks; motorway and trunk never</td>
+<td>Full <code>surface</code> and <code>tracktype</code></td>
+<td>Five colour categories by surface and track type</td>
+<td><a href="https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22">GitHub discussion #22</a></td>
+</tr>
+<tr>
+<td>Gaia GPS (Gaia Topo)</td>
+<td>no</td>
+<td><code>surface</code> is not used. Some roads with very bad <code>smoothness</code> are drawn as tracks; the exact rule is to check. The premium Overland layer shows surfaces</td>
+<td>To check</td>
+<td>Dashed outline, light fill</td>
+<td><a href="https://help.gaiagps.com/hc/en-us/community/topics">Community forum</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s-do-not-show-it">Do not show it</h2>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Open source</th>
+<th>Unpaved on main roads</th>
+<th>Data</th>
+<th>Tracks</th>
+<th>Where to ask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organic Maps, CoMaps</td>
+<td>yes</td>
+<td>No</td>
+<td>Paved or unpaved, with good or bad, already in the map data (used for routing only)</td>
+<td>To check</td>
+<td><a href="https://github.com/organicmaps/organicmaps/issues">GitHub</a> (<a href="https://github.com/organicmaps/organicmaps/issues/8485">#8485</a>)</td>
+</tr>
+<tr>
+<td>OSMF Shortbread (vector.openstreetmap.org)</td>
+<td>yes</td>
+<td>No</td>
+<td>Full <code>surface</code> in the tiles from zoom 11</td>
+<td>To check</td>
+<td><a href="https://github.com/pnorman/spirit/pull/93">Spirit PR #93</a> (open)</td>
+</tr>
+<tr>
+<td>MapTiler (Streets, Outdoor)</td>
+<td>no</td>
+<td>No</td>
+<td>Paved or unpaved, from OpenMapTiles, from zoom 12</td>
+<td>To check</td>
+<td><a href="https://www.maptiler.com/support/">MapTiler support</a></td>
+</tr>
+<tr>
+<td>Komoot</td>
+<td>no</td>
+<td>No; surfaces only in the route summary</td>
+<td>To check</td>
+<td>Own "Track" category</td>
+<td><a href="https://support.komoot.com">Help center</a></td>
+</tr>
+<tr>
+<td>Mapy.com (basic map)</td>
+<td>no</td>
+<td>No</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://community.mapy.com/category/4/ideas-for-new-features-nápady-na-nové-vychytávky">Community forum, ideas</a></td>
+</tr>
+<tr>
+<td>Kurviger</td>
+<td>no</td>
+<td>Only on the planned route, not on the map</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://forum.kurviger.com/t/different-colours-for-sealed-and-unsealed-roads/18588">Forum</a></td>
+</tr>
+<tr>
+<td>AllTrails</td>
+<td>no</td>
+<td>No</td>
+<td>To check</td>
+<td>Dashed double line</td>
+<td><a href="https://support.alltrails.com">Help center</a></td>
+</tr>
+<tr>
+<td>Maps.me</td>
+<td>no</td>
+<td>No</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://support.maps.me">Help center</a></td>
+</tr>
+<tr>
+<td>Guru Maps</td>
+<td>no</td>
+<td>No</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://gurumaps.app/docs/intro">Documentation</a>, support in the app</td>
+</tr>
+<tr>
+<td>OpenTopoMap</td>
+<td>yes</td>
+<td>No; surface only on paths</td>
+<td>Full <code>surface</code></td>
+<td>Dashes</td>
+<td><a href="https://github.com/der-stefan/OpenTopoMap/issues">GitHub</a></td>
+</tr>
+<tr>
+<td>Thunderforest (OpenCycleMap, Transport, Outdoors)</td>
+<td>no</td>
+<td>No</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://www.thunderforest.com/contact/">Contact</a></td>
+</tr>
+<tr>
+<td>Stadia Maps (Alidade Smooth, Outdoors)</td>
+<td>no</td>
+<td>No</td>
+<td>Paved or unpaved, from OpenMapTiles, from zoom 12 (to check)</td>
+<td>To check</td>
+<td><a href="https://docs.stadiamaps.com/support/">Support</a></td>
+</tr>
+<tr>
+<td>Strava</td>
+<td>no</td>
+<td>No</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://communityhub.strava.com">Community Hub ideas</a></td>
+</tr>
+<tr>
+<td>CalTopo</td>
+<td>no</td>
+<td>No</td>
+<td>To check</td>
+<td>To check</td>
+<td><a href="https://help.caltopo.com/hc/en-us/community/topics/4416797631899-Feature-Requests">Feature requests</a></td>
+</tr>
+<tr>
+<td>Protomaps basemap</td>
+<td>yes</td>
+<td>No</td>
+<td>No surface in the tiles: a schema change comes first</td>
+<td>To check</td>
+<td><a href="https://github.com/protomaps/basemaps/issues">GitHub</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s-tile-schemas">Tile schemas</h2>
+<p>A style can only draw what its tiles carry.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Used by</th>
+<th>Surface</th>
+<th>From zoom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenMapTiles</td>
+<td>Americana, MapTiler, Stadia, OpenFreeMap</td>
+<td>Paved or unpaved</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Shortbread</td>
+<td>OSMF vector tiles</td>
+<td>Full <code>surface</code> and <code>tracktype</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td>OsmAnd (OBF)</td>
+<td>OsmAnd</td>
+<td>Full <code>surface</code>, <code>smoothness</code> and <code>tracktype</code></td>
+<td>12 to 14</td>
+</tr>
+<tr>
+<td>Organic Maps (MWM)</td>
+<td>Organic Maps, CoMaps</td>
+<td>Paved or unpaved, good or bad</td>
+<td>with the road</td>
+</tr>
+<tr>
+<td>Protomaps</td>
+<td>Protomaps basemap</td>
+<td>None</td>
+<td></td>
+</tr>
+<tr>
+<td>Mapbox Streets v8</td>
+<td>Mapbox-based maps</td>
+<td>Paved or unpaved, where OSM has it</td>
+<td>not documented</td>
+</tr>
+</tbody>
+</table></div>
+</article>
+<nav class="toc" aria-label="Contents"><p>Contents</p><a href="#s-show-it-keep-the-class">Show it, keep the class</a><a href="#s-show-it-partly">Show it, partly</a><a href="#s-show-it-lose-the-class">Show it, lose the class</a><a href="#s-do-not-show-it">Do not show it</a><a href="#s-tile-schemas">Tile schemas</a></nav>
+
+<script>
+  // Today / Proposed slider
+  for (const s of document.querySelectorAll('.slider')) {
+    s.querySelector('input').addEventListener('input', (e) => s.style.setProperty('--pos', e.target.value + '%'));
+  }
+  // Contents: highlight the current section; hidden over the title and hero, and while a wide figure passes under it.
+  const toc = document.querySelector('.toc');
+  const links = [...toc.querySelectorAll('a')];
+  const heads = links.map((a) => document.getElementById(a.hash.slice(1)));
+  const wides = [...document.querySelectorAll('.wide')];
+  function update() {
+    let cur = 0;
+    heads.forEach((h, i) => { if (h.getBoundingClientRect().top < 120) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === cur));
+    const t = toc.getBoundingClientRect();
+    const before = document.querySelector('.article').getBoundingClientRect().top > t.top;
+    toc.classList.toggle('hidden', before || wides.some((w) => { const r = w.getBoundingClientRect(); return r.top < t.bottom && r.bottom > t.top; }));
+  }
+  addEventListener('scroll', update, { passive: true }); update();
+</script>
+</body>
+</html>

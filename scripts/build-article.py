@@ -1,4 +1,4 @@
-# Builds index.html (the article page) from article.md and article/template.html.
+# Builds the site pages from Markdown and article/template.html: index.html (article.md) and apps/index.html (apps.md).
 # Usage: python3 scripts/build-article.py   (needs the Python "markdown" package: pip install markdown)
 # FIGURE comments in article.md become figures; numbers in the chart come from research/stats/summary.csv,
 # photo credits from research/examples/images/credits.json. Images are in article/img/ (see LOG.md, 2026-11-11).
@@ -69,7 +69,7 @@ def app_grid():
         groups += f'<div class="group"><h3>{title}</h3><div class="pair">{cards}</div></div>'
     return (f'<figure class="fig wide apps">{groups}'
             '<figcaption>Namibia, C38 at Namutoni (Etosha): unpaved to the west and north, paved to the east. '
-            'Screenshots of each web map, November 2026, © OpenStreetMap contributors. Every app at all six roads: App reports.</figcaption></figure>')
+            'Screenshots of each web map, November 2026, © OpenStreetMap contributors. Every app: <a href="apps/">App reports</a>.</figcaption></figure>')
 
 
 SLIDER = f'''<figure class="fig wide"><div class="slider">
@@ -108,21 +108,56 @@ def figure(m):
     raise SystemExit(f'No figure for: {text[:60]}')
 
 
-md = (ROOT / 'article.md').read_text()
-md = re.sub(r'^# .*\n', '', md, count=1)  # the title and byline are in the template
-md = re.sub(r'^\*By .*\*\n', '', md, count=1, flags=re.M)
-md = re.sub(r'<!--\s*DRAFT.*?-->', '', md, flags=re.S)
-md = re.sub(r'<!--\s*FIGURE:?\s*(.*?)-->', figure, md, flags=re.S)
-body = markdown.markdown(md, extensions=['tables'])
-body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>Country)', r'<table class="num">\1', body)  # number tables align right
+import datetime
+import subprocess
 
-# Section ids and the table of contents
-slug = lambda t: 's-' + re.sub(r'[^a-z0-9]+', '-', re.sub(r'<.*?>', '', t).lower()).strip('-')
-heads = re.findall(r'<h2>(.*?)</h2>', body)
-for h in heads:
-    body = body.replace(f'<h2>{h}</h2>', f'<h2 id="{slug(h)}">{h}</h2>', 1)
-toc = '<nav class="toc" aria-label="Contents"><p>Contents</p>' + ''.join(f'<a href="#{slug(h)}">{h}</a>' for h in heads) + '</nav>'
+BYLINE = 'By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a>'
 
-page = (ROOT / 'article/template.html').read_text().replace('{{BODY}}', body).replace('{{TOC}}', toc)
-(ROOT / 'index.html').write_text(page)
-print('wrote index.html')
+
+def last_updated(src):
+    """Date of the last commit that changed the source, or today when it has uncommitted changes."""
+    dirty = subprocess.run(['git', 'status', '--porcelain', '--', src], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    day = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', src], cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    d = datetime.date.today() if dirty or not day else datetime.date.fromisoformat(day)
+    return f'{d.day} {d:%B %Y}'
+
+
+def build(src, out, title, description, kicker, h1, sub, hero, body_class=''):
+    md = (ROOT / src).read_text()
+    md = re.sub(r'^# .*\n', '', md, count=1)  # the title, subtitle and byline are in the header
+    md = re.sub(r'^\*By .*\*\n', '', md, count=1, flags=re.M)
+    md = re.sub(r'^\*How .*\*\n', '', md, count=1, flags=re.M)
+    md = re.sub(r'<!--\s*DRAFT.*?-->', '', md, flags=re.S)
+    md = re.sub(r'<!--\s*FIGURE:?\s*(.*?)-->', figure, md, flags=re.S)
+    md = re.sub(r'<!--.*?-->', '', md, flags=re.S)  # other notes for editors
+    body = markdown.markdown(md, extensions=['tables'])
+    body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>Country)', r'<table class="num">\1', body)  # number tables align right
+    if body_class == 'apps-page':
+        body = re.sub(r'(<table>.*?</table>)', r'<div class="scroll">\1</div>', body, flags=re.S)  # wide tables scroll on phones
+
+    # Section ids and the table of contents
+    slug = lambda t: 's-' + re.sub(r'[^a-z0-9]+', '-', re.sub(r'<.*?>', '', t).lower()).strip('-')
+    heads = re.findall(r'<h2>(.*?)</h2>', body)
+    for h in heads:
+        body = body.replace(f'<h2>{h}</h2>', f'<h2 id="{slug(h)}">{h}</h2>', 1)
+    toc = '<nav class="toc" aria-label="Contents"><p>Contents</p>' + ''.join(f'<a href="#{slug(h)}">{h}</a>' for h in heads) + '</nav>'
+
+    header = (f'<header class="wrap">\n  <p class="kicker">{kicker}</p>\n  <h1>{h1}</h1>\n  <p class="sub">{sub}</p>\n'
+              f'  <p class="byline">{BYLINE} · Last updated {last_updated(src)}</p>\n</header>')
+    page = (ROOT / 'article/template.html').read_text()
+    if not hero:
+        page = re.sub(r'<!--HERO-->.*?<!--/HERO-->', '', page, flags=re.S)
+    for k, v in {'TITLE': title, 'DESCRIPTION': description, 'HEADER': header, 'BODY': body, 'TOC': toc, 'BODYCLASS': body_class}.items():
+        page = page.replace('{{' + k + '}}', v)
+    (ROOT / out).parent.mkdir(exist_ok=True)
+    (ROOT / out).write_text(page)
+    print('wrote', out)
+
+
+build('article.md', 'index.html', 'Mind the Surface',
+      "A proposal for OpenStreetMap-based maps: keep each road's class colour and add one subtle signal for unpaved roads.",
+      'A proposal for OpenStreetMap-based maps', 'Mind the Surface', 'A main road is not always paved', hero=True)
+build('apps.md', 'apps/index.html', 'App reports: Mind the Surface',
+      'How OpenStreetMap-based maps and apps draw unpaved roads today, app by app.',
+      '<a href="../">Mind the Surface</a>', 'App reports', 'How OpenStreetMap-based maps draw unpaved roads, November 2026',
+      hero=False, body_class='apps-page')

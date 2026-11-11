@@ -13,7 +13,7 @@ Caption: "Namibia, C48, a primary road. The asphalt ends and 19 km of unpaved ro
 
 Most map apps built on OpenStreetMap draw an unpaved main road exactly like an asphalt one. In large parts of the world that is not a detail: a quarter of the roads mapped in OpenStreetMap are unpaved, including many of the primary and secondary roads that link towns. This proposal asks map makers to keep each road's class colour and add one subtle signal for **Unpaved**. An optional **Off-road** mark can show the roughest ones, where the data supports it.
 
-[Live demo](demo/) · [App reports](apps/) · [Evidence](evidence/)
+[Live demo](demo/) · [App reports](apps/) · [Data and methods](#s-data-and-methods)
 
 ## 1. The misconception
 
@@ -138,6 +138,15 @@ There is no single default: the right style depends on each map's design, and ab
 - **Mappers:** add `surface` to main roads, fix tags that are out of date, and add `smoothness` where a road really is rough. Tag what is on the ground, not what makes a map look right: the map should follow the tags, never the other way round.
 - **Map and app makers:** pick a style, switch to a paved whitelist, and tell me what does not fit your map.
 - **Map users:** comment on or vote for the open issue of the app you use.
+
+## Data and methods
+
+The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. The rules, the code and every result are in the [GitHub repository](https://github.com/julcnx/unpaved-rendering):
+
+- [Key numbers](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/key-numbers.md): every figure quoted here, generated from the data.
+- [Full report](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/report.md): per country and road class, with the official figures.
+- [Image review](https://github.com/julcnx/unpaved-rendering/blob/master/research/examples/images/review.md): the 55 roads checked on street-level imagery.
+- [Classifier](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js) and its [tests](https://github.com/julcnx/unpaved-rendering/tree/master/test).
 
 ## Credits
 

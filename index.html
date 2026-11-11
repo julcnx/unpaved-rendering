@@ -6,7 +6,7 @@
 <title>Mind the Surface</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23faf8f4%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%23e8a040%22 stroke-width=%227%22/%3E%3Cpath d=%22M4 26 L28 6%22 stroke=%22%236b4420%22 stroke-width=%227%22 stroke-dasharray=%224 4%22 opacity=%22.55%22/%3E%3C/svg%3E">
 <meta name="description" content="A proposal for OpenStreetMap-based maps: keep each road's class colour and add one subtle signal for unpaved roads.">
-<!-- Page template for article.md. Do not edit index.html: run `python3 scripts/build-article.py`. -->
+<!-- Page template for article.md (index.html) and apps.md (apps/index.html). Do not edit the built pages: run `npm run build`. -->
 <style>
   :root { --ink: #2b2620; --muted: #6f665b; --paper: #faf8f4; --line: #e4ded4; --asphalt: #3a3a3a; --gravel: #b07a3c; }
   * { box-sizing: border-box; }
@@ -18,6 +18,10 @@
   .sub { font: italic clamp(20px, 2.4vw, 28px)/1.3 Georgia, serif; color: var(--muted); margin: 8px 0 0; }
   .byline { font-size: 15px; color: var(--muted); margin: 14px 0 0; }
   .byline a { color: var(--ink); }
+  .kicker a { color: inherit; }
+  .scroll { overflow-x: auto; }
+  .apps-page .article > .scroll { max-width: none; }
+  .apps-page .article table { font-size: 15px; min-width: 760px; }
 
   /* Hero: full-width map, photos placed in the empty land on each side of the road (Komoot, centred on the transition) */
   .hero { position: relative; margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 2 / 1; }
@@ -129,14 +133,15 @@
   }
 </style>
 </head>
-<body>
+<body class="">
 <header class="wrap">
   <p class="kicker">A proposal for OpenStreetMap-based maps</p>
   <h1>Mind the Surface</h1>
   <p class="sub">A main road is not always paved</p>
-  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a></p>
+  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 11 November 2026</p>
 </header>
 
+<!--HERO-->
 <main class="wrap">
   <figure class="hero">
     <picture><source media="(max-width: 760px)" srcset="article/img/hero-komoot-portrait.png"><img src="article/img/hero-komoot.png" alt="Namibia C48 in Komoot: one orange line, paved and unpaved alike"></picture>
@@ -159,10 +164,11 @@
   <p class="caption">Namibia, C48, a primary road. The asphalt ends and 19 km of unpaved road begin (tagged <code>surface=gravel</code>).<br><b>On the map, it is the same orange line.</b></p>
   <p class="credit">Photos: tallguy, Mapillary, 2019, CC BY-SA 4.0 · Map: Komoot, November 2026, © OpenStreetMap contributors</p>
 </main>
+<!--/HERO-->
 
 <article class="article">
 <p>Most map apps built on OpenStreetMap draw an unpaved main road exactly like an asphalt one. In large parts of the world that is not a detail: a quarter of the roads mapped in OpenStreetMap are unpaved, including many of the primary and secondary roads that link towns. This proposal asks map makers to keep each road's class colour and add one subtle signal for <strong>Unpaved</strong>. An optional <strong>Off-road</strong> mark can show the roughest ones, where the data supports it.</p>
-<p><a href="demo/">Live demo</a> · <a href="apps/">App reports</a> · <a href="evidence/">Evidence</a></p>
+<p><a href="demo/">Live demo</a> · <a href="apps/">App reports</a> · <a href="#s-data-and-methods">Data and methods</a></p>
 <h2 id="s-1-the-misconception">1. The misconception</h2>
 <p>A red or orange road on a map reads as "a proper road". Most people take that to mean asphalt, and most maps agree with them: when a road has no <code>surface</code> tag it is drawn as paved, and when it does have one, most styles ignore it anyway.</p>
 <p>So the map tells the same story for the C48 in Namibia on both sides of the point where the asphalt stops. A driver in a rental car, a cyclist planning a day, a rider on a road bike, an aid convoy working out how long a trip will take: all of them see one orange line, and only find out on the ground that the next 19 km are gravel.</p>
@@ -190,7 +196,7 @@
 </ol>
 <p>The third group shows why the class matters. A trunk road drawn like a track no longer says that it is the main route between two towns. And when an important road looks like a track, mappers who want the map to look right may change its <code>highway</code> tag to match, which spreads wrong data. The road class says how important a road is; the surface says what it is like to drive. One signal for both makes both harder to read.</p>
 <p>Gaia GPS shows the right instinct, a dashed outline, but applies it by turning roads into tracks. Keep the outline, keep the class.</p>
-<figure class="fig wide apps"><div class="group"><h3>Show it, keep the class</h3><div class="pair"><figure><img src="article/img/app-americana.png" alt="Americana at Namutoni" loading="lazy"><figcaption>Americana</figcaption></figure><figure><img src="article/img/app-dmd2.png" alt="DMD2 at Namutoni" loading="lazy"><figcaption>DMD2</figcaption></figure></div></div><div class="group"><h3>Do not show it</h3><div class="pair"><figure><img src="article/img/app-komoot.png" alt="Komoot at Namutoni" loading="lazy"><figcaption>Komoot</figcaption></figure><figure><img src="article/img/app-mapy-com.png" alt="Mapy.com at Namutoni" loading="lazy"><figcaption>Mapy.com</figcaption></figure></div></div><div class="group"><h3>Show it, lose the class</h3><div class="pair"><figure><img src="article/img/app-humanitarian.png" alt="Humanitarian at Namutoni" loading="lazy"><figcaption>Humanitarian</figcaption></figure><figure><img src="article/img/app-ridewithgps.png" alt="Ride with GPS at Namutoni" loading="lazy"><figcaption>Ride with GPS</figcaption></figure></div></div><figcaption>Namibia, C38 at Namutoni (Etosha): unpaved to the west and north, paved to the east. Screenshots of each web map, November 2026, © OpenStreetMap contributors. Every app at all six roads: App reports.</figcaption></figure>
+<figure class="fig wide apps"><div class="group"><h3>Show it, keep the class</h3><div class="pair"><figure><img src="article/img/app-americana.png" alt="Americana at Namutoni" loading="lazy"><figcaption>Americana</figcaption></figure><figure><img src="article/img/app-dmd2.png" alt="DMD2 at Namutoni" loading="lazy"><figcaption>DMD2</figcaption></figure></div></div><div class="group"><h3>Do not show it</h3><div class="pair"><figure><img src="article/img/app-komoot.png" alt="Komoot at Namutoni" loading="lazy"><figcaption>Komoot</figcaption></figure><figure><img src="article/img/app-mapy-com.png" alt="Mapy.com at Namutoni" loading="lazy"><figcaption>Mapy.com</figcaption></figure></div></div><div class="group"><h3>Show it, lose the class</h3><div class="pair"><figure><img src="article/img/app-humanitarian.png" alt="Humanitarian at Namutoni" loading="lazy"><figcaption>Humanitarian</figcaption></figure><figure><img src="article/img/app-ridewithgps.png" alt="Ride with GPS at Namutoni" loading="lazy"><figcaption>Ride with GPS</figcaption></figure></div></div><figcaption>Namibia, C38 at Namutoni (Etosha): unpaved to the west and north, paved to the east. Screenshots of each web map, November 2026, © OpenStreetMap contributors. Every app: <a href="apps/">App reports</a>.</figcaption></figure>
 
 <h2 id="s-4-the-ask-two-levels">4. The ask: two levels</h2>
 <p>Every road gets one of two levels from its tags:</p>
@@ -329,6 +335,14 @@
 <li><strong>Map and app makers:</strong> pick a style, switch to a paved whitelist, and tell me what does not fit your map.</li>
 <li><strong>Map users:</strong> comment on or vote for the open issue of the app you use.</li>
 </ul>
+<h2 id="s-data-and-methods">Data and methods</h2>
+<p>The numbers come from OpenStreetMap extracts of 54 countries (November 2026), classified with the two-level rules above. The rules, the code and every result are in the <a href="https://github.com/julcnx/unpaved-rendering">GitHub repository</a>:</p>
+<ul>
+<li><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/key-numbers.md">Key numbers</a>: every figure quoted here, generated from the data.</li>
+<li><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/report.md">Full report</a>: per country and road class, with the official figures.</li>
+<li><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/examples/images/review.md">Image review</a>: the 55 roads checked on street-level imagery.</li>
+<li><a href="https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js">Classifier</a> and its <a href="https://github.com/julcnx/unpaved-rendering/tree/master/test">tests</a>.</li>
+</ul>
 <h2 id="s-credits">Credits</h2>
 <ul>
 <li>Christoph Hormann (imagico), who designed the unpaved grain of OSM Carto and wrote about road styling in OSM maps.</li>
@@ -337,7 +351,7 @@
 <li>Map data © OpenStreetMap contributors (ODbL). Official road statistics: CIA World Factbook (public domain). Street-level photos: Mapillary contributors (CC BY-SA 4.0), credited with each photo.</li>
 </ul>
 </article>
-<nav class="toc" aria-label="Contents"><p>Contents</p><a href="#s-1-the-misconception">1. The misconception</a><a href="#s-2-how-common-unpaved-main-roads-are">2. How common unpaved main roads are</a><a href="#s-3-what-apps-show-today">3. What apps show today</a><a href="#s-4-the-ask-two-levels">4. The ask: two levels</a><a href="#s-5-optional-the-off-road-mark">5. Optional: the Off-road mark</a><a href="#s-6-how-to-draw-it">6. How to draw it</a><a href="#s-7-limits">7. Limits</a><a href="#s-8-future-work">8. Future work</a><a href="#s-9-how-to-help">9. How to help</a><a href="#s-credits">Credits</a></nav>
+<nav class="toc" aria-label="Contents"><p>Contents</p><a href="#s-1-the-misconception">1. The misconception</a><a href="#s-2-how-common-unpaved-main-roads-are">2. How common unpaved main roads are</a><a href="#s-3-what-apps-show-today">3. What apps show today</a><a href="#s-4-the-ask-two-levels">4. The ask: two levels</a><a href="#s-5-optional-the-off-road-mark">5. Optional: the Off-road mark</a><a href="#s-6-how-to-draw-it">6. How to draw it</a><a href="#s-7-limits">7. Limits</a><a href="#s-8-future-work">8. Future work</a><a href="#s-9-how-to-help">9. How to help</a><a href="#s-data-and-methods">Data and methods</a><a href="#s-credits">Credits</a></nav>
 
 <script>
   // Today / Proposed slider

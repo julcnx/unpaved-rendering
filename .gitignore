@@ -1,3 +1,6 @@
 node_modules/
 shots/
 .DS_Store
+
+# Private outreach notes: mapper names and private replies (never public)
+research/B-communities.md
