@@ -127,6 +127,9 @@ if (!st) {
     // id: never all digits, or the sheet stores it as a number and may round it.
     r: { id: crypto.randomUUID?.() ?? `r${Math.random().toString(36).slice(2)}`, version, started: new Date().toISOString(),
       screen: `${screen.width}x${screen.height}@${devicePixelRatio}`, viewport: innerWidth, resumes: 0, maps: [] } };
+  // Where the link was posted (?src=fb, ?src=enduro...), to tell the groups apart; it goes in the sheet's raw column.
+  const src = new URLSearchParams(location.search).get('src');
+  if (src) st.r.src = src.slice(0, 20);
 }
 const save = () => { if (st.screen !== 'start') store.set(KEY, JSON.stringify({ ...st, elapsed: elapsed() })); };
 
