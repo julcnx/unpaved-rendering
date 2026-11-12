@@ -37,7 +37,7 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 | Humanitarian (HOT) | yes | Every class from zoom 11, but the road takes the residential colour, so an unpaved primary looks like a minor street | Paved whitelist; untagged unclassified and residential roads count as unpaved | To check | [GitHub](https://github.com/hotosm/HDM-CartoCSS/issues) ([#104](https://github.com/hotosm/HDM-CartoCSS/issues/104)) |
 | Ride with GPS | no | Drawn as dashed brown lines, like tracks | To check | Dashed brown line | [Help center](https://support.ridewithgps.com) |
 | OsmAnd Motorcycle styles | yes | Primary to residential with a gravel or dirt surface drawn like tracks; motorway and trunk never | Full `surface` and `tracktype` | Five colour categories by surface and track type | [GitHub discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) |
-| Gaia GPS (Gaia Topo) | no | `surface` is not used. Some roads with very bad `smoothness` are drawn as tracks; the exact rule is to check. The premium Overland layer shows surfaces | To check | Dashed outline, light fill | [Community forum](https://help.gaiagps.com/hc/en-us/community/topics) |
+| Gaia GPS (Gaia Topo) | no | `surface` is not used. Tertiary, unclassified and residential roads with `smoothness` very_bad or worse, or `4wd_only=yes`, are drawn as tracks; trunk, primary and secondary never. The premium Overland layer shows surfaces | `smoothness` (very_bad or worse) and `4wd_only`, only to turn a minor road into a track | Dashed outline, light fill | [Community forum](https://help.gaiagps.com/hc/en-us/community/topics) |
 
 ## Do not show it
 

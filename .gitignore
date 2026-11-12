@@ -7,3 +7,6 @@ research/B-communities.md
 
 # Local secrets (Mapillary token)
 .env.local
+
+# Gaia GPS check cache: tiles and Overpass answers (412 MB); results are in gaia-tracks.json
+research/examples/gaia-tracks/

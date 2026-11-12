@@ -51,7 +51,7 @@ Updated 2026-11-10. Open items from all the task files and the "Mind the Surface
 25. Allies: HOT, local mapping communities, the laterite-discussion contacts.
 29. Done 2026-11-11 (posted by Julien). Facebook post, northern Thailand (2026-11-10): road MS.4014 Pai to Wiang Haeng (view 19.540403, 98.548539, z13 to z14), carousel of a road photo plus Komoot, Google Maps, OsmAnd Off-road style, Gaia GPS and DMD2. Web screenshots in [examples/screenshots/pai-z14-portrait/](examples/screenshots/pai-z14-portrait/) (`PORTRAIT=1 ZOOM=14 node examples/screenshots.ts pai`), demo shots in `../shots/pai-portrait/`. Post text now kept by Julien in his notes. Can go before the forum feedback of item 22.
 
-- Gaia GPS (2026-11-11): test which roads it draws as tracks (very bad `smoothness` on any class? the Bolivia F10 trunk stayed a normal road), then update the app report (A0) and the article, which says "some roads" for now.
+- Done 2026-11-12: Gaia GPS draws `tertiary`, `unclassified` and `residential` with `smoothness=very_bad` or worse, or `4wd_only=yes`, as tracks; never `trunk`, `primary` or `secondary`; `surface` and `tracktype` not used. Measured from the `osm_id`s in Gaia's tiles ([examples/gaia-tracks.ts](examples/gaia-tracks.ts)); A0, the app reports, D3 and the article updated.
 
 ## Low priority
 - Paved `highway=track` (`tracktype=grade1` or a paved surface) drawn as a continuous line, matching the track rhythms now used by the centre line (OSM Carto already draws grade1 solid). For the future-work section, after the road classes.

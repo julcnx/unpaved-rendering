@@ -56,7 +56,7 @@ What he says, and what it means for our styles:
 6. **Readable without a key**: his test for a general map. The two base levels should pass it; the Off-road mark may need the legend.
 7. Nothing in these articles on "missing surface means paved".
 
-**Gaia GPS track look: credit the dashed outline, not the class change** (2026-11-10). Gaia Topo draws roads with very bad `smoothness` like tracks: dashed casing and light fill, the class colour gone. Julien sees this on any class; at the Bolivia spot the F10 trunk stayed a normal road, so the exact rule is not confirmed (A0). In the proposal and the article, present it as:
+**Gaia GPS track look: credit the dashed outline, not the class change** (2026-11-10). Gaia Topo draws tertiary, unclassified and residential roads with `smoothness=very_bad` or worse, or `4wd_only=yes`, like tracks: dashed casing and light fill, the class colour gone. Trunk, primary and secondary never change (measured 2026-11-12, A0). In the proposal and the article, present it as:
 
 1. **Good idea, credited**: the dashed outline is a clear, well-known way to say "not a normal road". Style 4 (dashed casing) takes it from Gaia.
 2. **Bad practice, explained**: drawing a road as a track loses its class. A trunk that looks like a track no longer says it is the main route between two towns, the same problem as Ride with GPS, the OsmAnd Motorcycle styles and HOT (A0).
