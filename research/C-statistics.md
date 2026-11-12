@@ -9,22 +9,25 @@ Reference implementation: [classifier/classify.ts](classifier/classify.ts). Port
 - [classifier/classify.lua](classifier/classify.lua): Lua (osm2pgsql flex and similar). `classify(tags)` returns level, base, base source, mark, mark source.
 - [classifier/classify.sql](classifier/classify.sql): PostgreSQL functions. `road_surface_class(highway, surface, smoothness, tracktype, 4wd_only)` returns `paved`, `unpaved`, `offroad` or `specialized`.
 
-Tests: [classifier/test-cases.json](classifier/test-cases.json) has 67 cases shared by all three. `node --test classifier/classify.test.ts classifier/ports.test.ts stats/test/road-stats.test.ts` runs everything (75 tests, the SQL one skipped without a database). The SQL test runs only when `PGHOST`/`PGPORT` point to a test database; run against a throwaway PostgreSQL 17 on 2026-11-02, all passing.
+Tests: [classifier/test-cases.json](classifier/test-cases.json) has 100 cases shared by all three. `node --test classifier/classify.test.ts classifier/ports.test.ts stats/test/road-stats.test.ts` runs everything (108 tests, the SQL one skipped without a database). The SQL test runs only when `PGHOST`/`PGPORT` point to a test database; run against a throwaway PostgreSQL 17 on 2026-11-12, all passing.
 
 **Base level** (first tag that applies):
 
 | Priority | Tag | Paved | Unpaved |
 |---|---|---|---|
-| 1 | `surface` | paved, asphalt, chipseal, concrete, concrete:plates, paving_stones, sett, bricks, metal, cobblestone, cobblestone:flattened; wood, concrete:lanes and grass_paver only with `smoothness` bad or better | everything else, including typos and local values |
-| 2 | `tracktype` (no surface) | grade1 | grade2 to grade8 |
-| 3 | nothing | road classes | `highway=track` |
+| 1 | `surface`, unpaved value | | everything not in the paved list, including typos and local values |
+| 2 | unpaved evidence, even with a paved surface | | `smoothness` very_bad or worse; `4wd_only` yes, recommended or extreme |
+| 3 | `surface`, paved value | paved, asphalt, chipseal, concrete, concrete:plates, paving_stones, sett, bricks, metal, cobblestone, cobblestone:flattened; wood, concrete:lanes and grass_paver only with `smoothness` bad or better | |
+| 4 | `tracktype` (no surface) | grade1 | grade2 to grade8 |
+| 5 | nothing | road classes | `highway=track` |
 
 **Off-road mark** (Unpaved roads only, ignored on Paved roads):
 
 | Priority | Tag | Off-road mark | Specialized (render as path) |
 |---|---|---|---|
 | 1 | `smoothness` (any known value decides) | very_bad, horrible | very_horrible, impassable |
-| 2 | `tracktype` | grade3 to grade7 | grade8 |
+| 2 | `tracktype` (any known value decides; grade1 to grade3 give no mark) | grade4 to grade7 | grade8 |
+| 3 | `surface` | mud, rock | |
 | minimum | `4wd_only` | recommended, yes | extreme |
 
 Decisions:
@@ -34,7 +37,7 @@ Decisions:
 3. The spec says `smoothness=impossible`; the documented OSM value is `impassable`. The classifier uses `impassable`.
 4. `tracktype=grade6` to `grade8`: Australian local extension (from Australian mappers in the survey replies).
 5. Multiple surface values (`asphalt;concrete`) are Paved only if every part is paved.
-6. Smoothness no longer decides Paved vs Unpaved (decision 9): it only gives the mark. `smoothness=excellent` + `surface=unpaved` is Unpaved. Off-road evidence on a Paved road is ignored for rendering and listed as a conflict in the stats.
+6. Good smoothness never makes a road Paved: `smoothness=excellent` + `surface=unpaved` is Unpaved. Since 2026-11-12, `smoothness` very_bad or worse and `4wd_only` make a road Unpaved even with a paved surface (a city car cannot pass); these are listed as conflicts in the stats. `tracktype` never overrules a surface (open question 12).
 7. `cobblestone` and `cobblestone:flattened` are Paved (legacy value mostly used for sett; OSM Carto and Organic Maps also treat it as paved).
 
 ## Statistics pipeline
@@ -78,13 +81,13 @@ Each result also has:
 
 `coverage_km`, `base_source_km`, `mark_source_km` and `value_km` are split per class and have an `all` entry.
 
-**Untagged** means no `surface` and no known `tracktype`, so the road is assumed Paved. `smoothness` or `4wd_only` alone do not make a road tagged, because they never decide the base level. Use this wording on the wiki.
+**Untagged** means no `surface` and no known `tracktype`, so the road is assumed Paved. `smoothness` bad or better, or `4wd_only=no`, alone do not make a road tagged, because they do not decide the base level; `smoothness` very_bad or worse, or a positive `4wd_only`, makes it Unpaved. Use this wording on the wiki.
 
-**Off-road evidence per country** (2026-11-09, [stats/mark-coverage.md](stats/mark-coverage.md), from the combination tables): 5.8% of Unpaved km have `smoothness`, `tracktype` or `4wd_only`, so the Off-road mark can be decided there today; 3.6% get the mark. From 41% in Bolivia (mostly `smoothness`) and 29% in Iceland (mostly `4wd_only`) down to 2% in Brazil, which has the most Unpaved km. Includes a short table for the article.
+**Off-road evidence per country** (2026-11-09, [stats/mark-coverage.md](stats/mark-coverage.md), from the combination tables): 5.9% of Unpaved km have `smoothness`, `tracktype` or `4wd_only`, so the Off-road mark can be decided there today; 3.1% get the mark (recomputed 2026-11-12 with the current rules). From 41% in Bolivia (mostly `smoothness`) and 29% in Iceland (mostly `4wd_only`) down to 2% in Brazil, which has the most Unpaved km. Includes a short table for the article.
 
 **Spot check** (2026-11-09, [stats/spot-check.ts](stats/spot-check.ts)): the 2 longest ways of each odd-way list (unpaved main roads, Off-road mark, conflicts, unknown values) for Namibia, Bolivia, Nepal and Denmark, 28 ways, fetched again from the OSM API. All 28 have the same tags, level and length as in the results. This checks the per-way pipeline (tags, classifier, length), not the country totals.
 
-Tests: see Classifier above (75 tests, including 5 stats tests on a fixture of known lengths).
+Tests: see Classifier above (108 tests, including the stats tests on a fixture of known lengths).
 
 ## Runs
 
@@ -347,4 +350,10 @@ Answers recorded here.
    - Stats columns: Paved (tagged), Untagged, Unpaved, Off-road mark.
 10. **`wood`, `concrete:lanes` and `grass_paver`** (decided 2026-11-09): Unpaved by default, Paved when `smoothness` is bad or better, since only `very_bad` and worse mean Off-road. All three look very different by region: smooth farm lanes in Europe vs broken strips with a washed-out middle in Thailand; plank bridges vs log or branch bridges; intact vs broken grass pavers. Before this, `wood` was always Paved, `concrete:lanes` and `grass_paver` always Unpaved. The stats were not rerun (the extracts are deleted): recomputed from the combo tables, about 216 km move from Paved to Unpaved (mostly `wood` in Indonesia and Brazil) and 84 km the other way (mostly `concrete:lanes` in Colombia and Indonesia), out of 20 million km in all 55 rows, so no table changes visibly.
 11. **`tracktype=grade3` keeps the Off-road mark** (decided 2026-11-10, Julien). `tracktype` is about firmness and lines up with `surface`, but `grade3` (mixed hard and soft material) is considered high-clearance in practice, so the mark from `grade3` to `grade7` stays. Dropping `grade3` was tried the same day and reverted: it would have moved about 34,000 km from Off-road back to plain Unpaved (3.6% of Unpaved km to 2.9%).
+   - **Reversed 2026-11-12 (Julien): `grade3` no longer gives the mark, `grade4` to `grade7` do.** Evidence from the combo tables, where mappers also rate `smoothness`: `grade3` roads are very_bad or worse on 59% of rated km, the same as plain `surface=unpaved` (61%), against 73% for `grade4` and 87% for `grade5`; `4wd_only` share 1.5%, 4.3% and 7.1%. The one `grade3` road with clear photos was a graded road (decision 14). About 34,500 km lose the mark: 195,000 to 161,000 km, 3.7% to 3.1% of Unpaved km.
    - Status (2026-11-02): mockups, classifier, Lua and SQL ports, tests, stats and report all updated. Three-level results archived in [stats/archive/3-levels/](stats/archive/3-levels/). All countries to be rerun once (Timor-Leste done). Thailand added to the country list with a fresh Geofabrik download.
+12. **Unpaved evidence overrules a paved surface, `tracktype` does not** (decided 2026-11-12). `smoothness` very_bad or worse and `4wd_only` make a road Unpaved whatever the `surface` (reverses the "ignored on Paved roads" part of decision 9). `tracktype` only decides when there is no `surface`: it describes firmness, the same thing as `surface`, and mappers who pave a road update `surface` and leave `tracktype` behind. Edit history of the 45 longest ways of each kind (OSM API, 2026-11-12): with `smoothness` very_bad or worse on a paved surface, 29 are deliberate (both tags set in the same edit, or `smoothness` added after the paved surface) and 16 have a `smoothness` older than the paved surface; with `tracktype=grade3` or higher, 21 are deliberate and 24 older. `4wd_only` is a legal or signed restriction. Both kinds are listed as conflicts in the stats. From the combo tables: about 3,000 km turn Unpaved through `smoothness` or `4wd_only`, and 2,145 km with a paved surface and `tracktype=grade2` or higher stay Paved.
+13. **`surface=mud` and `rock` give the Off-road mark** (decided 2026-11-12), when `smoothness` and `tracktype` say nothing: about 690 km. `sand` was tried and left out: it would add 21,700 km, mappers who rate sand roads rate them like `ground` or plain `unpaved`, and it depends on the country (very_bad in Mali, mostly `bad` or better and `grade1` or `grade2` in Finland and Argentina). Sand roads that need a 4WD should carry `4wd_only` or `smoothness`.
+14. **Photo check of `tracktype=grade3` and of sand and mud** (2026-11-12): of the 20 longest ways marked through `grade3` alone and 11 main roads tagged `sand` or `mud`, only 2 have Mapillary coverage, both `grade3`: Kenya [w34357586](https://www.openstreetmap.org/way/34357586) (soft sand with ruts, mark plausible) and Namibia D2186 [w28157306](https://www.openstreetmap.org/way/28157306) (graded gravel, mark too harsh). Not enough to decide; a sample drawn from ways with coverage is still to do.
+15. **Legacy and local values stay unknown** (decided 2026-11-12): `smoothness=robust_wheels` and similar, `tracktype=grade3-5`, and paved local names (`dbst`, `ottaseal`, `Blacktopped`, `tarmac`) are to be fixed in the data, not accepted by the classifier. Unknown `surface` values stay Unpaved: of 4,830 km, about 3,400 km are unpaved names and at most 740 km paved ones.
+16. **The results in `stats/results/` predate decisions 12 and 13** (2026-11-12): `report.md`, `summary.csv` and `key-numbers.md` still show the earlier rules until the countries are rerun (`FORCE=1 stats/run-all.sh`). `mark-coverage.md` is current, since it is computed from the combo tables.

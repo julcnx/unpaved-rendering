@@ -19,28 +19,28 @@ test('buckets per class', () => {
   assert.equal(d.km.unclassified.unpaved, 1.1);
   assert.equal(d.km.unclassified.offroad, 1.1, 'dirt + very_bad gets the mark');
   assert.equal(d.km.residential.untagged, 1.1, 'unknown smoothness only counts as untagged');
-  assert.equal(d.km.secondary.paved_tagged, 1.1, 'off-road evidence is ignored on paved roads');
-  assert.equal(d.km.secondary.offroad, 1.1, 'gravel + 4wd_only=yes gets the mark');
+  assert.equal(d.km.secondary.paved_tagged, 0, 'off-road evidence overrules a paved surface');
+  assert.equal(d.km.secondary.offroad, 2.2, 'asphalt + very_bad and gravel + 4wd_only=yes get the mark');
 });
 
 test('all row sums the classes and ignores other highways', () => {
   // 7 road ways of 1.112 km (w2 is twice as long), footway excluded.
   assert.equal(d.km.all.untagged, 3.3);
-  assert.equal(d.km.all.paved_tagged, 2.2);
+  assert.equal(d.km.all.paved_tagged, 1.1);
   assert.equal(d.km.all.unpaved, 1.1);
-  assert.equal(d.km.all.offroad, 2.2);
+  assert.equal(d.km.all.offroad, 3.3);
 });
 
 test('coverage, sources, deciding values and sanity lists', () => {
   assert.equal(d.coverage_km.tertiary.surface, 1.1);
   assert.equal(d.coverage_km.all.smoothness, 3.3);
-  assert.equal(d.mark_source_km.all.smoothness, 1.1);
+  assert.equal(d.mark_source_km.all.smoothness, 2.2);
   assert.equal(d.mark_source_km.all['4wd_only'], 1.1);
   assert.equal(d.value_km.all.unpaved['surface=unpaved'], 1.1);
   assert.equal(d.value_km.all.offroad['4wd_only=yes'], 1.1);
   assert.equal(d.unknown_value_km['smoothness=rough'], 1.1);
-  assert.equal(d.conflict_km['paved (surface=asphalt) + smoothness=very_bad'], 1.1);
-  assert.deepEqual(d.odd.major_unpaved.map((n: any) => n.id), ['w8']);
+  assert.equal(d.conflict_km['surface=asphalt + smoothness=very_bad'], 1.1);
+  assert.deepEqual(d.odd.major_unpaved.map((n: any) => n.id), ['w6', 'w8']);
   assert.deepEqual(d.odd.conflict.map((n: any) => n.id), ['w6']);
 });
 

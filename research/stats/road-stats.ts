@@ -64,7 +64,7 @@ const markSourceKm = perClass((): Record<string, number> => ({}));
 const valueKm = perClass(() => ({ unpaved: {}, offroad: {}, specialized: {} }) as Record<string, Record<string, number>>);
 // Values ignored by the classifier, or unpaved only because they are not in any known list (typos, local values).
 const unknownValueKm: Record<string, number> = {};
-// Sanity: off-road evidence ignored on paved roads, and smoothness excellent/good on unpaved surfaces.
+// Sanity: paved surfaces overruled by unpaved evidence, and smoothness excellent/good on unpaved surfaces.
 const conflictKm: Record<string, number> = {};
 const combos = new Map<string, number>();
 
@@ -76,13 +76,6 @@ function keepTop(list: WayNote[], note: WayNote) {
   list.push(note);
   list.sort((a, b) => b.km - a.km);
   if (list.length > TOP_WAYS) list.pop();
-}
-
-function offroadEvidence(tags: Tags): string | null {
-  if (tags.smoothness && SMOOTHNESS[tags.smoothness]) return `smoothness=${tags.smoothness}`;
-  if (tags.tracktype && TRACKTYPE_MARK[tags.tracktype]) return `tracktype=${tags.tracktype}`;
-  if (tags['4wd_only'] && FOUR_WD_ONLY[tags['4wd_only']]) return `4wd_only=${tags['4wd_only']}`;
-  return null;
 }
 
 function addWay(id: string, tags: Tags, len: number) {
@@ -107,9 +100,14 @@ function addWay(id: string, tags: Tags, len: number) {
   if (MAJOR.has(highway) && r.base === 'unpaved') keepTop(odd.major_unpaved, note);
   if (r.mark) keepTop(odd.offroad_mark, note);
 
-  const evidence = r.base === 'paved' ? offroadEvidence(tags) : null;
-  if (evidence) {
-    add(conflictKm, `paved (${tags.surface ? `surface=${tags.surface}` : 'no surface'}) + ${evidence}`, len);
+  // A paved surface overruled by unpaved evidence: right for the map, but one of the tags is likely wrong.
+  if (r.base === 'unpaved' && r.baseSource !== 'surface' && tags.surface) {
+    add(conflictKm, `surface=${tags.surface} + ${r.baseSource}=${tags[r.baseSource]}`, len);
+    keepTop(odd.conflict, note);
+  }
+  // A paved surface that wins over tracktype grade2 or higher: the tracktype is likely a leftover from before the road was paved.
+  if (r.base === 'paved' && tags.surface && Object.hasOwn(TRACKTYPE_MARK, tags.tracktype ?? '') && tags.tracktype !== 'grade1') {
+    add(conflictKm, `surface=${tags.surface} + tracktype=${tags.tracktype} (ignored)`, len);
     keepTop(odd.conflict, note);
   }
   if (r.base === 'unpaved' && tags.surface && (tags.smoothness === 'excellent' || tags.smoothness === 'good')) {

@@ -224,11 +224,11 @@
 <tbody>
 <tr>
 <td><strong>Paved</strong></td>
-<td><code>surface</code> is a paved value or missing, with no unpaved evidence and <code>tracktype</code> at most <code>grade1</code></td>
+<td><code>surface</code> is a paved value, or is missing with <code>tracktype</code> at most <code>grade1</code>, and there is no unpaved evidence</td>
 </tr>
 <tr>
 <td><strong>Unpaved</strong></td>
-<td>any other <code>surface</code> value, or unpaved evidence: <code>tracktype=grade2</code> or higher, <code>smoothness=very_bad</code> or worse, or <code>4wd_only=yes</code>, <code>recommended</code> or <code>extreme</code>, whatever the <code>surface</code></td>
+<td>any other <code>surface</code> value; no <code>surface</code> and <code>tracktype=grade2</code> or higher; or unpaved evidence, whatever the <code>surface</code>: <code>smoothness=very_bad</code> or worse, or <code>4wd_only=yes</code>, <code>recommended</code> or <code>extreme</code></td>
 </tr>
 </tbody>
 </table>
@@ -241,11 +241,12 @@
 <p>On unpaved roads only, a map can add a mark for roads that need a high-clearance vehicle, when the tags say so:</p>
 <ul>
 <li><code>smoothness=very_bad</code> or worse</li>
-<li><code>tracktype=grade3</code> or higher</li>
+<li><code>tracktype=grade4</code> or higher</li>
+<li><code>surface=mud</code> or <code>rock</code>, when <code>smoothness</code> and <code>tracktype</code> say nothing</li>
 <li><code>4wd_only=yes</code>, <code>recommended</code> or <code>extreme</code></li>
 </ul>
-<p>This evidence also makes the road Unpaved, even when <code>surface</code> is paved: a road a city car cannot pass, such as a broken asphalt mountain road, is not drawn as paved.</p>
-<p>The mark is optional because the evidence is rare. Only 5.8% of unpaved km carry <code>smoothness</code>, <code>tracktype</code> or <code>4wd_only</code>, and 3.6% get the mark. In some countries it is common (36% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged <code>4wd_only</code>); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the real ask. How the mark looks in each style is shown under <a href="#s-6-how-to-draw-it">How to draw it</a>.</p>
+<p><code>smoothness</code> and <code>4wd_only</code> evidence also makes the road Unpaved, even when <code>surface</code> is paved: a road a city car cannot pass, such as a broken asphalt mountain road, is not drawn as paved.</p>
+<p>The mark is optional because the evidence is rare. Only 5.9% of unpaved km carry <code>smoothness</code>, <code>tracktype</code> or <code>4wd_only</code>, and 3.1% get the mark. In some countries it is common (34% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged <code>4wd_only</code>); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the real ask. How the mark looks in each style is shown under <a href="#s-6-how-to-draw-it">How to draw it</a>.</p>
 <table class="num">
 <thead>
 <tr>
@@ -258,39 +259,39 @@
 <tbody>
 <tr>
 <td>Bolivia</td>
-<td style="text-align: right;">175,701</td>
-<td style="text-align: right;">41.0%</td>
-<td style="text-align: right;">36.4%</td>
+<td style="text-align: right;">175,850</td>
+<td style="text-align: right;">41.1%</td>
+<td style="text-align: right;">33.9%</td>
 </tr>
 <tr>
 <td>Iceland</td>
-<td style="text-align: right;">8,472</td>
-<td style="text-align: right;">28.7%</td>
+<td style="text-align: right;">8,474</td>
+<td style="text-align: right;">28.8%</td>
 <td style="text-align: right;">25.0%</td>
 </tr>
 <tr>
 <td>Nepal</td>
-<td style="text-align: right;">18,627</td>
-<td style="text-align: right;">21.8%</td>
-<td style="text-align: right;">5.8%</td>
+<td style="text-align: right;">18,725</td>
+<td style="text-align: right;">22.2%</td>
+<td style="text-align: right;">4.2%</td>
 </tr>
 <tr>
 <td>Namibia</td>
 <td style="text-align: right;">46,985</td>
 <td style="text-align: right;">10.4%</td>
-<td style="text-align: right;">4.2%</td>
+<td style="text-align: right;">1.7%</td>
 </tr>
 <tr>
 <td>Australia</td>
-<td style="text-align: right;">459,377</td>
+<td style="text-align: right;">459,570</td>
 <td style="text-align: right;">4.8%</td>
-<td style="text-align: right;">3.6%</td>
+<td style="text-align: right;">3.0%</td>
 </tr>
 <tr>
 <td>Brazil</td>
-<td style="text-align: right;">1,535,920</td>
+<td style="text-align: right;">1,536,384</td>
 <td style="text-align: right;">2.0%</td>
-<td style="text-align: right;">1.0%</td>
+<td style="text-align: right;">0.8%</td>
 </tr>
 </tbody>
 </table>

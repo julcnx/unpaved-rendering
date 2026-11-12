@@ -66,7 +66,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
     return [className(cls), Math.round(t).toLocaleString('en'), ...BUCKETS.map((b) => pct(v[b], t) + '%')];
   });
   out.push(...table(['Class', 'km', ...HEAD], kmRows));
-  out.push('', 'Untagged: no `surface` and no known `tracktype`, so the road is assumed paved. Paved (tagged) + Untagged + Unpaved = 100%. The Off-road mark is the part of Unpaved with off-road evidence (`smoothness`, `tracktype`, `4wd_only`).');
+  out.push('', 'Untagged: no `surface` and no known `tracktype`, so the road is assumed paved. Paved (tagged) + Untagged + Unpaved = 100%. The Off-road mark is the part of Unpaved with off-road evidence (`smoothness`, `tracktype`, `4wd_only`, or `surface=mud` or `rock`).');
 
   const total = (cls: string) => sum(d.km[cls]);
   out.push('', '### Tag coverage (% of km with the tag, any value)', '');
@@ -74,7 +74,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
     Object.entries<Record<string, number>>(d.coverage_km).map(([cls, cov]) => [className(cls), ...KEYS.map((k) => pct(cov[k] ?? 0, total(cls)) + '%')])));
 
   const BASE = ['surface', 'tracktype', 'default'];
-  const MARK = ['smoothness', 'tracktype', '4wd_only'];
+  const MARK = ['smoothness', 'tracktype', 'surface', '4wd_only'];
   out.push('', '### Deciding tag (% of km)', '');
   out.push(...table(['Class', ...BASE.map((k) => `Base: ${k === 'default' ? 'none' : `\`${k}\``}`), ...MARK.map((k) => `Mark: \`${k}\``)],
     Object.keys(d.base_source_km).map((cls) =>
@@ -93,7 +93,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
   const titles: Record<string, string> = {
     major_unpaved: 'Longest Unpaved motorway, trunk, primary, secondary',
     offroad_mark: 'Longest ways with the Off-road mark',
-    conflict: 'Longest conflicts (off-road evidence on paved roads, smoothness excellent or good on unpaved)',
+    conflict: 'Longest conflicts (paved surface overruled by unpaved evidence, tracktype ignored on a paved surface, smoothness excellent or good on unpaved)',
     unknown_value: 'Longest ways with unknown values',
   };
   for (const [k, list] of Object.entries<any[]>(d.odd)) {

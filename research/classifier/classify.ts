@@ -2,16 +2,21 @@
 // Two base levels, paved and unpaved, plus an optional mark on unpaved roads only:
 // offroad (needs a high-clearance vehicle) or specialized (render as a path).
 //
-// Base: unpaved surface > unpaved evidence > paved surface > tracktype=grade1 > default (roads paved, tracks unpaved).
-// Unpaved evidence: smoothness very_bad or worse, 4wd_only, or tracktype grade2 or higher makes a road unpaved, even with a paved surface.
+// Base: unpaved surface > unpaved evidence > paved surface > tracktype (grade1 paved, grade2 or higher unpaved) > default (roads paved, tracks unpaved).
+// Unpaved evidence: smoothness very_bad or worse, or 4wd_only, makes a road unpaved, even with a paved surface. tracktype never overrules a surface.
+// Why (decided 2026-11-12, from the edit history of the 45 longest ways of each kind, see C-statistics.md):
+// - smoothness very_bad or worse on a paved surface is deliberate in two thirds of the cases (potholed or broken pavement).
+//   The stale third (smoothness left behind when the road was paved) shows on the map, which is a reason to fix the tag.
+// - 4wd_only is a legal or signed restriction, not a guess about the surface.
+// - tracktype describes firmness, like surface, and in half of the cases it is a leftover from before the road was paved.
 // wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
-// Mark: smoothness > tracktype, and 4wd_only sets a minimum. Only on unpaved roads.
+// Mark: smoothness > tracktype > surface (mud, rock), and 4wd_only sets a minimum. Only on unpaved roads.
 
 export type Base = 'paved' | 'unpaved';
 export type Mark = 'offroad' | 'specialized';
 export type Level = Base | Mark;
 export type BaseSource = 'surface' | 'tracktype' | 'smoothness' | '4wd_only' | 'default';
-export type MarkSource = 'smoothness' | 'tracktype' | '4wd_only';
+export type MarkSource = 'smoothness' | 'tracktype' | 'surface' | '4wd_only';
 
 export const RANK: Record<Mark, number> = { offroad: 0, specialized: 1 };
 
@@ -34,12 +39,16 @@ export const SMOOTHNESS: Record<string, Mark | null> = {
   very_horrible: 'specialized', impassable: 'specialized',
 };
 
+// grade3 gives no mark: where mappers also rate smoothness, grade3 roads are rated like plain surface=unpaved (decided 2026-11-12).
 // grade6-8 are an Australian local extension (Australian Tagging Guidelines/Roads).
 export const TRACKTYPE_MARK: Record<string, Mark | null> = {
-  grade1: null, grade2: null,
-  grade3: 'offroad', grade4: 'offroad', grade5: 'offroad', grade6: 'offroad', grade7: 'offroad',
+  grade1: null, grade2: null, grade3: null,
+  grade4: 'offroad', grade5: 'offroad', grade6: 'offroad', grade7: 'offroad',
   grade8: 'specialized',
 };
+
+// Soft or bare surfaces: evidence for the mark only when smoothness and tracktype say nothing.
+export const OFFROAD_SURFACES = new Set(['mud', 'rock']);
 
 export const FOUR_WD_ONLY: Record<string, Mark> = {
   recommended: 'offroad',
@@ -75,14 +84,11 @@ export function classifyDetailed(tags: Tags): Result {
   } else if (has(FOUR_WD_ONLY, tags['4wd_only'])) {
     base = 'unpaved';
     baseSource = '4wd_only';
-  } else if (has(TRACKTYPE_MARK, tags.tracktype) && tags.tracktype !== 'grade1') {
-    base = 'unpaved';
-    baseSource = 'tracktype';
   } else if (surface) {
     base = surface;
     baseSource = 'surface';
-  } else if (tags.tracktype === 'grade1') {
-    base = 'paved';
+  } else if (has(TRACKTYPE_MARK, tags.tracktype)) {
+    base = tags.tracktype === 'grade1' ? 'paved' : 'unpaved';
     baseSource = 'tracktype';
   } else {
     // Missing surface: roads are assumed paved, tracks never are.
@@ -99,6 +105,9 @@ export function classifyDetailed(tags: Tags): Result {
   } else if (has(TRACKTYPE_MARK, tags.tracktype)) {
     mark = TRACKTYPE_MARK[tags.tracktype];
     markSource = mark && 'tracktype';
+  } else if (tags.surface?.split(';').some((s) => OFFROAD_SURFACES.has(s.trim()))) {
+    mark = 'offroad';
+    markSource = 'surface';
   }
   const fourWd = has(FOUR_WD_ONLY, tags['4wd_only']) && FOUR_WD_ONLY[tags['4wd_only']];
   if (fourWd && (!mark || RANK[fourWd] > RANK[mark])) {

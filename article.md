@@ -61,8 +61,8 @@ Every road gets one of two levels from its tags:
 
 | Level | Rule |
 |---|---|
-| **Paved** | `surface` is a paved value or missing, with no unpaved evidence and `tracktype` at most `grade1` |
-| **Unpaved** | any other `surface` value, or unpaved evidence: `tracktype=grade2` or higher, `smoothness=very_bad` or worse, or `4wd_only=yes`, `recommended` or `extreme`, whatever the `surface` |
+| **Paved** | `surface` is a paved value, or is missing with `tracktype` at most `grade1`, and there is no unpaved evidence |
+| **Unpaved** | any other `surface` value; no `surface` and `tracktype=grade2` or higher; or unpaved evidence, whatever the `surface`: `smoothness=very_bad` or worse, or `4wd_only=yes`, `recommended` or `extreme` |
 
 The paved values are a whitelist: `paved`, `asphalt`, `chipseal`, `concrete`, `concrete:plates`, `paving_stones`, `sett`, `bricks`, `metal`, `cobblestone` and `cobblestone:flattened`. `wood`, `concrete:lanes` and `grass_paver` count as paved only when `smoothness` is `bad` or better. A value with several parts (`asphalt;gravel`) is unpaved if any part is.
 
@@ -79,21 +79,22 @@ The paved values are a whitelist: `paved`, `asphalt`, `chipseal`, `concrete`, `c
 On unpaved roads only, a map can add a mark for roads that need a high-clearance vehicle, when the tags say so:
 
 - `smoothness=very_bad` or worse
-- `tracktype=grade3` or higher
+- `tracktype=grade4` or higher
+- `surface=mud` or `rock`, when `smoothness` and `tracktype` say nothing
 - `4wd_only=yes`, `recommended` or `extreme`
 
-This evidence also makes the road Unpaved, even when `surface` is paved: a road a city car cannot pass, such as a broken asphalt mountain road, is not drawn as paved.
+`smoothness` and `4wd_only` evidence also makes the road Unpaved, even when `surface` is paved: a road a city car cannot pass, such as a broken asphalt mountain road, is not drawn as paved.
 
-The mark is optional because the evidence is rare. Only 5.8% of unpaved km carry `smoothness`, `tracktype` or `4wd_only`, and 3.6% get the mark. In some countries it is common (36% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged `4wd_only`); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the real ask. How the mark looks in each style is shown under [How to draw it](#s-6-how-to-draw-it).
+The mark is optional because the evidence is rare. Only 5.9% of unpaved km carry `smoothness`, `tracktype` or `4wd_only`, and 3.1% get the mark. In some countries it is common (34% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged `4wd_only`); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the real ask. How the mark looks in each style is shown under [How to draw it](#s-6-how-to-draw-it).
 
 | Country | Unpaved km | With evidence | Off-road mark |
 |---|---:|---:|---:|
-| Bolivia | 175,701 | 41.0% | 36.4% |
-| Iceland | 8,472 | 28.7% | 25.0% |
-| Nepal | 18,627 | 21.8% | 5.8% |
-| Namibia | 46,985 | 10.4% | 4.2% |
-| Australia | 459,377 | 4.8% | 3.6% |
-| Brazil | 1,535,920 | 2.0% | 1.0% |
+| Bolivia | 175,850 | 41.1% | 33.9% |
+| Iceland | 8,474 | 28.8% | 25.0% |
+| Nepal | 18,725 | 22.2% | 4.2% |
+| Namibia | 46,985 | 10.4% | 1.7% |
+| Australia | 459,570 | 4.8% | 3.0% |
+| Brazil | 1,536,384 | 2.0% | 0.8% |
 
 ## 6. How to draw it
 

@@ -2,10 +2,19 @@
 # Run every country in stats/countries.txt: download, border, stats, delete download.
 # Countries with a result in stats/results/ are skipped, so the run can be restarted.
 # Usage: stats/run-all.sh, or ONLY="tl kh" stats/run-all.sh for some countries.
-# Ctrl-C stops cleanly; run again to continue.
+# FORCE=1 deletes the existing results first (only the ONLY countries if set), so everything is run again.
+# Ctrl-C stops cleanly; run again without FORCE to continue.
 
 cd "$(dirname "$0")/.."
 mkdir -p pbf work stats/results
+
+if [ -n "$FORCE" ]; then
+  if [ -n "$ONLY" ]; then
+    for code in $ONLY; do rm -f "stats/results/$code.json"; done
+  else
+    rm -f stats/results/*.json
+  fi
+fi
 
 LINES=()
 while IFS= read -r line; do LINES+=("$line"); done < <(grep -v -e '^#' -e '^$' stats/countries.txt)

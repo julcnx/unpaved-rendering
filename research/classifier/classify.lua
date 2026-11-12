@@ -2,10 +2,10 @@
 -- Two base levels, paved and unpaved, plus an optional mark on unpaved roads only:
 -- offroad (needs a high-clearance vehicle) or specialized (render as a path).
 --
--- Base: unpaved surface > unpaved evidence > paved surface > tracktype=grade1 > default (roads paved, tracks unpaved).
--- Unpaved evidence: smoothness very_bad or worse, 4wd_only, or tracktype grade2 or higher makes a road unpaved, even with a paved surface.
+-- Base: unpaved surface > unpaved evidence > paved surface > tracktype (grade1 paved, grade2 or higher unpaved) > default (roads paved, tracks unpaved).
+-- Unpaved evidence: smoothness very_bad or worse, or 4wd_only, makes a road unpaved, even with a paved surface. tracktype never overrules a surface. Reasons: see classify.ts.
 -- wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
--- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Only on unpaved roads.
+-- Mark: smoothness > tracktype > surface (mud, rock), and 4wd_only sets a minimum. Only on unpaved roads.
 --
 -- Usage: local classifier = require('classify')
 --        local level, base, base_source, mark, mark_source = classifier.classify(object.tags)
@@ -36,17 +36,21 @@ M.SMOOTHNESS = {
 
 -- grade6-8 are an Australian local extension (Australian Tagging Guidelines/Roads).
 M.TRACKTYPE_MARK = {
-  grade1 = false, grade2 = false,
-  grade3 = 'offroad', grade4 = 'offroad', grade5 = 'offroad', grade6 = 'offroad', grade7 = 'offroad',
+  grade1 = false, grade2 = false, grade3 = false,
+  grade4 = 'offroad', grade5 = 'offroad', grade6 = 'offroad', grade7 = 'offroad',
   grade8 = 'specialized',
 }
+
+-- Soft or bare surfaces: evidence for the mark only when smoothness and tracktype say nothing.
+M.OFFROAD_SURFACES = { mud = true, rock = true }
 
 M.FOUR_WD_ONLY = { recommended = 'offroad', yes = 'offroad', extreme = 'specialized' }
 
 -- Multiple values (e.g. "asphalt;concrete") are paved only if every part is.
 function M.surface_base(surface, smoothness)
   local smooth = smoothness ~= nil and M.SMOOTH_ENOUGH[smoothness]
-  for part in string.gmatch(surface, '[^;]+') do
+  -- Empty parts count ("asphalt;" is not all paved), as in the other ports.
+  for part in string.gmatch(surface .. ';', '([^;]*);') do
     local p = part:match('^%s*(.-)%s*$')
     if not (M.PAVED_SURFACES[p] or (smooth and M.MIXED_SURFACES[p])) then return 'unpaved' end
   end
@@ -56,7 +60,8 @@ end
 -- Returns level, base, base_source, mark, mark_source (mark and mark_source are nil when there is no mark).
 function M.classify(tags)
   local base, base_source
-  local surface = tags.surface and M.surface_base(tags.surface, tags.smoothness)
+  -- An empty surface value is no surface.
+  local surface = tags.surface and tags.surface ~= '' and M.surface_base(tags.surface, tags.smoothness)
   if surface == 'unpaved' then
     base, base_source = 'unpaved', 'surface'
   elseif tags.smoothness and M.SMOOTHNESS[tags.smoothness] then
@@ -64,12 +69,10 @@ function M.classify(tags)
     base, base_source = 'unpaved', 'smoothness'
   elseif tags['4wd_only'] and M.FOUR_WD_ONLY[tags['4wd_only']] then
     base, base_source = 'unpaved', '4wd_only'
-  elseif tags.tracktype and M.TRACKTYPE_MARK[tags.tracktype] ~= nil and tags.tracktype ~= 'grade1' then
-    base, base_source = 'unpaved', 'tracktype'
   elseif surface then
     base, base_source = surface, 'surface'
-  elseif tags.tracktype == 'grade1' then
-    base, base_source = 'paved', 'tracktype'
+  elseif tags.tracktype and M.TRACKTYPE_MARK[tags.tracktype] ~= nil then
+    base, base_source = tags.tracktype == 'grade1' and 'paved' or 'unpaved', 'tracktype'
   else
     -- Missing surface: roads are assumed paved, tracks never are.
     base, base_source = tags.highway == 'track' and 'unpaved' or 'paved', 'default'
@@ -83,6 +86,10 @@ function M.classify(tags)
   elseif tags.tracktype and M.TRACKTYPE_MARK[tags.tracktype] ~= nil then
     mark = M.TRACKTYPE_MARK[tags.tracktype] or nil
     mark_source = mark and 'tracktype' or nil
+  elseif tags.surface then
+    for part in string.gmatch(tags.surface, '[^;]+') do
+      if M.OFFROAD_SURFACES[part:match('^%s*(.-)%s*$')] then mark, mark_source = 'offroad', 'surface' end
+    end
   end
   local four_wd = tags['4wd_only'] and M.FOUR_WD_ONLY[tags['4wd_only']]
   if four_wd and (not mark or RANK[four_wd] > RANK[mark]) then
