@@ -114,7 +114,7 @@ Following these principles, I designed five styles, from faint to strong. Each f
 1. **Grain fill**: a fine grain inside the road fill. The approach of OSM Carto, and the most subtle. For maps that can draw fill patterns; it needs a road wide enough to show the grain.
 2. **Dashed centre line**: a thin dashed line along the middle of the road. For vector styles where fill patterns are hard to draw, and for maps with nothing else in the middle of the road (OSM Carto puts access restrictions there).
 3. **Dashed fill**: dashes in a band along the middle of the fill. A calmer version of style 5, for maps with many minor roads.
-4. **Dashed casing**: the outline is dashed, the fill stays continuous, so the road stays one line. Not for maps that draw tunnels with a dashed outline.
+4. **Dashed casing**: the outline is dashed, the fill stays continuous, so the road stays one line. Not for maps that draw tunnels with a dashed outline. On white minor roads, check it against the map's tracks: some apps draw tracks as a white line with a dashed outline.
 5. **Dashed fill, full width**: dashes across the whole road, as Americana does. The strongest, and loud in towns, so best where minor roads are few.
 
 <!-- FIGURE: slider, Namibia C38 at Namutoni, No style vs style 4 (demo, hillshade, z16). -->
@@ -181,7 +181,7 @@ Most unpaved roads are tagged only `surface=unpaved`, which says nothing about d
 
 ### Won't dashes clutter the map, or look like tracks or tunnels?
 
-That is why there are five styles: each map picks one that stays distinct ([How to draw it](#s-6-how-to-draw-it)).
+That is why there are five styles: each map picks one that stays distinct ([How to draw it](#s-6-how-to-draw-it)). I checked how 28 map styles draw tracks and paths, on seven views full of them. None draws tracks with a grain. The most common track look is a single thin dashed line. A few apps (Gaia GPS, AllTrails, the Thunderforest maps) draw tracks as a light line with a dashed outline: close to a dashed casing on a white minor road, but not on a red, orange or yellow main road, which keeps its colour. OSM Carto and Organic Maps draw tunnels with a dashed outline. Details per app are in the [evidence](https://github.com/julcnx/unpaved-rendering/blob/master/research/A-providers.md).
 
 ## Data and methods
 

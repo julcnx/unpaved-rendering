@@ -51,10 +51,12 @@ What the round shows, by style (styles as numbered in D-examples-visuals):
 1. **Grain fill** collides with nothing seen: no app draws tracks or paths as a dotted fill inside a road. Only OSM Carto uses a grain, and there it already means unpaved.
 2. **Dashed centre line** is the most common track look: a single thin dashed line, brown or dark, is how OSM Carto, OsmAnd (grey-green), Organic Maps, Tracestrack, Mapy.com, Locus, the MapTiler OMT layer and CalTopo draw tracks, and most of them draw paths the same way, only thinner. Inside a road it can read as a track laid on the road.
 3. **Dashed fill** is the track look in HOT (the dashed fill sits on the unpaved-road colour) and in DMD2, where unpaved roads already use it too, wider. On CalTopo any dashing of the solid black road line reads as a track.
-4. **Dashed casing** is the track look in Gaia GPS, AllTrails, Ride with GPS, OpenCycleMap and Thunderforest Outdoors, and Tracestrack's own unpaved style on minor roads; a dashed casing is also the tunnel in OSM Carto, Spirit and Organic Maps (motorway and trunk). Gaia GPS and Ride with GPS show the failure on screen: at Chiang Rai the Off-road unclassified road (`smoothness=very_bad`) is drawn exactly like the tracks next to it.
+4. **Dashed casing**: on main roads it keeps the class-colour fill (red, orange, yellow) with a darker dashed outline, which looks like no app's tracks: Gaia GPS tracks, for example, are a thin light brown-yellow fill with a light dashed outline (Julien, 2026-11-12). The overlap is on **white minor roads**: a white fill with a dashed outline is close to the tracks of OpenCycleMap and Thunderforest Outdoors (white fill, dashed grey outline) and AllTrails (double dashed line), and to the light track fills of Gaia GPS and Ride with GPS; Tracestrack's own dashed-casing unpaved style on minor roads already looks like its tracks. A dashed casing is also the tunnel in OSM Carto, Spirit and Organic Maps (motorway, trunk and primary). Separately, Gaia GPS and Ride with GPS show the class-loss failure on screen: at Chiang Rai the Off-road unclassified road (`smoothness=very_bad`) is drawn exactly like the tracks next to it.
 5. **Dashed fill, full width** (Americana): as style 3; Americana itself draws no tracks or paths, so it has nothing to collide with.
 
-Styles to avoid and styles that fit, per provider (for the issue drafts; "fits" means no collision seen, not a recommendation of one style):
+Reader test so far (11 finished answers, 2026-11-12; tracks hidden in the test): dashed casing was picked best by 5 and has the most rank points; correct answers 86% for dashed casing and grain, 84% for dashed fill and centre line, 74% for full-width dashed fill; grain splits readers (best for 3, worst for 6). Small sample.
+
+Styles to avoid and styles that fit, per provider (for the issue drafts; "fits" means no collision seen, not a recommendation of one style; "4 on minor roads" means check style 4 on white minor roads against that app's tracks, a darker outline may be enough):
 
 | Provider | Avoid | Fits | Why |
 |---|---|---|---|
@@ -63,14 +65,14 @@ Styles to avoid and styles that fit, per provider (for the issue drafts; "fits" 
 | HOT | 3, 5 | 1, 2, 4 | Tracks = unpaved fill + dashed fill; the class colour must come back anyway |
 | CyclOSM | 2, 4 | its own dashes (3 or 5 in the road colour) | Dark green dashed tracks; keep its bike-type rhythms, add `unpaved` and trunk |
 | OsmAnd | 2 | 1, 3, 4 (tunnels not checked) | Grey-green dashed tracks, dark grey dashed paths and footways |
-| Organic Maps / CoMaps | 2, 4 | 1, 3 | Olive dashed tracks, brown dashed paths, white dashed footways (a dashed fill on a thin white road needs a check against them); dashed casing = tunnel |
-| OSMF Shortbread (Spirit) | 4 | 1, 3 | Dashed casing = tunnel (the maintainer's point on PR #93); deployed tracks are thin black dots |
-| Tracestrack | 2, 4 | 1, 3 | Brown dashed tracks; its dashed-casing unpaved style already looks like them on minor roads |
+| Organic Maps / CoMaps | 2; 4 on motorway, trunk and primary (tunnels) | 1, 3; 4 on other classes | Olive dashed tracks, brown dashed paths, white dashed footways (a dashed fill on a thin white road needs a check against them); dashed casing = tunnel |
+| OSMF Shortbread (Spirit) | 4 while tunnels use a dashed casing | 1, 3 | Dashed casing = tunnel (the maintainer's point on PR #93); deployed tracks are thin black dots |
+| Tracestrack | 2; 4 on minor roads | 1, 3; 4 on main roads (its current style) | Brown dashed tracks; its dashed-casing unpaved style already looks like them on minor roads |
 | Komoot, Strava | 4 in brown | 1, 2, 3 | Tracks are cream with a brown edge |
 | Mapy.com, Locus | 2 | 1, 3, 4 | Thin dark dashed tracks and paths |
 | MapTiler | 2 (OMT layer) | 1, 3, 5 | Tan dashed tracks in the OMT layer; plain thin lines in Outdoor and Streets |
-| Gaia GPS, AllTrails, Ride with GPS | 4 | 1, 3 | Tracks are a dashed casing or dashed double line |
-| OpenCycleMap, Thunderforest Outdoors | 4 | 1, 3 | Tracks are a white fill with a dashed outline |
+| Gaia GPS, AllTrails, Ride with GPS | 4 on minor roads | 1, 3; 4 on main roads | Tracks are a dashed casing or dashed double line |
+| OpenCycleMap, Thunderforest Outdoors | 4 on minor roads | 1, 3; 4 on main roads | Tracks are a white fill with a dashed outline |
 | CalTopo | 2, 3, 4, 5 | 1 | Heavy black dashed tracks; any dashed road reads as a track |
 | DMD2 | (already has 3) | lighter styling only | Tracks and unpaved roads both a dashed fill; busy |
 | Stadia, Protomaps, Transport, Kurviger | none | any (5 like Americana) | Tracks are thin plain or faint lines |
