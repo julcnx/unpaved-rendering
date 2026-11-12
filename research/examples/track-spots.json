@@ -1,0 +1,721 @@
+[
+ {
+  "country": "thailand",
+  "name": "chiangrai",
+  "lat": 20.0259,
+  "lon": 99.678,
+  "hand": true,
+  "combos": {
+   "footway": {
+    "m": 1220,
+    "ids": [
+     406168474,
+     406168467,
+     231805512
+    ]
+   },
+   "path motorcycle=yes": {
+    "m": 8547,
+    "ids": [
+     204125961,
+     406172483,
+     204125965
+    ]
+   },
+   "path": {
+    "m": 9686,
+    "ids": [
+     169127079,
+     204125961,
+     406172483
+    ]
+   },
+   "track no tracktype": {
+    "m": 11882,
+    "ids": [
+     231899080,
+     406170473,
+     231458441
+    ]
+   },
+   "unclassified-residential Off-road": {
+    "m": 5926,
+    "ids": [
+     169127080,
+     169128056,
+     675352528
+    ]
+   },
+   "unclassified-residential Unpaved": {
+    "m": 3349,
+    "ids": [
+     204125969,
+     1300148223,
+     231899087
+    ]
+   }
+  }
+ },
+ {
+  "country": "thailand",
+  "name": "thailand-1",
+  "lat": 7.83617,
+  "lon": 98.31665,
+  "combos": {
+   "cycleway": {
+    "m": 386,
+    "ids": [
+     480850420
+    ]
+   },
+   "footway": {
+    "m": 16911,
+    "ids": [
+     324736255,
+     334584329,
+     473612878
+    ]
+   },
+   "path paved surface": {
+    "m": 279,
+    "ids": [
+     1347731710,
+     1279262668,
+     1279262669
+    ]
+   },
+   "path": {
+    "m": 22176,
+    "ids": [
+     1347731710,
+     770523378,
+     973513148
+    ]
+   },
+   "track grade1": {
+    "m": 2847,
+    "ids": [
+     971257572,
+     988579638,
+     136704368
+    ]
+   },
+   "track grade2": {
+    "m": 6727,
+    "ids": [
+     965543819,
+     987426562,
+     987426563
+    ]
+   },
+   "track grade3": {
+    "m": 10105,
+    "ids": [
+     136704413,
+     972192957,
+     987426567
+    ]
+   },
+   "track grade4": {
+    "m": 2158,
+    "ids": [
+     971303891,
+     971303892,
+     972192958
+    ]
+   },
+   "track grade5": {
+    "m": 1504,
+    "ids": [
+     971062184,
+     972192959,
+     971257573
+    ]
+   },
+   "track no tracktype": {
+    "m": 6713,
+    "ids": [
+     477631618,
+     699509979,
+     324737551
+    ]
+   },
+   "track paved surface": {
+    "m": 1257,
+    "ids": [
+     247985920,
+     971257572,
+     988579638
+    ]
+   },
+   "track smoothness very_bad or worse": {
+    "m": 226,
+    "ids": [
+     971257568
+    ]
+   },
+   "unclassified-residential Off-road": {
+    "m": 3269,
+    "ids": [
+     971045231,
+     971059348,
+     971059351
+    ]
+   },
+   "unclassified-residential Unpaved": {
+    "m": 4359,
+    "ids": [
+     136704357,
+     965600537,
+     1153729135
+    ]
+   }
+  }
+ },
+ {
+  "country": "thailand",
+  "name": "thailand-2",
+  "lat": 9.54117,
+  "lon": 99.97559,
+  "combos": {
+   "footway": {
+    "m": 1677,
+    "ids": [
+     455886351,
+     941724009,
+     941724010
+    ]
+   },
+   "path": {
+    "m": 987,
+    "ids": [
+     1473309147,
+     384551861,
+     1155729493
+    ]
+   },
+   "tertiary Off-road": {
+    "m": 1095,
+    "ids": [
+     329793703
+    ]
+   },
+   "tertiary Unpaved": {
+    "m": 1582,
+    "ids": [
+     557015776,
+     1558078367
+    ]
+   },
+   "track grade1": {
+    "m": 4133,
+    "ids": [
+     310379390,
+     436989799,
+     437012228
+    ]
+   },
+   "track grade4": {
+    "m": 2955,
+    "ids": [
+     310379385,
+     439329512,
+     437012227
+    ]
+   },
+   "track grade5": {
+    "m": 1771,
+    "ids": [
+     437155654,
+     393245436,
+     437012239
+    ]
+   },
+   "track no tracktype": {
+    "m": 17461,
+    "ids": [
+     155059031,
+     171529596,
+     329793702
+    ]
+   },
+   "track paved surface": {
+    "m": 4199,
+    "ids": [
+     310379390,
+     436989799,
+     437012228
+    ]
+   },
+   "track smoothness very_bad or worse": {
+    "m": 1739,
+    "ids": [
+     310379385,
+     439329512,
+     1158404178
+    ]
+   },
+   "unclassified-residential Unpaved": {
+    "m": 1940,
+    "ids": [
+     168360906,
+     1286155836,
+     1552462321
+    ]
+   }
+  }
+ },
+ {
+  "country": "thailand",
+  "name": "thailand-3",
+  "lat": 20.33948,
+  "lon": 99.74487,
+  "combos": {
+   "path paved surface": {
+    "m": 523,
+    "ids": [
+     135246411,
+     135248381,
+     135248388
+    ]
+   },
+   "path": {
+    "m": 674,
+    "ids": [
+     135246411,
+     135248381,
+     135248388
+    ]
+   },
+   "track no tracktype": {
+    "m": 1153,
+    "ids": [
+     759534461,
+     1199151148
+    ]
+   },
+   "trunk-secondary Off-road": {
+    "m": 3379,
+    "ids": [
+     40191379
+    ]
+   },
+   "trunk-secondary Unpaved": {
+    "m": 2502,
+    "ids": [
+     1027250789,
+     40191380
+    ]
+   }
+  }
+ },
+ {
+  "country": "thailand",
+  "totals": {
+   "bridleway": 7,
+   "cycleway": 1613,
+   "footway": 69594,
+   "path motorcycle=yes": 3463,
+   "path paved surface": 3104,
+   "path": 28599,
+   "tertiary Off-road": 52,
+   "tertiary Unpaved": 646,
+   "track grade1": 1598,
+   "track grade2": 2367,
+   "track grade3": 2619,
+   "track grade4": 1459,
+   "track grade5": 1049,
+   "track no tracktype": 258243,
+   "track other tracktype": 6,
+   "track paved surface": 2154,
+   "track smoothness very_bad or worse": 1642,
+   "trunk-secondary Off-road": 3,
+   "trunk-secondary Unpaved": 15,
+   "unclassified-residential Off-road": 2228,
+   "unclassified-residential Unpaved": 120655
+  },
+  "missing": [
+   "bridleway",
+   "track other tracktype"
+  ]
+ },
+ {
+  "country": "switzerland",
+  "name": "switzerland-1",
+  "lat": 47.69867,
+  "lon": 8.62427,
+  "combos": {
+   "bridleway": {
+    "m": 460,
+    "ids": [
+     24150932,
+     182653352,
+     25196432
+    ]
+   },
+   "cycleway": {
+    "m": 5246,
+    "ids": [
+     4675285,
+     4675290,
+     33043006
+    ]
+   },
+   "footway": {
+    "m": 41548,
+    "ids": [
+     936476184,
+     936476186,
+     36279032
+    ]
+   },
+   "path paved surface": {
+    "m": 6150,
+    "ids": [
+     729939561,
+     1475365600,
+     222152372
+    ]
+   },
+   "path": {
+    "m": 23352,
+    "ids": [
+     24150805,
+     24150933,
+     25196715
+    ]
+   },
+   "track grade1": {
+    "m": 1060,
+    "ids": [
+     1569046811,
+     24899589,
+     24899591
+    ]
+   },
+   "track grade2": {
+    "m": 11700,
+    "ids": [
+     24150806,
+     24150931,
+     24150934
+    ]
+   },
+   "track grade3": {
+    "m": 6902,
+    "ids": [
+     25200668,
+     184327691,
+     24150937
+    ]
+   },
+   "track grade4": {
+    "m": 4253,
+    "ids": [
+     25200665,
+     312792783,
+     25166867
+    ]
+   },
+   "track grade5": {
+    "m": 2121,
+    "ids": [
+     38121565,
+     232713493,
+     25161653
+    ]
+   },
+   "track no tracktype": {
+    "m": 4962,
+    "ids": [
+     24419608,
+     275321617,
+     275321618
+    ]
+   },
+   "track paved surface": {
+    "m": 1361,
+    "ids": [
+     24419608,
+     1569046811,
+     24899589
+    ]
+   },
+   "track smoothness very_bad or worse": {
+    "m": 498,
+    "ids": [
+     312792783,
+     784278091,
+     784570725
+    ]
+   },
+   "unclassified-residential Unpaved": {
+    "m": 278,
+    "ids": [
+     1203279051,
+     1196832233,
+     25011937
+    ]
+   }
+  }
+ },
+ {
+  "country": "switzerland",
+  "name": "switzerland-2",
+  "lat": 46.85643,
+  "lon": 7.03125,
+  "combos": {
+   "footway": {
+    "m": 3879,
+    "ids": [
+     485738149,
+     485738153,
+     485738154
+    ]
+   },
+   "path paved surface": {
+    "m": 771,
+    "ids": [
+     333945562,
+     485738156,
+     938202070
+    ]
+   },
+   "path": {
+    "m": 6462,
+    "ids": [
+     333945562,
+     485738156,
+     499962654
+    ]
+   },
+   "tertiary Unpaved": {
+    "m": 488,
+    "ids": [
+     531551516
+    ]
+   },
+   "track grade1": {
+    "m": 12666,
+    "ids": [
+     485738146,
+     485738160,
+     43513095
+    ]
+   },
+   "track grade2": {
+    "m": 8010,
+    "ids": [
+     43513061,
+     311536790,
+     1374294555
+    ]
+   },
+   "track grade3": {
+    "m": 5526,
+    "ids": [
+     691528050,
+     372578845,
+     303174648
+    ]
+   },
+   "track grade4": {
+    "m": 1943,
+    "ids": [
+     317156524,
+     1077804918,
+     1079852122
+    ]
+   },
+   "track grade5": {
+    "m": 1745,
+    "ids": [
+     506078805,
+     1374293886,
+     530106887
+    ]
+   },
+   "track no tracktype": {
+    "m": 7233,
+    "ids": [
+     1079852121,
+     1563909567,
+     1563909568
+    ]
+   },
+   "track paved surface": {
+    "m": 8083,
+    "ids": [
+     485738146,
+     485738160,
+     43513095
+    ]
+   },
+   "track smoothness very_bad or worse": {
+    "m": 889,
+    "ids": [
+     478662142,
+     478676698
+    ]
+   },
+   "unclassified-residential Off-road": {
+    "m": 217,
+    "ids": [
+     182013609
+    ]
+   },
+   "unclassified-residential Unpaved": {
+    "m": 423,
+    "ids": [
+     43513083,
+     262830731,
+     130442162
+    ]
+   }
+  }
+ },
+ {
+  "country": "switzerland",
+  "name": "switzerland-3",
+  "lat": 46.60794,
+  "lon": 6.6687,
+  "combos": {
+   "cycleway": {
+    "m": 843,
+    "ids": [
+     1267698493,
+     1560305413,
+     1267698494
+    ]
+   },
+   "footway": {
+    "m": 7743,
+    "ids": [
+     1536528002,
+     1536528003,
+     1267698497
+    ]
+   },
+   "path motorcycle=yes": {
+    "m": 303,
+    "ids": [
+     932355392
+    ]
+   },
+   "path paved surface": {
+    "m": 201,
+    "ids": [
+     1023431189,
+     1023431190
+    ]
+   },
+   "path": {
+    "m": 6240,
+    "ids": [
+     1274609803,
+     1274612960,
+     1278606903
+    ]
+   },
+   "track grade1": {
+    "m": 10759,
+    "ids": [
+     35443968,
+     35444613,
+     104546730
+    ]
+   },
+   "track grade2": {
+    "m": 3470,
+    "ids": [
+     228830924,
+     228830930,
+     228830933
+    ]
+   },
+   "track grade3": {
+    "m": 2163,
+    "ids": [
+     228831760,
+     39324153,
+     39324155
+    ]
+   },
+   "track grade4": {
+    "m": 1776,
+    "ids": [
+     968820593,
+     1277795185,
+     39324306
+    ]
+   },
+   "track grade5": {
+    "m": 425,
+    "ids": [
+     1299462916,
+     1279408878
+    ]
+   },
+   "track no tracktype": {
+    "m": 2797,
+    "ids": [
+     1278606896,
+     1278606898,
+     39324053
+    ]
+   },
+   "track paved surface": {
+    "m": 685,
+    "ids": [
+     35443968,
+     1111144946,
+     39324485
+    ]
+   },
+   "track smoothness very_bad or worse": {
+    "m": 1289,
+    "ids": [
+     28695417,
+     1277795185,
+     133488279
+    ]
+   },
+   "unclassified-residential Unpaved": {
+    "m": 686,
+    "ids": [
+     30277491
+    ]
+   }
+  }
+ },
+ {
+  "country": "switzerland",
+  "totals": {
+   "bridleway": 329,
+   "cycleway": 15478,
+   "footway": 436290,
+   "path motorcycle=yes": 91,
+   "path paved surface": 19689,
+   "path": 228368,
+   "tertiary Off-road": 1,
+   "tertiary Unpaved": 40,
+   "track grade1": 59265,
+   "track grade2": 99814,
+   "track grade3": 74808,
+   "track grade4": 35316,
+   "track grade5": 26527,
+   "track no tracktype": 76337,
+   "track other tracktype": 5,
+   "track paved surface": 32702,
+   "track smoothness very_bad or worse": 1619,
+   "trunk-secondary Unpaved": 2,
+   "unclassified-residential Off-road": 39,
+   "unclassified-residential Unpaved": 3529
+  },
+  "missing": [
+   "trunk-secondary Unpaved",
+   "tertiary Off-road",
+   "track other tracktype"
+  ]
+ }
+]

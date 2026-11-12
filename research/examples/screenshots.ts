@@ -2,7 +2,7 @@
 // Usage: [ZOOM=11] [APPS=a,b] node examples/screenshots.ts [spot ...] [--show]   (spots: namibia, bolivia, nepal, iceland, australia, alberta; --show opens a Chrome window)
 // Writes examples/screenshots/<spot>/<app>.png. Uses the installed Google Chrome through puppeteer-core.
 
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import puppeteer from 'puppeteer-core';
 
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
@@ -32,6 +32,9 @@ const SPOTS: Record<string, [number, number]> = {
   // Article hero: Namibia C48 (primary), asphalt to gravel, photo pair transition-na-9 (2026-11-11).
   c48: [-18.12805, 21.64435],
 };
+// Track round views (todo: track rendering per app), from track-spots.ts: spots track-<name>.
+for (const v of JSON.parse(readFileSync(new URL('./track-spots.json', import.meta.url), 'utf8')))
+  if (v.name) SPOTS[`track-${v.name}`] = [v.lat, v.lon];
 
 const osm = (layer: string) => (la: number, lo: number) => `https://www.openstreetmap.org/#map=${ZOOM}/${la}/${lo}&layers=${layer}`;
 // go: extra steps for sites whose URL cannot hold the position.

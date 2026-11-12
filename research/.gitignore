@@ -6,6 +6,8 @@ node_modules/
 borders/
 examples/images/google/
 examples/images/sheets/
+# Track round screenshots (todo: track rendering per app): 309 MB, kept local
+examples/screenshots/track-*/
 
 # Inherited from osm-wiki root .gitignore
 *.pbf

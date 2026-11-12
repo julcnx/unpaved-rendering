@@ -58,3 +58,4 @@ AL 53292 Albania
 IR 304938 Iran
 UA 60199 Ukraine
 CA 1428125 Canada
+CH 51701 Switzerland
