@@ -184,7 +184,7 @@ const key = [
   comparison.length ? `- ${comparison.length} countries compared: official unpaved share inside the OSM range (all km to tagged km) in ${within}, higher than the OSM upper bound in ${higher}, lower in ${comparison.length - within - higher}. OSM shares are conservative.` : '- not available',
 ];
 if (review) key.push('', '## Street-level imagery', '',
-  `- ${review.roads_reviewed} roads tagged unpaved checked on Mapillary or Google Street View: ${review.unpaved_confirmed} confirmed Unpaved, ${review.paved_now} paved now (${(100 * review.paved_now / review.roads_reviewed).toFixed(0)}%), ${review.mixed} mixed.`,
+  `- ${review.roads_reviewed} roads tagged unpaved checked on street-level imagery: ${review.unpaved_confirmed} confirmed Unpaved, ${review.paved_now} paved now (${(100 * review.paved_now / review.roads_reviewed).toFixed(0)}%), ${review.mixed} mixed.`,
   `- Of the ${review.paved_now} paved now: ${review.paved_after_tagging} were paved after the unpaved tag was set, ${review.tagged_unpaved_after_paving} were tagged unpaved after imagery already showed pavement.`,
   `- Untagged roads, Malaysia pilot: ${review.malaysia_untagged_visible_paved} of ${review.malaysia_untagged_visible} visible were paved, but only ${review.malaysia_untagged_with_imagery} of ${review.malaysia_untagged_tried} random untagged ways had imagery.`);
 writeFileSync(new URL('./key-numbers.md', import.meta.url), key.join('\n') + '\n');

@@ -1,11 +1,11 @@
 {
  "country": "dk",
  "name": "Denmark",
- "data_date": "2026-11-01",
+ "data_date": "2026-11-11",
  "run": {
-  "generated_at": "2026-11-03T04:15:57.199Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T04:03:42.513Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "denmark-latest.osm.pbf",
   "boundary": "r50046",
@@ -14,7 +14,7 @@
  },
  "km": {
   "motorway": {
-   "paved_tagged": 2594.1,
+   "paved_tagged": 2592.8,
    "untagged": 0,
    "unpaved": 0,
    "offroad": 0,
@@ -28,51 +28,51 @@
    "specialized": 0
   },
   "primary": {
-   "paved_tagged": 2781.9,
+   "paved_tagged": 2781.8,
    "untagged": 0,
    "unpaved": 0,
    "offroad": 0,
    "specialized": 0
   },
   "secondary": {
-   "paved_tagged": 6571.5,
-   "untagged": 2.6,
+   "paved_tagged": 6571.1,
+   "untagged": 2,
    "unpaved": 0,
    "offroad": 0,
    "specialized": 0
   },
   "tertiary": {
-   "paved_tagged": 23582.1,
+   "paved_tagged": 23581.9,
    "unpaved": 17.4,
    "untagged": 2.9,
    "offroad": 0,
    "specialized": 0
   },
   "unclassified": {
-   "paved_tagged": 20800.4,
-   "unpaved": 5868,
-   "untagged": 5453.2,
-   "offroad": 69.8,
+   "paved_tagged": 20804,
+   "unpaved": 5928.3,
+   "untagged": 5455,
+   "offroad": 10,
    "specialized": 0.3
   },
   "residential": {
-   "paved_tagged": 20176.8,
-   "untagged": 4063,
-   "unpaved": 3761,
-   "offroad": 41.8,
+   "paved_tagged": 20181.9,
+   "untagged": 4062.5,
+   "unpaved": 3802.6,
+   "offroad": 4.9,
    "specialized": 0
   },
   "all": {
-   "paved_tagged": 76992.3,
-   "unpaved": 9646.3,
-   "untagged": 9521.9,
-   "offroad": 111.6,
+   "paved_tagged": 76999,
+   "unpaved": 9748.4,
+   "untagged": 9522.6,
+   "offroad": 14.9,
    "specialized": 0.3
   }
  },
  "coverage_km": {
   "motorway": {
-   "surface": 2594.1,
+   "surface": 2592.8,
    "smoothness": 16.8
   },
   "trunk": {
@@ -80,66 +80,68 @@
    "smoothness": 4.4
   },
   "primary": {
-   "surface": 2781.9,
+   "surface": 2781.8,
    "smoothness": 432.9
   },
   "secondary": {
-   "surface": 6571.5,
+   "surface": 6571.1,
    "smoothness": 585.1
   },
   "tertiary": {
-   "surface": 23599.5,
-   "smoothness": 870.9
+   "surface": 23599.3,
+   "smoothness": 872.3
   },
   "unclassified": {
-   "surface": 26707.1,
+   "surface": 26711.3,
    "smoothness": 580.5,
-   "tracktype": 402.1
+   "tracktype": 402.4
   },
   "residential": {
-   "surface": 23960.2,
-   "smoothness": 685.3,
+   "surface": 23970.2,
+   "smoothness": 685.6,
    "tracktype": 198.9
   },
   "all": {
-   "surface": 86699.9,
-   "smoothness": 3175.9,
-   "tracktype": 601
+   "surface": 86712,
+   "smoothness": 3177.7,
+   "tracktype": 601.2
   }
  },
  "base_source_km": {
   "motorway": {
-   "surface": 2594.1
+   "surface": 2592.8
   },
   "trunk": {
    "surface": 485.4,
    "default": 0.2
   },
   "primary": {
-   "surface": 2781.9
+   "surface": 2781.8
   },
   "secondary": {
-   "surface": 6571.5,
-   "default": 2.6
+   "surface": 6571.1,
+   "default": 2
   },
   "tertiary": {
-   "surface": 23599.5,
+   "surface": 23599.3,
    "default": 2.9
   },
   "unclassified": {
-   "surface": 26707.1,
-   "default": 5453.2,
+   "surface": 26711.3,
+   "default": 5455,
    "tracktype": 31.3
   },
   "residential": {
-   "surface": 23960.2,
-   "default": 4063,
-   "tracktype": 19.3
+   "surface": 23969.6,
+   "default": 4062.5,
+   "tracktype": 19.3,
+   "smoothness": 0.5
   },
   "all": {
-   "surface": 86699.9,
-   "default": 9521.9,
-   "tracktype": 50.6
+   "surface": 86711.4,
+   "default": 9522.6,
+   "tracktype": 50.6,
+   "smoothness": 0.5
   }
  },
  "mark_source_km": {
@@ -149,16 +151,16 @@
   "secondary": {},
   "tertiary": {},
   "unclassified": {
-   "tracktype": 65.7,
+   "tracktype": 5.9,
    "smoothness": 4.4
   },
   "residential": {
-   "tracktype": 40.7,
-   "smoothness": 1.1
+   "tracktype": 3.3,
+   "smoothness": 1.7
   },
   "all": {
-   "tracktype": 106.4,
-   "smoothness": 5.5
+   "tracktype": 9.2,
+   "smoothness": 6.1
   }
  },
  "value_km": {
@@ -186,19 +188,20 @@
    "unpaved": {
     "surface=gravel": 14.4,
     "surface=unpaved": 1.9,
-    "surface=compacted": 1.1
+    "surface=compacted": 1.1,
+    "surface=wood": 0
    },
    "offroad": {},
    "specialized": {}
   },
   "unclassified": {
    "unpaved": {
-    "surface=gravel": 4129.2,
+    "surface=gravel": 4127.9,
     "surface=compacted": 986.2,
-    "surface=unpaved": 507.3,
-    "surface=fine_gravel": 117.7,
+    "surface=unpaved": 509,
+    "surface=fine_gravel": 117,
     "surface=pebblestone": 79,
-    "surface=dirt": 28.7,
+    "surface=dirt": 29,
     "surface=sand": 25,
     "surface=ground": 23.7,
     "tracktype=grade2": 14.7,
@@ -209,12 +212,12 @@
     "surface=unspecified": 0.9,
     "surface=com": 0.8,
     "surface=unhewn_cobblestone": 0.5,
+    "surface=wood": 0.5,
     "surface=grass_paver": 0.4,
     "tracktype=grade4": 0.3,
     "tracktype=grade5": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 59.8,
     "tracktype=grade4": 5.4,
     "smoothness=very_bad": 4.1,
     "tracktype=grade5": 0.5
@@ -225,12 +228,12 @@
   },
   "residential": {
    "unpaved": {
-    "surface=gravel": 2179.7,
-    "surface=compacted": 834.7,
+    "surface=gravel": 2180.4,
+    "surface=compacted": 836.7,
     "surface=unpaved": 365.1,
     "surface=pebblestone": 184.3,
     "surface=fine_gravel": 126.3,
-    "surface=ground": 27.1,
+    "surface=ground": 27.6,
     "surface=earth": 18.4,
     "surface=sand": 18.3,
     "surface=dirt": 17.2,
@@ -238,9 +241,11 @@
     "surface=grass": 9.2,
     "tracktype=grade3": 5.9,
     "surface=verdichtetw": 1.4,
-    "surface=grass_paver": 0.9,
+    "surface=wood": 1.3,
     "surface=com": 0.8,
+    "surface=grass_paver": 0.7,
     "surface=acrylic": 0.6,
+    "smoothness=very_bad": 0.5,
     "surface=unhewn_cobblestone": 0.5,
     "surface=grus": 0.4,
     "tracktype=grade4": 0.3,
@@ -248,44 +253,44 @@
     "surface=concrete:lanes": 0.2
    },
    "offroad": {
-    "tracktype=grade3": 37.4,
     "tracktype=grade4": 3.3,
-    "smoothness=very_bad": 1,
+    "smoothness=very_bad": 1.6,
     "smoothness=horrible": 0.1
    },
    "specialized": {}
   },
   "all": {
    "unpaved": {
-    "surface=gravel": 6323.3,
-    "surface=compacted": 1822,
-    "surface=unpaved": 874.2,
+    "surface=gravel": 6322.6,
+    "surface=compacted": 1824.1,
+    "surface=unpaved": 876,
     "surface=pebblestone": 263.3,
-    "surface=fine_gravel": 244,
-    "surface=ground": 50.8,
-    "surface=dirt": 45.9,
+    "surface=fine_gravel": 243.3,
+    "surface=ground": 51.3,
+    "surface=dirt": 46.2,
     "surface=sand": 43.2,
     "surface=earth": 27,
     "tracktype=grade2": 26,
     "surface=grass": 17.4,
     "tracktype=grade3": 11.3,
+    "surface=wood": 1.8,
     "surface=com": 1.6,
     "surface=verdichtetw": 1.4,
     "surface=tartan": 1.4,
-    "surface=grass_paver": 1.3,
+    "surface=grass_paver": 1.1,
     "surface=unhewn_cobblestone": 1,
     "surface=unspecified": 0.9,
     "tracktype=grade4": 0.6,
     "surface=acrylic": 0.6,
+    "smoothness=very_bad": 0.5,
     "surface=grus": 0.4,
     "surface=woodchips": 0.2,
     "surface=concrete:lanes": 0.2,
     "tracktype=grade5": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 97.2,
     "tracktype=grade4": 8.7,
-    "smoothness=very_bad": 5.1,
+    "smoothness=very_bad": 5.7,
     "tracktype=grade5": 0.5,
     "smoothness=horrible": 0.1
    },
@@ -306,60 +311,20 @@
  },
  "conflict_km": {
   "smoothness=good + surface=compacted": 15.9,
-  "paved (surface=asphalt) + tracktype=grade3": 5.1,
-  "paved (surface=paved) + tracktype=grade3": 1.5,
+  "surface=asphalt + tracktype=grade2 (ignored)": 7.5,
+  "surface=asphalt + tracktype=grade3 (ignored)": 5.1,
+  "surface=paved + tracktype=grade3 (ignored)": 1.5,
   "smoothness=good + surface=gravel": 0.7,
   "smoothness=excellent + surface=gravel": 0.6,
-  "paved (surface=asphalt) + smoothness=very_bad": 0.5,
-  "paved (surface=asphalt) + tracktype=grade5": 0.3,
-  "smoothness=good + surface=grass_paver": 0.2,
-  "paved (surface=concrete) + tracktype=grade3": 0
+  "surface=asphalt + smoothness=very_bad": 0.5,
+  "surface=asphalt + tracktype=grade5 (ignored)": 0.3,
+  "surface=paved + tracktype=grade2 (ignored)": 0.3,
+  "surface=concrete + tracktype=grade2 (ignored)": 0.2,
+  "surface=concrete + tracktype=grade3 (ignored)": 0
  },
  "odd": {
   "major_unpaved": [],
   "offroad_mark": [
-   {
-    "id": "w39128346",
-    "highway": "unclassified",
-    "km": 2.6,
-    "level": "offroad",
-    "tags": {
-     "cycleway:both": "no",
-     "highway": "unclassified",
-     "lit": "no",
-     "name": "Møgelskårvejen",
-     "name:etymology:wikidata": "Q108070739",
-     "oneway": "no",
-     "sidewalk": "no",
-     "surface": "gravel",
-     "tracktype": "grade3",
-     "width": "3"
-    }
-   },
-   {
-    "id": "w102777416",
-    "highway": "unclassified",
-    "km": 2.2,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Hjortflodvej",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w38626234",
-    "highway": "unclassified",
-    "km": 2.1,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Lerbæk Østre Skovvej",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
    {
     "id": "w121806875",
     "highway": "unclassified",
@@ -371,71 +336,6 @@
      "name": "Horshavevej",
      "smoothness": "very_bad",
      "surface": "gravel"
-    }
-   },
-   {
-    "id": "w43156900",
-    "highway": "residential",
-    "km": 2,
-    "level": "offroad",
-    "tags": {
-     "highway": "residential",
-     "name": "Lysholmvej",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w97743678",
-    "highway": "unclassified",
-    "km": 1.8,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Intrupvej",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w66097991",
-    "highway": "residential",
-    "km": 1.7,
-    "level": "offroad",
-    "tags": {
-     "highway": "residential",
-     "lit": "no",
-     "name": "Saksvadvej",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w196591406",
-    "highway": "unclassified",
-    "km": 1.7,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "lit": "no",
-     "maxspeed": "80",
-     "name": "Filsøvej",
-     "name:etymology:wikidata": "Q23748279",
-     "source:maxspeed": "DK:rural",
-     "surface": "gravel",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w98352901",
-    "highway": "unclassified",
-    "km": 1.6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Hovvej",
-     "surface": "compacted",
-     "tracktype": "grade3"
     }
    },
    {
@@ -451,65 +351,119 @@
     }
    },
    {
-    "id": "w144419591",
+    "id": "w93319415",
     "highway": "unclassified",
-    "km": 1.3,
+    "km": 1,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "name": "Fusagervej",
-     "name:etymology:wikidata": "Q139565044",
+     "name": "Skarrevvej",
+     "smoothness": "very_bad",
+     "surface": "gravel"
+    }
+   },
+   {
+    "id": "w38781548",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Fuglsbjergvej",
+     "name:etymology:wikidata": "Q131381690",
      "surface": "gravel",
-     "tracktype": "grade3"
+     "tracktype": "grade4"
     }
    },
    {
-    "id": "w152715227",
+    "id": "w559516650",
     "highway": "unclassified",
-    "km": 1.3,
+    "km": 0.7,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "name": "Vesterskovvej",
      "surface": "gravel",
-     "tracktype": "grade3"
+     "tracktype": "grade4"
     }
    },
    {
-    "id": "w98368320",
+    "id": "w1375106664",
     "highway": "unclassified",
-    "km": 1.3,
+    "km": 0.6,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "name": "Grynderupvej",
-     "surface": "gravel",
-     "tracktype": "grade3"
+     "name": "Blåsholmvej",
+     "smoothness": "very_bad",
+     "surface": "gravel"
     }
    },
    {
-    "id": "w103805361",
-    "highway": "unclassified",
-    "km": 1.3,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Elsøvej",
-     "name:etymology:wikidata": "Q131838346",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w102144000",
+    "id": "w303750976",
     "highway": "residential",
-    "km": 1.3,
+    "km": 0.6,
     "level": "offroad",
     "tags": {
      "highway": "residential",
-     "name": "Skellerupspang",
-     "name:etymology:wikidata": "Q140374935",
+     "lit": "no",
+     "name": "Peter Ejerstedgaardsvej",
+     "surface": "compacted",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w191979069",
+    "highway": "unclassified",
+    "km": 0.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lit": "no",
+     "maxspeed": "50",
+     "name": "Brandmosevej",
+     "source:maxspeed": "DK:urban",
+     "surface": "compacted",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w26418794",
+    "highway": "unclassified",
+    "km": 0.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Brandsøvej",
+     "name:etymology:wikidata": "Q592805",
      "surface": "gravel",
-     "tracktype": "grade3"
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w121722847",
+    "highway": "residential",
+    "km": 0.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "lit": "no",
+     "name": "Nordvestvej",
+     "surface": "compacted",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w29110488",
+    "highway": "residential",
+    "km": 0.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "lit": "no",
+     "motor_vehicle": "destination",
+     "name": "Storstranden",
+     "smoothness": "very_bad",
+     "surface": "compacted"
     }
    }
   ],
@@ -529,6 +483,21 @@
      "smoothness": "good",
      "source:maxspeed": "sign",
      "surface": "compacted"
+    }
+   },
+   {
+    "id": "w914225572",
+    "highway": "unclassified",
+    "km": 1.5,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lit": "no",
+     "maxspeed": "80",
+     "name": "Ravnsøvej",
+     "source:maxspeed": "DK:rural",
+     "surface": "asphalt",
+     "tracktype": "grade2"
     }
    },
    {
@@ -600,6 +569,22 @@
     }
    },
    {
+    "id": "w62101623",
+    "highway": "unclassified",
+    "km": 1.1,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lane_markings": "no",
+     "maxspeed": "50",
+     "name": "Bjørnkærvej",
+     "name:etymology:wikidata": "Q23750456",
+     "source:maxspeed": "DK:urban",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
+   {
     "id": "w52753532",
     "highway": "unclassified",
     "km": 0.9,
@@ -631,6 +616,18 @@
      "smoothness": "good",
      "source:maxspeed": "sign",
      "surface": "compacted"
+    }
+   },
+   {
+    "id": "w106122397",
+    "highway": "unclassified",
+    "km": 0.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "Under Skoven",
+     "surface": "asphalt",
+     "tracktype": "grade2"
     }
    },
    {
@@ -688,49 +685,6 @@
      "name": "Mosevej",
      "smoothness": "good",
      "surface": "compacted"
-    }
-   },
-   {
-    "id": "w99409194",
-    "highway": "residential",
-    "km": 0.6,
-    "level": "unpaved",
-    "tags": {
-     "highway": "residential",
-     "lit": "no",
-     "maxspeed": "50",
-     "maxspeed:advisory": "30",
-     "name": "Rusen",
-     "name:etymology:wikidata": "Q300937",
-     "smoothness": "good",
-     "source:maxspeed": "DK:urban",
-     "surface": "compacted"
-    }
-   },
-   {
-    "id": "w118754621",
-    "highway": "residential",
-    "km": 0.6,
-    "level": "unpaved",
-    "tags": {
-     "highway": "residential",
-     "maxspeed": "80",
-     "name": "Nykøbingvej",
-     "name:etymology:wikidata": "Q986435",
-     "smoothness": "good",
-     "surface": "compacted"
-    }
-   },
-   {
-    "id": "w102844884",
-    "highway": "unclassified",
-    "km": 0.6,
-    "level": "paved",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Gravenhøjvej",
-     "surface": "asphalt",
-     "tracktype": "grade3"
     }
    }
   ],

@@ -11,7 +11,7 @@ Sources used:
 
 Komoot, Gaia GPS, Calimoto and Guru Maps do not appear anywhere in the workspace. Gaia GPS, Calimoto, Guru Maps, Maps.me, Organic Maps, CoMaps and OsmAnd were checked by Julien in the phone apps on 2026-11-09 (see A0). Komoot was checked on the web map only (the phone check was dropped).
 
-**Model (decided 2026-11-02):** two levels, Paved and Unpaved, plus an optional Off-road mark on Unpaved roads only. The mark can only be decided where `smoothness`, `tracktype` or `4wd_only` is mapped: 5.8% of Unpaved km today ([stats/mark-coverage.md](stats/mark-coverage.md)), so the main ask is the two levels. The ask to providers is therefore small: (1) draw the paved/unpaved split on **every** road class, using a paved whitelist, and (2) optionally add the Off-road mark. Several providers already have the two levels internally; the open question per provider is whether they draw them on main road classes (primary, secondary, tertiary) or only on tracks and minor roads. That check is still to do.
+**Model (decided 2026-11-02):** two levels, Paved and Unpaved, plus an optional Off-road mark on Unpaved roads only. The mark can only be decided where `smoothness`, `tracktype` or `4wd_only` is mapped: 5.9% of Unpaved km today ([stats/mark-coverage.md](stats/mark-coverage.md)), so the main ask is the two levels. The ask to providers is therefore small: (1) draw the paved/unpaved split on **every** road class, using a paved whitelist, and (2) optionally add the Off-road mark. Several providers already have the two levels internally; the open question per provider is whether they draw them on main road classes (primary, secondary, tertiary) or only on tracks and minor roads. That check is still to do.
 
 ## A0. Main-road check: who draws unpaved on primary, secondary and tertiary? (2026-11-03)
 
@@ -144,7 +144,7 @@ Differences from our rule:
 6. **Shortbread / Spirit**: schema already has `surface`; style change only. Julien's PR #93 is waiting on the maintainer, who asked about tunnel confusion. Before pinging again, update it: a paved whitelist instead of the unpaved list, and a style that does not dash the casing (one of the four mockup styles).
 7. **Tracestrack**: fixed issue #67 quickly, and the unpaved style reaches secondary roads (Australia 27 dashed) but not primary or trunk (screenshots 2026-11-09). Ask to extend it to primary and trunk.
 8. **OsmAnd Motorcycle styles**: unpaved roads drawn like tracks, so the class is lost. The owner replied on [discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) (2026-11-09): he likes a better look for major unpaved roads, but he is not a developer and suggests Julien clones the project and changes it; he will help, use and promote it. The style and routing are already shipped by the OsmAnd team as a plugin (F-Droid build). He warns that the code is full of hacks around the official style, and that routing matters more to him. Next: Julien's fork with unpaved roads in their class colour, as the phone demo.
-9. **Commercial apps**: after the wiki page and demo exist. Ride with GPS draws unpaved roads like tracks (class lost); Calimoto draws them thinner; Gaia GPS (Topo) ignores `surface` but draws minor roads (not trunks) with `smoothness=very_bad` or worse as tracks (class lost, and only on the 5.8% of Unpaved km with evidence at most); Guru Maps, Maps.me, Mapy.com, Thunderforest, Strava and CalTopo show nothing; Komoot shows surface only in route summaries; Locus depends on the theme. Protomaps (open source): check first whether its tile schema exports `surface` at all.
+9. **Commercial apps**: after the wiki page and demo exist. Ride with GPS draws unpaved roads like tracks (class lost); Calimoto draws them thinner; Gaia GPS (Topo) ignores `surface` but draws minor roads (not trunks) with `smoothness=very_bad` or worse as tracks (class lost, and only on the 5.9% of Unpaved km with evidence at most); Guru Maps, Maps.me, Mapy.com, Thunderforest, Strava and CalTopo show nothing; Komoot shows surface only in route summaries; Locus depends on the theme. Protomaps (open source): check first whether its tile schema exports `surface` at all.
 10. **No action**: OSM Carto (credit only, staying passive), HOT (inactive, but its whitelist is the precedent), OpenTopoMap (kept online only), DMD2 (already shows unpaved on every class with the class colour kept: cite it as a precedent from a motorbike app).
 
 ## A4. Tile schemas: what surface data reaches the style (2026-11-09)
@@ -178,21 +178,21 @@ Screenshots at zoom 11 of the six spots for the apps that draw unpaved at z15 ([
 | Tracestrack | **No** at any spot |
 | CyclOSM | No (its surface dashes start at z14 in the code) |
 
-## A5. Provider rules measured against ours (2026-11-09)
+## A5. Provider rules measured against ours (2026-11-09, rerun 2026-11-12)
 
 Each open provider's paved/unpaved rule, copied from its source, run on the same 20 million km as our stats: [stats/provider-gaps.md](stats/provider-gaps.md) (`node stats/provider-gaps.ts`). Data side only: zoom limits and unstyled classes come on top.
 
 | Provider | Covers our Unpaved, main roads | Covers, all classes | Main gap |
 |---|---:|---:|---|
-| OSM Carto | 99.5% | 99.4% | Explicit list: misses `surface=laterite` (1,314 km on main roads, 1,972 km in all) and `tracktype` without surface (22,600 km, mostly minor roads) |
-| OpenMapTiles (Americana, MapTiler, Stadia) | 99.6% | 99.4% | Same: `tracktype` without surface; the list already has `laterite`. The real gap is zoom: no `surface` below z12 (A4) |
-| CyclOSM | 35.2% | 25.7% | **`surface=unpaved` missing: 3.9 million km**, 740,000 km of it on main roads; plus no dashes on trunk |
-| Organic Maps / CoMaps (data only) | 99.8% | 99.5% | Data is ready (paved whitelist); nothing is drawn. Small: `concrete:plates` counted as unpaved (3,800 km) |
-| HOT Humanitarian | 99.8% | 100% | Over-marks: untagged unclassified and residential count as unpaved (9.3 million km), and `chipseal`, `sett`, `concrete:plates` too |
+| OSM Carto | 99.2% | 99.2% | Explicit list: misses `surface=laterite` (1,363 km on main roads, 2,021 km in all) and `tracktype` without surface (22,600 km, mostly minor roads). Since decision 12 also paved roads with `smoothness` very_bad or worse or `4wd_only` (1,717 km of `asphalt` on main roads) |
+| OpenMapTiles (Americana, MapTiler, Stadia) | 99.3% | 99.3% | Same: `tracktype` without surface; the list already has `laterite`. The real gap is zoom: no `surface` below z12 (A4) |
+| CyclOSM | 35.4% | 25.8% | **`surface=unpaved` missing: 3.9 million km**, 740,000 km of it on main roads; plus no dashes on trunk |
+| Organic Maps / CoMaps (data only) | 99.6% | 99.4% | Data is ready (paved whitelist); nothing is drawn. Small: `concrete:plates` counted as unpaved (3,800 km) |
+| HOT Humanitarian | 99.5% | 99.9% | Over-marks: untagged unclassified and residential count as unpaved (9.3 million km), and `chipseal`, `sett`, `concrete:plates` too |
 
 What this changes:
 
-1. **The whitelist ask is small for OSM Carto and OpenMapTiles**: their lists already cover 99.4% of Unpaved km. A whitelist mainly protects against new and local values; the measurable gains are `laterite` (Carto) and `tracktype` without surface. For OpenMapTiles the zoom limit matters more.
+1. **The whitelist ask is small for OSM Carto and OpenMapTiles**: their lists already cover 99.2% of Unpaved km. A whitelist mainly protects against new and local values; the measurable gains are `laterite` (Carto) and `tracktype` without surface. For OpenMapTiles the zoom limit matters more.
 2. **CyclOSM is the one big data gap**: adding `unpaved` takes it from 26% to about 99% of Unpaved km. Still the best first PR.
 3. **Organic Maps needs styling only**: its data already matches ours.
 4. **HOT is a warning, not a model**: assuming untagged minor roads are unpaved turns 9 million km brown.

@@ -6,7 +6,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 
 | Value | km | Countries (km) |
 |---|---|---|
-| `surface=dirt/sand` | 1,302 | Brazil 307, Mexico 258, Kenya 236, Ethiopia 133, South Africa 62, Iran 60, India 49, Mali 43, Finland 42, Cameroon 18, Morocco 12, Indonesia 12, Honduras 11, Thailand 10, Australia 9, Myanmar 6, Romania 6, Senegal 5, Chile 5, Kyrgyzstan 5, Laos 4, Cambodia 3, Philippines 2, Madagascar 1, Bolivia 1, Peru 1, Mongolia 1, Papua New Guinea 1, Colombia 1, Guatemala 0, Malaysia 0, Namibia 0, Nepal 0 |
+| `surface=dirt/sand` | 1,301 | Brazil 307, Mexico 258, Kenya 236, Ethiopia 133, South Africa 62, Iran 60, India 49, Mali 43, Finland 41, Cameroon 18, Morocco 12, Indonesia 12, Honduras 11, Thailand 10, Australia 9, Myanmar 6, Romania 6, Senegal 5, Chile 5, Kyrgyzstan 5, Laos 4, Cambodia 3, Philippines 2, Madagascar 1, Bolivia 1, Peru 1, Mongolia 1, Papua New Guinea 1, Colombia 1, Guatemala 0, Malaysia 0, Namibia 0, Nepal 0 |
 | `tracktype=grade3-5` | 1,209 | South Africa 1209 |
 | `smoothness=very_good` | 374 | India 90, Senegal 82, Brazil 53, Morocco 40, Albania 37, Honduras 21, Bolivia 13, Romania 12, Ghana 8, Czechia 7, Gambia 6, Kenya 4, Argentina 1, Georgia 1 |
 | `surface=sand/gravel/stones` | 288 | Morocco 156, Kenya 125, Australia 6, India 1 |
@@ -24,7 +24,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `smoothness=poor` | 69 | Colombia 25, Australia 18, Uganda 16, Peru 4, Brazil 2, Philippines 2, Thailand 1, Indonesia 1, Mexico 0, Vietnam 0, Denmark 0 |
 | `surface=ottaseal` | 63 | Nepal 63 |
 | `surface=stone` | 55 | Indonesia 33, Ethiopia 9, Guatemala 3, Brazil 3, Nepal 3, Iran 1, Argentina 1, Bolivia 1, Colombia 1, Romania 1, Mexico 0, Gabon 0, India 0, Peru 0, Finland 0, Malaysia 0 |
-| `surface=mixed` | 55 | India 33, Romania 22, Philippines 0 |
+| `surface=mixed` | 54 | India 33, Romania 21, Philippines 0 |
 | `surface=asphalt, ground` | 48 | India 48 |
 | `surface=não_pavimentadoc` | 47 | Brazil 47 |
 | `smoothness=ok` | 47 | Uganda 47 |
@@ -156,6 +156,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=Bing` | 4 | Colombia 3, Ghana 0 |
 | `surface=unpaved=steep` | 4 | Brazil 4 |
 | `surface=12.50530/121.30882` | 4 | Philippines 4 |
+| `surface=unpaved2` | 4 | New Zealand 3, Malaysia 1, Madagascar 0, Thailand 0 |
 | `surface=sin_pavimentar` | 4 | Argentina 3, Peru 1, Mexico 0, Chile 0, Guatemala 0 |
 | `smoothness=wheels` | 4 | Czechia 4 |
 | `surface=písčitý` | 4 | Laos 4 |
@@ -198,6 +199,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=un33` | 3 | Mexico 3 |
 | `surface=steel` | 3 | Nepal 2, Cambodia 0, Laos 0, Cuba 0, India 0, Philippines 0, Thailand 0, Vietnam 0, Romania 0 |
 | `surface=composite` | 3 | Finland 3 |
+| `surface=Concrete` | 3 | Philippines 3 |
 | `surface=asfalt fara indicatoare` | 3 | Romania 3 |
 | `surface=não_pa` | 2 | Brazil 2 |
 | `surface=gru` | 2 | Colombia 2 |
@@ -259,6 +261,7 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `smoothness=bad;good` | 2 | Indonesia 2 |
 | `smoothness=2` | 2 | Kyrgyzstan 1, Indonesia 1 |
 | `smoothness=good - Thin Wheels: racing bike` | 2 | India 2 |
+| `surface=unpaved222` | 2 | India 2, Malaysia 0 |
 | `surface=graveled` | 2 | Philippines 2 |
 | `surface=Segments_of_concrete_and_unpaved_roads` | 2 | Philippines 2 |
 | `surface=asfalt bun, se circula bine` | 2 | Romania 2 |
@@ -274,7 +277,6 @@ Kept as found for now: no whitelist change, no retagging (decided 2026-11-02).
 | `surface=road` | 2 | DR Congo 1, Uganda 0, Nepal 0 |
 | `smoothness=thin_rollers` | 2 | Czechia 2 |
 | `surface=concrete_and_batu` | 2 | Indonesia 2 |
-| `surface=unpaved222` | 2 | India 2 |
 | `surface=sand;gravel;stones` | 2 | Kenya 2 |
 | `surface=undefined; gravel` | 2 | New Zealand 2 |
 | `surface=ถนน_ค.ส.ล.` | 2 | Thailand 2 |

@@ -1,11 +1,11 @@
 {
  "country": "vn",
  "name": "Vietnam",
- "data_date": "2026-11-02",
+ "data_date": "2026-11-11",
  "run": {
-  "generated_at": "2026-11-03T04:08:55.319Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T02:59:42.390Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "vietnam-latest.osm.pbf",
   "boundary": "r49915",
@@ -14,164 +14,180 @@
  },
  "km": {
   "motorway": {
-   "paved_tagged": 5525.9,
-   "untagged": 744.1,
+   "paved_tagged": 5647.7,
+   "untagged": 628.9,
    "unpaved": 0,
    "offroad": 0,
    "specialized": 0
   },
   "trunk": {
-   "paved_tagged": 15090.4,
-   "untagged": 6843,
-   "unpaved": 22.5,
-   "offroad": 0,
+   "paved_tagged": 15082.7,
+   "untagged": 6836,
+   "unpaved": 22.6,
+   "offroad": 13.6,
    "specialized": 0
   },
   "primary": {
-   "paved_tagged": 8698,
-   "untagged": 8621.1,
+   "paved_tagged": 8706.1,
+   "untagged": 8563,
+   "offroad": 52.9,
    "unpaved": 11.8,
-   "offroad": 0,
    "specialized": 0
   },
   "secondary": {
-   "untagged": 23373.1,
-   "paved_tagged": 8267.7,
-   "unpaved": 63.1,
-   "offroad": 0,
-   "specialized": 0
+   "untagged": 23407.8,
+   "paved_tagged": 8236.5,
+   "unpaved": 63.2,
+   "specialized": 0,
+   "offroad": 0
   },
   "tertiary": {
-   "untagged": 48456.5,
-   "paved_tagged": 7528.6,
-   "unpaved": 433.9,
-   "offroad": 18,
-   "specialized": 3.1
+   "untagged": 48501.7,
+   "paved_tagged": 7502.6,
+   "unpaved": 435.1,
+   "offroad": 46.1,
+   "specialized": 4.6
   },
   "unclassified": {
-   "untagged": 57998.9,
-   "unpaved": 9398.4,
-   "paved_tagged": 2578.4,
-   "offroad": 274.1,
+   "untagged": 58015.6,
+   "unpaved": 9398.8,
+   "paved_tagged": 2587.8,
+   "offroad": 283.5,
    "specialized": 128.1
   },
   "residential": {
-   "untagged": 362026.1,
-   "paved_tagged": 8476.4,
-   "unpaved": 4451.7,
-   "offroad": 67.5,
-   "specialized": 2.5
+   "untagged": 362132.8,
+   "paved_tagged": 8486.8,
+   "unpaved": 4479.8,
+   "offroad": 109.4,
+   "specialized": 8.7
   },
   "all": {
-   "untagged": 508062.9,
-   "paved_tagged": 56165.3,
-   "unpaved": 14381.4,
-   "offroad": 359.7,
-   "specialized": 133.7
+   "untagged": 508085.8,
+   "paved_tagged": 56250.3,
+   "unpaved": 14411.3,
+   "offroad": 505.6,
+   "specialized": 141.4
   }
  },
  "coverage_km": {
   "motorway": {
-   "surface": 5525.9,
+   "surface": 5647.7,
    "smoothness": 220.4
   },
   "trunk": {
-   "surface": 15112.9,
-   "smoothness": 687.4
+   "surface": 15119,
+   "smoothness": 687.4,
+   "tracktype": 1.4
   },
   "primary": {
-   "surface": 8709.8,
+   "surface": 8717.9,
    "smoothness": 940.9
   },
   "secondary": {
-   "surface": 8330.3,
-   "smoothness": 708.6,
+   "surface": 8299.2,
+   "smoothness": 708.8,
    "tracktype": 0.5
   },
   "tertiary": {
-   "surface": 7979,
-   "smoothness": 770.5,
+   "surface": 7981.7,
+   "smoothness": 773.5,
    "tracktype": 16.6
   },
   "unclassified": {
-   "surface": 12351.2,
-   "smoothness": 1257.4,
-   "tracktype": 336.8,
+   "surface": 12363.1,
+   "smoothness": 1257.5,
+   "tracktype": 326.4,
    "4wd_only": 19.9
   },
   "residential": {
-   "surface": 12927.1,
-   "smoothness": 737.7,
-   "tracktype": 142.8
+   "surface": 12961,
+   "smoothness": 737.8,
+   "tracktype": 142
   },
   "all": {
-   "surface": 70936.2,
-   "smoothness": 5322.9,
-   "tracktype": 496.7,
+   "surface": 71089.6,
+   "smoothness": 5326.3,
+   "tracktype": 487,
    "4wd_only": 19.9
   }
  },
  "base_source_km": {
   "motorway": {
-   "surface": 5525.9,
-   "default": 744.1
+   "surface": 5647.7,
+   "default": 628.9
   },
   "trunk": {
-   "surface": 15112.9,
-   "default": 6843
+   "surface": 15105.3,
+   "default": 6836,
+   "smoothness": 13.6
   },
   "primary": {
-   "surface": 8709.8,
-   "default": 8621.1
+   "surface": 8717.9,
+   "default": 8563,
+   "smoothness": 52.9
   },
   "secondary": {
-   "default": 23373.1,
-   "surface": 8330.3,
-   "tracktype": 0.5
+   "default": 23407.8,
+   "surface": 8299.2,
+   "tracktype": 0.5,
+   "smoothness": 0
   },
   "tertiary": {
-   "default": 48456.5,
-   "surface": 7979,
+   "default": 48501.7,
+   "surface": 7953.1,
+   "smoothness": 30.8,
    "tracktype": 4.5
   },
   "unclassified": {
-   "default": 57998.9,
-   "surface": 12351.2,
-   "tracktype": 27.8
+   "default": 58015.6,
+   "surface": 12357.4,
+   "smoothness": 22.7,
+   "tracktype": 18.1
   },
   "residential": {
-   "default": 362026.1,
-   "surface": 12927.1,
-   "tracktype": 71
+   "default": 362132.8,
+   "surface": 12954.2,
+   "smoothness": 67.4,
+   "tracktype": 63.1
   },
   "all": {
-   "default": 508062.9,
-   "surface": 70936.2,
-   "tracktype": 103.9
+   "default": 508085.8,
+   "surface": 71034.8,
+   "smoothness": 187.5,
+   "tracktype": 86.2
   }
  },
  "mark_source_km": {
   "motorway": {},
-  "trunk": {},
-  "primary": {},
-  "secondary": {},
+  "trunk": {
+   "smoothness": 13.6
+  },
+  "primary": {
+   "smoothness": 52.9
+  },
+  "secondary": {
+   "smoothness": 0
+  },
   "tertiary": {
-   "smoothness": 19.9,
-   "tracktype": 1.2
+   "smoothness": 50.7
   },
   "unclassified": {
-   "smoothness": 352.8,
-   "tracktype": 35.4,
-   "4wd_only": 14
+   "smoothness": 367.8,
+   "tracktype": 29,
+   "4wd_only": 14,
+   "surface": 0.7
   },
   "residential": {
-   "smoothness": 55.1,
-   "tracktype": 14.9
+   "smoothness": 114.6,
+   "surface": 2.5,
+   "tracktype": 1.1
   },
   "all": {
-   "smoothness": 427.9,
-   "tracktype": 51.5,
-   "4wd_only": 14
+   "smoothness": 599.7,
+   "tracktype": 30.1,
+   "4wd_only": 14,
+   "surface": 3.2
   }
  },
  "value_km": {
@@ -183,18 +199,27 @@
   "trunk": {
    "unpaved": {
     "surface=gravel": 22.3,
+    "smoothness=very_bad": 9.1,
+    "smoothness=horrible": 4.5,
     "surface=unpaved": 0.3,
+    "surface=wood": 0.1,
     "surface=concrete:lanes": 0
    },
-   "offroad": {},
+   "offroad": {
+    "smoothness=very_bad": 9.1,
+    "smoothness=horrible": 4.5
+   },
    "specialized": {}
   },
   "primary": {
    "unpaved": {
+    "smoothness=very_bad": 52.9,
     "surface=unpaved": 10.8,
     "surface=fine_gravel": 1
    },
-   "offroad": {},
+   "offroad": {
+    "smoothness=very_bad": 52.9
+   },
    "specialized": {}
   },
   "secondary": {
@@ -203,19 +228,26 @@
     "surface=construction": 4.7,
     "surface=dirt": 1.1,
     "surface=gravel": 0.8,
-    "surface=compacted": 0.7
+    "surface=compacted": 0.7,
+    "surface=wood": 0,
+    "smoothness=impassable": 0
    },
    "offroad": {},
-   "specialized": {}
+   "specialized": {
+    "smoothness=impassable": 0
+   }
   },
   "tertiary": {
    "unpaved": {
     "surface=unpaved": 379.7,
     "surface=gravel": 30,
     "surface=dirt": 29.4,
+    "smoothness=horrible": 22.5,
+    "smoothness=very_bad": 6.8,
     "surface=fine_gravel": 6.3,
     "surface=compacted": 5.1,
     "surface=Thâm_nhập_nhựa": 1.9,
+    "smoothness=very_horrible": 1.5,
     "surface=ground": 0.7,
     "surface=earth": 0.6,
     "surface=đt._824": 0.5,
@@ -223,43 +255,46 @@
     "surface=concrete:lanes": 0.2
    },
    "offroad": {
-    "smoothness=very_bad": 16.8,
-    "tracktype=grade3": 1.2
+    "smoothness=very_bad": 23.6,
+    "smoothness=horrible": 22.5
    },
    "specialized": {
-    "smoothness=very_horrible": 3.1
+    "smoothness=very_horrible": 4.6
    }
   },
   "unclassified": {
    "unpaved": {
-    "surface=unpaved": 9309.6,
+    "surface=unpaved": 9306.7,
     "surface=ground": 187.9,
     "surface=dirt": 168.1,
-    "surface=gravel": 54.9,
-    "surface=compacted": 36,
-    "tracktype=grade2": 8.7,
+    "surface=gravel": 54.5,
+    "surface=compacted": 35.9,
+    "smoothness=very_bad": 22,
     "surface=earth": 5.7,
     "tracktype=grade4": 5.7,
-    "surface=sand": 5.1,
     "surface=pebblestone": 5.1,
-    "tracktype=grade3": 5,
+    "surface=sand": 5,
     "surface=fine_gravel": 4.2,
+    "tracktype=grade3": 2.9,
     "surface=soil": 1.1,
+    "tracktype=grade2": 1,
     "surface=residential": 0.9,
     "tracktype=grade5": 0.8,
     "surface=mud": 0.7,
+    "smoothness=horrible": 0.7,
+    "surface=wood": 0.4,
     "surface=grass": 0.4,
     "surface=unhewn_cobblestone": 0.2,
     "surface=cement": 0.2,
     "surface=hẻm_nhỏ": 0
    },
    "offroad": {
-    "smoothness=very_bad": 118.1,
-    "smoothness=horrible": 106.5,
+    "smoothness=very_bad": 132.4,
+    "smoothness=horrible": 107.2,
     "tracktype=grade4": 22.2,
     "4wd_only=yes": 14,
     "tracktype=grade5": 6.8,
-    "tracktype=grade3": 6.4
+    "surface=mud": 0.7
    },
    "specialized": {
     "smoothness=very_horrible": 126.5,
@@ -268,19 +303,21 @@
   },
   "residential": {
    "unpaved": {
-    "surface=unpaved": 4042,
+    "surface=unpaved": 4058.6,
     "surface=compacted": 105,
     "surface=ground": 90.8,
     "surface=gravel": 70,
     "surface=earth": 69,
     "surface=dirt": 62.2,
+    "smoothness=very_bad": 35,
+    "smoothness=horrible": 25.5,
     "surface=soil": 16.5,
     "tracktype=grade3": 12.8,
     "tracktype=grade2": 12.4,
     "surface=fine_gravel": 10.3,
-    "tracktype=grade4": 6.5,
-    "tracktype=grade5": 5.5,
+    "smoothness=very_horrible": 6.9,
     "surface=clay": 4.2,
+    "tracktype=grade4": 3.8,
     "surface=residential": 3.5,
     "surface=concrete:lanes": 2.1,
     "surface=grass": 2,
@@ -291,36 +328,41 @@
     "surface=mud": 0.9,
     "surface=pebblestone": 0.5,
     "surface=bê_tông": 0.3,
+    "tracktype=grade5": 0.3,
     "surface=grass_paver": 0.2,
+    "surface=wood": 0.2,
     "surface=https://www.streetview.vn/?lat=21.11697997&lng=105.828509548&picId=7a451cbd-a117-409e-9d55-021d94abc083&yaw=105&pitch=-11": 0.1,
     "surface=steel": 0.1
    },
    "offroad": {
-    "smoothness=very_bad": 32,
-    "smoothness=horrible": 20.6,
-    "tracktype=grade3": 13.8,
+    "smoothness=very_bad": 60.5,
+    "smoothness=horrible": 45.4,
+    "surface=rock": 1.6,
     "tracktype=grade4": 1,
+    "surface=mud": 0.9,
     "tracktype=grade5": 0
    },
    "specialized": {
-    "smoothness=very_horrible": 2.5
+    "smoothness=very_horrible": 8.7
    }
   },
   "all": {
    "unpaved": {
-    "surface=unpaved": 13798.2,
+    "surface=unpaved": 13811.8,
     "surface=ground": 279.4,
     "surface=dirt": 260.8,
-    "surface=gravel": 177.9,
-    "surface=compacted": 146.8,
+    "surface=gravel": 177.6,
+    "surface=compacted": 146.7,
+    "smoothness=very_bad": 125.8,
     "surface=earth": 75.3,
+    "smoothness=horrible": 53.2,
     "surface=fine_gravel": 21.9,
-    "tracktype=grade2": 21.1,
-    "tracktype=grade3": 17.7,
     "surface=soil": 17.6,
-    "tracktype=grade4": 12.2,
-    "surface=sand": 6.6,
-    "tracktype=grade5": 6.3,
+    "tracktype=grade3": 15.7,
+    "tracktype=grade2": 13.4,
+    "tracktype=grade4": 9.5,
+    "smoothness=very_horrible": 8.4,
+    "surface=sand": 6.4,
     "surface=pebblestone": 5.5,
     "surface=construction": 4.7,
     "surface=residential": 4.4,
@@ -331,7 +373,9 @@
     "surface=mud": 1.7,
     "surface=rock": 1.6,
     "surface=cement": 1.2,
+    "tracktype=grade5": 1.1,
     "surface=soild": 1,
+    "surface=wood": 0.7,
     "surface=đt._824": 0.5,
     "surface=2": 0.5,
     "surface=bê_tông": 0.3,
@@ -339,18 +383,20 @@
     "surface=grass_paver": 0.2,
     "surface=https://www.streetview.vn/?lat=21.11697997&lng=105.828509548&picId=7a451cbd-a117-409e-9d55-021d94abc083&yaw=105&pitch=-11": 0.1,
     "surface=steel": 0.1,
-    "surface=hẻm_nhỏ": 0
+    "surface=hẻm_nhỏ": 0,
+    "smoothness=impassable": 0
    },
    "offroad": {
-    "smoothness=very_bad": 167,
-    "smoothness=horrible": 127.2,
+    "smoothness=very_bad": 278.6,
+    "smoothness=horrible": 179.7,
     "tracktype=grade4": 23.3,
-    "tracktype=grade3": 21.4,
     "4wd_only=yes": 14,
-    "tracktype=grade5": 6.8
+    "tracktype=grade5": 6.8,
+    "surface=mud": 1.7,
+    "surface=rock": 1.6
    },
    "specialized": {
-    "smoothness=very_horrible": 132.1,
+    "smoothness=very_horrible": 139.8,
     "smoothness=impassable": 1.6
    }
   }
@@ -372,22 +418,20 @@
   "surface=hẻm_nhỏ": 0
  },
  "conflict_km": {
-  "paved (no surface) + smoothness=very_bad": 88.9,
-  "paved (surface=paved) + smoothness=horrible": 22.5,
-  "paved (no surface) + smoothness=horrible": 19.7,
-  "paved (surface=asphalt) + smoothness=very_bad": 11.7,
-  "paved (no surface) + smoothness=very_horrible": 7.7,
-  "paved (surface=paved) + smoothness=very_bad": 5.4,
-  "paved (surface=asphalt) + smoothness=horrible": 5.3,
-  "paved (surface=concrete) + smoothness=horrible": 4.9,
-  "paved (surface=concrete) + smoothness=very_bad": 3.1,
-  "paved (surface=concrete) + tracktype=grade3": 2.4,
+  "surface=paved + smoothness=horrible": 22.5,
+  "surface=asphalt + smoothness=very_bad": 13.5,
+  "surface=paved + smoothness=very_bad": 5.4,
+  "surface=asphalt + smoothness=horrible": 5.3,
+  "surface=concrete + smoothness=horrible": 4.9,
+  "surface=concrete + tracktype=grade2 (ignored)": 4.7,
+  "surface=concrete + smoothness=very_bad": 3.1,
+  "surface=concrete + tracktype=grade3 (ignored)": 2.4,
   "smoothness=good + surface=ground": 2,
   "smoothness=good + surface=unpaved": 0.9,
-  "paved (surface=paving_stones) + tracktype=grade3": 0.7,
+  "surface=paving_stones + tracktype=grade3 (ignored)": 0.7,
+  "surface=asphalt + tracktype=grade2 (ignored)": 0.6,
   "smoothness=good + surface=compacted": 0.1,
-  "smoothness=good + surface=pebblestone": 0,
-  "paved (no surface) + smoothness=impassable": 0
+  "smoothness=good + surface=pebblestone": 0
  },
  "odd": {
   "major_unpaved": [
@@ -399,6 +443,19 @@
     "tags": {
      "highway": "secondary",
      "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w892617728",
+    "highway": "primary",
+    "km": 21,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
     }
    },
    {
@@ -426,6 +483,32 @@
      "ref": "ĐT.974",
      "smoothness": "bad",
      "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w892140709",
+    "highway": "primary",
+    "km": 10.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w893034413",
+    "highway": "primary",
+    "km": 10.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
     }
    },
    {
@@ -467,6 +550,59 @@
     }
    },
    {
+    "id": "w891565648",
+    "highway": "primary",
+    "km": 5,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w202058762",
+    "highway": "trunk",
+    "km": 4.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "lanes": "2",
+     "name": "Quốc lộ 49",
+     "ref": "QL.49",
+     "smoothness": "horrible",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w894082238",
+    "highway": "primary",
+    "km": 4.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w220358981",
+    "highway": "trunk",
+    "km": 4.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "trunk",
+     "name": "Quốc lộ 14C",
+     "ref": "QL.14C",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
+    }
+   },
+   {
     "id": "w785019839",
     "highway": "secondary",
     "km": 3,
@@ -479,116 +615,50 @@
     }
    },
    {
-    "id": "w1343621187",
-    "highway": "primary",
-    "km": 2.5,
-    "level": "unpaved",
+    "id": "w843354757",
+    "highway": "trunk",
+    "km": 2.9,
+    "level": "offroad",
     "tags": {
-     "highway": "primary",
-     "name": "Đường tỉnh 639",
-     "ref": "ĐT.639",
-     "surface": "unpaved"
-    }
-   },
-   {
-    "id": "w1466169323",
-    "highway": "secondary",
-    "km": 2.2,
-    "level": "unpaved",
-    "tags": {
-     "access": "no",
-     "highway": "secondary",
-     "name": "Đường N8",
-     "ref": "ĐT.787C",
-     "surface": "construction"
-    }
-   },
-   {
-    "id": "w1466169321",
-    "highway": "secondary",
-    "km": 1.1,
-    "level": "unpaved",
-    "tags": {
-     "access": "no",
-     "highway": "secondary",
-     "name": "Đường N8",
-     "ref": "ĐT.787C",
-     "surface": "construction"
-    }
-   },
-   {
-    "id": "w876125046",
-    "highway": "primary",
-    "km": 0.9,
-    "level": "unpaved",
-    "tags": {
-     "highway": "primary",
-     "lanes": "2",
-     "lit": "no",
-     "maxspeed": "80",
-     "name": "Quốc lộ 40B",
-     "name:en": "National Route 40B",
-     "ref": "QL.40B",
-     "sidewalk": "no",
-     "smoothness": "bad",
-     "source": "vietbando;GPS",
-     "surface": "fine_gravel"
-    }
-   },
-   {
-    "id": "w989045847",
-    "highway": "secondary",
-    "km": 0.9,
-    "level": "unpaved",
-    "tags": {
-     "highway": "secondary",
-     "name": "Đường tỉnh 103",
-     "ref": "ĐT.103",
-     "source": "maxar",
-     "surface": "unpaved"
-    }
-   },
-   {
-    "id": "w1467731446",
-    "highway": "secondary",
-    "km": 0.8,
-    "level": "unpaved",
-    "tags": {
-     "access": "no",
-     "highway": "secondary",
-     "name": "Đường N8",
-     "ref": "ĐT.787C",
-     "surface": "construction"
-    }
-   },
-   {
-    "id": "w1434408672",
-    "highway": "secondary",
-    "km": 0.7,
-    "level": "unpaved",
-    "tags": {
-     "check_date": "2024-11-11",
-     "highway": "secondary",
-     "name": "Đường tỉnh 569",
-     "ref": "ĐT.569",
-     "smoothness": "bad",
-     "surface": "dirt"
-    }
-   },
-   {
-    "id": "w291750523",
-    "highway": "secondary",
-    "km": 0.7,
-    "level": "unpaved",
-    "tags": {
-     "highway": "secondary",
-     "lanes": "2",
-     "name": "Bùi Thị Xuân",
-     "surface": "compacted"
+     "highway": "trunk",
+     "name": "Quốc lộ 14C",
+     "ref": "QL.14C",
+     "smoothness": "very_bad",
+     "surface": "asphalt"
     }
    }
   ],
   "offroad_mark": [
+   {
+    "id": "w469997176",
+    "highway": "tertiary",
+    "km": 22.5,
+    "level": "offroad",
+    "tags": {
+     "check_date": "2025",
+     "fixme": "Check after 2026",
+     "highway": "tertiary",
+     "maxspeed:advisory": "10",
+     "name": "Đường tỉnh 153",
+     "ref": "ĐT.153",
+     "smoothness": "horrible",
+     "source": "GPS",
+     "surface": "paved"
+    }
+   },
+   {
+    "id": "w892617728",
+    "highway": "primary",
+    "km": 21,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
+    }
+   },
    {
     "id": "w441120569",
     "highway": "unclassified",
@@ -602,6 +672,32 @@
      "source": "Bing",
      "surface": "ground",
      "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w892140709",
+    "highway": "primary",
+    "km": 10.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
+    }
+   },
+   {
+    "id": "w893034413",
+    "highway": "primary",
+    "km": 10.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "primary",
+     "lanes": "1",
+     "name": "Đường tỉnh 114",
+     "ref": "ĐT.114",
+     "smoothness": "very_bad"
     }
    },
    {
@@ -691,6 +787,16 @@
     }
    },
    {
+    "id": "w165494968",
+    "highway": "unclassified",
+    "km": 6.5,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad"
+    }
+   },
+   {
     "id": "w910292359",
     "highway": "unclassified",
     "km": 5.8,
@@ -726,73 +832,6 @@
      "surface": "unpaved",
      "tracktype": "grade4"
     }
-   },
-   {
-    "id": "w437742683",
-    "highway": "unclassified",
-    "km": 5.4,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "lanes": "2",
-     "lit": "no",
-     "sidewalk": "no",
-     "smoothness": "very_bad",
-     "source": "Bing",
-     "surface": "unpaved"
-    }
-   },
-   {
-    "id": "w818265910",
-    "highway": "unclassified",
-    "km": 5.3,
-    "level": "specialized",
-    "tags": {
-     "check_date": "2025-02-16",
-     "highway": "unclassified",
-     "smoothness": "very_horrible",
-     "surface": "unpaved",
-     "tracktype": "grade5"
-    }
-   },
-   {
-    "id": "w475394737",
-    "highway": "unclassified",
-    "km": 4.7,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "source": "Bing 2017",
-     "tracktype": "grade4"
-    }
-   },
-   {
-    "id": "w1417581679",
-    "highway": "unclassified",
-    "km": 4.4,
-    "level": "offroad",
-    "tags": {
-     "check_date": "2025-07-01",
-     "highway": "unclassified",
-     "name": "OffRoad 2025",
-     "surface": "unpaved",
-     "tracktype": "grade4"
-    }
-   },
-   {
-    "id": "w439340269",
-    "highway": "unclassified",
-    "km": 4.4,
-    "level": "offroad",
-    "tags": {
-     "access": "agricultural",
-     "highway": "unclassified",
-     "lit": "no",
-     "smoothness": "horrible",
-     "source": "Bing",
-     "surface": "ground",
-     "tracktype": "grade5"
-    }
    }
   ],
   "conflict": [
@@ -800,7 +839,7 @@
     "id": "w469997176",
     "highway": "tertiary",
     "km": 22.5,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "check_date": "2025",
      "fixme": "Check after 2026",
@@ -814,72 +853,10 @@
     }
    },
    {
-    "id": "w892617728",
-    "highway": "primary",
-    "km": 21,
-    "level": "paved",
-    "tags": {
-     "highway": "primary",
-     "lanes": "1",
-     "name": "Đường tỉnh 114",
-     "ref": "ĐT.114",
-     "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w892140709",
-    "highway": "primary",
-    "km": 10.7,
-    "level": "paved",
-    "tags": {
-     "highway": "primary",
-     "lanes": "1",
-     "name": "Đường tỉnh 114",
-     "ref": "ĐT.114",
-     "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w893034413",
-    "highway": "primary",
-    "km": 10.1,
-    "level": "paved",
-    "tags": {
-     "highway": "primary",
-     "lanes": "1",
-     "name": "Đường tỉnh 114",
-     "ref": "ĐT.114",
-     "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w165494968",
-    "highway": "unclassified",
-    "km": 6.5,
-    "level": "paved",
-    "tags": {
-     "highway": "unclassified",
-     "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w891565648",
-    "highway": "primary",
-    "km": 5,
-    "level": "paved",
-    "tags": {
-     "highway": "primary",
-     "lanes": "1",
-     "name": "Đường tỉnh 114",
-     "ref": "ĐT.114",
-     "smoothness": "very_bad"
-    }
-   },
-   {
     "id": "w202058762",
     "highway": "trunk",
     "km": 4.5,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "trunk",
      "lanes": "2",
@@ -890,23 +867,10 @@
     }
    },
    {
-    "id": "w894082238",
-    "highway": "primary",
-    "km": 4.5,
-    "level": "paved",
-    "tags": {
-     "highway": "primary",
-     "lanes": "1",
-     "name": "Đường tỉnh 114",
-     "ref": "ĐT.114",
-     "smoothness": "very_bad"
-    }
-   },
-   {
     "id": "w220358981",
     "highway": "trunk",
     "km": 4.4,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "trunk",
      "name": "Quốc lộ 14C",
@@ -919,7 +883,7 @@
     "id": "w464231205",
     "highway": "tertiary",
     "km": 3.3,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "tertiary",
      "service": "driveway",
@@ -932,7 +896,7 @@
     "id": "w843354757",
     "highway": "trunk",
     "km": 2.9,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "trunk",
      "name": "Quốc lộ 14C",
@@ -942,36 +906,26 @@
     }
    },
    {
-    "id": "w311596051",
-    "highway": "residential",
-    "km": 1.9,
-    "level": "paved",
-    "tags": {
-     "access": "agricultural",
-     "highway": "residential",
-     "lit": "no",
-     "smoothness": "very_bad",
-     "source": "Bing"
-    }
-   },
-   {
-    "id": "w411193517",
-    "highway": "residential",
+    "id": "w368453501",
+    "highway": "tertiary",
     "km": 1.8,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
-     "access": "agricultural",
-     "highway": "residential",
-     "lit": "no",
+     "highway": "tertiary",
+     "motor_vehicle": "destination",
+     "name": "Trần Quang Khải",
+     "name:en": "Tran Quang Khai Road",
+     "name:vi": "Trần Quang Khải",
+     "name:zh": "陈光凯路",
      "smoothness": "very_bad",
-     "source": "Bing"
+     "surface": "asphalt"
     }
    },
    {
     "id": "w433817991",
     "highway": "residential",
     "km": 1.8,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "residential",
      "lit": "no",
@@ -985,13 +939,107 @@
     "id": "w1414892062",
     "highway": "trunk",
     "km": 1.8,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "trunk",
      "name": "Quốc lộ 14C",
      "ref": "QL.14C",
      "smoothness": "very_bad",
      "surface": "paved"
+    }
+   },
+   {
+    "id": "w149430372",
+    "highway": "residential",
+    "km": 1.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "horrible",
+     "source": "bing aerial",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w437743009",
+    "highway": "unclassified",
+    "km": 1.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "lit": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "source": "Bing",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w1314537400",
+    "highway": "unclassified",
+    "km": 1.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "source": "bing",
+     "surface": "paved",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w890512914",
+    "highway": "residential",
+    "km": 1.3,
+    "level": "paved",
+    "tags": {
+     "highway": "residential",
+     "lane_markings": "no",
+     "noname": "yes",
+     "surface": "concrete",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w900993924",
+    "highway": "residential",
+    "km": 1.2,
+    "level": "paved",
+    "tags": {
+     "access": "yes",
+     "highway": "residential",
+     "motorcar": "no",
+     "motorcycle": "yes",
+     "surface": "concrete",
+     "tracktype": "grade3"
+    }
+   },
+   {
+    "id": "w149433346",
+    "highway": "residential",
+    "km": 1.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "smoothness": "horrible",
+     "source": "bing aerial",
+     "surface": "concrete"
+    }
+   },
+   {
+    "id": "w1415431244",
+    "highway": "unclassified",
+    "km": 1.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "2",
+     "lit": "no",
+     "sidewalk": "no",
+     "smoothness": "very_bad",
+     "source": "Bing",
+     "surface": "concrete"
     }
    }
   ],

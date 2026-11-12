@@ -1,11 +1,11 @@
 {
  "country": "gm",
  "name": "Gambia",
- "data_date": "2026-11-02",
+ "data_date": "2026-11-11",
  "run": {
-  "generated_at": "2026-11-03T02:40:49.996Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T02:50:27.085Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "senegal-and-gambia-latest.osm.pbf",
   "boundary": "r192774",
@@ -42,31 +42,31 @@
    "specialized": 0
   },
   "tertiary": {
-   "unpaved": 554.8,
+   "unpaved": 565,
    "paved_tagged": 163.2,
-   "offroad": 50.3,
+   "offroad": 40.1,
    "untagged": 39.5,
    "specialized": 0
   },
   "unclassified": {
    "untagged": 3878.2,
-   "unpaved": 2102.5,
-   "offroad": 444.2,
+   "unpaved": 2479.3,
+   "offroad": 67.4,
    "paved_tagged": 34.8,
    "specialized": 0
   },
   "residential": {
-   "untagged": 5061.4,
-   "unpaved": 1117.4,
-   "offroad": 180,
+   "untagged": 5063.6,
+   "unpaved": 1267.4,
    "paved_tagged": 35.9,
+   "offroad": 30.2,
    "specialized": 0.1
   },
   "all": {
-   "untagged": 8998.3,
-   "unpaved": 3861.1,
+   "untagged": 9000.4,
+   "unpaved": 4398.2,
    "paved_tagged": 1273.9,
-   "offroad": 681.5,
+   "offroad": 144.6,
    "specialized": 0.1
   }
  },
@@ -95,12 +95,12 @@
    "smoothness": 46.7
   },
   "residential": {
-   "surface": 1165.5,
+   "surface": 1165.8,
    "tracktype": 215.9,
    "smoothness": 40.8
   },
   "all": {
-   "surface": 5300.3,
+   "surface": 5300.5,
    "tracktype": 790.8,
    "smoothness": 306.1
   }
@@ -127,17 +127,20 @@
   "unclassified": {
    "default": 3878.2,
    "surface": 2269,
-   "tracktype": 312.4
+   "tracktype": 303.8,
+   "smoothness": 8.6
   },
   "residential": {
-   "default": 5061.4,
-   "surface": 1165.5,
-   "tracktype": 167.9
+   "default": 5063.6,
+   "surface": 1165.8,
+   "tracktype": 167.7,
+   "smoothness": 0.2
   },
   "all": {
-   "default": 8998.3,
-   "surface": 5300.3,
-   "tracktype": 516.3
+   "default": 9000.4,
+   "surface": 5300.5,
+   "tracktype": 507.5,
+   "smoothness": 8.8
   }
  },
  "mark_source_km": {
@@ -148,20 +151,19 @@
    "smoothness": 7
   },
   "tertiary": {
-   "smoothness": 40.1,
-   "tracktype": 10.3
+   "smoothness": 40.1
   },
   "unclassified": {
-   "tracktype": 412.4,
+   "tracktype": 35.7,
    "smoothness": 31.7
   },
   "residential": {
-   "tracktype": 172.5,
+   "tracktype": 22.7,
    "smoothness": 7.6
   },
   "all": {
-   "tracktype": 595.2,
-   "smoothness": 86.4
+   "smoothness": 86.4,
+   "tracktype": 58.4
   }
  },
  "value_km": {
@@ -205,7 +207,6 @@
    },
    "offroad": {
     "smoothness=very_bad": 35.4,
-    "tracktype=grade3": 10.3,
     "smoothness=horrible": 4.6
    },
    "specialized": {}
@@ -214,19 +215,19 @@
    "unpaved": {
     "surface=unpaved": 1751.8,
     "surface=ground": 309.1,
-    "tracktype=grade3": 263.4,
+    "tracktype=grade3": 254.8,
     "surface=dirt": 92.5,
     "surface=sand": 67.4,
     "tracktype=grade4": 26.4,
     "tracktype=grade2": 22.1,
     "surface=compacted": 12.7,
+    "smoothness=very_bad": 8.6,
     "tracktype=grade5": 0.6,
     "surface=Sandy": 0.5,
     "surface=unpaved_sand": 0.2,
     "surface=gravel": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 376.8,
     "tracktype=grade4": 34,
     "smoothness=very_bad": 20.7,
     "smoothness=horrible": 11,
@@ -238,19 +239,19 @@
    "unpaved": {
     "surface=unpaved": 942.2,
     "tracktype=grade3": 118.7,
-    "surface=ground": 117.4,
+    "surface=ground": 117.6,
     "surface=dirt": 37.1,
     "surface=sand": 30.7,
     "tracktype=grade2": 30.2,
     "tracktype=grade4": 17.7,
     "surface=gravel": 1.4,
-    "tracktype=grade5": 1.3,
+    "tracktype=grade5": 1.1,
     "surface=grass": 0.3,
     "surface=compacted": 0.3,
+    "smoothness=very_bad": 0.2,
     "surface=earth": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 149.8,
     "tracktype=grade4": 21.1,
     "smoothness=very_bad": 5.6,
     "smoothness=horrible": 1.9,
@@ -263,22 +264,22 @@
   "all": {
    "unpaved": {
     "surface=unpaved": 3203.9,
-    "surface=ground": 442,
-    "tracktype=grade3": 385.6,
+    "surface=ground": 442.2,
+    "tracktype=grade3": 377,
     "surface=dirt": 152.8,
     "surface=compacted": 115.8,
     "surface=sand": 108.5,
     "tracktype=grade2": 84.7,
     "tracktype=grade4": 44.1,
+    "smoothness=very_bad": 8.8,
     "surface=gravel": 2.4,
-    "tracktype=grade5": 1.9,
+    "tracktype=grade5": 1.7,
     "surface=Sandy": 0.5,
     "surface=grass": 0.3,
     "surface=unpaved_sand": 0.2,
     "surface=earth": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 536.8,
     "smoothness=very_bad": 68.7,
     "tracktype=grade4": 55.1,
     "smoothness=horrible": 17.6,
@@ -296,9 +297,9 @@
   "surface=unpaved_sand": 0.2
  },
  "conflict_km": {
-  "paved (surface=paved) + tracktype=grade5": 0.9,
+  "surface=paved + tracktype=grade5 (ignored)": 0.9,
   "smoothness=good + surface=unpaved": 0.8,
-  "paved (surface=asphalt) + tracktype=grade5": 0.2
+  "surface=asphalt + tracktype=grade5 (ignored)": 0.2
  },
  "odd": {
   "major_unpaved": [
@@ -427,81 +428,6 @@
     }
    },
    {
-    "id": "w294310615",
-    "highway": "unclassified",
-    "km": 19.9,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w328978328",
-    "highway": "unclassified",
-    "km": 14.1,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w322463527",
-    "highway": "unclassified",
-    "km": 13.6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w679145894",
-    "highway": "residential",
-    "km": 10.3,
-    "level": "offroad",
-    "tags": {
-     "highway": "residential",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w679875446",
-    "highway": "unclassified",
-    "km": 10,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w108464656",
-    "highway": "unclassified",
-    "km": 10,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "ground",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w294310660",
-    "highway": "unclassified",
-    "km": 9.5,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w255543573",
     "highway": "tertiary",
     "km": 8.4,
@@ -540,45 +466,130 @@
     }
    },
    {
-    "id": "w300887741",
+    "id": "w679915691",
     "highway": "unclassified",
-    "km": 6.7,
+    "km": 6.4,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "source": "bing",
-     "tracktype": "grade3"
+     "lanes": "2",
+     "oneway": "no",
+     "smoothness": "horrible",
+     "surface": "unpaved"
     }
    },
    {
-    "id": "w606312631",
+    "id": "w320654733",
+    "highway": "unclassified",
+    "km": 3.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w256068055",
+    "highway": "unclassified",
+    "km": 3.8,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w109447955",
     "highway": "tertiary",
-    "km": 6.7,
+    "km": 3.7,
     "level": "offroad",
     "tags": {
      "highway": "tertiary",
-     "surface": "unpaved",
-     "tracktype": "grade3"
+     "lanes": "2",
+     "oneway": "no",
+     "smoothness": "horrible",
+     "surface": "unpaved"
     }
    },
    {
-    "id": "w679145177",
+    "id": "w255515654",
     "highway": "unclassified",
-    "km": 6.6,
+    "km": 3.7,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "tracktype": "grade3"
+     "tracktype": "grade4"
     }
    },
    {
-    "id": "w298791277",
+    "id": "w372065663",
+    "highway": "tertiary",
+    "km": 3.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "oneway": "no",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w300887759",
     "highway": "unclassified",
-    "km": 6.5,
+    "km": 3.6,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "tracktype": "grade3"
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w424230317",
+    "highway": "unclassified",
+    "km": 3.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w366379736",
+    "highway": "unclassified",
+    "km": 3,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "highway": "unclassified",
+     "lit": "no",
+     "smoothness": "very_bad",
+     "surface": "ground",
+     "vehicle": "yes",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w252395751",
+    "highway": "unclassified",
+    "km": 2.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w255816700",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "surface": "unpaved"
     }
    }
   ],

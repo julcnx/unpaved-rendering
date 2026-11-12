@@ -32,8 +32,8 @@ The data to tell them is already in OpenStreetMap. Mappers have tagged millions 
 I classified 20.0 million km of road in 54 countries, from motorways to residential streets (tracks and service roads left out).
 
 - **At least 26.4% is unpaved.** That counts every road without a `surface` tag as paved. Among the roads that do have a surface tag, 63.1% are unpaved. Motorways are the exception: 41 km out of about 129,000 km.
-- **Main roads too.** The share of unpaved primary roads is 87% in Gabon, 66% in Namibia, 64% in DR Congo and 58% in Bolivia. For secondary roads it reaches 95% in Namibia and 88% in Mali. In 18 of the 54 countries, more than half of the tertiary roads are unpaved.
-- **In absolute length.** Brazil has about 42,000 km of unpaved trunk, primary and secondary roads, Namibia 28,600 km, DR Congo 27,300 km and Australia 26,900 km.
+- **Main roads too.** The share of unpaved primary roads is 87% in Gabon, 66% in Namibia, 65% in DR Congo and 58% in Bolivia. For secondary roads it reaches 95% in Namibia and 89% in Mali. In 18 of the 54 countries, more than half of the tertiary roads are unpaved.
+- **In absolute length.** Brazil has about 42,000 km of unpaved trunk, primary and secondary roads, Namibia 28,600 km, DR Congo 27,500 km and Australia 27,000 km.
 - **Not only in Africa or South America.** Iceland, Australia, Chile, New Zealand, Finland and Romania all have large unpaved shares on their secondary, tertiary or unclassified roads, and their data is well tagged, so the numbers are solid.
 
 **These numbers are conservative.** I compared them with the last official road statistics of the CIA World Factbook for 34 countries. In 15 the official unpaved share falls inside the OSM range, in 18 it is higher, in 1 it is lower. Where OSM and official figures disagree, the real world has more unpaved road, not less (part of the gap is definition: official figures also count rural tracks that OSM maps as `highway=track`). And where tagging is weakest (India, Indonesia, Myanmar and Vietnam have no surface on 88 to 91% of their roads), the map looks most paved.
@@ -66,9 +66,9 @@ Every road gets one of two levels from its tags:
 
 The paved values are a whitelist: `paved`, `asphalt`, `chipseal`, `concrete`, `concrete:plates`, `paving_stones`, `sett`, `bricks`, `metal`, `cobblestone` and `cobblestone:flattened`. `wood`, `concrete:lanes` and `grass_paver` count as paved only when `smoothness` is `bad` or better. A value with several parts (`asphalt;gravel`) is unpaved if any part is.
 
-**Why a whitelist.** Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. OSM Carto, for example, does not list `surface=laterite`, a common material in Africa and Asia, so about 1,300 km of laterite main roads are drawn as paved. With a whitelist, such a value is drawn as unpaved, which is the safer mistake.
+**Why a whitelist.** Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. OSM Carto, for example, does not list `surface=laterite`, a common material in Africa and Asia, so about 1,400 km of laterite main roads are drawn as paved. With a whitelist, such a value is drawn as unpaved, which is the safer mistake.
 
-**Why only two levels.** Three quarters of all unpaved km (75.5%) are tagged simply `surface=unpaved`. On the ground that can mean a smooth graded road or a rough track; the photos confirm both. Any finer split on the map would mostly be a guess. Routers, which see the whole route and how much of it is unpaved, are better placed to judge how hard a trip is.
+**Why only two levels.** Three quarters of all unpaved km (75.4%) are tagged simply `surface=unpaved`. On the ground that can mean a smooth graded road or a rough track; the photos confirm both. Any finer split on the map would mostly be a guess. Routers, which see the whole route and how much of it is unpaved, are better placed to judge how hard a trip is.
 
 **Unpaved does not mean bad.** A graded gravel road in Finland or Namibia is fine for any car when it is dry. The map says what the surface is; the reader decides what that means for their vehicle and the season.
 
@@ -89,12 +89,12 @@ The mark is optional because the evidence is rare. Only 5.9% of unpaved km carry
 
 | Country | Unpaved km | With evidence | Off-road mark |
 |---|---:|---:|---:|
-| Bolivia | 175,850 | 41.1% | 33.9% |
-| Iceland | 8,474 | 28.8% | 25.0% |
-| Nepal | 18,725 | 22.2% | 4.2% |
-| Namibia | 46,985 | 10.4% | 1.7% |
-| Australia | 459,570 | 4.8% | 3.0% |
-| Brazil | 1,536,384 | 2.0% | 0.8% |
+| Bolivia | 175,879 | 41.1% | 34.0% |
+| Iceland | 8,469 | 28.8% | 25.0% |
+| Nepal | 18,728 | 22.2% | 4.2% |
+| Namibia | 46,989 | 10.4% | 1.7% |
+| Australia | 459,598 | 4.8% | 3.0% |
+| Brazil | 1,537,503 | 2.0% | 0.8% |
 
 ## 6. How to draw it
 

@@ -1,11 +1,11 @@
 {
  "country": "sb",
  "name": "Solomon Islands",
- "data_date": "2026-11-02",
+ "data_date": "2026-11-11",
  "run": {
-  "generated_at": "2026-11-03T04:24:45.249Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T03:42:38.880Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "solomon-islands-latest.osm.pbf",
   "boundary": "r1857436",
@@ -43,7 +43,7 @@
   },
   "tertiary": {
    "untagged": 548.5,
-   "unpaved": 148.7,
+   "unpaved": 148.8,
    "paved_tagged": 5.8,
    "offroad": 0,
    "specialized": 0
@@ -165,7 +165,8 @@
   "tertiary": {
    "unpaved": {
     "surface=unpaved": 144.3,
-    "surface=fine_gravel": 4.4
+    "surface=fine_gravel": 4.4,
+    "surface=wood": 0
    },
    "offroad": {},
    "specialized": {}
@@ -206,7 +207,8 @@
     "surface=ground": 6.4,
     "surface=fine_gravel": 4.4,
     "surface=compacted": 4.2,
-    "surface=gravel": 0.9
+    "surface=gravel": 0.9,
+    "surface=wood": 0
    },
    "offroad": {
     "tracktype=grade4": 14.6,

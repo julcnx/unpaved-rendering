@@ -1,11 +1,11 @@
 {
  "country": "gf",
  "name": "French Guiana",
- "data_date": "2026-11-01",
+ "data_date": "2026-11-11",
  "run": {
-  "generated_at": "2026-11-02T16:45:28.145Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T02:38:39.501Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "guyane-latest.osm.pbf",
   "boundary": "r1260551",
@@ -43,30 +43,30 @@
   },
   "tertiary": {
    "untagged": 228.7,
-   "paved_tagged": 185.4,
+   "paved_tagged": 185.6,
    "unpaved": 3.5,
    "offroad": 0,
    "specialized": 0
   },
   "unclassified": {
-   "unpaved": 172.9,
-   "untagged": 152.7,
+   "unpaved": 174.1,
+   "untagged": 151.2,
    "paved_tagged": 138.2,
-   "offroad": 1.1,
+   "offroad": 0,
    "specialized": 0
   },
   "residential": {
-   "paved_tagged": 436.1,
-   "untagged": 410.8,
-   "unpaved": 180.5,
-   "offroad": 2.5,
+   "paved_tagged": 436,
+   "untagged": 413.6,
+   "unpaved": 182.8,
+   "offroad": 0.2,
    "specialized": 0
   },
   "all": {
-   "paved_tagged": 1274.2,
-   "untagged": 854.2,
-   "unpaved": 356.9,
-   "offroad": 12.8,
+   "paved_tagged": 1274.3,
+   "untagged": 855.4,
+   "unpaved": 360.4,
+   "offroad": 9.4,
    "specialized": 0
   }
  },
@@ -82,21 +82,21 @@
    "smoothness": 30.2
   },
   "tertiary": {
-   "surface": 188.9,
+   "surface": 189,
    "smoothness": 16.9
   },
   "unclassified": {
-   "surface": 279.1,
+   "surface": 279.2,
    "tracktype": 38.6,
    "smoothness": 26.7
   },
   "residential": {
-   "surface": 610.9,
+   "surface": 610.7,
    "smoothness": 54.9,
    "tracktype": 12.5
   },
   "all": {
-   "surface": 1602.6,
+   "surface": 1602.7,
    "smoothness": 176.3,
    "tracktype": 51.2
   }
@@ -114,22 +114,24 @@
   },
   "tertiary": {
    "default": 228.7,
-   "surface": 188.9
+   "surface": 189
   },
   "unclassified": {
-   "surface": 279.1,
-   "default": 152.7,
+   "surface": 279.2,
+   "default": 151.2,
    "tracktype": 33.1
   },
   "residential": {
-   "surface": 610.9,
-   "default": 410.8,
-   "tracktype": 8.3
+   "surface": 610.5,
+   "default": 413.6,
+   "tracktype": 8.3,
+   "smoothness": 0.2
   },
   "all": {
-   "surface": 1602.6,
-   "default": 854.2,
-   "tracktype": 41.4
+   "surface": 1602.5,
+   "default": 855.4,
+   "tracktype": 41.4,
+   "smoothness": 0.2
   }
  },
  "mark_source_km": {
@@ -140,15 +142,12 @@
    "smoothness": 9.2
   },
   "tertiary": {},
-  "unclassified": {
-   "tracktype": 1.1
-  },
+  "unclassified": {},
   "residential": {
-   "tracktype": 2.5
+   "smoothness": 0.2
   },
   "all": {
-   "smoothness": 9.2,
-   "tracktype": 3.6
+   "smoothness": 9.4
   }
  },
  "value_km": {
@@ -185,20 +184,19 @@
   },
   "unclassified": {
    "unpaved": {
-    "surface=unpaved": 123.1,
+    "surface=unpaved": 123.2,
     "tracktype=grade3": 20,
     "surface=ground": 13.1,
     "tracktype=grade2": 13.1,
-    "surface=compacted": 4.6
+    "surface=compacted": 4.6,
+    "surface=wood": 0
    },
-   "offroad": {
-    "tracktype=grade3": 1.1
-   },
+   "offroad": {},
    "specialized": {}
   },
   "residential": {
    "unpaved": {
-    "surface=unpaved": 144.4,
+    "surface=unpaved": 144.2,
     "surface=compacted": 15.8,
     "surface=dirt": 10.3,
     "surface=ground": 6,
@@ -206,18 +204,20 @@
     "tracktype=grade2": 1.9,
     "surface=gravel": 1.1,
     "surface=sand": 0.6,
+    "smoothness=very_bad": 0.2,
     "surface=concrete:lanes": 0.2,
     "surface=grass": 0.1,
-    "surface=fine_gravel": 0.1
+    "surface=fine_gravel": 0.1,
+    "surface=wood": 0
    },
    "offroad": {
-    "tracktype=grade3": 2.5
+    "smoothness=very_bad": 0.2
    },
    "specialized": {}
   },
   "all": {
    "unpaved": {
-    "surface=unpaved": 280.3,
+    "surface=unpaved": 280.1,
     "tracktype=grade3": 22.5,
     "surface=compacted": 20.4,
     "surface=ground": 19.2,
@@ -225,20 +225,22 @@
     "surface=dirt": 10.3,
     "surface=gravel": 1.1,
     "surface=sand": 0.6,
+    "smoothness=very_bad": 0.2,
     "surface=concrete:lanes": 0.2,
     "surface=grass": 0.1,
-    "surface=fine_gravel": 0.1
+    "surface=fine_gravel": 0.1,
+    "surface=wood": 0
    },
    "offroad": {
-    "smoothness=very_bad": 9.2,
-    "tracktype=grade3": 3.6
+    "smoothness=very_bad": 9.4
    },
    "specialized": {}
   }
  },
  "unknown_value_km": {},
  "conflict_km": {
-  "paved (surface=concrete) + smoothness=very_bad": 0.2,
+  "surface=asphalt + tracktype=grade2 (ignored)": 1.1,
+  "surface=concrete + smoothness=very_bad": 0.2,
   "smoothness=good + surface=compacted": 0.1
  },
  "odd": {
@@ -291,42 +293,6 @@
      "name": "Avenue Jean Granger",
      "smoothness": "very_bad",
      "surface": "unpaved"
-    }
-   },
-   {
-    "id": "w98382561",
-    "highway": "residential",
-    "km": 1.7,
-    "level": "offroad",
-    "tags": {
-     "highway": "residential",
-     "name": "Impasse des Wassaïs",
-     "name:etymology:wikidata": "Q33943",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w289104374",
-    "highway": "unclassified",
-    "km": 0.9,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "source": "Bing",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w1418733939",
-    "highway": "residential",
-    "km": 0.5,
-    "level": "offroad",
-    "tags": {
-     "highway": "residential",
-     "name": "Impasse Pitaya",
-     "name:etymology:wikidata": "Q232755",
-     "tracktype": "grade3"
     }
    }
   ],

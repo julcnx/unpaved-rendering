@@ -1,11 +1,11 @@
 {
  "country": "ro",
  "name": "Romania",
- "data_date": "2026-11-01",
+ "data_date": "2026-11-10",
  "run": {
-  "generated_at": "2026-11-03T04:52:04.687Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T03:49:44.576Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "romania-latest.osm.pbf",
   "boundary": "r90689",
@@ -14,165 +14,176 @@
  },
  "km": {
   "motorway": {
-   "paved_tagged": 2695.7,
-   "untagged": 9.7,
+   "paved_tagged": 2720.6,
+   "untagged": 0.7,
    "unpaved": 0,
    "offroad": 0,
    "specialized": 0
   },
   "trunk": {
-   "paved_tagged": 5301.8,
+   "paved_tagged": 5289.7,
+   "specialized": 12.3,
    "untagged": 10,
    "unpaved": 0,
-   "offroad": 0,
-   "specialized": 0
+   "offroad": 0
   },
   "primary": {
-   "paved_tagged": 13052,
-   "offroad": 36.8,
+   "paved_tagged": 13052.6,
+   "offroad": 37.4,
+   "untagged": 20.1,
    "unpaved": 20.1,
-   "untagged": 19.4,
    "specialized": 0
   },
   "secondary": {
-   "paved_tagged": 29039.6,
-   "untagged": 541.5,
-   "unpaved": 471.7,
-   "offroad": 83.2,
+   "paved_tagged": 29008.2,
+   "untagged": 540.1,
+   "unpaved": 468.2,
+   "offroad": 125.7,
    "specialized": 0
   },
   "tertiary": {
-   "paved_tagged": 17300.8,
-   "unpaved": 3724.7,
-   "untagged": 3004.5,
-   "offroad": 267.5,
-   "specialized": 3.2
+   "paved_tagged": 17221,
+   "unpaved": 3744.7,
+   "untagged": 3005.1,
+   "offroad": 370,
+   "specialized": 5.7
   },
   "unclassified": {
-   "unpaved": 10366,
-   "untagged": 4287.6,
-   "paved_tagged": 2874.4,
-   "offroad": 1307.1,
-   "specialized": 74.6
+   "unpaved": 10504.3,
+   "untagged": 4284.8,
+   "paved_tagged": 2795.1,
+   "offroad": 1234.3,
+   "specialized": 83.8
   },
   "residential": {
-   "untagged": 38246.5,
-   "unpaved": 28853.1,
-   "paved_tagged": 23205.2,
-   "offroad": 331.1,
-   "specialized": 8.8
+   "untagged": 38224.2,
+   "unpaved": 28925.2,
+   "paved_tagged": 23145.5,
+   "offroad": 331.5,
+   "specialized": 15.4
   },
   "all": {
-   "paved_tagged": 93469.4,
-   "untagged": 46119.2,
-   "unpaved": 43435.5,
-   "offroad": 2025.8,
-   "specialized": 86.6
+   "paved_tagged": 93232.6,
+   "untagged": 46085.1,
+   "unpaved": 43662.4,
+   "offroad": 2098.9,
+   "specialized": 117.1
   }
  },
  "coverage_km": {
   "motorway": {
-   "surface": 2695.7,
-   "smoothness": 2533.1
+   "surface": 2720.6,
+   "smoothness": 2625.3
   },
   "trunk": {
-   "surface": 5301.8,
-   "smoothness": 5250.4
+   "surface": 5302,
+   "smoothness": 5250.7
   },
   "primary": {
-   "surface": 13108.9,
-   "smoothness": 12747.1
+   "surface": 13110.1,
+   "smoothness": 12748.2
   },
   "secondary": {
-   "surface": 29570.1,
-   "smoothness": 25879.5,
+   "surface": 29577.6,
+   "smoothness": 25879.4,
    "tracktype": 164.4
   },
   "tertiary": {
-   "surface": 21252,
-   "smoothness": 13258.5,
+   "surface": 21295.7,
+   "smoothness": 13275,
    "tracktype": 268.6
   },
   "unclassified": {
-   "surface": 14457,
-   "smoothness": 4267.3,
-   "tracktype": 1423.6
+   "surface": 14443.1,
+   "smoothness": 4258.3,
+   "tracktype": 1417.4
   },
   "residential": {
-   "surface": 52211.2,
-   "smoothness": 6205,
+   "surface": 52224.4,
+   "smoothness": 6200.2,
    "tracktype": 678
   },
   "all": {
-   "surface": 138596.6,
-   "smoothness": 70141,
-   "tracktype": 2534.7
+   "surface": 138673.5,
+   "smoothness": 70237,
+   "tracktype": 2528.5
   }
  },
  "base_source_km": {
   "motorway": {
-   "surface": 2695.7,
-   "default": 9.7
+   "surface": 2720.6,
+   "default": 0.7
   },
   "trunk": {
-   "surface": 5301.8,
+   "surface": 5289.7,
+   "smoothness": 12.3,
    "default": 10
   },
   "primary": {
-   "surface": 13108.9,
-   "default": 19.4
+   "surface": 13109.5,
+   "default": 20.1,
+   "smoothness": 0.6
   },
   "secondary": {
-   "surface": 29570.1,
-   "default": 541.5,
-   "tracktype": 24.4
+   "surface": 29535.1,
+   "default": 540.1,
+   "smoothness": 42.8,
+   "tracktype": 24.1
   },
   "tertiary": {
-   "surface": 21252,
-   "default": 3004.5,
+   "surface": 21188.3,
+   "default": 3005.1,
+   "smoothness": 108.8,
    "tracktype": 44.2
   },
   "unclassified": {
-   "surface": 14457,
-   "default": 4287.6,
-   "tracktype": 165.2
+   "surface": 14353.5,
+   "default": 4284.8,
+   "tracktype": 165.2,
+   "smoothness": 98.6
   },
   "residential": {
-   "surface": 52211.2,
-   "default": 38246.5,
-   "tracktype": 187
+   "surface": 52146.9,
+   "default": 38224.2,
+   "tracktype": 186.9,
+   "smoothness": 83.8
   },
   "all": {
-   "surface": 138596.6,
-   "default": 46119.2,
-   "tracktype": 420.8
+   "surface": 138343.6,
+   "default": 46085.1,
+   "tracktype": 420.4,
+   "smoothness": 347
   }
  },
  "mark_source_km": {
   "motorway": {},
-  "trunk": {},
+  "trunk": {
+   "smoothness": 12.3
+  },
   "primary": {
-   "smoothness": 36.8
+   "smoothness": 37.4
   },
   "secondary": {
-   "smoothness": 82.8,
-   "tracktype": 0.4
+   "smoothness": 125.7
   },
   "tertiary": {
-   "smoothness": 249.4,
-   "tracktype": 21.3
+   "smoothness": 359.7,
+   "tracktype": 16
   },
   "unclassified": {
-   "smoothness": 1144.1,
-   "tracktype": 237.7
+   "smoothness": 1242.7,
+   "tracktype": 72,
+   "surface": 3.3
   },
   "residential": {
-   "smoothness": 180.5,
-   "tracktype": 159.4
+   "smoothness": 262.6,
+   "tracktype": 77.8,
+   "surface": 6.5
   },
   "all": {
-   "smoothness": 1693.6,
-   "tracktype": 418.7
+   "smoothness": 2040.3,
+   "tracktype": 165.9,
+   "surface": 9.7
   }
  },
  "value_km": {
@@ -182,52 +193,61 @@
    "specialized": {}
   },
   "trunk": {
-   "unpaved": {},
+   "unpaved": {
+    "smoothness=very_horrible": 12.3
+   },
    "offroad": {},
-   "specialized": {}
+   "specialized": {
+    "smoothness=very_horrible": 12.3
+   }
   },
   "primary": {
    "unpaved": {
     "surface=gravel": 40.9,
     "surface=dirt": 15.7,
-    "surface=ground": 0.2
+    "smoothness=horrible": 0.5,
+    "surface=ground": 0.2,
+    "smoothness=very_bad": 0.1
    },
    "offroad": {
-    "smoothness=very_bad": 21.4,
-    "smoothness=horrible": 15.4
+    "smoothness=very_bad": 21.5,
+    "smoothness=horrible": 15.9
    },
    "specialized": {}
   },
   "secondary": {
    "unpaved": {
-    "surface=gravel": 385.2,
+    "surface=gravel": 384.2,
     "surface=unpaved": 64,
     "surface=compacted": 39.5,
+    "smoothness=very_bad": 31.3,
     "surface=fine_gravel": 28.7,
     "surface=dirt": 24.2,
+    "smoothness=horrible": 11.6,
     "surface=asphalt, ros la suprafata": 4.1,
     "tracktype=grade2": 3.2,
-    "surface=concrete:lanes": 3.1,
     "surface=ground": 1.8,
     "surface=concrete tiles": 0.5,
     "surface=pebblestone": 0.4,
-    "tracktype=grade3": 0.4
+    "tracktype=grade3": 0.4,
+    "surface=wood": 0.1
    },
    "offroad": {
-    "smoothness=very_bad": 76.7,
-    "smoothness=horrible": 6.1,
-    "tracktype=grade3": 0.4
+    "smoothness=very_bad": 108,
+    "smoothness=horrible": 17.7
    },
    "specialized": {}
   },
   "tertiary": {
    "unpaved": {
-    "surface=gravel": 2667.8,
-    "surface=unpaved": 382.5,
-    "surface=dirt": 352.1,
-    "surface=compacted": 278.1,
+    "surface=gravel": 2672,
+    "surface=unpaved": 381.9,
+    "surface=dirt": 358.7,
+    "surface=compacted": 283.9,
     "surface=ground": 134.7,
     "surface=fine_gravel": 92.1,
+    "smoothness=very_bad": 74.3,
+    "smoothness=horrible": 32,
     "surface=mixed": 19,
     "surface=pebblestone": 8.6,
     "surface=grass": 8.3,
@@ -239,6 +259,7 @@
     "surface=gravel;fine_gravel": 3.9,
     "surface=sand": 3.5,
     "surface=asfalt fara indicatoare": 2.5,
+    "smoothness=impassable": 2.5,
     "surface=no real road": 2.4,
     "surface=asphalt/gravel": 2.3,
     "tracktype=grade5": 2.3,
@@ -249,42 +270,47 @@
     "surface=unhewn_cobblestone": 0.8,
     "surface=drum de pamant si piatra": 0.8,
     "surface=mud": 0.3,
+    "surface=wood": 0.2,
     "surface=asphalt;unpaved": 0.1
    },
    "offroad": {
-    "smoothness=very_bad": 198.7,
-    "smoothness=horrible": 47.5,
+    "smoothness=very_bad": 273,
+    "smoothness=horrible": 81,
     "tracktype=grade4": 9.4,
-    "tracktype=grade5": 6.6,
-    "tracktype=grade3": 5.3
+    "tracktype=grade5": 6.6
    },
    "specialized": {
-    "smoothness=very_horrible": 2.3,
-    "smoothness=impassable": 0.8
+    "smoothness=impassable": 3.3,
+    "smoothness=very_horrible": 2.3
    }
   },
   "unclassified": {
    "unpaved": {
-    "surface=gravel": 6429.1,
-    "surface=dirt": 1939.1,
-    "surface=unpaved": 1925.4,
-    "surface=ground": 692.6,
-    "surface=compacted": 416.5,
+    "surface=gravel": 6397.9,
+    "surface=dirt": 1935,
+    "surface=unpaved": 1932.7,
+    "surface=ground": 692.9,
+    "surface=compacted": 419.7,
     "surface=fine_gravel": 100.6,
+    "smoothness=very_bad": 78.8,
     "tracktype=grade2": 70.7,
     "tracktype=grade3": 45.5,
     "surface=earth": 28.9,
     "surface=pebblestone": 24.1,
     "surface=mud": 15.8,
     "surface=d": 15.6,
+    "smoothness=horrible": 10.7,
     "surface=sand": 10.6,
     "surface=grass": 10.6,
     "tracktype=grade5": 10.5,
+    "smoothness=impassable": 5.9,
     "surface=dirt/sand": 3.7,
+    "smoothness=very_horrible": 3.3,
     "tracktype=grade4": 3.2,
     "surface=unhewn_cobblestone": 2.8,
     "surface=ashalpt": 1.3,
     "surface=piatra/balast": 0.7,
+    "surface=wood": 0.3,
     "surface=concrete:lanes": 0.2,
     "surface=piatra": 0.2,
     "surface=stone": 0.1,
@@ -292,53 +318,57 @@
     "surface=woodchips": 0
    },
    "offroad": {
-    "smoothness=very_bad": 810.9,
-    "smoothness=horrible": 258.6,
-    "tracktype=grade3": 165.7,
+    "smoothness=very_bad": 889.7,
+    "smoothness=horrible": 269.3,
     "tracktype=grade4": 50.4,
-    "tracktype=grade5": 21.6
+    "tracktype=grade5": 21.6,
+    "surface=mud": 3.3
    },
    "specialized": {
-    "smoothness=very_horrible": 65.5,
-    "smoothness=impassable": 9.1
+    "smoothness=very_horrible": 68.8,
+    "smoothness=impassable": 15
    }
   },
   "residential": {
    "unpaved": {
-    "surface=gravel": 20707.9,
-    "surface=dirt": 2778.2,
-    "surface=unpaved": 2751.8,
-    "surface=compacted": 1440.3,
+    "surface=gravel": 20694.4,
+    "surface=dirt": 2777.6,
+    "surface=unpaved": 2752,
+    "surface=compacted": 1451.4,
     "surface=ground": 998.9,
     "surface=fine_gravel": 220.2,
     "tracktype=grade2": 82.9,
     "surface=pebblestone": 74.7,
+    "smoothness=very_bad": 63.8,
     "tracktype=grade3": 30.9,
     "surface=grass": 22.2,
     "surface=sand": 15.5,
+    "smoothness=horrible": 13.4,
     "tracktype=grade4": 9.9,
     "surface=earth": 7.3,
     "surface=unhewn_cobblestone": 5.7,
     "surface=mud": 4.7,
-    "tracktype=grade5": 4,
+    "smoothness=very_horrible": 4.6,
+    "tracktype=grade5": 3.9,
     "surface=paved concrete": 3.7,
     "surface=rock": 2.9,
-    "surface=mixed": 2.9,
     "surface=asphalt; gravel": 2.7,
     "surface=gravel; asphalt": 2.6,
     "surface=dirt/sand": 2.2,
+    "smoothness=impassable": 2,
     "surface=gravel; unpaved": 1.8,
     "surface=asfalt bun, se circula bine": 1.6,
     "surface=d": 1.6,
+    "surface=mixed": 1.5,
     "surface=gravel;fine_gravel": 1.5,
     "surface=grass_paver": 1.4,
-    "surface=dirt; gravel": 1.3,
     "surface=Strada_Bazei": 1.3,
     "surface=asphalt; ground": 1,
     "surface=concrete tiles": 1,
     "surface=artificial_turf": 0.9,
     "surface=gravel; paved": 0.9,
     "surface=pamant": 0.8,
+    "surface=wood": 0.8,
     "surface=gravel;asphalt": 0.7,
     "surface=asphalt;gravel": 0.7,
     "surface=asfalt cu denivelari": 0.6,
@@ -363,43 +393,47 @@
     "surface=woodchips": 0
    },
    "offroad": {
-    "smoothness=very_bad": 119.7,
-    "tracktype=grade3": 81.5,
-    "smoothness=horrible": 52.1,
+    "smoothness=very_bad": 183.5,
+    "smoothness=horrible": 63.7,
     "tracktype=grade4": 49.8,
-    "tracktype=grade5": 28
+    "tracktype=grade5": 28,
+    "surface=mud": 3.6,
+    "surface=rock": 2.8
    },
    "specialized": {
-    "smoothness=very_horrible": 5.9,
-    "smoothness=impassable": 2.8
+    "smoothness=very_horrible": 10.5,
+    "smoothness=impassable": 4.8
    }
   },
   "all": {
    "unpaved": {
-    "surface=gravel": 30230.9,
-    "surface=unpaved": 5123.6,
-    "surface=dirt": 5109.4,
-    "surface=compacted": 2174.3,
-    "surface=ground": 1828.2,
+    "surface=gravel": 30189.5,
+    "surface=unpaved": 5130.5,
+    "surface=dirt": 5111.2,
+    "surface=compacted": 2194.5,
+    "surface=ground": 1828.6,
     "surface=fine_gravel": 441.6,
+    "smoothness=very_bad": 248.3,
     "tracktype=grade2": 161,
     "surface=pebblestone": 107.7,
     "tracktype=grade3": 81,
+    "smoothness=horrible": 68.1,
     "surface=earth": 43.6,
     "surface=grass": 41.1,
     "surface=sand": 29.6,
     "surface=d": 21.9,
-    "surface=mixed": 21.9,
     "surface=mud": 20.8,
-    "tracktype=grade5": 16.8,
+    "surface=mixed": 20.6,
+    "smoothness=very_horrible": 20.2,
+    "tracktype=grade5": 16.7,
     "tracktype=grade4": 13.1,
+    "smoothness=impassable": 10.3,
     "surface=unhewn_cobblestone": 9.3,
     "surface=concrete tiles": 7.9,
     "surface=dirt/sand": 5.9,
     "surface=paved concrete": 5.7,
     "surface=gravel;fine_gravel": 5.4,
     "surface=asphalt, ros la suprafata": 4.1,
-    "surface=concrete:lanes": 3.8,
     "surface=rock": 2.9,
     "surface=asphalt; gravel": 2.7,
     "surface=asphalt;gravel": 2.6,
@@ -410,7 +444,7 @@
     "surface=gravel; unpaved": 1.8,
     "surface=asfalt bun, se circula bine": 1.6,
     "surface=grass_paver": 1.4,
-    "surface=dirt; gravel": 1.3,
+    "surface=wood": 1.3,
     "surface=ashalpt": 1.3,
     "surface=Strada_Bazei": 1.3,
     "surface=dc69a": 1.2,
@@ -420,6 +454,7 @@
     "surface=asfalt cu indicatoare": 0.9,
     "surface=drum de pamant si piatra": 0.8,
     "surface=pamant": 0.8,
+    "surface=concrete:lanes": 0.8,
     "surface=stone": 0.7,
     "surface=gravel;asphalt": 0.7,
     "surface=piatra/balast": 0.7,
@@ -446,21 +481,22 @@
     "surface=woodchips": 0
    },
    "offroad": {
-    "smoothness=very_bad": 1227.4,
-    "smoothness=horrible": 379.6,
-    "tracktype=grade3": 252.8,
+    "smoothness=very_bad": 1475.7,
+    "smoothness=horrible": 447.6,
     "tracktype=grade4": 109.6,
-    "tracktype=grade5": 56.2
+    "tracktype=grade5": 56.2,
+    "surface=mud": 6.9,
+    "surface=rock": 2.8
    },
    "specialized": {
-    "smoothness=very_horrible": 73.8,
-    "smoothness=impassable": 12.8
+    "smoothness=very_horrible": 94,
+    "smoothness=impassable": 23.1
    }
   }
  },
  "unknown_value_km": {
   "surface=d": 21.9,
-  "surface=mixed": 21.9,
+  "surface=mixed": 20.6,
   "smoothness=very_good": 11.8,
   "surface=concrete tiles": 7.9,
   "surface=dirt/sand": 5.9,
@@ -499,50 +535,48 @@
   "surface=macadam cu gropi ici colo.": 0
  },
  "conflict_km": {
-  "paved (surface=asphalt) + smoothness=very_bad": 205.2,
-  "smoothness=good + surface=gravel": 149.6,
-  "paved (surface=asphalt) + smoothness=horrible": 66.5,
-  "paved (surface=asphalt) + tracktype=grade3": 33.5,
+  "surface=asphalt + smoothness=very_bad": 204.6,
+  "smoothness=good + surface=gravel": 148.7,
+  "surface=asphalt + tracktype=grade2 (ignored)": 87.3,
+  "surface=asphalt + smoothness=horrible": 66.5,
+  "surface=asphalt + tracktype=grade3 (ignored)": 33.5,
   "smoothness=good + surface=dirt": 21.4,
-  "smoothness=good + surface=compacted": 17.9,
-  "paved (surface=asphalt) + tracktype=grade4": 17.4,
-  "paved (surface=asphalt) + smoothness=very_horrible": 17.2,
-  "smoothness=excellent + surface=gravel": 17,
-  "paved (surface=concrete) + smoothness=very_bad": 16.4,
-  "smoothness=good + surface=unpaved": 13.7,
-  "paved (surface=concrete:plates) + smoothness=very_bad": 13.3,
-  "paved (no surface) + smoothness=very_bad": 12.4,
-  "paved (surface=asphalt) + smoothness=impassable": 9.5,
-  "paved (surface=asphalt) + tracktype=grade5": 7,
+  "smoothness=good + surface=compacted": 18.3,
+  "surface=asphalt + tracktype=grade4 (ignored)": 17.4,
+  "surface=asphalt + smoothness=very_horrible": 17.2,
+  "smoothness=excellent + surface=gravel": 17.2,
+  "surface=concrete + smoothness=very_bad": 16.4,
+  "smoothness=good + surface=unpaved": 13.8,
+  "surface=concrete:plates + smoothness=very_bad": 13.3,
+  "surface=asphalt + smoothness=impassable": 9.5,
+  "surface=asphalt + tracktype=grade5 (ignored)": 7,
   "smoothness=good + surface=ground": 5.7,
   "smoothness=good + surface=fine_gravel": 3,
-  "paved (no surface) + smoothness=very_horrible": 2.7,
-  "paved (surface=paved) + tracktype=grade4": 2.7,
+  "surface=paved + tracktype=grade4 (ignored)": 2.7,
   "smoothness=good + surface=asfalt fara indicatoare": 2.5,
   "smoothness=good + surface=asphalt/gravel": 2.3,
-  "paved (surface=paved) + tracktype=grade3": 1.9,
+  "surface=paved + tracktype=grade3 (ignored)": 1.9,
   "smoothness=good + surface=asfalt bun, se circula bine": 1.6,
   "smoothness=good + surface=ashalpt": 1.2,
-  "paved (surface=cobblestone) + smoothness=very_bad": 1.1,
-  "paved (no surface) + smoothness=horrible": 1,
+  "surface=paving_stones + tracktype=grade2 (ignored)": 1.2,
+  "surface=cobblestone + smoothness=very_bad": 1.1,
+  "surface=concrete + tracktype=grade2 (ignored)": 1.1,
   "smoothness=excellent + surface=compacted": 1,
   "smoothness=good + surface=asfalt cu indicatoare": 0.9,
-  "paved (no surface) + smoothness=impassable": 0.8,
-  "paved (surface=sett) + tracktype=grade3": 0.6,
-  "paved (surface=sett) + smoothness=very_bad": 0.5,
-  "paved (surface=cobblestone) + smoothness=horrible": 0.3,
+  "surface=sett + tracktype=grade3 (ignored)": 0.6,
+  "surface=sett + smoothness=very_bad": 0.5,
+  "surface=cobblestone + smoothness=horrible": 0.3,
   "smoothness=excellent + surface=mud": 0.3,
-  "paved (surface=concrete) + smoothness=horrible": 0.2,
+  "surface=concrete + smoothness=horrible": 0.2,
   "smoothness=good + surface=grass": 0.1,
-  "paved (surface=sett) + smoothness=very_horrible": 0.1,
+  "surface=sett + smoothness=very_horrible": 0.1,
   "smoothness=excellent + surface=dirt": 0.1,
-  "paved (surface=metal) + tracktype=grade4": 0,
-  "paved (surface=concrete) + smoothness=very_horrible": 0,
+  "surface=metal + tracktype=grade4 (ignored)": 0,
+  "surface=concrete + smoothness=very_horrible": 0,
+  "surface=wood + tracktype=grade2 (ignored)": 0,
   "smoothness=excellent + surface=unpaved": 0,
-  "paved (surface=concrete) + tracktype=grade3": 0,
-  "paved (surface=wood) + tracktype=grade3": 0,
-  "paved (surface=wood) + smoothness=very_bad": 0,
-  "paved (surface=concrete) + tracktype=grade4": 0
+  "surface=concrete + tracktype=grade3 (ignored)": 0,
+  "surface=concrete + tracktype=grade4 (ignored)": 0
  },
  "odd": {
   "major_unpaved": [
@@ -612,6 +646,21 @@
      "smoothness": "very_bad",
      "surface": "gravel",
      "surface_survey": "2017JUN_Mapillary"
+    }
+   },
+   {
+    "id": "w219823263",
+    "highway": "secondary",
+    "km": 11.2,
+    "level": "offroad",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "ref": "DJ682",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "surface_survey": "2022MAY_klaus"
     }
    },
    {
@@ -765,34 +814,9 @@
      "ref": "DJ203A",
      "surface": "compacted"
     }
-   },
-   {
-    "id": "w306751049",
-    "highway": "secondary",
-    "km": 5.8,
-    "level": "unpaved",
-    "tags": {
-     "highway": "secondary",
-     "lanes": "1",
-     "name": "Cenade-Broșteni",
-     "oneway": "no",
-     "ref": "DJ141C",
-     "surface": "gravel"
-    }
    }
   ],
   "offroad_mark": [
-   {
-    "id": "w217769124",
-    "highway": "unclassified",
-    "km": 38.4,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "dirt",
-     "tracktype": "grade3"
-    }
-   },
    {
     "id": "w188133662",
     "highway": "unclassified",
@@ -964,13 +988,18 @@
     }
    },
    {
-    "id": "w286241705",
-    "highway": "unclassified",
-    "km": 10.7,
+    "id": "w219823263",
+    "highway": "secondary",
+    "km": 11.2,
     "level": "offroad",
     "tags": {
-     "highway": "unclassified",
-     "tracktype": "grade3"
+     "highway": "secondary",
+     "lanes": "2",
+     "maxspeed": "90",
+     "ref": "DJ682",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "surface_survey": "2022MAY_klaus"
     }
    },
    {
@@ -999,6 +1028,21 @@
      "source": "bing",
      "surface": "dirt",
      "surface_survey": "2019FEB_IonutPaduretu"
+    }
+   },
+   {
+    "id": "w709605614",
+    "highway": "unclassified",
+    "km": 9.9,
+    "level": "offroad",
+    "tags": {
+     "hgv": "no",
+     "highway": "unclassified",
+     "lanes": "1",
+     "maxspeed": "50",
+     "smoothness": "very_bad",
+     "surface": "asphalt",
+     "surface_survey": "2023SEP_"
     }
    },
    {
@@ -1060,7 +1104,7 @@
     "id": "w219823263",
     "highway": "secondary",
     "km": 11.2,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "secondary",
      "lanes": "2",
@@ -1075,7 +1119,7 @@
     "id": "w709605614",
     "highway": "unclassified",
     "km": 9.9,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "hgv": "no",
      "highway": "unclassified",
@@ -1090,7 +1134,7 @@
     "id": "w476981999",
     "highway": "tertiary",
     "km": 7.4,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "tertiary",
      "lanes": "2",
@@ -1119,6 +1163,34 @@
      "surface": "asphalt",
      "surface_survey": "2016APR_",
      "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w342740025",
+    "highway": "secondary",
+    "km": 5.7,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "lanes": "2",
+     "ref": "DJ132A",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w1066096526",
+    "highway": "unclassified",
+    "km": 5.6,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "oneway": "no",
+     "smoothness": "bad",
+     "surface": "asphalt",
+     "surface_survey": "25MAI2013_owene@osm - criblura tasata bine, drum bun pt un macadam",
+     "tracktype": "grade2"
     }
    },
    {
@@ -1170,7 +1242,7 @@
     "id": "w262655706",
     "highway": "tertiary",
     "km": 5.3,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "tertiary",
      "lanes": "2",
@@ -1187,7 +1259,7 @@
     "id": "w130631209",
     "highway": "tertiary",
     "km": 5.3,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "tertiary",
      "smoothness": "very_bad",
@@ -1196,82 +1268,30 @@
     }
    },
    {
-    "id": "w287500469",
+    "id": "w203798886",
     "highway": "unclassified",
-    "km": 4.7,
-    "level": "unpaved",
-    "tags": {
-     "bicycle": "yes",
-     "hazard": "curves",
-     "highway": "unclassified",
-     "horse": "yes",
-     "lanes": "1",
-     "lit": "no",
-     "maxspeed": "50",
-     "maxspeed:type": "hazard",
-     "motor_vehicle": "yes",
-     "oneway": "no",
-     "shoulder": "no",
-     "sidewalk": "no",
-     "smoothness": "good",
-     "source": "survey",
-     "surface": "gravel",
-     "surface_survey": "2024FEB_",
-     "tracktype": "grade1"
-    }
-   },
-   {
-    "id": "w917984599",
-    "highway": "unclassified",
-    "km": 4.6,
+    "km": 5.1,
     "level": "paved",
     "tags": {
-     "access": "yes",
-     "description": "Drum forestier Pârâul Canciu 1",
-     "foot": "yes",
-     "hgv": "no",
      "highway": "unclassified",
-     "lanes": "2",
-     "maxspeed": "30",
-     "old_ref": "DJ704",
-     "oneway": "no",
-     "smoothness": "very_bad",
+     "smoothness": "bad",
      "surface": "asphalt",
-     "surface_survey": "2022FEB_"
+     "surface_survey": "2022APR_",
+     "tracktype": "grade2"
     }
    },
    {
-    "id": "w149464145",
+    "id": "w146115950",
     "highway": "secondary",
-    "km": 4.5,
+    "km": 4.7,
     "level": "paved",
     "tags": {
      "highway": "secondary",
      "lanes": "2",
-     "maxspeed": "90",
-     "oneway": "no",
-     "ref": "DJ102H",
-     "smoothness": "horrible",
+     "ref": "DJ102C",
      "source": "Bing",
      "surface": "asphalt",
-     "surface_survey": "2024MAY"
-    }
-   },
-   {
-    "id": "w40727632",
-    "highway": "unclassified",
-    "km": 4,
-    "level": "paved",
-    "tags": {
-     "description": "Cumpăna-Movilița",
-     "highway": "unclassified",
-     "lanes": "2",
-     "maxspeed": "90",
-     "ref": "DC1A",
-     "smoothness": "very_bad",
-     "source": "survey",
-     "surface": "asphalt",
-     "surface_survey": "2023SEP_"
+     "tracktype": "grade2"
     }
    }
   ],

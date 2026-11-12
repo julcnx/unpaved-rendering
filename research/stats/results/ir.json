@@ -1,11 +1,11 @@
 {
  "country": "ir",
  "name": "Iran",
- "data_date": "2026-11-02",
+ "data_date": "2026-11-11",
  "run": {
-  "generated_at": "2026-11-03T04:39:32.776Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T03:48:14.895Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "iran-latest.osm.pbf",
   "boundary": "r304938",
@@ -21,53 +21,53 @@
    "specialized": 0
   },
   "trunk": {
-   "paved_tagged": 26442.1,
-   "untagged": 16717.6,
+   "paved_tagged": 26442.3,
+   "untagged": 16718.3,
    "unpaved": 0.3,
    "offroad": 0,
    "specialized": 0
   },
   "primary": {
-   "untagged": 17852.8,
-   "paved_tagged": 16594.7,
+   "untagged": 17853,
+   "paved_tagged": 16594.6,
    "unpaved": 13.3,
    "offroad": 0,
    "specialized": 0
   },
   "secondary": {
-   "untagged": 38544.8,
-   "paved_tagged": 19114.9,
-   "unpaved": 208.2,
+   "untagged": 38553.2,
+   "paved_tagged": 19122.6,
+   "unpaved": 208.4,
    "offroad": 0,
    "specialized": 0
   },
   "tertiary": {
-   "untagged": 89756.9,
-   "paved_tagged": 19507,
-   "unpaved": 4680.6,
-   "offroad": 27.7,
-   "specialized": 0
+   "untagged": 89721.1,
+   "paved_tagged": 19515.8,
+   "unpaved": 4698.1,
+   "offroad": 24,
+   "specialized": 4.3
   },
   "unclassified": {
-   "untagged": 78039.7,
-   "unpaved": 27603.2,
-   "paved_tagged": 2750.6,
-   "offroad": 356.7,
-   "specialized": 4
+   "untagged": 78030.4,
+   "unpaved": 27766.3,
+   "paved_tagged": 2751,
+   "offroad": 281,
+   "specialized": 5.5
   },
   "residential": {
-   "untagged": 181514.5,
-   "paved_tagged": 15571.6,
-   "unpaved": 10168.5,
-   "offroad": 45.4,
+   "untagged": 181512.5,
+   "paved_tagged": 15575.9,
+   "unpaved": 10198.2,
+   "offroad": 27.1,
    "specialized": 0.3
   },
   "all": {
-   "untagged": 424581.8,
-   "paved_tagged": 104048.4,
-   "unpaved": 42674.1,
-   "offroad": 429.8,
-   "specialized": 4.3
+   "untagged": 424544,
+   "paved_tagged": 104069.8,
+   "unpaved": 42884.5,
+   "offroad": 332,
+   "specialized": 10
   }
  },
  "coverage_km": {
@@ -75,37 +75,37 @@
    "surface": 4067.5
   },
   "trunk": {
-   "surface": 26442.3,
+   "surface": 26442.6,
    "smoothness": 454.8
   },
   "primary": {
-   "surface": 16607.9,
+   "surface": 16607.8,
    "smoothness": 54.3
   },
   "secondary": {
-   "surface": 19322.3,
-   "smoothness": 119.9,
-   "tracktype": 48.9
+   "surface": 19330.1,
+   "smoothness": 120,
+   "tracktype": 49.1
   },
   "tertiary": {
-   "surface": 24165.8,
-   "tracktype": 165.8,
+   "surface": 24177.8,
+   "tracktype": 165.6,
    "smoothness": 136.7
   },
   "unclassified": {
-   "surface": 30474.6,
+   "surface": 30532.3,
    "tracktype": 898.1,
    "smoothness": 427,
    "4wd_only": 2.9
   },
   "residential": {
-   "surface": 25715.1,
+   "surface": 25730.1,
    "tracktype": 209.9,
    "smoothness": 132,
    "4wd_only": 0.1
   },
   "all": {
-   "surface": 146795.6,
+   "surface": 146888.2,
    "smoothness": 1324.7,
    "tracktype": 1322.6,
    "4wd_only": 3
@@ -117,37 +117,44 @@
    "default": 2155.5
   },
   "trunk": {
-   "surface": 26442.3,
-   "default": 16717.6
+   "surface": 26442.6,
+   "default": 16718.3
   },
   "primary": {
-   "default": 17852.8,
-   "surface": 16607.9
+   "default": 17853,
+   "surface": 16607.8
   },
   "secondary": {
-   "default": 38544.8,
-   "surface": 19322.3,
-   "tracktype": 0.8
+   "default": 38553.2,
+   "surface": 19330.1,
+   "tracktype": 1
   },
   "tertiary": {
-   "default": 89756.9,
-   "surface": 24165.8,
-   "tracktype": 49.5
+   "default": 89721.1,
+   "surface": 24177.3,
+   "tracktype": 49.3,
+   "smoothness": 15.6
   },
   "unclassified": {
-   "default": 78039.7,
-   "surface": 30474.6,
-   "tracktype": 240
+   "default": 78030.4,
+   "surface": 30532,
+   "tracktype": 190.2,
+   "smoothness": 81.2,
+   "4wd_only": 0.3
   },
   "residential": {
-   "default": 181514.5,
-   "surface": 25715.1,
-   "tracktype": 70.7
+   "default": 181512.5,
+   "surface": 25729.8,
+   "tracktype": 70.7,
+   "smoothness": 0.8,
+   "4wd_only": 0.1
   },
   "all": {
-   "default": 424581.8,
-   "surface": 146795.6,
-   "tracktype": 361
+   "default": 424544,
+   "surface": 146887.2,
+   "tracktype": 311.2,
+   "smoothness": 97.6,
+   "4wd_only": 0.4
   }
  },
  "mark_source_km": {
@@ -156,20 +163,26 @@
   "primary": {},
   "secondary": {},
   "tertiary": {
-   "tracktype": 23.5,
-   "smoothness": 4.2
+   "smoothness": 19.7,
+   "tracktype": 8.5
   },
   "unclassified": {
-   "tracktype": 187.4,
-   "smoothness": 173.3
+   "smoothness": 204.7,
+   "tracktype": 80.8,
+   "surface": 0.6,
+   "4wd_only": 0.3
   },
   "residential": {
-   "tracktype": 33.3,
-   "smoothness": 12.4
+   "smoothness": 13.2,
+   "tracktype": 12.9,
+   "surface": 1.1,
+   "4wd_only": 0.1
   },
   "all": {
-   "tracktype": 244.2,
-   "smoothness": 189.9
+   "smoothness": 237.6,
+   "tracktype": 102.3,
+   "surface": 1.7,
+   "4wd_only": 0.4
   }
  },
  "value_km": {
@@ -205,6 +218,7 @@
     "surface=خاکی": 4.2,
     "surface=gravel": 2.7,
     "surface=earth": 0.8,
+    "tracktype=grade2": 0.2,
     "surface=میدان_فلق": 0.1,
     "surface=roun": 0.1
    },
@@ -214,74 +228,83 @@
   "tertiary": {
    "unpaved": {
     "surface=unpaved": 2271.2,
-    "surface=dirt": 796.7,
+    "surface=dirt": 799.5,
     "surface=ground": 755.6,
     "surface=compacted": 439.4,
     "surface=gravel": 179.8,
     "surface=earth": 102.7,
     "surface=sand": 66,
-    "tracktype=grade2": 23.1,
+    "tracktype=grade2": 22.9,
     "surface=dirt/sand": 19.1,
     "surface=pebblestone": 16.7,
     "tracktype=grade3": 15,
+    "smoothness=very_bad": 10.8,
     "surface=آسفالته": 7.3,
     "surface=شن_ریزی": 6.5,
     "surface=fine_gravel": 4.7,
     "surface=soil": 4.3,
+    "smoothness=very_horrible": 4.3,
+    "smoothness=horrible": 0.5,
     "surface=zx": 0.3
    },
    "offroad": {
-    "tracktype=grade3": 15,
+    "smoothness=very_bad": 15,
     "tracktype=grade4": 4.6,
-    "smoothness=very_bad": 4.2,
-    "tracktype=grade5": 4
+    "tracktype=grade5": 4,
+    "smoothness=horrible": 0.5
    },
-   "specialized": {}
+   "specialized": {
+    "smoothness=very_horrible": 4.3
+   }
   },
   "unclassified": {
    "unpaved": {
-    "surface=dirt": 11338.1,
+    "surface=dirt": 11321.4,
     "surface=unpaved": 10171.7,
-    "surface=ground": 3675.6,
+    "surface=ground": 3749.4,
     "surface=compacted": 909.1,
     "surface=gravel": 797.6,
     "surface=sand": 368.7,
     "surface=earth": 317.7,
     "tracktype=grade2": 89.4,
+    "smoothness=very_bad": 75.8,
     "surface=pebblestone": 73.8,
     "surface=fine_gravel": 58,
-    "tracktype=grade5": 50.7,
-    "tracktype=grade3": 47,
+    "tracktype=grade3": 43,
     "surface=soil": 22.4,
     "surface=dirt/sand": 21.7,
     "tracktype=grade4": 16.2,
+    "smoothness=very_horrible": 5.5,
+    "tracktype=grade5": 4.9,
     "surface=clay": 2,
     "surface=سنگ": 1.2,
     "surface=خاکی": 1.1,
     "surface=grass_paver": 1,
     "surface=mud": 0.6,
+    "4wd_only=recommended": 0.3,
     "surface=stone": 0.1,
     "surface=grass": 0
    },
    "offroad": {
-    "smoothness=very_bad": 120.1,
-    "tracktype=grade3": 106.6,
+    "smoothness=very_bad": 150,
     "tracktype=grade4": 60.6,
     "smoothness=horrible": 49.2,
-    "tracktype=grade5": 20.2
+    "tracktype=grade5": 20.2,
+    "surface=mud": 0.6,
+    "4wd_only=recommended": 0.3
    },
    "specialized": {
-    "smoothness=very_horrible": 4
+    "smoothness=very_horrible": 5.5
    }
   },
   "residential": {
    "unpaved": {
-    "surface=dirt": 6442.2,
-    "surface=unpaved": 1592.1,
+    "surface=dirt": 6450.9,
+    "surface=unpaved": 1593.1,
     "surface=ground": 927.2,
-    "surface=compacted": 719,
-    "surface=gravel": 171.7,
-    "surface=sand": 123,
+    "surface=compacted": 718.9,
+    "surface=gravel": 171.6,
+    "surface=sand": 124.1,
     "surface=earth": 67.5,
     "surface=fine_gravel": 50,
     "tracktype=grade2": 33.9,
@@ -291,9 +314,10 @@
     "surface=soil": 12.8,
     "tracktype=grade4": 4.1,
     "surface=asphalt:lanes": 3,
-    "surface=mud": 1.4,
+    "surface=mud": 1.1,
     "surface=concrete:lanes": 0.9,
     "surface=stone": 0.8,
+    "smoothness=very_bad": 0.8,
     "tracktype=grade5": 0.8,
     "surface=خاکی": 0.6,
     "surface=unhewn_cobblestone": 0.5,
@@ -307,7 +331,9 @@
     "surface=اسفالت": 0.2,
     "surface=امام_حسن_۸-_شهید_جاویدی_۳": 0.1,
     "surface=2": 0.1,
+    "surface=wood": 0.1,
     "surface=sandy_road": 0.1,
+    "4wd_only=yes": 0.1,
     "surface=۱": 0.1,
     "surface=آسفالت": 0.1,
     "surface=کشوری۳": 0.1,
@@ -315,11 +341,12 @@
     "surface=جمهوری_۲": 0
    },
    "offroad": {
-    "tracktype=grade3": 20.3,
     "tracktype=grade4": 12.2,
+    "smoothness=very_bad": 6.8,
     "smoothness=horrible": 6.1,
-    "smoothness=very_bad": 6,
-    "tracktype=grade5": 0.8
+    "surface=mud": 1.1,
+    "tracktype=grade5": 0.8,
+    "4wd_only=yes": 0.1
    },
    "specialized": {
     "smoothness=impassable": 0.3
@@ -327,35 +354,39 @@
   },
   "all": {
    "unpaved": {
-    "surface=dirt": 18678.4,
-    "surface=unpaved": 14054.6,
-    "surface=ground": 5369.5,
-    "surface=compacted": 2117.6,
-    "surface=gravel": 1153.6,
-    "surface=sand": 587.4,
+    "surface=dirt": 18673.2,
+    "surface=unpaved": 14055.6,
+    "surface=ground": 5443.3,
+    "surface=compacted": 2117.5,
+    "surface=gravel": 1153.5,
+    "surface=sand": 588.4,
     "surface=earth": 488.8,
     "tracktype=grade2": 146.3,
     "surface=pebblestone": 115.1,
     "surface=fine_gravel": 112.6,
-    "tracktype=grade3": 78.1,
+    "smoothness=very_bad": 87.4,
+    "tracktype=grade3": 74.1,
     "surface=dirt/sand": 60,
-    "tracktype=grade5": 51.5,
     "surface=soil": 39.6,
     "tracktype=grade4": 20.4,
+    "smoothness=very_horrible": 9.7,
     "surface=آسفالته": 7.3,
     "surface=شن_ریزی": 6.5,
     "surface=خاکی": 6,
+    "tracktype=grade5": 5.7,
     "surface=asphalt:lanes": 3,
-    "surface=mud": 2,
     "surface=clay": 2,
+    "surface=mud": 1.7,
     "surface=سنگ": 1.2,
     "surface=grass_paver": 1,
     "surface=stone": 1,
     "surface=concrete:lanes": 0.9,
-    "surface=unhewn_cobblestone": 0.5,
     "surface=grass": 0.5,
+    "surface=unhewn_cobblestone": 0.5,
+    "smoothness=horrible": 0.5,
     "surface=کوی_ویلائی_بهاران_آبریز": 0.3,
     "surface=شن_ریزی_شده": 0.3,
+    "4wd_only=recommended": 0.3,
     "surface=zx": 0.3,
     "surface=cement": 0.2,
     "surface=ایراذ_نام": 0.2,
@@ -365,8 +396,10 @@
     "surface=میدان_فلق": 0.1,
     "surface=امام_حسن_۸-_شهید_جاویدی_۳": 0.1,
     "surface=2": 0.1,
+    "surface=wood": 0.1,
     "surface=sandy_road": 0.1,
     "surface=roun": 0.1,
+    "4wd_only=yes": 0.1,
     "surface=۱": 0.1,
     "surface=آسفالت": 0.1,
     "surface=کشوری۳": 0.1,
@@ -375,14 +408,16 @@
     "surface=آسفالت11": 0
    },
    "offroad": {
-    "tracktype=grade3": 141.9,
-    "smoothness=very_bad": 130.3,
+    "smoothness=very_bad": 171.9,
     "tracktype=grade4": 77.3,
-    "smoothness=horrible": 55.3,
-    "tracktype=grade5": 25
+    "smoothness=horrible": 55.8,
+    "tracktype=grade5": 25,
+    "surface=mud": 1.7,
+    "4wd_only=recommended": 0.3,
+    "4wd_only=yes": 0.1
    },
    "specialized": {
-    "smoothness=very_horrible": 4,
+    "smoothness=very_horrible": 9.7,
     "smoothness=impassable": 0.3
    }
   }
@@ -417,18 +452,17 @@
   "surface=آسفالت11": 0
  },
  "conflict_km": {
-  "paved (no surface) + smoothness=very_bad": 41.3,
-  "paved (surface=asphalt) + tracktype=grade5": 20.2,
-  "paved (no surface) + smoothness=very_horrible": 5.7,
-  "paved (surface=paved) + tracktype=grade3": 5,
+  "surface=asphalt + tracktype=grade2 (ignored)": 97.2,
+  "surface=asphalt + tracktype=grade5 (ignored)": 20.2,
+  "surface=paved + tracktype=grade3 (ignored)": 5,
   "smoothness=good + surface=ground": 3.9,
   "smoothness=good + surface=fine_gravel": 3.1,
   "smoothness=good + surface=compacted": 2.7,
-  "paved (surface=asphalt) + smoothness=horrible": 0.5,
-  "paved (surface=asphalt) + tracktype=grade3": 0.4,
-  "paved (surface=paved) + 4wd_only=recommended": 0.3,
-  "paved (surface=asphalt) + smoothness=very_bad": 0.3,
-  "paved (no surface) + 4wd_only=yes": 0.1
+  "surface=paved + tracktype=grade2 (ignored)": 1.6,
+  "surface=asphalt + smoothness=horrible": 0.5,
+  "surface=asphalt + tracktype=grade3 (ignored)": 0.4,
+  "surface=paved + 4wd_only=recommended": 0.3,
+  "surface=asphalt + smoothness=very_bad": 0.3
  },
  "odd": {
   "major_unpaved": [
@@ -637,18 +671,6 @@
     }
    },
    {
-    "id": "w198691005",
-    "highway": "unclassified",
-    "km": 20.2,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "source": "bing",
-     "surface": "ground",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w440557049",
     "highway": "unclassified",
     "km": 19.9,
@@ -680,27 +702,6 @@
     }
    },
    {
-    "id": "w31338414",
-    "highway": "unclassified",
-    "km": 14.6,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w379300550",
-    "highway": "tertiary",
-    "km": 14,
-    "level": "offroad",
-    "tags": {
-     "highway": "tertiary",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w835231213",
     "highway": "unclassified",
     "km": 13.4,
@@ -709,6 +710,18 @@
      "highway": "unclassified",
      "smoothness": "horrible",
      "surface": "ground"
+    }
+   },
+   {
+    "id": "w456211682",
+    "highway": "unclassified",
+    "km": 12.1,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "lanes": "1",
+     "smoothness": "very_bad",
+     "source": "bing"
     }
    },
    {
@@ -781,41 +794,109 @@
     }
    },
    {
-    "id": "w672387092",
+    "id": "w485895653",
     "highway": "unclassified",
-    "km": 10,
+    "km": 9.6,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "source": "bing",
-     "tracktype": "grade3"
+     "smoothness": "very_bad",
+     "source": "bing"
     }
    },
    {
-    "id": "w564595557",
-    "highway": "unclassified",
-    "km": 9,
-    "level": "offroad",
-    "tags": {
-     "description": "جاده خاکی",
-     "highway": "unclassified",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w722752747",
+    "id": "w835231211",
     "highway": "unclassified",
     "km": 8.2,
     "level": "offroad",
     "tags": {
      "highway": "unclassified",
-     "name": "جاده روستای ورجه",
-     "surface": "dirt",
-     "tracktype": "grade3"
+     "smoothness": "very_bad",
+     "surface": "ground"
+    }
+   },
+   {
+    "id": "w725324471",
+    "highway": "residential",
+    "km": 7.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "residential",
+     "name": "میاب - خانه سر",
+     "note": "Only used in summer (Rainy or snowy weather not supported)",
+     "surface": "ground",
+     "tracktype": "grade4",
+     "width": "3"
+    }
+   },
+   {
+    "id": "w450654893",
+    "highway": "unclassified",
+    "km": 7.9,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "name": "جاده مالرو جولادک یرک",
+     "name:en": "Juladek Yerak Rd. Malro",
+     "surface": "compacted",
+     "tracktype": "grade4"
+    }
+   },
+   {
+    "id": "w485895608",
+    "highway": "unclassified",
+    "km": 7.6,
+    "level": "offroad",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "very_bad",
+     "source": "bing"
     }
    }
   ],
   "conflict": [
+   {
+    "id": "w1469734972",
+    "highway": "secondary",
+    "km": 19.1,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "name": "مسیرگلباف",
+     "name:en": "GOLBAF RD",
+     "note": "اصلاح شده توسط علی وفائی",
+     "source": "GPS survey",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w400552017",
+    "highway": "secondary",
+    "km": 18.1,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "name": "مسیرگلباف",
+     "name:en": "GOLBAF RD",
+     "note": "اصلاح شده توسط علی وفائی",
+     "source": "GPS survey",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w790985494",
+    "highway": "tertiary",
+    "km": 13.9,
+    "level": "paved",
+    "tags": {
+     "highway": "tertiary",
+     "source": "GPS survey",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
    {
     "id": "w42918039",
     "highway": "tertiary",
@@ -829,37 +910,27 @@
     }
    },
    {
-    "id": "w456211682",
-    "highway": "unclassified",
-    "km": 12.1,
+    "id": "w59055484",
+    "highway": "tertiary",
+    "km": 11.5,
     "level": "paved",
     "tags": {
-     "highway": "unclassified",
-     "lanes": "1",
-     "smoothness": "very_bad",
-     "source": "bing"
+     "highway": "tertiary",
+     "source": "GPS survey",
+     "surface": "asphalt",
+     "tracktype": "grade2"
     }
    },
    {
-    "id": "w485895653",
-    "highway": "unclassified",
-    "km": 9.6,
+    "id": "w383613060",
+    "highway": "tertiary",
+    "km": 10.6,
     "level": "paved",
     "tags": {
-     "highway": "unclassified",
-     "smoothness": "very_bad",
-     "source": "bing"
-    }
-   },
-   {
-    "id": "w485895608",
-    "highway": "unclassified",
-    "km": 7.6,
-    "level": "paved",
-    "tags": {
-     "highway": "unclassified",
-     "smoothness": "very_bad",
-     "source": "bing"
+     "highway": "tertiary",
+     "source": "Bing",
+     "surface": "asphalt",
+     "tracktype": "grade2"
     }
    },
    {
@@ -872,6 +943,21 @@
      "source": "DigitalGlobal Premium Image 28-01-18",
      "surface": "asphalt",
      "tracktype": "grade5"
+    }
+   },
+   {
+    "id": "w327051602",
+    "highway": "unclassified",
+    "km": 5.4,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "name": "مورود",
+     "oneway": "no",
+     "smoothness": "bad",
+     "surface": "asphalt",
+     "tracktype": "grade2",
+     "width": "6"
     }
    },
    {
@@ -888,35 +974,6 @@
     }
    },
    {
-    "id": "w781549253",
-    "highway": "tertiary",
-    "km": 4.3,
-    "level": "paved",
-    "tags": {
-     "bicycle": "yes",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "motor_vehicle": "yes",
-     "smoothness": "very_horrible"
-    }
-   },
-   {
-    "id": "w407920192",
-    "highway": "tertiary",
-    "km": 3.2,
-    "level": "paved",
-    "tags": {
-     "bicycle": "yes",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "maxspeed": "90",
-     "name": "راه نیریز - هرگان",
-     "smoothness": "very_bad"
-    }
-   },
-   {
     "id": "w581624818",
     "highway": "residential",
     "km": 3.1,
@@ -929,6 +986,43 @@
      "name": "جاده روستای لورچال",
      "smoothness": "good",
      "surface": "fine_gravel"
+    }
+   },
+   {
+    "id": "w540081398",
+    "highway": "unclassified",
+    "km": 2.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w540081397",
+    "highway": "unclassified",
+    "km": 2.7,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w1469746078",
+    "highway": "secondary",
+    "km": 2.7,
+    "level": "paved",
+    "tags": {
+     "highway": "secondary",
+     "name": "مسیرگلباف",
+     "name:en": "GOLBAF RD",
+     "note": "اصلاح شده توسط علی وفائی",
+     "source": "GPS survey",
+     "surface": "asphalt",
+     "tracktype": "grade2"
     }
    },
    {
@@ -949,79 +1043,15 @@
     }
    },
    {
-    "id": "w407920183",
-    "highway": "tertiary",
-    "km": 2.2,
+    "id": "w479065506",
+    "highway": "residential",
+    "km": 1.8,
     "level": "paved",
     "tags": {
-     "bicycle": "yes",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "maxspeed": "90",
-     "motor_vehicle": "yes",
-     "name": "راه نیریز - هرگان",
-     "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w407920190",
-    "highway": "tertiary",
-    "km": 2,
-    "level": "paved",
-    "tags": {
-     "bicycle": "yes",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "maxspeed": "90",
-     "name": "راه نیریز - هرگان",
-     "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w1176151446",
-    "highway": "unclassified",
-    "km": 1.4,
-    "level": "paved",
-    "tags": {
-     "bicycle": "yes",
-     "foot": "yes",
-     "highway": "unclassified",
-     "horse": "yes",
-     "lanes": "2",
-     "maxspeed": "20",
-     "motor_vehicle": "yes",
-     "name": "جاده روستای دوه بوینی",
-     "smoothness": "very_horrible",
-     "width": "3"
-    }
-   },
-   {
-    "id": "w407920181",
-    "highway": "tertiary",
-    "km": 1.4,
-    "level": "paved",
-    "tags": {
-     "bicycle": "yes",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "maxspeed": "90",
-     "motor_vehicle": "yes",
-     "name": "راه نیریز - هرگان",
-     "smoothness": "very_bad"
-    }
-   },
-   {
-    "id": "w429665318",
-    "highway": "unclassified",
-    "km": 1.3,
-    "level": "unpaved",
-    "tags": {
-     "highway": "unclassified",
-     "smoothness": "good",
-     "surface": "ground"
+     "highway": "residential",
+     "name": "باغچه",
+     "surface": "asphalt",
+     "tracktype": "grade2"
     }
    }
   ],

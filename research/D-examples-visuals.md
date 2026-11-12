@@ -52,7 +52,7 @@ What he says, and what it means for our styles:
 2. **Dashes on main roads collide with existing markings**: in OSM Carto, tunnels have a dashed casing, construction a dashed fill, and restricted access marks along the middle of the road. He found surface dashing "very noisy" or too close to these. Our references cover tunnels and construction (D2); access restrictions are the third case (below).
 3. **Dashed lines break continuity**: a dashed or dotted line makes it harder to follow a road as one line. A point against the dashed fill (style 3) to weigh per provider, and the reason open gaps were replaced by a dashed casing (style 4): the fill stays continuous in the grain fill, the dashed centre line and the dashed casing.
 4. **Contrast per road colour**: he tuned his access dashing per fill colour. We already do this (per-class grain colours and dash tints).
-5. **Patchy tagging becomes visible noise**: a mark that appears only where tags exist looks random. Fits the Off-road evidence finding (5.8% of Unpaved km, [stats/mark-coverage.md](stats/mark-coverage.md)): keep the mark optional.
+5. **Patchy tagging becomes visible noise**: a mark that appears only where tags exist looks random. Fits the Off-road evidence finding (5.9% of Unpaved km, [stats/mark-coverage.md](stats/mark-coverage.md)): keep the mark optional.
 6. **Readable without a key**: his test for a general map. The two base levels should pass it; the Off-road mark may need the legend.
 7. Nothing in these articles on "missing surface means paved".
 

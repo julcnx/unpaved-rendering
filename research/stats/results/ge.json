@@ -1,11 +1,11 @@
 {
  "country": "ge",
  "name": "Georgia",
- "data_date": "2026-11-01",
+ "data_date": "2026-11-11",
  "run": {
-  "generated_at": "2026-11-03T04:36:43.532Z",
-  "classifier_sha256": "0a018a8853bb",
-  "pipeline_sha256": "9767283de3b6",
+  "generated_at": "2026-11-12T03:46:51.950Z",
+  "classifier_sha256": "0ee7ee3811bf",
+  "pipeline_sha256": "77d37c8f435b",
   "osmium": "osmium version 1.19.1",
   "source_pbf": "georgia-latest.osm.pbf",
   "boundary": "r28699",
@@ -14,8 +14,8 @@
  },
  "km": {
   "motorway": {
-   "paved_tagged": 623.1,
-   "untagged": 18.1,
+   "paved_tagged": 623.3,
+   "untagged": 17.9,
    "unpaved": 0,
    "offroad": 0,
    "specialized": 0
@@ -28,51 +28,51 @@
    "specialized": 0
   },
   "primary": {
-   "paved_tagged": 1564.5,
-   "untagged": 107,
+   "paved_tagged": 1565.4,
+   "untagged": 109.1,
    "unpaved": 20,
-   "offroad": 0,
+   "offroad": 0.3,
    "specialized": 0
   },
   "secondary": {
-   "paved_tagged": 3008.6,
+   "paved_tagged": 3003.5,
    "untagged": 331.2,
    "unpaved": 123.9,
-   "offroad": 26.1,
-   "specialized": 0
+   "offroad": 30.5,
+   "specialized": 0.6
   },
   "tertiary": {
-   "paved_tagged": 3438.7,
-   "unpaved": 2530.3,
-   "untagged": 1970.8,
-   "offroad": 201.8,
-   "specialized": 2.8
+   "paved_tagged": 3434.7,
+   "unpaved": 2536.8,
+   "untagged": 1970.9,
+   "offroad": 191.3,
+   "specialized": 4.2
   },
   "unclassified": {
-   "unpaved": 6071.3,
-   "untagged": 4458.4,
-   "paved_tagged": 899.5,
-   "offroad": 499.3,
-   "specialized": 1.4
+   "unpaved": 6298.8,
+   "untagged": 4454.2,
+   "paved_tagged": 895.5,
+   "offroad": 270.4,
+   "specialized": 2.1
   },
   "residential": {
-   "untagged": 15676.1,
-   "unpaved": 8136.4,
-   "paved_tagged": 2480.9,
-   "offroad": 214.6,
-   "specialized": 0.9
+   "untagged": 15684.6,
+   "unpaved": 8294.3,
+   "paved_tagged": 2478.9,
+   "offroad": 70.2,
+   "specialized": 1.3
   },
   "all": {
-   "untagged": 22626.6,
-   "unpaved": 16882.9,
-   "paved_tagged": 13239.2,
-   "offroad": 941.8,
-   "specialized": 5
+   "untagged": 22632.8,
+   "unpaved": 17274.8,
+   "paved_tagged": 13225.3,
+   "offroad": 562.6,
+   "specialized": 8.2
   }
  },
  "coverage_km": {
   "motorway": {
-   "surface": 623.1,
+   "surface": 623.3,
    "smoothness": 29.7
   },
   "trunk": {
@@ -80,109 +80,121 @@
    "smoothness": 229
   },
   "primary": {
-   "surface": 1584.5,
+   "surface": 1585.7,
    "smoothness": 218.3,
    "tracktype": 0.1
   },
   "secondary": {
-   "surface": 3158.7,
+   "surface": 3158.5,
    "smoothness": 424.9,
    "4wd_only": 15.2,
    "tracktype": 5.4
   },
   "tertiary": {
-   "surface": 6146.3,
-   "smoothness": 376.6,
-   "tracktype": 167.3,
+   "surface": 6139.7,
+   "smoothness": 377.2,
+   "tracktype": 166,
    "4wd_only": 81.2
   },
   "unclassified": {
-   "surface": 7234.1,
-   "tracktype": 939.3,
+   "surface": 7228.7,
+   "tracktype": 936.9,
    "smoothness": 302.4,
    "4wd_only": 17.4
   },
   "residential": {
-   "surface": 10652.9,
-   "tracktype": 267.4,
-   "smoothness": 194.4,
+   "surface": 10664.5,
+   "tracktype": 267,
+   "smoothness": 194.3,
    "4wd_only": 1.2
   },
   "all": {
-   "surface": 30624.7,
-   "smoothness": 1775.4,
-   "tracktype": 1379.5,
+   "surface": 30625.4,
+   "smoothness": 1775.9,
+   "tracktype": 1375.5,
    "4wd_only": 115.1
   }
  },
  "base_source_km": {
   "motorway": {
-   "surface": 623.1,
-   "default": 18.1
+   "surface": 623.3,
+   "default": 17.9
   },
   "trunk": {
    "surface": 1225,
    "default": 64.9
   },
   "primary": {
-   "surface": 1584.5,
-   "default": 107
+   "surface": 1585.4,
+   "default": 109.1,
+   "smoothness": 0.2
   },
   "secondary": {
-   "surface": 3158.7,
-   "default": 331.2
+   "surface": 3153.5,
+   "default": 331.2,
+   "4wd_only": 4.2,
+   "smoothness": 0.8
   },
   "tertiary": {
-   "surface": 6146.3,
-   "default": 1970.8,
-   "tracktype": 27.2
+   "surface": 6127.6,
+   "default": 1970.9,
+   "tracktype": 26.2,
+   "4wd_only": 9,
+   "smoothness": 4.2
   },
   "unclassified": {
-   "surface": 7234.1,
-   "default": 4458.4,
-   "tracktype": 237.3
+   "surface": 7224.9,
+   "default": 4454.2,
+   "tracktype": 235.3,
+   "smoothness": 6.7
   },
   "residential": {
-   "default": 15676.1,
-   "surface": 10652.9,
-   "tracktype": 179.7
+   "default": 15684.6,
+   "surface": 10660.8,
+   "tracktype": 179.7,
+   "smoothness": 3.8,
+   "4wd_only": 0.3
   },
   "all": {
-   "surface": 30624.7,
-   "default": 22626.6,
-   "tracktype": 444.3
+   "surface": 30600.6,
+   "default": 22632.8,
+   "tracktype": 441.2,
+   "smoothness": 15.7,
+   "4wd_only": 13.5
   }
  },
  "mark_source_km": {
   "motorway": {},
   "trunk": {},
   "primary": {
-   "smoothness": 0
+   "smoothness": 0.3
   },
   "secondary": {
-   "smoothness": 26.1,
-   "tracktype": 0,
-   "4wd_only": 0
+   "smoothness": 26.9,
+   "4wd_only": 4.2
   },
   "tertiary": {
-   "smoothness": 176.4,
-   "tracktype": 24.5,
-   "4wd_only": 3.7
+   "smoothness": 179.6,
+   "4wd_only": 12.7,
+   "tracktype": 3.2
   },
   "unclassified": {
-   "tracktype": 354.5,
-   "smoothness": 128.7,
-   "4wd_only": 17.4
+   "smoothness": 133.3,
+   "tracktype": 121,
+   "4wd_only": 17.4,
+   "surface": 0.8
   },
   "residential": {
-   "tracktype": 179.4,
-   "smoothness": 35.5,
-   "4wd_only": 0.6
+   "smoothness": 39.3,
+   "tracktype": 29.3,
+   "surface": 2,
+   "4wd_only": 0.9
   },
   "all": {
-   "tracktype": 558.4,
-   "smoothness": 366.7,
-   "4wd_only": 21.7
+   "smoothness": 379.3,
+   "tracktype": 153.5,
+   "4wd_only": 35.2,
+   "surface": 2.8
   }
  },
  "value_km": {
@@ -203,10 +215,11 @@
     "surface=gravel": 14.5,
     "surface=compacted": 3.6,
     "surface=earth": 1.9,
+    "smoothness=very_bad": 0.2,
     "surface=unpaved": 0.1
    },
    "offroad": {
-    "smoothness=very_bad": 0
+    "smoothness=very_bad": 0.3
    },
    "specialized": {}
   },
@@ -215,84 +228,97 @@
     "surface=gravel": 106.2,
     "surface=unpaved": 32.9,
     "surface=compacted": 9.2,
-    "surface=ground": 1.6
+    "4wd_only=yes": 4.2,
+    "surface=ground": 1.6,
+    "smoothness=very_horrible": 0.6,
+    "smoothness=very_bad": 0.1,
+    "smoothness=horrible": 0
    },
    "offroad": {
-    "smoothness=very_bad": 14.2,
-    "smoothness=horrible": 11.9,
-    "tracktype=grade3": 0,
-    "4wd_only=yes": 0
+    "smoothness=very_bad": 14.3,
+    "smoothness=horrible": 12,
+    "4wd_only=yes": 4.2
    },
-   "specialized": {}
+   "specialized": {
+    "smoothness=very_horrible": 0.6
+   }
   },
   "tertiary": {
    "unpaved": {
-    "surface=unpaved": 1672.4,
-    "surface=gravel": 651.3,
-    "surface=ground": 218.3,
+    "surface=unpaved": 1669.4,
+    "surface=gravel": 640.7,
+    "surface=ground": 216.9,
     "surface=compacted": 85.6,
     "surface=dirt": 40.4,
     "surface=fine_gravel": 29.8,
-    "tracktype=grade2": 18.6,
+    "tracktype=grade2": 17.5,
+    "4wd_only=yes": 9,
     "surface=unhewn_cobblestone": 8.6,
     "tracktype=grade3": 6.6,
+    "smoothness=very_bad": 2.8,
+    "smoothness=very_horrible": 1.4,
     "surface=pebblestone": 1.4,
     "tracktype=grade4": 1.1,
-    "surface=sand": 0.8
+    "surface=sand": 0.8,
+    "surface=wood": 0.3
    },
    "offroad": {
-    "smoothness=very_bad": 155.4,
-    "tracktype=grade3": 21.3,
+    "smoothness=very_bad": 157.1,
     "smoothness=horrible": 18.3,
-    "4wd_only=yes": 3.7,
+    "4wd_only=yes": 12.7,
     "tracktype=grade5": 1.6,
     "tracktype=grade4": 1.6
    },
    "specialized": {
-    "smoothness=very_horrible": 2.8
+    "smoothness=very_horrible": 4.2
    }
   },
   "unclassified": {
    "unpaved": {
-    "surface=unpaved": 4821,
-    "surface=gravel": 901.8,
-    "surface=ground": 358.4,
+    "surface=unpaved": 4817.7,
+    "surface=gravel": 900.5,
+    "surface=ground": 357.7,
     "surface=compacted": 140.4,
     "tracktype=grade2": 112.2,
     "surface=dirt": 95.9,
-    "tracktype=grade3": 94,
+    "tracktype=grade3": 92,
     "tracktype=grade4": 17.1,
     "surface=grass": 8.2,
     "surface=Maxar Premium": 5,
     "tracktype=grade5": 4.2,
     "surface=mud": 3.6,
+    "smoothness=horrible": 3.5,
     "surface=fine_gravel": 2.8,
+    "smoothness=very_bad": 2.4,
     "surface=earth": 2.3,
     "surface=pebblestone": 1.7,
     "surface=dirt_and_rock": 0.9,
     "surface=sand": 0.9,
     "surface=asphalt; asphalt; ground": 0.8,
+    "smoothness=very_horrible": 0.8,
     "surface=natural": 0.5,
     "surface=rock": 0.2,
-    "surface=unhewn_cobblestone": 0.1
+    "surface=unhewn_cobblestone": 0.1,
+    "surface=wood": 0
    },
    "offroad": {
-    "tracktype=grade3": 233.5,
     "tracktype=grade4": 115.9,
-    "smoothness=very_bad": 69.6,
-    "smoothness=horrible": 57.7,
+    "smoothness=very_bad": 72,
+    "smoothness=horrible": 59.1,
     "4wd_only=yes": 17.4,
-    "tracktype=grade5": 5.2
+    "tracktype=grade5": 5.2,
+    "surface=mud": 0.7,
+    "surface=rock": 0.1
    },
    "specialized": {
-    "smoothness=very_horrible": 1.4
+    "smoothness=very_horrible": 2.1
    }
   },
   "residential": {
    "unpaved": {
-    "surface=unpaved": 5514.2,
-    "surface=gravel": 1710.5,
-    "surface=ground": 803,
+    "surface=unpaved": 5518,
+    "surface=gravel": 1714.8,
+    "surface=ground": 804.6,
     "tracktype=grade3": 111.4,
     "surface=compacted": 68.3,
     "surface=dirt": 46.1,
@@ -302,6 +328,7 @@
     "surface=pebblestone": 9.1,
     "surface=fine_gravel": 8,
     "tracktype=grade5": 3.8,
+    "smoothness=very_bad": 3.4,
     "surface=grass": 3.4,
     "surface=earth": 1.8,
     "surface=rock": 1.5,
@@ -309,60 +336,71 @@
     "surface=sand": 1.1,
     "surface=paved; unpaved": 0.9,
     "surface=dirt_and_rock": 0.4,
+    "smoothness=impassable": 0.4,
+    "4wd_only=yes": 0.3,
     "surface=paved;unpaved": 0.2,
+    "surface=wood": 0.1,
     "surface=living_street": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 150.1,
-    "smoothness=very_bad": 31.9,
+    "smoothness=very_bad": 35.3,
     "tracktype=grade4": 23.9,
     "tracktype=grade5": 5.3,
     "smoothness=horrible": 2.7,
-    "4wd_only=yes": 0.6
+    "surface=rock": 1.4,
+    "4wd_only=yes": 0.9,
+    "surface=mud": 0.7
    },
    "specialized": {
-    "smoothness=very_horrible": 0.5,
-    "smoothness=impassable": 0.4
+    "smoothness=impassable": 0.8,
+    "smoothness=very_horrible": 0.5
    }
   },
   "all": {
    "unpaved": {
-    "surface=unpaved": 12040.5,
-    "surface=gravel": 3385.3,
-    "surface=ground": 1381.3,
+    "surface=unpaved": 12038.1,
+    "surface=gravel": 3377.7,
+    "surface=ground": 1380.8,
     "surface=compacted": 307.1,
-    "tracktype=grade3": 212.1,
+    "tracktype=grade3": 210,
     "surface=dirt": 182.3,
-    "tracktype=grade2": 169.7,
+    "tracktype=grade2": 168.7,
     "surface=fine_gravel": 40.6,
     "tracktype=grade4": 36.9,
     "surface=unhewn_cobblestone": 18,
+    "4wd_only=yes": 13.5,
     "surface=pebblestone": 12.3,
     "surface=grass": 11.6,
+    "smoothness=very_bad": 8.9,
     "tracktype=grade5": 8,
     "surface=earth": 6,
     "surface=Maxar Premium": 5,
     "surface=mud": 4.8,
+    "smoothness=horrible": 3.5,
+    "smoothness=very_horrible": 2.8,
     "surface=sand": 2.7,
     "surface=rock": 1.7,
     "surface=dirt_and_rock": 1.3,
     "surface=paved; unpaved": 0.9,
     "surface=asphalt; asphalt; ground": 0.8,
     "surface=natural": 0.5,
+    "surface=wood": 0.4,
+    "smoothness=impassable": 0.4,
     "surface=paved;unpaved": 0.2,
     "surface=living_street": 0.1
    },
    "offroad": {
-    "tracktype=grade3": 404.9,
-    "smoothness=very_bad": 271.1,
+    "smoothness=very_bad": 279,
     "tracktype=grade4": 141.4,
-    "smoothness=horrible": 90.6,
-    "4wd_only=yes": 21.7,
-    "tracktype=grade5": 12.2
+    "smoothness=horrible": 92.1,
+    "4wd_only=yes": 35.2,
+    "tracktype=grade5": 12.2,
+    "surface=rock": 1.4,
+    "surface=mud": 1.4
    },
    "specialized": {
-    "smoothness=very_horrible": 4.6,
-    "smoothness=impassable": 0.4
+    "smoothness=very_horrible": 7.5,
+    "smoothness=impassable": 0.8
    }
   }
  },
@@ -374,25 +412,29 @@
   "surface=living_street": 0.1
  },
  "conflict_km": {
-  "paved (surface=asphalt) + 4wd_only=yes": 9,
-  "paved (surface=asphalt) + smoothness=very_bad": 6.4,
-  "paved (surface=concrete) + 4wd_only=yes": 4.5,
-  "paved (surface=paved) + tracktype=grade5": 3.4,
-  "paved (surface=asphalt) + smoothness=very_horrible": 2.1,
-  "paved (surface=paved) + tracktype=grade3": 1.8,
+  "surface=asphalt + tracktype=grade2 (ignored)": 9.6,
+  "surface=asphalt + 4wd_only=yes": 9,
+  "surface=concrete + tracktype=grade2 (ignored)": 6.9,
+  "surface=asphalt + smoothness=very_bad": 6.4,
+  "surface=paved + tracktype=grade2 (ignored)": 5,
+  "surface=concrete + 4wd_only=yes": 4.5,
+  "smoothness=excellent + surface=asphalt": 3.7,
+  "smoothness=good + surface=asphalt": 3.5,
+  "surface=paved + tracktype=grade5 (ignored)": 3.4,
+  "surface=asphalt + smoothness=very_horrible": 2.1,
+  "surface=paved + tracktype=grade3 (ignored)": 1.8,
   "smoothness=excellent + surface=unpaved": 1.7,
-  "paved (surface=concrete) + tracktype=grade4": 1.4,
-  "paved (surface=concrete:plates) + smoothness=horrible": 1.1,
-  "paved (surface=paved) + smoothness=very_bad": 0.8,
-  "paved (no surface) + smoothness=very_horrible": 0.8,
-  "paved (surface=asphalt) + tracktype=grade3": 0.6,
-  "paved (surface=sett) + smoothness=very_bad": 0.5,
-  "paved (no surface) + smoothness=impassable": 0.4,
-  "paved (surface=asphalt) + tracktype=grade4": 0.4,
-  "paved (surface=asphalt) + smoothness=horrible": 0.4,
-  "paved (surface=concrete) + tracktype=grade3": 0.2,
-  "paved (surface=concrete) + smoothness=very_bad": 0.1,
-  "paved (no surface) + smoothness=very_bad": 0.1
+  "surface=concrete + tracktype=grade4 (ignored)": 1.4,
+  "surface=concrete:plates + smoothness=horrible": 1.1,
+  "surface=concrete:plates + tracktype=grade2 (ignored)": 0.9,
+  "surface=paved + smoothness=very_bad": 0.8,
+  "surface=asphalt + tracktype=grade3 (ignored)": 0.6,
+  "surface=sett + smoothness=very_bad": 0.5,
+  "surface=asphalt + tracktype=grade4 (ignored)": 0.4,
+  "surface=asphalt + smoothness=horrible": 0.4,
+  "surface=concrete + tracktype=grade3 (ignored)": 0.2,
+  "surface=concrete + smoothness=very_bad": 0.1,
+  "surface=metal + tracktype=grade2 (ignored)": 0
  },
  "odd": {
   "major_unpaved": [
@@ -539,8 +581,10 @@
     "level": "unpaved",
     "tags": {
      "highway": "secondary",
-     "name": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
-     "name:ka": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
+     "name": "დიდი დმანისი — დმანისი — გომარეთი — ბედიანი",
+     "name:en": "Didi Dmanisi — Dmanisi — Gomareti — Bediani",
+     "name:ka": "დიდი დმანისი — დმანისი — გომარეთი — ბედიანი",
+     "name:ru": "Диди Дманиси — Дманиси — Гомарети — Бедиани",
      "ref": "შ 68",
      "source": "JumpStart International",
      "surface": "gravel"
@@ -571,8 +615,10 @@
     "level": "unpaved",
     "tags": {
      "highway": "secondary",
-     "name": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
-     "name:ka": "დიდი დმანისი-დმანისი-გომარეთი-ბედიანი",
+     "name": "დიდი დმანისი — დმანისი — გომარეთი — ბედიანი",
+     "name:en": "Didi Dmanisi — Dmanisi — Gomareti — Bediani",
+     "name:ka": "დიდი დმანისი — დმანისი — გომარეთი — ბედიანი",
+     "name:ru": "Диди Дманиси — Дманиси — Гомарети — Бедиани",
      "ref": "შ 68",
      "surface": "unpaved"
     }
@@ -644,18 +690,6 @@
    }
   ],
   "offroad_mark": [
-   {
-    "id": "w1327196456",
-    "highway": "unclassified",
-    "km": 18.9,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "name": "Taribana-Chachuna-Eldari",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
    {
     "id": "w202654804",
     "highway": "unclassified",
@@ -761,17 +795,6 @@
     }
    },
    {
-    "id": "w676777550",
-    "highway": "unclassified",
-    "km": 9.5,
-    "level": "offroad",
-    "tags": {
-     "highway": "unclassified",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w127581955",
     "highway": "unclassified",
     "km": 9.4,
@@ -806,26 +829,6 @@
     }
    },
    {
-    "id": "w82021590",
-    "highway": "tertiary",
-    "km": 7.7,
-    "level": "offroad",
-    "tags": {
-     "access": "yes",
-     "bicycle": "yes",
-     "cycleway": "no",
-     "foot": "yes",
-     "highway": "tertiary",
-     "horse": "yes",
-     "lanes": "2",
-     "lit": "no",
-     "oneway": "no",
-     "source": "ScanEx",
-     "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
     "id": "w707272787",
     "highway": "tertiary",
     "km": 7.3,
@@ -836,18 +839,6 @@
      "ref": "შ 158",
      "smoothness": "very_bad",
      "surface": "unpaved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w547988836",
-    "highway": "unclassified",
-    "km": 7,
-    "level": "offroad",
-    "tags": {
-     "comment": "Тропа от турбазы Аджара на хребет Ацетука",
-     "highway": "unclassified",
-     "surface": "ground",
      "tracktype": "grade3"
     }
    },
@@ -871,9 +862,102 @@
      "surface": "gravel",
      "wikidata": "Q3493036"
     }
+   },
+   {
+    "id": "w82376574",
+    "highway": "unclassified",
+    "km": 6.9,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "bicycle": "yes",
+     "foot": "yes",
+     "highway": "unclassified",
+     "lit": "no",
+     "oneway": "no",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w338061616",
+    "highway": "unclassified",
+    "km": 6.7,
+    "level": "offroad",
+    "tags": {
+     "access": "yes",
+     "highway": "unclassified",
+     "oneway": "no",
+     "smoothness": "horrible",
+     "surface": "unpaved"
+    }
+   },
+   {
+    "id": "w779659168",
+    "highway": "tertiary",
+    "km": 6.5,
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access:conditional": "no @ (Nov-Jun)",
+     "hazard": "curves;landslide",
+     "highway": "tertiary",
+     "name": "ფშაველი — აბანო — ომალო",
+     "name:en": "Pshaveli — Abano — Omalo",
+     "name:ka": "ფშაველი — აბანო — ომალო",
+     "name:ru": "Пшавели — Абано — Омало",
+     "ref": "შ 44",
+     "sac_scale": "strolling",
+     "smoothness": "very_bad",
+     "source": "GPS;streetlevel imagery",
+     "surface": "ground",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w213492304",
+    "highway": "tertiary",
+    "km": 6.4,
+    "level": "offroad",
+    "tags": {
+     "highway": "tertiary",
+     "lanes": "1",
+     "mountain_pass": "yes",
+     "name:ka": "ხაიში — საკენი — ომარიშარა",
+     "nat_ref": "შ 100",
+     "old_ref": "შ 10",
+     "oneway": "no",
+     "ref": "შ 100",
+     "smoothness": "horrible",
+     "surface": "unpaved",
+     "tracktype": "grade2"
+    }
    }
   ],
   "conflict": [
+   {
+    "id": "w102156594",
+    "highway": "unclassified",
+    "km": 4.3,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "asphalt",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w55209633",
+    "highway": "unclassified",
+    "km": 3.4,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "bad",
+     "surface": "concrete",
+     "tracktype": "grade2"
+    }
+   },
    {
     "id": "w102534737",
     "highway": "tertiary",
@@ -894,7 +978,7 @@
     "id": "w102151129",
     "highway": "secondary",
     "km": 3.1,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "4wd_only": "yes",
      "check_date:surface": "2024-08-30",
@@ -916,7 +1000,27 @@
     "id": "w28089103",
     "highway": "tertiary",
     "km": 2.6,
-    "level": "paved",
+    "level": "offroad",
+    "tags": {
+     "4wd_only": "yes",
+     "access:conditional": "no @ (Nov-Jun)",
+     "hazard": "curves;landslide",
+     "highway": "tertiary",
+     "name": "ფშაველი — აბანო — ომალო",
+     "name:en": "Pshaveli — Abano — Omalo",
+     "name:ka": "ფშაველი — აბანო — ომალო",
+     "name:ru": "Пшавели — Абано — Омало",
+     "ref": "შ 44",
+     "smoothness": "good",
+     "source": "GPS;streetlevel imagery",
+     "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w28089103",
+    "highway": "tertiary",
+    "km": 2.6,
+    "level": "offroad",
     "tags": {
      "4wd_only": "yes",
      "access:conditional": "no @ (Nov-Jun)",
@@ -936,17 +1040,40 @@
     "id": "w655580814",
     "highway": "unclassified",
     "km": 2.4,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "access": "permissive",
      "highway": "unclassified",
      "lanes": "2",
-     "name:ka": "ტირძნისი-დიცი-ერედვი-ხეითი",
+     "name:ka": "ტირძნისი — დიცი — ერედვი — ხეითი",
      "old_ref": "შ 72",
      "oneway": "no",
      "ref": "შ 72",
      "smoothness": "very_bad",
      "surface": "asphalt"
+    }
+   },
+   {
+    "id": "w121424878",
+    "highway": "unclassified",
+    "km": 1.9,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "surface": "paved",
+     "tracktype": "grade2"
+    }
+   },
+   {
+    "id": "w798940808",
+    "highway": "unclassified",
+    "km": 1.8,
+    "level": "paved",
+    "tags": {
+     "highway": "unclassified",
+     "smoothness": "bad",
+     "surface": "concrete",
+     "tracktype": "grade2"
     }
    },
    {
@@ -980,6 +1107,19 @@
     }
    },
    {
+    "id": "w966547311",
+    "highway": "unclassified",
+    "km": 1.4,
+    "level": "paved",
+    "tags": {
+     "foot": "yes",
+     "highway": "unclassified",
+     "sac_scale": "strolling",
+     "surface": "paved",
+     "tracktype": "grade2"
+    }
+   },
+   {
     "id": "w123865168",
     "highway": "unclassified",
     "km": 1.3,
@@ -995,7 +1135,7 @@
     "id": "w106762664",
     "highway": "tertiary",
     "km": 1.2,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "access": "yes",
      "bicycle": "yes",
@@ -1021,7 +1161,7 @@
     "id": "w102602969",
     "highway": "residential",
     "km": 1.2,
-    "level": "paved",
+    "level": "offroad",
     "tags": {
      "highway": "residential",
      "lane_markings": "no",
@@ -1037,145 +1177,14 @@
     }
    },
    {
-    "id": "w1436177337",
-    "highway": "tertiary",
+    "id": "w1282178577",
+    "highway": "unclassified",
     "km": 1.2,
     "level": "paved",
     "tags": {
-     "access:conditional": "no @ (Nov-Apr)",
-     "hazard": "curves",
-     "highway": "tertiary",
-     "name": "ფშაველი — აბანო — ომალო",
-     "name:en": "Pshaveli — Abano — Omalo",
-     "name:ka": "ფშაველი — აბანო — ომალო",
-     "name:ru": "Пшавели — Абано — Омало",
-     "ref": "შ 44",
-     "smoothness": "very_horrible",
-     "source": "GPS;streetlevel imagery",
-     "surface": "asphalt"
-    }
-   },
-   {
-    "id": "w1312761853",
-    "highway": "tertiary",
-    "km": 1.1,
-    "level": "paved",
-    "tags": {
-     "4wd_only": "yes",
-     "foot": "permissive",
-     "highway": "tertiary",
-     "incline": "8%",
-     "lanes": "2",
-     "lit": "no",
-     "maxspeed": "50",
-     "name": "სტეფანწმინდა-სამება",
-     "name:en": "Stepantsminda-Sameba",
-     "name:ka": "სტეფანწმინდა-სამება",
-     "name:ru": "Степанцминда - Самеба",
-     "nat_ref": "შ 146",
-     "overtaking": "no",
-     "ref": "შ 146",
-     "sidewalk": "no",
-     "smoothness": "excellent",
-     "surface": "asphalt",
-     "tracktype": "grade1"
-    }
-   },
-   {
-    "id": "w1312761846",
-    "highway": "tertiary",
-    "km": 0.9,
-    "level": "paved",
-    "tags": {
-     "4wd_only": "yes",
-     "fixme": "resurvey",
-     "highway": "tertiary",
-     "incline": "12%",
-     "lanes": "2",
-     "lit": "no",
-     "maxspeed": "30",
-     "name": "სტეფანწმინდა-სამება",
-     "name:en": "Stepantsminda-Sameba",
-     "name:ka": "სტეფანწმინდა-სამება",
-     "name:ru": "Степанцминда - Самеба",
-     "ref": "შ 146",
-     "sidewalk": "no",
-     "surface": "asphalt"
-    }
-   },
-   {
-    "id": "w587168279",
-    "highway": "tertiary",
-    "km": 0.9,
-    "level": "paved",
-    "tags": {
-     "4wd_only": "yes",
-     "highway": "tertiary",
-     "incline": "down",
-     "lanes": "2",
-     "lit": "no",
-     "maxspeed": "40",
-     "name": "სტეფანწმინდა-სამება",
-     "name:en": "Stepantsminda-Sameba",
-     "name:ka": "სტეფანწმინდა-სამება",
-     "name:ru": "Степанцминда - Самеба",
-     "ref": "შ 146",
-     "sidewalk": "no",
-     "surface": "asphalt"
-    }
-   },
-   {
-    "id": "w1210704871",
-    "highway": "secondary",
-    "km": 0.9,
-    "level": "paved",
-    "tags": {
-     "4wd_only": "yes",
-     "check_date:surface": "2024-08-30",
-     "description": "September 2023: Mostly construction site which is driveable but offroady. Open only June to October.",
-     "highway": "secondary",
-     "lanes": "2",
-     "maxspeed": "40",
-     "name": "ქუთაისი — წყალტუბო — ცაგერი — ლენტეხი — ლასდილი",
-     "name:en": "Kutaisi — Tsqaltubo — Tsageri — Lentekhi — Lasdili",
-     "name:ka": "ქუთაისი — წყალტუბო — ცაგერი — ლენტეხი — ლასდილი",
-     "name:ru": "Кутаиси — Цхалтубо — Цагери — Лентехи — Ласдили",
-     "ref": "შ 15",
-     "smoothness": "intermediate",
-     "source": "GPS",
-     "surface": "concrete"
-    }
-   },
-   {
-    "id": "w864991000",
-    "highway": "residential",
-    "km": 0.9,
-    "level": "paved",
-    "tags": {
-     "highway": "residential",
-     "surface": "paved",
-     "tracktype": "grade3"
-    }
-   },
-   {
-    "id": "w1409442115",
-    "highway": "tertiary",
-    "km": 0.9,
-    "level": "paved",
-    "tags": {
-     "4wd_only": "yes",
-     "access:conditional": "no @ (Nov-Jun)",
-     "fixme": "bad gps coverage - fix needed",
-     "hazard": "curves;landslide",
-     "highway": "tertiary",
-     "name": "ფშაველი — აბანო — ომალო",
-     "name:en": "Pshaveli — Abano — Omalo",
-     "name:ka": "ფშაველი — აბანო — ომალო",
-     "name:ru": "Пшавели — Абано — Омало",
-     "ref": "შ 44",
-     "smoothness": "good",
-     "source": "GPS;streetlevel imagery",
-     "surface": "asphalt"
+     "highway": "unclassified",
+     "surface": "concrete",
+     "tracktype": "grade2"
     }
    }
   ],
