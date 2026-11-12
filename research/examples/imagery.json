@@ -25158,6 +25158,4540 @@
      "mapillary": "https://www.mapillary.com/app/?pKey=809223047724868"
     }
    ]
+  },
+  {
+   "id": "w34357586",
+   "country": "ke",
+   "label": "tertiary, gravel, grade3",
+   "origin": "list",
+   "km": 165,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "surface": "gravel",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 2,
+    "latest": "2017-07-11",
+    "first": "https://www.mapillary.com/app/?pKey=498758314488320"
+   },
+   "samples": [
+    {
+     "lat": -1.4729934752814953,
+     "lon": 39.81435235058022,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.49176640908336,
+     "lon": 39.65947728759137,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.5291544304921483,
+     "lon": 39.51278928191703,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.5751623127417487,
+     "lon": 39.39780983653607,
+     "mapillary": "https://www.mapillary.com/app/?pKey=498758314488320"
+    },
+    {
+     "lat": -1.5564263416843098,
+     "lon": 39.24857297613258,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.5919041059014498,
+     "lon": 39.11133020579593,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.68041541080379,
+     "lon": 39.00601592456277,
+     "mapillary": "https://www.mapillary.com/app/?pKey=513805122992887"
+    },
+    {
+     "lat": -1.7450089513261637,
+     "lon": 38.87277798187473,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w315044849",
+   "country": "na",
+   "label": "D3445 (tertiary, gravel, grade3)",
+   "origin": "list",
+   "km": 119.2,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "ref": "D3445",
+    "surface": "gravel",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -18.57655871289813,
+     "lon": 19.00241944203236,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.570647881214587,
+     "lon": 18.87692341219528,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.564647685605294,
+     "lon": 18.75143476858321,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.55863684765142,
+     "lon": 18.62595138901608,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.552421181561,
+     "lon": 18.500484583015137,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.54622953851442,
+     "lon": 18.375020305263085,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.53993597251096,
+     "lon": 18.249565690359308,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.5336045721826,
+     "lon": 18.12411812098232,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w205545073",
+   "country": "ml",
+   "label": "tertiary, unpaved, grade3",
+   "origin": "list",
+   "km": 88.5,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 16.37888524740524,
+     "lon": -4.657491164711528,
+     "mapillary": ""
+    },
+    {
+     "lat": 16.368683706578278,
+     "lon": -4.743948190668288,
+     "mapillary": ""
+    },
+    {
+     "lat": 16.35245953072669,
+     "lon": -4.827941572710591,
+     "mapillary": ""
+    },
+    {
+     "lat": 16.342010376816585,
+     "lon": -4.912298458121254,
+     "mapillary": ""
+    },
+    {
+     "lat": 16.322415904922472,
+     "lon": -4.999236459032024,
+     "mapillary": ""
+    },
+    {
+     "lat": 16.297051872291433,
+     "lon": -5.085196615598379,
+     "mapillary": ""
+    },
+    {
+     "lat": 16.26061966374149,
+     "lon": -5.1662413807233865,
+     "mapillary": ""
+    },
+    {
+     "lat": 16.207218569969267,
+     "lon": -5.235962650968612,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w550488462",
+   "country": "om",
+   "label": "unclassified, sand, grade3",
+   "origin": "list",
+   "km": 83.7,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "sand",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 22.450832105973074,
+     "lon": 58.60355282445743,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.378434607324483,
+     "lon": 58.56405495015734,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.317171167347833,
+     "lon": 58.50416072144084,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.238852653591252,
+     "lon": 58.474105030632046,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.15702858959642,
+     "lon": 58.45697105917595,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.074822566716144,
+     "lon": 58.465428234134286,
+     "mapillary": ""
+    },
+    {
+     "lat": 21.99522025515543,
+     "lon": 58.447579801206494,
+     "mapillary": ""
+    },
+    {
+     "lat": 21.912228081313835,
+     "lon": 58.43926459028334,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w1004666122",
+   "country": "et",
+   "label": "tertiary, compacted, grade3",
+   "origin": "list",
+   "km": 78.3,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "surface": "compacted",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 13.107346296903607,
+     "lon": 41.02896406435944,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.137477833060753,
+     "lon": 41.087031539536014,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.162633197143888,
+     "lon": 41.15699569158513,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.14374660196198,
+     "lon": 41.222335158335454,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.138139811862645,
+     "lon": 41.29499700084845,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.131111851202828,
+     "lon": 41.371528523612156,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.161731807097171,
+     "lon": 41.44163869956026,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.167401445292251,
+     "lon": 41.5128288262849,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w539973831",
+   "country": "et",
+   "label": "Maji Alt. (tertiary, mud, grade3)",
+   "origin": "list",
+   "km": 71.3,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "surface": "mud",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 5.78744157345778,
+     "lon": 35.4718969800974,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.845963232975577,
+     "lon": 35.44646287521596,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.91309662751972,
+     "lon": 35.436981247354026,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.973753667918369,
+     "lon": 35.41976808081171,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.0342655040588875,
+     "lon": 35.423102027577066,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.094086203476564,
+     "lon": 35.44300753776167,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.134576116159321,
+     "lon": 35.42184597936521,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.188094343502034,
+     "lon": 35.39423289381648,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w835098894",
+   "country": "co",
+   "label": "La Cristalina (unclassified, gravel, grade3)",
+   "origin": "list",
+   "km": 69.9,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "gravel",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 4.1704039979050584,
+     "lon": -71.97006154283713,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.190508780939596,
+     "lon": -71.90794709060576,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.205232959767777,
+     "lon": -71.84572258085889,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.212401675753119,
+     "lon": -71.77721626768215,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.229697079014066,
+     "lon": -71.71321285377054,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.252522570023264,
+     "lon": -71.65124122150118,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.24686821714204,
+     "lon": -71.58864746656309,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.231322868309953,
+     "lon": -71.52860327331486,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w618256836",
+   "country": "ar",
+   "label": "unclassified, unpaved, grade3",
+   "origin": "list",
+   "km": 69.6,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "unpaved",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -37.50442129016926,
+     "lon": -64.97025050543299,
+     "mapillary": ""
+    },
+    {
+     "lat": -37.573918880338525,
+     "lon": -64.97150531086598,
+     "mapillary": ""
+    },
+    {
+     "lat": -37.643375780999676,
+     "lon": -64.97383093785034,
+     "mapillary": ""
+    },
+    {
+     "lat": -37.712880035248276,
+     "lon": -64.97413438620606,
+     "mapillary": ""
+    },
+    {
+     "lat": -37.78238305823018,
+     "lon": -64.97460490116069,
+     "mapillary": ""
+    },
+    {
+     "lat": -37.8518431693646,
+     "lon": -64.97606629989508,
+     "mapillary": ""
+    },
+    {
+     "lat": -37.921336256325176,
+     "lon": -64.97766175441494,
+     "mapillary": ""
+    },
+    {
+     "lat": -37.990541575642325,
+     "lon": -64.97904009782592,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w57870460",
+   "country": "co",
+   "label": "La Cristalina (unclassified, gravel, grade3)",
+   "origin": "list",
+   "km": 66,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "gravel",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 4.1820100170642,
+     "lon": -71.42754298545503,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.165831288313248,
+     "lon": -71.36904867868331,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.186013524666837,
+     "lon": -71.30928153765666,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.186367192571088,
+     "lon": -71.24427126087873,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.186402789275115,
+     "lon": -71.18743262725192,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.1873481755869175,
+     "lon": -71.129541597723,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.179255470985466,
+     "lon": -71.07233269408114,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.1404792753025,
+     "lon": -71.03569050949113,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w236676422",
+   "country": "cl",
+   "label": "unclassified, dirt, grade3",
+   "origin": "list",
+   "km": 56.1,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "dirt",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -21.22367539039988,
+     "lon": -69.17246847309146,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.210143671395972,
+     "lon": -69.18463566750533,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.170433292992225,
+     "lon": -69.1949050021138,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.13036762993339,
+     "lon": -69.20015847255233,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.09085325992913,
+     "lon": -69.19589247424761,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.09619617350066,
+     "lon": -69.2509332337987,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.0976538927673,
+     "lon": -69.30934944278914,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.07927326185088,
+     "lon": -69.3640827508411,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w252659850",
+   "country": "sn",
+   "label": "N17 (tertiary, unpaved, grade3)",
+   "origin": "list",
+   "km": 54.6,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "ref": "N17",
+    "surface": "unpaved",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 14.284859750135759,
+     "lon": -12.809393604935085,
+     "mapillary": ""
+    },
+    {
+     "lat": 14.335133511611295,
+     "lon": -12.826287431879832,
+     "mapillary": ""
+    },
+    {
+     "lat": 14.386490901598416,
+     "lon": -12.819100149758714,
+     "mapillary": ""
+    },
+    {
+     "lat": 14.432783893753427,
+     "lon": -12.796082101715184,
+     "mapillary": ""
+    },
+    {
+     "lat": 14.48218522695446,
+     "lon": -12.787080021341643,
+     "mapillary": ""
+    },
+    {
+     "lat": 14.53355898901328,
+     "lon": -12.772639655083227,
+     "mapillary": ""
+    },
+    {
+     "lat": 14.572983566045407,
+     "lon": -12.734526178920424,
+     "mapillary": ""
+    },
+    {
+     "lat": 14.615664613581984,
+     "lon": -12.700385783089747,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w28157306",
+   "country": "na",
+   "label": "D2186 (unclassified, dirt, grade3)",
+   "origin": "list",
+   "km": 53.9,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "ref": "D2186",
+    "surface": "dirt",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 8,
+    "latest": "2015-12-25",
+    "first": "https://www.mapillary.com/app/?pKey=466533447896297"
+   },
+   "samples": [
+    {
+     "lat": -23.413260762590806,
+     "lon": 15.477067208595374,
+     "mapillary": "https://www.mapillary.com/app/?pKey=466533447896297"
+    },
+    {
+     "lat": -23.434618077031757,
+     "lon": 15.424957110759943,
+     "mapillary": "https://www.mapillary.com/app/?pKey=790961745171885"
+    },
+    {
+     "lat": -23.460154303464183,
+     "lon": 15.373773824676219,
+     "mapillary": "https://www.mapillary.com/app/?pKey=309619360538546"
+    },
+    {
+     "lat": -23.482318012439404,
+     "lon": 15.320406691400951,
+     "mapillary": "https://www.mapillary.com/app/?pKey=451624032569245"
+    },
+    {
+     "lat": -23.500420888073435,
+     "lon": 15.265623637478463,
+     "mapillary": "https://www.mapillary.com/app/?pKey=789114998681089"
+    },
+    {
+     "lat": -23.52101796901972,
+     "lon": 15.211430651499525,
+     "mapillary": "https://www.mapillary.com/app/?pKey=957089665061131"
+    },
+    {
+     "lat": -23.541575076036768,
+     "lon": 15.157168128576126,
+     "mapillary": "https://www.mapillary.com/app/?pKey=145997700754421"
+    },
+    {
+     "lat": -23.559933712494498,
+     "lon": 15.102278084518485,
+     "mapillary": "https://www.mapillary.com/app/?pKey=273596211080459"
+    }
+   ]
+  },
+  {
+   "id": "w227748568",
+   "country": "mn",
+   "label": "unclassified, ground, grade3",
+   "origin": "list",
+   "km": 51.6,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "ground",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 46.91857883374772,
+     "lon": 109.00728980937997,
+     "mapillary": ""
+    },
+    {
+     "lat": 46.882078376348176,
+     "lon": 109.05866255231447,
+     "mapillary": ""
+    },
+    {
+     "lat": 46.8458870707067,
+     "lon": 109.10941618986226,
+     "mapillary": ""
+    },
+    {
+     "lat": 46.80849087221596,
+     "lon": 109.16039781021637,
+     "mapillary": ""
+    },
+    {
+     "lat": 46.77919263149558,
+     "lon": 109.22230944126771,
+     "mapillary": ""
+    },
+    {
+     "lat": 46.746295247932565,
+     "lon": 109.27973040948282,
+     "mapillary": ""
+    },
+    {
+     "lat": 46.7022095506177,
+     "lon": 109.3150110169334,
+     "mapillary": ""
+    },
+    {
+     "lat": 46.65714548210325,
+     "lon": 109.35127154631367,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w562607036",
+   "country": "co",
+   "label": "unclassified, ground, grade3",
+   "origin": "list",
+   "km": 48.4,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "ground",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 5.969579524667127,
+     "lon": -71.13583783938645,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.975086590420727,
+     "lon": -71.09035325428516,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.991305280792085,
+     "lon": -71.04581546335258,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.993646420331168,
+     "lon": -71.0009728353722,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.98141484060485,
+     "lon": -70.95786083013597,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.963768425899646,
+     "lon": -70.91824455631185,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.96417503099073,
+     "lon": -70.87252422996391,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.975313442035235,
+     "lon": -70.83207561645798,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w496090202",
+   "country": "kg",
+   "label": "unclassified, ground, grade3",
+   "origin": "list",
+   "km": 46.7,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "ground",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 42.197123576316386,
+     "lon": 75.17833160407568,
+     "mapillary": ""
+    },
+    {
+     "lat": 42.205755705616085,
+     "lon": 75.1205928797556,
+     "mapillary": ""
+    },
+    {
+     "lat": 42.2134128355234,
+     "lon": 75.06253416706383,
+     "mapillary": ""
+    },
+    {
+     "lat": 42.22436754715448,
+     "lon": 75.00410186286928,
+     "mapillary": ""
+    },
+    {
+     "lat": 42.230386819887435,
+     "lon": 74.9437386110905,
+     "mapillary": ""
+    },
+    {
+     "lat": 42.24935202955811,
+     "lon": 74.8907476820896,
+     "mapillary": ""
+    },
+    {
+     "lat": 42.25545831789981,
+     "lon": 74.83127520390317,
+     "mapillary": ""
+    },
+    {
+     "lat": 42.26199653279922,
+     "lon": 74.77235765285488,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w223347478",
+   "country": "cm",
+   "label": "tertiary, unpaved, grade3",
+   "origin": "list",
+   "km": 45.7,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "surface": "unpaved",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 7.317583844310176,
+     "lon": 13.524375421459542,
+     "mapillary": ""
+    },
+    {
+     "lat": 7.290664938045242,
+     "lon": 13.49089028587511,
+     "mapillary": ""
+    },
+    {
+     "lat": 7.265871633193151,
+     "lon": 13.459778552744451,
+     "mapillary": ""
+    },
+    {
+     "lat": 7.239395984383068,
+     "lon": 13.427066473020306,
+     "mapillary": ""
+    },
+    {
+     "lat": 7.221704934198967,
+     "lon": 13.390277024831528,
+     "mapillary": ""
+    },
+    {
+     "lat": 7.212307372493619,
+     "lon": 13.348234371898371,
+     "mapillary": ""
+    },
+    {
+     "lat": 7.168719617634416,
+     "lon": 13.343429001630872,
+     "mapillary": ""
+    },
+    {
+     "lat": 7.129745930041733,
+     "lon": 13.326599272190805,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w551304677",
+   "country": "na",
+   "label": "D3646 (secondary, gravel, grade3)",
+   "origin": "list",
+   "km": 42.4,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "D3646",
+    "surface": "gravel",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -18.529406812976298,
+     "lon": 16.77736482042032,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.55880767398443,
+     "lon": 16.809309533867133,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.593287978539898,
+     "lon": 16.83522709577767,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.627778529406488,
+     "lon": 16.861135592028152,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.66228755565201,
+     "lon": 16.887021945031726,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.70159133204101,
+     "lon": 16.89975575607807,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.74368137147398,
+     "lon": 16.904580871081425,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.78575814450076,
+     "lon": 16.909534434939697,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w23911018",
+   "country": "na",
+   "label": "Eland Drive (tertiary, gravel, grade3)",
+   "origin": "list",
+   "km": 41.7,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "ref": "5978",
+    "surface": "gravel",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -19.034055452119663,
+     "lon": 16.556602710691283,
+     "mapillary": ""
+    },
+    {
+     "lat": -19.071500990870764,
+     "lon": 16.563227722519734,
+     "mapillary": ""
+    },
+    {
+     "lat": -19.06699798475358,
+     "lon": 16.593555184818452,
+     "mapillary": ""
+    },
+    {
+     "lat": -19.04465989727462,
+     "lon": 16.610015761064723,
+     "mapillary": ""
+    },
+    {
+     "lat": -19.045084655760963,
+     "lon": 16.649980030927136,
+     "mapillary": ""
+    },
+    {
+     "lat": -19.05857870853235,
+     "lon": 16.68445748650113,
+     "mapillary": ""
+    },
+    {
+     "lat": -19.02490717625536,
+     "lon": 16.66997529348584,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.992884114309838,
+     "lon": 16.686615570158384,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w217769124",
+   "country": "ro",
+   "label": "unclassified, dirt, grade3",
+   "origin": "list",
+   "km": 38.4,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "unclassified",
+    "surface": "dirt",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 44.96603319268781,
+     "lon": 27.933538458262163,
+     "mapillary": ""
+    },
+    {
+     "lat": 45.00326867846736,
+     "lon": 27.93491215232916,
+     "mapillary": ""
+    },
+    {
+     "lat": 45.03949249968652,
+     "lon": 27.92566215106978,
+     "mapillary": ""
+    },
+    {
+     "lat": 45.07421184005111,
+     "lon": 27.924847184816375,
+     "mapillary": ""
+    },
+    {
+     "lat": 45.10571955055733,
+     "lon": 27.955133927915988,
+     "mapillary": ""
+    },
+    {
+     "lat": 45.1419507334858,
+     "lon": 27.969097711438156,
+     "mapillary": ""
+    },
+    {
+     "lat": 45.16445051151623,
+     "lon": 27.999668178138325,
+     "mapillary": ""
+    },
+    {
+     "lat": 45.20085254674431,
+     "lon": 27.99004925258786,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w372757694",
+   "country": "sn",
+   "label": "D06.106 (tertiary, unpaved, grade3)",
+   "origin": "list",
+   "km": 37.5,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "tertiary",
+    "ref": "D06.106",
+    "surface": "unpaved",
+    "tracktype": "grade3"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 13.363929517937184,
+     "lon": -12.583201579778256,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.3630150551358,
+     "lon": -12.61915105095093,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.358450533130014,
+     "lon": -12.6565399860125,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.363153939989484,
+     "lon": -12.69386548835071,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.363396222966532,
+     "lon": -12.730752778494764,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.373568706060729,
+     "lon": -12.767175782241397,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.381822565693867,
+     "lon": -12.80366195771258,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.37390309976056,
+     "lon": -12.83872745797944,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w33402624",
+   "country": "ke",
+   "label": "A3 (trunk, sand)",
+   "origin": "list",
+   "km": 79.5,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "A3",
+    "surface": "sand"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 0.17292179077112876,
+     "lon": 40.45313507660165,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.19973783155242478,
+     "lon": 40.52347048251537,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.20440960897840954,
+     "lon": 40.594609232927716,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.2302966013468141,
+     "lon": 40.66822547267457,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.28520283739483776,
+     "lon": 40.71784746031245,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.31880202639675076,
+     "lon": 40.78567749022962,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.3419693403469675,
+     "lon": 40.85829990025312,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.3887410910684475,
+     "lon": 40.920750130704775,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w33677929",
+   "country": "ar",
+   "label": "RP25 (secondary)",
+   "origin": "stats",
+   "km": 204.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "RP25",
+    "surface": "compacted"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -49.257991997863776,
+     "lon": -68.08077409555824,
+     "mapillary": ""
+    },
+    {
+     "lat": -49.118088944907704,
+     "lon": -68.27582040258703,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.97618081686747,
+     "lon": -68.45195215346924,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.94116605323466,
+     "lon": -68.74270460143191,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.9406527399067,
+     "lon": -69.05408921511761,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.909512814544385,
+     "lon": -69.35855835255018,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.844783667656706,
+     "lon": -69.65355436880238,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.78063548531217,
+     "lon": -69.94833521934316,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w269097792",
+   "country": "ar",
+   "label": "RP9 (secondary)",
+   "origin": "stats",
+   "km": 191.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "RP9",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -50.268166693453765,
+     "lon": -69.45539412556563,
+     "mapillary": ""
+    },
+    {
+     "lat": -50.27594699870542,
+     "lon": -69.75109329941294,
+     "mapillary": ""
+    },
+    {
+     "lat": -50.3007002774196,
+     "lon": -70.03635373162334,
+     "mapillary": ""
+    },
+    {
+     "lat": -50.29493167318548,
+     "lon": -70.32451992986181,
+     "mapillary": ""
+    },
+    {
+     "lat": -50.282901170614885,
+     "lon": -70.61075220765557,
+     "mapillary": ""
+    },
+    {
+     "lat": -50.31125056944956,
+     "lon": -70.89722899810431,
+     "mapillary": ""
+    },
+    {
+     "lat": -50.267060137719845,
+     "lon": -71.11142581818405,
+     "mapillary": ""
+    },
+    {
+     "lat": -50.24611009187835,
+     "lon": -71.38479341423013,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w117805624",
+   "country": "ar",
+   "label": "RP12 (secondary)",
+   "origin": "stats",
+   "km": 178.6,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "RP12",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -47.80027947736146,
+     "lon": -69.01595315255541,
+     "mapillary": ""
+    },
+    {
+     "lat": -47.89799277267967,
+     "lon": -69.16396054497594,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.01690272551983,
+     "lon": -69.33553737442237,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.11387485713228,
+     "lon": -69.53325558367213,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.22055424284002,
+     "lon": -69.70602341859443,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.36954931674254,
+     "lon": -69.64557669731691,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.538586462999014,
+     "lon": -69.68365876818642,
+     "mapillary": ""
+    },
+    {
+     "lat": -48.68949956284426,
+     "lon": -69.72485498038525,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w174644417",
+   "country": "au",
+   "label": "14 (secondary)",
+   "origin": "stats",
+   "km": 370.2,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "14",
+    "surface": "unpaved",
+    "4wd_only": "recommended"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -21.76340276706608,
+     "lon": 135.1882643754844,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.682618284227296,
+     "lon": 135.56271515009897,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.81180633046546,
+     "lon": 135.91817483075275,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.749412197244403,
+     "lon": 136.28346423451745,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.530619459889824,
+     "lon": 136.5943613650235,
+     "mapillary": ""
+    },
+    {
+     "lat": -21.277945022481088,
+     "lon": 136.87261809285314,
+     "mapillary": ""
+    },
+    {
+     "lat": -20.98616281521744,
+     "lon": 137.10191030564684,
+     "mapillary": ""
+    },
+    {
+     "lat": -20.984698327117393,
+     "lon": 137.4911975023425,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w241943842",
+   "country": "au",
+   "label": "Great Central Road (primary)",
+   "origin": "stats",
+   "km": 212.2,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -25.217232110787027,
+     "lon": 128.0241123055156,
+     "mapillary": ""
+    },
+    {
+     "lat": -25.299434666796742,
+     "lon": 127.81799112174029,
+     "mapillary": ""
+    },
+    {
+     "lat": -25.392224425602304,
+     "lon": 127.61106090037211,
+     "mapillary": ""
+    },
+    {
+     "lat": -25.4775765398197,
+     "lon": 127.39987754812655,
+     "mapillary": ""
+    },
+    {
+     "lat": -25.603439205515045,
+     "lon": 127.2213149040511,
+     "mapillary": ""
+    },
+    {
+     "lat": -25.77597661835577,
+     "lon": 127.10887868712857,
+     "mapillary": ""
+    },
+    {
+     "lat": -25.88218020375626,
+     "lon": 126.91132501951606,
+     "mapillary": ""
+    },
+    {
+     "lat": -26.02814876619749,
+     "lon": 126.74772214946981,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w251644518",
+   "country": "bo",
+   "label": "F10 (trunk)",
+   "origin": "stats",
+   "km": 119.4,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "F10",
+    "surface": "ground",
+    "smoothness": "bad"
+   },
+   "mapillary": {
+    "covered": 3,
+    "latest": "2025-10-02",
+    "first": "https://www.mapillary.com/app/?pKey=1549616506022399"
+   },
+   "samples": [
+    {
+     "lat": -15.119122390282026,
+     "lon": -61.481675585748256,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1549616506022399"
+    },
+    {
+     "lat": -15.00470575113521,
+     "lon": -61.495063224880475,
+     "mapillary": "https://www.mapillary.com/app/?pKey=24137494459263343"
+    },
+    {
+     "lat": -14.887992315063244,
+     "lon": -61.49304577041114,
+     "mapillary": "https://www.mapillary.com/app/?pKey=2253692748432870"
+    },
+    {
+     "lat": -14.787132430606174,
+     "lon": -61.521723338857164,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.678067280986564,
+     "lon": -61.511946301478936,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.566895210622752,
+     "lon": -61.49383500421409,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.462612528875772,
+     "lon": -61.53523313725373,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.35973216199429,
+     "lon": -61.58142428034124,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w430199807",
+   "country": "bo",
+   "label": "F9 (trunk)",
+   "origin": "stats",
+   "km": 112.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "F9",
+    "surface": "compacted"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -13.464466971640736,
+     "lon": -64.84378739517305,
+     "mapillary": ""
+    },
+    {
+     "lat": -13.570212988838117,
+     "lon": -64.88160984501317,
+     "mapillary": ""
+    },
+    {
+     "lat": -13.674509941689772,
+     "lon": -64.89783393221953,
+     "mapillary": ""
+    },
+    {
+     "lat": -13.768632705639737,
+     "lon": -64.93562054450031,
+     "mapillary": ""
+    },
+    {
+     "lat": -13.875772728607794,
+     "lon": -64.96395999314831,
+     "mapillary": ""
+    },
+    {
+     "lat": -13.946808998767278,
+     "lon": -65.03639947261519,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.025960017391224,
+     "lon": -65.02941693635232,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.10358983326281,
+     "lon": -64.96663241954552,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w294889974",
+   "country": "br",
+   "label": "BR-030 (secondary)",
+   "origin": "stats",
+   "km": 102.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "BR-030",
+    "surface": "ground"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -15.111973931755934,
+     "lon": -45.359320801290785,
+     "mapillary": ""
+    },
+    {
+     "lat": -15.045121400226803,
+     "lon": -45.27847239643362,
+     "mapillary": ""
+    },
+    {
+     "lat": -15.025815897192325,
+     "lon": -45.18931372098908,
+     "mapillary": ""
+    },
+    {
+     "lat": -15.075948143301078,
+     "lon": -45.10059731903645,
+     "mapillary": ""
+    },
+    {
+     "lat": -15.045854400151248,
+     "lon": -45.000926074809804,
+     "mapillary": ""
+    },
+    {
+     "lat": -15.012656105030269,
+     "lon": -44.90335465242175,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.966409212505972,
+     "lon": -44.815126556241715,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.926106292233268,
+     "lon": -44.73740100792932,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w52054656",
+   "country": "br",
+   "label": "GO-206 (secondary)",
+   "origin": "stats",
+   "km": 90.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "GO-206",
+    "surface": "dirt"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -18.497836274334254,
+     "lon": -52.00103662306907,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.538902888670133,
+     "lon": -51.92626861268385,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.575688899350943,
+     "lon": -51.84475860889349,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.5702348756363,
+     "lon": -51.753804001390606,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.59307615192108,
+     "lon": -51.665977458714,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.641260091574342,
+     "lon": -51.58944133184085,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.670201115909318,
+     "lon": -51.50566060414523,
+     "mapillary": ""
+    },
+    {
+     "lat": -18.72263586328235,
+     "lon": -51.431395938055324,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w905714038",
+   "country": "br",
+   "label": "MT-175 (secondary)",
+   "origin": "stats",
+   "km": 81.5,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "MT-175",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -14.515052404143454,
+     "lon": -58.37655837515397,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.578275417361425,
+     "lon": -58.32358148345481,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.655653239469292,
+     "lon": -58.3348344800029,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.70818230654724,
+     "lon": -58.39474839481517,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.755539183879204,
+     "lon": -58.45857905778346,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.826337290076467,
+     "lon": -58.47714600518442,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.87184261390578,
+     "lon": -58.40754110892594,
+     "mapillary": ""
+    },
+    {
+     "lat": -14.94481855420491,
+     "lon": -58.39044248217071,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w423703704",
+   "country": "cd",
+   "label": "RN3 (trunk)",
+   "origin": "stats",
+   "km": 165.6,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "RN3",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 8,
+    "latest": "2022-01-08",
+    "first": "https://www.mapillary.com/app/?pKey=141489241603960"
+   },
+   "samples": [
+    {
+     "lat": 0.026033691629845722,
+     "lon": 25.5534181791675,
+     "mapillary": "https://www.mapillary.com/app/?pKey=141489241603960"
+    },
+    {
+     "lat": -0.11394396744391998,
+     "lon": 25.616766675189417,
+     "mapillary": "https://www.mapillary.com/app/?pKey=390471223041278"
+    },
+    {
+     "lat": -0.18834299860788767,
+     "lon": 25.745282704873556,
+     "mapillary": "https://www.mapillary.com/app/?pKey=705898597366706"
+    },
+    {
+     "lat": -0.26132828764995863,
+     "lon": 25.875466456377932,
+     "mapillary": "https://www.mapillary.com/app/?pKey=153602700523889"
+    },
+    {
+     "lat": -0.37036319314113464,
+     "lon": 25.967700600311062,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1088216831772633"
+    },
+    {
+     "lat": -0.4320556874906845,
+     "lon": 26.090674360819342,
+     "mapillary": "https://www.mapillary.com/app/?pKey=558965008959302"
+    },
+    {
+     "lat": -0.43435874772554034,
+     "lon": 26.23147253373307,
+     "mapillary": "https://www.mapillary.com/app/?pKey=729559771702438"
+    },
+    {
+     "lat": -0.5197024282276883,
+     "lon": 26.362464518672066,
+     "mapillary": "https://www.mapillary.com/app/?pKey=562432638934202"
+    }
+   ]
+  },
+  {
+   "id": "w23556281",
+   "country": "cd",
+   "label": "RN6 (primary)",
+   "origin": "stats",
+   "km": 115.6,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "ref": "RN6",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 8,
+    "latest": "2019-05-29",
+    "first": "https://www.mapillary.com/app/?pKey=5580488192024157"
+   },
+   "samples": [
+    {
+     "lat": 2.464755946585092,
+     "lon": 20.120989733625542,
+     "mapillary": "https://www.mapillary.com/app/?pKey=5580488192024157"
+    },
+    {
+     "lat": 2.5475000941868635,
+     "lon": 20.04365889651607,
+     "mapillary": "https://www.mapillary.com/app/?pKey=2979610562328598"
+    },
+    {
+     "lat": 2.6449322641378092,
+     "lon": 20.003528286529605,
+     "mapillary": "https://www.mapillary.com/app/?pKey=477922760142000"
+    },
+    {
+     "lat": 2.751470203385028,
+     "lon": 19.993588275797443,
+     "mapillary": "https://www.mapillary.com/app/?pKey=956366301786146"
+    },
+    {
+     "lat": 2.8532403530694497,
+     "lon": 19.946471580671584,
+     "mapillary": "https://www.mapillary.com/app/?pKey=963459804483780"
+    },
+    {
+     "lat": 2.956838661209881,
+     "lon": 19.90073049893694,
+     "mapillary": "https://www.mapillary.com/app/?pKey=918014502323956"
+    },
+    {
+     "lat": 3.070310288545595,
+     "lon": 19.882658241744537,
+     "mapillary": "https://www.mapillary.com/app/?pKey=134059095431810"
+    },
+    {
+     "lat": 3.1508245847373857,
+     "lon": 19.81798512569003,
+     "mapillary": "https://www.mapillary.com/app/?pKey=134444292009742"
+    }
+   ]
+  },
+  {
+   "id": "w33673364",
+   "country": "cd",
+   "label": "RN5 (trunk)",
+   "origin": "stats",
+   "km": 97,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "RN5",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 8,
+    "latest": "2019-07-01",
+    "first": "https://www.mapillary.com/app/?pKey=1600817846781841"
+   },
+   "samples": [
+    {
+     "lat": -6.368327019950951,
+     "lon": 29.038464477541876,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1600817846781841"
+    },
+    {
+     "lat": -6.306412759762768,
+     "lon": 29.0146644712261,
+     "mapillary": "https://www.mapillary.com/app/?pKey=2886068118304907"
+    },
+    {
+     "lat": -6.273101823039055,
+     "lon": 28.96946382539803,
+     "mapillary": "https://www.mapillary.com/app/?pKey=828544534535247"
+    },
+    {
+     "lat": -6.2275000520670485,
+     "lon": 28.89953059613374,
+     "mapillary": "https://www.mapillary.com/app/?pKey=896253411230303"
+    },
+    {
+     "lat": -6.1438635140483,
+     "lon": 28.888669885318915,
+     "mapillary": "https://www.mapillary.com/app/?pKey=489497999052130"
+    },
+    {
+     "lat": -6.065136968123554,
+     "lon": 28.901709017941613,
+     "mapillary": "https://www.mapillary.com/app/?pKey=217767259879489"
+    },
+    {
+     "lat": -6.016487133057984,
+     "lon": 28.951688898273563,
+     "mapillary": "https://www.mapillary.com/app/?pKey=488158538907010"
+    },
+    {
+     "lat": -5.960687818695822,
+     "lon": 28.98470189870331,
+     "mapillary": "https://www.mapillary.com/app/?pKey=840660363531162"
+    }
+   ]
+  },
+  {
+   "id": "w322119511",
+   "country": "cg",
+   "label": "RN 3 (trunk)",
+   "origin": "stats",
+   "km": 52.5,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "RN 3",
+    "surface": "unpaved",
+    "smoothness": "bad"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -3.508637053205332,
+     "lon": 12.344827300928763,
+     "mapillary": ""
+    },
+    {
+     "lat": -3.4731083302137424,
+     "lon": 12.306703456054597,
+     "mapillary": ""
+    },
+    {
+     "lat": -3.440293188758689,
+     "lon": 12.265762092108924,
+     "mapillary": ""
+    },
+    {
+     "lat": -3.4079797790161357,
+     "lon": 12.224387666374083,
+     "mapillary": ""
+    },
+    {
+     "lat": -3.3731761841042522,
+     "lon": 12.185964829304725,
+     "mapillary": ""
+    },
+    {
+     "lat": -3.33089937735192,
+     "lon": 12.157831320661689,
+     "mapillary": ""
+    },
+    {
+     "lat": -3.2831479611493553,
+     "lon": 12.151024411359124,
+     "mapillary": ""
+    },
+    {
+     "lat": -3.237327814157809,
+     "lon": 12.12794852808453,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w324325183",
+   "country": "cg",
+   "label": "P30 (secondary)",
+   "origin": "stats",
+   "km": 48.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "P30",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -1.6404261459428975,
+     "lon": 15.552504177677061,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.6576097512584935,
+     "lon": 15.589273995658834,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.6642128720653444,
+     "lon": 15.634657181610224,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.692224175044177,
+     "lon": 15.673719361702437,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.7064647398232586,
+     "lon": 15.716017953598579,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.7463577611328094,
+     "lon": 15.736333609748236,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.7739613347137222,
+     "lon": 15.775840635969622,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.7993767644629877,
+     "lon": 15.812522146660683,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w28293889",
+   "country": "co",
+   "label": "40 (trunk)",
+   "origin": "stats",
+   "km": 76.8,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "40",
+    "surface": "ground"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 6.139157134577269,
+     "lon": -68.24996545836359,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.1077867650930875,
+     "lon": -68.31888688701495,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.093143726651348,
+     "lon": -68.39407766273338,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.129935555388635,
+     "lon": -68.45523483608784,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.147240633843723,
+     "lon": -68.51768742619286,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.096528340746118,
+     "lon": -68.57441566618448,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.063233866423794,
+     "lon": -68.63705428806611,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.065429863648854,
+     "lon": -68.70591154122548,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w166673145",
+   "country": "co",
+   "label": "40 (trunk)",
+   "origin": "stats",
+   "km": 71.2,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "40",
+    "surface": "ground"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 6.146052480775131,
+     "lon": -68.91365842817525,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.1261742162193125,
+     "lon": -68.98028221205746,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.120730507471383,
+     "lon": -69.04919122220983,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.0948934804440364,
+     "lon": -69.11583924980005,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.05966128884224,
+     "lon": -69.17752470520472,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.045166744085378,
+     "lon": -69.2444187124547,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.0280235393251695,
+     "lon": -69.3122237838859,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.0117660505408175,
+     "lon": -69.37937385551633,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w123898329",
+   "country": "co",
+   "label": "40 (trunk)",
+   "origin": "stats",
+   "km": 63.2,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "40",
+    "surface": "ground",
+    "smoothness": "horrible"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 4.904582146957036,
+     "lon": -71.00600590973613,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.955280951379781,
+     "lon": -70.96880781192344,
+     "mapillary": ""
+    },
+    {
+     "lat": 4.995369645383893,
+     "lon": -70.92093668413143,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.021001902203311,
+     "lon": -70.8631296200406,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.045712078053437,
+     "lon": -70.80483672786778,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.092038220513744,
+     "lon": -70.77020834334051,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.137340805646146,
+     "lon": -70.72648984046245,
+     "mapillary": ""
+    },
+    {
+     "lat": 5.176276435445721,
+     "lon": -70.67760351254604,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w118110197",
+   "country": "cu",
+   "label": "6-483 (secondary)",
+   "origin": "stats",
+   "km": 10.6,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "6-483",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 20.447142611389612,
+     "lon": -75.43270708301169,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.441358224403142,
+     "lon": -75.42356200012384,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.438685011873712,
+     "lon": -75.41325788970298,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.440176637479368,
+     "lon": -75.40399696355128,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.44626923280644,
+     "lon": -75.39807168912868,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.452055479376224,
+     "lon": -75.39295717646739,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.458080605021717,
+     "lon": -75.38573510960468,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.455840679921366,
+     "lon": -75.37645984320204,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w204029305",
+   "country": "cu",
+   "label": "CN;6-123 (secondary)",
+   "origin": "stats",
+   "km": 7.1,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "CN;6-123",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 20.485694855300896,
+     "lon": -74.61865514523986,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.486883232874927,
+     "lon": -74.6250389536252,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.48311745674522,
+     "lon": -74.63092402420557,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.487510276746526,
+     "lon": -74.63609734767422,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.49338062648713,
+     "lon": -74.63692429234823,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.497726003990724,
+     "lon": -74.63237381969071,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.50355514715341,
+     "lon": -74.63538580109231,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.50667978957563,
+     "lon": -74.64192949982152,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w516261335",
+   "country": "ga",
+   "label": "RN7 (trunk)",
+   "origin": "stats",
+   "km": 116.1,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "RN7",
+    "surface": "compacted",
+    "smoothness": "intermediate"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 0.3369611084351372,
+     "lon": 13.203952161255538,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.2942317840308016,
+     "lon": 13.27941830104135,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.26908811620990664,
+     "lon": 13.371885424744416,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.26826947460271033,
+     "lon": 13.457221961446699,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.22329860582188388,
+     "lon": 13.509636277164319,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.18469009279448342,
+     "lon": 13.597394086007622,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.12961886972029707,
+     "lon": 13.677386475879121,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.06708003262792629,
+     "lon": 13.664626432005056,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w1502210462",
+   "country": "ga",
+   "label": "RN6 (trunk)",
+   "origin": "stats",
+   "km": 79.2,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "RN6",
+    "surface": "compacted",
+    "smoothness": "good"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -1.9086161305093488,
+     "lon": 11.838002054339773,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.9340648486203107,
+     "lon": 11.785168626107918,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.963958947474728,
+     "lon": 11.738456591379702,
+     "mapillary": ""
+    },
+    {
+     "lat": -1.993976432460919,
+     "lon": 11.691342778301937,
+     "mapillary": ""
+    },
+    {
+     "lat": -2.0337285726112033,
+     "lon": 11.638892729984981,
+     "mapillary": ""
+    },
+    {
+     "lat": -2.0774577499825964,
+     "lon": 11.601435479648273,
+     "mapillary": ""
+    },
+    {
+     "lat": -2.140240139120013,
+     "lon": 11.581603373960522,
+     "mapillary": ""
+    },
+    {
+     "lat": -2.1946367108594482,
+     "lon": 11.558110673382657,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w48056142",
+   "country": "gm",
+   "label": "(secondary)",
+   "origin": "stats",
+   "km": 38.3,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "compacted"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 13.299568769553359,
+     "lon": -15.868811178856197,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.321596500110942,
+     "lon": -15.899837368151065,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.344227636680328,
+     "lon": -15.930717920698777,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.342005363439903,
+     "lon": -15.969851230258774,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.332205049657247,
+     "lon": -16.006542781206434,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.346287892181234,
+     "lon": -16.043059068664697,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.35182109492284,
+     "lon": -16.079835205662775,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.344273216504702,
+     "lon": -16.116125257299753,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w308693362",
+   "country": "id",
+   "label": "Jalan Poros RAPP (secondary)",
+   "origin": "stats",
+   "km": 58.5,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "dirt"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 0.08302337766030196,
+     "lon": 101.8261879930942,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.055859062966363546,
+     "lon": 101.78605321508454,
+     "mapillary": ""
+    },
+    {
+     "lat": 0.0012661757889862388,
+     "lon": 101.80653384640017,
+     "mapillary": ""
+    },
+    {
+     "lat": -0.05047663357469536,
+     "lon": 101.79308029511573,
+     "mapillary": ""
+    },
+    {
+     "lat": -0.09407512001132579,
+     "lon": 101.82151956618057,
+     "mapillary": ""
+    },
+    {
+     "lat": -0.11582993707797831,
+     "lon": 101.86651964917506,
+     "mapillary": ""
+    },
+    {
+     "lat": -0.1446443862735955,
+     "lon": 101.89361943547367,
+     "mapillary": ""
+    },
+    {
+     "lat": -0.152188635905686,
+     "lon": 101.93743995193768,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w1061693681",
+   "country": "id",
+   "label": "Jalan Poros Sesua - Long Loreh - Pujungan - Long Nawang (secondary)",
+   "origin": "stats",
+   "km": 52.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 3.0206350410814595,
+     "lon": 116.12150997033588,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.0467289263280977,
+     "lon": 116.10103340937509,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.0515391196487545,
+     "lon": 116.05882855357804,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.072097743017929,
+     "lon": 116.02147398632164,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.047516086626265,
+     "lon": 115.98751212508274,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.055544001828805,
+     "lon": 115.94354649403915,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.032000867543053,
+     "lon": 115.9151474961269,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.9899996431254143,
+     "lon": 115.89433536560968,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w614638623",
+   "country": "id",
+   "label": "Jalan Poros Sesua - Long Loreh - Pujungan - Long Nawang (secondary)",
+   "origin": "stats",
+   "km": 45.5,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 2.8128475399772603,
+     "lon": 115.85192562314921,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.789106701772923,
+     "lon": 115.82630451932596,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.7653430030495483,
+     "lon": 115.80520350992062,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.7392472804403,
+     "lon": 115.7839593272021,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.706745569502249,
+     "lon": 115.78966216501708,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.690459787433312,
+     "lon": 115.81228574258658,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.6603491674574227,
+     "lon": 115.8098636958057,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.626019360433476,
+     "lon": 115.80615234858726,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w22832189",
+   "country": "in",
+   "label": "SH215 (primary)",
+   "origin": "stats",
+   "km": 43.8,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "ref": "SH215",
+    "surface": "asphalt, ground"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 12.528401126827836,
+     "lon": 79.0946541074206,
+     "mapillary": ""
+    },
+    {
+     "lat": 12.537450185504149,
+     "lon": 79.05547572439195,
+     "mapillary": ""
+    },
+    {
+     "lat": 12.555886264118264,
+     "lon": 79.02138561219083,
+     "mapillary": ""
+    },
+    {
+     "lat": 12.567133275018966,
+     "lon": 79.01338004010464,
+     "mapillary": ""
+    },
+    {
+     "lat": 12.57578457915405,
+     "lon": 78.99430096231178,
+     "mapillary": ""
+    },
+    {
+     "lat": 12.552159545020505,
+     "lon": 78.96333296690068,
+     "mapillary": ""
+    },
+    {
+     "lat": 12.550720549858966,
+     "lon": 78.92992103013681,
+     "mapillary": ""
+    },
+    {
+     "lat": 12.573067845546577,
+     "lon": 78.89615252110023,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w364239000",
+   "country": "in",
+   "label": "(secondary)",
+   "origin": "stats",
+   "km": 30.6,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 25.19334630624797,
+     "lon": 94.36236309959752,
+     "mapillary": ""
+    },
+    {
+     "lat": 25.21791918790892,
+     "lon": 94.37102242308275,
+     "mapillary": ""
+    },
+    {
+     "lat": 25.225739405182864,
+     "lon": 94.39000792318143,
+     "mapillary": ""
+    },
+    {
+     "lat": 25.246427431553272,
+     "lon": 94.39762515381148,
+     "mapillary": ""
+    },
+    {
+     "lat": 25.264887331326086,
+     "lon": 94.39651111748425,
+     "mapillary": ""
+    },
+    {
+     "lat": 25.29146162788791,
+     "lon": 94.39517372677959,
+     "mapillary": ""
+    },
+    {
+     "lat": 25.3172552358622,
+     "lon": 94.4039282755845,
+     "mapillary": ""
+    },
+    {
+     "lat": 25.336684212000307,
+     "lon": 94.40231367636666,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w168286862",
+   "country": "in",
+   "label": "NH2 (trunk)",
+   "origin": "stats",
+   "km": 27.4,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "NH2",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 22.31690712045842,
+     "lon": 93.0205838194305,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.31888567251903,
+     "lon": 93.02886760128045,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.33372878664029,
+     "lon": 93.03618031814334,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.345160170733475,
+     "lon": 93.04488731715924,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.365130725213188,
+     "lon": 93.04214109776812,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.379377310648877,
+     "lon": 93.02940423696029,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.39650557310043,
+     "lon": 93.03109338471322,
+     "mapillary": ""
+    },
+    {
+     "lat": 22.397933726027926,
+     "lon": 93.01374825218849,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w680241875",
+   "country": "ke",
+   "label": "A13 (trunk)",
+   "origin": "stats",
+   "km": 257.5,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "A13",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 2.6582091416671347,
+     "lon": 40.89073784989856,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.899415259498817,
+     "lon": 40.937701643032455,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.146647945143568,
+     "lon": 40.874073426844824,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.3929432973095244,
+     "lon": 40.90957221763164,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.612128152914952,
+     "lon": 40.99906386316617,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.8068474823271696,
+     "lon": 41.15690639997507,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.9214045676697196,
+     "lon": 41.32359448878146,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.876650816833389,
+     "lon": 41.574249403657994,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w279571921",
+   "country": "ke",
+   "label": "E847 (secondary)",
+   "origin": "stats",
+   "km": 139.2,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "E847",
+    "surface": "compacted"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 3.8262872426906185,
+     "lon": 41.72460104707296,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.72940883256044,
+     "lon": 41.62927836602337,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.616924836628299,
+     "lon": 41.54898609577601,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.5036763767470585,
+     "lon": 41.46913608191091,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.376464314348458,
+     "lon": 41.413375521694874,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.272453724496011,
+     "lon": 41.32279530502894,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.172685470226071,
+     "lon": 41.22574465776962,
+     "mapillary": ""
+    },
+    {
+     "lat": 3.097331940432022,
+     "lon": 41.11116643542186,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w703051364",
+   "country": "ke",
+   "label": "A13 (trunk)",
+   "origin": "stats",
+   "km": 123.4,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "trunk",
+    "ref": "A13",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 1.9154089308406335,
+     "lon": 40.10906853883022,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.036197724515183,
+     "lon": 40.12311338627969,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.1594103133958407,
+     "lon": 40.11798203576107,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.2357966152802855,
+     "lon": 40.18689504866069,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.2695795896999433,
+     "lon": 40.30317695276733,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.325894329600418,
+     "lon": 40.40116506822147,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.3508117202566416,
+     "lon": 40.51418946476267,
+     "mapillary": ""
+    },
+    {
+     "lat": 2.4202236530798196,
+     "lon": 40.61312952762604,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w377931537",
+   "country": "la",
+   "label": "4502 (primary)",
+   "origin": "stats",
+   "km": 45.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "ref": "4502",
+    "surface": "unpaved",
+    "tracktype": "grade2"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 18.107764687699635,
+     "lon": 101.71158638622686,
+     "mapillary": ""
+    },
+    {
+     "lat": 18.15220999888049,
+     "lon": 101.72009492079515,
+     "mapillary": ""
+    },
+    {
+     "lat": 18.196406749527128,
+     "lon": 101.71924249607284,
+     "mapillary": ""
+    },
+    {
+     "lat": 18.23845990726523,
+     "lon": 101.72699758255129,
+     "mapillary": ""
+    },
+    {
+     "lat": 18.28294611906643,
+     "lon": 101.73242823407,
+     "mapillary": ""
+    },
+    {
+     "lat": 18.32222981804025,
+     "lon": 101.75165440832896,
+     "mapillary": ""
+    },
+    {
+     "lat": 18.36542026466327,
+     "lon": 101.76427777190749,
+     "mapillary": ""
+    },
+    {
+     "lat": 18.406590027015582,
+     "lon": 101.77293497001256,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w58691032",
+   "country": "mg",
+   "label": "N 10 (secondary)",
+   "origin": "stats",
+   "km": 60.6,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "N 10",
+    "surface": "unpaved",
+    "smoothness": "horrible"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -24.29389301907089,
+     "lon": 44.5049641413595,
+     "mapillary": ""
+    },
+    {
+     "lat": -24.238091622419514,
+     "lon": 44.48642347962924,
+     "mapillary": ""
+    },
+    {
+     "lat": -24.187548940186147,
+     "lon": 44.45157744155545,
+     "mapillary": ""
+    },
+    {
+     "lat": -24.12933381160519,
+     "lon": 44.43470245089326,
+     "mapillary": ""
+    },
+    {
+     "lat": -24.074711147342995,
+     "lon": 44.40719777384127,
+     "mapillary": ""
+    },
+    {
+     "lat": -24.02487307275396,
+     "lon": 44.37280208993847,
+     "mapillary": ""
+    },
+    {
+     "lat": -23.97061524649858,
+     "lon": 44.344662985074976,
+     "mapillary": ""
+    },
+    {
+     "lat": -23.91610967788719,
+     "lon": 44.332308877246014,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w275088407",
+   "country": "mg",
+   "label": "N 1b (secondary)",
+   "origin": "stats",
+   "km": 56.3,
+   "level": "offroad",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "N 1b",
+    "surface": "unpaved",
+    "smoothness": "horrible"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -18.003609717257635,
+     "lon": 44.08734041226563,
+     "mapillary": ""
+    },
+    {
+     "lat": -17.979778977488223,
+     "lon": 44.13171887146667,
+     "mapillary": ""
+    },
+    {
+     "lat": -17.965235627247107,
+     "lon": 44.180023790440096,
+     "mapillary": ""
+    },
+    {
+     "lat": -17.976013993286713,
+     "lon": 44.218303360236106,
+     "mapillary": ""
+    },
+    {
+     "lat": -17.963656662403125,
+     "lon": 44.27043590900699,
+     "mapillary": ""
+    },
+    {
+     "lat": -17.95526510545436,
+     "lon": 44.31850898771485,
+     "mapillary": ""
+    },
+    {
+     "lat": -17.964313273841626,
+     "lon": 44.35921131461245,
+     "mapillary": ""
+    },
+    {
+     "lat": -17.964480266746257,
+     "lon": 44.41224223898162,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w189197582",
+   "country": "mg",
+   "label": "N 10 (secondary)",
+   "origin": "stats",
+   "km": 36.3,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "N 10",
+    "surface": "unpaved",
+    "smoothness": "bad"
+   },
+   "mapillary": {
+    "covered": 8,
+    "latest": "2026-10-23",
+    "first": "https://www.mapillary.com/app/?pKey=2844632625938159"
+   },
+   "samples": [
+    {
+     "lat": -25.2732797057631,
+     "lon": 45.58674168563074,
+     "mapillary": "https://www.mapillary.com/app/?pKey=2844632625938159"
+    },
+    {
+     "lat": -25.267658999650894,
+     "lon": 45.62623250411927,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1770281834265687"
+    },
+    {
+     "lat": -25.257990027749365,
+     "lon": 45.66470248059524,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1638030191119978"
+    },
+    {
+     "lat": -25.256766893890376,
+     "lon": 45.70403207453072,
+     "mapillary": "https://www.mapillary.com/app/?pKey=2630451674064718"
+    },
+    {
+     "lat": -25.253970094378577,
+     "lon": 45.7439262372126,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1426308522378841"
+    },
+    {
+     "lat": -25.242422146608902,
+     "lon": 45.781858662734464,
+     "mapillary": "https://www.mapillary.com/app/?pKey=2010742922952981"
+    },
+    {
+     "lat": -25.222074106014855,
+     "lon": 45.814758284176726,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1434076951467612"
+    },
+    {
+     "lat": -25.215748903507375,
+     "lon": 45.851842983908966,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1645543160278330"
+    }
+   ]
+  },
+  {
+   "id": "w304271768",
+   "country": "np",
+   "label": "NH09 (secondary)",
+   "origin": "stats",
+   "km": 27.3,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "NH09",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 27.998915987529365,
+     "lon": 82.64397195111788,
+     "mapillary": ""
+    },
+    {
+     "lat": 27.997612254889162,
+     "lon": 82.67156628212616,
+     "mapillary": ""
+    },
+    {
+     "lat": 28.0004240819257,
+     "lon": 82.6929540339311,
+     "mapillary": ""
+    },
+    {
+     "lat": 27.99699663864402,
+     "lon": 82.71972779508106,
+     "mapillary": ""
+    },
+    {
+     "lat": 28.009271023255817,
+     "lon": 82.73493181101125,
+     "mapillary": ""
+    },
+    {
+     "lat": 28.017097744192146,
+     "lon": 82.75952842809966,
+     "mapillary": ""
+    },
+    {
+     "lat": 28.029252491329707,
+     "lon": 82.77504951394666,
+     "mapillary": ""
+    },
+    {
+     "lat": 28.033172765293,
+     "lon": 82.77566137947885,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w257116613",
+   "country": "np",
+   "label": "F151 (secondary)",
+   "origin": "stats",
+   "km": 20.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "F151",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 29.015701170901185,
+     "lon": 80.31516058503252,
+     "mapillary": ""
+    },
+    {
+     "lat": 29.02660098260694,
+     "lon": 80.31784499520083,
+     "mapillary": ""
+    },
+    {
+     "lat": 29.029801086474567,
+     "lon": 80.32275732375611,
+     "mapillary": ""
+    },
+    {
+     "lat": 29.03998831504153,
+     "lon": 80.32406825758082,
+     "mapillary": ""
+    },
+    {
+     "lat": 29.043060583658097,
+     "lon": 80.32484738592755,
+     "mapillary": ""
+    },
+    {
+     "lat": 29.048392469397193,
+     "lon": 80.32801009747492,
+     "mapillary": ""
+    },
+    {
+     "lat": 29.056396467880404,
+     "lon": 80.33741727414771,
+     "mapillary": ""
+    },
+    {
+     "lat": 29.062354946665362,
+     "lon": 80.33808436605861,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w321795044",
+   "country": "pe",
+   "label": "PI-105 (primary)",
+   "origin": "stats",
+   "km": 61.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "ref": "PI-105",
+    "surface": "compacted"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -4.549666525783209,
+     "lon": -80.88347710301838,
+     "mapillary": ""
+    },
+    {
+     "lat": -4.5223983570447475,
+     "lon": -80.92368089379188,
+     "mapillary": ""
+    },
+    {
+     "lat": -4.474768366186738,
+     "lon": -80.95608828802895,
+     "mapillary": ""
+    },
+    {
+     "lat": -4.4272469716096055,
+     "lon": -80.96093917503768,
+     "mapillary": ""
+    },
+    {
+     "lat": -4.382142546314806,
+     "lon": -80.94327841255307,
+     "mapillary": ""
+    },
+    {
+     "lat": -4.336791809533277,
+     "lon": -80.93061021982214,
+     "mapillary": ""
+    },
+    {
+     "lat": -4.281578292981186,
+     "lon": -80.91954737088018,
+     "mapillary": ""
+    },
+    {
+     "lat": -4.229710911054565,
+     "lon": -80.893939844326,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w354613167",
+   "country": "pe",
+   "label": "LM-812 (secondary)",
+   "origin": "stats",
+   "km": 59.1,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "LM-812",
+    "surface": "ground"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -12.469402204955397,
+     "lon": -76.67282334311729,
+     "mapillary": ""
+    },
+    {
+     "lat": -12.446939005907174,
+     "lon": -76.61925046322274,
+     "mapillary": ""
+    },
+    {
+     "lat": -12.419458397584544,
+     "lon": -76.57742703727158,
+     "mapillary": ""
+    },
+    {
+     "lat": -12.377375160809251,
+     "lon": -76.54636841452992,
+     "mapillary": ""
+    },
+    {
+     "lat": -12.329535397031592,
+     "lon": -76.51777641959931,
+     "mapillary": ""
+    },
+    {
+     "lat": -12.281720203621983,
+     "lon": -76.49639713965414,
+     "mapillary": ""
+    },
+    {
+     "lat": -12.246335246545959,
+     "lon": -76.49834881988617,
+     "mapillary": ""
+    },
+    {
+     "lat": -12.230346329691557,
+     "lon": -76.50691398294661,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w304005891",
+   "country": "pe",
+   "label": "PE-5SA (primary)",
+   "origin": "stats",
+   "km": 53.3,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "ref": "PE-5SA",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -11.088397724765557,
+     "lon": -74.28487284150565,
+     "mapillary": ""
+    },
+    {
+     "lat": -11.050749135239597,
+     "lon": -74.3062320667187,
+     "mapillary": ""
+    },
+    {
+     "lat": -11.014665627497905,
+     "lon": -74.29685882179997,
+     "mapillary": ""
+    },
+    {
+     "lat": -10.982042690295229,
+     "lon": -74.2746759576037,
+     "mapillary": ""
+    },
+    {
+     "lat": -10.965189446576069,
+     "lon": -74.2400223304671,
+     "mapillary": ""
+    },
+    {
+     "lat": -10.931804058694993,
+     "lon": -74.22373120398846,
+     "mapillary": ""
+    },
+    {
+     "lat": -10.92378350757919,
+     "lon": -74.19162124724632,
+     "mapillary": ""
+    },
+    {
+     "lat": -10.899552718664989,
+     "lon": -74.16590746102833,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w530898066",
+   "country": "pg",
+   "label": "(secondary)",
+   "origin": "stats",
+   "km": 54.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -6.557701051680717,
+     "lon": 143.30592752945563,
+     "mapillary": ""
+    },
+    {
+     "lat": -6.589351421888289,
+     "lon": 143.34809098574866,
+     "mapillary": ""
+    },
+    {
+     "lat": -6.62414081211636,
+     "lon": 143.37941524788226,
+     "mapillary": ""
+    },
+    {
+     "lat": -6.659846966667205,
+     "lon": 143.4163899057863,
+     "mapillary": ""
+    },
+    {
+     "lat": -6.692967007911911,
+     "lon": 143.45788399037932,
+     "mapillary": ""
+    },
+    {
+     "lat": -6.719131949768716,
+     "lon": 143.50523803684416,
+     "mapillary": ""
+    },
+    {
+     "lat": -6.734449769464078,
+     "lon": 143.55540127132457,
+     "mapillary": ""
+    },
+    {
+     "lat": -6.772990795804694,
+     "lon": 143.57753101352608,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w212203749",
+   "country": "ph",
+   "label": "(secondary)",
+   "origin": "stats",
+   "km": 34.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 6.513603396726532,
+     "lon": 124.335735194853,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.536141800373256,
+     "lon": 124.34697975059487,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.561064315123222,
+     "lon": 124.34642006224286,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.572949571650988,
+     "lon": 124.33451275455346,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.587145353846431,
+     "lon": 124.32371079821503,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.607029137508653,
+     "lon": 124.30987145794016,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.633472142003178,
+     "lon": 124.31617971756692,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.650295516763674,
+     "lon": 124.30509900817854,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w872841825",
+   "country": "ph",
+   "label": "Esperanza - Lebak Road (secondary)",
+   "origin": "stats",
+   "km": 26,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 6.709906698640645,
+     "lon": 124.3621404768556,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.708409826427844,
+     "lon": 124.37304313917085,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.704680993207465,
+     "lon": 124.38612979084017,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.714366141244097,
+     "lon": 124.38876696956832,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.721738646845418,
+     "lon": 124.41031610386469,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.7055723606932265,
+     "lon": 124.41365865572921,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.710816744139832,
+     "lon": 124.42793015284974,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.712730640561858,
+     "lon": 124.44363280743467,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w496115651",
+   "country": "ph",
+   "label": "(secondary)",
+   "origin": "stats",
+   "km": 20.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 6.610101339816194,
+     "lon": 124.12228901369646,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.617435931290745,
+     "lon": 124.12698364242402,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.624742460395195,
+     "lon": 124.1384480910836,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.626197058686598,
+     "lon": 124.14359888347313,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.629486421197527,
+     "lon": 124.15636027176728,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.63108890865619,
+     "lon": 124.16540271921265,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.632430247622865,
+     "lon": 124.18406995604623,
+     "mapillary": ""
+    },
+    {
+     "lat": 6.63123941412015,
+     "lon": 124.20092022293932,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w374492434",
+   "country": "sn",
+   "label": "R072 (secondary)",
+   "origin": "stats",
+   "km": 79.4,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "R072",
+    "surface": "compacted"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 13.331938627502415,
+     "lon": -15.470366773881645,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.338054804502912,
+     "lon": -15.39873448196423,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.328040424349801,
+     "lon": -15.332587647710506,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.310120858936502,
+     "lon": -15.275250342404622,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.274498702374865,
+     "lon": -15.233958103832917,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.229170589777107,
+     "lon": -15.170944661943938,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.183640948002223,
+     "lon": -15.10976748399648,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.165916518493786,
+     "lon": -15.043085566714087,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w26966658",
+   "country": "sn",
+   "label": "R074 (secondary)",
+   "origin": "stats",
+   "km": 65.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "R074",
+    "surface": "compacted",
+    "smoothness": "bad",
+    "tracktype": "grade2"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 13.257206317736836,
+     "lon": -14.461172129803934,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.237211951834249,
+     "lon": -14.43325036061588,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.20696627562674,
+     "lon": -14.377171058848285,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.157009018965626,
+     "lon": -14.336400518816271,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.096136990687599,
+     "lon": -14.351827107437927,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.075674460180013,
+     "lon": -14.302204296276523,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.091319632993008,
+     "lon": -14.238895580070695,
+     "mapillary": ""
+    },
+    {
+     "lat": 13.115736660568325,
+     "lon": -14.1813251671424,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w1027250789",
+   "country": "th",
+   "label": "1334 (secondary)",
+   "origin": "stats",
+   "km": 1.2,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "1334",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": 20.342002956023347,
+     "lon": 99.7306294525181,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.343031525203635,
+     "lon": 99.73109275398846,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.34358066386585,
+     "lon": 99.73164270712431,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.344285497947922,
+     "lon": 99.73269441586484,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.344700393524242,
+     "lon": 99.73391584087443,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.345136277425254,
+     "lon": 99.73485577317122,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.345051176016867,
+     "lon": 99.73577116048894,
+     "mapillary": ""
+    },
+    {
+     "lat": 20.34571349738554,
+     "lon": 99.73647438929558,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w40678547",
+   "country": "tl",
+   "label": "Estrada Díli - Manatuto (primary)",
+   "origin": "stats",
+   "km": 13.6,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "surface": "gravel"
+   },
+   "mapillary": {
+    "covered": 8,
+    "latest": "2025-08-24",
+    "first": "https://www.mapillary.com/app/?pKey=792959390320818"
+   },
+   "samples": [
+    {
+     "lat": -8.483444809093093,
+     "lon": 125.94617936057647,
+     "mapillary": "https://www.mapillary.com/app/?pKey=792959390320818"
+    },
+    {
+     "lat": -8.486824320981523,
+     "lon": 125.95286774950868,
+     "mapillary": "https://www.mapillary.com/app/?pKey=715072318289815"
+    },
+    {
+     "lat": -8.493908498528512,
+     "lon": 125.95521773853493,
+     "mapillary": "https://www.mapillary.com/app/?pKey=829012333039987"
+    },
+    {
+     "lat": -8.492629952067611,
+     "lon": 125.9646402960602,
+     "mapillary": "https://www.mapillary.com/app/?pKey=794341250146549"
+    },
+    {
+     "lat": -8.48881224092807,
+     "lon": 125.97340271153394,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1380973423599334"
+    },
+    {
+     "lat": -8.487838665504682,
+     "lon": 125.98484804548093,
+     "mapillary": "https://www.mapillary.com/app/?pKey=24958783063775946"
+    },
+    {
+     "lat": -8.497510153005303,
+     "lon": 125.99351712480936,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1673676796927515"
+    },
+    {
+     "lat": -8.50772379652212,
+     "lon": 125.99629095886509,
+     "mapillary": "https://www.mapillary.com/app/?pKey=1544911800016380"
+    }
+   ]
+  },
+  {
+   "id": "w58647077",
+   "country": "za",
+   "label": "R358 (secondary)",
+   "origin": "stats",
+   "km": 184.7,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "R358",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -30.370527036635323,
+     "lon": 18.81257605873528,
+     "mapillary": ""
+    },
+    {
+     "lat": -30.212721558927335,
+     "lon": 18.92342480314954,
+     "mapillary": ""
+    },
+    {
+     "lat": -30.05483294671236,
+     "lon": 19.03393594498815,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.896800765396286,
+     "lon": 19.143997720677945,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.75432681549455,
+     "lon": 19.278845498807254,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.598891541360157,
+     "lon": 19.3884457385205,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.43367663960847,
+     "lon": 19.48165555171664,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.280929823452823,
+     "lon": 19.504635776410215,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w32649598",
+   "country": "za",
+   "label": "R355 (secondary)",
+   "origin": "stats",
+   "km": 141.9,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "secondary",
+    "ref": "R355",
+    "surface": "unpaved"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -29.712171007339254,
+     "lon": 18.074392765489605,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.766799347475157,
+     "lon": 18.217276404554056,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.839299177347673,
+     "lon": 18.34247442187778,
+     "mapillary": ""
+    },
+    {
+     "lat": -29.94549850811934,
+     "lon": 18.425642480576816,
+     "mapillary": ""
+    },
+    {
+     "lat": -30.04785156006735,
+     "lon": 18.52473579610455,
+     "mapillary": ""
+    },
+    {
+     "lat": -30.18596402556927,
+     "lon": 18.493684083529384,
+     "mapillary": ""
+    },
+    {
+     "lat": -30.321592269433175,
+     "lon": 18.50370562658699,
+     "mapillary": ""
+    },
+    {
+     "lat": -30.432718652806855,
+     "lon": 18.601543278891384,
+     "mapillary": ""
+    }
+   ]
+  },
+  {
+   "id": "w334826895",
+   "country": "za",
+   "label": "R31 (primary)",
+   "origin": "stats",
+   "km": 139.8,
+   "level": "unpaved",
+   "checked_at": "2026-11-12",
+   "samples_checked": 8,
+   "tags": {
+    "highway": "primary",
+    "ref": "R31",
+    "surface": "gravel",
+    "smoothness": "bad"
+   },
+   "mapillary": {
+    "covered": 0,
+    "latest": "",
+    "first": ""
+   },
+   "samples": [
+    {
+     "lat": -26.93770691378669,
+     "lon": 21.936780839493572,
+     "mapillary": ""
+    },
+    {
+     "lat": -27.00412982797564,
+     "lon": 21.810224413104773,
+     "mapillary": ""
+    },
+    {
+     "lat": -27.037856437822473,
+     "lon": 21.666485392670914,
+     "mapillary": ""
+    },
+    {
+     "lat": -27.073927494637072,
+     "lon": 21.52737615572886,
+     "mapillary": ""
+    },
+    {
+     "lat": -27.06106250595291,
+     "lon": 21.378831471505723,
+     "mapillary": ""
+    },
+    {
+     "lat": -27.06508155381989,
+     "lon": 21.233631988779536,
+     "mapillary": ""
+    },
+    {
+     "lat": -27.0336836197386,
+     "lon": 21.099941080415803,
+     "mapillary": ""
+    },
+    {
+     "lat": -27.004070735805772,
+     "lon": 20.957600137979405,
+     "mapillary": ""
+    }
+   ]
   }
  ]
 }

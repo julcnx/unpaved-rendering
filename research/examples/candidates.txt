@@ -19,3 +19,38 @@ w373866983 au Nyangumarta Highway (tracktype=grade6 example)
 w320261711 au Rudall River Road (tracktype=grade7 example)
 w231792517 au Diamantina Developmental Road
 w158450100 au Kidson Track
+
+# Off-road mark from tracktype=grade3 alone (no smoothness, no 4wd_only): the 20 longest in stats/results, to check the mark on imagery
+w34357586 ke tertiary, gravel, grade3
+w315044849 na D3445 (tertiary, gravel, grade3)
+w205545073 ml tertiary, unpaved, grade3
+w550488462 om unclassified, sand, grade3
+w1004666122 et tertiary, compacted, grade3
+w539973831 et Maji Alt. (tertiary, mud, grade3)
+w835098894 co La Cristalina (unclassified, gravel, grade3)
+w618256836 ar unclassified, unpaved, grade3
+w57870460 co La Cristalina (unclassified, gravel, grade3)
+w236676422 cl unclassified, dirt, grade3
+w252659850 sn N17 (tertiary, unpaved, grade3)
+w28157306 na D2186 (unclassified, dirt, grade3)
+w227748568 mn unclassified, ground, grade3
+w562607036 co unclassified, ground, grade3
+w496090202 kg unclassified, ground, grade3
+w223347478 cm tertiary, unpaved, grade3
+w551304677 na D3646 (secondary, gravel, grade3)
+w23911018 na Eland Drive (tertiary, gravel, grade3)
+w217769124 ro unclassified, dirt, grade3
+w372757694 sn D06.106 (tertiary, unpaved, grade3)
+
+# surface=sand or mud with no smoothness, tracktype or 4wd_only (no mark today): all the ones in stats/results, to check whether they look off-road
+w33402624 ke A3 (trunk, sand)
+w93337181 mx Camino Cabo Este (secondary, sand)
+w449926569 ir secondary, sand
+w713671987 my Long San to Lio Mato Road (secondary, mud)
+w795162976 my Long San to Lio Mato Road (secondary, mud)
+w335698738 my Long San to Lio Mato Road (secondary, mud)
+w525330924 my Long San to Lio Mato Road (secondary, mud)
+w741873510 my Long San to Lio Mato Road (secondary, mud)
+w806124872 kh 113 (secondary, sand)
+w334077928 kh 113 (secondary, sand)
+w756566014 cu secondary, sand

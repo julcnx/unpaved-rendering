@@ -4,3 +4,6 @@ shots/
 
 # Private outreach notes: mapper names and private replies (never public)
 research/B-communities.md
+
+# Local secrets (Mapillary token)
+.env.local

@@ -2086,5 +2086,59 @@
   "author": "roshanpoudel14",
   "captured": "2016-12-29",
   "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/ke-w34357586-3.jpg": {
+  "road": "tertiary, gravel, grade3",
+  "way": "w34357586",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=498758314488320",
+  "author": "roadroid",
+  "captured": "2017-07-11",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/ke-w34357586-6.jpg": {
+  "road": "tertiary, gravel, grade3",
+  "way": "w34357586",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=513805122992887",
+  "author": "roadroid",
+  "captured": "2017-07-11",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/na-w28157306-0.jpg": {
+  "road": "D2186 (unclassified, dirt, grade3)",
+  "way": "w28157306",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=466533447896297",
+  "author": "staehler",
+  "captured": "2015-12-25",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/na-w28157306-2.jpg": {
+  "road": "D2186 (unclassified, dirt, grade3)",
+  "way": "w28157306",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=309619360538546",
+  "author": "staehler",
+  "captured": "2015-12-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/na-w28157306-5.jpg": {
+  "road": "D2186 (unclassified, dirt, grade3)",
+  "way": "w28157306",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=957089665061131",
+  "author": "staehler",
+  "captured": "2015-12-24",
+  "licence": "CC BY-SA 4.0"
+ },
+ "mapillary/na-w28157306-7.jpg": {
+  "road": "D2186 (unclassified, dirt, grade3)",
+  "way": "w28157306",
+  "source": "Mapillary",
+  "image": "https://www.mapillary.com/app/?pKey=273596211080459",
+  "author": "staehler",
+  "captured": "2015-12-24",
+  "licence": "CC BY-SA 4.0"
  }
 }
