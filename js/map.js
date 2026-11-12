@@ -1,10 +1,11 @@
 // Canvas map: Web Mercator, pan and zoom, roads drawn with the selected unpaved style.
 import { classify } from './classify.js';
-import { STYLES, palette, roadInfo, RANK, widthAt } from './styles.js';
+import { STYLES, palette, roadInfo, RANK, widthAt, LOW_BELOW } from './styles.js';
 
 // Backgrounds: land colour, and whether the map is dark. "terrain" adds hillshade and contours.
 export const BACKGROUNDS = {
   white: { name: 'White', land: '#ffffff' },
+  land: { name: 'Carto land', land: '#f2efe9' }, // OSM Carto's plain land colour, no hillshade
   forest: { name: 'Forest', land: '#add19e' },
   sand: { name: 'Sand / desert', land: '#e8d6ad' },
   terrain: { name: 'Hillshade, contours', land: '#f2efe9', terrain: true },
@@ -159,7 +160,7 @@ export class MapView {
     const zf = zfAt(z), zfDash = zfAt(zb) * k;
     for (const f of all) {
       const t = TRACKS[f.tags.highway];
-      if (!t) continue;
+      if (!t || this.reader) continue;
       path(f);
       stroke(bg.dark ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.6)', (t.width + 2) * zf);
       stroke(bg.dark ? t.dark : t.color, t.width * zf, t.dash.map((d) => d * zfDash), 'butt');
@@ -167,15 +168,19 @@ export class MapView {
 
     // Roads: casings, then fills by rank, then overlays.
     const style = styleKey === NONE ? { draw: () => ({}) } : STYLES[styleKey]; // No style: every road drawn as paved
+    // Reader test view (reader=1): no tracks or paths, no road too thin for its style's pattern (it would show the plain
+    // low-zoom tint, a second signal), and off-road drawn as unpaved, so only the two base levels show.
+    const levelOf = (f) => (this.reader && f.level !== 'paved' ? 'unpaved' : f.level);
     const roads = all.map((f) => {
       const info = roadInfo(f.tags.highway);
       if (!info) return null;
       const c = pal[info[0]], w = widthAt(info[1], z);
-      const d = style.draw(f.level, c, w, pal.brown, ctx);
+      if (this.reader && w < LOW_BELOW) return null;
+      const d = style.draw(levelOf(f), c, w, pal.brown, ctx);
       // While zooming: the dash lengths of the start zoom, scaled with the map (same layers only; at the low-zoom
       // threshold the layers differ and the current ones are kept).
       if (k !== 1) {
-        const d0 = style.draw(f.level, c, widthAt(info[1], zb), pal.brown, ctx);
+        const d0 = style.draw(levelOf(f), c, widthAt(info[1], zb), pal.brown, ctx);
         const fix = (a, b) => (a?.dash && b?.dash ? { ...a, dash: b.dash.map((x) => x * k) } : a);
         d.casing = fix(d.casing, d0.casing); d.fill = fix(d.fill, d0.fill);
         if (d.over && d0.over?.length === d.over.length) d.over = d.over.map((o, i) => fix(o, d0.over[i]));

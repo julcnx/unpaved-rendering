@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map test: which roads are unpaved?</title>
+<meta name="description" content="A 3-minute map test: five small maps, no legend. Which roads are unpaved?">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4ed8'/%3E%3Cpath d='M4 16 H14' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M19 16 H22 M26 16 H28' stroke='%23fff' stroke-width='6'/%3E%3C/svg%3E">
+<meta property="og:title" content="Map test, 3 minutes: which roads are unpaved?">
+<meta property="og:description" content="Five small maps, no legend on purpose. Which numbered roads are gravel or dirt?">
+<style>
+  :root { --fg: #1f1d1a; --muted: #6b665e; --bg: #faf8f4; --card: #fff; --line: #ddd7cc; --blue: #1d4ed8; --blue-soft: #e6ecfb; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.45 system-ui, -apple-system, sans-serif; color: var(--fg); background: var(--bg); }
+  main { max-width: 432px; margin: 0 auto; padding: 12px 16px 32px; }
+  h1 { font-size: 22px; line-height: 1.25; margin: 8px 0 12px; }
+  h2 { font-size: 17px; margin: 20px 0 8px; }
+  p { margin: 0 0 12px; }
+  .muted { color: var(--muted); font-size: 14px; }
+  [hidden] { display: none !important; }
+  .step { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: var(--muted); margin: 4px 0 6px; }
+  .q { font-weight: 600; margin: 0 0 8px; }
+  /* The map is shown at its real size (400 CSS px wide): never wider, so every reader sees the same scale. */
+  .map { display: block; width: 100%; max-width: 400px; aspect-ratio: 400 / 520; margin: 0 auto; border-radius: 6px; background: #f2efe9; }
+  .strip { display: block; width: 100%; max-width: 400px; aspect-ratio: 400 / 240; border-radius: 6px; background: #f2efe9; }
+  fieldset { border: 0; margin: 0; padding: 0; }
+  .road { display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 8px; margin: 6px 0; }
+  .num { width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--blue); }
+  .seg { display: grid; grid-template-columns: 1fr 1fr 0.8fr; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--card); }
+  .seg.two { grid-template-columns: 1fr 1fr; }
+  .seg.five { grid-template-columns: repeat(5, 1fr); }
+  .seg label { position: relative; text-align: center; font-size: 15px; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+  .seg span { display: block; padding: 10px 2px; }
+  .seg label + label { border-left: 1px solid var(--line); }
+  .seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .seg input:checked + span { background: var(--blue); color: #fff; font-weight: 600; }
+  .seg input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: -3px; }
+  button.go { display: block; width: 100%; margin: 16px 0 0; padding: 14px; font: 600 17px system-ui, sans-serif; color: #fff; background: var(--blue); border: 0; border-radius: 10px; cursor: pointer; }
+  button.go:disabled { background: #a9b6d6; cursor: default; }
+  .hint { text-align: center; font-size: 13px; color: var(--muted); margin-top: 6px; min-height: 18px; }
+  .strips { display: grid; gap: 10px; margin: 8px 0 4px; }
+  .strips figure { margin: 0; position: relative; }
+  .strips figcaption { position: absolute; top: 6px; left: 6px; width: 28px; height: 28px; border-radius: 6px; background: var(--fg); color: #fff; font-weight: 700; display: grid; place-items: center; }
+  textarea { width: 100%; min-height: 70px; font: inherit; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+  .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  pre { white-space: pre-wrap; font-size: 12px; background: var(--card); border: 1px solid var(--line); padding: 8px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<main>
+
+<!-- 1. Start -->
+<section id="start">
+  <h1>Which roads are unpaved?</h1>
+  <p>You will see five small maps. Each one shows paved roads and unpaved roads (gravel or dirt), drawn in different ways, and each map uses its own way of drawing them.</p>
+  <p>There is <strong>no legend, on purpose</strong>: for each numbered road, say whether you read it as paved or unpaved, from the drawing alone. Go with your first impression.</p>
+  <p class="muted">About 3 minutes. Anonymous: no name, no email. If you cannot tell, pick "Not sure": that is a useful answer too.</p>
+  <h2>Do you edit OpenStreetMap?</h2>
+  <fieldset class="seg two" id="mapper">
+    <label><input type="radio" name="mapper" value="yes"><span>Yes</span></label>
+    <label><input type="radio" name="mapper" value="no"><span>No</span></label>
+  </fieldset>
+  <h2>How do you mostly travel on unpaved roads? <span class="muted">(optional)</span></h2>
+  <fieldset class="seg" id="travel" style="grid-template-columns: repeat(4, 1fr)">
+    <label><input type="radio" name="travel" value="motorbike"><span>Motorbike</span></label>
+    <label><input type="radio" name="travel" value="car"><span>Car, 4x4</span></label>
+    <label><input type="radio" name="travel" value="bicycle"><span>Bicycle</span></label>
+    <label><input type="radio" name="travel" value="other"><span>Other</span></label>
+  </fieldset>
+  <div class="trap" aria-hidden="true"><label>Website <input id="website" tabindex="-1" autocomplete="off"></label></div>
+  <button class="go" id="begin" disabled>Start</button>
+  <div class="hint" id="begin-hint">Answer the first question to start.</div>
+</section>
+
+<!-- 2. One map at a time -->
+<section id="test" hidden>
+  <div class="step"><span id="step"></span><span>No legend on purpose</span></div>
+  <p class="q">For each numbered road: do you read it as paved or unpaved?</p>
+  <img class="map" id="map" alt="Map with numbered roads" width="400" height="520">
+  <div id="roads"></div>
+  <button class="go" id="next" disabled>Next</button>
+  <div class="hint" id="next-hint"></div>
+</section>
+
+<!-- 3. Clearest style -->
+<section id="clarity" hidden>
+  <h1>Last question</h1>
+  <p>The same place, drawn five ways. The orange road is paved where it runs down to the right, and unpaved where it runs to the left.</p>
+  <div class="strips" id="strips"></div>
+  <h2>Which one shows unpaved roads most clearly?</h2>
+  <fieldset class="seg five" id="best"></fieldset>
+  <h2>And least clearly?</h2>
+  <fieldset class="seg five" id="worst"></fieldset>
+  <h2>Why? <span class="muted">(optional)</span></h2>
+  <textarea id="why" maxlength="600" placeholder="One sentence is plenty"></textarea>
+  <button class="go" id="send" disabled>Send my answers</button>
+  <div class="hint" id="send-hint"></div>
+</section>
+
+<!-- 4. Done -->
+<section id="done" hidden>
+  <h1>Thank you!</h1>
+  <p>Your answers are in. The right answers, and what this test is for, will be posted in a few days.</p>
+  <p class="muted">Please do not share the answers you gave, so the next people start fresh. Sharing the link is welcome.</p>
+  <pre id="debug" hidden></pre>
+</section>
+
+</main>
+<script>
+// Where the answers go: the Google Apps Script web app URL (see research/reader-test/README.md, "Collecting answers").
+// Empty: test mode, nothing is sent and the answers are shown on the last screen.
+const ENDPOINT = '';
+
+const PLACES = ['bolivia', 'nepal', 'alberta', 'namibia', 'australia'];
+const STYLES = ['grain', 'centre-line', 'dashed-fill', 'dashed-casing', 'dashed-fill-full'];
+const $ = (id) => document.getElementById(id);
+const shuffle = (a) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const store = { get: (k) => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+const debug = !ENDPOINT || new URLSearchParams(location.search).has('debug');
+
+// Latin square: version v puts style (i + v) mod 5 on place i, so over the five versions every style is seen on every place.
+// The order of the five maps is shuffled for each person.
+const version = Math.floor(Math.random() * 5);
+const maps = shuffle(PLACES.map((place, i) => ({ place, style: STYLES[(i + version) % 5] })));
+const r = { id: crypto.randomUUID?.() ?? String(Math.random()).slice(2), version, started: new Date().toISOString(),
+  screen: `${screen.width}x${screen.height}@${devicePixelRatio}`, viewport: innerWidth, maps: [] };
+let counts, k = 0, shownAt = 0;
+
+const show = (id) => { for (const s of ['start', 'test', 'clarity', 'done']) $(s).hidden = s !== id; scrollTo(0, 0); };
+const picked = (name) => document.querySelector(`input[name="${name}"]:checked`)?.value ?? null;
+
+if (store.get('reader-test-done') && !debug) { show('done'); }
+
+$('mapper').addEventListener('change', () => { $('begin').disabled = false; $('begin-hint').textContent = ''; });
+$('begin').addEventListener('click', async () => {
+  $('begin').disabled = true;
+  counts = await fetch('places.json').then((x) => x.json());
+  r.mapper = picked('mapper'); r.travel = picked('travel'); r.trap = $('website').value;
+  shuffle(STYLES).forEach((s) => { const i = new Image(); i.src = `img/clarity-${s}.jpg`; }); // warm the cache
+  showMap();
+});
+
+function showMap() {
+  const m = maps[k], n = counts[m.place];
+  $('step').textContent = `Map ${k + 1} of ${maps.length}`;
+  $('map').src = `img/${m.place}-${m.style}.jpg`;
+  $('roads').innerHTML = Array.from({ length: n }, (_, i) => `
+    <fieldset class="road"><legend class="trap">Road ${i + 1}</legend><span class="num" aria-hidden="true">${i + 1}</span>
+      <div class="seg">${[['P', 'Paved'], ['U', 'Unpaved'], ['?', 'Not sure']].map(([v, t]) =>
+        `<label><input type="radio" name="road${i + 1}" value="${v}"><span>${t}</span></label>`).join('')}</div></fieldset>`).join('');
+  $('next').disabled = true;
+  $('next').textContent = k + 1 < maps.length ? 'Next map' : 'Next';
+  $('next-hint').textContent = `Answer all ${n} roads to go on.`;
+  show('test');
+  if (maps[k + 1]) new Image().src = `img/${maps[k + 1].place}-${maps[k + 1].style}.jpg`; // preload the next map
+  shownAt = performance.now();
+}
+$('roads').addEventListener('change', () => {
+  const n = counts[maps[k].place], left = Array.from({ length: n }, (_, i) => picked(`road${i + 1}`)).filter((v) => !v).length;
+  $('next').disabled = left > 0;
+  $('next-hint').textContent = left ? `${left} road${left > 1 ? 's' : ''} left.` : '';
+});
+$('next').addEventListener('click', () => {
+  const m = maps[k], n = counts[m.place];
+  // Answers in road order, one letter each: U unpaved, P paved, ? not sure. No going back: first impressions only.
+  r.maps.push({ ...m, answers: Array.from({ length: n }, (_, i) => picked(`road${i + 1}`)).join(''), ms: Math.round(performance.now() - shownAt) });
+  if (++k < maps.length) showMap(); else showClarity();
+});
+
+// Clearest style: the five strips in a shuffled order, numbered 1 to 5 by position.
+const stripOrder = shuffle(STYLES);
+function showClarity() {
+  $('strips').innerHTML = stripOrder.map((s, i) =>
+    `<figure><img class="strip" src="img/clarity-${s}.jpg" alt="Style ${i + 1}" width="400" height="240"><figcaption>${i + 1}</figcaption></figure>`).join('');
+  for (const q of ['best', 'worst']) $(q).innerHTML = stripOrder.map((_, i) => `<label><input type="radio" name="${q}" value="${i + 1}"><span>${i + 1}</span></label>`).join('');
+  show('clarity');
+  shownAt = performance.now();
+}
+$('clarity').addEventListener('change', () => {
+  const b = picked('best'), w = picked('worst'), ok = b && w && b !== w;
+  $('send').disabled = !ok;
+  $('send-hint').textContent = b && w && b === w ? 'Pick two different ones.' : '';
+});
+$('send').addEventListener('click', async () => {
+  $('send').disabled = true; $('send').textContent = 'Sending...';
+  r.strips = stripOrder.join(' ');
+  r.best = stripOrder[picked('best') - 1]; r.worst = stripOrder[picked('worst') - 1];
+  r.why = $('why').value.trim(); r.clarityMs = Math.round(performance.now() - shownAt);
+  // text/plain and no-cors: a simple request Apps Script accepts without a preflight. The reply cannot be read.
+  if (ENDPOINT) {
+    try { await fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(r) }); }
+    catch { $('send').disabled = false; $('send').textContent = 'Send my answers'; $('send-hint').textContent = 'Could not send. Check your connection and try again.'; return; }
+  }
+  store.set('reader-test-done', '1');
+  if (debug) { $('debug').hidden = false; $('debug').textContent = JSON.stringify(r, null, 1); }
+  show('done');
+});
+</script>
+</body>
+</html>

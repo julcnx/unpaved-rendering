@@ -34,11 +34,14 @@ if ($('compare').checked && bg === 'all') bg = 'white';
 
 const map = new MapView($('map'), () => { updateUrl(); loadLive(); updateNote(); });
 map.opts = { style: $('style').value, bg, compare: $('compare').checked };
+// reader=1: the reader test view (see MapView.reader). URL only, kept on reload.
+map.reader = params.get('reader') === '1';
 
 function updateUrl() {
   const { lat, lon, z } = map.center();
   const p = new URLSearchParams({ spot: $('spot').value, style: map.opts.style, bg: map.opts.bg, z: z.toFixed(2), lat: lat.toFixed(5), lon: lon.toFixed(5) });
   p.set('compare', map.opts.compare ? '1' : '0');
+  if (map.reader) p.set('reader', '1');
   history.replaceState(null, '', `?${p}`);
 }
 

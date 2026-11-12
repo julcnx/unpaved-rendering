@@ -32,6 +32,7 @@ const ROAD = {
 };
 export const roadInfo = (highway) => ROAD[highway?.replace(/_link$/, '')] ?? null;
 export const RANK = ['service', 'road', 'living_street', 'residential', 'unclassified', 'tertiary', 'secondary', 'primary', 'trunk', 'motorway'];
+export const LOW_BELOW = SPEC.lowZoom.below; // px of fill width under which every style is a plain tint
 export const widthAt = (base, z) => base * 2 ** (0.55 * (z - 15));
 
 // Grain patterns are built once per colour pair and scale: the same 64 px OSM Carto tile, two colours.
