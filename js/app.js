@@ -69,6 +69,12 @@ async function loadSpot(id) {
       const res = await fetch(new URL(`../data/${id}.json`, import.meta.url)); // data/ next to js/, wherever the page is
       if (!res.ok) throw new Error();
       const data = await res.json();
+      // Reader test view: a few street surfaces changed for the test (research/reader-test/overrides.json; a way is
+      // known by its first point, "lon,lat", as the cached data has no way ids).
+      if (map.reader) {
+        const fix = (await fetch(new URL('../research/reader-test/overrides.json', import.meta.url)).then((r) => r.json()).catch(() => ({})))[id] ?? {};
+        for (const f of data.features) Object.assign(f.properties, fix[f.geometry.coordinates[0].join(',')]);
+      }
       map.layers.set(`spot:${id}`, prepare(data.features));
       // The saved area counts as loaded, for every tier: live loading takes over outside it.
       const [s, w, n, e] = data.bbox.split(',').map(Number);

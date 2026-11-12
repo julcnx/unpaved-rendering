@@ -24,24 +24,23 @@
   .map { display: block; width: 100%; max-width: 400px; aspect-ratio: 400 / 520; margin: 0 auto; border-radius: 6px; background: #f2efe9; }
   .strip { display: block; width: 100%; max-width: 400px; aspect-ratio: 400 / 240; border-radius: 6px; background: #f2efe9; }
   fieldset { border: 0; margin: 0; padding: 0; }
-  .road { display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 8px; margin: 6px 0; }
-  .num { width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--blue); }
-  .seg { display: grid; grid-template-columns: 1fr 1fr 0.8fr; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--card); }
-  .seg.two { grid-template-columns: 1fr 1fr; }
-  .seg.five { grid-template-columns: repeat(5, 1fr); }
-  .seg label { position: relative; text-align: center; font-size: 15px; cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
-  .seg span { display: block; padding: 10px 2px; }
-  .seg label + label { border-left: 1px solid var(--line); }
-  .seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
-  .seg input:checked + span { background: var(--blue); color: #fff; font-weight: 600; }
-  .seg input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: -3px; }
+  /* Answers: one circle per road, carrying its number like the badges on the map. Tap the roads that look unpaved:
+     white when not tapped, blue when tapped; tap again to untap. */
+  .grid { display: grid; grid-template-columns: repeat(var(--n), 1fr); align-items: center; margin: 12px 0 0; }
+  .dot { justify-self: center; width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--blue); background: #fff; color: var(--blue);
+    font: 700 17px system-ui, sans-serif; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .dot[aria-pressed="true"] { background: var(--blue); color: #fff; }
+  .dot:focus-visible, .pick:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
   button.go { display: block; width: 100%; margin: 16px 0 0; padding: 14px; font: 600 17px system-ui, sans-serif; color: #fff; background: var(--blue); border: 0; border-radius: 10px; cursor: pointer; }
   button.go:disabled { background: #a9b6d6; cursor: default; }
   .hint { text-align: center; font-size: 13px; color: var(--muted); margin-top: 6px; min-height: 18px; }
   .strips { display: grid; gap: 10px; margin: 8px 0 4px; }
-  .strips figure { margin: 0; position: relative; }
-  .strips figcaption { position: absolute; top: 6px; left: 6px; width: 28px; height: 28px; border-radius: 6px; background: var(--fg); color: #fff; font-weight: 700; display: grid; place-items: center; }
-  textarea { width: 100%; min-height: 70px; font: inherit; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+  /* Ranking: tap the drawings in order, clearest first. A ranked drawing gets a blue frame and its rank in the circle. */
+  .pick { position: relative; display: block; width: 100%; padding: 0; border: 3px solid transparent; border-radius: 9px; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  .pick[aria-pressed="true"] { border-color: var(--blue); }
+  .pick .strip { border-radius: 6px; }
+  .rank { position: absolute; top: 8px; left: 8px; width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--blue); background: #fff; color: var(--blue); font: 700 19px system-ui, sans-serif; display: grid; place-items: center; }
+  .pick[aria-pressed="true"] .rank { background: var(--blue); color: #fff; }
   .trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   pre { white-space: pre-wrap; font-size: 12px; background: var(--card); border: 1px solid var(--line); padding: 8px; border-radius: 6px; }
 </style>
@@ -52,33 +51,21 @@
 <!-- 1. Start -->
 <section id="start">
   <h1>Which roads are unpaved?</h1>
+  <p>Most maps draw gravel and dirt roads exactly like paved ones. I am working on ways for maps made from OpenStreetMap to show the difference, and this test checks which drawings people understand at a glance, without a legend.</p>
   <p>You will see five small maps. Each one shows paved roads and unpaved roads (gravel or dirt), drawn in different ways, and each map uses its own way of drawing them.</p>
-  <p>There is <strong>no legend, on purpose</strong>: for each numbered road, say whether you read it as paved or unpaved, from the drawing alone. Go with your first impression.</p>
-  <p class="muted">About 3 minutes. Anonymous: no name, no email. If you cannot tell, pick "Not sure": that is a useful answer too.</p>
-  <h2>Do you edit OpenStreetMap?</h2>
-  <fieldset class="seg two" id="mapper">
-    <label><input type="radio" name="mapper" value="yes"><span>Yes</span></label>
-    <label><input type="radio" name="mapper" value="no"><span>No</span></label>
-  </fieldset>
-  <h2>How do you mostly travel on unpaved roads? <span class="muted">(optional)</span></h2>
-  <fieldset class="seg" id="travel" style="grid-template-columns: repeat(4, 1fr)">
-    <label><input type="radio" name="travel" value="motorbike"><span>Motorbike</span></label>
-    <label><input type="radio" name="travel" value="car"><span>Car, 4x4</span></label>
-    <label><input type="radio" name="travel" value="bicycle"><span>Bicycle</span></label>
-    <label><input type="radio" name="travel" value="other"><span>Other</span></label>
-  </fieldset>
+  <p>There is <strong>no legend, on purpose</strong>: on each map, tap the numbered roads you read as unpaved, from the drawing alone. Go with your first impression: you cannot go back to a map once you move on.</p>
+  <p class="muted">About 3 minutes. Anonymous: no name, no email.</p>
   <div class="trap" aria-hidden="true"><label>Website <input id="website" tabindex="-1" autocomplete="off"></label></div>
-  <button class="go" id="begin" disabled>Start</button>
-  <div class="hint" id="begin-hint">Answer the first question to start.</div>
+  <button class="go" id="begin">Start</button>
 </section>
 
 <!-- 2. One map at a time -->
 <section id="test" hidden>
   <div class="step"><span id="step"></span><span>No legend on purpose</span></div>
-  <p class="q">For each numbered road: do you read it as paved or unpaved?</p>
+  <p class="q">Tap the numbered roads that look unpaved to you.</p>
   <img class="map" id="map" alt="Map with numbered roads" width="400" height="520">
-  <div id="roads"></div>
-  <button class="go" id="next" disabled>Next</button>
+  <div class="grid" id="roads"></div>
+  <button class="go" id="next">Next</button>
   <div class="hint" id="next-hint"></div>
 </section>
 
@@ -86,21 +73,17 @@
 <section id="clarity" hidden>
   <h1>Last question</h1>
   <p>The same place, drawn five ways. The orange road is paved where it runs down to the right, and unpaved where it runs to the left.</p>
+  <p class="q">Tap them in order: first the one that shows unpaved roads most clearly, last the least clear.</p>
   <div class="strips" id="strips"></div>
-  <h2>Which one shows unpaved roads most clearly?</h2>
-  <fieldset class="seg five" id="best"></fieldset>
-  <h2>And least clearly?</h2>
-  <fieldset class="seg five" id="worst"></fieldset>
-  <h2>Why? <span class="muted">(optional)</span></h2>
-  <textarea id="why" maxlength="600" placeholder="One sentence is plenty"></textarea>
-  <button class="go" id="send" disabled>Send my answers</button>
+  <div class="hint" id="rank-hint"></div>
+  <button class="go" id="send">Send my answers</button>
   <div class="hint" id="send-hint"></div>
 </section>
 
 <!-- 4. Done -->
 <section id="done" hidden>
   <h1>Thank you!</h1>
-  <p>Your answers are in. The right answers, and what this test is for, will be posted in a few days.</p>
+  <p>Your answers are in. The right answers and the results will be posted in a few days.</p>
   <p class="muted">Please do not share the answers you gave, so the next people start fresh. Sharing the link is welcome.</p>
   <pre id="debug" hidden></pre>
 </section>
@@ -109,7 +92,7 @@
 <script>
 // Where the answers go: the Google Apps Script web app URL (see research/reader-test/README.md, "Collecting answers").
 // Empty: test mode, nothing is sent and the answers are shown on the last screen.
-const ENDPOINT = '';
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzgqOhJDVLUKdfWqVI3aOcJM9UWvPYnFRz7tnxMHZrKdICiCBEpbqqQfmzavCTfVXCg/exec';
 
 const PLACES = ['bolivia', 'nepal', 'alberta', 'namibia', 'australia'];
 const STYLES = ['grain', 'centre-line', 'dashed-fill', 'dashed-casing', 'dashed-fill-full'];
@@ -118,81 +101,153 @@ const shuffle = (a) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { co
 const store = { get: (k) => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
 const debug = !ENDPOINT || new URLSearchParams(location.search).has('debug');
 
-// Latin square: version v puts style (i + v) mod 5 on place i, so over the five versions every style is seen on every place.
-// The order of the five maps is shuffled for each person.
-const version = Math.floor(Math.random() * 5);
-const maps = shuffle(PLACES.map((place, i) => ({ place, style: STYLES[(i + version) % 5] })));
-const r = { id: crypto.randomUUID?.() ?? String(Math.random()).slice(2), version, started: new Date().toISOString(),
-  screen: `${screen.width}x${screen.height}@${devicePixelRatio}`, viewport: innerWidth, maps: [] };
-let counts, k = 0, shownAt = 0;
+// The session is kept in the browser after every tap: someone who leaves (closes the tab, switches app, phone locks)
+// comes back to the same map, with the same answers, order and id, so the sheet keeps one row per person.
+// ?reset starts afresh (testing).
+const KEY = 'reader-test-session';
+if (new URLSearchParams(location.search).has('reset')) { try { localStorage.removeItem(KEY); } catch {} }
+let st = (() => { try { return JSON.parse(store.get(KEY)); } catch { return null; } })();
+if (!st) {
+  // Latin square: version v puts style (i + v) mod 5 on place i, so over the five versions every style is seen on every
+  // place. The order of the five maps is shuffled for each person.
+  const version = Math.floor(Math.random() * 5);
+  const maps = shuffle(PLACES.map((place, i) => ({ place, style: STYLES[(i + version) % 5] })));
+  // Never grain first: it is the faintest style, and a first map where nothing seems to show puts people off.
+  if (maps[0].style === 'grain') { const j = 1 + Math.floor(Math.random() * (maps.length - 1)); [maps[0], maps[j]] = [maps[j], maps[0]]; }
+  st = { screen: 'start', k: 0, maps, cur: null, elapsed: 0, changes: 0, beaconed: -1,
+    stripOrder: shuffle(STYLES), rank: [], clarityTaps: [],
+    // id: never all digits, or the sheet stores it as a number and may round it.
+    r: { id: crypto.randomUUID?.() ?? `r${Math.random().toString(36).slice(2)}`, version, started: new Date().toISOString(),
+      screen: `${screen.width}x${screen.height}@${devicePixelRatio}`, viewport: innerWidth, resumes: 0, maps: [] } };
+}
+const save = () => { if (st.screen !== 'start') store.set(KEY, JSON.stringify({ ...st, elapsed: elapsed() })); };
 
+// Time on the current screen counts only while the page is on screen: time away does not count, so a map's time and
+// its taps' times are reading time.
+let mark = document.visibilityState === 'visible' ? performance.now() : null;
+const elapsed = () => st.elapsed + (mark === null ? 0 : performance.now() - mark);
+const restart = () => { st.elapsed = 0; mark = document.visibilityState === 'visible' ? performance.now() : null; };
+const secs = () => (elapsed() / 1000).toFixed(1);
+
+let counts, sent = false;
 const show = (id) => { for (const s of ['start', 'test', 'clarity', 'done']) $(s).hidden = s !== id; scrollTo(0, 0); };
-const picked = (name) => document.querySelector(`input[name="${name}"]:checked`)?.value ?? null;
 
-if (store.get('reader-test-done') && !debug) { show('done'); }
+(async () => {
+  if (store.get('reader-test-done') && !debug) return show('done');
+  if (st.screen === 'start') return;
+  counts = await fetch('places.json').then((x) => x.json());
+  st.r.resumes++;
+  if (st.screen === 'map') renderMap(); else renderClarity();
+})();
 
-$('mapper').addEventListener('change', () => { $('begin').disabled = false; $('begin-hint').textContent = ''; });
 $('begin').addEventListener('click', async () => {
   $('begin').disabled = true;
   counts = await fetch('places.json').then((x) => x.json());
-  r.mapper = picked('mapper'); r.travel = picked('travel'); r.trap = $('website').value;
-  shuffle(STYLES).forEach((s) => { const i = new Image(); i.src = `img/clarity-${s}.jpg`; }); // warm the cache
-  showMap();
+  st.r.trap = $('website').value;
+  STYLES.forEach((s) => { new Image().src = `img/clarity-${s}.jpg`; }); // warm the cache
+  newMap();
 });
 
-function showMap() {
-  const m = maps[k], n = counts[m.place];
+// One map: answers per road (U tapped as unpaved, P not tapped, so read as paved), and every tap in order with its time
+// in seconds: "3U@1.2 1U@2.1 3-@2.5" (road 3 tapped, road 1 tapped, road 3 untapped).
+function newMap() {
+  const m = st.maps[st.k];
+  st.screen = 'map'; st.cur = { ...m, answers: Array(counts[m.place]).fill('P'), taps: [] };
+  restart(); renderMap(); save();
+}
+function renderMap() {
+  const { k, maps, cur } = st, n = cur.answers.length;
   $('step').textContent = `Map ${k + 1} of ${maps.length}`;
-  $('map').src = `img/${m.place}-${m.style}.jpg`;
-  $('roads').innerHTML = Array.from({ length: n }, (_, i) => `
-    <fieldset class="road"><legend class="trap">Road ${i + 1}</legend><span class="num" aria-hidden="true">${i + 1}</span>
-      <div class="seg">${[['P', 'Paved'], ['U', 'Unpaved'], ['?', 'Not sure']].map(([v, t]) =>
-        `<label><input type="radio" name="road${i + 1}" value="${v}"><span>${t}</span></label>`).join('')}</div></fieldset>`).join('');
-  $('next').disabled = true;
+  $('map').src = `img/${cur.place}-${cur.style}.jpg`;
+  $('roads').style.setProperty('--n', n);
+  $('roads').innerHTML = Array.from({ length: n }, (_, i) =>
+    `<button class="dot" data-road="${i}" aria-pressed="${cur.answers[i] === 'U'}" aria-label="Road ${i + 1} unpaved">${i + 1}</button>`).join('');
   $('next').textContent = k + 1 < maps.length ? 'Next map' : 'Next';
-  $('next-hint').textContent = `Answer all ${n} roads to go on.`;
+  hint();
   show('test');
   if (maps[k + 1]) new Image().src = `img/${maps[k + 1].place}-${maps[k + 1].style}.jpg`; // preload the next map
-  shownAt = performance.now();
 }
-$('roads').addEventListener('change', () => {
-  const n = counts[maps[k].place], left = Array.from({ length: n }, (_, i) => picked(`road${i + 1}`)).filter((v) => !v).length;
-  $('next').disabled = left > 0;
-  $('next-hint').textContent = left ? `${left} road${left > 1 ? 's' : ''} left.` : '';
+const hint = () => {
+  $('next-hint').textContent = st.cur.answers.includes('U') ? '' : 'If none look unpaved, just go on.';
+};
+$('roads').addEventListener('click', (e) => {
+  const b = e.target.closest('.dot');
+  if (!b) return;
+  const { cur } = st, i = +b.dataset.road, on = cur.answers[i] !== 'U'; // tap again to untap
+  cur.answers[i] = on ? 'U' : 'P'; cur.taps.push(`${i + 1}${on ? 'U' : '-'}@${secs()}`); st.changes++;
+  b.setAttribute('aria-pressed', on);
+  hint(); save();
 });
 $('next').addEventListener('click', () => {
-  const m = maps[k], n = counts[m.place];
-  // Answers in road order, one letter each: U unpaved, P paved, ? not sure. No going back: first impressions only.
-  r.maps.push({ ...m, answers: Array.from({ length: n }, (_, i) => picked(`road${i + 1}`)).join(''), ms: Math.round(performance.now() - shownAt) });
-  if (++k < maps.length) showMap(); else showClarity();
+  // No going back: first impressions only.
+  st.r.maps.push(finish(st.cur)); st.cur = null; st.changes++;
+  if (++st.k < st.maps.length) newMap(); else newClarity();
+});
+const finish = (c) => ({ ...c, answers: c.answers.map((a) => (a === 'U' ? 'U' : 'P')).join(''), taps: c.taps.join(' '), ms: Math.round(elapsed()) });
+
+// Clearest style: the five strips in a shuffled order. People tap them in order, clearest first; tapping a ranked one
+// takes it out and moves the ones after it up. Optional, and a partial ranking counts. Taps logged by position shown
+// (1 = top strip) with their time: "3@2.1 1@3.0 -3@4.2" (strip 3 ranked, strip 1 ranked, strip 3 taken out).
+function newClarity() { st.screen = 'clarity'; restart(); renderClarity(); save(); }
+function renderClarity() {
+  st.rank ??= []; // a session saved by an earlier version of the page
+  $('strips').innerHTML = st.stripOrder.map((s, i) =>
+    `<button class="pick" data-i="${i}"><img class="strip" src="img/clarity-${s}.jpg" alt="Drawing ${i + 1}" width="400" height="240"><span class="rank"></span></button>`).join('');
+  ranks();
+  show('clarity');
+}
+const ranks = () => {
+  for (const b of $('strips').querySelectorAll('.pick')) {
+    const r = st.rank.indexOf(+b.dataset.i);
+    b.setAttribute('aria-pressed', r >= 0);
+    b.querySelector('.rank').textContent = r >= 0 ? r + 1 : '';
+    b.setAttribute('aria-label', r >= 0 ? `Drawing ${+b.dataset.i + 1}, ranked ${r + 1}` : `Drawing ${+b.dataset.i + 1}, not ranked`);
+  }
+  const n = st.rank.length;
+  $('rank-hint').textContent = n === 0 ? '' : n < st.stripOrder.length ? `${n} of ${st.stripOrder.length} ranked. Tap a ranked one to take it out.` : 'All ranked. Tap one to take it out.';
+};
+$('strips').addEventListener('click', (e) => {
+  const b = e.target.closest('.pick');
+  if (!b) return;
+  const i = +b.dataset.i, at = st.rank.indexOf(i);
+  if (at >= 0) st.rank.splice(at, 1); else st.rank.push(i);
+  st.clarityTaps.push(`${at >= 0 ? '-' : ''}${i + 1}@${secs()}`); st.changes++;
+  ranks(); save();
 });
 
-// Clearest style: the five strips in a shuffled order, numbered 1 to 5 by position.
-const stripOrder = shuffle(STYLES);
-function showClarity() {
-  $('strips').innerHTML = stripOrder.map((s, i) =>
-    `<figure><img class="strip" src="img/clarity-${s}.jpg" alt="Style ${i + 1}" width="400" height="240"><figcaption>${i + 1}</figcaption></figure>`).join('');
-  for (const q of ['best', 'worst']) $(q).innerHTML = stripOrder.map((_, i) => `<label><input type="radio" name="${q}" value="${i + 1}"><span>${i + 1}</span></label>`).join('');
-  show('clarity');
-  shownAt = performance.now();
+// What is sent: everything answered so far. stage says how far the person got (map1 ... map5, clarity, done).
+function payload(stage) {
+  const p = { ...st.r, stage, maps: st.cur ? [...st.r.maps, finish(st.cur)] : st.r.maps };
+  if (stage === 'clarity' || stage === 'done') Object.assign(p, {
+    // ranking: styles from clearest to least clear (partial if not all tapped); best and worst only from a full ranking.
+    strips: st.stripOrder.join(' '), ranking: st.rank.map((i) => st.stripOrder[i]).join(' '),
+    best: st.rank.length ? st.stripOrder[st.rank[0]] : '', worst: st.rank.length === st.stripOrder.length ? st.stripOrder[st.rank.at(-1)] : '',
+    clarityTaps: st.clarityTaps.join(' '), clarityMs: Math.round(elapsed()) });
+  return p;
 }
-$('clarity').addEventListener('change', () => {
-  const b = picked('best'), w = picked('worst'), ok = b && w && b !== w;
-  $('send').disabled = !ok;
-  $('send-hint').textContent = b && w && b === w ? 'Pick two different ones.' : '';
+// Leaving (tab closed, app switched, phone locked): stop the clock, keep the session, and send what is answered so far,
+// so someone who never comes back still counts. Sent again only when something changed.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') { if (mark === null) mark = performance.now(); return; }
+  if (st.screen === 'start' || sent) return;
+  st.elapsed = elapsed(); mark = null; save();
+  if (!ENDPOINT || st.beaconed === st.changes) return;
+  const stage = st.screen === 'clarity' ? 'clarity' : `map${st.k + 1}`;
+  if (navigator.sendBeacon?.(ENDPOINT, new Blob([JSON.stringify(payload(stage))], { type: 'text/plain' }))) { st.beaconed = st.changes; save(); }
 });
+
 $('send').addEventListener('click', async () => {
   $('send').disabled = true; $('send').textContent = 'Sending...';
-  r.strips = stripOrder.join(' ');
-  r.best = stripOrder[picked('best') - 1]; r.worst = stripOrder[picked('worst') - 1];
-  r.why = $('why').value.trim(); r.clarityMs = Math.round(performance.now() - shownAt);
+  const p = payload('done');
   // text/plain and no-cors: a simple request Apps Script accepts without a preflight. The reply cannot be read.
   if (ENDPOINT) {
-    try { await fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(r) }); }
+    try { await fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(p) }); }
     catch { $('send').disabled = false; $('send').textContent = 'Send my answers'; $('send-hint').textContent = 'Could not send. Check your connection and try again.'; return; }
   }
+  sent = true;
   store.set('reader-test-done', '1');
-  if (debug) { $('debug').hidden = false; $('debug').textContent = JSON.stringify(r, null, 1); }
+  try { localStorage.removeItem(KEY); } catch {}
+  if (debug) { $('debug').hidden = false; $('debug').textContent = JSON.stringify(p, null, 1); }
   show('done');
 });
 </script>

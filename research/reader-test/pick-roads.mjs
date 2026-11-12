@@ -39,7 +39,12 @@ const segDist = ([px, py], [ax, ay], [bx, by]) => {
 };
 
 const cache = new Map();
-const load = (spot) => cache.get(spot) ?? cache.set(spot, JSON.parse(readFileSync(new URL(`../../data/${spot}.json`, import.meta.url))).features).get(spot);
+// A few street surfaces are changed for the test (overrides.json; a way is known by its first point, "lon,lat"), as in the demo's reader=1 view: the test
+// measures how a drawing reads, so the answer key is what the map draws. Bolivia and Alberta had no paved minor road.
+const OVERRIDES = JSON.parse(readFileSync(new URL('overrides.json', import.meta.url)));
+const load = (spot) => cache.get(spot) ?? cache.set(spot, JSON.parse(readFileSync(new URL(`../../data/${spot}.json`, import.meta.url))).features
+  .map((f) => { const fix = OVERRIDES[spot]?.[f.geometry.coordinates[0].join(',')];
+    return fix ? { ...f, properties: { ...f.properties, ...fix } } : f; })).get(spot);
 
 // Picks the numbered roads for one frame. Exported so find-frame.mjs can test other centres.
 export function pickRoads(spot, [lat, lon], Z) {
@@ -77,7 +82,7 @@ export function pickRoads(spot, [lat, lon], Z) {
     }
     if (best && best.clear >= MIN_CLEAR) {
       cands.push({ x: Math.round(best.p[0]), y: Math.round(best.p[1]), clear: Math.round(best.clear),
-        highway: w.tags.highway, surface: w.tags.surface ?? null, ref: w.tags.ref ?? w.tags.name ?? null,
+        first: w.coords[0].join(','), highway: w.tags.highway, surface: w.tags.surface ?? null, ref: w.tags.ref ?? w.tags.name ?? null,
         level: w.level, unpaved: w.unpaved, road: find(i) });
     }
   });
