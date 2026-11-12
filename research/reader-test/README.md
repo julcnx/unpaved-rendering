@@ -1,6 +1,6 @@
 # Reader test: can people spot unpaved roads without a legend?
 
-The article says the two base levels *should* read without a legend, and that this has not been tested. This kit tests it with people who are not mappers (riders, drivers, cyclists), in about 3 minutes of their time each.
+The article says the two base levels *should* read without a legend, and that this has not been tested. This kit tests it with people who are not mappers (riders, drivers, cyclists), in about a minute of their time each.
 
 The test is a web page, [reader-test/](../../reader-test/) (on GitHub Pages: `/reader-test/`). Answers go to a Google Sheet (see "Collecting answers"). Five pictures for a quick post are also here, picture-A.jpg to picture-E.jpg.
 
@@ -56,7 +56,7 @@ Columns: per place, the style shown, the answers in road order (U tapped as unpa
 
 ## Post text (for a riders' group)
 
-> **Quick map test, 3 minutes: which roads are unpaved?**
+> **Quick map test, 1 minute: which roads are unpaved?**
 >
 > Five small maps, no legend on purpose. Each shows paved and unpaved roads drawn in different ways: tell which numbered roads you read as unpaved. Works best on a phone.
 >
