@@ -31,6 +31,11 @@ const SPOTS: Record<string, [number, number]> = {
   pai: [19.540403, 98.548539],
   // Article hero: Namibia C48 (primary), asphalt to gravel, photo pair transition-na-9 (2026-11-11).
   c48: [-18.12805, 21.64435],
+  // Surface value test spots near Chiang Rai (A-providers A4, 2026-11-13): which values each app counts as unpaved.
+  'surface-laterite': [19.90972, 99.50398], // unclassified laterite next to paved, concrete and untagged ones
+  'surface-unknown': [19.97648, 99.77361], // unclassified with the unknown value unpavedsource:geometry=strava, among unpaved and ground
+  'surface-1334': [20.34475, 99.74077], // secondary 1334, gravel next to paved
+  'surface-laterite-only': [19.8194371, 99.486622], // residential laterite with no smoothness tag (the others are smoothness=very_bad)
 };
 // Track round views (todo: track rendering per app), from track-spots.ts: spots track-<name>.
 for (const v of JSON.parse(readFileSync(new URL('./track-spots.json', import.meta.url), 'utf8')))

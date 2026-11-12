@@ -151,7 +151,7 @@
   <p class="kicker"><a href="../">Mind the Surface</a></p>
   <h1>App reports</h1>
   <p class="sub">How OpenStreetMap-based maps draw unpaved roads, November 2026</p>
-  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 12 November 2026</p>
+  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 13 November 2026</p>
 </header>
 
 
@@ -195,7 +195,7 @@
 <td>DMD2</td>
 <td>no</td>
 <td>Every class seen: dark dashes in the fill</td>
-<td>To check</td>
+<td>Counts <code>laterite</code> as unpaved (seen on test roads in its web planner)</td>
 <td>Coloured dashes inside the line, like its unpaved roads</td>
 <td>3 in use</td>
 <td><a href="https://drivemodedashboard.com/forums/">DMD forum</a></td>
@@ -213,7 +213,7 @@
 <td>Tracestrack Topo</td>
 <td>partly</td>
 <td>Secondary and below: a dashed outline. Primary and trunk: no difference</td>
-<td>To check</td>
+<td>A list of unpaved values that includes <code>laterite</code>; a value it does not know is drawn as paved (seen on test roads)</td>
 <td>Brown dashes; its unpaved minor roads look close to them</td>
 <td>1, 3; 4 on main roads (as today)</td>
 <td><a href="https://github.com/tracestrack/tracestrack-maps/issues">GitHub</a></td>
@@ -290,7 +290,7 @@
 <td>Ride with GPS</td>
 <td>no</td>
 <td>Drawn as dashed brown lines, like tracks</td>
-<td>To check</td>
+<td>Paved or unpaved, from zoom 10; untagged roads and values it does not know, such as <code>laterite</code>, count as paved</td>
 <td>Two brown dashed lines on a pale fill, like its unpaved roads</td>
 <td>1, 3; 4 on main roads</td>
 <td><a href="https://support.ridewithgps.com">Help center</a></td>
@@ -360,7 +360,7 @@
 <td>Komoot</td>
 <td>no</td>
 <td>No; surfaces only in the route summary</td>
-<td>To check</td>
+<td>No surface in the map tiles, only <code>tracktype</code>; surfaces come from its routing data</td>
 <td>Own "Track" category: cream with a brown edge</td>
 <td>1, 2, 3</td>
 <td><a href="https://support.komoot.com">Help center</a></td>
@@ -369,7 +369,7 @@
 <td>Mapy.com (basic map)</td>
 <td>no</td>
 <td>No</td>
-<td>To check</td>
+<td>Surface classes for minor ways only (asphalt, hardened road, field track); none on main roads</td>
 <td>Thin dark grey dashes</td>
 <td>1, 3, 4</td>
 <td><a href="https://community.mapy.com/category/4/ideas-for-new-features-nápady-na-nové-vychytávky">Community forum, ideas</a></td>
@@ -387,7 +387,7 @@
 <td>AllTrails</td>
 <td>no</td>
 <td>No</td>
-<td>To check</td>
+<td>Tiles not checked; the map draws <code>laterite</code>, <code>unpaved</code> and gravel roads alike</td>
 <td>Dashed double line; paths grey dots</td>
 <td>1, 3; 4 on main roads</td>
 <td><a href="https://support.alltrails.com">Help center</a></td>
@@ -423,7 +423,7 @@
 <td>Thunderforest (OpenCycleMap, Transport, Outdoors)</td>
 <td>no</td>
 <td>No</td>
-<td>To check</td>
+<td>No surface on roads; <code>surface</code> only on paths (Outdoors tiles)</td>
 <td>White line with a dashed grey outline (Transport: faint grey lines)</td>
 <td>1, 3; 4 on main roads</td>
 <td><a href="https://www.thunderforest.com/contact/">Contact</a></td>
@@ -432,7 +432,7 @@
 <td>Stadia Maps (Alidade Smooth, Outdoors)</td>
 <td>no</td>
 <td>No</td>
-<td>Paved or unpaved, from OpenMapTiles, from zoom 12 (to check)</td>
+<td>Paved or unpaved, OpenMapTiles-compatible tiles, from zoom 12</td>
 <td>Thin plain lines</td>
 <td>Any</td>
 <td><a href="https://docs.stadiamaps.com/support/">Support</a></td>
@@ -441,7 +441,7 @@
 <td>Strava</td>
 <td>no</td>
 <td>No</td>
-<td>To check</td>
+<td>Paved or unpaved on roads from zoom 12, finer values on tracks; untagged roads and values it does not know, such as <code>laterite</code>, get none</td>
 <td>Cream with a brown edge; paths dark green dashes</td>
 <td>1, 2, 3</td>
 <td><a href="https://communityhub.strava.com">Community Hub ideas</a></td>
@@ -489,8 +489,8 @@
 </tr>
 <tr>
 <td>Humanitarian (HOT)</td>
-<td>Style rules with a paved list</td>
-<td><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql">SQL</a>, to check</td>
+<td>SQL <code>CASE</code> in <code>project.yml</code> (repository archived in March 2025)</td>
+<td><a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql">SQL</a></td>
 </tr>
 <tr>
 <td>Any osm2pgsql flex or tilemaker pipeline</td>

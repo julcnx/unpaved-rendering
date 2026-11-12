@@ -211,6 +211,31 @@ Screenshots at zoom 11 of the six spots for the apps that draw unpaved at z15 ([
 | Tracestrack | **No** at any spot |
 | CyclOSM | No (its surface dashes start at z14 in the code) |
 
+### Closed apps: what their tiles carry (2026-11-13)
+
+Tiles the web maps load, saved with `research/work/capture-tiles.mjs` and read with `research/work/tile-fields.mjs` (no GDAL needed). Values per way come from `research/work/tile-match.mjs`, which matches each OSM way of three Chiang Rai test spots (Thailand extract of 2026-11-11) to the tile line on top of it: A `laterite`, paved, concrete and untagged unclassified roads (19.910, 99.503); B the unknown value `unpavedsource:geometry=strava` among `unpaved`, `ground` and untagged roads (19.976, 99.774; way 963585113, typo fixed to `unpaved` by Julien after these checks, 2026-11-13); C route 1334, secondary with `gravel` (20.345, 99.741). Also Namibia C38 at z8 to z14.
+
+| App | Tile source | Surface in the tiles | From zoom | `laterite`, unknown value | Untagged |
+|---|---|---|---|---|---|
+| Strava | `tiles.strava.com/planet-v1` (own schema, OpenMapTiles-like) | Roads: `paved` or `unpaved`. Tracks: finer values (`gravel`, `dirt`, or the `tracktype` grade) | z12 (none at z10) | No surface | No surface |
+| Ride with GPS | `vector-cdn.ridewithgps.com/data/rwgps` (OpenMapTiles-based, own build) | `paved` or `unpaved` | z10 (none at z8) | **`paved`** | `paved` (main and minor roads) |
+| Komoot | `tiles-api.maps.komoot.net/v1/tiles/osm` ([TileJSON](https://tiles-api.maps.komoot.net/v1/tiles.json)) | **None** on roads; `tracktype` only. Surfaces come from its routing data | | | |
+| Mapy.com | own format (`vectmap.mapy.cz`), style `map_base.xml` | No field to read, but the style has separate classes for minor ways only: asphalt minor road, hardened road, field track. Main road classes have none | | | |
+| Thunderforest | [outdoors-v2](https://www.thunderforest.com/docs/thunderforest.outdoors-v2/), [transport-v2](https://www.thunderforest.com/docs/thunderforest.transport-v2/) (docs) | **None** on the road layer; `surface` only on the path layer (Outdoors), `tracktype` on road labels | | | |
+| Stadia | "compatible with OpenMapTiles" ([docs](https://docs.stadiamaps.com/vector/)) | `paved` or `unpaved` (OpenMapTiles) | z12 (OpenMapTiles) | | |
+
+Not readable from here: Locus (raster PNG tiles), CalTopo (no vector tiles seen), AllTrails (bot check), Tracestrack (vector tiles need an API key; Topo raster), Kurviger (tiles not loaded in headless Chrome). DMD2, Maps.me and Guru Maps are phone apps.
+
+Screenshots at zoom 16 of the test spots ([examples/screenshots/](examples/screenshots/), folders `surface-*-z16`, each with a `key.png` of the OSM ways coloured by `surface`, from `research/work/surface-key.py`):
+
+- **Tracestrack**: every `laterite` stretch dashed, every paved and concrete one plain (spot A). Those ways also have `smoothness=very_bad`, but the one short `laterite` way with no `smoothness` (spot `surface-laterite-only`) is dashed too. The unknown value is plain between dashed `unpaved` roads (spot B). So: a list of unpaved values that includes `laterite`, and a value it does not know is drawn as paved.
+- **Ride with GPS**: `laterite` drawn plain, as its tiles say (paved).
+- **DMD2** (web planner hub.dmdnavigation.com, Julien's shots, `dmd2-web.png`): spot A, every `laterite` stretch dashed (yellow dashes on dark, the unclassified colour) and every paved or concrete one plain grey; spot A2, the `laterite` way without `smoothness` dashed like the `unpaved` residential roads next to it. So `laterite` counts as unpaved. Spot C (route 1334): the `gravel` stretch of the secondary dashed, the paved part solid.
+- **AllTrails** (Julien's desktop shots, `alltrails.png` in the A, A2 and C folders): `laterite`, `unpaved`, concrete and the gravel secondary all plain white; no surface drawn.
+- **Locus web map, Kurviger, CalTopo, Strava, OSM Carto**: no difference on any test road (OSM Carto: `laterite` is in none of its lists).
+
+Ride with GPS counts `laterite`, the unknown value and untagged roads as paved: it looks like a list of unpaved values with paved as the default, unlike OpenMapTiles, which leaves values in no list with no surface.
+
 ## A5. Provider rules measured against ours (2026-11-09, rerun 2026-11-12)
 
 Each open provider's paved/unpaved rule, copied from its source, run on the same 20 million km as our stats: [stats/provider-gaps.md](stats/provider-gaps.md) (`node stats/provider-gaps.ts`). Data side only: zoom limits and unstyled classes come on top.
