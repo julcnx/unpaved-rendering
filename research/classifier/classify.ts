@@ -2,14 +2,15 @@
 // Two base levels, paved and unpaved, plus an optional mark on unpaved roads only:
 // offroad (needs a high-clearance vehicle) or specialized (render as a path).
 //
-// Base: surface > tracktype > default (roads paved, tracks unpaved).
+// Base: unpaved surface > unpaved evidence > paved surface > tracktype=grade1 > default (roads paved, tracks unpaved).
+// Unpaved evidence: smoothness very_bad or worse, 4wd_only, or tracktype grade2 or higher makes a road unpaved, even with a paved surface.
 // wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
-// Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
+// Mark: smoothness > tracktype, and 4wd_only sets a minimum. Only on unpaved roads.
 
 export type Base = 'paved' | 'unpaved';
 export type Mark = 'offroad' | 'specialized';
 export type Level = Base | Mark;
-export type BaseSource = 'surface' | 'tracktype' | 'default';
+export type BaseSource = 'surface' | 'tracktype' | 'smoothness' | '4wd_only' | 'default';
 export type MarkSource = 'smoothness' | 'tracktype' | '4wd_only';
 
 export const RANK: Record<Mark, number> = { offroad: 0, specialized: 1 };
@@ -63,11 +64,25 @@ export type Result = { level: Level; base: Base; baseSource: BaseSource; mark: M
 export function classifyDetailed(tags: Tags): Result {
   let base: Base;
   let baseSource: BaseSource;
-  if (tags.surface) {
-    base = surfaceBase(tags.surface, tags.smoothness);
+  const surface = tags.surface ? surfaceBase(tags.surface, tags.smoothness) : null;
+  if (surface === 'unpaved') {
+    base = 'unpaved';
     baseSource = 'surface';
-  } else if (has(TRACKTYPE_MARK, tags.tracktype)) {
-    base = tags.tracktype === 'grade1' ? 'paved' : 'unpaved';
+  } else if (has(SMOOTHNESS, tags.smoothness) && SMOOTHNESS[tags.smoothness]) {
+    // A city car cannot pass: the road is not paved, even with a paved surface.
+    base = 'unpaved';
+    baseSource = 'smoothness';
+  } else if (has(FOUR_WD_ONLY, tags['4wd_only'])) {
+    base = 'unpaved';
+    baseSource = '4wd_only';
+  } else if (has(TRACKTYPE_MARK, tags.tracktype) && tags.tracktype !== 'grade1') {
+    base = 'unpaved';
+    baseSource = 'tracktype';
+  } else if (surface) {
+    base = surface;
+    baseSource = 'surface';
+  } else if (tags.tracktype === 'grade1') {
+    base = 'paved';
     baseSource = 'tracktype';
   } else {
     // Missing surface: roads are assumed paved, tracks never are.

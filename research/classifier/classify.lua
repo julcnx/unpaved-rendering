@@ -2,9 +2,10 @@
 -- Two base levels, paved and unpaved, plus an optional mark on unpaved roads only:
 -- offroad (needs a high-clearance vehicle) or specialized (render as a path).
 --
--- Base: surface > tracktype > default (roads paved, tracks unpaved).
+-- Base: unpaved surface > unpaved evidence > paved surface > tracktype=grade1 > default (roads paved, tracks unpaved).
+-- Unpaved evidence: smoothness very_bad or worse, 4wd_only, or tracktype grade2 or higher makes a road unpaved, even with a paved surface.
 -- wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
--- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
+-- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Only on unpaved roads.
 --
 -- Usage: local classifier = require('classify')
 --        local level, base, base_source, mark, mark_source = classifier.classify(object.tags)
@@ -55,10 +56,20 @@ end
 -- Returns level, base, base_source, mark, mark_source (mark and mark_source are nil when there is no mark).
 function M.classify(tags)
   local base, base_source
-  if tags.surface then
-    base, base_source = M.surface_base(tags.surface, tags.smoothness), 'surface'
-  elseif tags.tracktype and M.TRACKTYPE_MARK[tags.tracktype] ~= nil then
-    base, base_source = tags.tracktype == 'grade1' and 'paved' or 'unpaved', 'tracktype'
+  local surface = tags.surface and M.surface_base(tags.surface, tags.smoothness)
+  if surface == 'unpaved' then
+    base, base_source = 'unpaved', 'surface'
+  elseif tags.smoothness and M.SMOOTHNESS[tags.smoothness] then
+    -- A city car cannot pass: the road is not paved, even with a paved surface.
+    base, base_source = 'unpaved', 'smoothness'
+  elseif tags['4wd_only'] and M.FOUR_WD_ONLY[tags['4wd_only']] then
+    base, base_source = 'unpaved', '4wd_only'
+  elseif tags.tracktype and M.TRACKTYPE_MARK[tags.tracktype] ~= nil and tags.tracktype ~= 'grade1' then
+    base, base_source = 'unpaved', 'tracktype'
+  elseif surface then
+    base, base_source = surface, 'surface'
+  elseif tags.tracktype == 'grade1' then
+    base, base_source = 'paved', 'tracktype'
   else
     -- Missing surface: roads are assumed paved, tracks never are.
     base, base_source = tags.highway == 'track' and 'unpaved' or 'paved', 'default'

@@ -2,9 +2,10 @@
 -- Two base levels, paved and unpaved, plus an optional mark on unpaved roads only:
 -- offroad (needs a high-clearance vehicle) or specialized (render as a path).
 --
--- Base: surface > tracktype > default (roads paved, tracks unpaved).
+-- Base: unpaved surface > unpaved evidence > paved surface > tracktype=grade1 > default (roads paved, tracks unpaved).
+-- Unpaved evidence: smoothness very_bad or worse, 4wd_only, or tracktype grade2 or higher makes a road unpaved, even with a paved surface.
 -- wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
--- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
+-- Mark: smoothness > tracktype, and 4wd_only sets a minimum. Only on unpaved roads.
 --
 -- Usage, with an hstore tags column (osm2pgsql):
 --   SELECT road_surface_class(highway, tags->'surface', tags->'smoothness', tags->'tracktype', tags->'4wd_only') FROM planet_osm_line;
@@ -32,10 +33,13 @@ RETURNS text AS $$
   END
   FROM (SELECT
     CASE
-      WHEN surface IS NOT NULL THEN road_surface_base(surface, smoothness)
-      WHEN tracktype = 'grade1' THEN 'paved'
+      -- A city car cannot pass: the road is not paved, even with a paved surface.
+      WHEN smoothness IN ('very_bad', 'horrible', 'very_horrible', 'impassable') THEN 'unpaved'
+      WHEN fourwd_only IN ('recommended', 'yes', 'extreme') THEN 'unpaved'
       -- grade6-8 are an Australian local extension (Australian Tagging Guidelines/Roads).
       WHEN tracktype IN ('grade2', 'grade3', 'grade4', 'grade5', 'grade6', 'grade7', 'grade8') THEN 'unpaved'
+      WHEN surface IS NOT NULL THEN road_surface_base(surface, smoothness)
+      WHEN tracktype = 'grade1' THEN 'paved'
       -- Missing surface: roads are assumed paved, tracks never are.
       WHEN highway = 'track' THEN 'unpaved'
       ELSE 'paved'

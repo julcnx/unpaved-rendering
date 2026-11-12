@@ -1,9 +1,10 @@
 // Classifier: plain-JS copy of osm-wiki/unpaved-rendering/classifier/classify.ts (same test cases in test/).
 // Two levels, paved and unpaved, plus an optional mark on unpaved roads only:
 // offroad (needs a high-clearance vehicle) or specialized (could be drawn as a path).
-// Base: surface > tracktype > default (roads paved, tracks unpaved).
+// Base: unpaved surface > unpaved evidence > paved surface > tracktype=grade1 > default (roads paved, tracks unpaved).
+// Unpaved evidence: smoothness very_bad or worse, 4wd_only, or tracktype grade2 or higher makes a road unpaved, even with a paved surface.
 // wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
-// Mark: smoothness > tracktype, and 4wd_only sets a minimum. Ignored on paved roads.
+// Mark: smoothness > tracktype, and 4wd_only sets a minimum. Only on unpaved roads.
 
 const RANK = { offroad: 0, specialized: 1 };
 
@@ -36,8 +37,13 @@ export function surfaceBase(surface, smoothness) {
 
 export function classifyDetailed(tags) {
   let base, baseSource;
-  if (tags.surface) { base = surfaceBase(tags.surface, tags.smoothness); baseSource = 'surface'; }
-  else if (has(TRACKTYPE_MARK, tags.tracktype)) { base = tags.tracktype === 'grade1' ? 'paved' : 'unpaved'; baseSource = 'tracktype'; }
+  const surface = tags.surface ? surfaceBase(tags.surface, tags.smoothness) : null;
+  if (surface === 'unpaved') { base = 'unpaved'; baseSource = 'surface'; }
+  else if (has(SMOOTHNESS, tags.smoothness) && SMOOTHNESS[tags.smoothness]) { base = 'unpaved'; baseSource = 'smoothness'; }
+  else if (has(FOUR_WD_ONLY, tags['4wd_only'])) { base = 'unpaved'; baseSource = '4wd_only'; }
+  else if (has(TRACKTYPE_MARK, tags.tracktype) && tags.tracktype !== 'grade1') { base = 'unpaved'; baseSource = 'tracktype'; }
+  else if (surface) { base = surface; baseSource = 'surface'; }
+  else if (tags.tracktype === 'grade1') { base = 'paved'; baseSource = 'tracktype'; }
   else { base = tags.highway === 'track' ? 'unpaved' : 'paved'; baseSource = 'default'; }
   if (base === 'paved') return { level: 'paved', base, baseSource, mark: null, markSource: null };
   let mark = null, markSource = null;

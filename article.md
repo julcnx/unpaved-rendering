@@ -61,8 +61,8 @@ Every road gets one of two levels from its tags:
 
 | Level | Rule |
 |---|---|
-| **Paved** | `surface` is a paved value, or there is no `surface` and `tracktype=grade1`, or neither `surface` nor `tracktype` |
-| **Unpaved** | any other `surface` value, or no `surface` and `tracktype=grade2` or higher |
+| **Paved** | `surface` is a paved value or missing, with no unpaved evidence and `tracktype` at most `grade1` |
+| **Unpaved** | any other `surface` value, or unpaved evidence: `tracktype=grade2` or higher, `smoothness=very_bad` or worse, or `4wd_only=yes`, `recommended` or `extreme`, whatever the `surface` |
 
 The paved values are a whitelist: `paved`, `asphalt`, `chipseal`, `concrete`, `concrete:plates`, `paving_stones`, `sett`, `bricks`, `metal`, `cobblestone` and `cobblestone:flattened`. `wood`, `concrete:lanes` and `grass_paver` count as paved only when `smoothness` is `bad` or better. A value with several parts (`asphalt;gravel`) is unpaved if any part is.
 
@@ -82,7 +82,7 @@ On unpaved roads only, a map can add a mark for roads that need a high-clearance
 - `tracktype=grade3` or higher
 - `4wd_only=yes`, `recommended` or `extreme`
 
-The mark is never shown on paved roads: a potholed asphalt road is still paved, and routers can still use its `smoothness`.
+This evidence also makes the road Unpaved, even when `surface` is paved: a road a city car cannot pass, such as a broken asphalt mountain road, is not drawn as paved.
 
 The mark is optional because the evidence is rare. Only 5.8% of unpaved km carry `smoothness`, `tracktype` or `4wd_only`, and 3.6% get the mark. In some countries it is common (36% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged `4wd_only`); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the real ask. How the mark looks in each style is shown under [How to draw it](#s-6-how-to-draw-it).
 
