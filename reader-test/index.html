@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Map test: which roads are unpaved?</title>
-<meta name="description" content="A 1-minute map test: five small maps, no legend. Which roads are unpaved?">
+<title>Map test: which roads are gravel or dirt?</title>
+<meta name="description" content="A 1-minute map test: five small maps, no legend. Which roads are gravel or dirt?">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d4ed8'/%3E%3Cpath d='M4 16 H14' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M19 16 H22 M26 16 H28' stroke='%23fff' stroke-width='6'/%3E%3C/svg%3E">
-<meta property="og:title" content="Map test, 1 minute: which roads are unpaved?">
+<meta property="og:title" content="Map test, 1 minute: which roads are gravel or dirt?">
 <meta property="og:description" content="Five small maps, no legend on purpose. Which numbered roads are gravel or dirt?">
 <style>
   :root { --fg: #1f1d1a; --muted: #6b665e; --bg: #faf8f4; --card: #fff; --line: #ddd7cc; --blue: #1d4ed8; --blue-soft: #e6ecfb; }
@@ -55,10 +55,10 @@
 
 <!-- 1. Start -->
 <section id="start">
-  <h1>Which roads are unpaved?</h1>
+  <h1>Which roads are gravel or dirt?</h1>
   <p>Most maps draw gravel and dirt roads exactly like paved ones. I am working on ways for maps made from OpenStreetMap to show the difference, and this test checks which drawings people understand at a glance, without a legend.</p>
   <p>You will see five small maps. Each one shows paved roads and unpaved roads (gravel or dirt), drawn in different ways, and each map uses its own way of drawing them.</p>
-  <p>There is <strong>no legend, on purpose</strong>: on each map, tap the numbered roads you read as unpaved, from the drawing alone. Go with your first impression: you cannot go back to a map once you move on.</p>
+  <p>There is <strong>no legend, on purpose</strong>: on each map, tap the numbered roads you read as gravel or dirt, from the drawing alone. Go with your first impression: you cannot go back to a map once you move on.</p>
   <p class="muted">About a minute. Anonymous: no name, no email.</p>
   <div class="trap" aria-hidden="true"><label>Website <input id="website" tabindex="-1" autocomplete="off"></label></div>
   <button class="go" id="begin">Start</button>
@@ -66,7 +66,7 @@
 
 <!-- 2. One map at a time -->
 <section id="test" hidden>
-  <p class="q"><span class="step" id="step"></span> · Tap the roads that look unpaved</p>
+  <p class="q"><span class="step" id="step"></span> · Tap the gravel or dirt roads</p>
   <img class="map" id="map" alt="Map with numbered roads" width="400" height="520">
   <div class="bar">
     <div class="grid" id="roads"></div>
@@ -78,8 +78,8 @@
 <!-- 3. Clearest style -->
 <section id="clarity" hidden>
   <h1>Last question</h1>
-  <p>The same place, drawn five ways. The orange road is paved where it runs down to the right, and unpaved where it runs to the left.</p>
-  <p class="q">Tap them in order: first the one that shows unpaved roads most clearly, last the least clear.</p>
+  <p>The same place, drawn five ways. The orange road is paved where it runs down to the right, and gravel where it runs to the left.</p>
+  <p class="q">Tap them in order: first the one that shows gravel and dirt roads most clearly, last the least clear.</p>
   <div class="strips" id="strips"></div>
   <div class="hint" id="rank-hint"></div>
   <button class="go" id="send">Send my answers</button>
