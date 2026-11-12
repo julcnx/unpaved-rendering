@@ -22,7 +22,6 @@ const APPS: Record<string, string[]> = {
   osmand: ['net.osmand.plus', 'net.osmand'],
   'organic-maps': ['app.organicmaps', 'app.organicmaps.web'],
   comaps: ['app.comaps', 'app.comaps.google', 'app.comaps.fdroid'],
-  calimoto: ['com.calimoto.calimoto'],
   'guru-maps': ['com.bodunov.galileo', 'com.bodunov.GalileoPro'],
   'maps-me': ['com.mapswithme.maps.pro'],
 };

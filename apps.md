@@ -26,7 +26,6 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 | Map | Open source | Unpaved on main roads | Data | Tracks and paths | Styles that fit | Where to ask |
 |---|---|---|---|---|---|---|
 | AdvOSM (Garmin maps) | not stated | Every class except service: dashes across the road. Minor roads stay white; the one tertiary checked turned from orange to yellow | `surface`, `smoothness`, `tracktype` and width | To check | To check | Contact form on [the site](https://rex8475.wixsite.com/advosm) |
-| Calimoto | no | Unpaved sections drawn thinner | To check | To check | To check | [Help center](https://support.calimoto.com/hc/en-us) |
 | OsmAnd | yes | Only with the "Road surface" or "Road quality" overlay, off by default, from zoom 14 | Full `surface`, `smoothness` and `tracktype` | Grey-green dashes by `tracktype`; paths dark grey dashes. The OsmAnd web map uses the OSM Carto style instead | 1, 3, 4 | [GitHub](https://github.com/osmandapp/OsmAnd/issues) ([#9465](https://github.com/osmandapp/OsmAnd/issues/9465)) |
 | Locus Map | no | Depends on the map theme; not on the LoMaps web map | To check | Web map: thin dark dashes, tracks and paths alike | 1, 3, 4 | [Helpdesk ideas](https://help.locusmap.eu) |
 

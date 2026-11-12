@@ -2,7 +2,7 @@
 
 One verified spot per continent (2026-11-03, Iceland and Australia 2026-11-09, North America 2026-11-09). At each point, two ways of the same road meet, one tagged paved and one unpaved, and street-level imagery confirms the surface really changes there. Found with [transitions.ts](transitions.ts) ([transitions.json](transitions.json)).
 
-Only apps and styles that use OSM data are listed: Google, Apple and Bing draw their own data, so this proposal cannot change them. All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Calimoto, Guru Maps, Maps.me): open the `geo:` link on the phone or paste the coordinates.
+Only apps and styles that use OSM data are listed: Google, Apple and Bing draw their own data, so this proposal cannot change them. All links open at zoom 15 on the point where the surface changes. Phone-only apps (Organic Maps, CoMaps, OsmAnd app, Guru Maps, Maps.me): open the `geo:` link on the phone or paste the coordinates.
 
 Why only one per country: of 27 tag transitions checked on imagery, 13 showed a real change and 14 did not (both sides paved, or both gravel or dirt), so every spot needs a look at the images. Other verified spots (Namibia C48, C28, C26, C47, C40; Bolivia RN3 west, RN25, F48) are kept in transitions.json and `images/sheets/transitions/` as backups.
 
