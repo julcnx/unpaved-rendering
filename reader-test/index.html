@@ -18,7 +18,12 @@
   p { margin: 0 0 12px; }
   .muted { color: var(--muted); font-size: 14px; }
   [hidden] { display: none !important; }
-  .step { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: var(--muted); margin: 4px 0 6px; }
+  .step { color: var(--muted); font-weight: 400; }
+  /* Map screen: the circles and Next stay in a bar at the bottom of the screen, so they are always in reach, even where
+     in-app browsers leave little height (the map can run under the bar; a short scroll shows the rest). */
+  .bar { position: sticky; bottom: 0; background: var(--bg); margin: 0 -16px; padding: 4px 16px calc(6px + env(safe-area-inset-bottom)); box-shadow: 0 -1px 0 var(--line); }
+  .bar button.go { margin-top: 10px; padding: 12px; }
+  .bar .hint { margin-top: 4px; min-height: 16px; }
   .q { font-weight: 600; margin: 0 0 8px; }
   /* The map is shown at its real size (400 CSS px wide): never wider, so every reader sees the same scale. */
   .map { display: block; width: 100%; max-width: 400px; aspect-ratio: 400 / 520; margin: 0 auto; border-radius: 6px; background: #f2efe9; }
@@ -26,7 +31,7 @@
   fieldset { border: 0; margin: 0; padding: 0; }
   /* Answers: one circle per road, carrying its number like the badges on the map. Tap the roads that look unpaved:
      white when not tapped, blue when tapped; tap again to untap. */
-  .grid { display: grid; grid-template-columns: repeat(var(--n), 1fr); align-items: center; margin: 12px 0 0; }
+  .grid { display: grid; grid-template-columns: repeat(var(--n), 1fr); align-items: center; margin: 8px 0 0; }
   .dot { justify-self: center; width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--blue); background: #fff; color: var(--blue);
     font: 700 17px system-ui, sans-serif; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
   .dot[aria-pressed="true"] { background: var(--blue); color: #fff; }
@@ -61,12 +66,13 @@
 
 <!-- 2. One map at a time -->
 <section id="test" hidden>
-  <div class="step"><span id="step"></span><span>No legend on purpose</span></div>
-  <p class="q">Tap the numbered roads that look unpaved to you.</p>
+  <p class="q"><span class="step" id="step"></span> · Tap the roads that look unpaved</p>
   <img class="map" id="map" alt="Map with numbered roads" width="400" height="520">
-  <div class="grid" id="roads"></div>
-  <button class="go" id="next">Next</button>
-  <div class="hint" id="next-hint"></div>
+  <div class="bar">
+    <div class="grid" id="roads"></div>
+    <button class="go" id="next">Next</button>
+    <div class="hint" id="next-hint"></div>
+  </div>
 </section>
 
 <!-- 3. Clearest style -->
@@ -157,7 +163,7 @@ function newMap() {
 }
 function renderMap() {
   const { k, maps, cur } = st, n = cur.answers.length;
-  $('step').textContent = `Map ${k + 1} of ${maps.length}`;
+  $('step').textContent = `Map ${k + 1}/${maps.length}`;
   $('map').src = `img/${cur.place}-${cur.style}.jpg`;
   $('roads').style.setProperty('--n', n);
   $('roads').innerHTML = Array.from({ length: n }, (_, i) =>
