@@ -213,7 +213,7 @@ Screenshots at zoom 11 of the six spots for the apps that draw unpaved at z15 ([
 
 ### Closed apps: what their tiles carry (2026-11-13)
 
-Tiles the web maps load, saved with `research/work/capture-tiles.mjs` and read with `research/work/tile-fields.mjs` (no GDAL needed). Values per way come from `research/work/tile-match.mjs`, which matches each OSM way of three Chiang Rai test spots (Thailand extract of 2026-11-11) to the tile line on top of it: A `laterite`, paved, concrete and untagged unclassified roads (19.910, 99.503); B the unknown value `unpavedsource:geometry=strava` among `unpaved`, `ground` and untagged roads (19.976, 99.774; way 963585113, typo fixed to `unpaved` by Julien after these checks, 2026-11-13); C route 1334, secondary with `gravel` (20.345, 99.741). Also Namibia C38 at z8 to z14.
+Tiles the web maps load, saved with `research/tiles/capture-tiles.mjs` and read with `research/tiles/tile-fields.mjs` (no GDAL needed). Values per way come from `research/tiles/tile-match.mjs`, which matches each OSM way of three Chiang Rai test spots (Thailand extract of 2026-11-11) to the tile line on top of it: A `laterite`, paved, concrete and untagged unclassified roads (19.910, 99.503); B the unknown value `unpavedsource:geometry=strava` among `unpaved`, `ground` and untagged roads (19.976, 99.774; way 963585113, typo fixed to `unpaved` by Julien after these checks, 2026-11-13); C route 1334, secondary with `gravel` (20.345, 99.741). Also Namibia C38 at z8 to z14.
 
 | App | Tile source | Surface in the tiles | From zoom | `laterite`, unknown value | Untagged |
 |---|---|---|---|---|---|
@@ -226,7 +226,7 @@ Tiles the web maps load, saved with `research/work/capture-tiles.mjs` and read w
 
 Not readable from here: Locus (raster PNG tiles), CalTopo (no vector tiles seen), AllTrails (bot check), Tracestrack (vector tiles need an API key; Topo raster), Kurviger (tiles not loaded in headless Chrome). DMD2, Maps.me and Guru Maps are phone apps.
 
-Screenshots at zoom 16 of the test spots ([examples/screenshots/](examples/screenshots/), folders `surface-*-z16`, each with a `key.png` of the OSM ways coloured by `surface`, from `research/work/surface-key.py`):
+Screenshots at zoom 16 of the test spots ([examples/screenshots/](examples/screenshots/), folders `surface-*-z16`, each with a `key.png` of the OSM ways coloured by `surface`, from `research/tiles/surface-key.py`):
 
 - **Tracestrack**: every `laterite` stretch dashed, every paved and concrete one plain (spot A). Those ways also have `smoothness=very_bad`, but the one short `laterite` way with no `smoothness` (spot `surface-laterite-only`) is dashed too. The unknown value is plain between dashed `unpaved` roads (spot B). So: a list of unpaved values that includes `laterite`, and a value it does not know is drawn as paved.
 - **Ride with GPS**: `laterite` drawn plain, as its tiles say (paved).
