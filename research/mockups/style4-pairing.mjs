@@ -16,7 +16,9 @@ mkdirSync(TMP, { recursive: true });
 const labels = JSON.parse(readFileSync('research/reader-test/labels.json', 'utf8'));
 const SPOT = 'australia', [LAT, LON] = labels[SPOT].center, Z = 16;
 const BGS = ['white', 'forest', 'terrain'];
-const VARIANTS = { plain: 'Style 4 everywhere', 'fill': 'Style 4, white roads style 3', grain: 'Style 4, white roads style 1' };
+const VARIANTS = { plain: 'Style 4 everywhere', 'fill': 'Style 4, white roads style 3', grain: 'Style 4, white roads style 1', tan: 'Style 4, white roads tan fill' };
+// VARIANTS=tan,plain: a subset (and a sheet named after it).
+const ONLY = process.env.VARIANTS?.split(',');
 
 const browser = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' });
 const page = await browser.newPage();
@@ -25,6 +27,7 @@ await page.setRequestInterception(true);
 page.on('request', (r) => (/overpass/i.test(r.url()) ? r.abort() : r.continue()));
 const files = [];
 for (const bg of BGS) for (const [v, label] of Object.entries(VARIANTS)) {
+  if (ONLY && !ONLY.includes(v)) continue;
   const q = new URLSearchParams({ spot: SPOT, bg, z: String(Z), style: 'dashed-casing', compare: '0', lat: LAT, lon: LON });
   await page.goto(`http://localhost:8765/demo/?${q}`, { waitUntil: 'domcontentloaded' });
   await page.addStyleTag({ content: 'body { grid-template-columns: 1fr !important; grid-template-rows: 1fr !important; } aside, #chips, #bgchips, #msg { display: none !important; }' });
@@ -35,6 +38,11 @@ for (const bg of BGS) for (const [v, label] of Object.entries(VARIANTS)) {
     // White roads are the only class with tintCasing (style-spec.js).
     const other = v === 'fill' ? STYLES['dashed-fill'].draw : v === 'grain' ? STYLES.grain.draw : null;
     if (other) STYLES['dashed-casing'].draw = (level, c, ...rest) => (c.tintCasing ? other : plain)(level, c, ...rest);
+    // Tan: white Unpaved roads get the light tan of the low-zoom tint (lowTint); Off-road keeps its darker tan (offTint).
+    if (v === 'tan') STYLES['dashed-casing'].draw = (level, c, ...rest) => {
+      const d = plain(level, c, ...rest);
+      return c.tintCasing && level === 'unpaved' && d.casing ? { ...d, fill: { color: c.lowTint } } : d;
+    };
     window.dispatchEvent(new Event('resize'));
   }, v);
   await new Promise((r) => setTimeout(r, 1200));
@@ -45,6 +53,7 @@ for (const bg of BGS) for (const [v, label] of Object.entries(VARIANTS)) {
 }
 await browser.close();
 // One sheet: rows = backgrounds, columns = variants.
-execFileSync('montage', [...files.flatMap(([f, l]) => ['-label', l, f]), '-tile', '3x', '-geometry', '+4+4', '-pointsize', '16', `${OUT}/style4-pairing.png`]);
+const sheet = `${OUT}/style4-pairing${ONLY ? '-' + ONLY.join('-') : ''}.png`;
+execFileSync('montage', [...files.flatMap(([f, l]) => ['-label', l, f]), '-tile', `${ONLY?.length ?? Object.keys(VARIANTS).length}x`, '-geometry', '+4+4', '-pointsize', '16', sheet]);
 rmSync(TMP, { recursive: true });
-console.error(`${OUT}/style4-pairing.png`);
+console.error(sheet);

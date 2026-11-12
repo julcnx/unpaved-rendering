@@ -212,7 +212,7 @@ export default {
     },
     "dashed-casing": {
       "name": "4. Dashed casing",
-      "note": "Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept). Off-road: the same outline on a darker tint.",
+      "note": "Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept); white roads get a light tan fill. Off-road: the same outline on a darker tint.",
       "unpaved": [
         22,
         6
@@ -232,6 +232,9 @@ export default {
         "primary": "#5d3e00",
         "secondary": "#535c04",
         "minor": "#575757"
+      },
+      "unpavedFill": {
+        "minor": "#e2cfb8"
       }
     }
   }

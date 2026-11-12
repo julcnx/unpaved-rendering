@@ -73,7 +73,11 @@ const SPEC = {
     // darker on white (OSM Carto tertiary casing), or the dashes fade.
     'dashed-casing': { unpaved: RHYTHM.unpaved, offroad: RHYTHM.offroad, casing: { trunk: '#a33b20', primary: '#7d5400', minor: '#8f8f8f' },
       // Outline on the darker Off-road fill: same hue, darker, so it keeps the contrast it has on Unpaved (it fell to 1.8 on white).
-      offCasing: { motorway: '#af1d4f', trunk: '#782c18', primary: '#5d3e00', secondary: '#535c04', minor: '#575757' } },
+      offCasing: { motorway: '#af1d4f', trunk: '#782c18', primary: '#5d3e00', secondary: '#535c04', minor: '#575757' },
+      // Unpaved fill on white roads (2026-11-12, Julien): the light tan of the low-zoom tint (minor lowTint), so Unpaved is light tan
+      // and Off-road the darker tan (offTint) at every zoom. A white fill with a dashed outline looked like the tracks of AllTrails,
+      // OpenCycleMap and Thunderforest on light land, and its dashes nearly vanished on forest (D-examples-visuals, style 4).
+      unpavedFill: { minor: '#e2cfb8' } },
   },
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
@@ -120,7 +124,9 @@ let DARK_MODE = false; // dark map: the outline is the class casing, already lig
 const isTinted = (c: Klass) => c.id.endsWith('-t'); // Off-road: the darker fill (see tinted())
 const gapCasing = (c: Klass) => DARK_MODE ? (isTinted(c) ? (SPEC.dark.offCasing as Record<string, string>)[c.id.replace(/-t$/, '')] : c.casing)
   : (isTinted(c) ? (GA.offCasing as Record<string, string>)[c.id.replace(/-t$/, '')] : (GA.casing as Record<string, string>)[c.id]) ?? c.casing;
-const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) + line(c.fill, W);
+// Unpaved white roads: a light tan fill (GA.unpavedFill, light mode only); Off-road is already tinted (see tinted()).
+const dashedCasing = (c: Klass, dash: string) => line(gapCasing(c), W + CAS, dash) +
+  line(!DARK_MODE && !isTinted(c) ? (GA.unpavedFill as Record<string, string>)[c.id] ?? c.fill : c.fill, W);
 
 const unpaved = (s: State) => s.startsWith('Unpaved');
 const offroad = (s: State) => s.endsWith('Off-road');
@@ -150,7 +156,7 @@ const OPTIONS: Record<string, Option> = {
   },
   'dashed-casing': {
     title: '4. Dashed casing',
-    note: 'Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept). Off-road: the same outline on a darker tint.',
+    note: 'Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept); white roads get a light tan fill. Off-road: the same outline on a darker tint.',
     road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
   'dashed-fill-full': {

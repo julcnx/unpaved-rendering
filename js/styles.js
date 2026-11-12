@@ -10,7 +10,8 @@ const { motorway, trunk, primary, secondary, minor } = SPEC.classes;
 const S = SPEC.styles;
 // Dashed casing: a darker outline where the normal casing is too close to the fill (red, orange, white).
 // On the darker Off-road fill the outline and the centre line are darker too (offGapCasing, offLine), so they keep their contrast.
-const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor });
+// unpavedFill: the light tan fill of white Unpaved roads in the dashed casing (light mode only).
+const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor, unpavedFill: S['dashed-casing'].unpavedFill?.[key] });
 const LIGHT = {
   motorway: withGapCasing('motorway', motorway), trunk: withGapCasing('trunk', trunk), primary: withGapCasing('primary', primary),
   secondary: withGapCasing('secondary', secondary), minor: withGapCasing('minor', minor),
@@ -88,7 +89,7 @@ export const STYLES = {
     name: GA.name, note: GA.note, minWidth: 3,
     draw: (level, c) => level === 'paved' ? {} : {
       casing: { dash: GA.unpaved, cap: 'butt', color: off(level) ? (c.offGapCasing ?? c.gapCasing) : c.gapCasing },
-      fill: off(level) ? { color: offTint(c) } : undefined,
+      fill: off(level) ? { color: offTint(c) } : c.unpavedFill ? { color: c.unpavedFill } : undefined,
     },
   },
   'dashed-fill-full': {
