@@ -2,9 +2,9 @@
 
 *A Main Road Is Not Always Paved*
 
-A proposal asking map apps to show whether a road is paved or unpaved, as an extra signal on top of the road class colour, so the class (function and importance) is never lost.
+A proposal for map apps to show whether a road is paved or unpaved, as an extra signal on top of the road class colour, so the class (function and importance) is never lost.
 
-- **Main ask:** two levels, **Paved** and **Unpaved**.
+- **Core:** two levels, **Paved** and **Unpaved**.
 - **Optional:** an **Off-road** mark on Unpaved roads, where `smoothness`, `tracktype` or `4wd_only` say a city car cannot pass.
 
 ## Site

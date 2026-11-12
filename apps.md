@@ -9,7 +9,7 @@ Sources, code links and screenshots: research/A-providers.md and research/exampl
 
 How each map draws a road that changes from paved to unpaved. The web maps were compared on six such roads (Namibia C38, Bolivia RN3, Nepal NH48, Iceland 54, Australia 27, Alberta 40, zoom 15); the phone apps were checked by hand. The proposal and the five styles are in the [article](../).
 
-**Data** says what the map's data or tiles know about the surface, so whether a change is a style change only. **Tracks** says how the map draws `highway=track`, which an Unpaved signal on roads must not look like. "To check" means not verified yet; corrections are welcome as a [GitHub issue](https://github.com/julcnx/unpaved-rendering/issues).
+**Data** says what the map's data or tiles know about the surface, so whether a change is a style change only. **Tracks** says how the map draws `highway=track`, which an Unpaved signal on roads is best kept distinct from. "To check" means not verified yet; corrections are welcome as a [GitHub issue](https://github.com/julcnx/unpaved-rendering/issues).
 
 ## Show it, keep the class
 
