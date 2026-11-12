@@ -145,9 +145,9 @@ The demo below draws the five styles on real data, at any of the sample spots or
 - **Mappers:** what helps most is `surface` on main roads, updating tags that are out of date, and `smoothness` where a road really is rough. As always, tag what is on the ground, not what makes a map look right: the map should follow the tags, never the other way round.
 - **Map and app makers:** if you want to try it, four steps. Classify with a paved whitelist: it is ready in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua) (osm2pgsql flex, tilemaker), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) (PostgreSQL) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js), with shared tests. Pick the style that stays distinct from your tracks and tunnels. Keep the class colour. Add two words to the legend, Unpaved and Off-road. Then tell me what does not fit your map.
 - **Map users:** find your app in the [App reports](apps/) and ask for it through its channel; once a request is open, support it there.
-- **Everyone:** corrections and feedback are welcome as a [GitHub issue](https://github.com/julcnx/unpaved-rendering/issues).
+- **Everyone:** [discuss it on the OpenStreetMap community forum](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052), or report a correction as a [GitHub issue](https://github.com/julcnx/unpaved-rendering/issues).
 
-**What happens next.** A thread on the OpenStreetMap community forum to collect feedback on the styles, then one request per app, starting with the open-source ones. The [App reports](apps/) will show where each stands.
+**What happens next.** Feedback is being collected in a [thread on the OpenStreetMap community forum](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052). Then comes one request per app, starting with the open-source ones. The [App reports](apps/) will show where each stands.
 
 ## Questions
 
