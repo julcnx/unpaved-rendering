@@ -50,7 +50,7 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 | Kurviger | no | Only on the planned route, not on the map | To check | Faint thin grey lines | Any | [Forum](https://forum.kurviger.com/t/different-colours-for-sealed-and-unsealed-roads/18588) |
 | AllTrails | no | No | To check | Dashed double line; paths grey dots | 1, 3; 4 on main roads | [Help center](https://support.alltrails.com) |
 | Maps.me | no | No | To check | Dark olive dashes, the same for every track; paths brown dashes; footways white dashes (as Organic Maps) | 1, 3 | [Help center](https://support.maps.me) |
-| Guru Maps | no | No | To check | To check | To check | [Documentation](https://gurumaps.app/docs/intro), support in the app |
+| Guru Maps | no | No | To check | Brown dashes, no grade difference seen; paths thin light grey dashes | 1, 3, 4 (tunnels not checked) | [Documentation](https://gurumaps.app/docs/intro), support in the app |
 | OpenTopoMap | yes | No; surface only on paths | Full `surface` | Thin solid black lines by `tracktype`; paths black dots | 1, 3, 4 | [GitHub](https://github.com/der-stefan/OpenTopoMap/issues) |
 | Thunderforest (OpenCycleMap, Transport, Outdoors) | no | No | To check | White line with a dashed grey outline (Transport: faint grey lines) | 1, 3; 4 on main roads | [Contact](https://www.thunderforest.com/contact/) |
 | Stadia Maps (Alidade Smooth, Outdoors) | no | No | Paved or unpaved, from OpenMapTiles, from zoom 12 (to check) | Thin plain lines | Any | [Support](https://docs.stadiamaps.com/support/) |
