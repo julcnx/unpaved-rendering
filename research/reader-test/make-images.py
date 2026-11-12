@@ -6,6 +6,7 @@
 #   reader-test/img/<spot>-<style>.jpg   every place in every style, roads numbered (the web page rotates them)
 #   reader-test/img/clarity-<style>.jpg  one place in every style, no numbers (the closing "clearest style" question)
 #   reader-test/places.json              how many numbers each place has (no answers)
+#   reader-test/img/og.jpg               link preview: Iceland, no style, no numbers, no question (nothing to answer in comments)
 #   research/reader-test/picture-A.jpg ... E.jpg  one version with letters, for a post (PICTURES)
 import json
 from pathlib import Path
@@ -60,3 +61,12 @@ for letter, (spot, style) in PICTURES.items():
     im.save(HERE / f'picture-{letter}.jpg', quality=85)
     unpaved = [r['n'] for r in labels[spot]['roads'] if r['unpaved']]
     print(f'picture-{letter}.jpg  {spot:10} {style:17} unpaved: {unpaved}')
+
+# Link preview: no numbers and no question, so there is nothing to answer in the comments of a post.
+im = Image.open(SHOTS / 'og-iceland.png').convert('RGB')
+d = ImageDraw.Draw(im)
+d.text((1160, 80), '1-minute map test', fill='#222', font=ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc', 46, index=1), anchor='ra')
+credit = ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc', 22)
+d.rectangle([im.width - d.textlength('© OpenStreetMap contributors', font=credit) - 24, im.height - 40, im.width, im.height], fill='#faf8f4')
+d.text((im.width - 12, im.height - 20), '© OpenStreetMap contributors', fill='#333', font=credit, anchor='rm')
+im.save(PAGE / 'og.jpg', quality=88)

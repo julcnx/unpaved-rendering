@@ -18,4 +18,8 @@ for style in grain centre-line dashed-fill dashed-casing dashed-fill-full; do
     --center -18.8107,16.9415 --attribution --reader --out shots/reader-test/tmp
   mv "shots/reader-test/tmp/namibia-$style-land-z16.png" "shots/reader-test/clarity-$style.png"
 done
+# Link preview (Facebook and others): a place not in the test, Iceland road 54, with no style (every road drawn
+# as paved, as most maps today), so the preview primes no style and no test map. 1200 x 630 px. Credit drawn by make-images.py.
+node scripts/shots.mjs --spots iceland --styles none --bgs land --zooms 14 --size 600x315 --dpr 2 --reader --out shots/reader-test/tmp
+mv shots/reader-test/tmp/iceland-none-land-z14.png shots/reader-test/og-iceland.png
 python3 research/reader-test/make-images.py
