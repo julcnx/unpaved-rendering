@@ -162,7 +162,7 @@ def build(src, out, title, description, kicker, h1, sub, hero, body_class=''):
 
 build('article.md', 'index.html', 'Mind the Surface',
       "A proposal for OpenStreetMap-based maps: keep each road's class colour and add one subtle signal for unpaved roads.",
-      'A proposal for OpenStreetMap-based maps', 'Mind the Surface', 'A main road is not always paved', hero=True)
+      'A proposal for OpenStreetMap-based maps · Draft for feedback', 'Mind the Surface', 'A main road is not always paved', hero=True)
 build('apps.md', 'apps/index.html', 'App reports: Mind the Surface',
       'How OpenStreetMap-based maps and apps draw unpaved roads today, app by app.',
       '<a href="../">Mind the Surface</a>', 'App reports', 'How OpenStreetMap-based maps draw unpaved roads, November 2026',
