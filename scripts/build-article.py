@@ -69,7 +69,7 @@ def app_grid():
         groups += f'<div class="group"><h3>{title}</h3><div class="pair">{cards}</div></div>'
     return (f'<figure class="fig wide apps">{groups}'
             '<figcaption>Namibia, C38 at Namutoni (Etosha): unpaved to the west and north, paved to the east. '
-            'Screenshots of each web map; OsmAnd Motorcycle rendered from the phone style. November 2026, © OpenStreetMap contributors. Every app: <a href="apps/">App reports</a>.</figcaption></figure>')
+            'Screenshots of each web map; OsmAnd Motorcycle is a third-party plugin style for the OsmAnd app, rendered on desktop. November 2026, © OpenStreetMap contributors. Every app: <a href="apps/">App reports</a>.</figcaption></figure>')
 
 
 SLIDER = f'''<figure class="fig wide"><div class="slider">
