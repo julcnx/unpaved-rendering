@@ -19,6 +19,8 @@ LANDMARKS = {  # app: (screenshot, J, K) in pixels of the 1200 x 800 screenshot,
     'mapy-com': ('namibia/mapy-com.png', (400, 400), (515, 600)),
     'humanitarian': ('namibia/humanitarian.png', (600, 400), (722, 600)),
     'ridewithgps': ('namibia/ridewithgps.png', (598, 330), (712, 545)),
+    # OsmAnd Motorcycle style, desktop render (research/examples/osmand-desktop.sh); landmarks read on the paved red leg
+    'osmand-motorcycle': ('namibia/osmand-desktop-enduro.png', (600, 400), (716, 598)),
 }
 W, H = 640, 400        # output frame
 JX, JY = 300, 110      # where J lands in it
