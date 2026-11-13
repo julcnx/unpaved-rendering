@@ -104,6 +104,9 @@ const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzgqOhJDVLUKdfWqVI3aOc
 
 const PLACES = ['bolivia', 'nepal', 'alberta', 'namibia', 'australia'];
 const STYLES = ['grain', 'centre-line', 'dashed-fill', 'dashed-casing', 'dashed-fill-full'];
+// Picture set, sent with the answers (images) and added to the picture URLs so no phone shows a cached older set.
+// 1 (no field in the sheet): until 2026-11-13. 2: dashed casing with the light tan fill on white unpaved roads.
+const IMAGES = 2;
 const $ = (id) => document.getElementById(id);
 const shuffle = (a) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const store = { get: (k) => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
@@ -126,7 +129,7 @@ if (!st) {
     stripOrder: shuffle(STYLES), rank: [], clarityTaps: [],
     // id: never all digits, or the sheet stores it as a number and may round it.
     r: { id: crypto.randomUUID?.() ?? `r${Math.random().toString(36).slice(2)}`, version, started: new Date().toISOString(),
-      screen: `${screen.width}x${screen.height}@${devicePixelRatio}`, viewport: innerWidth, resumes: 0, maps: [] } };
+      screen: `${screen.width}x${screen.height}@${devicePixelRatio}`, viewport: innerWidth, resumes: 0, images: IMAGES, maps: [] } };
   // Where the link was posted (?src=fb, ?src=enduro...), to tell the groups apart; it goes in the sheet's raw column.
   const src = new URLSearchParams(location.search).get('src');
   if (src) st.r.src = src.slice(0, 20);
@@ -155,7 +158,7 @@ $('begin').addEventListener('click', async () => {
   $('begin').disabled = true;
   counts = await fetch('places.json').then((x) => x.json());
   st.r.trap = $('website').value;
-  STYLES.forEach((s) => { new Image().src = `img/clarity-${s}.jpg`; }); // warm the cache
+  STYLES.forEach((s) => { new Image().src = `img/clarity-${s}.jpg?v=${IMAGES}`; }); // warm the cache
   newMap();
 });
 
@@ -169,14 +172,14 @@ function newMap() {
 function renderMap() {
   const { k, maps, cur } = st, n = cur.answers.length;
   $('step').textContent = `Map ${k + 1}/${maps.length}`;
-  $('map').src = `img/${cur.place}-${cur.style}.jpg`;
+  $('map').src = `img/${cur.place}-${cur.style}.jpg?v=${IMAGES}`;
   $('roads').style.setProperty('--n', n);
   $('roads').innerHTML = Array.from({ length: n }, (_, i) =>
     `<button class="dot" data-road="${i}" aria-pressed="${cur.answers[i] === 'U'}" aria-label="Road ${i + 1} unpaved">${i + 1}</button>`).join('');
   $('next').textContent = k + 1 < maps.length ? 'Next map' : 'Next';
   hint();
   show('test');
-  if (maps[k + 1]) new Image().src = `img/${maps[k + 1].place}-${maps[k + 1].style}.jpg`; // preload the next map
+  if (maps[k + 1]) new Image().src = `img/${maps[k + 1].place}-${maps[k + 1].style}.jpg?v=${IMAGES}`; // preload the next map
 }
 const hint = () => {
   $('next-hint').textContent = st.cur.answers.includes('U') ? '' : 'If none look unpaved, just go on.';
@@ -203,7 +206,7 @@ function newClarity() { st.screen = 'clarity'; restart(); renderClarity(); save(
 function renderClarity() {
   st.rank ??= []; // a session saved by an earlier version of the page
   $('strips').innerHTML = st.stripOrder.map((s, i) =>
-    `<button class="pick" data-i="${i}"><img class="strip" src="img/clarity-${s}.jpg" alt="Drawing ${i + 1}" width="400" height="240"><span class="rank"></span></button>`).join('');
+    `<button class="pick" data-i="${i}"><img class="strip" src="img/clarity-${s}.jpg?v=${IMAGES}" alt="Drawing ${i + 1}" width="400" height="240"><span class="rank"></span></button>`).join('');
   ranks();
   show('clarity');
 }
