@@ -8,6 +8,8 @@ examples/images/google/
 examples/images/sheets/
 # Track round screenshots (todo: track rendering per app): 309 MB, kept local
 examples/screenshots/track-*/
+# cycle.travel surface-value shots (forum reply to post #5): 22 MB, kept local
+examples/screenshots/cycle-travel-values/
 
 # Inherited from osm-wiki root .gitignore
 *.pbf

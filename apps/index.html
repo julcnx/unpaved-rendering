@@ -218,6 +218,15 @@
 <td>1, 3; 4 on main roads (as today)</td>
 <td><a href="https://github.com/tracestrack/tracestrack-maps/issues">GitHub</a></td>
 </tr>
+<tr>
+<td>cycle.travel</td>
+<td>no (built with its maker's open tilemaker and glug)</td>
+<td>A dashed dark outline; a secondary keeps its yellow (Canada), a tertiary turns from cream to white on its unpaved section (Switzerland). Map data in Europe and North America only</td>
+<td>A list of unpaved values: <code>rock</code>, <code>cement</code> and <code>asphalt_lanes</code> drawn as paved (seen on test roads); <code>tracktype</code> counts</td>
+<td>Brown dashed and dotted lines, no outline; paved tracks drawn as minor roads; paths green dots</td>
+<td>4 in use (tunnels not checked)</td>
+<td><a href="https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052">OSM forum</a></td>
+</tr>
 </tbody>
 </table></div>
 <h2 id="s-show-it-partly">Show it, partly</h2>
@@ -234,15 +243,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>AdvOSM (Garmin maps)</td>
-<td>not stated</td>
-<td>Every class except service: dashes across the road. Minor roads stay white; the one tertiary checked turned from orange to yellow</td>
-<td><code>surface</code>, <code>smoothness</code>, <code>tracktype</code> and width</td>
-<td>To check</td>
-<td>To check</td>
-<td>Contact form on <a href="https://rex8475.wixsite.com/advosm">the site</a></td>
-</tr>
 <tr>
 <td>OsmAnd</td>
 <td>yes</td>
@@ -303,6 +303,15 @@
 <td>Five colour categories by surface and track type: green dashes for dirt and tracks without a grade, brown for easier ones; paths red dashes. Unpaved roads below trunk take the track colour and width</td>
 <td>1, 3, 4, on the road's own class colour instead of the track look</td>
 <td><a href="https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22">GitHub discussion #22</a></td>
+</tr>
+<tr>
+<td>AdvOSM (Garmin maps)</td>
+<td>no: style rules not published (the TYP file can be read from any map)</td>
+<td>Every class except service, as one yellow dashed line, so an unpaved trunk looks like an unpaved minor road</td>
+<td><code>surface</code>, <code>smoothness</code>, <code>tracktype</code> and width; warning icons for bad <code>smoothness</code>, low <code>tracktype</code> grades and narrow roads</td>
+<td>Tracks white dashes between grey edges, thinner than roads; closed tracks red dashes; footpaths red dashes</td>
+<td>1, 2, 3, 4 in the class colour</td>
+<td>Contact form on <a href="https://rex8475.wixsite.com/advosm">the site</a></td>
 </tr>
 <tr>
 <td>Gaia GPS (Gaia Topo)</td>
