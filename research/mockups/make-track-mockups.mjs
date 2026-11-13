@@ -535,3 +535,109 @@ const bandScene = (ratio, z) => () => {
   writeFileSync(new URL('band-percent.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
   console.error('mockups/band-percent.svg');
 }
+
+// ---------- 13. Latest picks combined (2026-11-13): scheme D tracks + 60% band roads ----------
+// Tracks: solid, colour = vehicle (white paved, brown Unpaved, dark brown High clearance, near black 4WD).
+// Rideable paths (motorcycle=yes): dashed single track in the same colours. Other paths: grey dots. Closed: thin pale red.
+// Roads: class fill and casing, plus a solid band in the track colour of the level: 60% of the fill, 40% on white roads.
+{
+  const CW = 520, CH = 360;
+  const G = {
+    trPaved: 'M0 60 L170 60', trUnp: 'M170 60 L350 60', trHigh: 'M350 60 L520 60',
+    whPaved: 'M120 60 L120 150', whUnp: 'M120 150 L120 360',
+    tUnp: 'M250 60 C 265 140, 300 240, 330 360', tHigh: 'M420 60 C 430 110, 470 170, 520 250',
+    t4wd: 'M455 140 C 430 220, 420 300, 430 360', tPaved: 'M120 110 C 80 115, 40 130, 0 150',
+    sUnp: 'M120 250 C 170 260, 200 300, 230 360', sHigh: 'M296 250 C 350 262, 430 300, 520 320',
+    hike: 'M0 300 C 40 290, 80 270, 120 250', closed: 'M0 220 C 40 212, 80 200, 120 196',
+  };
+  const W15 = { trunk: 7, minor: 4.5 };
+  const road = (key, level, d, night) => {
+    const c = night ? SPEC.dark.classes[key] : SPEC.classes[key];
+    const w = W15[key];
+    const base = ln(d, { color: c.casing, width: w + 1.2 }) + ln(d, { color: c.fill, width: w });
+    if (level === 'paved') return base;
+    const ratio = key === 'minor' ? 0.4 : 0.6;
+    return base + ln(d, { color: RAMP_D[night ? 'night' : 'day'][level], width: Math.max(w * ratio, 0.8) });
+  };
+  const scene = (b) => {
+    const n = b.night, t = n ? 'night' : 'day', R = RAMP_D[t];
+    const tr = (d, level, dash = null, w = TRACK_W) => ln(d, { color: R[level], width: w, dash });
+    const pt = PAVED_TRACK[t];
+    return ln(G.hike, { color: DOTS[t], width: 1.4, dash: '0.1_2.6', cap: 'round' }) +
+      ln(G.closed, { color: CLOSED[t], width: 1.4 }) +
+      ln(G.tPaved, { color: pt.casing, width: TRACK_W + 1.2 }) + ln(G.tPaved, { color: pt.fill, width: TRACK_W }) +
+      tr(G.sUnp, 'unpaved', SINGLE, PATH_W) + tr(G.sHigh, 'high', SINGLE, PATH_W) +
+      tr(G.tUnp, 'unpaved') + tr(G.t4wd, 'fourwd') + tr(G.tHigh, 'high') +
+      road('minor', 'paved', G.whPaved, n) + road('minor', 'unpaved', G.whUnp, n) +
+      road('trunk', 'paved', G.trPaved, n) + road('trunk', 'unpaved', G.trUnp, n) + road('trunk', 'high', G.trHigh, n);
+  };
+  const LEGEND = [
+    ['Trunk: paved | Unpaved | High clearance', 'class fill and casing kept; band in the track colour, 60% of the fill'],
+    ['White road: paved | Unpaved', 'white fill kept; band 40%'],
+    ['Paved track', 'narrow white road'],
+    ['Unpaved track', 'brown, solid'],
+    ['High-clearance track', 'dark brown, solid'],
+    ['4WD track', 'near black, solid (bright pale tan at night)'],
+    ['Single track (motorcycle=yes)', 'dashed, same colours by level'],
+    ['Path, nobody said yes', 'thin grey dots'],
+    ['Closed track', 'thin pale red'],
+  ];
+  const LW = 420, top = 70, gap = 12, BG = ['land', 'forest', 'night'];
+  const W = LW + BG.length * (CW + gap) + 10, H = top + CH + 30;
+  let out = text(10, 26, 'Latest picks combined: solid tracks by vehicle, roads with a band in the track colour (z15)', 17, 700) +
+    text(10, 46, 'Scheme D tracks and paths (E-tracks 6.4) with the 60% band on coloured roads and 40% on white roads.', 12, 400, MUTED);
+  // Day swatch per legend row, 60 px wide, left of the text.
+  const sw = (y, parts) => `<g transform="translate(10 ${y})">${parts.map((o) => line({ ...o, d: 'M0 0 L60 0' })).join('')}</g>`;
+  const c = SPEC.classes, R = RAMP_D.day;
+  const SWATCH = [
+    [{ color: c.trunk.casing, width: 8.2 }, { color: c.trunk.fill, width: 7 }, { color: R.unpaved, width: 4.2 }],
+    [{ color: c.minor.casing, width: 5.7 }, { color: c.minor.fill, width: 4.5 }, { color: R.unpaved, width: 1.8 }],
+    [{ color: PAVED_TRACK.day.casing, width: TRACK_W + 1.2 }, { color: PAVED_TRACK.day.fill, width: TRACK_W }],
+    [{ color: R.unpaved, width: TRACK_W }], [{ color: R.high, width: TRACK_W }], [{ color: R.fourwd, width: TRACK_W }],
+    [{ color: R.unpaved, width: PATH_W, dash: SINGLE }], [{ color: DOTS.day, width: 1.4, dash: '0.1_2.6', cap: 'round' }],
+    [{ color: CLOSED.day, width: 1.4 }],
+  ];
+  LEGEND.forEach(([a, b], i) => {
+    const y = top + 20 + i * 38;
+    out += `<rect x="4" y="${y - 12}" width="72" height="24" rx="3" fill="${BGS.land.color}"/>` + sw(y, SWATCH[i]) +
+      text(86, y - 2, a, 13, 700) + text(86, y + 14, b, 11, 400, MUTED);
+  });
+  BG.forEach((bg, j) => {
+    const x = LW + j * (CW + gap);
+    out += text(x + CW / 2, top - 6, BGS[bg].name, 12, 400, MUTED, 'middle') +
+      `<g transform="translate(${x} ${top})"><rect width="${CW}" height="${CH}" rx="4" fill="${BGS[bg].color}"/>${scene(BGS[bg])}</g>`;
+  });
+  writeFileSync(new URL('picks-combined.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
+  console.error('mockups/picks-combined.svg');
+}
+
+// ---------- 14. Closed track variants at track width (2026-11-13) ----------
+// The thin pale red (1.4 px, #e07878) read as a path and sat in the trunk's red family. Variants keep the track width.
+{
+  const CW = 300, CH = 150;
+  const D = { trunk: 'M0 40 L300 40', open: 'M60 40 C 70 90, 90 120, 110 150', closed: 'M190 40 C 200 90, 220 120, 240 150' };
+  const VARS = [
+    ['old', 'Old: thin pale red', 'path width, #e07878: reads as a path, trunk red family', (b) => ln(D.closed, { color: CLOSED.day, width: 1.4 })],
+    ['crimson', 'A. Crimson, track width', '#a3245a: red meaning kept, hue away from the orange-red trunk', (b) => ln(D.closed, { color: '#a3245a', width: TRACK_W })],
+    ['outline', 'B. Track colour, red outline', 'surface still shown; thin crimson edges say closed', (b) => ln(D.closed, { color: '#a3245a', width: TRACK_W + 2 }) + ln(D.closed, { color: RAMP_D.day.unpaved, width: TRACK_W - 0.4 })],
+    ['faded', 'C. Faded track, red outline', 'as B, the track at 40%: recedes, still red-edged', (b) => ln(D.closed, { color: '#a3245a', width: TRACK_W + 2 }) + ln(D.closed, { color: BGS[b].color, width: TRACK_W - 0.4 }) + ln(D.closed, { color: RAMP_D.day.unpaved, width: TRACK_W - 0.4, opacity: 0.4 })],
+    ['grey', 'D. Grey solid, track width', '#8c8c8c: "not for you", no red at all; close to the paved-track casing', (b) => ln(D.closed, { color: '#8c8c8c', width: TRACK_W })],
+  ];
+  const scene = (draw, bg) => {
+    const c = SPEC.classes.trunk;
+    return ln(D.open, { color: RAMP_D.day.unpaved, width: TRACK_W }) + draw(bg) +
+      ln(D.trunk, { color: c.casing, width: 8.2 }) + ln(D.trunk, { color: c.fill, width: 7 });
+  };
+  const LW = 420, top = 70, gap = 10, BG = ['land', 'forest'];
+  const W = LW + BG.length * (CW + gap) + 10, H = top + VARS.length * (CH + gap) + 20;
+  let out = text(10, 26, 'Closed track at track width: next to a paved trunk (red) and an open Unpaved track', 17, 700) +
+    text(10, 46, 'Left track: open, Unpaved. Right track: closed (motorcycle, motor_vehicle or access = no, private, agricultural, forestry).', 12, 400, MUTED);
+  BG.forEach((bg, j) => { out += text(LW + j * (CW + gap) + CW / 2, top - 6, BGS[bg].name, 12, 400, MUTED, 'middle'); });
+  VARS.forEach(([, title, sub, draw], i) => {
+    const y = top + i * (CH + gap);
+    out += text(10, y + 24, title, 14, 700) + text(10, y + 44, sub, 11, 400, MUTED);
+    BG.forEach((bg, j) => { out += `<g transform="translate(${LW + j * (CW + gap)} ${y})"><rect width="${CW}" height="${CH}" rx="4" fill="${BGS[bg].color}"/>${scene(draw, bg)}</g>`; });
+  });
+  writeFileSync(new URL('closed-track.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
+  console.error('mockups/closed-track.svg');
+}

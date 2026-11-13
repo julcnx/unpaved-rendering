@@ -191,6 +191,23 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 
 Next: draw the Chiang Rai and one Swiss view from the track round in scheme D from the real tags, with two or three closed-way styles, so the density of red and the Paved to Unpaved step can be judged before touching OsmAnd.
 
+### 6.5 Background, hillshade and contours (to evaluate)
+
+Julien's task (2026-11-13): find the land colours, landcover, hillshade and contour lines that work best under the combined scheme ([mockups/picks-combined.png](mockups/picks-combined.png)). Preference: a **light background**, as in the OsmAnd Motorcycle plugin, Gaia GPS and cycle.travel.
+
+Constraints from the scheme (brown carries meaning, so the background must not):
+
+- **Contours not in the track brown**, or only far fainter and thinner. Brown contours are the classic topo look (OpenTopoMap and national topo maps), but here a brown line means a dirt track. Separate them by width (contours 0.5 to 1 px against 2.5 px tracks) and by contrast (contours barely above the land).
+- **Hillshade neutral grey, not warm**, and light: a brown or ochre shade under brown tracks lowers their contrast and tints the white roads.
+- **Landcover pale and low in saturation.** No tan or sand fill that competes with the Unpaved brown or with the white roads; forest a pale green.
+- **Check the ramp on the darkest slope:** the contrast of each track step and of the road band against each landcover with the hillshade at its darkest, not only on flat land.
+
+Starting point, the Motorcycle plugin (`enduro.render.xml`): forest `#dce6d0`, scrub `#e9efd9`; contours default `#333333` at about 12% opacity (`contourLineColor`, L428), with selectable schemes (white, yellow, green, red, and three browns `#886633` at 12 to 21%). So its default contours are already a faint grey, which suits the scheme.
+
+To review: the OsmAnd Motorcycle plugin, Gaia GPS (Topo), cycle.travel; OpenTopoMap and a national topo map as the brown-contour counterexample. Same views as the track round (Chiang Rai flat, and a Swiss alpine view for slopes and contours); the track-round shots already cover Gaia GPS.
+
+Deliverable: [mockups/picks-combined.png](mockups/picks-combined.png) redrawn over three or four background candidates (land and landcover, hillshade, contours), with the contrast of each ramp step measured on the darkest slope.
+
 ## 7. Test plan
 
 1. **Views**: the seven track-round views in [examples/track-spots.md](examples/track-spots.md) (Chiang Rai and two more in Thailand, three in Switzerland), all with tracks of every grade, paved tracks, moto paths and Unpaved and Off-road roads side by side.
