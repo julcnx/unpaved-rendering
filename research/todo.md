@@ -2,10 +2,14 @@
 
 Updated 2026-11-13. Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to E), [LOG.md](../LOG.md) and git history.
 
+## High priority
+
+- **Unpaved main roads are missed** (reader test 2026-11-13: non-mappers found 43% of unpaved main roads against 78% of minor roads, no style clearly better). Make the mark stronger on trunk, primary and secondary (coloured fills) while keeping the class colour: contrast, dash length or band width; GmapTool's class colour with white gaps as one candidate. Mockups of the five styles against the reader-test pictures, then maybe a second round with the same page (new `?src=` tag). Blocks publishing and outreach: issues and the Spirit PR should carry the fixed style.
+
 ## Waiting on feedback
 
-- **Forum thread** (posted by Julien 2026-11-12, https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052): read the replies; they feed the open style points, the article, the wiki page and the outreach below.
-- **Reader test**: closed 2026-11-13, results in [reader-test/README.md](reader-test/README.md#results) and in the article (sections 6 and 7, Data and methods). Non-mappers found 78% of unpaved minor roads but 43% of unpaved main roads; no style clearly better. Left: a stronger mark for unpaved main roads on coloured fills (design decision), then maybe a second round with the same page (new `?src=` tag). Late answers can still be scored: `python3 research/reader-test/score.py export.csv --exclude e491f01c`.
+- **Forum thread** (posted by Julien 2026-11-12, https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052): round closed 2026-11-13, no feedback beyond cycle.travel (#5, below).
+- **Reader test**: closed 2026-11-13, results in [reader-test/README.md](reader-test/README.md#results) and in the article (sections 6 and 7, Data and methods). Non-mappers found 78% of unpaved minor roads but 43% of unpaved main roads; no style clearly better. Left: the main-road fix (High priority above). Late answers can still be scored: `python3 research/reader-test/score.py export.csv --exclude e491f01c`.
 - **Unknown paved `surface` values** (`dbst`, `ottaseal`, `Blacktopped`, `tarmac`; decision 14): wiki warning lines drafted in [outreach/surface-values.md](outreach/surface-values.md), waiting for replies on the [bot-edit thread](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/10) and the [Nepal topic](https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053). Km per country: [stats/unknown-values.md](stats/unknown-values.md).
 - **cycle.travel** (Richard Fairhurst, its maker, forum post #5): reply posted by Julien 2026-11-13, asking whether the tertiary turning white is on purpose and whether he would consider a paved whitelist (it lists unpaved values: `rock` drawn as paved). Findings in [outreach/forum/5-cycle-travel.md](outreach/forum/5-cycle-travel.md); added to the article (section 3, group 1) and the App reports. Left: read his answer and update the App reports row; add the A0 row; tunnels not checked.
 - **AdvOSM**: the author replied 2026-11-13 (TYP and legend; A0 row, apps page and track row updated). Reply sent; questions for the coffee on **Wednesday 2026-11-18** (Chiang Mai, near Honda BigWing) in [outreach/advosm.md](outreach/advosm.md). Credit as "AdvOSM" only, no name.
@@ -14,12 +18,11 @@ Updated 2026-11-13. Only what is still open. Settled decisions are in [decisions
 
 - Open points from the mockup review (LOG.md), ideally decided with forum feedback: style 5 in towns and on short ways, white caramel dash against orange, yellow Off-road hue, dark mode steps.
 - Zoom behaviour: where each style starts working, and how it looks on thin roads.
-- Colour tests: several earthy browns against every background, distinct from contour and boundary browns; write down why the colours were picked.
 - Demo: refetch the spot data with way ids (postponed while Overpass is off, decision 11).
 
 ## Article, wiki and posts
 
-- Article ([../article.md](../article.md), site `../index.html`, `npm run build`): draft 1 and Julien's first read-through done 2026-11-11. Left: fold in the forum feedback and the reader-test result; finish the app reports page (built as a draft).
+- Article ([../article.md](../article.md), site `../index.html`, `npm run build`): draft 1 and Julien's first read-through done 2026-11-11. Forum round and reader-test result folded in. Left: finish the app reports page (built as a draft).
 - Legend or wiki text: one line saying broken pavement is drawn as Unpaved on purpose (decision 15), so it does not read as an error. Support if asked: Gaia GPS does the same (30 of 31 sampled paved minor roads with `smoothness` very_bad or worse drawn as tracks).
 - After the forum round: a short OSM wiki page for the tag mapping only, linking to the repo; an OSM diary entry; a Facebook post pointing to the diary.
 
