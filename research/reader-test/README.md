@@ -94,4 +94,27 @@ sh research/reader-test/render.sh          # 25 shots + 5 clarity strips, then m
 
 ## Results
 
-(none yet)
+Closed 2026-11-13 with fewer answers than the 30 aimed for: 35 people started, 28 saw all five maps. Julien's own run is left out (`--exclude e491f01c`). Groups by link tag: 22 non-mappers (12 friends from the first link, no tag; 6 `enduro`, a riders' chat; 4 `fb`, a public Facebook post) and 6 mappers (`forum`, the OSM community forum). Scored with [score.py](score.py); the answers stay in the sheet, not in the repo.
+
+**Non-mappers miss unpaved main roads.** They found 78% of the unpaved minor roads (103/132) but 43% of the unpaved main roads (57/132; Fisher p < 0.001). On every map the paved part of a main road was never tapped, and its unpaved part was found by 6 to 12 of 22 people: Australia 27 6/22, Bolivia F3 8/22, Namibia C38 9/22, Alberta 40 10/22, Nepal NH48 and Namibia D3646 12/22. Where a highway changes from asphalt to gravel, most did not notice. Mappers found 81% of the unpaved main roads (29/36): they know what to look for.
+
+**Almost no false alarms.** A paved road was tapped 4% of the time (10/242): the marks do not make a paved road look unpaved; when they fail, they go unnoticed.
+
+Per style, non-mappers (unpaved roads found; each person saw each style once, on a different place):
+
+| Style | All unpaved | Main roads | Minor roads | Paved tapped |
+|---|---|---|---|---|
+| 1. Grain fill | 67% (34/51) | 58% (14/24) | 74% (20/27) | 4% |
+| 2. Dashed centre line | 62% (31/50) | 42% (11/26) | 83% (20/24) | 4% |
+| 3. Dashed fill | 59% (32/54) | 39% (11/28) | 81% (21/26) | 4% |
+| 4. Dashed casing, pictures 1 | 63% (17/27) | 53% (8/15) | 75% (9/12) | 0% |
+| 4. Dashed casing, pictures 2 (tan fill) | 61% (17/28) | 33% (4/12) | 81% (13/16) | 4% |
+| 5. Dashed fill full width | 54% (29/54) | 33% (9/27) | 74% (20/27) | 6% |
+
+No style clearly beats the others. Grain did best on main roads and full width worst, but with about 25 main roads each the gap may be chance (p ≈ 0.1). The tan fill of style 4 made no measurable difference (11 people on each picture set).
+
+Clearest drawing, 17 full rankings by non-mappers: dashed casing (average rank 2.6, first 7 times, last 4), grain (2.8, first 7, last 6: it splits people), centre line and dashed fill (3.1), full width (3.4, never first).
+
+Other: 6 of 22 non-mappers left at least one map with no tap ("I see no difference"); median time 27 s on the first map, 9 s on the next ones; 7 of 35 people stopped early, 5 of them on map 1.
+
+**In short.** On white minor roads every style was read by most people; on coloured main roads, fewer than half of the unpaved parts were noticed. A second round of this test can check any change to the styles.

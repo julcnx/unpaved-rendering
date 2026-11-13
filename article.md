@@ -85,7 +85,9 @@ On unpaved roads only, a map can add a mark for roads that need a high-clearance
 
 `smoothness` and `4wd_only` evidence also makes the road Unpaved, even when `surface` is paved: a road a city car cannot pass, such as a broken asphalt mountain road, is not drawn as paved.
 
-The mark is optional because the evidence is rare. Only 5.9% of unpaved km carry `smoothness`, `tracktype` or `4wd_only`, and 3.1% get the mark. In some countries it is common (34% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged `4wd_only`); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the core of the proposal. How the mark looks in each style is shown under [How to draw it](#s-6-how-to-draw-it).
+The mark is optional because the evidence is rare. Only 5.9% of unpaved km carry `smoothness`, `tracktype` or `4wd_only`, and 3.1% get the mark. In some countries it is common (34% of unpaved km in Bolivia, 25% in Iceland, where the F-roads are tagged `4wd_only`); in most it is close to zero. A mark that appears only where someone added a tag looks patchy, so the two base levels are the core of the proposal.
+
+One rule draws it in every style: the Unpaved pattern, only darker (lighter on a dark map). The colour still reads at low zoom, where patterns merge, and the road keeps its class colour. The legend then needs a second word: **Off-road**.
 
 | Country | Unpaved km | With evidence | Off-road mark |
 |---|---:|---:|---:|
@@ -102,7 +104,7 @@ I designed the styles around a few principles from map design and from how peopl
 
 - **Keep the class colour.** The colour says how important a road is, and readers rely on it to find the main route. The surface is added to it, never shown in its place.
 - **Add one signal, not a new kind of road.** Unpaved is a property of the road, so it shows as a pattern on the road, not as a different line.
-- **Readable without a legend.** A broken or grainy line is a common map convention for rougher roads, so the two base levels should read at a glance. This is a design goal; it has not been tested with readers yet.
+- **Readable without a legend.** A broken or grainy line is a common map convention for rougher roads, so the two base levels should read at a glance. In an informal test without a legend, 22 people who don't map (riders and friends) found about four in five unpaved minor roads, but fewer than half of the unpaved main roads: where a highway changes from asphalt to gravel, most did not notice. Almost no paved road was taken for unpaved. No style clearly beat the others.
 - **Distinct from what maps already use.** Many maps draw tracks with dashes, tunnels with a dashed outline, roads under construction with a dashed fill and restricted access with dots. An unpaved road works best when it looks like none of them.
 - **Quiet at low zoom.** On thin roads patterns blur, so below about 6 pixels of road width a plain tint of the class colour takes over.
 - **For every reader, on every map.** Colours are tuned per class on white, forest, sand, hillshade and dark backgrounds, and checked for colour blindness.
@@ -119,9 +121,9 @@ Following these principles, I designed five styles, from faint to strong. Each f
 
 <!-- FIGURE: slider, Namibia C38 at Namutoni, No style vs style 4 (demo, hillshade, z16). -->
 
-There is no single default: the right style depends on each map's design, and above all on how it already draws tracks, tunnels and construction. The **Off-road** mark uses the same pattern, only darker. The legend needs two short words: **Unpaved** and **Off-road**.
+There is no single default: the right style depends on each map's design, and above all on how it already draws tracks, tunnels and construction. The legend needs one word: **Unpaved**.
 
-<!-- FIGURE: junction, each class colour going Paved, Unpaved, Off-road in the five styles (mockup sheet). -->
+<!-- FIGURE: junction, each class colour going Paved then Unpaved in the five styles (mockup sheet). -->
 
 The demo below draws the five styles on real data, at any of the sample spots or anywhere else.
 
@@ -131,7 +133,7 @@ The demo below draws the five styles on real data, at any of the sample spots or
 
 - **Tile data.** A style can only draw what its tiles carry. OpenMapTiles, used by Americana, MapTiler, Stadia and OpenFreeMap, has no surface below zoom 12, so these maps cannot show unpaved roads in an overview, whatever the style says. Protomaps has no surface at all. Shortbread, OsmAnd and Organic Maps already carry it, so for them it is a style change only.
 - **The data.** Roads without a surface tag are drawn as paved, and some unpaved tags are out of date (16% in the photo check). `surface=unpaved` says nothing about how rough a road is.
-- **The styles.** They exist as mockups and a demo, not yet in a real app at scale, and whether they read without a legend has not been tested with readers.
+- **The styles.** They exist as mockups and a demo, not yet in a real app at scale. In a small [reader test](https://github.com/julcnx/unpaved-rendering/blob/master/research/reader-test/README.md), people without a legend missed more than half of the unpaved main roads.
 
 ## 8. Future work
 
@@ -143,7 +145,7 @@ The demo below draws the five styles on real data, at any of the sample spots or
 ## 9. How to help
 
 - **Mappers:** what helps most is `surface` on main roads, updating tags that are out of date, and `smoothness` where a road really is rough. As always, tag what is on the ground, not what makes a map look right: the map should follow the tags, never the other way round.
-- **Map and app makers:** if you want to try it, four steps. Classify with a paved whitelist: it is ready in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua) (osm2pgsql flex, tilemaker), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) (PostgreSQL) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js), with shared tests. Pick the style that stays distinct from your tracks and tunnels. Keep the class colour. Add two words to the legend, Unpaved and Off-road. Then tell me what does not fit your map.
+- **Map and app makers:** if you want to try it, four steps. Classify with a paved whitelist: it is ready in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua) (osm2pgsql flex, tilemaker), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) (PostgreSQL) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js), with shared tests. Pick the style that stays distinct from your tracks and tunnels. Keep the class colour. Add Unpaved to the legend, and Off-road if you draw the mark. Then tell me what does not fit your map.
 - **Map users:** find your app in the [App reports](apps/) and ask for it through its channel; once a request is open, support it there.
 - **Everyone:** [discuss it on the OpenStreetMap community forum](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052), or report a correction as a [GitHub issue](https://github.com/julcnx/unpaved-rendering/issues).
 
@@ -190,6 +192,7 @@ The numbers come from OpenStreetMap extracts of 54 countries (November 2026), cl
 - [Key numbers](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/key-numbers.md): every figure quoted here, generated from the data.
 - [Full report](https://github.com/julcnx/unpaved-rendering/blob/master/research/stats/report.md): per country and road class, with the official figures.
 - [Image review](https://github.com/julcnx/unpaved-rendering/blob/master/research/examples/images/review.md): the 55 roads checked on street-level imagery.
+- [Reader test](https://github.com/julcnx/unpaved-rendering/blob/master/research/reader-test/README.md): five small maps without a legend, 22 non-mappers and 6 mappers, November 2026.
 - Classifier: [TypeScript reference](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.ts) and ports in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js), all checked against the same [67 test cases](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json).
 
 ## Credits
