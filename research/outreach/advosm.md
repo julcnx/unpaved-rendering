@@ -41,7 +41,7 @@ On the same Tanzania image: **GmapTool** keeps the class colour with dashes (gre
 
 ## Reply draft
 
-Not sent.
+Sent by Julien 2026-11-13.
 
 ---
 
