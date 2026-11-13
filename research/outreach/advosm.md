@@ -37,7 +37,8 @@ On the same Tanzania image: **GmapTool** keeps the class colour with dashes (gre
 1. Which `surface` values count as unpaved: a list of unpaved values, or a list of paved values with everything else unpaved? How is a road with no `surface` drawn?
 2. Why one unpaved type for every class: Garmin type limits, or readability on the small screen? Would class-colour dashes, as GmapTool does, read well enough on 240 x 400?
 3. The S points: exact `smoothness` rules, and how the length threshold is measured (one way, or joined ways).
-4. Is it fine to show the Tanzania comparison and the legend images in the article or apps page, credited to AdvOSM?
+4. GmapTool (A0 row): its unpaved trunk and primary keep the class colour with white gaps. Does the author know how it is built: an overlay line type (0x10002, as in the old mkgmap-style-sheets rules) or a dashed copy of each class type? Do its secondary and tertiary get the dashes too? Has the author read its TYP?
+5. Is it fine to show the Tanzania comparison and the legend images in the article or apps page, credited to AdvOSM?
 
 ## Reply draft
 
