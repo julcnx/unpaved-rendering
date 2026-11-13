@@ -317,12 +317,12 @@ sheet('roads-fork-unpaved-strength.svg', 'Unpaved on coloured roads: three stren
 // all: grain on every dirt level, density = vehicle (sparse, dense, dense and dark).
 // Grain drawn with an SVG mask: dots clipped to the road; dot colour from the class grainDot (js/style-spec.js).
 let gid = 0;
-const grain = (w, step, r, color, opacity = 1) => {
+const grain = (w, step, r, color, opacity = 1, d = CURVE, cw = CELL_W, ch = CELL_H) => {
   const id = `g${gid++}`;
   return `<defs><pattern id="${id}p" width="${step}" height="${step}" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">` +
     `<circle cx="${step / 2}" cy="${step / 2}" r="${r}" fill="${color}" fill-opacity="${opacity}"/></pattern>` +
-    `<mask id="${id}m"><path d="${CURVE}" fill="none" stroke="#fff" stroke-width="${w * S}"/></mask></defs>` +
-    `<rect width="${CELL_W}" height="${CELL_H}" fill="url(#${id}p)" mask="url(#${id}m)"/>`;
+    `<mask id="${id}m"><path d="${d}" fill="none" stroke="#fff" stroke-width="${w * S}"/></mask></defs>` +
+    `<rect width="${cw}" height="${ch}" fill="url(#${id}p)" mask="url(#${id}m)"/>`;
 };
 const SPARSE = [5.5, 0.85], DENSE = [3.6, 0.85];
 const roadGrain = (cls, level, w) => (b, v) => {
@@ -347,3 +347,191 @@ sheet('roads-fork-grain.svg', 'Grain as the vehicle signal on fork roads (z15)',
     { title: 'Idea: tint, sparse, dense', bgs: ['land', 'forest'], variant: 'idea' },
     { title: 'All dirt grained', bgs: ['land', 'forest', 'night'], variant: 'all' },
   ], 250);
+
+// ---------- 9. Road + track pairings for the fork: one scene per option (2026-11-13) ----------
+// Tracks are the same in every option (scheme D: solid, colour = vehicle; dashed = single track; grey dots = path).
+// Only the road signal changes. Scene: primary road paved | Unpaved | Off-road (high clearance), an Unpaved white road,
+// an Unpaved and an Off-road track, a single track and a hiking path.
+const SW = 360, SH = 160;
+const SP = {
+  pPaved: 'M0 40 L120 40', pUnp: 'M120 40 L240 40', pOff: 'M240 40 L360 40',
+  white: 'M80 40 L80 160',
+  tUnp: 'M175 40 C 190 90, 225 115, 255 160',
+  tOff: 'M300 40 C 305 80, 325 110, 360 125',
+  single: 'M80 105 C 115 112, 135 132, 160 160',
+  hike: 'M0 125 C 25 115, 55 108, 80 105',
+};
+const ln = (d, o) => line({ ...o, d });
+const roadOpt = (opt, key, level, d, w) => {
+  const c = SPEC.classes[key];
+  const ramp = RAMP_D.day[level === 'offroad' ? 'high' : 'unpaved'];
+  const casingW = w + 1.2;
+  if (level === 'paved') return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: c.fill, width: w });
+  const off = level === 'offroad';
+  const tint = off ? c.offTint : c.lowTint;
+  switch (opt) {
+    case 'grain': return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: tint, width: w }) +
+      grain(w, off ? 3.6 : 5.5, 0.85, c.grainDot, 0.85, d, SW, SH);
+    case 'tint': return ln(d, { color: ramp, width: w + 2 }) + ln(d, { color: tint, width: w });
+    case 'casing': return ln(d, { color: ramp, width: w + 1.8, dash: '11_3' }) + ln(d, { color: key === 'minor' ? tint : (off ? c.offTint : c.fill), width: w });
+    case 'centre': return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: off ? c.offTint : (key === 'minor' ? c.fill : c.fill), width: w }) + ln(d, { color: ramp, width: 1.3 });
+    case 'dfill': return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: c.fill, width: w }) +
+      ln(d, { color: off ? c.offDash : c.dash, width: w * 0.6, dash: `${(3.6 * w).toFixed(1)}_${(0.98 * w).toFixed(1)}` });
+    case 'tfull': return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: c.fill, width: w }) +
+      ln(d, { color: ramp, width: w, dash: `${(3.6 * w).toFixed(1)}_${(0.98 * w).toFixed(1)}` });
+    case 'tband': return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: c.fill, width: w }) +
+      ln(d, { color: ramp, width: w * 0.6, dash: `${(3.6 * w).toFixed(1)}_${(0.98 * w).toFixed(1)}` });
+    case 'sband': return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: c.fill, width: w }) +
+      ln(d, { color: ramp, width: w * 0.6 });
+    case 'dfull': return ln(d, { color: c.casing, width: casingW }) + ln(d, { color: c.fill, width: w }) +
+      ln(d, { color: off ? c.offDash : c.fullDash, width: w, dash: `${(3.6 * w).toFixed(1)}_${(0.98 * w).toFixed(1)}` });
+  }
+};
+const scene = (opt) => (b) => {
+  const day = 'day';
+  const t = (d, level, dash = null, w = TRACK_W) => ln(d, { color: RAMP_D[day][level], width: w, dash });
+  return t(SP.tUnp, 'unpaved') + t(SP.tOff, 'high') + t(SP.single, 'unpaved', SINGLE, PATH_W) +
+    ln(SP.hike, { color: DOTS.day, width: 1.4, dash: '0.1_2.6', cap: 'round' }) +
+    roadOpt(opt, 'minor', 'unpaved', SP.white, 4.5) +
+    roadOpt(opt, 'primary', 'paved', SP.pPaved, 6.5) + roadOpt(opt, 'primary', 'unpaved', SP.pUnp, 6.5) + roadOpt(opt, 'primary', 'offroad', SP.pOff, 6.5);
+};
+const OPTIONS = [
+  ['grain', '1. Grain fill', 'roads: class tint + dot grain (denser = Off-road). Needs textures: official OsmAnd style only'],
+  ['centre', '2. Brown centre line', 'roads: class fill + thin solid brown line, the track colour inside the road. Plugin OK'],
+  ['tint', '3. Class tint, brown casing', 'roads: tinted fill, casing in the track colour. Plugin OK; weak on orange and red'],
+  ['casing', '4. Dashed casing', 'roads: dashed outline in the track colour. Plugin OK; dashes on roads only'],
+  ['dfill', '5. Dashed fill', 'roads: article style 3, dashes in a 60% band. Plugin OK; busiest'],
+  ['dfull', '6. Dashed fill, full width', 'roads: article style 5, dashes across the whole road (as Americana). Plugin OK'],
+  ['tfull', '7. Dashed fill, full width, track colour', 'roads: as 6, blocks in the track brown (dark brown Off-road). Plugin OK'],
+  ['tband', '8. Dashed fill, 60% band, track colour', 'roads: as 5, band in the track brown, class colour kept along both edges. Plugin OK'],
+  ['sband', '9. Solid 60% band, track colour', 'roads: a continuous brown band inside the class fill, class colour along both edges; no dashes. Plugin OK'],
+];
+{
+  const LW = 300, top = 70, gap = 10;
+  const H = top + OPTIONS.length * (SH + gap) + 20, W = LW + 2 * (SW + gap) + 10;
+  let out = text(10, 26, 'Road and track pairings for the fork (z15): same tracks, nine road signals', 17, 700) +
+    text(10, 46, 'Primary: paved | Unpaved | Off-road. White road Unpaved. Tracks solid (brown Unpaved, dark brown Off-road), single track dashed, hiking path dots.', 12, 400, MUTED);
+  ['land', 'forest'].forEach((bg, j) => { out += text(LW + j * (SW + gap) + SW / 2, top - 6, BGS[bg].name, 12, 400, MUTED, 'middle'); });
+  OPTIONS.forEach(([k, title, sub], i) => {
+    const y = top + i * (SH + gap);
+    out += text(10, y + 24, title, 14, 700) + `<foreignObject x="10" y="${y + 32}" width="${LW - 20}" height="80"><div xmlns="http://www.w3.org/1999/xhtml" style="font:12px Helvetica,Arial,sans-serif;color:${MUTED}">${esc(sub)}</div></foreignObject>`;
+    ['land', 'forest'].forEach((bg, j) => {
+      out += `<g transform="translate(${LW + j * (SW + gap)} ${y})"><rect width="${SW}" height="${SH}" rx="4" fill="${BGS[bg].color}"/>${scene(k)(BGS[bg])}</g>`;
+    });
+  });
+  writeFileSync(new URL('pairings-fork.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
+  console.error('mockups/pairings-fork.svg');
+}
+
+// ---------- 10. Solid track-colour band on roads: band width test (2026-11-13) ----------
+// Row 9 of pairings-fork with white Unpaved roads on the tan fill (article style 4), at three band widths, z15 and z13.
+const ZW = { z15: { primary: 6.5, white: 4.5, track: TRACK_W, path: PATH_W }, z13: { primary: 3.2, white: 2, track: 1.5, path: 1 } };
+const bandRoad = (key, level, d, w, ratio) => {
+  const c = SPEC.classes[key];
+  if (level === 'paved') return ln(d, { color: c.casing, width: w + 1.2 }) + ln(d, { color: c.fill, width: w });
+  const ramp = RAMP_D.day[level === 'offroad' ? 'high' : 'unpaved'];
+  const fill = key === 'minor' ? (level === 'offroad' ? c.offTint : c.lowTint) : c.fill;
+  return ln(d, { color: c.casing, width: w + 1.2 }) + ln(d, { color: fill, width: w }) + ln(d, { color: ramp, width: Math.max(w * ratio, 0.8) });
+};
+const bandScene = (ratio, z) => () => {
+  const W = ZW[z];
+  const t = (d, level, dash = null, w = W.track) => ln(d, { color: RAMP_D.day[level], width: w, dash });
+  return t(SP.tUnp, 'unpaved') + t(SP.tOff, 'high') + t(SP.single, 'unpaved', SINGLE, W.path) +
+    ln(SP.hike, { color: DOTS.day, width: z === 'z13' ? 1 : 1.4, dash: '0.1_2.6', cap: 'round' }) +
+    bandRoad('minor', 'unpaved', SP.white, W.white, ratio) +
+    bandRoad('primary', 'paved', SP.pPaved, W.primary, ratio) + bandRoad('primary', 'unpaved', SP.pUnp, W.primary, ratio) + bandRoad('primary', 'offroad', SP.pOff, W.primary, ratio);
+};
+{
+  const RATIOS = [[0.3, '30% band'], [0.45, '45% band'], [0.6, '60% band']];
+  const COLS = [['z15', 'land', 'z15, land'], ['z15', 'forest', 'z15, forest'], ['z13', 'land', 'z13 widths, land']];
+  const LW = 220, top = 70, gap = 10;
+  const H = top + RATIOS.length * (SH + gap) + 20, W = LW + COLS.length * (SW + gap) + 10;
+  let out = text(10, 26, 'Solid band in the track colour: band width, z15 and z13 (white Unpaved roads on the tan fill)', 17, 700) +
+    text(10, 46, 'Primary: paved | Unpaved | Off-road. Band = share of the road fill width; minimum 0.8 px. Same tracks as pairings-fork.', 12, 400, MUTED);
+  COLS.forEach(([, , label], j) => { out += text(LW + j * (SW + gap) + SW / 2, top - 6, label, 12, 400, MUTED, 'middle'); });
+  RATIOS.forEach(([r, label], i) => {
+    const y = top + i * (SH + gap);
+    out += text(10, y + 24, label, 14, 700);
+    COLS.forEach(([z, bg], j) => {
+      out += `<g transform="translate(${LW + j * (SW + gap)} ${y})"><rect width="${SW}" height="${SH}" rx="4" fill="${BGS[bg].color}"/>${bandScene(r, z)()}</g>`;
+    });
+  });
+  writeFileSync(new URL('band-width.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
+  console.error('mockups/band-width.svg');
+}
+
+// ---------- 11. Fixed band: band = track width at that zoom, capped at 60% of the road fill, 40% on white roads (2026-11-13) ----------
+// One row per class (trunk, primary, unclassified): paved | Unpaved | Off-road, with an Unpaved and an Off-road track
+// leaving from the matching part, so the band can be seen continuing into the track.
+{
+  const ROWS = [['trunk', 'Trunk (red)', { z15: 7, z13: 3.5 }], ['primary', 'Primary (orange)', { z15: 6.5, z13: 3.2 }], ['minor', 'Unclassified (white)', { z15: 4.5, z13: 2 }]];
+  const COLS = [['z15', 'land', 'z15, land'], ['z15', 'forest', 'z15, forest'], ['z13', 'land', 'z13, land']];
+  const TW = { z15: TRACK_W, z13: 1.5 };
+  const RD = { paved: 'M0 50 L120 50', unp: 'M120 50 L240 50', off: 'M240 50 L360 50', tUnp: 'M180 50 C 195 100, 225 125, 255 160', tOff: 'M300 50 C 305 95, 330 120, 360 135' };
+  const CAP = (key) => (key === 'minor' ? 0.4 : 0.6); // white roads: wider tan edges, so the road does not read as a track
+  const band = (w, z, key) => Math.max(Math.min(TW[z], CAP(key) * w), 0.8);
+  const roadPart = (key, level, d, w, z) => {
+    const c = SPEC.classes[key];
+    if (level === 'paved') return ln(d, { color: c.casing, width: w + 1.2 }) + ln(d, { color: c.fill, width: w });
+    const ramp = RAMP_D.day[level === 'offroad' ? 'high' : 'unpaved'];
+    // White roads keep their white fill (Julien, 2026-11-13): white edges against the brown core keep the road a road.
+    return ln(d, { color: c.casing, width: w + 1.2 }) + ln(d, { color: c.fill, width: w }) + ln(d, { color: ramp, width: band(w, z, key) });
+  };
+  const cell = (key, widths, z) => {
+    const w = widths[z];
+    return ln(RD.tUnp, { color: RAMP_D.day.unpaved, width: TW[z] }) + ln(RD.tOff, { color: RAMP_D.day.high, width: TW[z] }) +
+      roadPart(key, 'paved', RD.paved, w, z) + roadPart(key, 'unpaved', RD.unp, w, z) + roadPart(key, 'offroad', RD.off, w, z);
+  };
+  const LW = 260, top = 70, gap = 10;
+  const H = top + ROWS.length * (SH + gap) + 20, W = LW + COLS.length * (SW + gap) + 10;
+  let out = text(10, 26, 'Fixed band: the track width inside the road, capped at 60% of the fill (40% on white roads)', 17, 700) +
+    text(10, 46, 'Paved | Unpaved | Off-road, with an Unpaved and an Off-road track leaving each part. Band: z15 2.5 px, z13 1.5 px (track widths), max 60% of fill (40% on white roads), min 0.8 px.', 12, 400, MUTED);
+  COLS.forEach(([, , label], j) => { out += text(LW + j * (SW + gap) + SW / 2, top - 6, label, 12, 400, MUTED, 'middle'); });
+  ROWS.forEach(([key, label, widths], i) => {
+    const y = top + i * (SH + gap);
+    out += text(10, y + 24, label, 14, 700) + text(10, y + 44, `band ${COLS.map(([z]) => z).filter((z, k, a) => a.indexOf(z) === k).map((z) => `${z} ${band(widths[z], z, key).toFixed(1)}/${widths[z]} px`).join(', ')}`, 11, 400, MUTED);
+    COLS.forEach(([z, bg], j) => {
+      out += `<g transform="translate(${LW + j * (SW + gap)} ${y})"><rect width="${SW}" height="${SH}" rx="4" fill="${BGS[bg].color}"/>${cell(key, widths, z)}</g>`;
+    });
+  });
+  writeFileSync(new URL('band-fixed.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
+  console.error('mockups/band-fixed.svg');
+}
+
+// ---------- 12. Fixed band vs percentage band (2026-11-13) ----------
+// Same scene as band-fixed. Fixed: track width, cap 60% (40% white). Percentage: share of the fill, white roads at most 40%.
+{
+  const ROWS = [['trunk', 'Trunk (red)', { z15: 7, z13: 3.5 }], ['primary', 'Primary (orange)', { z15: 6.5, z13: 3.2 }], ['minor', 'Unclassified (white)', { z15: 4.5, z13: 2 }]];
+  const TW = { z15: TRACK_W, z13: 1.5 };
+  const COLS = [['fixed', 'z15', 'Fixed (track width), z15'], [0.4, 'z15', '40% of fill, z15'], [0.5, 'z15', '50% of fill, z15'], [0.5, 'z13', '50% of fill, z13']];
+  const RD = { paved: 'M0 50 L120 50', unp: 'M120 50 L240 50', off: 'M240 50 L360 50', tUnp: 'M180 50 C 195 100, 225 125, 255 160', tOff: 'M300 50 C 305 95, 330 120, 360 135' };
+  const band = (mode, w, z, key) => {
+    const cap = key === 'minor' ? 0.4 : 0.6;
+    const v = mode === 'fixed' ? Math.min(TW[z], cap * w) : Math.min(mode, key === 'minor' ? 0.4 : 1) * w;
+    return Math.max(v, 0.8);
+  };
+  const part = (key, level, d, w, z, mode) => {
+    const c = SPEC.classes[key];
+    const base = ln(d, { color: c.casing, width: w + 1.2 }) + ln(d, { color: c.fill, width: w });
+    if (level === 'paved') return base;
+    return base + ln(d, { color: RAMP_D.day[level === 'offroad' ? 'high' : 'unpaved'], width: band(mode, w, z, key) });
+  };
+  const LW = 240, top = 70, gap = 10;
+  const H = top + ROWS.length * (SH + gap) + 20, W = LW + COLS.length * (SW + gap) + 10;
+  let out = text(10, 26, 'Band inside the road: fixed track width vs a share of the fill', 17, 700) +
+    text(10, 46, 'Paved | Unpaved | Off-road, tracks leaving each part. White roads capped at 40% in every column; minimum 0.8 px.', 12, 400, MUTED);
+  COLS.forEach(([, , label], j) => { out += text(LW + j * (SW + gap) + SW / 2, top - 6, label, 12, 400, MUTED, 'middle'); });
+  ROWS.forEach(([key, label, widths], i) => {
+    const y = top + i * (SH + gap);
+    out += text(10, y + 24, label, 14, 700);
+    COLS.forEach(([mode, z], j) => {
+      const w = widths[z];
+      out += text(10, y + 44 + j * 16, `${COLS[j][2]}: ${band(mode, w, z, key).toFixed(1)}/${w} px`, 11, 400, MUTED);
+      const cell = ln(RD.tUnp, { color: RAMP_D.day.unpaved, width: TW[z] }) + ln(RD.tOff, { color: RAMP_D.day.high, width: TW[z] }) +
+        part(key, 'paved', RD.paved, w, z, mode) + part(key, 'unpaved', RD.unp, w, z, mode) + part(key, 'offroad', RD.off, w, z, mode);
+      out += `<g transform="translate(${LW + j * (SW + gap)} ${y})"><rect width="${SW}" height="${SH}" rx="4" fill="${BGS.land.color}"/>${cell}</g>`;
+    });
+  });
+  writeFileSync(new URL('band-percent.svg', import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
+  console.error('mockups/band-percent.svg');
+}

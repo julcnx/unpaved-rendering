@@ -95,8 +95,8 @@ ZOOM_STRIP = ('<figure class="fig wide zoom"><div class="row">' + ''.join(
     'darker tint; from zoom 14 the dashes take over. © OpenStreetMap contributors.</figcaption></figure>')
 
 JUNCTION = (f'<figure class="fig wide junction"><div class="scroll"><img src="{IMG}/junction.jpg" '
-            'alt="Each class colour going Paved, Unpaved, then Off-road, in the five styles" loading="lazy"></div>'
-            '<figcaption>The four class colours in the five styles. Each road goes Paved, Unpaved (the S-bend), then Off-road; '
+            'alt="Each class colour going Paved, then Unpaved, in the five styles" loading="lazy"></div>'
+            '<figcaption>The four class colours in the five styles. Each road goes Paved, then Unpaved through the S-bend; '
             'the side road is a white Unpaved road. Source: research/mockups.</figcaption></figure>')
 
 FIGURES = {'slider': SLIDER, 'live demo': EMBED, 'chart': heat_table, 'photo grid': photo_grid, 'apps': app_grid,

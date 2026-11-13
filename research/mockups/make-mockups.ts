@@ -256,9 +256,11 @@ function renderComparison(suffix: string) {
 
 // Bend and junction: one road per class going Paved, Unpaved (S-bend), Off-road (bend, then straight), with a white Unpaved
 // side road joining in the bend. Straight samples hide what dashes do on curves, at short ways and where the surface changes.
-function renderJunction(suffix = '', land = LAND) {
+// twoLevels (article figure, 2026-11-13): the last part stays Unpaved, so the sheet shows Paved and Unpaved only;
+// the Off-road mark is an optional extension described in text.
+function renderJunction(suffix = '', land = LAND, twoLevels = false) {
   const H = 120, LABEL_W = 290, keys = Object.keys(OPTIONS);
-  const PARTS: [string, State][] = [['M 15 28 L 75 28', 'Paved'], ['M 75 28 C 120 28 120 70 165 70', 'Unpaved'], ['M 165 70 C 205 70 205 30 240 30 L 285 30', 'Unpaved + Off-road']];
+  const PARTS: [string, State][] = [['M 15 28 L 75 28', 'Paved'], ['M 75 28 C 120 28 120 70 165 70', 'Unpaved'], ['M 165 70 C 205 70 205 30 240 30 L 285 30', twoLevels ? 'Unpaved' : 'Unpaved + Off-road']];
   const SIDE = 'M 120 112 L 120 49'; // ends on the middle of the S-bend
   const on = (path: string, draw: () => string) => { ROAD = path; return draw(); };
   const cell = (key: string, c: Klass) => on(SIDE, () => official(key, 'Unpaved', CLASSES[3])) + PARTS.map(([path, s]) => on(path, () => official(key, s, c))).join('');
@@ -266,14 +268,17 @@ function renderJunction(suffix = '', land = LAND) {
   LAND = land;
   const w = LABEL_W + keys.length * (CELL_W + 10) + 10, y = (r: number) => 40 + r * (H + 10), h = y(CLASSES.length);
   const body = keys.map((key, i) => text(LABEL_W + i * (CELL_W + 10) + CELL_W / 2, 26, OPTIONS[key].title, 15, 700, 'middle')).join('') +
-    CLASSES.map((c, r) => text(10, y(r) + H / 2 + 5, `${c.name}: Paved, Unpaved, Off-road`, 14, 700) + keys.map((key, i) =>
+    CLASSES.map((c, r) => text(10, y(r) + H / 2 + 5, `${c.name}: Paved, Unpaved${twoLevels ? '' : ', Off-road'}`, 14, 700) + keys.map((key, i) =>
       `<g transform="translate(${LABEL_W + i * (CELL_W + 10)} ${y(r)})"><rect width="${CELL_W}" height="${H}" fill="${LAND}" rx="4"/>${cell(key, c)}</g>`).join('')).join('');
   ROAD = straight; LAND = normalLand;
-  out(`options-junction${suffix}`, svg(w, h + 30, body + text(10, h + 18, 'Left to right: Paved, Unpaved (S-bend), Off-road. Side road: white, Unpaved. Each part is its own way, so the dashes restart where the surface changes.', 13)));
+  out(`options-junction${suffix}`, svg(w, h + 30, body + text(10, h + 18, twoLevels
+    ? 'Left to right: Paved, then Unpaved through the S-bend. Side road: white, Unpaved. Each part is its own way, so the dashes restart where the surface changes.'
+    : 'Left to right: Paved, Unpaved (S-bend), Off-road. Side road: white, Unpaved. Each part is its own way, so the dashes restart where the surface changes.', 13)));
 }
 
 render('');
 renderJunction();
+renderJunction('-2levels', LAND, true);
 // The same sheet on the demo's forest and sand backgrounds (js/map.js): the tints and browns must hold on green and on beige.
 renderJunction('-forest', '#add19e');
 renderJunction('-sand', '#e8d6ad');
