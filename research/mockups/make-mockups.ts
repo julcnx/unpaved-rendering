@@ -288,9 +288,10 @@ const mixC = (a: string, b: string, t: number) => '#' + [1, 3, 5].map((i) => Mat
   Math.round(parseInt(a.slice(i, i + 2), 16) * (1 - t) + parseInt(b.slice(i, i + 2), 16) * t))).toString(16).padStart(2, '0')).join('');
 // Grain patterns at other scales and backgrounds, added to the sheet's own <defs>.
 const extraDefs = new Map<string, string>();
-const grainV = (c: Klass, bg: string, scale: number) => {
-  const id = `grainV-${c.id}-${bg.slice(1)}-${scale}`;
-  extraDefs.set(id, `<pattern id="${id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(${scale})"><rect width="64" height="64" fill="${bg}"/><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>`);
+// bg '' draws the dots only; shift moves the tile (Off-road: a second, shifted copy doubles the dots).
+const grainV = (c: Klass, bg: string, scale: number, shift = [0, 0]) => {
+  const id = `grainV-${c.id}-${bg.slice(1)}-${scale}-${shift.join('_')}`;
+  extraDefs.set(id, `<pattern id="${id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(${shift.join(' ')}) scale(${scale})">${bg ? `<rect width="64" height="64" fill="${bg}"/>` : ''}<path d="${GRAIN}" fill="${c.grainDot}"/></pattern>`);
   return `url(#${id})`;
 };
 const gap = (c: Klass) => (GA.casing as Record<string, string>)[c.id] ?? c.casing;
@@ -364,6 +365,57 @@ function renderMainRoads() {
   for (const c of CLASSES.slice(0, 3)) console.log(`${c.name}: dashed fill 1.8 ${stronger(c, 1.8)}, full width 1.6 ${stronger(c, 1.6)}`);
 }
 
+// Picks (Julien, 2026-11-15): one variant per style, with its Off-road add-on one step darker than the new Unpaved.
+// Style 5 softened: its stronger dash (1.6) left no room for a darker Off-road, so Unpaved goes to 1.45 under the current Off-road dash.
+const OFF_LINE = mixC(CL.offColor, '#000000', 0.4); // centre line: the new Unpaved line is the old Off-road brown
+type Pick = { title: string; unpaved: string; off: string; road: (c: Klass, off: boolean) => string };
+const PICKS: Record<string, Pick> = {
+  grain: { title: '1. Grain fill: C', unpaved: 'grain 2.25 x on the low-zoom tint', off: 'same grain, twice as dense, on the Off-road tint',
+    road: (c, off) => road(grainV(c, off ? c.offTint : c.lowTint, 2.25), c.casing, off ? line(grainV(c, '', 2.25, GR.denseShift), W) : '') },
+  'centre-line': { title: '2. Dashed centre line: B', unpaved: 'line 30% of the fill, brown #5e4126', off: `same line, darker ${OFF_LINE}, on the Off-road tint`,
+    road: (c, off) => road(off ? c.offTint : c.fill, c.casing, line(off ? OFF_LINE : CL.offColor, 0.3 * W, CL.unpavedDash.join(' '))) },
+  'dashed-fill': { title: '3. Dashed fill: A', unpaved: 'dash contrast 1.8', off: 'dash contrast 2.45',
+    road: (c, off) => band(c, stronger(c, off ? 2.45 : 1.8), W * DA.band, DA.unpavedXWidth) },
+  'dashed-casing': { title: '4. Dashed casing: A', unpaved: 'outline dashes 14/8', off: 'same outline, darker, on the Off-road tint',
+    road: (c, off) => dashedCasing(off ? tinted(c) : c, '14 8') },
+  'dashed-fill-full': { title: '5. Full width: A, softened', unpaved: 'dash contrast 1.45 (A was 1.6)', off: 'current Off-road dash (1.8 to 1.9)',
+    road: (c, off) => band(c, off ? c.offDash : stronger(c, 1.45), W, DF.unpavedXWidth) },
+};
+
+// One row per style, four frames: current Unpaved, current Off-road, new Unpaved, new Off-road. Same roads and widths as
+// main-roads-*.svg, z15 then z16; white roads keep the current style in every frame.
+function renderPicks() {
+  const FW = 400, FH = 400, LABEL = 70, TOP = 50, HEAD = 26, RH = HEAD + FH + 40;
+  const ROWS: [Klass, number, number][] = [];
+  for (const [z, y0] of [[15, 28], [16, 222]] as const) {
+    const k = 2 ** (0.55 * (z - 15));
+    CLASSES.forEach((c, i) => ROWS.push([c, (c.id === 'secondary' ? 9 : c.id === 'minor' ? 6 : 10) * k, y0 + i * (z === 16 ? 50 : 46)]));
+  }
+  const parts = (y: number): [string, boolean][] => [[`M -20 ${y} L 140 ${y} C 170 ${y} 170 ${y + 12} 200 ${y + 12}`, false],
+    [`M 200 ${y + 12} L 250 ${y + 12} C 290 ${y + 12} 290 ${y} 330 ${y} L 420 ${y}`, true]];
+  const COLS: [string, (key: string, c: Klass) => string][] = [
+    ['Current Unpaved', (key, c) => official(key, 'Unpaved', c)], ['Current Off-road', (key, c) => official(key, 'Unpaved + Off-road', c)],
+    ['New Unpaved', (key, c) => c.id === 'minor' ? official(key, 'Unpaved', c) : PICKS[key].road(c, false)],
+    ['New Off-road', (key, c) => c.id === 'minor' ? official(key, 'Unpaved + Off-road', c) : PICKS[key].road(c, true)]];
+  const saved = { W, CAS, ROAD };
+  extraDefs.clear();
+  const keys = Object.keys(PICKS);
+  const body = COLS.map(([t], i) => text(LABEL + i * (FW + 10) + FW / 2, 30, t, 16, 700, 'middle')).join('') + keys.map((key, r) => {
+    const y = TOP + r * RH + HEAD;
+    return text(10, y - 8, `${PICKS[key].title.replace(': ', ', pick ')}`, 15, 700) +
+      ROWS.map(([c, , ry]) => text(10, y + ry + 10, c.name, 11)).join('') +
+      COLS.map(([, draw], i) => `<svg x="${LABEL + i * (FW + 10)}" y="${y}" width="${FW}" height="${FH}" viewBox="0 0 ${FW} ${FH}"><rect width="${FW}" height="${FH}" fill="${LAND}"/>` +
+        ROWS.map(([c, w, ry]) => { W = w; CAS = Math.max(1, 0.3 * w); return parts(ry).map(([p, unp]) => { ROAD = p; return unp ? draw(key, c) : road(c.fill, c.casing); }).join(''); }).join('') + '</svg>').join('') +
+      text(LABEL + 2 * (FW + 10) + 4, y + FH + 18, `${PICKS[key].unpaved}  |  Off-road: ${PICKS[key].off}`, 12);
+  }).join('');
+  const w = LABEL + COLS.length * (FW + 10) + 10, h = TOP + keys.length * RH + 30;
+  out('main-roads-picks', svg(w, h, `<defs>${[...extraDefs.values()].join('')}</defs>` + body +
+    text(10, h - 14, 'Red, orange, yellow at z15 (top) and z16 (bottom), white minor roads unchanged; each road Paved on the left. White rows keep the current style.', 12)));
+  ({ W, CAS, ROAD } = saved);
+  for (const c of CLASSES.slice(0, 3)) console.log(`${c.name}: 3A ${stronger(c, 1.8)} -> off ${stronger(c, 2.45)} (${contrast(stronger(c, 1.8), stronger(c, 2.45)).toFixed(2)} step); ` +
+    `5 ${stronger(c, 1.45)} -> off ${c.offDash} (${contrast(stronger(c, 1.45), c.offDash).toFixed(2)} step); line ${contrast(c.fill, CL.offColor).toFixed(2)} / off ${contrast(c.offTint, OFF_LINE).toFixed(2)}`);
+}
+
 render('');
 renderJunction();
 renderJunction('-2levels', LAND, true);
@@ -374,6 +426,7 @@ W = 5;
 CAS = 2;
 render('-narrow');
 renderMainRoads();
+renderPicks();
 
 // Dark version: same styles on the dark palette, comparison grids only.
 LAND = SPEC.dark.land;
