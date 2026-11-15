@@ -55,19 +55,32 @@ const SPEC = {
       minor: { name: 'White', fill: '#4b4b4f', casing: '#6d6d72', grainBg: '#4b4b4f', grainDot: '#d2c1ac', dash: '#685b4b', offTint: '#776856', offDash: '#7f705c', lowTint: '#655949', fullDash: '#655949', tunnel: '#4b4b4f', tintCasing: '#8f8f94' },
     },
   },
+  // Main roads (Julien's picks, 2026-11-15): the reader test found 43% of unpaved main roads against 78% of minor roads, so on
+  // these classes every style gets a stronger mark, in its `main` block (light mode; white roads, motorway, low zoom and dark mode unchanged).
+  // Each Off-road stays one step darker than the new Unpaved. Mockups: main-roads-*.png (variants), main-roads-picks.png.
+  mainRoads: ['trunk', 'primary', 'secondary'],
   // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
   styles: {
     // offColor: the line on the darker Off-road fill, darker too, so it keeps the contrast it has on Unpaved (3.6 or more; the normal brown fell to 2.0 on red).
-    'centre-line': { color: '#8a6440', offColor: '#5e4126', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad },
+    'centre-line': { color: '#8a6440', offColor: '#5e4126', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad,
+      // Main roads (pick B): a line 30% of the fill in the old Off-road brown; Off-road the same line, darker, on the Off-road tint.
+      main: { xWidth: 0.3, color: '#5e4126', offColor: '#382717' } },
     // denseShift: Off-road draws the same grain a second time, shifted, so the dots are twice as dense (same dot size). The dots are
     // already near black and cannot get darker with the fill, as the line and the outline of styles 2 and 4 do.
-    grain: { scale: 1.5, denseShift: [32, 32], offroadScale: 3, offroadShift: [21, 37] },
-    'dashed-fill': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad), band: 0.6, bandFromWidth: 6 },
+    grain: { scale: 1.5, denseShift: [32, 32], offroadScale: 3, offroadShift: [21, 37],
+      // Main roads (pick C): grain 2.25 x on the low-zoom Unpaved tint (lowTint); Off-road twice as dense on the Off-road tint.
+      main: { scale: 2.25, onLowTint: true } },
+    'dashed-fill': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad), band: 0.6, bandFromWidth: 6,
+      // Main roads (pick A): dash contrast 1.8 against the fill (was 1.3 to 1.4), Off-road 2.45 (a 1.36 step, as before).
+      main: { dash: { trunk: '#e56c46', primary: '#e1932d', secondary: '#c3be30' }, offDash: { trunk: '#da4517', primary: '#d47200', secondary: '#aba200' } } },
     // Full width, as Americana draws unpaved roads (and DMD2): same dashes, no band. Lighter Unpaved dash (fullDash, contrast
     // 1.25 against the fill; white keeps the tan dash so it does not fade into the land): full width already covers most of the road.
     // Rhythm kept at 3.6 : 0.98 (2026-11-10): wider gaps (2.4 : 1.2 was tried) make the blocks read as Carto construction, most of all
     // on white roads (tan blocks, white gaps). The cost: a way shorter than one period shows no gap (see options-junction).
-    'dashed-fill-full': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad) },
+    'dashed-fill-full': { unpavedXWidth: xWidth(RHYTHM.unpaved), offroadXWidth: xWidth(RHYTHM.offroad),
+      // Main roads (pick A, softened): dash contrast 1.45 (was 1.25; 1.6 left no room for Off-road). Off-road: the class offDash on red
+      // and orange (a 1.32 step), darker on yellow (#bcb61c, 1.35; offDash was only 1.23 over the new dash).
+      main: { dash: { trunk: '#ec8666', primary: '#ebab58', secondary: '#d5d361' }, offDash: { trunk: '#e3643d', primary: '#df8d23', secondary: '#bcb61c' } } },
     // Dashed casing, the fill stays continuous: the dashed outline of Gaia GPS tracks, with the class kept.
     // Casing colour for the dashed outline: darker on red and orange (the normal casing is close to the fill),
     // darker on white (OSM Carto tertiary casing), or the dashes fade.
@@ -77,7 +90,9 @@ const SPEC = {
       // Unpaved fill on white roads (2026-11-12, Julien): the light tan of the low-zoom tint (minor lowTint), so Unpaved is light tan
       // and Off-road the darker tan (offTint) at every zoom. A white fill with a dashed outline looked like the tracks of AllTrails,
       // OpenCycleMap and Thunderforest on light land, and its dashes nearly vanished on forest (D-examples-visuals, style 4).
-      unpavedFill: { minor: '#e2cfb8' } },
+      unpavedFill: { minor: '#e2cfb8' },
+      // Main roads (pick A): longer gaps in the outline, 14/8 (was 22/6), for Unpaved and Off-road.
+      main: { dash: [14, 8] } },
   },
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
@@ -139,29 +154,29 @@ type Option = { title: string; note: string; road: (s: State, c: Klass) => strin
 const OPTIONS: Record<string, Option> = {
   grain: {
     title: '1. Grain fill',
-    note: 'Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: the same grain, twice as dense, on a darker tint.',
+    note: 'Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown (main roads: 2.25 x, on a darker tint). Off-road: the same grain, twice as dense, on a darker tint.',
     road: (s, c) => road(unpaved(s) ? `url(#grain-${c.id})` : c.fill, c.casing, offroad(s) ? line(`url(#grain2-${c.id})`, W) : unpaved(s) && isTinted(c) ? line(`url(#grainDense-${c.id})`, W) : ''),
   },
   'centre-line': {
     title: '2. Dashed centre line',
-    note: 'Thin brown line down the middle in long dashes (OSM Carto grade2 rhythm). Off-road: the same line on a darker tint of the road.',
+    note: 'Thin brown line down the middle in long dashes (OSM Carto grade2 rhythm; main roads: wider and darker). Off-road: the same line on a darker tint of the road.',
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(isTinted(c) ? (DARK_MODE ? SPEC.dark.centreLineOff : CL.offColor) : BROWN, W < CL.narrowBelow ? CL.narrowWidth : CL.width, (offroad(s) ? CL.offroadDash : CL.unpavedDash).join(' ')) : ''),
   },
   'dashed-fill': {
     title: '3. Dashed fill',
-    note: 'Long dashes in a darker class tint, in a centred band (as DMD2; light brown on white). Off-road: the same dashes, darker.',
+    note: 'Long dashes in a darker class tint, in a centred band (as DMD2; light brown on white; darker on main roads). Off-road: the same dashes, darker.',
     // Dashes in a centred band 60% of the road width, so a thin edge of the normal fill stays along both sides: the road reads
     // as one road with a pattern, not as Carto construction (full-width blocks). Full width below 6 px, or the band vanishes.
     road: (s, c) => road(c.fill, c.casing, unpaved(s) ? line(c.dash, W < DA.bandFromWidth ? W : W * DA.band, (offroad(s) ? DA.offroadXWidth : DA.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
   'dashed-casing': {
     title: '4. Dashed casing',
-    note: 'Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept); white roads get a light tan fill. Off-road: the same outline on a darker tint.',
+    note: 'Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept; longer gaps on main roads); white roads get a light tan fill. Off-road: the same outline on a darker tint.',
     road: (s, c) => unpaved(s) ? dashedCasing(c, (offroad(s) ? GA.offroad : GA.unpaved).join(' ')) : road(c.fill, c.casing),
   },
   'dashed-fill-full': {
     title: '5. Dashed fill, full width',
-    note: 'Long dashes in a darker class tint over the whole road width (as Americana). Off-road: the same dashes, darker.',
+    note: 'Long dashes in a darker class tint over the whole road width (as Americana; darker on main roads). Off-road: the same dashes, darker.',
     // White roads: the tan dashes cover most of the road, so the casing is the darker tintCasing, as for a tan fill.
     road: (s, c) => road(c.fill, unpaved(s) ? c.tintCasing ?? c.casing : c.casing, unpaved(s) ? line(c.fullDash, W, (offroad(s) ? DF.offroadXWidth : DF.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
@@ -170,7 +185,10 @@ const OPTIONS: Record<string, Option> = {
 // Official Off-road: the Unpaved pattern, only darker: darker fill (offTint) in the grain fill, centre line and casing,
 // darker dashes (offDash) in the two dashed fills.
 // Below SPEC.lowZoom.below px of fill width, every style is a plain tint (stepwise contrast 1.2 or more: fill, lowTint, offTint).
+// Main roads (SPEC.mainRoads) draw the picks (PICKS below), light mode only; MAIN_PICKS = false gives the reader-test style.
+let MAIN_PICKS = true;
 const official = (key: string, s: State, c: Klass) => unpaved(s) && W < SPEC.lowZoom.below ? road(offroad(s) ? c.offTint : c.lowTint, c.tintCasing ?? c.casing)
+  : unpaved(s) && MAIN_PICKS && !DARK_MODE && (SPEC.mainRoads as string[]).includes(c.id) ? PICKS[key].road(c, offroad(s))
   : !offroad(s) ? OPTIONS[key].road(s, c)
   : OPTIONS[key].road('Unpaved', key.startsWith('dashed-fill') ? tintedDash(c) : tinted(c));
 
@@ -200,7 +218,7 @@ const box = (x: number, y: number, inner: string) =>
   `<g transform="translate(${x} ${y})"><rect width="${CELL_W}" height="${CELL_H}" fill="${LAND}" rx="4"/>${inner}</g>`;
 
 const svg = (w: number, h: number, body: string) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${DEFS}<rect width="${w}" height="${h}" fill="${PAGE}"/>${body}</svg>\n`;
+  `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${DEFS}${extraDefs.size ? `<defs>${[...extraDefs.values()].join('')}</defs>` : ''}<rect width="${w}" height="${h}" fill="${PAGE}"/>${body}</svg>\n`;
 
 const out = (name: string, content: string) => writeFileSync(new URL(`./${name}.svg`, import.meta.url), content);
 
@@ -328,6 +346,7 @@ const VARIANTS: Record<string, Variant[]> = {
 // at the change), then a white minor road the same way, at z15 (top) and z16 (bottom). Widths as in the demo (js/styles.js:
 // trunk and primary 10 px, secondary 9, residential 6 at z15, x 1.46 at z16; casing + 30%).
 function renderMainRoads() {
+  MAIN_PICKS = false; // "Current" = the reader-test style
   const FW = 400, FH = 520, LABEL = 120, TOP = 50, NOTE = 44;
   const ROWS: [Klass, number, number][] = [];
   for (const [z, y0] of [[15, 34], [16, 296]] as const) {
@@ -343,7 +362,6 @@ function renderMainRoads() {
     return parts(y).map(([p, unp]) => { ROAD = p; return !unp ? road(c.fill, c.casing) : c.id === 'minor' ? official(key, 'Unpaved', c) : v.road(c); }).join('');
   }).join('');
   for (const [key, variants] of Object.entries(VARIANTS)) {
-    extraDefs.clear();
     const w = LABEL + variants.length * (FW + 10) + 10;
     const refsY = TOP + FH + NOTE + 16, h = refsY + 96;
     const frames = variants.map((v, i) => {
@@ -359,32 +377,34 @@ function renderMainRoads() {
     const refs = text(10, refsY + 34, 'Must not look like', 13, 700) + [['Carto construction (orange)', construction(CLASSES[1].fill)], ['Carto tunnel (orange)', tunnel(CLASSES[1])],
       ['Carto track', track()]].map(([name, inner], i) => `<g transform="translate(${LABEL + i * 310} ${refsY})"><rect width="300" height="64" fill="${LAND}" rx="4"/>${inner}${text(150, 56, name, 11, 400, 'middle')}</g>`).join('');
     const body = frames + labels + refs;
-    out(`main-roads-${key}`, svg(w, h, `<defs>${[...extraDefs.values()].join('')}</defs>` + body));
+    out(`main-roads-${key}`, svg(w, h, body));
   }
   ({ W, CAS, ROAD } = saved);
+  MAIN_PICKS = true;
   for (const c of CLASSES.slice(0, 3)) console.log(`${c.name}: dashed fill 1.8 ${stronger(c, 1.8)}, full width 1.6 ${stronger(c, 1.6)}`);
 }
 
 // Picks (Julien, 2026-11-15): one variant per style, with its Off-road add-on one step darker than the new Unpaved.
 // Style 5 softened: its stronger dash (1.6) left no room for a darker Off-road, so Unpaved goes to 1.45 under the current Off-road dash.
-const OFF_LINE = mixC(CL.offColor, '#000000', 0.4); // centre line: the new Unpaved line is the old Off-road brown
+const MAIN = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, (v as any).main])) as Record<string, any>;
 type Pick = { title: string; unpaved: string; off: string; road: (c: Klass, off: boolean) => string };
 const PICKS: Record<string, Pick> = {
   grain: { title: '1. Grain fill: C', unpaved: 'grain 2.25 x on the low-zoom tint', off: 'same grain, twice as dense, on the Off-road tint',
-    road: (c, off) => road(grainV(c, off ? c.offTint : c.lowTint, 2.25), c.casing, off ? line(grainV(c, '', 2.25, GR.denseShift), W) : '') },
-  'centre-line': { title: '2. Dashed centre line: B', unpaved: 'line 30% of the fill, brown #5e4126', off: `same line, darker ${OFF_LINE}, on the Off-road tint`,
-    road: (c, off) => road(off ? c.offTint : c.fill, c.casing, line(off ? OFF_LINE : CL.offColor, 0.3 * W, CL.unpavedDash.join(' '))) },
+    road: (c, off) => road(grainV(c, off ? c.offTint : c.lowTint, MAIN.grain.scale), c.casing, off ? line(grainV(c, '', MAIN.grain.scale, GR.denseShift), W) : '') },
+  'centre-line': { title: '2. Dashed centre line: B', unpaved: `line 30% of the fill, brown ${MAIN['centre-line'].color}`, off: `same line, darker ${MAIN['centre-line'].offColor}, on the Off-road tint`,
+    road: (c, off) => road(off ? c.offTint : c.fill, c.casing, line(off ? MAIN['centre-line'].offColor : MAIN['centre-line'].color, MAIN['centre-line'].xWidth * W, CL.unpavedDash.join(' '))) },
   'dashed-fill': { title: '3. Dashed fill: A', unpaved: 'dash contrast 1.8', off: 'dash contrast 2.45',
-    road: (c, off) => band(c, stronger(c, off ? 2.45 : 1.8), W * DA.band, DA.unpavedXWidth) },
+    road: (c, off) => band(c, MAIN['dashed-fill'][off ? 'offDash' : 'dash'][c.id], W * DA.band, DA.unpavedXWidth) },
   'dashed-casing': { title: '4. Dashed casing: A', unpaved: 'outline dashes 14/8', off: 'same outline, darker, on the Off-road tint',
-    road: (c, off) => dashedCasing(off ? tinted(c) : c, '14 8') },
-  'dashed-fill-full': { title: '5. Full width: A, softened', unpaved: 'dash contrast 1.45 (A was 1.6)', off: 'current Off-road dash (1.8 to 1.9)',
-    road: (c, off) => band(c, off ? c.offDash : stronger(c, 1.45), W, DF.unpavedXWidth) },
+    road: (c, off) => dashedCasing(off ? tinted(c) : c, MAIN['dashed-casing'].dash.join(' ')) },
+  'dashed-fill-full': { title: '5. Full width: A, softened', unpaved: 'dash contrast 1.45 (A was 1.6)', off: 'a 1.32 to 1.35 step darker',
+    road: (c, off) => band(c, MAIN['dashed-fill-full'][off ? 'offDash' : 'dash'][c.id], W, DF.unpavedXWidth) },
 };
 
 // One row per style, four frames: current Unpaved, current Off-road, new Unpaved, new Off-road. Same roads and widths as
 // main-roads-*.svg, z15 then z16; white roads keep the current style in every frame.
 function renderPicks() {
+  const current = (key: string, s: State, c: Klass) => { MAIN_PICKS = false; const r = official(key, s, c); MAIN_PICKS = true; return r; };
   const FW = 400, FH = 400, LABEL = 70, TOP = 50, HEAD = 26, RH = HEAD + FH + 40;
   const ROWS: [Klass, number, number][] = [];
   for (const [z, y0] of [[15, 28], [16, 222]] as const) {
@@ -394,11 +414,10 @@ function renderPicks() {
   const parts = (y: number): [string, boolean][] => [[`M -20 ${y} L 140 ${y} C 170 ${y} 170 ${y + 12} 200 ${y + 12}`, false],
     [`M 200 ${y + 12} L 250 ${y + 12} C 290 ${y + 12} 290 ${y} 330 ${y} L 420 ${y}`, true]];
   const COLS: [string, (key: string, c: Klass) => string][] = [
-    ['Current Unpaved', (key, c) => official(key, 'Unpaved', c)], ['Current Off-road', (key, c) => official(key, 'Unpaved + Off-road', c)],
+    ['Current Unpaved', (key, c) => current(key, 'Unpaved', c)], ['Current Off-road', (key, c) => current(key, 'Unpaved + Off-road', c)],
     ['New Unpaved', (key, c) => c.id === 'minor' ? official(key, 'Unpaved', c) : PICKS[key].road(c, false)],
     ['New Off-road', (key, c) => c.id === 'minor' ? official(key, 'Unpaved + Off-road', c) : PICKS[key].road(c, true)]];
   const saved = { W, CAS, ROAD };
-  extraDefs.clear();
   const keys = Object.keys(PICKS);
   const body = COLS.map(([t], i) => text(LABEL + i * (FW + 10) + FW / 2, 30, t, 16, 700, 'middle')).join('') + keys.map((key, r) => {
     const y = TOP + r * RH + HEAD;
@@ -409,11 +428,12 @@ function renderPicks() {
       text(LABEL + 2 * (FW + 10) + 4, y + FH + 18, `${PICKS[key].unpaved}  |  Off-road: ${PICKS[key].off}`, 12);
   }).join('');
   const w = LABEL + COLS.length * (FW + 10) + 10, h = TOP + keys.length * RH + 30;
-  out('main-roads-picks', svg(w, h, `<defs>${[...extraDefs.values()].join('')}</defs>` + body +
+  out('main-roads-picks', svg(w, h, body +
     text(10, h - 14, 'Red, orange, yellow at z15 (top) and z16 (bottom), white minor roads unchanged; each road Paved on the left. White rows keep the current style.', 12)));
   ({ W, CAS, ROAD } = saved);
-  for (const c of CLASSES.slice(0, 3)) console.log(`${c.name}: 3A ${stronger(c, 1.8)} -> off ${stronger(c, 2.45)} (${contrast(stronger(c, 1.8), stronger(c, 2.45)).toFixed(2)} step); ` +
-    `5 ${stronger(c, 1.45)} -> off ${c.offDash} (${contrast(stronger(c, 1.45), c.offDash).toFixed(2)} step); line ${contrast(c.fill, CL.offColor).toFixed(2)} / off ${contrast(c.offTint, OFF_LINE).toFixed(2)}`);
+  // Contrast check of the spec values: mark against the fill, and the Off-road step over Unpaved.
+  for (const c of CLASSES.slice(0, 3)) console.log(`${c.name}: ` + (['dashed-fill', 'dashed-fill-full'] as const).map((k) => { const m = MAIN[k];
+    return `${k} ${contrast(c.fill, m.dash[c.id]).toFixed(2)}, Off-road step ${contrast(m.dash[c.id], m.offDash[c.id]).toFixed(2)}`; }).join('; '));
 }
 
 render('');
@@ -438,14 +458,4 @@ for (const [w, cas, suffix] of [[11, 4, '-dark'], [5, 2, '-dark-narrow']] as con
 
 // Style values for the demo, with the titles and notes shown in its menu and legend.
 const styles = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, { name: OPTIONS[k].title, note: OPTIONS[k].note, ...v }]));
-writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'research/mockups/make-mockups.ts', lowZoom: SPEC.lowZoom, classes: SPEC.classes, dark: SPEC.dark, styles }, null, 2) + '\n');
-// Colour-only main-road variants as whole specs, to preview on the reader-test places without touching the demo:
-// node scripts/shots.mjs --reader --spec research/mockups/main-roads-spec-<name>.json (serves it as js/style-spec.js).
-// Only trunk, primary and secondary change; the variants that change a width or scale need demo code.
-const MAIN = ['trunk', 'primary', 'secondary'] as const;
-const LIGHT = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
-for (const [name, patch] of [['grain-B', (c: Klass) => ({ grainBg: c.lowTint })], ['dashed-fill-A', (c: Klass) => ({ dash: stronger(c, 1.8) })],
-  ['dashed-fill-full-A', (c: Klass) => ({ fullDash: stronger(c, 1.6) })]] as const) {
-  const classes = { ...SPEC.classes, ...Object.fromEntries(MAIN.map((k) => [k, { ...SPEC.classes[k], ...patch(LIGHT.find((c) => c.id === k)!) }])) };
-  writeFileSync(new URL(`./main-roads-spec-${name}.json`, import.meta.url), JSON.stringify({ source: `research/mockups/make-mockups.ts (main-road variant ${name}, preview only)`, lowZoom: SPEC.lowZoom, classes, dark: SPEC.dark, styles }, null, 2) + '\n');
-}
+writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'research/mockups/make-mockups.ts', lowZoom: SPEC.lowZoom, mainRoads: SPEC.mainRoads, classes: SPEC.classes, dark: SPEC.dark, styles }, null, 2) + '\n');

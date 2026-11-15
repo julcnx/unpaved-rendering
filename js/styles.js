@@ -11,7 +11,11 @@ const S = SPEC.styles;
 // Dashed casing: a darker outline where the normal casing is too close to the fill (red, orange, white).
 // On the darker Off-road fill the outline and the centre line are darker too (offGapCasing, offLine), so they keep their contrast.
 // unpavedFill: the light tan fill of white Unpaved roads in the dashed casing (light mode only).
-const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor, unpavedFill: S['dashed-casing'].unpavedFill?.[key] });
+// main: a main road (SPEC.mainRoads, light mode only), drawn with the stronger mark of each style's `main` block; mainDash and
+// mainFullDash: its dash colours in the dashed fill and the full width, [Unpaved, Off-road].
+const isMain = (key) => SPEC.mainRoads?.includes(key) ?? false;
+const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor, unpavedFill: S['dashed-casing'].unpavedFill?.[key],
+  ...(isMain(key) && { main: true, mainDash: [S['dashed-fill'].main.dash[key], S['dashed-fill'].main.offDash[key]], mainFullDash: [S['dashed-fill-full'].main.dash[key], S['dashed-fill-full'].main.offDash[key]] }) });
 const LIGHT = {
   motorway: withGapCasing('motorway', motorway), trunk: withGapCasing('trunk', trunk), primary: withGapCasing('primary', primary),
   secondary: withGapCasing('secondary', secondary), minor: withGapCasing('minor', minor),
@@ -66,29 +70,32 @@ const offDash = (c) => c.offDash ?? c.casing;
 export const STYLES = {
   grain: {
     name: GR.name, note: GR.note, minWidth: 6,
+    // Main roads: bigger grain on the low-zoom Unpaved tint.
     draw: (level, c, w, brown, ctx) => level === 'paved' ? {} : {
-      fill: { color: grain(ctx, off(level) ? offTint(c) : c.grainBg, c.grainDot, GR.scale) },
+      fill: { color: grain(ctx, off(level) ? offTint(c) : c.main ? c.lowTint : c.grainBg, c.grainDot, c.main ? GR.main.scale : GR.scale) },
       // Off-road: the same grain once more, shifted, so the dots are twice as dense.
-      over: off(level) ? [{ color: grain(ctx, null, c.grainDot, GR.scale, GR.denseShift), width: w, cap: 'butt' }] : [],
+      over: off(level) ? [{ color: grain(ctx, null, c.grainDot, c.main ? GR.main.scale : GR.scale, GR.denseShift), width: w, cap: 'butt' }] : [],
     },
   },
   'centre-line': {
     name: CL.name, note: CL.note, minWidth: 5,
     draw: (level, c, w, brown) => level === 'paved' ? {} : {
       fill: off(level) ? { color: offTint(c) } : undefined,
-      over: [{ color: off(level) ? (c.offLine ?? brown) : brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: CL.unpavedDash, cap: 'butt' }],
+      // Main roads: a wider, darker line (CL.main), darker again on Off-road.
+      over: [c.main ? { color: off(level) ? CL.main.offColor : CL.main.color, width: CL.main.xWidth * w, dash: CL.unpavedDash, cap: 'butt' }
+        : { color: off(level) ? (c.offLine ?? brown) : brown, width: w < CL.narrowBelow ? CL.narrowWidth : CL.width, dash: CL.unpavedDash, cap: 'butt' }],
     },
   },
   'dashed-fill': {
     name: DA.name, note: DA.note, minWidth: 3,
     draw: (level, c, w) => ({
-      over: level === 'paved' ? [] : [{ color: off(level) ? offDash(c) : c.dash, width: w < DA.bandFromWidth ? w : w * DA.band, dash: DA.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: c.main ? c.mainDash[off(level) ? 1 : 0] : off(level) ? offDash(c) : c.dash, width: w < DA.bandFromWidth ? w : w * DA.band, dash: DA.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
     }),
   },
   'dashed-casing': {
     name: GA.name, note: GA.note, minWidth: 3,
     draw: (level, c) => level === 'paved' ? {} : {
-      casing: { dash: GA.unpaved, cap: 'butt', color: off(level) ? (c.offGapCasing ?? c.gapCasing) : c.gapCasing },
+      casing: { dash: c.main ? GA.main.dash : GA.unpaved, cap: 'butt', color: off(level) ? (c.offGapCasing ?? c.gapCasing) : c.gapCasing },
       fill: off(level) ? { color: offTint(c) } : c.unpavedFill ? { color: c.unpavedFill } : undefined,
     },
   },
@@ -97,7 +104,7 @@ export const STYLES = {
     draw: (level, c, w) => ({
       // White roads: the tan dashes cover most of the road, so the casing is the darker tintCasing, as for a tan fill.
       casing: level !== 'paved' && c.tintCasing ? { color: c.tintCasing } : undefined,
-      over: level === 'paved' ? [] : [{ color: off(level) ? offDash(c) : (c.fullDash ?? c.dash), width: w, dash: DF.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
+      over: level === 'paved' ? [] : [{ color: c.main ? c.mainFullDash[off(level) ? 1 : 0] : off(level) ? offDash(c) : (c.fullDash ?? c.dash), width: w, dash: DF.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
     }),
   },
 };

@@ -4,6 +4,11 @@ export default {
   "lowZoom": {
     "below": 6
   },
+  "mainRoads": [
+    "trunk",
+    "primary",
+    "secondary"
+  ],
   "classes": {
     "motorway": {
       "name": "Pink",
@@ -155,7 +160,7 @@ export default {
   "styles": {
     "centre-line": {
       "name": "2. Dashed centre line",
-      "note": "Thin brown line down the middle in long dashes (OSM Carto grade2 rhythm). Off-road: the same line on a darker tint of the road.",
+      "note": "Thin brown line down the middle in long dashes (OSM Carto grade2 rhythm; main roads: wider and darker). Off-road: the same line on a darker tint of the road.",
       "color": "#8a6440",
       "offColor": "#5e4126",
       "width": 1.8,
@@ -168,11 +173,16 @@ export default {
       "offroadDash": [
         8,
         9
-      ]
+      ],
+      "main": {
+        "xWidth": 0.3,
+        "color": "#5e4126",
+        "offColor": "#382717"
+      }
     },
     "grain": {
       "name": "1. Grain fill",
-      "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown. Off-road: the same grain, twice as dense, on a darker tint.",
+      "note": "Unpaved: the OSM Carto grain, dark dots in the class hue, 1.5 x larger, on a fill tinted a little toward brown (main roads: 2.25 x, on a darker tint). Off-road: the same grain, twice as dense, on a darker tint.",
       "scale": 1.5,
       "denseShift": [
         32,
@@ -182,11 +192,15 @@ export default {
       "offroadShift": [
         21,
         37
-      ]
+      ],
+      "main": {
+        "scale": 2.25,
+        "onLowTint": true
+      }
     },
     "dashed-fill": {
       "name": "3. Dashed fill",
-      "note": "Long dashes in a darker class tint, in a centred band (as DMD2; light brown on white). Off-road: the same dashes, darker.",
+      "note": "Long dashes in a darker class tint, in a centred band (as DMD2; light brown on white; darker on main roads). Off-road: the same dashes, darker.",
       "unpavedXWidth": [
         3.6,
         0.98
@@ -196,11 +210,23 @@ export default {
         1.47
       ],
       "band": 0.6,
-      "bandFromWidth": 6
+      "bandFromWidth": 6,
+      "main": {
+        "dash": {
+          "trunk": "#e56c46",
+          "primary": "#e1932d",
+          "secondary": "#c3be30"
+        },
+        "offDash": {
+          "trunk": "#da4517",
+          "primary": "#d47200",
+          "secondary": "#aba200"
+        }
+      }
     },
     "dashed-fill-full": {
       "name": "5. Dashed fill, full width",
-      "note": "Long dashes in a darker class tint over the whole road width (as Americana). Off-road: the same dashes, darker.",
+      "note": "Long dashes in a darker class tint over the whole road width (as Americana; darker on main roads). Off-road: the same dashes, darker.",
       "unpavedXWidth": [
         3.6,
         0.98
@@ -208,11 +234,23 @@ export default {
       "offroadXWidth": [
         1.31,
         1.47
-      ]
+      ],
+      "main": {
+        "dash": {
+          "trunk": "#ec8666",
+          "primary": "#ebab58",
+          "secondary": "#d5d361"
+        },
+        "offDash": {
+          "trunk": "#e3643d",
+          "primary": "#df8d23",
+          "secondary": "#bcb61c"
+        }
+      }
     },
     "dashed-casing": {
       "name": "4. Dashed casing",
-      "note": "Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept); white roads get a light tan fill. Off-road: the same outline on a darker tint.",
+      "note": "Class-coloured fill, outline in long dashes (as Gaia GPS tracks, class kept; longer gaps on main roads); white roads get a light tan fill. Off-road: the same outline on a darker tint.",
       "unpaved": [
         22,
         6
@@ -235,6 +273,12 @@ export default {
       },
       "unpavedFill": {
         "minor": "#e2cfb8"
+      },
+      "main": {
+        "dash": [
+          14,
+          8
+        ]
       }
     }
   }
