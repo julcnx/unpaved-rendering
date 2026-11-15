@@ -276,6 +276,94 @@ function renderJunction(suffix = '', land = LAND, twoLevels = false) {
     : 'Left to right: Paved, Unpaved (S-bend), Off-road. Side road: white, Unpaved. Each part is its own way, so the dashes restart where the surface changes.', 13)));
 }
 
+// Main roads (2026-11-15): in the reader test non-mappers found 43% of unpaved main roads against 78% of minor roads
+// (research/reader-test/README.md, Results). Variants that make the mark stronger on red, orange and yellow roads only,
+// class colour kept; white minor roads stay as they are. Mockups only: nothing here goes into styles.json.
+// Luminance contrast (WCAG), as used for every tint step above.
+const lum = (h: string) => { const [r, g, b] = [1, 3, 5].map((i) => { const c = parseInt(h.slice(i, i + 2), 16) / 255; return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+const contrast = (a: string, b: string) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => p - q); return (y + 0.05) / (x + 0.05); };
+// The class fill pushed toward its Off-road dash (same hue) until it reaches the target contrast against the fill.
+const stronger = (c: Klass, target: number) => { let t = 0; while (t < 2 && contrast(c.fill, mixC(c.fill, c.offDash, t)) < target) t += 0.01; return mixC(c.fill, c.offDash, t); };
+const mixC = (a: string, b: string, t: number) => '#' + [1, 3, 5].map((i) => Math.max(0, Math.min(255,
+  Math.round(parseInt(a.slice(i, i + 2), 16) * (1 - t) + parseInt(b.slice(i, i + 2), 16) * t))).toString(16).padStart(2, '0')).join('');
+// Grain patterns at other scales and backgrounds, added to the sheet's own <defs>.
+const extraDefs = new Map<string, string>();
+const grainV = (c: Klass, bg: string, scale: number) => {
+  const id = `grainV-${c.id}-${bg.slice(1)}-${scale}`;
+  extraDefs.set(id, `<pattern id="${id}" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="scale(${scale})"><rect width="64" height="64" fill="${bg}"/><path d="${GRAIN}" fill="${c.grainDot}"/></pattern>`);
+  return `url(#${id})`;
+};
+const gap = (c: Klass) => (GA.casing as Record<string, string>)[c.id] ?? c.casing;
+// Variants per style, Unpaved only (two levels, as in the reader test). W and CAS are the demo's widths here (see renderMainRoads).
+type Variant = { title: string; note: string; road: (c: Klass) => string };
+const CURRENT = (key: string): Variant => ({ title: 'Current', note: 'As in the reader test.', road: (c) => official(key, 'Unpaved', c) });
+const band = (c: Klass, colour: string, width: number, dash: number[]) => road(c.fill, c.casing, line(colour, width, dash.map((x) => x * W).join(' ')));
+const VARIANTS: Record<string, Variant[]> = {
+  grain: [CURRENT('grain'),
+    { title: 'A. Bigger grain', note: 'Grain 2.25 x (was 1.5 x): bigger, sparser dots.', road: (c) => road(grainV(c, c.grainBg, 2.25), c.casing) },
+    { title: 'B. Grain on the tint', note: 'Same grain on the low-zoom Unpaved tint (lowTint).', road: (c) => road(grainV(c, c.lowTint, GR.scale), c.casing) },
+    { title: 'C. Bigger, on the tint', note: 'A and B together.', road: (c) => road(grainV(c, c.lowTint, 2.25), c.casing) }],
+  'centre-line': [CURRENT('centre-line'),
+    { title: 'A. Wider line', note: 'Line 30% of the fill (3 px at z15, was 1.8).', road: (c) => road(c.fill, c.casing, line(BROWN, 0.3 * W, CL.unpavedDash.join(' '))) },
+    { title: 'B. Wider, darker', note: 'A in the Off-road brown #5e4126.', road: (c) => road(c.fill, c.casing, line(CL.offColor, 0.3 * W, CL.unpavedDash.join(' '))) },
+    { title: 'C. Wider, shorter dashes', note: 'A with dashes 12/6 (was 22/6).', road: (c) => road(c.fill, c.casing, line(BROWN, 0.3 * W, '12 6')) }],
+  'dashed-fill': [CURRENT('dashed-fill'),
+    { title: 'A. Stronger dash', note: 'Dash contrast 1.8 (was 1.3 to 1.4), band 60%.', road: (c) => band(c, stronger(c, 1.8), W * DA.band, DA.unpavedXWidth) },
+    { title: 'B. Stronger, wider band', note: 'A in a band 80% of the fill.', road: (c) => band(c, stronger(c, 1.8), W * 0.8, DA.unpavedXWidth) },
+    { title: 'C. Stronger, longer gaps', note: 'A with dashes 2.4 and gaps 1.6 fill widths (was 3.6 / 1).', road: (c) => band(c, stronger(c, 1.8), W * DA.band, [2.4, 1.6]) }],
+  'dashed-casing': [CURRENT('dashed-casing'),
+    { title: 'A. Longer gaps', note: 'Outline dashes 14/8 (was 22/6).', road: (c) => dashedCasing(c, '14 8') },
+    { title: 'B. Longer gaps, thicker', note: 'A with an outline twice as thick.', road: (c) => { const cas = CAS; CAS *= 2; const r = dashedCasing(c, '14 8'); CAS = cas; return r; } },
+    { title: 'C. Teeth', note: 'Land-coloured notches (6 every 22 px) cut the outline; middle 60% whole.',
+      road: (c) => line(gap(c), W + CAS) + line(c.fill, W) + line(LAND, W + CAS, '6 16') + line(c.fill, W * 0.6) }],
+  'dashed-fill-full': [CURRENT('dashed-fill-full'),
+    { title: 'A. Stronger dash', note: 'Dash contrast 1.6 (was 1.25).', road: (c) => band(c, stronger(c, 1.6), W, DF.unpavedXWidth) },
+    { title: 'B. White gaps (GmapTool)', note: 'Class fill broken by white gaps 0.6 fill widths long every 3.6.', road: (c) => band(c, '#ffffff', W, [0.6, 3]) },
+    { title: 'C. Gaps through the casing', note: 'B with land-coloured gaps that cut the casing too.', road: (c) => road(c.fill, c.casing) + line(LAND, W + CAS + 0.5, [0.6, 3].map((x) => x * W).join(' ')) }],
+};
+
+// One sheet per style: phone frames of 400 x 520 CSS px (the reader-test size; PNG at 2 x), current style then the variants.
+// Each frame: red, orange and yellow main roads, Paved on the left and Unpaved on the right (two ways, so the dashes restart
+// at the change), then a white minor road the same way, at z15 (top) and z16 (bottom). Widths as in the demo (js/styles.js:
+// trunk and primary 10 px, secondary 9, residential 6 at z15, x 1.46 at z16; casing + 30%).
+function renderMainRoads() {
+  const FW = 400, FH = 520, LABEL = 120, TOP = 50, NOTE = 44;
+  const ROWS: [Klass, number, number][] = [];
+  for (const [z, y0] of [[15, 34], [16, 296]] as const) {
+    const k = 2 ** (0.55 * (z - 15));
+    CLASSES.forEach((c, i) => ROWS.push([c, (c.id === 'secondary' ? 9 : c.id === 'minor' ? 6 : 10) * k, y0 + i * 60 + (z === 16 ? i * 6 : 0)]));
+  }
+  const parts = (y: number): [string, boolean][] => [[`M -20 ${y} L 140 ${y} C 170 ${y} 170 ${y + 12} 200 ${y + 12}`, false],
+    [`M 200 ${y + 12} L 250 ${y + 12} C 290 ${y + 12} 290 ${y} 330 ${y} L 420 ${y}`, true]];
+  const saved = { W, CAS, ROAD };
+  // White minor roads: the current style, unchanged.
+  const frame = (key: string, v: Variant) => ROWS.map(([c, w, y]) => {
+    W = w; CAS = Math.max(1, 0.3 * w);
+    return parts(y).map(([p, unp]) => { ROAD = p; return !unp ? road(c.fill, c.casing) : c.id === 'minor' ? official(key, 'Unpaved', c) : v.road(c); }).join('');
+  }).join('');
+  for (const [key, variants] of Object.entries(VARIANTS)) {
+    extraDefs.clear();
+    const w = LABEL + variants.length * (FW + 10) + 10;
+    const refsY = TOP + FH + NOTE + 16, h = refsY + 96;
+    const frames = variants.map((v, i) => {
+      const x = LABEL + i * (FW + 10);
+      return text(x + FW / 2, 30, v.title, 16, 700, 'middle') +
+        `<svg x="${x}" y="${TOP}" width="${FW}" height="${FH}" viewBox="0 0 ${FW} ${FH}"><rect width="${FW}" height="${FH}" fill="${LAND}"/>${frame(key, v)}</svg>` +
+        text(x + 4, TOP + FH + 18, v.note, 12);
+    }).join('');
+    const labels = ROWS.map(([c, , y], r) => text(10, TOP + y + 10, `${r < 4 ? 'z15' : 'z16'} ${c.name}`, 13, 700)).join('') +
+      text(10, TOP + FH + 18, 'Paved | Unpaved', 12);
+    // Carto features the marks must not look like, on orange at z15 (white for construction of minor roads is in references.svg).
+    W = 10; CAS = 3; ROAD = 'M 10 30 L 290 30';
+    const refs = text(10, refsY + 34, 'Must not look like', 13, 700) + [['Carto construction (orange)', construction(CLASSES[1].fill)], ['Carto tunnel (orange)', tunnel(CLASSES[1])],
+      ['Carto track', track()]].map(([name, inner], i) => `<g transform="translate(${LABEL + i * 310} ${refsY})"><rect width="300" height="64" fill="${LAND}" rx="4"/>${inner}${text(150, 56, name, 11, 400, 'middle')}</g>`).join('');
+    const body = frames + labels + refs;
+    out(`main-roads-${key}`, svg(w, h, `<defs>${[...extraDefs.values()].join('')}</defs>` + body));
+  }
+  ({ W, CAS, ROAD } = saved);
+  for (const c of CLASSES.slice(0, 3)) console.log(`${c.name}: dashed fill 1.8 ${stronger(c, 1.8)}, full width 1.6 ${stronger(c, 1.6)}`);
+}
+
 render('');
 renderJunction();
 renderJunction('-2levels', LAND, true);
@@ -285,6 +373,7 @@ renderJunction('-sand', '#e8d6ad');
 W = 5;
 CAS = 2;
 render('-narrow');
+renderMainRoads();
 
 // Dark version: same styles on the dark palette, comparison grids only.
 LAND = SPEC.dark.land;
@@ -297,3 +386,13 @@ for (const [w, cas, suffix] of [[11, 4, '-dark'], [5, 2, '-dark-narrow']] as con
 // Style values for the demo, with the titles and notes shown in its menu and legend.
 const styles = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, { name: OPTIONS[k].title, note: OPTIONS[k].note, ...v }]));
 writeFileSync(new URL('./styles.json', import.meta.url), JSON.stringify({ source: 'research/mockups/make-mockups.ts', lowZoom: SPEC.lowZoom, classes: SPEC.classes, dark: SPEC.dark, styles }, null, 2) + '\n');
+// Colour-only main-road variants as whole specs, to preview on the reader-test places without touching the demo:
+// node scripts/shots.mjs --reader --spec research/mockups/main-roads-spec-<name>.json (serves it as js/style-spec.js).
+// Only trunk, primary and secondary change; the variants that change a width or scale need demo code.
+const MAIN = ['trunk', 'primary', 'secondary'] as const;
+const LIGHT = MOCKUP_CLASSES.map((id) => ({ id, ...SPEC.classes[id] }));
+for (const [name, patch] of [['grain-B', (c: Klass) => ({ grainBg: c.lowTint })], ['dashed-fill-A', (c: Klass) => ({ dash: stronger(c, 1.8) })],
+  ['dashed-fill-full-A', (c: Klass) => ({ fullDash: stronger(c, 1.6) })]] as const) {
+  const classes = { ...SPEC.classes, ...Object.fromEntries(MAIN.map((k) => [k, { ...SPEC.classes[k], ...patch(LIGHT.find((c) => c.id === k)!) }])) };
+  writeFileSync(new URL(`./main-roads-spec-${name}.json`, import.meta.url), JSON.stringify({ source: `research/mockups/make-mockups.ts (main-road variant ${name}, preview only)`, lowZoom: SPEC.lowZoom, classes, dark: SPEC.dark, styles }, null, 2) + '\n');
+}

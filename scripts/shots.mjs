@@ -1,9 +1,9 @@
 // Screenshots of the demo for review: every spot x style x background x zoom, or a subset.
-// Usage: node scripts/shots.mjs [--spots a,b] [--styles a,b] [--bgs a,b] [--zooms 13,15,17] [--compare] [--portrait] [--center lat,lon] [--attribution] [--reader] [--size WxH] [--dpr 2] [--out dir]
+// Usage: node scripts/shots.mjs [--spots a,b] [--styles a,b] [--bgs a,b] [--zooms 13,15,17] [--compare] [--portrait] [--center lat,lon] [--attribution] [--reader] [--size WxH] [--dpr 2] [--spec styles.json] [--out dir]
 // Map only: sidebar, chips and messages hidden. --attribution keeps the OSM credit (needed on any published shot).
 // Needs the repo served on http://localhost:8765 (python3 -m http.server 8765); the demo is at /demo/.
 import puppeteer from 'puppeteer-core';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 
 const arg = (name, def) => { const i = process.argv.indexOf(`--${name}`); return i > 0 ? process.argv[i + 1].split(',') : def; };
 const spots = arg('spots', ['namibia', 'bolivia', 'nepal', 'iceland', 'australia', 'alberta']);
@@ -25,7 +25,11 @@ await page.setViewport({ width: size ? +size[0].split('x')[0] : portrait ? 1080 
 page.on('pageerror', (e) => console.error('page error:', e.message));
 // Cached spot data only: Overpass breaks too easily to make the shots depend on it.
 await page.setRequestInterception(true);
-page.on('request', (r) => (/overpass/i.test(r.url()) ? r.abort() : r.continue()));
+// --spec file.json: serve these style values instead of js/style-spec.js (variant previews; the demo is unchanged).
+const spec = arg('spec', null);
+const specJs = spec && `export default ${readFileSync(spec[0], 'utf8')};`;
+page.on('request', (r) => (/overpass/i.test(r.url()) ? r.abort()
+  : specJs && /\/js\/style-spec\.js$/.test(new URL(r.url()).pathname) ? r.respond({ contentType: 'text/javascript', body: specJs }) : r.continue()));
 for (const spot of spots) for (const bg of bgs) for (const z of zooms) for (const style of compare ? ['all'] : styles) {
   const q = new URLSearchParams({ spot, bg, z, style: compare ? 'centre-line' : style });
   q.set('compare', compare ? '1' : '0'); // the demo shows all styles unless compare=0
