@@ -2,7 +2,19 @@
 export default {
   "source": "research/mockups/make-mockups.ts",
   "lowZoom": {
-    "below": 6
+    "below": 6,
+    "main": {
+      "unpaved": {
+        "trunk": "#eb8261",
+        "primary": "#e9a751",
+        "secondary": "#d2d059"
+      },
+      "offroad": {
+        "trunk": "#e15d34",
+        "primary": "#dc8617",
+        "secondary": "#bab315"
+      }
+    }
   },
   "mainRoads": [
     "trunk",

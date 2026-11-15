@@ -38,7 +38,9 @@ const SPEC = {
     minor: { name: 'White', fill: '#ffffff', casing: '#bbbbbb', grainBg: '#ffffff', grainDot: '#46362a', dash: '#dccab0', tunnel: '#f2f2f2', offTint: '#cca979', offDash: '#c18f46', lowTint: '#e2cfb8', fullDash: '#dccab0', tintCasing: '#8f8f8f' },
   },
   // Below this fill width (px) every style draws a plain tint: lowTint for Unpaved, offTint for Off-road (patterns blur there).
-  lowZoom: { below: 6 },
+  // Main roads (2026-11-15, Julien): the Unpaved tint was 1.20 to 1.25 against the fill and hard to see; now 1.5, as white roads,
+  // and Off-road one 1.35 step darker (light mode; low zoom only, so lowTint and offTint keep their other uses). Sheet: main-roads-low-zoom.png.
+  lowZoom: { below: 6, main: { unpaved: { trunk: '#eb8261', primary: '#e9a751', secondary: '#d2d059' }, offroad: { trunk: '#e15d34', primary: '#dc8617', secondary: '#bab315' } } },
   // Dark mode (2026-11-10): on a dark map Off-road is the LIGHTER step. Fills from the demo's dark palette, primary more orange
   // (it read brown). Steps measured the same way as in light mode, going lighter: lowTint and offTint 1.25 each, dash 1.3,
   // offDash 1.35 above it, fullDash 1.25. White roads are a warm grey-tan, as the tan of light mode.
@@ -187,7 +189,9 @@ const OPTIONS: Record<string, Option> = {
 // Below SPEC.lowZoom.below px of fill width, every style is a plain tint (stepwise contrast 1.2 or more: fill, lowTint, offTint).
 // Main roads (SPEC.mainRoads) draw the picks (PICKS below), light mode only; MAIN_PICKS = false gives the reader-test style.
 let MAIN_PICKS = true;
-const official = (key: string, s: State, c: Klass) => unpaved(s) && W < SPEC.lowZoom.below ? road(offroad(s) ? c.offTint : c.lowTint, c.tintCasing ?? c.casing)
+const lowMain = (c: Klass) => MAIN_PICKS && !DARK_MODE && (SPEC.mainRoads as string[]).includes(c.id);
+const official = (key: string, s: State, c: Klass) => unpaved(s) && W < SPEC.lowZoom.below
+  ? road(lowMain(c) ? (SPEC.lowZoom.main as any)[offroad(s) ? 'offroad' : 'unpaved'][c.id] : offroad(s) ? c.offTint : c.lowTint, c.tintCasing ?? c.casing)
   : unpaved(s) && MAIN_PICKS && !DARK_MODE && (SPEC.mainRoads as string[]).includes(c.id) ? PICKS[key].road(c, offroad(s))
   : !offroad(s) ? OPTIONS[key].road(s, c)
   : OPTIONS[key].road('Unpaved', key.startsWith('dashed-fill') ? tintedDash(c) : tinted(c));
@@ -436,6 +440,35 @@ function renderPicks() {
     return `${k} ${contrast(c.fill, m.dash[c.id]).toFixed(2)}, Off-road step ${contrast(m.dash[c.id], m.offDash[c.id]).toFixed(2)}`; }).join('; '));
 }
 
+// Low-zoom tint on main roads (2026-11-15): under 6 px every style is a plain tint, and on red, orange and yellow the Unpaved
+// tint was only 1.20 to 1.25 against the fill (white: 1.52). Now (SPEC.lowZoom.main): Unpaved 1.5 against the fill, as white
+// roads, and Off-road one 1.35 step darker. LOW_PROPOSED is the rule the spec values come from.
+const darkerStep = (c: Klass, from: string, step: number) => { let t = 0; while (t < 3 && (lum(mixC(c.fill, c.offDash, t)) >= lum(from) || contrast(from, mixC(c.fill, c.offDash, t)) < step)) t += 0.01; return mixC(c.fill, c.offDash, t); };
+const LOW_PROPOSED = (c: Klass) => { const unp = stronger(c, 1.5); return { unp, off: darkerStep(c, unp, 1.35) }; };
+function renderLowZoom() {
+  const FW = 400, FH = 300, LABEL = 70, TOP = 50;
+  const ROWS: [Klass, number, number][] = [];
+  for (const [z, y0] of [[12, 30], [13, 170]] as const) {
+    const k = 2 ** (0.55 * (z - 15));
+    CLASSES.forEach((c, i) => ROWS.push([c, (c.id === 'secondary' ? 9 : c.id === 'minor' ? 6 : 10) * k, y0 + i * 30]));
+  }
+  const PARTS = (y: number): [string, State][] => [[`M -20 ${y} L 130 ${y}`, 'Paved'], [`M 130 ${y} L 270 ${y}`, 'Unpaved'], [`M 270 ${y} L 420 ${y}`, 'Unpaved + Off-road']];
+  const COLS: [string, (s: State, c: Klass) => string][] = [
+    ['Before', (s, c) => { MAIN_PICKS = false; const r = official('dashed-fill', s, c); MAIN_PICKS = true; return r; }],
+    ['Now: Unpaved 1.5, Off-road +1.35', (s, c) => official('dashed-fill', s, c)]];
+  const saved = { W, CAS, ROAD };
+  const body = COLS.map(([title, draw], i) => { const x = LABEL + i * (FW + 10);
+    return text(x + FW / 2, 30, title, 16, 700, 'middle') + `<svg x="${x}" y="${TOP}" width="${FW}" height="${FH}" viewBox="0 0 ${FW} ${FH}"><rect width="${FW}" height="${FH}" fill="${LAND}"/>` +
+      ROWS.map(([c, w, y]) => { W = w; CAS = Math.max(1, 0.3 * w); return PARTS(y).map(([p, s]) => { ROAD = p; return draw(s, c); }).join(''); }).join('') + '</svg>'; }).join('') +
+    ROWS.map(([c, , y], r) => text(10, TOP + y + 4, `${r < 4 ? 'z12' : 'z13'} ${c.name}`, 11)).join('');
+  ({ W, CAS, ROAD } = saved);
+  out('main-roads-low-zoom', svg(LABEL + COLS.length * (FW + 10) + 10, TOP + FH + 40, body +
+    text(10, TOP + FH + 26, 'Each road: Paved, Unpaved, Off-road (left to right). Under 6 px every style draws these tints. White roads unchanged.', 12)));
+  // Check: the spec values against the rule (computed by LOW_PROPOSED).
+  for (const c of CLASSES.slice(0, 3)) { const t = LOW_PROPOSED(c), m = SPEC.lowZoom.main as any;
+    if (t.unp !== m.unpaved[c.id] || t.off !== m.offroad[c.id]) console.log(`${c.name} low zoom: spec ${m.unpaved[c.id]} / ${m.offroad[c.id]}, rule gives ${t.unp} / ${t.off}`); }
+}
+
 render('');
 renderJunction();
 renderJunction('-2levels', LAND, true);
@@ -447,6 +480,7 @@ CAS = 2;
 render('-narrow');
 renderMainRoads();
 renderPicks();
+renderLowZoom();
 
 // Dark version: same styles on the dark palette, comparison grids only.
 LAND = SPEC.dark.land;

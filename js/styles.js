@@ -12,10 +12,11 @@ const S = SPEC.styles;
 // On the darker Off-road fill the outline and the centre line are darker too (offGapCasing, offLine), so they keep their contrast.
 // unpavedFill: the light tan fill of white Unpaved roads in the dashed casing (light mode only).
 // main: a main road (SPEC.mainRoads, light mode only), drawn with the stronger mark of each style's `main` block; mainDash and
-// mainFullDash: its dash colours in the dashed fill and the full width, [Unpaved, Off-road].
+// mainFullDash: its dash colours in the dashed fill and the full width, [Unpaved, Off-road]; lowMain: its low-zoom tints.
 const isMain = (key) => SPEC.mainRoads?.includes(key) ?? false;
 const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor, unpavedFill: S['dashed-casing'].unpavedFill?.[key],
-  ...(isMain(key) && { main: true, mainDash: [S['dashed-fill'].main.dash[key], S['dashed-fill'].main.offDash[key]], mainFullDash: [S['dashed-fill-full'].main.dash[key], S['dashed-fill-full'].main.offDash[key]] }) });
+  ...(isMain(key) && { main: true, mainDash: [S['dashed-fill'].main.dash[key], S['dashed-fill'].main.offDash[key]], mainFullDash: [S['dashed-fill-full'].main.dash[key], S['dashed-fill-full'].main.offDash[key]],
+    lowMain: [SPEC.lowZoom.main.unpaved[key], SPEC.lowZoom.main.offroad[key]] }) });
 const LIGHT = {
   motorway: withGapCasing('motorway', motorway), trunk: withGapCasing('trunk', trunk), primary: withGapCasing('primary', primary),
   secondary: withGapCasing('secondary', secondary), minor: withGapCasing('minor', minor),
@@ -115,7 +116,8 @@ for (const st of Object.values(STYLES)) {
   const draw = st.draw;
   st.draw = (level, c, w, brown, ctx) => {
     const low = level !== 'paved' && w < SPEC.lowZoom.below;
-    const d = low ? { fill: { color: off(level) ? offTint(c) : (c.lowTint ?? c.dash) } } : draw(level, c, w, brown, ctx);
+    // Main roads (light mode): stronger tints (SPEC.lowZoom.main), the old ones were hard to see.
+    const d = low ? { fill: { color: c.lowMain ? c.lowMain[off(level) ? 1 : 0] : off(level) ? offTint(c) : (c.lowTint ?? c.dash) } } : draw(level, c, w, brown, ctx);
     // White roads with a tan tint as fill get a darker casing (tintCasing), or they lose their outline and vanish on sand.
     return c.tintCasing && (low || off(level)) && d.fill && !d.casing ? { ...d, casing: { color: c.tintCasing } } : d;
   };
