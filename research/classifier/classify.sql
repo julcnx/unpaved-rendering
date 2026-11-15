@@ -4,7 +4,7 @@
 --
 -- Base: unpaved surface > unpaved evidence > paved surface > tracktype (grade1 paved, grade2 or higher unpaved) > default (roads paved, tracks unpaved).
 -- Unpaved evidence: smoothness very_bad or worse, or 4wd_only, makes a road unpaved, even with a paved surface. tracktype never overrules a surface. Reasons: see classify.ts.
--- wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
+-- wood, stone and the :lanes and grass_paver values are unpaved unless smoothness is bad or better.
 -- Mark: smoothness > tracktype > surface (mud, rock), and 4wd_only sets a minimum. Only on unpaved roads.
 --
 -- Usage, with an hstore tags column (osm2pgsql):
@@ -13,11 +13,12 @@
 
 -- Whitelist: any surface value not listed is unpaved, including typos and local values.
 -- Multiple values (e.g. 'asphalt;concrete') are paved only if every part is. cobblestone is a legacy value, mostly used for sett.
--- wood, concrete:lanes and grass_paver are paved in some places, broken or improvised in others: paved only when smoothness is good enough.
+-- wood, stone and the :lanes and grass_paver values are paved in some places, broken or improvised in others: paved only when smoothness is good enough.
 CREATE OR REPLACE FUNCTION road_surface_base(surface text, smoothness text) RETURNS text AS $$
   SELECT CASE WHEN bool_and(trim(p) IN ('paved', 'asphalt', 'chipseal', 'concrete', 'concrete:plates', 'paving_stones',
-                                        'sett', 'bricks', 'metal', 'cobblestone', 'cobblestone:flattened')
-                            OR (trim(p) IN ('wood', 'concrete:lanes', 'grass_paver')
+                                        'sett', 'bricks', 'metal', 'cobblestone', 'cobblestone:flattened',
+                                        'unhewn_cobblestone', 'bitmac', 'tarmac', 'metal_grid', 'tiles')
+                            OR (trim(p) IN ('wood', 'concrete:lanes', 'grass_paver', 'paving_stones:lanes', 'grass_paver:lanes', 'stone')
                                 AND coalesce(smoothness IN ('excellent', 'good', 'intermediate', 'bad'), false)))
     THEN 'paved' ELSE 'unpaved' END
   FROM unnest(string_to_array(surface, ';')) AS p;

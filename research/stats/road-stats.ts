@@ -23,9 +23,9 @@ const MIN_ODD_KM = 0.5;
 const COVERAGE_KEYS = ['surface', 'smoothness', 'tracktype', '4wd_only'];
 // Documented Key:surface values that are unpaved by design. Any other unpaved value is a typo or local value.
 const KNOWN_UNPAVED = new Set([
-  'unpaved', 'compacted', 'fine_gravel', 'gravel', 'unhewn_cobblestone', 'dirt', 'earth', 'ground', 'grass',
+  'unpaved', 'compacted', 'fine_gravel', 'gravel', 'dirt', 'earth', 'ground', 'grass',
   'grass_paver', 'mud', 'sand', 'rock', 'pebblestone', 'clay', 'laterite', 'woodchips', 'snow', 'ice', 'salt',
-  'concrete:lanes', 'wood', 'stepping_stones', 'shells',
+  'concrete:lanes', 'wood', 'stepping_stones', 'shells', 'paving_stones:lanes', 'grass_paver:lanes', 'stone',
 ]);
 // Files whose changes can change the numbers.
 const PIPELINE_FILES = ['../classifier/classify.ts', './road-stats.ts', './run-country.sh'];

@@ -151,7 +151,7 @@
   <p class="kicker">A proposal for OpenStreetMap-based maps · Draft for feedback</p>
   <h1>Mind the Surface</h1>
   <p class="sub">A main road is not always paved</p>
-  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 13 November 2026</p>
+  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 15 November 2026</p>
 </header>
 
 <!--HERO-->
@@ -232,8 +232,8 @@
 </tr>
 </tbody>
 </table>
-<p>The paved values are a whitelist: <code>paved</code>, <code>asphalt</code>, <code>chipseal</code>, <code>concrete</code>, <code>concrete:plates</code>, <code>paving_stones</code>, <code>sett</code>, <code>bricks</code>, <code>metal</code>, <code>cobblestone</code> and <code>cobblestone:flattened</code>. <code>wood</code>, <code>concrete:lanes</code> and <code>grass_paver</code> count as paved only when <code>smoothness</code> is <code>bad</code> or better. A value with several parts (<code>asphalt;gravel</code>) is unpaved if any part is.</p>
-<p><strong>Why a whitelist.</strong> Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. OSM Carto, for example, does not list <code>surface=laterite</code>, a common material in Africa and Asia, so about 1,400 km of laterite main roads are drawn as paved. With a whitelist, such a value is drawn as unpaved, which is the safer mistake.</p>
+<p>The paved values are a whitelist: <code>paved</code>, <code>asphalt</code>, <code>chipseal</code>, <code>concrete</code>, <code>concrete:plates</code>, <code>paving_stones</code>, <code>sett</code>, <code>bricks</code>, <code>metal</code>, <code>metal_grid</code>, <code>cobblestone</code>, <code>cobblestone:flattened</code>, <code>unhewn_cobblestone</code>, <code>bitmac</code>, <code>tarmac</code> and <code>tiles</code>: the paved materials documented on the wiki as in use or de facto. <code>wood</code>, <code>stone</code>, <code>concrete:lanes</code>, <code>paving_stones:lanes</code>, <code>grass_paver</code> and <code>grass_paver:lanes</code> count as paved only when <code>smoothness</code> is <code>bad</code> or better. Deprecated values and misspellings (<code>cement</code>, <code>brick</code>) are left out: they should be retagged, not accepted. A value with several parts (<code>asphalt;gravel</code>) is unpaved if any part is.</p>
+<p><strong>Why a whitelist.</strong> Most styles today list the unpaved values instead. Any value missing from that list, a local material, a new value, a typo, is then drawn as paved. OSM Carto, for example, does not list <code>surface=laterite</code>, a common material in Africa and Asia, so about 1,400 km of laterite main roads are drawn as paved. With a whitelist, such a value is drawn as unpaved, which is the safer mistake: it is visible on the map, and the fix is in the data. This is a rendering rule only. A router should treat an unknown value as unknown, not reuse this fallback.</p>
 <p><strong>Why only two levels.</strong> Three quarters of all unpaved km (75.4%) are tagged simply <code>surface=unpaved</code>. On the ground that can mean a smooth graded road or a rough track; the photos confirm both. Any finer split on the map would mostly be a guess. Routers, which see the whole route and how much of it is unpaved, are better placed to judge how hard a trip is.</p>
 <p><strong>Unpaved does not mean bad.</strong> A graded gravel road in Finland or Namibia is fine for any car when it is dry. The map says what the surface is; the reader decides what that means for their vehicle and the season.</p>
 <p><strong>Untagged roads stay paved.</strong> The proposal only draws what mappers have tagged, and asks no one to change a tag.</p>

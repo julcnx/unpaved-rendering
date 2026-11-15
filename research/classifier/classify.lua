@@ -4,7 +4,7 @@
 --
 -- Base: unpaved surface > unpaved evidence > paved surface > tracktype (grade1 paved, grade2 or higher unpaved) > default (roads paved, tracks unpaved).
 -- Unpaved evidence: smoothness very_bad or worse, or 4wd_only, makes a road unpaved, even with a paved surface. tracktype never overrules a surface. Reasons: see classify.ts.
--- wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
+-- wood, stone and the :lanes and grass_paver values are unpaved unless smoothness is bad or better.
 -- Mark: smoothness > tracktype > surface (mud, rock), and 4wd_only sets a minimum. Only on unpaved roads.
 --
 -- Usage: local classifier = require('classify')
@@ -20,11 +20,15 @@ M.PAVED_SURFACES = {
   paved = true, asphalt = true, chipseal = true, concrete = true, ['concrete:plates'] = true,
   paving_stones = true, sett = true, bricks = true, metal = true,
   cobblestone = true, ['cobblestone:flattened'] = true,
+  unhewn_cobblestone = true, bitmac = true, tarmac = true, metal_grid = true, tiles = true,
 }
 
 -- Paved in some places, broken or improvised in others (smooth farm lanes vs washed-out strips,
--- plank bridges vs log bridges, intact vs broken grass pavers): unpaved unless smoothness says the road is smooth enough.
-M.MIXED_SURFACES = { wood = true, ['concrete:lanes'] = true, grass_paver = true }
+-- plank bridges vs log bridges, intact vs broken grass pavers, laid stone vs rough stone roads): unpaved unless smoothness says the road is smooth enough.
+M.MIXED_SURFACES = {
+  wood = true, ['concrete:lanes'] = true, grass_paver = true,
+  ['paving_stones:lanes'] = true, ['grass_paver:lanes'] = true, stone = true,
+}
 M.SMOOTH_ENOUGH = { excellent = true, good = true, intermediate = true, bad = true }
 
 -- Smoothness only gives evidence for the mark; better values give no mark (false).

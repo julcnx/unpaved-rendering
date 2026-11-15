@@ -9,7 +9,7 @@
 //   The stale third (smoothness left behind when the road was paved) shows on the map, which is a reason to fix the tag.
 // - 4wd_only is a legal or signed restriction, not a guess about the surface.
 // - tracktype describes firmness, like surface, and in half of the cases it is a leftover from before the road was paved.
-// wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
+// wood, stone and the :lanes and grass_paver values are unpaved unless smoothness is bad or better.
 // Mark: smoothness > tracktype > surface (mud, rock), and 4wd_only sets a minimum. Only on unpaved roads.
 
 export type Base = 'paved' | 'unpaved';
@@ -21,15 +21,20 @@ export type MarkSource = 'smoothness' | 'tracktype' | 'surface' | '4wd_only';
 export const RANK: Record<Mark, number> = { offroad: 0, specialized: 1 };
 
 // Whitelist: any surface value not listed here is unpaved, including typos and local values.
+// Paved values with an in-use or de facto wiki page are listed; deprecated values and misspellings (cement, brick)
+// are left out, to be retagged in the data.
 // cobblestone is a legacy value, mostly used for sett.
 export const PAVED_SURFACES = new Set([
   'paved', 'asphalt', 'chipseal', 'concrete', 'concrete:plates',
   'paving_stones', 'sett', 'bricks', 'metal', 'cobblestone', 'cobblestone:flattened',
+  'unhewn_cobblestone', 'bitmac', 'tarmac', 'metal_grid', 'tiles',
 ]);
 
 // Paved in some places, broken or improvised in others (smooth farm lanes vs washed-out strips,
-// plank bridges vs log bridges, intact vs broken grass pavers): unpaved unless smoothness says the road is smooth enough.
-export const MIXED_SURFACES = new Set(['wood', 'concrete:lanes', 'grass_paver']);
+// plank bridges vs log bridges, intact vs broken grass pavers, laid stone vs rough stone roads): unpaved unless smoothness says the road is smooth enough.
+export const MIXED_SURFACES = new Set([
+  'wood', 'concrete:lanes', 'grass_paver', 'paving_stones:lanes', 'grass_paver:lanes', 'stone',
+]);
 export const SMOOTH_ENOUGH = new Set(['excellent', 'good', 'intermediate', 'bad']);
 
 // Smoothness only gives evidence for the mark; better values give no mark.

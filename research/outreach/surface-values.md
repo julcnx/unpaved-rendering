@@ -13,9 +13,22 @@ Counts are worldwide, all objects, from taginfo (data until 2026-11-12). Km are 
 | `ottaseal`                            | 16      | 63 (Nepal)                              | `chipseal`                                    |
 | `Blacktopped`                         | 85      | 36 (Nepal)                              | `asphalt`                                     |
 | `blacktop`                            | 4       | 1 (Nepal)                               | `asphalt`                                     |
-| `tarmac`                              | 318     | 26 (Malaysia, Sri Lanka, Uganda, Kenya) | `asphalt`                                     |
+| `tarmac`                              | 318     | 26 (Malaysia, Sri Lanka, Uganda, Kenya) | `asphalt` (see note below: now paved for us)  |
 | `dbst_and_concreate`                  | 1       | 14 (Cambodia)                           | by hand: split into `chipseal` and `concrete` |
 | `dbst_and_gravek`                     | 1       | 1 (Cambodia)                            | by hand: split into `chipseal` and `gravel`   |
+
+## Update 2026-11-15: documented values now paved, deprecated ones to retag
+
+After forum post #7 on the draft thread ([forum/7-8-whitelist-routing.md](forum/7-8-whitelist-routing.md)), the classifier accepts every paved value with an in-use or de facto wiki page (C-statistics decision 17). `tarmac` is one of them (wiki: tar macadam, "often incorrectly used for asphalt/concrete"), so it no longer needs retagging for our maps. The `tarmac` → `asphalt` line in post 10 above is wrong for real tar macadam. Follow-up posted by Julien 2026-11-15 as post 11: `tarmac` dropped from the list, and asked whether `brick` → `bricks` and `cement` → `concrete` fit the bot or need their own proposals.
+
+Deprecated or misspelled paved values, drawn Unpaved and to be retagged (taginfo, ways, 2026-11-15). Not by bot without the automated edits code of conduct:
+
+| Value | Ways | Wiki | Target |
+|---|---|---|---|
+| `brick` | 8,142 | redirect to `bricks` | `bricks` |
+| `cement` | 2,653 | deprecated; Mateusz Konieczny's bot already migrates it on US roads and paths | `concrete` |
+
+`tartan` on roads (India 87 km, Namibia 41 km) looks like "tar", but it is a running-track material: check locally, do not whitelist.
 
 ## 1. Forum reply
 

@@ -3,7 +3,7 @@
 // offroad (needs a high-clearance vehicle) or specialized (could be drawn as a path).
 // Base: unpaved surface > unpaved evidence > paved surface > tracktype (grade1 paved, grade2 or higher unpaved) > default (roads paved, tracks unpaved).
 // Unpaved evidence: smoothness very_bad or worse, or 4wd_only, makes a road unpaved, even with a paved surface. tracktype never overrules a surface. Reasons: see research/classifier/classify.ts.
-// wood, concrete:lanes and grass_paver are unpaved unless smoothness is bad or better.
+// wood, stone and the :lanes and grass_paver values are unpaved unless smoothness is bad or better.
 // Mark: smoothness > tracktype > surface (mud, rock), and 4wd_only sets a minimum. Only on unpaved roads.
 
 const RANK = { offroad: 0, specialized: 1 };
@@ -12,8 +12,11 @@ const RANK = { offroad: 0, specialized: 1 };
 export const PAVED_SURFACES = new Set([
   'paved', 'asphalt', 'chipseal', 'concrete', 'concrete:plates',
   'paving_stones', 'sett', 'bricks', 'metal', 'cobblestone', 'cobblestone:flattened',
+  'unhewn_cobblestone', 'bitmac', 'tarmac', 'metal_grid', 'tiles',
 ]);
-export const MIXED_SURFACES = new Set(['wood', 'concrete:lanes', 'grass_paver']);
+export const MIXED_SURFACES = new Set([
+  'wood', 'concrete:lanes', 'grass_paver', 'paving_stones:lanes', 'grass_paver:lanes', 'stone',
+]);
 const SMOOTH_ENOUGH = new Set(['excellent', 'good', 'intermediate', 'bad']);
 
 const SMOOTHNESS = {

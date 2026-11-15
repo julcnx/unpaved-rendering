@@ -20,7 +20,7 @@ Settled decisions, moved out of [todo.md](todo.md) on 2026-11-13. Numbers 1 to 1
 
 12. Tracks and paths are not part of the proposal (2026-11-10): future work. Track rendering per app is checked only so each provider's style stays distinct from its tracks.
 13. Article scope (2026-11-11): `laterite` only as an example under Limits (OSM Carto's explicit lists render it as paved), no own section; the open style points of the screenshot review stay out; no Evidence page, the article links to the evidence on GitHub; one sentence saying the same paved whitelist applies to tracks and paths.
-14. Unknown `surface` values stay Unpaved (2026-11-12): local paved values such as `dbst`, `ottaseal`, `Blacktopped` and `tarmac` are drawn as Unpaved; the data should be fixed, not the classifier.
+14. Unknown `surface` values stay Unpaved (2026-11-12, revised 2026-11-15): local and undocumented paved values such as `dbst`, `ottaseal` and `Blacktopped`, and deprecated ones (`cement`, `brick`), are drawn as Unpaved; the data should be fixed, not the classifier. Paved values with an in-use or de facto wiki page are in the whitelist (`bitmac`, `tarmac`, `unhewn_cobblestone`, `metal_grid`, `tiles`; `stone` and the `:lanes` values only when smooth enough): C-statistics decision 17.
 15. Broken pavement is drawn as Unpaved on purpose (2026-11-12, C-statistics decision 12): a paved road with `smoothness` very_bad or worse, or `4wd_only`, cannot be passed by a city car.
 16. Style 4 on white minor roads (Julien, 2026-11-12): white Unpaved roads get a light tan fill, Off-road keeps the darker tan, so the dashes do not read as AllTrails tracks or vanish on forest.
 17. Calimoto dropped from the track checks (2026-11-12): map too light to read, tracks not visible.
