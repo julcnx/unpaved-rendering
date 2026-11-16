@@ -2,7 +2,9 @@
 
 Status 2026-11-16: drafts only, nothing posted. Mateusz Konieczny offered to run both worldwide if someone writes the proposals (forum thread and wiki page) and answers the comments ([post 12](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12)). Scope: `highway=*` only, like his US cement bot (decided 2026-11-16). The local values (`dbst`, `ottaseal`, `Blacktopped`) are not part of this: see [local-values-mappers.md](local-values-mappers.md).
 
-**Now (2026-11-16)**: changeset comments sent and Mateusz updated. Order:
+**Status 2026-11-16: waiting for Mateusz's review.** Both documentation pages created by Julien (section 4) and Mateusz asked in the bot thread to check them. Post the merged topic (section 3) when he answers OK, or on **2026-11-21** (5 days) without an answer. Then put the topic link in both pages and reply in the bot thread with it.
+
+Original order (steps 1 done):
 
 1. Create both wiki pages (section 4). Their "[placeholder: forum thread link]" stays until step 3.
 2. Post the merged topic (section 3, "Merged topic"), with the two wiki links filled in.
