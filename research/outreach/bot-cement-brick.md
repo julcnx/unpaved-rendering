@@ -213,7 +213,7 @@ As of 2026-11-16: 812 objects with {{key|highway}} and {{tag|surface|cement}} (1
 
 After the first run, the number depends on how many new matches appear.
 
-objects affected by the next run: [placeholder: overpass-turbo link]
+objects affected by the next run: run the query from the Source code section on https://overpass-turbo.eu
 
 == How ==
 Each changeset contains a single element or group of close elements to avoid edits spanning across large areas.
@@ -246,7 +246,6 @@ will not be edited
 will not be edited
 
 == Discussion ==
-* [placeholder: forum thread link]
 * https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12 (offer to run it)
 * https://community.openstreetmap.org/t/mysterious-surface-cement/5158 (2022 discussion, deprecation)
 
@@ -285,7 +284,7 @@ out skel qt;
         objects_to_consider_query_storage_file='/media/mateusz/OSM_cache/osm_bot_cache/osm_bot_edit_' + hashed + '.osm',
         is_in_manual_mode=False,
         changeset_comment='migrate surface=cement to surface=concrete on roads and paths',
-        discussion_url="[placeholder: forum thread link]",
+        discussion_url="https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12",
         osm_wiki_documentation_page='https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_highways_worldwide',
         edit_element_function=edit_element,
     )
@@ -338,7 +337,7 @@ As of 2026-11-16: 7,871 objects with {{key|highway}} and {{tag|surface|brick}} (
 
 After the first run, the number depends on how many new matches appear.
 
-objects affected by the next run: [placeholder: overpass-turbo link]
+objects affected by the next run: run the query from the Source code section on https://overpass-turbo.eu
 
 == How ==
 Each changeset contains a single element or group of close elements to avoid edits spanning across large areas.
@@ -372,7 +371,6 @@ will not be edited (here {{tag|material|brick}} is likely meant)
 will not be edited
 
 == Discussion ==
-* [placeholder: forum thread link]
 * https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12 (offer to run it)
 
 == Repetition ==
@@ -408,7 +406,7 @@ out skel qt;
         objects_to_consider_query_storage_file='/media/mateusz/OSM_cache/osm_bot_cache/osm_bot_edit_' + hashed + '.osm',
         is_in_manual_mode=False,
         changeset_comment='migrate surface=brick to surface=bricks on roads and paths',
-        discussion_url="[placeholder: forum thread link]",
+        discussion_url="https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12",
         osm_wiki_documentation_page='https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dbrick_to_surface%3Dbricks_on_highways_worldwide',
         edit_element_function=edit_element,
     )
