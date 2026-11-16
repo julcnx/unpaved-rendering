@@ -65,8 +65,8 @@ const SPEC = {
   styles: {
     // offColor: the line on the darker Off-road fill, darker too, so it keeps the contrast it has on Unpaved (3.6 or more; the normal brown fell to 2.0 on red).
     'centre-line': { color: '#8a6440', offColor: '#5e4126', width: 1.8, narrowWidth: 1, narrowBelow: 6, unpavedDash: RHYTHM.unpaved, offroadDash: RHYTHM.offroad,
-      // Main roads (pick B): a line 30% of the fill in the old Off-road brown; Off-road the same line, darker, on the Off-road tint.
-      main: { xWidth: 0.3, color: '#5e4126', offColor: '#382717' } },
+      // Main roads (pick B, line narrowed from 30% to 20% on 2026-11-16: 30% outweighed the class colour): a line 20% of the fill in the old Off-road brown; Off-road the same line, darker, on the Off-road tint.
+      main: { xWidth: 0.2, color: '#5e4126', offColor: '#382717' } },
     // denseShift: Off-road draws the same grain a second time, shifted, so the dots are twice as dense (same dot size). The dots are
     // already near black and cannot get darker with the fill, as the line and the outline of styles 2 and 4 do.
     grain: { scale: 1.5, denseShift: [32, 32], offroadScale: 3, offroadShift: [21, 37],
@@ -395,7 +395,7 @@ type Pick = { title: string; unpaved: string; off: string; road: (c: Klass, off:
 const PICKS: Record<string, Pick> = {
   grain: { title: '1. Grain fill: C', unpaved: 'grain 2.25 x on the low-zoom tint', off: 'same grain, twice as dense, on the Off-road tint',
     road: (c, off) => road(grainV(c, off ? c.offTint : c.lowTint, MAIN.grain.scale), c.casing, off ? line(grainV(c, '', MAIN.grain.scale, GR.denseShift), W) : '') },
-  'centre-line': { title: '2. Dashed centre line: B', unpaved: `line 30% of the fill, brown ${MAIN['centre-line'].color}`, off: `same line, darker ${MAIN['centre-line'].offColor}, on the Off-road tint`,
+  'centre-line': { title: '2. Dashed centre line: B', unpaved: `line ${MAIN['centre-line'].xWidth * 100}% of the fill, brown ${MAIN['centre-line'].color}`, off: `same line, darker ${MAIN['centre-line'].offColor}, on the Off-road tint`,
     road: (c, off) => road(off ? c.offTint : c.fill, c.casing, line(off ? MAIN['centre-line'].offColor : MAIN['centre-line'].color, MAIN['centre-line'].xWidth * W, CL.unpavedDash.join(' '))) },
   'dashed-fill': { title: '3. Dashed fill: A', unpaved: 'dash contrast 1.8', off: 'dash contrast 2.45',
     road: (c, off) => band(c, MAIN['dashed-fill'][off ? 'offDash' : 'dash'][c.id], W * DA.band, DA.unpavedXWidth) },

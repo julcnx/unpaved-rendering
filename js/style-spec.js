@@ -187,7 +187,7 @@ export default {
         9
       ],
       "main": {
-        "xWidth": 0.3,
+        "xWidth": 0.2,
         "color": "#5e4126",
         "offColor": "#382717"
       }
