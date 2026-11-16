@@ -1,5 +1,6 @@
 # Scores the reader test from a CSV export of the answers sheet (File > Download > CSV). Only the "raw" column is read.
-# Usage: python3 research/reader-test/score.py answers.csv [--exclude id-prefix ...]
+# Usage: python3 research/reader-test/score.py answers.csv [--images 3] [--exclude id-prefix ...]
+# --images: only these picture sets (comma list; 1 is a row with no images field). Round 1: 1,2; round 2: 3.
 # Counts people who saw all five maps. Groups by link tag (src): "forum" is mappers, everything else is non-mappers.
 # Main roads: trunk, primary, secondary (the case the styles are made for); minor: the rest. Answer key: labels.json.
 import csv, json, statistics, sys
@@ -12,13 +13,18 @@ KEY = json.loads((Path(__file__).parent / 'labels.json').read_text())
 ROADS = {p: {r['n']: r for r in v['roads']} for p, v in KEY.items()}
 
 args = sys.argv[1:]
+images = None
+if '--images' in args:
+    i = args.index('--images'); images = {int(x) for x in args[i + 1].split(',')}; del args[i:i + 2]
 exclude = args[args.index('--exclude') + 1:] if '--exclude' in args else []
 rows = [json.loads(r['raw']) for r in csv.DictReader(open(args[0], newline='', encoding='utf-8'))]
-people = [r for r in rows if len(r['maps']) == 5 and not any(r['id'].startswith(x) for x in exclude)]
+people = [r for r in rows if len(r['maps']) == 5 and not any(r['id'].startswith(x) for x in exclude)
+          and (not images or r.get('images', 1) in images)]
 group = lambda r: 'mappers (forum)' if r.get('src') == 'forum' else 'non-mappers'
 pct = lambda a, b: f'{a}/{b} ({100 * a / b:.0f}%)' if b else '-'
 
-print(f"{len(rows)} rows, {len(people)} saw all five maps ({len(exclude)} excluded)")
+print(f"{len(rows)} rows, {len(people)} saw all five maps ({len(exclude)} excluded)"
+      + (f", picture sets {','.join(map(str, sorted(images)))}" if images else ''))
 for g in sorted({group(r) for r in people}):
     n = [r for r in people if group(r) == g]
     print(f"  {g}: {len(n)}  (src: {dict(sorted(defaultdict(int, {s: sum(r.get('src', 'none') == s for r in n) for s in {r.get('src', 'none') for r in n}}).items()))})")
@@ -78,7 +84,7 @@ def times(people):
 
 for g in sorted({group(r) for r in people}, reverse=True):
     ps = [r for r in people if group(r) == g]
-    score(ps, g, split_images=True)
+    score(ps, g, split_images=not images or bool(images & {1, 2}))
     roads(ps)
     ranking(ps)
     times(ps)
