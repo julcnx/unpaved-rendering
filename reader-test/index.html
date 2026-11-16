@@ -132,7 +132,8 @@ if (!st) {
     r: { id: crypto.randomUUID?.() ?? `r${Math.random().toString(36).slice(2)}`, version, started: new Date().toISOString(),
       screen: `${screen.width}x${screen.height}@${devicePixelRatio}`, viewport: innerWidth, resumes: 0, images: IMAGES, maps: [] } };
   // Where the link was posted (?src=fb, ?src=enduro...), to tell the groups apart; it goes in the sheet's raw column.
-  const src = new URLSearchParams(location.search).get('src');
+  // A link with no tag counts as round 2 (picture set 3); round 1's untagged links came before it.
+  const src = new URLSearchParams(location.search).get('src') || 'r2';
   if (src) st.r.src = src.slice(0, 20);
 }
 const save = () => { if (st.screen !== 'start') store.set(KEY, JSON.stringify({ ...st, elapsed: elapsed() })); };
