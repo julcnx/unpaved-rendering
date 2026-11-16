@@ -1,6 +1,6 @@
 # Changeset comments: undocumented local paved values (drafts, not sent)
 
-Status 2026-11-16: drafts only, nothing sent. Following Mateusz Konieczny's advice in [post 12](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12): no bot for these values, ask the mappers first. Values, meanings and targets come from [surface-values.md](surface-values.md); km per country in [../stats/unknown-values.md](../stats/unknown-values.md). Send after the two bot threads are up ([bot-cement-brick.md](bot-cement-brick.md)), before the reply to Mateusz.
+Status 2026-11-16: drafts only, nothing sent. **Priority: send these first** (Julien, 2026-11-16); the bot proposals wait. Following Mateusz Konieczny's advice in [post 12](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12): no bot for these values, ask the mappers first. Values, meanings and targets come from [surface-values.md](surface-values.md); km per country in [../stats/unknown-values.md](../stats/unknown-values.md). Send now, before the bot proposals ([bot-cement-brick.md](bot-cement-brick.md), on hold).
 
 Follow-up: if a mapper has not answered after 14 days, retag by hand only where the target is clear (`dbst` family → `chipseal`), and leave `Blacktopped` and `ottaseal` to the [Nepal topic](https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053) (no replies yet on 2026-11-16).
 
@@ -84,3 +84,271 @@ Notes: thebMeta and Somony map road projects (changeset comments name the World 
 Notes: one changeset (79 of the 85 `Blacktopped` ways, comment "its actual survey data") is the main case, but that mapper has been inactive since 2022, so the Nepal topic matters more for `Blacktopped`. Heinz_V and Ujjwal Dahal hold most of the `ottaseal` km. Ujjwal Dahal and drdangi have been inactive since 2015. Three users mapped in HOT Tasking Manager projects (`#hotosm-project-...`).
 
 Total: 18 users, 137 ways.
+
+## Ready to send (filled in, one per user)
+
+Paste each text into the comment box at the bottom of its changeset page. Order: Cambodia, then Nepal; the two big ones first (thebMeta, prabesh chapagain).
+
+### thebMeta (Cambodia)
+
+Changeset: https://www.openstreetmap.org/changeset/140918137
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 3 roads with surface=dbst_pavement. On other roads you also used surface=dbst (7 roads) and surface=double_bitumenous_surface_treatment (1). These values are not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+All three mean DBST (double bituminous surface treatment), a two-layer chip seal, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+```
+
+### Somony (Cambodia)
+
+Changeset: https://www.openstreetmap.org/changeset/189715837
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=dbst (8 roads in all, with your other changesets). This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+dbst means double bituminous surface treatment (DBST), a two-layer chip seal, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+Two of your roads use surface=dbst_and_concreate and surface=dbst_and_gravek. Could they be split into parts with surface=chipseal and surface=concrete (or gravel)?
+```
+
+### _varman_ (Cambodia)
+
+Changeset: https://www.openstreetmap.org/changeset/175435283
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 6 roads with surface=dbst. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+dbst means double bituminous surface treatment (DBST), a two-layer chip seal, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+```
+
+### imiii (Cambodia)
+
+Changeset: https://www.openstreetmap.org/changeset/169588361
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 2 roads with surface=DBST. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+DBST means double bituminous surface treatment, a two-layer chip seal, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+```
+
+### FerganaValley (Cambodia)
+
+Changeset: https://www.openstreetmap.org/changeset/143718703
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 2 roads with surface=dbst. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+dbst means double bituminous surface treatment (DBST), a two-layer chip seal, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+```
+
+### LeopoldCanal (Cambodia)
+
+Changeset: https://www.openstreetmap.org/changeset/145902036
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 2 roads with surface=dbst. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+dbst means double bituminous surface treatment (DBST), a two-layer chip seal, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+```
+
+### Theb Meta (Cambodia)
+
+Changeset: https://www.openstreetmap.org/changeset/71085734
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=DBST. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+DBST means double bituminous surface treatment, a two-layer chip seal, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+```
+
+### prabesh chapagain (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/61247913
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 79 roads with surface=Blacktopped (80 roads in all, with your other changesets). This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+Blacktopped means a road with a bitumen (black-top) surface, so I would suggest surface=asphalt: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt (or surface=chipseal if it is a surface dressing)
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### Heinz_V (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/35125079
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 6 roads with surface=ottaseal (8 roads in all, with your other changesets). This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+ottaseal means Otta seal, a bitumen seal laid with graded natural gravel, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### Ujjwal Dahal (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/32998816
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=ottaseal (3 roads in all, with your other changesets). This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+ottaseal means Otta seal, a bitumen seal laid with graded natural gravel, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### srj_panthee (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/169656166
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged 2 roads with surface=Blacktopped. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+Blacktopped means a road with a bitumen (black-top) surface, so I would suggest surface=asphalt: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt (or surface=chipseal if it is a surface dressing)
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### cartorhythm (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/77706795
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=Blacktopped (2 roads in all, with your other changesets). This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+Blacktopped means a road with a bitumen (black-top) surface, so I would suggest surface=asphalt: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt (or surface=chipseal if it is a surface dressing)
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### Anil Basnet (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/113787584
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=ottaseal (2 roads in all, with your other changesets). This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+ottaseal means Otta seal, a bitumen seal laid with graded natural gravel, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### Lalit_IAAS (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/128806605
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=ottaseal. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+ottaseal means Otta seal, a bitumen seal laid with graded natural gravel, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### Bimalpokhrel (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/176343373
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=ottaseal. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+ottaseal means Otta seal, a bitumen seal laid with graded natural gravel, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### Chiranshivapurnepal (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/127397755
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=Blacktopped. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+Blacktopped means a road with a bitumen (black-top) surface, so I would suggest surface=asphalt: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt (or surface=chipseal if it is a surface dressing)
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### drdangi (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/32998301
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=ottaseal. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+ottaseal means Otta seal, a bitumen seal laid with graded natural gravel, so I would suggest surface=chipseal: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dchipseal
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+### MeghaShrestha (Nepal)
+
+Changeset: https://www.openstreetmap.org/changeset/32668942
+
+```text
+Hi, and thanks for mapping these roads! In this changeset you tagged a road with surface=blacktop. This value is not documented on the OSM wiki, so many maps and routers do not know it and treat these roads as unpaved.
+
+blacktop means a road with a bitumen (black-top) surface, so I would suggest surface=asphalt: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dasphalt (or surface=chipseal if it is a surface dressing)
+
+Do you agree? If yes, would you like to retag them yourself, or are you OK if I do it?
+
+I also asked other mappers in Nepal here: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+```
+
+## Reply to Mateusz (post after sending the comments)
+
+Post at: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361 (the cement and brick part comes later, with the bot thread link)
+
+```markdown
+[quote="Mateusz_Konieczny, post:12, topic:105361"]
+I would rather contact mappers using these values and ask whether they would support migration to more standard values (I do such things, but no promises on when I ask about this specific tags)
+[/quote]
+
+[quote="Mateusz_Konieczny, post:12, topic:105361"]
+consider also asking users of this tags first (may be not needed, it is hard for me to judge this cases)
+[/quote]
+
+Thanks, done: I asked the 18 mappers who added `dbst`, `ottaseal` and `Blacktopped` (7 in Cambodia, 11 in Nepal) in changeset comments. I'll retag by hand where they agree, and the Nepal topic is still open for the others: https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053
+
+[quote="Mateusz_Konieczny, post:12, topic:105361"]
+these red boxes manage to be both annoying and useless (sometimes they manage to be also wrong) so I would not encourage their use
+[/quote]
+
+OK, I dropped the PossibleSynonym idea. Thanks for adding them to your dubious-tags list.
+
+For `cement` and `brick`, I'm preparing the proposal and will post the link here.
+```

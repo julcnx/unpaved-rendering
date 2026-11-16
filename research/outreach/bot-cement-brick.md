@@ -2,7 +2,13 @@
 
 Status 2026-11-16: drafts only, nothing posted. Mateusz Konieczny offered to run both worldwide if someone writes the proposals (forum thread and wiki page) and answers the comments ([post 12](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12)). Scope: `highway=*` only, like his US cement bot (decided 2026-11-16). The local values (`dbst`, `ottaseal`, `Blacktopped`) are not part of this: see [local-values-mappers.md](local-values-mappers.md).
 
-Order:
+**On hold (2026-11-16)**: the changeset comments to the local-value mappers come first. Steps left when picked up again:
+
+1. Merge the two threads (3a, 3b) into one post, both edits `highway=*` only, with one sentence: "If one part gets objections, the other can still go ahead on its own." Keep the two wiki pages, both pointing to the same thread.
+2. Update the wiki pages (Discussion, `discussion_url`) and the reply to Mateusz (one thread link instead of two).
+3. Then publish the wiki pages, post the thread, and post the second reply to Mateusz with the link.
+
+Old order (two threads):
 
 1. Publish both wiki pages (section 4), then post both threads (section 3) with the wiki links filled in.
 2. Put each thread link into its wiki page (Discussion section and `discussion_url` in the code).
