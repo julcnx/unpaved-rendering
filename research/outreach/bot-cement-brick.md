@@ -2,11 +2,12 @@
 
 Status 2026-11-16: drafts only, nothing posted. Mateusz Konieczny offered to run both worldwide if someone writes the proposals (forum thread and wiki page) and answers the comments ([post 12](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12)). Scope: `highway=*` only, like his US cement bot (decided 2026-11-16). The local values (`dbst`, `ottaseal`, `Blacktopped`) are not part of this: see [local-values-mappers.md](local-values-mappers.md).
 
-**On hold (2026-11-16)**: the changeset comments to the local-value mappers come first. Steps left when picked up again:
+**Now (2026-11-16)**: changeset comments sent and Mateusz updated. Order:
 
-1. Merge the two threads (3a, 3b) into one post, both edits `highway=*` only, with one sentence: "If one part gets objections, the other can still go ahead on its own." Keep the two wiki pages, both pointing to the same thread.
-2. Update the wiki pages (Discussion, `discussion_url`) and the reply to Mateusz (one thread link instead of two).
-3. Then publish the wiki pages, post the thread, and post the second reply to Mateusz with the link.
+1. Create both wiki pages (section 4). Their "[placeholder: forum thread link]" stays until step 3.
+2. Post the merged topic (section 3, "Merged topic"), with the two wiki links filled in.
+3. Put the topic link into both wiki pages (Discussion section and `discussion_url` in the code).
+4. Reply in the bot thread with the topic link (section 5, updated).
 
 Old order (two threads):
 
@@ -66,6 +67,45 @@ Two threads:
 Where: [General talk](https://community.openstreetmap.org/c/general/38), tag `bot`, like Mateusz's worldwide proposals ([paved= duplicates](https://community.openstreetmap.org/t/surface-duplicated-by-paved-bot-edit-proposal/138817), [duplicate tags](https://community.openstreetmap.org/t/148926)). The code of conduct accepts the forum for a worldwide edit. Optional: one line in the United States category for brick (77% of the objects), linking the thread.
 
 ## 3. Forum posts
+
+### Merged topic (use this one)
+
+Post at: https://community.openstreetmap.org/new-topic?category=general (category General talk, tag `bot`)
+
+Title: `Proposed bot edits: surface=cement to concrete and surface=brick to bricks on highways worldwide (recurring)`
+
+```markdown
+I propose two small recurring bot edits, both on `highway=*` only, worldwide:
+
+1. `surface=cement` → `surface=concrete`
+2. `surface=brick` → `surface=bricks`
+
+Mateusz Konieczny would run them with his bot account, as he offered here: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12. I wrote the proposals and I will answer comments. If one part gets objections, the other can still go ahead on its own.
+
+Wiki pages:
+- cement: [placeholder: cement wiki page link]
+- brick: [placeholder: brick wiki page link]
+
+**Why**
+
+Software that reads `surface` usually knows only the documented values, so these roads and paths end up with an unknown surface (and on some maps as unpaved).
+
+- `surface=cement` was discussed in 2022 (https://community.openstreetmap.org/t/mysterious-surface-cement/5158) and marked deprecated on the wiki, with `concrete` as the replacement. In many languages "cement" is the everyday word for concrete. The same edit already ran on US roads and paths: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_USA_roads_and_paths. This extends it to the whole world.
+- `surface=brick` is the same as the documented `surface=bricks` (the wiki page redirects there), only the plural is missing. It keeps growing: about 4,100 objects in 2020, 8,326 today.
+
+**What would change**
+
+- cement: 812 objects (118 km), mostly footways, service and residential roads, steps, in Italy, Indonesia, Mexico, Greece, India, Spain, China and others. Tracks with `tracktype=grade2` or worse (6 ways) are left out, to check by hand.
+- brick: 7,871 objects (579 km), mostly sidewalks, residential and service roads, steps. About 77% in the USA, 11% in the UK.
+
+Nothing without `highway=*` is touched (pitches, parking, benches, buildings, walls and so on). Some of those use `surface` for the material of the object itself and need a check by hand.
+
+I checked 15 random objects of each and every object with a `note`, `description` or `fixme`: all were plain concrete or brick paving, and I found no case of cement-stabilised soil.
+
+Any objections?
+```
+
+### Earlier two-thread drafts (not used)
 
 ### 3a. Cement
 
@@ -389,12 +429,9 @@ Post at: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-repla
 I would be happy run a worldwide one or in other regions, I think it makes sense. The limit here is that proposal for bot edit needs to be made (if anyone wants, feel free to make thread proposing such edit mirroring USA one - for other limited area or worldwide one, if clearly accepted I would be happy to run bot)
 [/quote]
 
-Thanks! I wrote both proposals, with your bot account as the operator, and I'll answer the comments there:
+Thanks! I wrote the proposal for both, with your bot account as the operator, and I'll answer the comments there: [placeholder: topic link]
 
-- `cement` → `concrete`: [placeholder: cement thread link]
-- `brick` → `bricks`: [placeholder: brick thread link]
-
-Both are worldwide and recurring, and limited to `highway=*` like the US one. If you prefer other wording or code on the wiki pages, feel free to change them.
+Both edits are worldwide and recurring, and limited to `highway=*` like the US one. If you prefer other wording or code on the wiki pages, feel free to change them.
 
 [quote="Mateusz_Konieczny, post:12, topic:105361"]
 I would rather contact mappers using these values and ask whether they would support migration to more standard values (I do such things, but no promises on when I ask about this specific tags)
