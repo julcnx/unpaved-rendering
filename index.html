@@ -151,7 +151,7 @@
   <p class="kicker">A proposal for OpenStreetMap-based maps · Draft for feedback</p>
   <h1>Mind the Surface</h1>
   <p class="sub">A main road is not always paved</p>
-  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 15 November 2026</p>
+  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 16 November 2026</p>
 </header>
 
 <!--HERO-->
@@ -301,7 +301,7 @@
 <ul>
 <li><strong>Keep the class colour.</strong> The colour says how important a road is, and readers rely on it to find the main route. The surface is added to it, never shown in its place.</li>
 <li><strong>Add one signal, not a new kind of road.</strong> Unpaved is a property of the road, so it shows as a pattern on the road, not as a different line.</li>
-<li><strong>Readable without a legend.</strong> A broken or grainy line is a common map convention for rougher roads, so the two base levels should read at a glance. In an informal test without a legend, 22 people who don't map (riders and friends) found about four in five unpaved minor roads, but fewer than half of the unpaved main roads: where a highway changes from asphalt to gravel, most did not notice. Almost no paved road was taken for unpaved. No style clearly beat the others.</li>
+<li><strong>Readable without a legend.</strong> A broken or grainy line is a common map convention for rougher roads, so the two base levels should read at a glance. In an informal test without a legend, 22 people who don't map (riders and friends) found about four in five unpaved minor roads, but fewer than half of the unpaved main roads: where a highway changes from asphalt to gravel, most did not notice. Almost no paved road was taken for unpaved. No style clearly beat the others. So every style now gives main roads a stronger mark, as in the pictures here, and a second round of the test is checking it.</li>
 <li><strong>Distinct from what maps already use.</strong> Many maps draw tracks with dashes, tunnels with a dashed outline, roads under construction with a dashed fill and restricted access with dots. An unpaved road works best when it looks like none of them.</li>
 <li><strong>Quiet at low zoom.</strong> On thin roads patterns blur, so below about 6 pixels of road width a plain tint of the class colour takes over.</li>
 <li><strong>For every reader, on every map.</strong> Colours are tuned per class on white, forest, sand, hillshade and dark backgrounds, and checked for colour blindness.</li>
@@ -337,7 +337,7 @@
 <ul>
 <li><strong>Tile data.</strong> A style can only draw what its tiles carry. OpenMapTiles, used by Americana, MapTiler, Stadia and OpenFreeMap, has no surface below zoom 12, so these maps cannot show unpaved roads in an overview, whatever the style says. Protomaps has no surface at all. Shortbread, OsmAnd and Organic Maps already carry it, so for them it is a style change only.</li>
 <li><strong>The data.</strong> Roads without a surface tag are drawn as paved, and some unpaved tags are out of date (16% in the photo check). <code>surface=unpaved</code> says nothing about how rough a road is.</li>
-<li><strong>The styles.</strong> They exist as mockups and a demo, not yet in a real app at scale. In a small <a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/reader-test/README.md">reader test</a>, people without a legend missed more than half of the unpaved main roads.</li>
+<li><strong>The styles.</strong> They exist as mockups and a demo, not yet in a real app at scale. In a small <a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/reader-test/README.md">reader test</a>, people without a legend missed more than half of the unpaved main roads. The styles now mark main roads more strongly; whether that is enough is not tested yet.</li>
 </ul>
 <h2 id="s-8-future-work">8. Future work</h2>
 <ul>
