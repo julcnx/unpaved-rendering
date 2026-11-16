@@ -167,6 +167,48 @@ export default {
         "tunnel": "#4b4b4f",
         "tintCasing": "#8f8f94"
       }
+    },
+    "main": {
+      "lowZoom": {
+        "unpaved": {
+          "trunk": "#b4644b",
+          "primary": "#bd7b2c",
+          "secondary": "#7a7f48"
+        },
+        "offroad": {
+          "trunk": "#c2806c",
+          "primary": "#d49548",
+          "secondary": "#919655"
+        }
+      },
+      "centre-line": {
+        "color": "#f2dcbc",
+        "offColor": "#fff6ea"
+      },
+      "dashed-fill": {
+        "dash": {
+          "trunk": "#bd755e",
+          "primary": "#cf8833",
+          "secondary": "#888c50"
+        },
+        "offDash": {
+          "trunk": "#cb9381",
+          "primary": "#dca869",
+          "secondary": "#a0a562"
+        }
+      },
+      "dashed-fill-full": {
+        "dash": {
+          "trunk": "#b16249",
+          "primary": "#ba792b",
+          "secondary": "#777c47"
+        },
+        "offDash": {
+          "trunk": "#c07c66",
+          "primary": "#d39040",
+          "secondary": "#8d9253"
+        }
+      }
     }
   },
   "styles": {

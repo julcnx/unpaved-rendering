@@ -56,9 +56,19 @@ const SPEC = {
       secondary: { name: 'Yellow', fill: '#5e6238', casing: '#93985a', grainBg: '#5e6238', grainDot: '#b1b86c', dash: '#717543', offTint: '#7f844b', offDash: '#878c50', lowTint: '#6e7241', fullDash: '#6e7241', tunnel: '#5e6238' },
       minor: { name: 'White', fill: '#4b4b4f', casing: '#6d6d72', grainBg: '#4b4b4f', grainDot: '#d2c1ac', dash: '#685b4b', offTint: '#776856', offDash: '#7f705c', lowTint: '#655949', fullDash: '#655949', tunnel: '#4b4b4f', tintCasing: '#8f8f94' },
     },
+    // Main roads in dark mode (2026-11-16): the light-mode picks with the same contrast steps, going LIGHTER, in the hue of each
+    // class's dash. Grain (bigger, on lowTint) and dashed casing (14/8) need no colours of their own. Centre line: the old
+    // Off-road cream as the line (3.9 to 4.9 against the fill), as light mode took its old Off-road brown; Off-road near white.
+    // Dashed fill 1.8, Off-road a 1.36 step lighter; full width 1.45, then 1.33; low zoom 1.5, then 1.35.
+    main: {
+      lowZoom: { unpaved: { trunk: '#b4644b', primary: '#bd7b2c', secondary: '#7a7f48' }, offroad: { trunk: '#c2806c', primary: '#d49548', secondary: '#919655' } },
+      'centre-line': { color: '#f2dcbc', offColor: '#fff6ea' },
+      'dashed-fill': { dash: { trunk: '#bd755e', primary: '#cf8833', secondary: '#888c50' }, offDash: { trunk: '#cb9381', primary: '#dca869', secondary: '#a0a562' } },
+      'dashed-fill-full': { dash: { trunk: '#b16249', primary: '#ba792b', secondary: '#777c47' }, offDash: { trunk: '#c07c66', primary: '#d39040', secondary: '#8d9253' } },
+    },
   },
   // Main roads (Julien's picks, 2026-11-15): the reader test found 43% of unpaved main roads against 78% of minor roads, so on
-  // these classes every style gets a stronger mark, in its `main` block (light mode; white roads, motorway, low zoom and dark mode unchanged).
+  // these classes every style gets a stronger mark, in its `main` block (white roads and motorway unchanged; dark mode colours in dark.main).
   // Each Off-road stays one step darker than the new Unpaved. Mockups: main-roads-*.png (variants), main-roads-picks.png.
   mainRoads: ['trunk', 'primary', 'secondary'],
   // Widths and dashes in px at the mockup fill width (11 px) unless the name says "x fill width".
@@ -187,12 +197,12 @@ const OPTIONS: Record<string, Option> = {
 // Official Off-road: the Unpaved pattern, only darker: darker fill (offTint) in the grain fill, centre line and casing,
 // darker dashes (offDash) in the two dashed fills.
 // Below SPEC.lowZoom.below px of fill width, every style is a plain tint (stepwise contrast 1.2 or more: fill, lowTint, offTint).
-// Main roads (SPEC.mainRoads) draw the picks (PICKS below), light mode only; MAIN_PICKS = false gives the reader-test style.
+// Main roads (SPEC.mainRoads) draw the picks (PICKS below), with the dark.main colours in dark mode; MAIN_PICKS = false gives the reader-test style.
 let MAIN_PICKS = true;
-const lowMain = (c: Klass) => MAIN_PICKS && !DARK_MODE && (SPEC.mainRoads as string[]).includes(c.id);
+const lowMain = (c: Klass) => MAIN_PICKS && (SPEC.mainRoads as string[]).includes(c.id);
 const official = (key: string, s: State, c: Klass) => unpaved(s) && W < SPEC.lowZoom.below
-  ? road(lowMain(c) ? (SPEC.lowZoom.main as any)[offroad(s) ? 'offroad' : 'unpaved'][c.id] : offroad(s) ? c.offTint : c.lowTint, c.tintCasing ?? c.casing)
-  : unpaved(s) && MAIN_PICKS && !DARK_MODE && (SPEC.mainRoads as string[]).includes(c.id) ? PICKS[key].road(c, offroad(s))
+  ? road(lowMain(c) ? ((DARK_MODE ? SPEC.dark.main.lowZoom : SPEC.lowZoom.main) as any)[offroad(s) ? 'offroad' : 'unpaved'][c.id] : offroad(s) ? c.offTint : c.lowTint, c.tintCasing ?? c.casing)
+  : unpaved(s) && lowMain(c) ? PICKS[key].road(c, offroad(s))
   : !offroad(s) ? OPTIONS[key].road(s, c)
   : OPTIONS[key].road('Unpaved', key.startsWith('dashed-fill') ? tintedDash(c) : tinted(c));
 
@@ -390,12 +400,14 @@ function renderMainRoads() {
 
 // Picks (Julien, 2026-11-15): one variant per style, with its Off-road add-on one step darker than the new Unpaved.
 // Style 5 softened: its stronger dash (1.6) left no room for a darker Off-road, so Unpaved goes to 1.45 under the current Off-road dash.
-const MAIN = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, (v as any).main])) as Record<string, any>;
+const MAIN_LIGHT = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, (v as any).main])) as Record<string, any>;
+// Dark mode: the same picks with the dark.main colours.
+const MAIN = new Proxy({} as Record<string, any>, { get: (_, k: string) => DARK_MODE ? { ...MAIN_LIGHT[k], ...(SPEC.dark.main as any)[k] } : MAIN_LIGHT[k] });
 type Pick = { title: string; unpaved: string; off: string; road: (c: Klass, off: boolean) => string };
 const PICKS: Record<string, Pick> = {
   grain: { title: '1. Grain fill: C', unpaved: 'grain 2.25 x on the low-zoom tint', off: 'same grain, twice as dense, on the Off-road tint',
     road: (c, off) => road(grainV(c, off ? c.offTint : c.lowTint, MAIN.grain.scale), c.casing, off ? line(grainV(c, '', MAIN.grain.scale, GR.denseShift), W) : '') },
-  'centre-line': { title: '2. Dashed centre line: B', unpaved: `line ${MAIN['centre-line'].xWidth * 100}% of the fill, brown ${MAIN['centre-line'].color}`, off: `same line, darker ${MAIN['centre-line'].offColor}, on the Off-road tint`,
+  'centre-line': { title: '2. Dashed centre line: B', unpaved: `line ${MAIN['centre-line'].xWidth * 100}% of the fill, in the old Off-road colour`, off: 'same line, one step further, on the Off-road tint',
     road: (c, off) => road(off ? c.offTint : c.fill, c.casing, line(off ? MAIN['centre-line'].offColor : MAIN['centre-line'].color, MAIN['centre-line'].xWidth * W, CL.unpavedDash.join(' '))) },
   'dashed-fill': { title: '3. Dashed fill: A', unpaved: 'dash contrast 1.8', off: 'dash contrast 2.45',
     road: (c, off) => band(c, MAIN['dashed-fill'][off ? 'offDash' : 'dash'][c.id], W * DA.band, DA.unpavedXWidth) },
@@ -407,7 +419,7 @@ const PICKS: Record<string, Pick> = {
 
 // One row per style, four frames: current Unpaved, current Off-road, new Unpaved, new Off-road. Same roads and widths as
 // main-roads-*.svg, z15 then z16; white roads keep the current style in every frame.
-function renderPicks() {
+function renderPicks(suffix = '') {
   const current = (key: string, s: State, c: Klass) => { MAIN_PICKS = false; const r = official(key, s, c); MAIN_PICKS = true; return r; };
   const FW = 400, FH = 400, LABEL = 70, TOP = 50, HEAD = 26, RH = HEAD + FH + 40;
   const ROWS: [Klass, number, number][] = [];
@@ -432,7 +444,7 @@ function renderPicks() {
       text(LABEL + 2 * (FW + 10) + 4, y + FH + 18, `${PICKS[key].unpaved}  |  Off-road: ${PICKS[key].off}`, 12);
   }).join('');
   const w = LABEL + COLS.length * (FW + 10) + 10, h = TOP + keys.length * RH + 30;
-  out('main-roads-picks', svg(w, h, body +
+  out(`main-roads-picks${suffix}`, svg(w, h, body +
     text(10, h - 14, 'Red, orange, yellow at z15 (top) and z16 (bottom), white minor roads unchanged; each road Paved on the left. White rows keep the current style.', 12)));
   ({ W, CAS, ROAD } = saved);
   // Contrast check of the spec values: mark against the fill, and the Off-road step over Unpaved.
@@ -482,13 +494,14 @@ renderMainRoads();
 renderPicks();
 renderLowZoom();
 
-// Dark version: same styles on the dark palette, comparison grids only.
+// Dark version: same styles on the dark palette, comparison grids and the main-road picks sheet.
 LAND = SPEC.dark.land;
 BROWN = SPEC.dark.centreLine;
 CLASSES = MOCKUP_CLASSES.map((id) => ({ id, ...(SPEC.dark.classes as any)[id] }));
 DEFS = defs();
 INK = '#e8e8e8'; PAGE = '#18181a'; DARK_MODE = true;
 for (const [w, cas, suffix] of [[11, 4, '-dark'], [5, 2, '-dark-narrow']] as const) { W = w; CAS = cas; renderComparison(suffix); }
+renderPicks('-dark');
 
 // Style values for the demo, with the titles and notes shown in its menu and legend.
 const styles = Object.fromEntries(Object.entries(SPEC.styles).map(([k, v]) => [k, { name: OPTIONS[k].title, note: OPTIONS[k].note, ...v }]));
