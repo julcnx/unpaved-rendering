@@ -82,7 +82,7 @@ I propose two small recurring bot edits, both on `highway=*` only, worldwide:
 
 Mateusz Konieczny would run them with his bot account, as he offered here: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12. I wrote the proposals and I will answer comments. If one part gets objections, the other can still go ahead on its own.
 
-Wiki pages:
+Bot documentation pages (who, rule, code, opt-out):
 - cement: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_highways_worldwide
 - brick: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dbrick_to_surface%3Dbricks_on_highways_worldwide
 
@@ -90,8 +90,8 @@ Wiki pages:
 
 Software that reads `surface` usually knows only the documented values, so these roads and paths end up with an unknown surface (and on some maps as unpaved).
 
-- `surface=cement` was discussed in 2022 (https://community.openstreetmap.org/t/mysterious-surface-cement/5158) and marked deprecated on the wiki, with `concrete` as the replacement. In many languages "cement" is the everyday word for concrete. The same edit already ran on US roads and paths: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_USA_roads_and_paths. This extends it to the whole world.
-- `surface=brick` is the same as the documented `surface=bricks` (the wiki page redirects there), only the plural is missing. It keeps growing: about 4,100 objects in 2020, 8,326 today.
+- `surface=cement` was discussed in 2022 (https://community.openstreetmap.org/t/mysterious-surface-cement/5158) and marked deprecated on the wiki, with `concrete` as the replacement: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcement. In many languages "cement" is the everyday word for concrete. The same edit already ran on US roads and paths: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_USA_roads_and_paths. This extends it to the whole world.
+- `surface=brick` is the same as the documented `surface=bricks` (https://wiki.openstreetmap.org/wiki/Tag:surface%3Dbricks; the `surface=brick` page redirects there), only the plural is missing. It keeps growing: about 4,100 objects in 2020, 8,326 today.
 
 **What would change**
 
