@@ -106,7 +106,8 @@ const PLACES = ['bolivia', 'nepal', 'alberta', 'namibia', 'australia'];
 const STYLES = ['grain', 'centre-line', 'dashed-fill', 'dashed-casing', 'dashed-fill-full'];
 // Picture set, sent with the answers (images) and added to the picture URLs so no phone shows a cached older set.
 // 1 (no field in the sheet): until 2026-11-13. 2: dashed casing with the light tan fill on white unpaved roads.
-const IMAGES = 2;
+// 3: round 2 (2026-11-16), stronger marks on unpaved main roads (picks 1C, 2B, 3A, 4A, 5A).
+const IMAGES = 3;
 const $ = (id) => document.getElementById(id);
 const shuffle = (a) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const store = { get: (k) => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
