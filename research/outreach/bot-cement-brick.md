@@ -83,8 +83,8 @@ I propose two small recurring bot edits, both on `highway=*` only, worldwide:
 Mateusz Konieczny would run them with his bot account, as he offered here: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12. I wrote the proposals and I will answer comments. If one part gets objections, the other can still go ahead on its own.
 
 Wiki pages:
-- cement: [placeholder: cement wiki page link]
-- brick: [placeholder: brick wiki page link]
+- cement: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_highways_worldwide
+- brick: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dbrick_to_surface%3Dbricks_on_highways_worldwide
 
 **Why**
 
