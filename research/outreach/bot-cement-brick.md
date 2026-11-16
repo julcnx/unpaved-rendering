@@ -102,6 +102,8 @@ Nothing without `highway=*` is touched (pitches, parking, benches, buildings, wa
 
 I checked 15 random objects of each and every object with a `note`, `description` or `fixme`: all were plain concrete or brick paving, and I found no case of cement-stabilised soil.
 
+After the edit, I'd also turn the `surface=brick` wiki redirect into a short deprecated page (replacement `surface=bricks`), like `surface=cement`, so mappers and tools see that it is a mistake.
+
 Any objections?
 ```
 
