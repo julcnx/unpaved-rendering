@@ -43,6 +43,10 @@ Updated 2026-11-16. Only what is still open. Settled decisions are in [decisions
 - **Commercial apps** through support or product teams: Komoot, Gaia GPS, Guru Maps, Ride with GPS and the others.
 - **Allies**: HOT, local mapping communities, the laterite-discussion contacts.
 
+## Tracks rendering
+
+- Find a mechanism for rendering unpaved roads and tracks/paths consistently together (added 2026-11-16, Julien). Starting points: the constraint and shared classifier in [E-tracks.md section 4](E-tracks.md#4-constraint-from-the-roads-work) (a road never drawn as a track, tracks unlike any Unpaved or Off-road road, one classifier for both), scheme D in [section 6.4](E-tracks.md#64-scheme-d-decisions-of-2026-11-13-julien-not-in-the-article), paved tracks drawn solid (Low priority below). Left: decide what "consistent" means (shared ramp and legend words, shared dash rhythms, or one rule mapping road class plus condition to a look), then a mockup of roads and tracks side by side in each road style.
+
 ## Low priority
 
 - Dark mode: a variant per style, the style 4 tan fill (decision 16) and the primary that looks brown in the demo (LOG.md).
