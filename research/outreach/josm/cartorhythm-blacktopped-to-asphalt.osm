@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osm-cli" upload="true">
+ <node id="5799532105" visible="true" version="3" changeset="94063085" timestamp="2020-11-13T13:28:22Z" user="Gaurav Parajuli" uid="8316170" lat="27.6289604" lon="83.4934062" />
+ <node id="5799532106" visible="true" version="3" changeset="94063085" timestamp="2020-11-13T13:28:22Z" user="Gaurav Parajuli" uid="8316170" lat="27.6291220" lon="83.4934491" />
+ <node id="5799533666" visible="true" version="3" changeset="94063085" timestamp="2020-11-13T13:28:22Z" user="Gaurav Parajuli" uid="8316170" lat="27.6294166" lon="83.4935309" />
+ <node id="5799533667" visible="true" version="3" changeset="94063085" timestamp="2020-11-13T13:28:22Z" user="Gaurav Parajuli" uid="8316170" lat="27.6297078" lon="83.4936248" />
+ <node id="5799533668" visible="true" version="4" changeset="100457275" timestamp="2021-03-05T04:20:42Z" user="Gaurav Parajuli" uid="8316170" lat="27.6298800" lon="83.4936100" />
+ <node id="5799533669" visible="true" version="4" changeset="100457275" timestamp="2021-03-05T04:20:42Z" user="Gaurav Parajuli" uid="8316170" lat="27.6299406" lon="83.4934471" />
+ <node id="5799539326" visible="true" version="6" changeset="127353232" timestamp="2022-10-11T11:08:11Z" user="Chiranshivapurnepal" uid="16515052" lat="27.6284344" lon="83.4932947" />
+ <node id="7018553439" visible="true" version="3" changeset="100457275" timestamp="2021-03-05T04:20:42Z" user="Gaurav Parajuli" uid="8316170" lat="27.6298206" lon="83.4936650" />
+ <node id="7018553440" visible="true" version="3" changeset="100457275" timestamp="2021-03-05T04:20:42Z" user="Gaurav Parajuli" uid="8316170" lat="27.6298432" lon="83.4936583" />
+ <way id="750639445" visible="true" version="1" changeset="77706795" timestamp="2019-11-29T05:19:50Z" user="cartorhythm" uid="8610585" action="modify">
+  <nd ref="5799533669" />
+  <nd ref="5799533668" />
+  <nd ref="7018553440" />
+  <nd ref="7018553439" />
+  <nd ref="5799533667" />
+  <nd ref="5799533666" />
+  <nd ref="5799532106" />
+  <nd ref="5799532105" />
+  <nd ref="5799539326" />
+  <tag k="highway" v="residential" />
+  <tag k="name" v="Shantiban Marga Ka Line" />
+  <tag k="surface" v="asphalt" />
+ </way>
+</osm>
