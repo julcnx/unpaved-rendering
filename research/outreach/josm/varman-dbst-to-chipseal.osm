@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="retag-script" upload="true">
+  <node id="3274068989" visible="true" version="2" changeset="139424882" timestamp="2023-08-04T06:36:50Z" user="thebMeta" uid="17511293" lat="11.7179985" lon="105.4375731" />
+  <node id="3274069008" visible="true" version="1" changeset="27969948" timestamp="2015-01-07T05:03:14Z" user="imiii" uid="21298" lat="11.7202826" lon="105.4345928" />
+  <node id="3274069010" visible="true" version="1" changeset="27969948" timestamp="2015-01-07T05:03:14Z" user="imiii" uid="21298" lat="11.7204053" lon="105.4341377" />
+  <node id="3274069011" visible="true" version="1" changeset="27969948" timestamp="2015-01-07T05:03:14Z" user="imiii" uid="21298" lat="11.7204569" lon="105.4319482" />
+  <node id="3274069014" visible="true" version="2" changeset="157656528" timestamp="2024-10-09T06:25:46Z" user="ElLlobregatRiver" uid="17110701" lat="11.7206947" lon="105.4267138" />
+  <node id="3274069015" visible="true" version="1" changeset="27969948" timestamp="2015-01-07T05:03:14Z" user="imiii" uid="21298" lat="11.7207088" lon="105.4255444" />
+  <node id="11088590840" visible="true" version="1" changeset="139424882" timestamp="2023-08-04T06:36:50Z" user="thebMeta" uid="17511293" lat="11.7193894" lon="105.4357805" />
+  <node id="11088590841" visible="true" version="1" changeset="139424882" timestamp="2023-08-04T06:36:50Z" user="thebMeta" uid="17511293" lat="11.7203516" lon="105.4343370" />
+  <node id="11088590855" visible="true" version="1" changeset="139424882" timestamp="2023-08-04T06:36:50Z" user="thebMeta" uid="17511293" lat="11.7204256" lon="105.4332748" />
+  <node id="11088590858" visible="true" version="1" changeset="139424882" timestamp="2023-08-04T06:36:50Z" user="thebMeta" uid="17511293" lat="11.7187886" lon="105.4365794" />
+  <node id="12237294066" visible="true" version="1" changeset="157656528" timestamp="2024-10-09T06:25:46Z" user="ElLlobregatRiver" uid="17110701" lat="11.7184936" lon="105.4369505" />
+  <node id="13350856447" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" lat="11.7206591" lon="105.4249447" />
+  <node id="13350856443" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" lat="11.7205173" lon="105.4227349" />
+  <node id="13350856444" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" lat="11.7205328" lon="105.4229589" />
+  <node id="13350856445" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" lat="11.7205989" lon="105.4239155" />
+  <node id="13350856446" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" lat="11.7206162" lon="105.4241644" />
+  <node id="3274069013" visible="true" version="2" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" lat="11.7206514" lon="105.4248219" />
+  <way id="1455715510" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" action="modify">
+    <nd ref="3274068989" />
+    <nd ref="12237294066" />
+    <nd ref="11088590858" />
+    <nd ref="11088590840" />
+    <nd ref="3274069008" />
+    <nd ref="11088590841" />
+    <nd ref="3274069010" />
+    <nd ref="11088590855" />
+    <nd ref="3274069011" />
+    <nd ref="3274069014" />
+    <nd ref="3274069015" />
+    <nd ref="13350856447" />
+    <tag k="highway" v="tertiary" />
+    <tag k="lanes" v="2" />
+    <tag k="maxspeed" v="40" />
+    <tag k="name" v="Svay Teab - Prey Chheang - Bati" />
+    <tag k="surface" v="chipseal" />
+  </way>
+  <way id="1455715511" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" action="modify">
+    <nd ref="13350856444" />
+    <nd ref="13350856443" />
+    <tag k="bridge" v="yes" />
+    <tag k="highway" v="tertiary" />
+    <tag k="lanes" v="2" />
+    <tag k="layer" v="1" />
+    <tag k="maxspeed" v="40" />
+    <tag k="name" v="Svay Teab - Prey Chheang - Bati" />
+    <tag k="surface" v="chipseal" />
+  </way>
+  <way id="1455715512" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" action="modify">
+    <nd ref="13350856445" />
+    <nd ref="13350856444" />
+    <tag k="highway" v="tertiary" />
+    <tag k="lanes" v="2" />
+    <tag k="maxspeed" v="40" />
+    <tag k="name" v="Svay Teab - Prey Chheang - Bati" />
+    <tag k="surface" v="chipseal" />
+  </way>
+  <way id="1455715513" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" action="modify">
+    <nd ref="13350856446" />
+    <nd ref="13350856445" />
+    <tag k="bridge" v="yes" />
+    <tag k="highway" v="tertiary" />
+    <tag k="lanes" v="2" />
+    <tag k="layer" v="1" />
+    <tag k="maxspeed" v="40" />
+    <tag k="name" v="Svay Teab - Prey Chheang - Bati" />
+    <tag k="surface" v="chipseal" />
+  </way>
+  <way id="1455715514" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" action="modify">
+    <nd ref="3274069013" />
+    <nd ref="13350856446" />
+    <tag k="highway" v="tertiary" />
+    <tag k="lanes" v="2" />
+    <tag k="maxspeed" v="40" />
+    <tag k="name" v="Svay Teab - Prey Chheang - Bati" />
+    <tag k="surface" v="chipseal" />
+  </way>
+  <way id="1455715515" visible="true" version="1" changeset="175435283" timestamp="2025-12-03T08:46:47Z" user="_varman_" uid="3049756" action="modify">
+    <nd ref="13350856447" />
+    <nd ref="3274069013" />
+    <tag k="bridge" v="yes" />
+    <tag k="highway" v="tertiary" />
+    <tag k="lanes" v="2" />
+    <tag k="layer" v="1" />
+    <tag k="maxspeed" v="40" />
+    <tag k="name" v="Svay Teab - Prey Chheang - Bati" />
+    <tag k="surface" v="chipseal" />
+  </way>
+</osm>
