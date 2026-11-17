@@ -11,6 +11,14 @@ Follow-up: if a mapper has not answered after 14 days, retag by hand only where 
 - For each way, the OSM API history: the version that first set the current value (start of the last unbroken run with that value), its changeset and user. 134 ways had no `surface` before, 3 had `unpaved`, 3 had `asphalt`.
 - One changeset per user: the one that set the value on the most ways; if tied, the most recent.
 
+## Answers
+
+| Date | User | Answer | Action |
+|---|---|---|---|
+| 2026-11-16 | \_varman\_ | "yes sure, you can update"; says they only picked a value from the editor's options list | Retag the 6 ways to `surface=chipseal` (tertiary "Svay Teab - Prey Chheang - Bati": [w1455715510](https://www.openstreetmap.org/way/1455715510), [w1455715511](https://www.openstreetmap.org/way/1455715511), [w1455715512](https://www.openstreetmap.org/way/1455715512), [w1455715513](https://www.openstreetmap.org/way/1455715513), [w1455715514](https://www.openstreetmap.org/way/1455715514), [w1455715515](https://www.openstreetmap.org/way/1455715515)); thank them in the changeset |
+
+The edit was made with iD 2.37.3. iD's surface list only adds taginfo values used more than 100 times or documented on the wiki, so `dbst` (25 uses) was not offered there; it was probably typed in. But the same rule means iD does offer `cement` (2,688, wiki page) and `brick` (8,326, wiki redirect): see [bot-cement-brick.md](bot-cement-brick.md).
+
 ## Template
 
 Post as a changeset comment (open the changeset link, comment box at the bottom). Fill the `{}` parts from the table. The Nepal line is only for Nepali mappers, the split line only for the one Cambodian mapper with mixed values.

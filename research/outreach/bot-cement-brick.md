@@ -4,6 +4,8 @@ Status 2026-11-16: drafts only, nothing posted. Mateusz Konieczny offered to run
 
 **Status 2026-11-16: waiting for Mateusz's review.** Both documentation pages created by Julien (section 4) and Mateusz asked in the bot thread to check them. Post the merged topic (section 3) when he answers OK, or on **2026-11-21** (5 days) without an answer. Then put the topic link in both pages and reply in the bot thread with it.
 
+**Found 2026-11-17: iD suggests both values.** iD's surface field adds taginfo values with more than 100 uses or a wiki page, minus values in id-tagging-schema `data/deprecated.json` ([combo.js](https://github.com/openstreetmap/iD/blob/v2.37.3/modules/ui/fields/combo.js), [taginfo.js](https://github.com/openstreetmap/iD/blob/v2.37.3/modules/services/taginfo.js) `filterValues`). `cement` (2,688) and `brick` (8,326) both pass and are not in deprecated.json, so iD offers them next to `concrete` and `bricks`. That likely explains why `brick` keeps growing. Fix: an id-tagging-schema issue or PR adding `{"old": {"surface": "cement"}, "replace": {"surface": "concrete"}}` and `{"old": {"surface": "brick"}, "replace": {"surface": "bricks"}}` to deprecated.json. That removes them from the list and makes iD offer the upgrade when someone edits such a way. No existing issue (searched 2026-11-17). Do it after the bot topic is accepted, and link the topic.
+
 Original order (steps 1 done):
 
 1. Create both wiki pages (section 4). Their "[placeholder: forum thread link]" stays until step 3.
