@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osm-cli" upload="true">
+ <node id="997644706" visible="true" version="1" changeset="6421689" timestamp="2010-11-21T11:44:06Z" user="Oliver Tam" uid="328697" lat="11.7751398" lon="105.3702534" />
+ <node id="997645157" visible="true" version="2" changeset="71873882" timestamp="2019-07-03T19:59:56Z" user="(Inactive) Hoordinates" uid="8867106" lat="11.7751627" lon="105.3698570" />
+ <node id="11072395066" visible="true" version="1" changeset="139116846" timestamp="2023-07-28T05:37:59Z" user="Nolichucky" uid="9090061" lat="11.7749772" lon="105.3757585" />
+ <node id="11072395087" visible="true" version="1" changeset="139116846" timestamp="2023-07-28T05:37:59Z" user="Nolichucky" uid="9090061" lat="11.7751301" lon="105.3705815" />
+ <node id="11072395099" visible="true" version="1" changeset="139116846" timestamp="2023-07-28T05:37:59Z" user="Nolichucky" uid="9090061" lat="11.7748873" lon="105.3787995" />
+ <node id="11072395103" visible="true" version="1" changeset="139116846" timestamp="2023-07-28T05:37:59Z" user="Nolichucky" uid="9090061" lat="11.7748815" lon="105.3789954" />
+ <node id="11489422654" visible="true" version="1" changeset="145902036" timestamp="2024-01-05T00:48:07Z" user="LeopoldCanal" uid="20681105" lat="11.7749028" lon="105.3782736" />
+ <way id="1237124709" visible="true" version="1" changeset="145902036" timestamp="2024-01-05T00:48:07Z" user="LeopoldCanal" uid="20681105" action="modify">
+  <nd ref="11072395099" />
+  <nd ref="11072395103" />
+  <tag k="bridge" v="yes" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lanes" v="2" />
+  <tag k="layer" v="1" />
+  <tag k="maxspeed" v="40, 60" />
+  <tag k="name" v="Prey Deum Thneung - Prey Chheang" />
+  <tag k="surface" v="chipseal" />
+ </way>
+ <way id="1237124710" visible="true" version="1" changeset="145902036" timestamp="2024-01-05T00:48:07Z" user="LeopoldCanal" uid="20681105" action="modify">
+  <nd ref="997645157" />
+  <nd ref="997644706" />
+  <nd ref="11072395087" />
+  <nd ref="11072395066" />
+  <nd ref="11489422654" />
+  <nd ref="11072395099" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="40, 60" />
+  <tag k="name" v="Prey Deum Thneung - Prey Chheang" />
+  <tag k="surface" v="chipseal" />
+ </way>
+</osm>
