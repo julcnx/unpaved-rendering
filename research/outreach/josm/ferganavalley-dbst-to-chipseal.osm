@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="osm-cli" upload="true">
+ <node id="2355297640" visible="true" version="2" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6546275" lon="105.2570858" />
+ <node id="2566050089" visible="true" version="3" changeset="143719603" timestamp="2023-11-07T05:34:47Z" user="CaluequeDam" uid="16528248" lat="13.6564382" lon="105.2576783" />
+ <node id="2566050105" visible="true" version="3" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6588232" lon="105.2578394" />
+ <node id="2609210328" visible="true" version="2" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6732112" lon="105.2614056" />
+ <node id="2609210912" visible="true" version="3" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6838824" lon="105.2339668" />
+ <node id="2651269751" visible="true" version="2" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6621285" lon="105.2592781" />
+ <node id="2651269752" visible="true" version="1" changeset="20346478" timestamp="2014-02-03T03:51:12Z" user="MakaraMap" uid="1813540" lat="13.6634534" lon="105.2597255" />
+ <node id="2651269753" visible="true" version="1" changeset="20346478" timestamp="2014-02-03T03:51:12Z" user="MakaraMap" uid="1813540" lat="13.6659497" lon="105.2602995" />
+ <node id="2651269754" visible="true" version="1" changeset="20346478" timestamp="2014-02-03T03:51:12Z" user="MakaraMap" uid="1813540" lat="13.6704135" lon="105.2609130" />
+ <node id="2651269755" visible="true" version="1" changeset="20346478" timestamp="2014-02-03T03:51:12Z" user="MakaraMap" uid="1813540" lat="13.6721583" lon="105.2611824" />
+ <node id="9090033008" visible="true" version="2" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6618388" lon="105.2591761" />
+ <node id="11171290797" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6611588" lon="105.2589111" />
+ <node id="11171290798" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6602529" lon="105.2584873" />
+ <node id="11171290799" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6596924" lon="105.2582365" />
+ <node id="11171290801" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6582709" lon="105.2577977" />
+ <node id="11171290802" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6575479" lon="105.2577433" />
+ <node id="11171290805" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6733706" lon="105.2609482" />
+ <node id="11171290806" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6734562" lon="105.2605034" />
+ <node id="11171290807" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6735316" lon="105.2597284" />
+ <node id="11171290808" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6735830" lon="105.2592178" />
+ <node id="11171290809" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6736068" lon="105.2589475" />
+ <node id="11171290810" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6736509" lon="105.2588005" />
+ <node id="11171290811" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6741987" lon="105.2581032" />
+ <node id="11171290812" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6747736" lon="105.2576240" />
+ <node id="11171290813" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6753093" lon="105.2572192" />
+ <node id="11171290814" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6757881" lon="105.2568365" />
+ <node id="11171290815" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6762499" lon="105.2564339" />
+ <node id="11171290816" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6763437" lon="105.2562818" />
+ <node id="11171290817" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6767071" lon="105.2555050" />
+ <node id="11171290818" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6768062" lon="105.2553402" />
+ <node id="11171290819" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6770356" lon="105.2549958" />
+ <node id="11171290820" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6774241" lon="105.2544788" />
+ <node id="11171290821" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6780881" lon="105.2536359" />
+ <node id="11171290822" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6784816" lon="105.2531571" />
+ <node id="11171290823" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6786888" lon="105.2528688" />
+ <node id="11171290824" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6788269" lon="105.2522700" />
+ <node id="11171290825" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6789181" lon="105.2517282" />
+ <node id="11171290826" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6790367" lon="105.2511562" />
+ <node id="11171290827" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6791918" lon="105.2505789" />
+ <node id="11171290828" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6796780" lon="105.2490537" />
+ <node id="11171290829" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6803476" lon="105.2469994" />
+ <node id="11171290830" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6805098" lon="105.2465532" />
+ <node id="11171290831" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6806174" lon="105.2463601" />
+ <node id="11171290832" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6807564" lon="105.2462869" />
+ <node id="11171290833" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6816739" lon="105.2460064" />
+ <node id="11171290834" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6819789" lon="105.2459382" />
+ <node id="11171290835" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6838691" lon="105.2454773" />
+ <node id="11171290836" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6840396" lon="105.2453855" />
+ <node id="11171308537" visible="true" version="2" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6841359" lon="105.2451997" />
+ <node id="11171308538" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6843365" lon="105.2444934" />
+ <node id="11171308539" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6844724" lon="105.2430223" />
+ <node id="11171308540" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6845444" lon="105.2418492" />
+ <node id="11171308541" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6844584" lon="105.2414449" />
+ <node id="11171308542" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6837378" lon="105.2392540" />
+ <node id="11171308543" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6834250" lon="105.2375995" />
+ <node id="11171308544" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6834294" lon="105.2369511" />
+ <node id="11171308545" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6834476" lon="105.2360580" />
+ <node id="11171308546" visible="true" version="1" changeset="140881859" timestamp="2023-09-06T07:45:07Z" user="thebMeta" uid="17511293" lat="13.6835199" lon="105.2354970" />
+ <node id="11171308548" visible="true" version="2" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" lat="13.6842998" lon="105.2321542" />
+ <node id="11171308549" visible="true" version="3" changeset="180751621" timestamp="2026-04-02T06:36:53Z" user="SaladoRiver" uid="22435321" lat="13.6850498" lon="105.2291651" />
+ <node id="11330358807" visible="true" version="2" changeset="143719603" timestamp="2023-11-07T05:34:47Z" user="CaluequeDam" uid="16528248" lat="13.6557318" lon="105.2574568" />
+ <node id="11330441399" visible="true" version="1" changeset="143719603" timestamp="2023-11-07T05:34:47Z" user="CaluequeDam" uid="16528248" lat="13.6557638" lon="105.2574694" />
+ <way id="983091487" visible="true" version="5" changeset="165294297" timestamp="2025-04-22T16:18:46Z" user="EarlEBird" uid="10228237" action="modify">
+  <nd ref="2651269751" />
+  <nd ref="2651269752" />
+  <nd ref="2651269753" />
+  <nd ref="2651269754" />
+  <nd ref="2651269755" />
+  <nd ref="2609210328" />
+  <nd ref="11171290805" />
+  <nd ref="11171290806" />
+  <nd ref="11171290807" />
+  <nd ref="11171290808" />
+  <nd ref="11171290809" />
+  <nd ref="11171290810" />
+  <nd ref="11171290811" />
+  <nd ref="11171290812" />
+  <nd ref="11171290813" />
+  <nd ref="11171290814" />
+  <nd ref="11171290815" />
+  <nd ref="11171290816" />
+  <nd ref="11171290817" />
+  <nd ref="11171290818" />
+  <nd ref="11171290819" />
+  <nd ref="11171290820" />
+  <nd ref="11171290821" />
+  <nd ref="11171290822" />
+  <nd ref="11171290823" />
+  <nd ref="11171290824" />
+  <nd ref="11171290825" />
+  <nd ref="11171290826" />
+  <nd ref="11171290827" />
+  <nd ref="11171290828" />
+  <nd ref="11171290829" />
+  <nd ref="11171290830" />
+  <nd ref="11171290831" />
+  <nd ref="11171290832" />
+  <nd ref="11171290833" />
+  <nd ref="11171290834" />
+  <nd ref="11171290835" />
+  <nd ref="11171290836" />
+  <nd ref="11171308537" />
+  <nd ref="11171308538" />
+  <nd ref="11171308539" />
+  <nd ref="11171308540" />
+  <nd ref="11171308541" />
+  <nd ref="11171308542" />
+  <nd ref="11171308543" />
+  <nd ref="11171308544" />
+  <nd ref="11171308545" />
+  <nd ref="11171308546" />
+  <nd ref="2609210912" />
+  <nd ref="11171308548" />
+  <nd ref="11171308549" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="40,60" />
+  <tag k="name" v="S'ang to Samrong (RID4CAM Project 2023)" />
+  <tag k="surface" v="chipseal" />
+ </way>
+ <way id="1221667960" visible="true" version="1" changeset="143718703" timestamp="2023-11-07T04:47:06Z" user="FerganaValley" uid="16853716" action="modify">
+  <nd ref="9090033008" />
+  <nd ref="2651269751" />
+  <tag k="bridge" v="yes" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lanes" v="2" />
+  <tag k="layer" v="1" />
+  <tag k="maxspeed" v="40,60" />
+  <tag k="name" v="S'ang to Samrong (RID4CAM Project 2023)" />
+  <tag k="surface" v="chipseal" />
+ </way>
+ <way id="1221667961" visible="true" version="2" changeset="143719603" timestamp="2023-11-07T05:34:47Z" user="CaluequeDam" uid="16528248" action="modify">
+  <nd ref="2355297640" />
+  <nd ref="11330358807" />
+  <nd ref="11330441399" />
+  <nd ref="2566050089" />
+  <nd ref="11171290802" />
+  <nd ref="11171290801" />
+  <nd ref="2566050105" />
+  <nd ref="11171290799" />
+  <nd ref="11171290798" />
+  <nd ref="11171290797" />
+  <nd ref="9090033008" />
+  <tag k="highway" v="tertiary" />
+  <tag k="lanes" v="2" />
+  <tag k="maxspeed" v="40,60" />
+  <tag k="name" v="S'ang to Samrong (RID4CAM Project 2023)" />
+  <tag k="surface" v="chipseal" />
+ </way>
+</osm>
