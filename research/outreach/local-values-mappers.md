@@ -363,3 +363,17 @@ OK, I dropped the PossibleSynonym idea. Thanks for adding them to your dubious-t
 
 For `cement` and `brick`, I'm preparing the proposal and will post the link here.
 ```
+
+## Wiki sentence for Tag:surface=chipseal (draft, not edited)
+
+Edit at: https://wiki.openstreetmap.org/w/index.php?title=Tag:surface%3Dchipseal&action=edit
+
+Insert as a new paragraph right after the paragraph that starts "Chipseals are constructed by evenly distributing...". Lead and the rest unchanged.
+
+```mediawiki
+Chipseal is also known as ''bituminous surface treatment'' (BST), or ''double bituminous surface treatment'' (DBST) when two layers of binder and chips are applied, and in the UK as ''surface dressing''. Such roads are tagged {{tag|surface|chipseal}}, not with these names as values.
+```
+
+Edit summary: `Add other names for chipseal (BST, DBST, surface dressing) so mappers find this value`
+
+Not included on purpose: Otta seal, until the Nepal topic settles whether `ottaseal` maps to `chipseal`.
