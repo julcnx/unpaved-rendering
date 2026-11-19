@@ -299,6 +299,26 @@ One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and 
 6. **Shields**: tested at 13.5 px text; check on the phone, and decide whether unpaved main roads get a marked shield (for example a brown border).
 7. **Night version** of High vis 2 (dark land, the night ramp of 6.4).
 
+**Track colours rated, and three changes (2026-11-19).** Rating (Claude): order readable without a legend 9, colour-blind safe (lightness only) 10, meaning (brown = dirt, near black = hard) 9, apart from roads 8 (Delta E >= 24), apart from grey 9 (Delta E 40), default Unpaved visible on the land 6 (contrast 3.3), a lone Unpaved told from High clearance 6 (2.06 between them), band edge clash 4; about 7.5 overall. Changes:
+
+- **`smoothness=very_horrible` tracks drawn as single tracks** in the 4WD colour (Julien: only a bike, ATV or tractor gets through, it should be mapped as a path; the article classifier's "specialized"). 4WD (solid near black) keeps `horrible`, `grade5` to `grade8`, `mud` and `4wd_only`. Roads with `very_horrible` keep the solid near-black band.
+- **Band edge in coloured roads: neutral dark grey `#3d3d3d`** instead of the 4WD near black, so an Unpaved trunk no longer reads as 4WD. Cost: the dirt signal inside crimson trunks drops (edge against fill 2.35, score 10 to 6.8). An edge in each road's casing colour was worse (1.3 against the band on a yellow secondary), so the grey stays.
+- **Rust middle step, variant**: High clearance `#7a3a14` (deeper than option C's `#8c3a10`, which came closer to the Unpaved brown for colour-blind riders: Delta E 18.6 against 23.1). [mockups/fork-ramp-thailand-1.png](mockups/fork-ramp-thailand-1.png): grade4 tracks get a look of their own. Not adopted yet, Julien to decide.
+
+Score after these changes (a new measure, ramp steps apart, added; the scores are not comparable with the table above):
+
+| Measure (floor -> target) | Now | High vis | High vis 2 | High vis 2 + rust | AdvOSM (ref.) |
+|---|---|---|---|---|---|
+| Fill contrast (1 -> 3) | 1.3 (1.27) | 5.5 (2.11) | 7.3 (2.46) | 7.3 (2.46) | 9.5 (2.89) |
+| Class separation (colour-blind) (5 -> 30) | 0.9 (7.16) | 4.1 (15.25) | 5.8 (19.48) | 5.8 (19.48) | 7.0 (22.40) |
+| Dirt signal in roads (1 -> 3) | 5.7 (2.14) | 10.0 (4.52) | 6.8 (2.35) | 6.8 (2.35) | 10.0 (4.17) |
+| Tracks apart from roads (5 -> 30) | 7.3 (23.28) | 1.0 (7.50) | 7.8 (24.38) | 7.8 (24.38) | n/a |
+| Ramp steps apart (10 -> 30) | 5.5 (20.90) | 5.5 (20.90) | 5.5 (20.90) | 6.5 (23.06) | n/a |
+| Minor road width (px) (6 -> 14) | 3.8 (9.00) | 9.4 (13.50) | 9.4 (13.50) | 9.4 (13.50) | n/a |
+| Track width (px) (4 -> 9) | 2.0 (5.00) | 7.0 (7.50) | 7.0 (7.50) | 7.0 (7.50) | n/a |
+| Road numbers (0 -> 10) | 0 (no) | 10 (yes) | 10 (yes) | 10 (yes) | 10 (yes) |
+| **Score (mean)** | **3.3** | **6.6** | **7.4** | **7.6** | **9.1** |
+
 **Barriers (Julien, 2026-11-19: would rather not show them; could get ugly quickly).** Proposal: do not draw `barrier=gate` and the like, except a barrier node that blocks (`access`, `motorcycle` or `motor_vehicle` = no or private): a small light grey bar across the line, from z16. Do not grey the whole track: most gates are open or passable, a closed one blocks only part of the way, and the map cannot tell which side; OsmAnd routing already reads the access tags on barrier nodes. Not drawn (barrier nodes are not in the extract).
 
 **Still missing from the fork mockups (2026-11-19, priority order, Claude's proposal):**

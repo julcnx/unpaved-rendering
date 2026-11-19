@@ -27,6 +27,7 @@ def de_cb(a, b): return min([de(a, b)] + [de(sim(a, m), sim(b, m)) for m in M.va
 
 LAND = h('#f2efe9')
 RAMP = [h('#b0773a'), h('#74481f'), h('#2b190c')]
+RUST = [h('#b0773a'), h('#7a3a14'), h('#2b190c')]
 P = {
     'Now': dict(land=LAND, fills=[h('#f9b29c'), h('#fcd6a4'), h('#f7fabf'), h('#ffffff')], band=h('#b0773a'), edge=None,
                 minor_w=4.5, track_w=2.5, shields=False),
@@ -34,8 +35,11 @@ P = {
                      minor_w=4.5 * 1.5, track_w=2.5 * 1.5, shields=True),
     # Candidate after the first score: crimson-rose trunk and a deeper orange primary, so red-green colour-blind riders
     # can tell the trunk from the brown Unpaved track (Delta E 7.5 with #e8503a) and the primary from the secondary.
-    'High vis 2': dict(land=LAND, fills=[h('#d6336c'), h('#ef8a1f'), h('#f4e04a'), h('#ffffff')], band=h('#b0773a'), edge=h('#2b190c'),
+    'High vis 2': dict(land=LAND, fills=[h('#d6336c'), h('#ef8a1f'), h('#f4e04a'), h('#ffffff')], band=h('#b0773a'), edge=h('#3d3d3d'),
                        minor_w=4.5 * 1.5, track_w=2.5 * 1.5, shields=True),
+    # High vis 2 with the rust middle step (2026-11-19).
+    'High vis 2 + rust': dict(land=LAND, fills=[h('#d6336c'), h('#ef8a1f'), h('#f4e04a'), h('#ffffff')], band=h('#b0773a'), edge=h('#3d3d3d'),
+                              minor_w=4.5 * 1.5, track_w=2.5 * 1.5, shields=True, ramp=RUST),
     'AdvOSM (ref.)': dict(land=h('#ffffff'), fills=[h('#e00000'), h('#f09010'), h('#f0f030')], band=None, edge=h('#000000'),
                           minor_w=None, track_w=None, shields=True),
 }
@@ -54,7 +58,10 @@ for name, p in P.items():
     m['Dirt signal in roads'] = (min(cr(sig, c) for c in f[:3]), 1, 3)
     # 4. Tracks apart from roads: brown ramp against every class fill, worst pair, colour-blind: floor 5, target 30.
     if name != 'AdvOSM (ref.)':
-        m['Tracks apart from roads'] = (min(de_cb(r, c) for r in RAMP for c in f), 5, 30)
+        ramp = p.get('ramp', RAMP)
+        m['Tracks apart from roads'] = (min(de_cb(r, c) for r in ramp for c in f), 5, 30)
+        # 4b. Ramp steps apart from each other (worst adjacent pair, colour-blind): floor 10, target 30.
+        m['Ramp steps apart'] = (min(de_cb(ramp[i], ramp[i + 1]) for i in range(2)), 10, 30)
     # 5. Line width on screen at density 2 (px): minor road, floor 6, target 14; track floor 4, target 9.
     if p['minor_w']:
         m['Minor road width (px)'] = (p['minor_w'] * 2, 6, 14)

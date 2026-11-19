@@ -16,7 +16,7 @@ import { classifyDetailed } from '../../js/classify.js';
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
   { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks' },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
   { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'] },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
@@ -107,6 +107,9 @@ function look(t, z = Z) {
   if (h === 'track') {
     if (t.smoothness === 'impassable') return { kind: 'dots', level: 'impassable' };
     if (access(t) === 'no') return { kind: 'closedTrack' };
+    // smoothness=very_horrible: only a bike, ATV or tractor gets through, so drawn as a single track in the 4WD
+    // colour (Julien, 2026-11-19; the article classifier's "specialized: could be drawn as a path").
+    if (t.smoothness === 'very_horrible') return { kind: 'single', level: 'fourwd' };
     const d = classifyDetailed(t);
     return { kind: 'track', level: d.base === 'paved' ? 'paved' : vehicle(t) };
   }
@@ -224,7 +227,9 @@ const CASINGS = {
 // fills as on the AdvOSM Garmin maps, every line 1.5 x wider, a dark edge around the dirt band inside coloured roads
 // (brown on orange or red is weak), road numbers in shields. Tertiary and below stay white.
 const HIVIS = {
-  widthK: 1.5, bandEdge: '#2b190c', shields: true,
+  // Band edge: a neutral dark grey, not the 4WD near-black, so an Unpaved band in a coloured road does not read as
+  // 4WD (2026-11-19, from the colour rating).
+  widthK: 1.5, bandEdge: '#3d3d3d', shields: true,
   classes: {
     trunk: { ...SPEC.classes.trunk, fill: '#e8503a', casing: '#8e2414' },
     primary: { ...SPEC.classes.primary, fill: '#f39c26', casing: '#94560b' },
@@ -242,6 +247,11 @@ const HIVIS2 = {
     secondary: HIVIS.classes.secondary,
   },
 };
+// Rust middle step (2026-11-19, from the colour rating): High clearance in a deep rust instead of dark brown, so the
+// middle level has a look of its own and not only a place in the order. #7a3a14 rather than ramp option C's
+// #8c3a10, which came closer to the Unpaved brown for colour-blind riders (Delta E 18.6 against 23.1).
+const HIVIS2_RUST = { ...HIVIS2, ramp: { ...RAMP, high: '#7a3a14' } };
+
 // The fork default since 2026-11-19 (Julien): High vis 2. Pass null for the OSM Carto based palette.
 const DEFAULT_P = HIVIS2;
 
@@ -276,6 +286,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
   // inside coloured roads, ref shields. null = the OSM Carto based palette.
   const K = P?.widthK ?? 1;
   const st = (pts, o) => stroke(pts, { ...o, width: o.width * K, dash: o.dash && o.cap !== 'round' ? o.dash.split(' ').map((n) => +n * K).join(' ') : o.dash });
+  const R = P?.ramp ?? RAMP;
   const C = (cls) => P?.classes?.[cls] ?? SPEC.classes[cls];
   const F = focus ? FOCUS[focus] : {};
   const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
@@ -294,11 +305,11 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
     else if (k.kind === 'dots') { if (paths) L.dots.push(st(w.pts, { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' })); }
     else if (k.kind === 'closedTrack') L.closed.push(st(w.pts, closed.track));
     else if (k.kind === 'closedPath') { if (paths) L.closed.push(st(w.pts, closed.path)); }
-    else if (k.kind === 'single') { if (paths) L.single.push(st(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : RAMP[k.level], width: singleW, dash: SINGLE })); }
+    else if (k.kind === 'single') { if (paths) L.single.push(st(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : R[k.level], width: singleW, dash: SINGLE })); }
     else if (k.kind === 'track' && k.level === 'paved') {
       L.pavedCasing.push(st(w.pts, { color: F.pavedCasing?.residential ?? cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
       L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
-    } else if (k.kind === 'track') L.track.push(st(w.pts, { color: RAMP[k.level], width: trackW }));
+    } else if (k.kind === 'track') L.track.push(st(w.pts, { color: R[k.level], width: trackW }));
     else if (k.kind === 'road') roads.push(w);
     if (F.symbols && /^[0-5]$/.test(w.tags['dirtbike:scale'] ?? '') && k.kind !== 'skip') L.sym.push(symbols(w.pts, w.tags['dirtbike:scale']));
   }
@@ -318,7 +329,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
     if (w.look.level !== 'paved') {
       const bw = Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8);
       const fade = (x) => (bOp < 1 ? `<g opacity="${bOp}">${x}</g>` : x);
-      r.band = fade(st(w.pts, { color: RAMP[w.look.level], width: bw }));
+      r.band = fade(st(w.pts, { color: R[w.look.level], width: bw }));
       if (P?.bandEdge && cls !== 'minor') r.edge = fade(st(w.pts, { color: P.bandEdge, width: bw + 1.2 }));
     }
     return r;
@@ -480,6 +491,14 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       sheet(`fork-hivis-${v.name}.svg`, `Fork, high visibility: ${v.name} at z${v.z ?? Z}`,
         'For a handlebar screen in sunlight and older eyes (Julien, 2026-11-19), after the AdvOSM Garmin and DMD2 review. Contrast of each colour against the land in the legend column.',
         hp, CONTRAST);
+    }
+    if (v.rampCheck) {
+      const rp = [
+        { key: 'ramp', badge: 'Brown', title: 'Current ramp: brown, dark brown, near black', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey), stats },
+        { key: 'rust', badge: 'Rust', title: 'Rust middle step: High clearance #7a3a14', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, HIVIS2_RUST), stats },
+      ];
+      sheet(`fork-ramp-${v.name}.svg`, `Fork, track ramp: ${v.name} at z15`,
+        'Can a lone High-clearance track be named at a glance? Same map, two middle steps. High vis 2, band edge neutral grey, very_horrible tracks as single tracks.', rp);
     }
     if (v.noFocus) continue;
     const fpanels = Object.keys(FOCUS).map((f) => ({ key: f, badge: BADGE[f], title: FOCUS[f].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, f), stats }));
