@@ -21,6 +21,8 @@ const VIEWS = [
   { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'] },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
   { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'] },
+  // Same centre at z16: driveways appear (grey), the rest as at z15 (widths kept at their z15 values).
+  { country: 'switzerland', name: 'switzerland-1-z16', z: 16, lat: 47.69867, lon: 8.62427, note: 'driveways from z16', closedVariants: ['grey'], noFocus: true },
 ];
 
 // ---------- Scheme D (values from make-track-mockups.mjs, day only) ----------
@@ -76,7 +78,9 @@ function vehicle(t) {
   return v;
 }
 // Access: first of motorcycle, motor_vehicle, vehicle, access that answers (unknown is no answer).
-const NO = new Set(['no', 'private', 'agricultural', 'forestry', 'destination']);
+// destination is not a no (Julien, 2026-11-19): common on residential streets, and OsmAnd routes it to reach a place
+// on it. Same rule for roads, tracks and paths.
+const NO = new Set(['no', 'private', 'agricultural', 'forestry']);
 const YES = new Set(['yes', 'designated', 'permissive']);
 function access(t) {
   for (const k of ['motorcycle', 'motor_vehicle', 'vehicle', 'access']) {
@@ -86,13 +90,16 @@ function access(t) {
   }
   return null;
 }
-// One look per way: { kind, level } with kind road | track | single | dots | closedTrack | closedPath | skip.
-function look(t) {
+// One look per way: { kind, level } with kind road | track | single | dots | closedTrack | closedPath | closedRoad | skip.
+function look(t, z = Z) {
   const h = t.highway;
   if (h === 'service') {
-    if (SERVICE_SKIP.has(t.service)) return { kind: 'skip' };
-    if (access(t) === 'no') return { kind: 'closedTrack' };
+    // Driveways lead to a private house or plot: grey from z16 (hidden at z15, too dense). Parking aisles and
+    // drive-throughs from z16, faded like other service roads.
+    if (SERVICE_SKIP.has(t.service) && z < 16) return { kind: 'skip' };
+    if (t.service === 'driveway') return { kind: 'closedRoad' };
   }
+  if (ROAD[h] && access(t) === 'no') return { kind: 'closedRoad' }; // closed roads grey (Julien, 2026-11-19)
   if (ROAD[h]) {
     const d = classifyDetailed(t);
     return { kind: 'road', level: d.base === 'paved' ? 'paved' : vehicle(t) };
@@ -103,7 +110,10 @@ function look(t) {
     const d = classifyDetailed(t);
     return { kind: 'track', level: d.base === 'paved' ? 'paved' : vehicle(t) };
   }
-  if (['path', 'footway', 'bridleway', 'cycleway'].includes(h)) {
+  // Footways and cycleways hidden in every focus (Julien, 2026-11-19): a motorbike may never ride them, and in towns
+  // they are dense clutter beside the roads. A motorcycle yes still makes them a single track.
+  if (['footway', 'cycleway'].includes(h)) return access(t) === 'yes' ? { kind: 'single', level: vehicle(t) } : { kind: 'skip' };
+  if (['path', 'bridleway'].includes(h)) {
     if (t.smoothness === 'impassable') return { kind: 'dots', level: 'impassable' };
     const a = access(t);
     if (a === 'no') return { kind: 'closedPath' };
@@ -114,14 +124,15 @@ function look(t) {
 }
 
 // ---------- Geometry ----------
-const px = (lon) => ((lon + 180) / 360) * 256 * 2 ** Z;
-const py = (lat) => { const r = (lat * Math.PI) / 180; return ((1 - Math.asinh(Math.tan(r)) / Math.PI) / 2) * 256 * 2 ** Z; };
-const M_PER_PX = (lat) => (40075016.686 * Math.cos((lat * Math.PI) / 180)) / (256 * 2 ** Z);
+const px = (lon, z = Z) => ((lon + 180) / 360) * 256 * 2 ** z;
+const py = (lat, z = Z) => { const r = (lat * Math.PI) / 180; return ((1 - Math.asinh(Math.tan(r)) / Math.PI) / 2) * 256 * 2 ** z; };
+const M_PER_PX = (lat, z = Z) => (40075016.686 * Math.cos((lat * Math.PI) / 180)) / (256 * 2 ** z);
 
 async function load(country, views) {
   const boxes = views.map((v) => {
-    const x0 = px(v.lon) - CW / 2, y0 = py(v.lat) - CH / 2;
-    return { v, x0, y0, ways: [] };
+    const z = v.z ?? Z;
+    const x0 = px(v.lon, z) - CW / 2, y0 = py(v.lat, z) - CH / 2;
+    return { v, x0, y0, k: 2 ** (z - Z), ways: [] };
   });
   for (const file of [`${country}-ways`, `${country}-service`]) {
   const rl = createInterface({ input: createReadStream(new URL(`../pbf/${file}.geojsonseq`, import.meta.url)), crlfDelay: Infinity });
@@ -132,7 +143,7 @@ async function load(country, views) {
     if (f.geometry?.type !== 'LineString') continue;
     const pts = f.geometry.coordinates.map(([lon, lat]) => [px(lon), py(lat)]);
     for (const b of boxes) {
-      const local = pts.map(([x, y]) => [x - b.x0, y - b.y0]);
+      const local = pts.map(([x, y]) => [x * b.k - b.x0, y * b.k - b.y0]);
       if (local.some(([x, y]) => x > -20 && x < CW + 20 && y > -20 && y < CH + 20)) b.ways.push({ tags: f.properties, pts: local });
     }
   }
@@ -141,7 +152,7 @@ async function load(country, views) {
 }
 
 // Length inside the crop, in metres, per look (clipped by sampling each segment).
-function lengthInside(pts, lat) {
+function lengthInside(pts, lat, z = Z) {
   let m = 0;
   for (let i = 1; i < pts.length; i++) {
     const [a, b] = [pts[i - 1], pts[i]];
@@ -151,7 +162,7 @@ function lengthInside(pts, lat) {
       if (x >= 0 && x <= CW && y >= 0 && y <= CH) m += Math.hypot(b[0] - a[0], b[1] - a[1]) / n;
     }
   }
-  return m * M_PER_PX(lat);
+  return m * M_PER_PX(lat, z);
 }
 
 // ---------- Drawing ----------
@@ -170,11 +181,14 @@ const stroke = (pts, { color, width, dash = null, cap = null }) =>
 //         little thinner than roads; single tracks and paths hidden (no four-wheeler or heavy bike uses them).
 //   trail: scheme D, single tracks stronger (dirtbike:scale symbols: documented only, not drawn).
 const FOCUS = {
-  road: { title: 'Road riding: paved leads, dirt fades, no single tracks', bandOpacity: 0.3, trackOpacity: 0.3, paths: false, pavedCasing: MINOR_CASING_ROAD },
+  // Road riding: dirt tracks and closed tracks hidden, not grey (grey = you may not ride it, false for a dirt track);
+  // paved tracks kept as narrow roads (Julien, 2026-11-19).
+  road: { title: 'Road riding: paved leads, dirt band faded, no dirt tracks, no paths', bandOpacity: 0.3, dirtTracks: false, paths: false, pavedCasing: MINOR_CASING_ROAD },
   adventure: { title: 'Adventure riding (and 4WD): dirt roads lead, all double tracks, no single tracks', band: [0.75, 0.55], trackW: 2, paths: false },
   // dirtbike:scale symbols: not rendered for now (Julien, 2026-11-19), documented in E-tracks 6.4 only. Set
   // symbols: true and pass SYMBOL_LEGEND to the focus sheet to draw them again.
-  trail: { title: 'Trail riding: scheme D, single tracks stronger', singleW: 2.2, symbols: false },
+  // Trail riding: paved roads softer (60%), the brown band on dirt roads at full strength (Julien, 2026-11-19).
+  trail: { title: 'Trail riding: single tracks stronger, paved roads at 60%', singleW: 2.2, symbols: false, pavedRoadOpacity: 0.6 },
 };
 // dirtbike:scale symbols (trail focus), drawn with dashes only so core-legacy can draw them too, black on a white
 // halo (a second, wider line with the same dashes). Count and length carry the level, no colour and no shape (dots
@@ -208,11 +222,14 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork) {
   const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
   const tOp = F.trackOpacity ?? 1, bOp = F.bandOpacity ?? 1;
   const op = (o) => (o < 1 ? `<g opacity="${o}">` : '<g>');
-  const L = { service: [], dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], band: [], sym: [] };
+  const L = { service: [], closedRoad: [], dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], band: [], sym: [] };
   const roads = [];
   for (const w of ways) {
     const k = w.look;
     const greyStyle = closed.track.color === GREY;
+    const dirt = F.dirtTracks ?? true;
+    if (k.kind === 'closedRoad') { L.closedRoad.push(stroke(w.pts, { color: GREY, width: ROAD[w.tags.highway][1] })); continue; }
+    if (!dirt && (k.kind === 'closedTrack' || (k.kind === 'track' && k.level !== 'paved') || (k.kind === 'dots' && w.tags.highway === 'track'))) continue;
     if (k.kind === 'dots' && greyStyle && w.tags.highway === 'track') L.closed.push(stroke(w.pts, closed.track));
     else if (k.kind === 'dots' && greyStyle) { if (paths) L.dots.push(stroke(w.pts, closed.path)); }
     else if (k.kind === 'dots') { if (paths) L.dots.push(stroke(w.pts, { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' })); }
@@ -251,11 +268,19 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork) {
     const sf = service.map((w) => fillOf(w, 'minor', SPEC.classes.minor, ROAD.service[1])).join('');
     L.service.push(`<g opacity="${SERVICE_OPACITY}">${sc}${sf}</g>`);
   }
-  for (const w of main) {
+  // Trail riding: paved roads in their own group at reduced opacity, under the dirt roads.
+  const soft = F.pavedRoadOpacity ? main.filter((w) => w.look.level === 'paved') : [];
+  const full = F.pavedRoadOpacity ? main.filter((w) => w.look.level !== 'paved') : main;
+  if (soft.length) {
+    const sc = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return stroke(w.pts, { color: casingOf(w, cls, SPEC.classes[cls]), width: width + cas.extra }); }).join('');
+    const sf = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return fillOf(w, cls, SPEC.classes[cls], width); }).join('');
+    L.service.push(`<g opacity="${F.pavedRoadOpacity}">${sc}${sf}</g>`);
+  }
+  for (const w of full) {
     const [cls, width] = ROAD[w.tags.highway];
     L.casing.push(stroke(w.pts, { color: casingOf(w, cls, SPEC.classes[cls]), width: width + cas.extra }));
   }
-  for (const w of main) {
+  for (const w of full) {
     const [cls, width] = ROAD[w.tags.highway];
     L.fill.push(fillOf(w, cls, SPEC.classes[cls], width));
   }
@@ -275,7 +300,8 @@ function legend(closed) {
     ['Track: high clearance | 4WD', sw([{ color: RAMP.high, width: TRACK_W }]), sw([{ color: RAMP.fourwd, width: TRACK_W }])],
     ...(closed.track.color === GREY
       ? [['Single track (motorcycle=yes)', sw([{ color: RAMP.unpaved, width: PATH_W, dash: SINGLE }]), ''],
-         ['You may not ride it: track | path', sw([closed.track]), sw([closed.path])]]
+         ['You may not ride it: track | path', sw([closed.track]), sw([closed.path])],
+         ['Closed road | driveway (z16+)', sw([{ color: GREY, width: 4.5 }]), sw([{ color: GREY, width: 3 }])]]
       : [['Single track (motorcycle=yes) | path, nobody said yes', sw([{ color: RAMP.unpaved, width: PATH_W, dash: SINGLE }]), sw([{ color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' }])],
          ['Closed: track | path', sw([closed.track]), sw([closed.path])]]),
   ];
@@ -335,17 +361,17 @@ const NAMES = {
   'road paved': 'Paved road', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
   'track paved': 'Paved track', 'track unpaved': 'Unpaved track', 'track high': 'High-clearance track', 'track fourwd': '4WD track',
   'single unpaved': 'Single track', 'single high': 'Single track, high clearance', 'single fourwd': 'Single track, 4WD', 'single paved': 'Single track, paved',
-  'dots no answer': 'Path, nobody said yes', 'dots impassable': 'Impassable', service: 'Service road (faded)', 'service closed': 'Service road, private or no (grey)', closedTrack: 'Closed track', closedPath: 'Closed path',
+  'dots no answer': 'Path, nobody said yes', 'dots impassable': 'Impassable', service: 'Service road (faded)', 'service closed': 'Service road, private or no (grey)', closedTrack: 'Closed track', closedPath: 'Closed path', closedRoad: 'Closed road (grey)', driveway: 'Driveway (grey)',
 };
 for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
   const boxes = await load(country, VIEWS.filter((v) => v.country === country));
   for (const { v, ways } of boxes) {
     const km = {};
     for (const w of ways) {
-      w.look = look(w.tags);
+      w.look = look(w.tags, v.z ?? Z);
       if (w.look.kind === 'skip') continue;
-      const key = w.tags.highway === 'service' ? (w.look.kind === 'closedTrack' ? 'service closed' : 'service') : w.look.level ? `${w.look.kind} ${w.look.level}` : w.look.kind;
-      km[key] = (km[key] ?? 0) + lengthInside(w.pts, v.lat) / 1000;
+      const key = w.tags.service === 'driveway' ? 'driveway' : w.tags.highway === 'service' ? (w.look.kind === 'closedRoad' ? 'service closed' : 'service') : w.look.level ? `${w.look.kind} ${w.look.level}` : w.look.kind;
+      km[key] = (km[key] ?? 0) + lengthInside(w.pts, v.lat, v.z ?? Z) / 1000;
     }
     const rows = Object.entries(km).filter(([, k]) => k >= 0.05).sort((a, b) => b[1] - a[1]);
     const trackKm = rows.filter(([k]) => k.startsWith('track') || k === 'closedTrack').reduce((s, [, k]) => s + k, 0);
@@ -353,12 +379,13 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
     console.error(`${v.name}: ` + rows.map(([k, n]) => `${NAMES[k] ?? k} ${n.toFixed(1)}`).join(', ') + `; closed ${closedShare.toFixed(1)}% of track km`);
     const stats = `<b>In this crop</b> (km): ` + rows.map(([k, n]) => `${esc(NAMES[k] ?? k)} ${n.toFixed(1)}`).join(', ') +
       `. Closed: ${closedShare.toFixed(1)}% of track km.`;
-    const panels = (v.closedVariants ?? ['thin']).map((key) => ({ key, badge: v.closedVariants ? BADGE[key] : null, title: v.closedVariants ? CLOSED[key].title : `${v.name}, z15`, closed: CLOSED[key], svg: drawCrop(ways, CLOSED[key]), stats }));
+    const panels = (v.closedVariants ?? ['thin']).map((key) => ({ key, badge: v.closedVariants ? BADGE[key] : null, title: v.closedVariants ? CLOSED[key].title : `${v.name}, z${v.z ?? Z}`, closed: CLOSED[key], svg: drawCrop(ways, CLOSED[key]), stats }));
     sheet(`fork-crop-${v.name}.svg`,
-      `Fork, real data: ${v.name} at z15 (${v.note})`,
+      `Fork, real data: ${v.name} at z${v.z ?? Z} (${v.note})`,
       `Scheme D tracks and paths with the solid band on Unpaved roads (E-tracks 6.4), from the tags of the Geofabrik 2026-11-12 extract. ${CW} x ${CH} dp around ${v.lat}, ${v.lon}; highways only, no landuse. Light mode.`,
       panels);
     // Riding focus sheets: the same crop three ways, closed ways grey.
+    if (v.noFocus) continue;
     const fpanels = Object.keys(FOCUS).map((f) => ({ key: f, badge: BADGE[f], title: FOCUS[f].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, f), stats }));
     sheet(`fork-focus-${v.name}.svg`,
       `Fork, riding focus: ${v.name} at z15 (${v.note})`,

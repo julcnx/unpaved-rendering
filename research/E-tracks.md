@@ -200,8 +200,8 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 
 **Routing already matches (OsmAnd-resources `routing/routing.xml`, commit 85815c678, 2026-08-19).** The motorcycle profile is derived from the car profile. Its `access` attribute takes the first rule that matches, checked in this order: `motorcycle`, then `motorcar`, `motor_vehicle`, `vehicle`, then `highway` cycleway, footway and path, then `access`. The values `no`, `agricultural`, `forestry` (and both combined) give -1 (no access). `private` gives -1 unless the "Allow private access" setting is on. `yes`, `permissive`, `designated`, `destination` and `customers` give access. So:
 
-- Closed ways are not routed through, with no custom `routing.xml` needed. This holds for every value the fork draws grey except `destination`.
-- `destination` is routable, with a penalty, so it is used only to reach a place on it. Grey still fits: you may not ride through it.
+- Closed ways are not routed through, with no custom `routing.xml` needed. This holds for every value the fork draws grey.
+- `destination` is routable, with a penalty, so it is used only to reach a place on it. Since 2026-11-19 the fork no longer draws it grey (see "Closed roads, driveways" below), so map and router agree.
 - Paths are blocked unless a `motorcycle`, `motorcar`, `motor_vehicle` or `vehicle` tag says yes, so the router also follows "dots = nobody said yes".
 - One mismatch, on OsmAnd's side: `motorcar=no` with no `motorcycle` tag blocks motorcycles in the router, while the map (rightly) draws the way open, since `motorcar` does not cover motorcycles. Rare; worth an issue to OsmAnd later, not a fork change.
 
@@ -209,12 +209,13 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 
 | | Road riding | Adventure riding (and 4WD) | Trail riding |
 |---|---|---|---|
-| Paved roads | lead: darker casing `#6f6f6f` on white roads | class colours | class colours |
+| Paved roads | lead: casings one step darker on white roads | class colours | **at 60%** (2026-11-19) |
 | Unpaved and Off-road roads | band faded to 30% | **lead**: band 75% of the fill (55% on white roads) | band 60% / 40% (scheme D) |
 | Paved tracks | lead: darker casing | as scheme D | as scheme D |
-| Dirt tracks | faded to 30% | **all kept, full vehicle ladder**, 2 dp instead of 2.5 | as scheme D |
-| Single tracks, paths | hidden | hidden | **lead**: single tracks 2.2 dp; dots |
-| Closed | grey, faded | grey | grey |
+| Dirt tracks | **hidden** (2026-11-19; was faded); paved tracks kept as narrow roads | **all kept, full vehicle ladder**, 2 dp instead of 2.5 | as scheme D |
+| Single tracks, paths, bridleways | hidden | hidden | **lead**: single tracks 2.2 dp; paths grey dashed |
+| Footways, cycleways | hidden | hidden | hidden (2026-11-19) |
+| Closed | roads grey; closed tracks hidden | grey | grey |
 | `dirtbike:scale` | | | not rendered for now (documented below) |
 
 - **4WD fits Adventure** because Adventure keeps the whole ladder instead of fading the hard tracks: a heavy bike reads near black as "stop", a 4WD driver as the goal; same line, each reader decides. Neither uses single tracks, so both lose them.
@@ -253,6 +254,15 @@ One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and 
 - **Service roads faded by default**: they are often private (Julien). Driveways, parking aisles and drive-throughs are left out at z15 (OSM Carto shows them from z16). A service road whose first access answer is no, private, agricultural, forestry or destination is grey like any way you may not ride. In the crops: thailand-1 15.3 km faded and 2.3 km grey; switzerland-1 9.3 km and 2.3 km.
 - **Road riding focus** darkens each step once (`#4f4f4f`, `#6f6f6f`, `#8f8f8f`) on paved white roads.
 - Data: `pbf/<country>-service.geojsonseq`, extracted on 2026-11-19 from the same Geofabrik files (commands at the top of `mockups/make-fork-crops.mjs`). Every crop and focus sheet is redrawn with this; the casing comparison sheets stay as drawn.
+
+**Closed roads, driveways, footways, and the focus changes (Julien, 2026-11-19).**
+
+- **Closed roads grey.** A road of any class whose first access answer (`motorcycle`, `motor_vehicle`, `vehicle`, `access`) is no, private, agricultural or forestry is a solid grey `#c4bdb4` line at its own width, with no casing, class colour or band. In the crops: 1.4 km in thailand-1, 1.7 km in switzerland-1.
+- **`destination` is not a no any more**, on roads, tracks and paths. It is common on residential streets, and OsmAnd routes it to reach a place on it. Closed track in switzerland-2: 17.4% of track km (was 18.5%).
+- **Service roads**: faded white by default; grey when private or no; `service=driveway` grey (a driveway leads to a private house or plot), from z16 only, since driveways are too dense at z15 (OSM Carto shows them from z16). Parking aisles and drive-throughs also from z16, faded. Zoom 16 check: [mockups/fork-crop-switzerland-1-z16.png](mockups/fork-crop-switzerland-1-z16.png) (2.1 km of driveways in the crop; widths kept at their z15 values, so roads look thinner than OsmAnd would draw them).
+- **Footways and cycleways hidden in every focus**: a motorbike may never ride them, and in towns they are dense clutter beside the roads (switzerland-1: paths in the crop drop from 54.8 to 16.1 km). With `motorcycle=yes` they stay a brown single track. Paths and bridleways stay grey dashed in Trail riding.
+- **Road riding**: dirt tracks and closed tracks hidden, not grey, since grey says "you may not ride it", which is false for a dirt track. Paved tracks stay as narrow roads; Unpaved roads keep the faded band.
+- **Trail riding**: paved roads drawn at 60% (casing and fill), under the dirt roads, whose brown band stays at full strength.
 
 ### 6.5 Background, hillshade and contours (to evaluate)
 
