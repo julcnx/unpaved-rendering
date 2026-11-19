@@ -386,6 +386,19 @@ Reading:
 
 **Drawn on real landcover (2026-11-19)**: [mockups/fork-land-thailand-1.png](mockups/fork-land-thailand-1.png), [mockups/fork-land-switzerland-1.png](mockups/fork-land-switzerland-1.png), [mockups/fork-land-switzerland-2.png](mockups/fork-land-switzerland-2.png), [mockups/fork-land-chiangrai.png](mockups/fork-land-chiangrai.png): High vis 2 over Carto, Motorcycle and the proposal, with the landcover of the Geofabrik 2026-11-12 extract (landuse, natural, waterway and leisure=park around each view: `pbf/land-<view>.geojsonseq`, commands in `mockups/make-fork-crops.mjs`; about 120 to 290 areas per view, only 17 features at Chiang Rai, where landcover is barely mapped). Reading (Claude): in Carto's forest the tracks and the grey "may not ride" ways almost disappear (Phuket hills, thailand-1), as the contrast table predicted; Motorcycle and the proposal keep the brown ramp, the grey and the white roads readable in forest; the proposal's near-white land makes open land a little crisper than Motorcycle's cream, and its forest is about the same. Proposal stands, to confirm by Julien. Hillshade and contours not drawn yet (no elevation data here).
 
+**Water, fords and bridges (2026-11-19, Claude's advice, Julien to confirm).** All three come from OsmAnd's default style, which the minimal style inherits:
+
+- **Rivers kept**, recoloured to the background's water `#9cc3ea` (one colour override). They are the main landmark outside towns, and a ford needs its river to make sense.
+- **Fords kept as OsmAnd draws them**: its maps keep `ford=yes` and `ford=stepping_stones` from z14 (`rendering_types.xml`, which also turns `flood_prone=yes` into a ford), and `default.render.xml` draws a ford icon in a small shield on ford nodes and ways (lines 5121, 6600-6602). Check in the first test render that the icon reads on the 1.5 x tracks and at z14; scale it up only if needed. Routing already has an "avoid fords" setting (`avoid_ice_roads_fords`).
+- **Bridges inherited**: they tell the rider there is no ford.
+
+**Hillshade and contours: plan (2026-11-19, waiting for Julien).**
+
+- In OsmAnd the style controls **contour lines** (colour, width, minimum zoom; from OsmAnd's separate contour-line downloads), but **hillshade** is a raster layer of the Terrain plugin whose opacity the rider sets. So the question for the style is how strong the hillshade may get before the ramp and the grey suffer; the answer becomes the recommended opacity in the docs.
+- Data: Copernicus GLO-30 DEM, public on AWS without an account, tiles N07E098 (thailand-1), N20E099 (chiangrai), N47E008 (switzerland-1), N46E007 (switzerland-2), about 30 to 40 MB each, into the git-ignored `pbf/`.
+- Tools: GDAL is installed but broken (Homebrew library mismatch: `libabsl` missing for apache-arrow). Either `brew upgrade gdal` (changes the system, Julien's call) or compute hillshade and contours in Python without GDAL.
+- Variants on thailand-1 and switzerland-2 over the proposed background: A no hillshade, contours grey, faint, 0.5 dp, 20 m; B neutral grey hillshade about 25%; C about 50% plus 100 m index contours a little darker. Measure each ramp step, the grey and the road casings on the darkest slope, and add it to the score.
+
 Deliverable: [mockups/picks-combined.png](mockups/picks-combined.png) redrawn over three or four background candidates (land and landcover, hillshade, contours), with the contrast of each ramp step measured on the darkest slope.
 
 ## 7. Test plan
