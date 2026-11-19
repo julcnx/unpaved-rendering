@@ -348,6 +348,38 @@ Starting point, the Motorcycle plugin (`enduro.render.xml`): forest `#dce6d0`, s
 
 To review: the OsmAnd Motorcycle plugin, Gaia GPS (Topo), cycle.travel; OpenTopoMap and a national topo map as the brown-contour counterexample. Same views as the track round (Chiang Rai flat, and a Swiss alpine view for slopes and contours); the track-round shots already cover Gaia GPS.
 
+**Land colour research (2026-11-19).** Julien likes the light backgrounds of AdvOSM, Gaia GPS and the OsmAnd Motorcycle plugin. Colours read from the style sources where available, otherwise sampled from the track-round screenshots (most common colours, 4-level steps, so about +-2 per channel):
+
+| Map | Land | Forest | Grass, meadow | Farmland | Water | Source |
+|---|---|---|---|---|---|---|
+| OSM Carto | `#f2efe9` | `#add19e` | `#cdebb0` | `#eef0d5` | `#aad3df` | style (forest confirmed in the screenshot, `#acd09c`) |
+| OsmAnd default | `#ebe7e4` | `#87cc70` | `#94d77b` (meadow `#91d47b`) | none | `#5cc3e5` | `default.render.xml` (`defaultColor`, `woodColor`, `grassColor`, `waterColor`) |
+| OsmAnd Motorcycle | `#f9f9ef` | `#dce6d0` (scrub `#e9efd9`) | `#e3f6e3` | `#f9f9ef` (as land) | `#80b0ff` | `enduro.render.xml` f0676ed (`defaultColor`, `foret`, `broussaille`, `herbe`, `culture`, `eau`); a grey mode exists (`gris`: land `#f0f0f0`, forest `#c9d6c9`) |
+| AdvOSM (Garmin) | about `#fcfcfc` (white) | about `#ccf0cc` | | | about `#3090f0` | sampled, Tanzania screenshot |
+| Gaia GPS | about `#f0f0dc` | about `#d6e4ce` | | | | sampled, track-round screenshots (Switzerland, Thailand); its hillshade blends in |
+| Komoot (for comparison) | about `#e8ecd4` | about `#c8d498` | | | | sampled |
+
+What the light maps share: land near white (AdvOSM pure white, Motorcycle and Gaia a faint warm or yellow cream), forest a pale green only 1.15 to 1.24 in contrast from the land (Carto 1.48, OsmAnd default 1.57), farmland not drawn or drawn as land, few other fills. OsmAnd's default is the opposite: grey-beige land and a strong green.
+
+Contrast of the fork's colours (High vis 2) on land / on forest:
+
+| Background | Unpaved track | Grey (may not ride) | Residential casing | White road fill | Secondary fill | Primary fill |
+|---|---|---|---|---|---|---|
+| Carto | 3.30 / 2.23 | 1.62 / 1.10 | 2.82 / 1.91 | 1.15 / 1.69 | 1.17 / 1.26 | 2.20 / 1.49 |
+| OsmAnd default | 3.08 / 1.97 | 1.51 / 1.04 | 2.63 / 1.68 | 1.23 / 1.93 | 1.09 / 1.43 | 2.05 / 1.31 |
+| Motorcycle | 3.57 / 2.93 | 1.76 / 1.44 | 3.05 / 2.51 | 1.06 / 1.29 | 1.27 / 1.04 | 2.38 / 1.95 |
+| Gaia (sampled) | 3.28 / 2.86 | 1.61 / 1.40 | 2.80 / 2.44 | 1.15 / 1.33 | 1.17 / 1.02 | 2.19 / 1.90 |
+| AdvOSM (sampled) | 3.79 / 3.05 | 1.86 / 1.50 | 3.23 / 2.60 | 1.00 / 1.24 | 1.35 / 1.08 | 2.52 / 2.03 |
+| **Proposal** | **3.63 / 3.08** | **1.78 / 1.52** | **3.10 / 2.63** | 1.04 / 1.23 | 1.29 / 1.10 | 2.42 / 2.06 |
+
+Reading:
+
+- **The forest colour matters more than the land colour.** In Carto and OsmAnd forest, the Unpaved track falls to 2.2 and 2.0 and the grey of "may not ride" disappears (1.10, 1.04). Under a pale forest (Motorcycle, Gaia, AdvOSM) tracks keep about 3 and the grey stays visible. Most Thai and Swiss tracks run through forest or farmland, so this is where the map is read.
+- **Lighter land helps every line a little** (Unpaved 3.30 on Carto land to 3.63 to 3.79 on near-white) and costs only the white road fill, which then has no contrast at all (1.00 to 1.06). With casing B the roads are carried by their edges, so this is acceptable, as on the Garmin maps.
+- **The yellow secondary fill is weak on any light background** (1.0 to 1.35); it reads by saturation and its casing, as on AdvOSM.
+
+**Proposal for the fork** (Claude, to check on the crops): land `#fbfaf6` (near white, a trace of warmth so it is not a blank screen in the dark), forest `#e2ebd8` (between Motorcycle and Gaia), grass and meadow `#edf3e4`, scrub as grass, farmland not drawn (as land, as Motorcycle), residential areas a very light grey `#f1f0ed` or not drawn, water `#9cc3ea` (a clear blue, lighter than AdvOSM's, still blue at a glance). Same principle as the plugin's: landcover only tells forest from open land, everything else is left to the lines. Next: extract the landcover of the crop views (osmium, landuse and natural polygons) and draw High vis 2 over Carto, Motorcycle and the proposal, which is the deliverable below.
+
 Deliverable: [mockups/picks-combined.png](mockups/picks-combined.png) redrawn over three or four background candidates (land and landcover, hillshade, contours), with the contrast of each ramp step measured on the darkest slope.
 
 ## 7. Test plan
