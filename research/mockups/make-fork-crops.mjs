@@ -241,6 +241,7 @@ const HIVIS = {
 // tritanopia (15.2). Crimson-rose trunk, deeper orange primary. Score 6.7 -> 8.2 (AdvOSM 9.1).
 const HIVIS2 = {
   ...HIVIS,
+  land: '#fbfaf6', // the proposed near-white land (Julien, 2026-11-19: kept over the Motorcycle plugin's, easier to read)
   classes: {
     trunk: { ...SPEC.classes.trunk, fill: '#d6336c', casing: '#7a1236' },
     primary: { ...SPEC.classes.primary, fill: '#ef8a1f', casing: '#8a4a08' },
