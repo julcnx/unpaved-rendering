@@ -364,7 +364,9 @@ OK, I dropped the PossibleSynonym idea. Thanks for adding them to your dubious-t
 For `cement` and `brick`, I'm preparing the proposal and will post the link here.
 ```
 
-## Wiki sentence for Tag:surface=chipseal (draft, not edited)
+## Wiki sentence for Tag:surface=chipseal
+
+Added by Julien on 2026-11-18 (01:40 UTC), as drafted below.
 
 Edit at: https://wiki.openstreetmap.org/w/index.php?title=Tag:surface%3Dchipseal&action=edit
 
