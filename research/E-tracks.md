@@ -226,9 +226,18 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 
 - **The data is already in the maps.** `obf_creation/rendering_types.xml` (category `dirtbike:scale`, lines 3105-3114) turns every way with `dirtbike:scale` into a `route_dirtbike` line and keeps the values 0 to 5 as additional tags from z12; 6 is commented out. No map change is needed.
 - **OsmAnd already draws it**, in `rendering_styles/routes.addon.render.xml` (lines 1273-1291, setting `showDirtbikeTrails`): a 6 to 13 dp line with round caps and `pathEffect` 1_20 to 1_70, which gives coloured dots along the way, green to maroon by value. That is a dash pattern, so it works in core-legacy too.
-- **Symbols with dashes only**: a round cap on a near-zero dash is a dot, a butt cap with dash = width is a square, and two dashes close together make a pair. So dots, pairs and squares work in every renderer; a diamond does not (a shape needs `pathIcon`, OpenGL only, as found in the grain test). Proposal, black on a white halo, every 48 dp: 0-1 one dot, 2 two dots, 3 one square, 4-5 two squares. Shape and count carry the level, no colour (green and blue would clash with the ramp and with water). The halo is a second line layer (`strokeWidth_2`, `pathEffect_2`). Not yet tried in `osmand-render`.
+- **Symbols with dashes only**: a round cap on a near-zero dash is a dot, a butt cap with dash = width is a square, and two dashes close together make a pair. So dots, pairs and squares work in every renderer; a diamond does not (a shape needs `pathIcon`, OpenGL only, as found in the grain test). Proposal, black on a white halo, every 48 dp: 0-1 one dot, 2 two dots, 3 three dots, 4-5 a bar (10 dp). Count and length carry the level, no colour (green and blue would clash with the ramp and with water) and no shape: the first set (dots, pairs, squares) could not be told apart at 4 dp (Julien, 2026-11-19). Every mark is a round-cap dash, so the halo is the same dashes, wider. The halo is a second line layer (`strokeWidth_2`, `pathEffect_2`). Not yet tried in `osmand-render`.
 - **Labels from the tag are not possible**: core-legacy text comes from name tags only (`renderText`), and `dirtbike:scale` is an additional tag, not a name, so a "2" shield cannot be drawn from it.
 - **Data**: none in the three views and none in Switzerland. The symbols are shown on a sample line in the legend only.
+
+**Paths dashed grey, not dotted (Julien, 2026-11-19).** The pattern says what kind of way it is, the colour whether you may ride it:
+
+| | You may ride it | You may not |
+|---|---|---|
+| Solid (double track) | brown, by vehicle needed | grey |
+| Dashed (single track, 7/3) | brown, by vehicle needed | grey |
+
+One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and paths, paths nobody said yes to (no `motorcycle`, `motor_vehicle`, `vehicle` or `access` answer), hiking paths, and `smoothness=impassable` (solid on a track, dashed on a path). No dots are left in the scheme, and the two greys of the first grey version (dark dots `#6b6b6b`, light closed tracks) become one. This replaces the dots of 2026-11-13: "nobody said yes" is no longer a look of its own, it is grey like a "no". A hiking path now reads as what it is for a rider, a single track you may not ride. Drawn in every grey panel and focus sheet; density check in [mockups/fork-crop-switzerland-1.png](mockups/fork-crop-switzerland-1.png) (55 km of paths in the crop: dots, dashes 1.75 dp, dashes 1.4 dp). Reading: the grey dashes are quieter than the dark dots, though more continuous; at Chiang Rai brown and grey dashes are clearly apart. 1.4 dp is calmer in towns; whether forbidden paths should be thinner than rideable single tracks (1.75 dp) is for Julien.
 
 ### 6.5 Background, hillshade and contours (to evaluate)
 
