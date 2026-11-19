@@ -8,19 +8,19 @@
 // Each crop is CW x CH dp of a z15 view (256 px tiles) around the view centre; PNG at 2 x (a phone at density 2).
 // Widths in dp are the estimates of make-track-mockups.mjs (not OsmAnd's own).
 // Usage (from research/): node mockups/make-fork-crops.mjs && node mockups/svg2png.mjs mockups/fork-crop-*.svg
-import { createReadStream, writeFileSync } from 'node:fs';
+import { createReadStream, existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { createInterface } from 'node:readline';
 import SPEC from '../../js/style-spec.js';
 import { classifyDetailed } from '../../js/classify.js';
 
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
-  { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks' },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true },
+  { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks', landCheck: true },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true, landCheck: true },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
-  { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'] },
+  { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'], landCheck: true },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
-  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], hivis: true },
+  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], hivis: true, landCheck: true },
   // Same centre at z16: driveways appear (grey), the rest as at z15 (widths kept at their z15 values).
   { country: 'switzerland', name: 'switzerland-1-z16', z: 16, lat: 47.69867, lon: 8.62427, note: 'driveways from z16', closedVariants: ['grey'], noFocus: true },
 ];
@@ -281,7 +281,7 @@ function shields(roads, K) {
   return out;
 }
 
-function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P) {
+function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P, under = null) {
   // P: palette override (HIVIS below): saturated class colours, every width x widthK, dark edge on the dirt band
   // inside coloured roads, ref shields. null = the OSM Carto based palette.
   const K = P?.widthK ?? 1;
@@ -361,7 +361,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
   }
   if (P?.shields) L.sym.push(shields(full, K));
   const out = Object.entries(L).map(([key, a]) => (['track', 'single', 'dots', 'closed'].includes(key) ? op(tOp) : '<g>') + a.join('') + '</g>');
-  return `<rect width="${CW}" height="${CH}" fill="${P?.land ?? LAND}"/>` + out.join('');
+  return (under ?? `<rect width="${CW}" height="${CH}" fill="${P?.land ?? LAND}"/>`) + out.join('');
 }
 
 // Legend swatches (60 dp lines).
@@ -453,6 +453,58 @@ const CONTRAST = (() => {
   return { svg, h: 20 + rows.length * 18 + 14 };
 })();
 
+// ---------- Landcover (E-tracks 6.5, 2026-11-19) ----------
+// pbf/land-<view>.geojsonseq: landuse, natural, waterway and leisure=park around each view (osmium extract -b, then
+// tags-filter and export from the Geofabrik 2026-11-12 files). Areas from their polygons only; rivers and streams as
+// lines. Three backgrounds: OSM Carto, the OsmAnd Motorcycle plugin (enduro.render.xml f0676ed) and the proposal.
+const LANDS = {
+  carto: { title: 'OSM Carto', land: '#f2efe9', forest: '#add19e', scrub: '#c8d7ab', grass: '#cdebb0', farmland: '#eef0d5', residential: '#e0dfdf', water: '#aad3df' },
+  moto: { title: 'OsmAnd Motorcycle plugin', land: '#f9f9ef', forest: '#dce6d0', scrub: '#e9efd9', grass: '#e3f6e3', farmland: null, residential: null, water: '#80b0ff' },
+  proposal: { title: 'Proposal: near-white land, pale forest', land: '#fbfaf6', forest: '#e2ebd8', scrub: '#edf3e4', grass: '#edf3e4', farmland: null, residential: '#f1f0ed', water: '#9cc3ea' },
+};
+const LAND_CLASS = (p) => {
+  const t = (k, ...v) => v.includes(p[k]);
+  if (t('landuse', 'forest') || t('natural', 'wood')) return 'forest';
+  if (t('natural', 'scrub', 'heath')) return 'scrub';
+  if (t('landuse', 'grass', 'meadow') || t('natural', 'grassland') || t('leisure', 'park')) return 'grass';
+  if (t('landuse', 'farmland', 'orchard', 'vineyard', 'plantation')) return 'farmland';
+  if (t('landuse', 'residential', 'commercial', 'industrial', 'retail')) return 'residential';
+  if (t('natural', 'water') || t('waterway', 'riverbank') || t('landuse', 'reservoir', 'basin')) return 'water';
+  return null;
+};
+const LAND_ORDER = ['farmland', 'residential', 'grass', 'scrub', 'forest', 'water'];
+function loadLand(v) {
+  const f = new URL(`../pbf/land-${v.name}.geojsonseq`, import.meta.url);
+  if (!existsSync(f)) return null;
+  const z = v.z ?? Z, x0 = px(v.lon, z) - CW / 2, y0 = py(v.lat, z) - CH / 2;
+  const P = ([lon, lat]) => [px(lon, z) - x0, py(lat, z) - y0];
+  const areas = [], lines = [];
+  for (const raw of readFileSync(f, 'utf8').split('\n')) {
+    const line = raw.replace(/^\x1e/, '');
+    if (!line) continue;
+    const ft = JSON.parse(line), g = ft.geometry, p = ft.properties;
+    if (g?.type === 'MultiPolygon' || g?.type === 'Polygon') {
+      const cls = LAND_CLASS(p);
+      if (!cls) continue;
+      const polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+      const dd = polys.map((poly) => poly.map((ring) => 'M' + ring.map((c) => P(c).map((n) => n.toFixed(1)).join(' ')).join('L') + 'Z').join('')).join('');
+      areas.push({ cls, d: dd });
+    } else if (g?.type === 'LineString' && ['river', 'stream', 'canal'].includes(p.waterway)) {
+      lines.push({ w: p.waterway === 'stream' ? 1.2 : 2.5, pts: g.coordinates.map(P) });
+    }
+  }
+  return { areas, lines };
+}
+function drawLand(land, pal) {
+  let out = `<rect width="${CW}" height="${CH}" fill="${pal.land}"/>`;
+  for (const cls of LAND_ORDER) {
+    if (!pal[cls]) continue;
+    out += land.areas.filter((a) => a.cls === cls).map((a) => `<path d="${a.d}" fill="${pal[cls]}" fill-rule="evenodd"/>`).join('');
+  }
+  out += land.lines.map((l) => stroke(l.pts, { color: pal.water, width: l.w })).join('');
+  return out;
+}
+
 // ---------- Run ----------
 const NAMES = {
   'road paved': 'Paved road', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
@@ -491,6 +543,13 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       sheet(`fork-hivis-${v.name}.svg`, `Fork, high visibility: ${v.name} at z${v.z ?? Z}`,
         'For a handlebar screen in sunlight and older eyes (Julien, 2026-11-19), after the AdvOSM Garmin and DMD2 review. Contrast of each colour against the land in the legend column.',
         hp, CONTRAST);
+    }
+    const land = v.landCheck ? loadLand(v) : null;
+    if (land) {
+      const lp = Object.entries(LANDS).map(([k, pal]) => ({ key: k, badge: { carto: 'Carto', moto: 'Moto', proposal: 'Proposal' }[k], title: pal.title,
+        closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, DEFAULT_P, drawLand(land, pal)), stats }));
+      sheet(`fork-land-${v.name}.svg`, `Fork, land colours: ${v.name} at z${v.z ?? Z}`,
+        `High vis 2 over three backgrounds, with the landcover of the Geofabrik 2026-11-12 extract (${land.areas.length} areas). Farmland not drawn in Moto and Proposal (as the plugin).`, lp);
     }
     if (v.rampCheck) {
       const rp = [
