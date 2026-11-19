@@ -287,6 +287,18 @@ One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and 
 - **High vis fails one measure**: its red trunk `#e8503a` and the brown Unpaved track are almost the same colour for red-green colour-blind riders (Delta E 7.5 with deuteranopia, 8.7 protanopia), and primary and secondary are close for tritanopia (15.2).
 - **High vis 2** fixes both: crimson-rose trunk `#d6336c` (casing `#7a1236`) and a deeper orange primary `#ef8a1f` (casing `#8a4a08`). Score 6.7 to 8.2; AdvOSM 9.1, mostly from its white land and higher fill contrast. Drawn as the third panel of the high-visibility sheets. Trade-off: the trunk moves away from the Carto red toward pink, so motorways (not in the extract, see below) will need a colour of their own, such as a dark blue or purple.
 
+**Decision (Julien, 2026-11-19): High vis 2 is the fork's palette.** Every crop and focus sheet is redrawn with it (`DEFAULT_P` in `mockups/make-fork-crops.mjs`; the high-visibility sheets keep the Carto palette as "Carto" for comparison).
+
+**How to make it better (2026-11-19, Claude's proposal, to rank with Julien).** The palette is near its ceiling: pure white land lifts the fill contrast only from 2.46 to 2.83 (and white roads then have only their casing), and the weakest pair left, primary and secondary under tritanopia (Delta E 19.5), barely moves with other yellows (14.5 to 20.8). The next gains are elsewhere:
+
+1. **Test on a real phone, outdoors.** Render the fork style in OsmAnd (`osmand-render`, then on a device at 100% and 150% magnifier) and look at it in sunlight on a handlebar mount. The score measures colours, not glare or a 6-inch screen.
+2. **Reader test round 3 with riders**, including older ones: the same method as rounds 1 and 2 (find the unpaved road, find the track you may ride), on fork crops instead of article styles. The only way to know whether the score's thresholds match people.
+3. **Thin out towns.** At 1.5 x widths, residential streets and service roads crowd towns (switzerland-1). Options: residential at 1.25 x instead of 1.5 x, service roads hidden below z16, or both.
+4. **Generalise for z10 to 13**, where trips are planned and where the Garmin look is strongest: only trunk to tertiary, Unpaved roads and Off-road tracks, road numbers.
+5. **Tracks a little wider**: 3.75 dp now (7.5 px), the score's target is 9 px (4.5 dp). Check it does not make tracks look like roads.
+6. **Shields**: tested at 13.5 px text; check on the phone, and decide whether unpaved main roads get a marked shield (for example a brown border).
+7. **Night version** of High vis 2 (dark land, the night ramp of 6.4).
+
 **Barriers (Julien, 2026-11-19: would rather not show them; could get ugly quickly).** Proposal: do not draw `barrier=gate` and the like, except a barrier node that blocks (`access`, `motorcycle` or `motor_vehicle` = no or private): a small light grey bar across the line, from z16. Do not grey the whole track: most gates are open or passable, a closed one blocks only part of the way, and the map cannot tell which side; OsmAnd routing already reads the access tags on barrier nodes. Not drawn (barrier nodes are not in the extract).
 
 **Still missing from the fork mockups (2026-11-19, priority order, Claude's proposal):**

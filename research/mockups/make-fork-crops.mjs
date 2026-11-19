@@ -242,6 +242,9 @@ const HIVIS2 = {
     secondary: HIVIS.classes.secondary,
   },
 };
+// The fork default since 2026-11-19 (Julien): High vis 2. Pass null for the OSM Carto based palette.
+const DEFAULT_P = HIVIS2;
+
 // Road number shields: one per ref, at the middle of its longest way in the crop, at least 260 dp apart for the
 // same ref. trunk to tertiary only.
 function shields(roads, K) {
@@ -268,7 +271,7 @@ function shields(roads, K) {
   return out;
 }
 
-function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = null) {
+function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P) {
   // P: palette override (HIVIS below): saturated class colours, every width x widthK, dark edge on the dirt band
   // inside coloured roads, ref shields. null = the OSM Carto based palette.
   const K = P?.widthK ?? 1;
@@ -350,7 +353,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = null) {
 // Legend swatches (60 dp lines).
 const sw = (parts) => parts.map((o) => stroke([[0, 0], [60, 0]], o)).join('');
 function legend(closed) {
-  const c = SPEC.classes;
+  const c = { ...SPEC.classes, ...(DEFAULT_P?.classes ?? {}) }; // swatch colours of the default palette
   return [
     ['Coloured road: paved | Unpaved', sw([{ color: c.primary.casing, width: 8.5 }, { color: c.primary.fill, width: 6.5 }]), sw([{ color: c.primary.casing, width: 8.5 }, { color: c.primary.fill, width: 6.5 }, { color: RAMP.unpaved, width: 3.9 }])],
     ['Unclassified: paved | Unpaved', sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }]), sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }, { color: RAMP.unpaved, width: 1.8 }])],
@@ -467,9 +470,9 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
     // Riding focus sheets: the same crop three ways, closed ways grey.
     if (v.hivis) {
       const hp = [
-        { key: 'now', badge: 'Now', title: 'Now: OSM Carto based palette, z15 widths', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey), stats },
+        { key: 'now', badge: 'Carto', title: 'Before: OSM Carto based palette, z15 widths', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, null), stats },
         { key: 'hivis', badge: 'High vis', title: 'High visibility: saturated fills, 1.5 x widths, dark band edge, road numbers', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, HIVIS), stats },
-        { key: 'hivis2', badge: 'High vis 2', title: 'High vis 2: crimson-rose trunk, deeper orange (colour-blind safe)', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, HIVIS2), stats },
+        { key: 'hivis2', badge: 'High vis 2', title: 'High vis 2 (the fork default): crimson-rose trunk, deeper orange, colour-blind safe', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, HIVIS2), stats },
       ];
       sheet(`fork-hivis-${v.name}.svg`, `Fork, high visibility: ${v.name} at z${v.z ?? Z}`,
         'For a handlebar screen in sunlight and older eyes (Julien, 2026-11-19), after the AdvOSM Garmin and DMD2 review. Contrast of each colour against the land in the legend column.',
