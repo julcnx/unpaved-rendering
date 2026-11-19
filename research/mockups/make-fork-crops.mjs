@@ -151,11 +151,13 @@ const stroke = (pts, { color, width, dash = null, cap = null }) =>
 //         single tracks and paths hidden.
 //   adventure (and 4WD): dirt roads lead (wider band); every double track kept with the full vehicle ladder, a
 //         little thinner than roads; single tracks and paths hidden (no four-wheeler or heavy bike uses them).
-//   trail: scheme D, single tracks stronger, dirtbike:scale symbols where tagged.
+//   trail: scheme D, single tracks stronger (dirtbike:scale symbols: documented only, not drawn).
 const FOCUS = {
   road: { title: 'Road riding: paved leads, dirt fades, no single tracks', bandOpacity: 0.3, trackOpacity: 0.3, paths: false, pavedCasing: '#6f6f6f' },
   adventure: { title: 'Adventure riding (and 4WD): dirt roads lead, all double tracks, no single tracks', band: [0.75, 0.55], trackW: 2, paths: false },
-  trail: { title: 'Trail riding: scheme D, single tracks stronger, dirtbike:scale symbols', singleW: 2.2, symbols: true },
+  // dirtbike:scale symbols: not rendered for now (Julien, 2026-11-19), documented in E-tracks 6.4 only. Set
+  // symbols: true and pass SYMBOL_LEGEND to the focus sheet to draw them again.
+  trail: { title: 'Trail riding: scheme D, single tracks stronger', singleW: 2.2, symbols: false },
 };
 // dirtbike:scale symbols (trail focus), drawn with dashes only so core-legacy can draw them too, black on a white
 // halo (a second, wider line with the same dashes). Count and length carry the level, no colour and no shape (dots
@@ -318,11 +320,10 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       panels);
     // Riding focus sheets: the same crop three ways, closed ways grey.
     const fpanels = Object.keys(FOCUS).map((f) => ({ key: f, title: FOCUS[f].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, f), stats }));
-    const symCount = ways.filter((w) => w.tags['dirtbike:scale']).length;
     sheet(`fork-focus-${v.name}.svg`,
       `Fork, riding focus: ${v.name} at z15 (${v.note})`,
-      `One rendering property, three values (proposal). Same tags, same colours; only the emphasis changes. Closed ways grey. dirtbike:scale ways in this crop: ${symCount}.`,
-      fpanels, SYMBOL_LEGEND);
+      `One rendering property, three values (proposal). Same tags, same colours; only the emphasis changes. Closed ways grey.`,
+      fpanels);
     if (v.casingCheck) {
       const cpanels = Object.keys(CASINGS).map((k) => ({ key: k, title: CASINGS[k].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS[k]), stats }));
       sheet(`fork-casing-${v.name}.svg`, `Fork, road casing: ${v.name} at z15`,

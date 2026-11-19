@@ -215,14 +215,14 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 | Dirt tracks | faded to 30% | **all kept, full vehicle ladder**, 2 dp instead of 2.5 | as scheme D |
 | Single tracks, paths | hidden | hidden | **lead**: single tracks 2.2 dp; dots |
 | Closed | grey, faded | grey | grey |
-| `dirtbike:scale` | | | symbols where tagged |
+| `dirtbike:scale` | | | not rendered for now (documented below) |
 
 - **4WD fits Adventure** because Adventure keeps the whole ladder instead of fading the hard tracks: a heavy bike reads near black as "stop", a 4WD driver as the goal; same line, each reader decides. Neither uses single tracks, so both lose them.
 - **Adventure keeps Unpaved tracks**: whether a dirt road is mapped as a road or a track is the mapper's choice (98% of Thai tracks say nothing about their condition), so hiding tracks would cut real routes.
-- **Reading of the crops**: Road riding makes the paved village network of thailand-1 readable at once; Adventure puts the High-clearance and 4WD network of the hills first with the paved roads quiet; Trail riding is scheme D. Chiang Rai in Road and Adventure loses its 8.8 km of moto paths, as intended.
+- **Reading of the crops**: Road riding makes the paved village network of thailand-1 readable at once; Adventure puts the High-clearance and 4WD network of the hills first with the paved roads quiet; Trail riding is scheme D with stronger single tracks. Chiang Rai in Road and Adventure loses its 8.8 km of moto paths, as intended.
 - **Default when installed: to decide** (Claude's pick: Adventure riding, the largest audience and the closest to the roads article).
 
-**`dirtbike:scale` in OsmAnd (checked 2026-11-19, OsmAnd-resources 85815c678, core-legacy 3317961).**
+**`dirtbike:scale` in OsmAnd (checked 2026-11-19, OsmAnd-resources 85815c678, core-legacy 3317961). Not rendered for now (Julien, 2026-11-19): documented only, the symbols are out of the sheets.**
 
 - **The data is already in the maps.** `obf_creation/rendering_types.xml` (category `dirtbike:scale`, lines 3105-3114) turns every way with `dirtbike:scale` into a `route_dirtbike` line and keeps the values 0 to 5 as additional tags from z12; 6 is commented out. No map change is needed.
 - **OsmAnd already draws it**, in `rendering_styles/routes.addon.render.xml` (lines 1273-1291, setting `showDirtbikeTrails`): a 6 to 13 dp line with round caps and `pathEffect` 1_20 to 1_70, which gives coloured dots along the way, green to maroon by value. That is a dash pattern, so it works in core-legacy too.
