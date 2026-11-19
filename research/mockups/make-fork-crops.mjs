@@ -281,7 +281,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
   const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
   const tOp = F.trackOpacity ?? 1, bOp = F.bandOpacity ?? 1;
   const op = (o) => (o < 1 ? `<g opacity="${o}">` : '<g>');
-  const L = { service: [], closedRoad: [], dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], band: [], sym: [] };
+  const L = { service: [], closedRoad: [], dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], bandEdge: [], band: [], sym: [] };
   const roads = [];
   for (const w of ways) {
     const k = w.look;
@@ -311,22 +311,24 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
     return cas.white ?? (cas.hierarchy ? MINOR_CASING[h] : c.casing);
   };
   const [bandMain, bandWhite] = F.band ?? [0.6, 0.4];
+  // Fill, band edge and band of one road, returned apart: every fill is drawn before every band edge, and every edge
+  // before every band, so the next way's fill does not cut the band at each joint (gaps seen by Julien, 2026-11-19).
   const fillOf = (w, cls, c, width) => {
-    let f = st(w.pts, { color: c.fill, width });
+    const r = { fill: st(w.pts, { color: c.fill, width }), edge: '', band: '' };
     if (w.look.level !== 'paved') {
       const bw = Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8);
-      let band = st(w.pts, { color: RAMP[w.look.level], width: bw });
-      if (P?.bandEdge && cls !== 'minor') band = st(w.pts, { color: P.bandEdge, width: bw + 1.2 }) + band;
-      // Faded band: the road fill shows through, drawn as its own fill + band so the fade does not reach the casing.
-      f += bOp < 1 ? `<g opacity="${bOp}">${band}</g>` : band;
+      const fade = (x) => (bOp < 1 ? `<g opacity="${bOp}">${x}</g>` : x);
+      r.band = fade(st(w.pts, { color: RAMP[w.look.level], width: bw }));
+      if (P?.bandEdge && cls !== 'minor') r.edge = fade(st(w.pts, { color: P.bandEdge, width: bw + 1.2 }));
     }
-    return f;
+    return r;
   };
+  const layered = (parts) => ['fill', 'edge', 'band'].map((k) => parts.map((p) => p[k]).join('')).join('');
   // Service roads: their own faded group under the other roads (casing, then fill).
   const service = roads.filter((w) => w.tags.highway === 'service'), main = roads.filter((w) => w.tags.highway !== 'service');
   if (service.length) {
     const sc = service.map((w) => st(w.pts, { color: casingOf(w, 'minor', C('minor')), width: ROAD.service[1] + cas.extra })).join('');
-    const sf = service.map((w) => fillOf(w, 'minor', C('minor'), ROAD.service[1])).join('');
+    const sf = layered(service.map((w) => fillOf(w, 'minor', C('minor'), ROAD.service[1])));
     L.service.push(`<g opacity="${SERVICE_OPACITY}">${sc}${sf}</g>`);
   }
   // Trail riding: paved roads in their own group at reduced opacity, under the dirt roads.
@@ -334,7 +336,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
   const full = F.pavedRoadOpacity ? main.filter((w) => w.look.level !== 'paved') : main;
   if (soft.length) {
     const sc = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return st(w.pts, { color: casingOf(w, cls, C(cls)), width: width + cas.extra }); }).join('');
-    const sf = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return fillOf(w, cls, C(cls), width); }).join('');
+    const sf = layered(soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return fillOf(w, cls, C(cls), width); }));
     L.service.push(`<g opacity="${F.pavedRoadOpacity}">${sc}${sf}</g>`);
   }
   for (const w of full) {
@@ -343,7 +345,8 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P)
   }
   for (const w of full) {
     const [cls, width] = ROAD[w.tags.highway];
-    L.fill.push(fillOf(w, cls, C(cls), width));
+    const r = fillOf(w, cls, C(cls), width);
+    L.fill.push(r.fill); L.bandEdge.push(r.edge); L.band.push(r.band);
   }
   if (P?.shields) L.sym.push(shields(full, K));
   const out = Object.entries(L).map(([key, a]) => (['track', 'single', 'dots', 'closed'].includes(key) ? op(tOp) : '<g>') + a.join('') + '</g>');
