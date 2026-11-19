@@ -13,11 +13,11 @@ import { classifyDetailed } from '../../js/classify.js';
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
   { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks' },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'] },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], casingCheck: true },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
   { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'] },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
-  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'] },
+  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], casingCheck: true },
 ];
 
 // ---------- Scheme D (values from make-track-mockups.mjs, day only) ----------
@@ -172,7 +172,16 @@ function symbols(pts, scale) {
     `<path d="${pd}" fill="none" stroke="#222" stroke-width="${SYM_S}" stroke-dasharray="${mark}" stroke-linecap="round"/>`;
 }
 
-function drawCrop(ways, closed, focus = null) {
+// Road casing variants (Julien, 2026-11-19: road strokes too soft). white: casing colour of white roads and paved
+// tracks (a paved track is a narrow road, so it follows); extra: casing width added to the fill (both sides).
+const CASINGS = {
+  current: { title: 'Current: #bbbbbb, 0.6 dp a side (OSM Carto)', white: null, extra: 1.2 },
+  darker: { title: 'A. Darker: #8f8f8f, 0.6 dp a side', white: '#8f8f8f', extra: 1.2 },
+  wider: { title: 'B. Darker and wider: #8f8f8f, 1 dp a side', white: '#8f8f8f', extra: 2 },
+  strong: { title: 'C. Strong: #6f6f6f, 1 dp a side', white: '#6f6f6f', extra: 2 },
+};
+
+function drawCrop(ways, closed, focus = null, cas = CASINGS.current) {
   const F = focus ? FOCUS[focus] : {};
   const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
   const tOp = F.trackOpacity ?? 1, bOp = F.bandOpacity ?? 1;
@@ -189,7 +198,7 @@ function drawCrop(ways, closed, focus = null) {
     else if (k.kind === 'closedPath') { if (paths) L.closed.push(stroke(w.pts, closed.path)); }
     else if (k.kind === 'single') { if (paths) L.single.push(stroke(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : RAMP[k.level], width: singleW, dash: SINGLE })); }
     else if (k.kind === 'track' && k.level === 'paved') {
-      L.pavedCasing.push(stroke(w.pts, { color: F.pavedCasing ?? PAVED_TRACK.casing, width: trackW + 1.2 }));
+      L.pavedCasing.push(stroke(w.pts, { color: F.pavedCasing ?? cas.white ?? PAVED_TRACK.casing, width: trackW + cas.extra }));
       L.pavedFill.push(stroke(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
     } else if (k.kind === 'track') L.track.push(stroke(w.pts, { color: RAMP[k.level], width: trackW }));
     else if (k.kind === 'road') roads.push(w);
@@ -200,8 +209,8 @@ function drawCrop(ways, closed, focus = null) {
   for (const w of roads) {
     const [cls, width] = ROAD[w.tags.highway];
     const c = SPEC.classes[cls];
-    const casing = F.pavedCasing && cls === 'minor' && w.look.level === 'paved' ? F.pavedCasing : c.casing;
-    L.casing.push(stroke(w.pts, { color: casing, width: width + 1.2 }));
+    const casing = F.pavedCasing && cls === 'minor' && w.look.level === 'paved' ? F.pavedCasing : (cls === 'minor' && cas.white) || c.casing;
+    L.casing.push(stroke(w.pts, { color: casing, width: width + cas.extra }));
   }
   const [bandMain, bandWhite] = F.band ?? [0.6, 0.4];
   for (const w of roads) {
@@ -314,5 +323,11 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       `Fork, riding focus: ${v.name} at z15 (${v.note})`,
       `One rendering property, three values (proposal). Same tags, same colours; only the emphasis changes. Closed ways grey. dirtbike:scale ways in this crop: ${symCount}.`,
       fpanels, SYMBOL_LEGEND);
+    if (v.casingCheck) {
+      const cpanels = Object.keys(CASINGS).map((k) => ({ key: k, title: CASINGS[k].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS[k]), stats }));
+      sheet(`fork-casing-${v.name}.svg`, `Fork, road casing: ${v.name} at z15`,
+        'Road strokes too soft (Julien, 2026-11-19): four casings. White roads and paved tracks take the grey; coloured roads keep their class casing, at the same width. Scheme D, grey for every way you may not ride.',
+        cpanels);
+    }
   }
 }
