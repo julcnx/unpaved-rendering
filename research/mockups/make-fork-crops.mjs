@@ -13,9 +13,9 @@ import { classifyDetailed } from '../../js/classify.js';
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
   { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks' },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks' },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'] },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
-  { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: true },
+  { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'] },
 ];
 
 // ---------- Scheme D (values from make-track-mockups.mjs, day only) ----------
@@ -31,6 +31,10 @@ const CLOSED = {
   thin: { title: 'Closed: thin pale red (scheme D)', track: { color: '#e07878', width: 1.4 }, path: { color: '#e07878', width: 1.4, dash: SINGLE } },
   crimson: { title: 'Closed: crimson, track width', track: { color: '#a3245a', width: TRACK_W }, path: { color: '#a3245a', width: PATH_W, dash: SINGLE } },
   dashed: { title: 'Closed: pale red, long dashes', track: { color: '#e07878', width: TRACK_W, dash: '14 4' }, path: { color: '#e07878', width: PATH_W, dash: SINGLE } },
+  // Julien, 2026-11-19: closed ways greyed out, not red. One rule: brown = you may ride it, grey = you may not.
+  // Closed track: light warm grey, solid, track width (apart from the paved-track casing #9a9a9a and the dots #6b6b6b).
+  // Closed path: the same grey dots as a path nobody said yes to.
+  grey: { title: 'Closed: grey (Julien, 2026-11-19)', track: { color: '#c4bdb4', width: TRACK_W }, path: { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' } },
 };
 // Road widths at z15 in dp; tertiary and below use the white class.
 const ROAD = {
@@ -201,7 +205,7 @@ function sheet(file, heading, note, panels) {
   if (panels.length > 1) {
     panels.slice(1).forEach((p) => {
       out += `<rect x="6" y="${y - 12}" width="146" height="24" rx="3" fill="${LAND}"/><g transform="translate(12 ${y})">${sw([p.closed.track])}</g><g transform="translate(86 ${y})">${sw([p.closed.path])}</g>` +
-        text(160, y + 4, `Closed, ${p.key}`, 12);
+        text(160, y + 4, `Closed, ${p.key}: track | path`, 12);
       y += 44;
     });
   }
@@ -233,7 +237,7 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
     console.error(`${v.name}: ` + rows.map(([k, n]) => `${NAMES[k] ?? k} ${n.toFixed(1)}`).join(', ') + `; closed ${closedShare.toFixed(1)}% of track km`);
     const stats = `<b>In this crop</b> (km): ` + rows.map(([k, n]) => `${esc(NAMES[k] ?? k)} ${n.toFixed(1)}`).join(', ') +
       `. Closed: ${closedShare.toFixed(1)}% of track km.`;
-    const panels = (v.closedVariants ? Object.keys(CLOSED) : ['thin']).map((key) => ({ key, title: v.closedVariants ? CLOSED[key].title : `${v.name}, z15`, closed: CLOSED[key], svg: drawCrop(ways, CLOSED[key]), stats }));
+    const panels = (v.closedVariants ?? ['thin']).map((key) => ({ key, title: v.closedVariants ? CLOSED[key].title : `${v.name}, z15`, closed: CLOSED[key], svg: drawCrop(ways, CLOSED[key]), stats }));
     sheet(`fork-crop-${v.name}.svg`,
       `Fork, real data: ${v.name} at z15 (${v.note})`,
       `Scheme D tracks and paths with the solid band on Unpaved roads (E-tracks 6.4), from the tags of the Geofabrik 2026-11-12 extract. ${CW} x ${CH} dp around ${v.lat}, ${v.lon}; highways only, no landuse. Light mode.`,
