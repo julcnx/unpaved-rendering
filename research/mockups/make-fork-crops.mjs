@@ -1,7 +1,10 @@
 // Real-data crops for the OsmAnd fork (todo "Tracks rendering", 2026-11-19): scheme D tracks and paths with the
 // solid band on Unpaved roads (E-tracks.md 6.4), drawn from the real tags of the track-round views
 // (examples/track-spots.md), so roads and tracks are seen meeting at junctions.
-// Geometry: pbf/<country>-ways.geojsonseq (Geofabrik 2026-11-12, highways only: no landuse, water or buildings).
+// Geometry: pbf/<country>-ways.geojsonseq (Geofabrik 2026-11-12, highways only: no landuse, water or buildings), plus
+// pbf/<country>-service.geojsonseq for highway=service (2026-11-19, same extract):
+//   osmium tags-filter -o pbf/<c>-service.osm.pbf pbf/<c>-latest.osm.pbf w/highway=service
+//   osmium export -f geojsonseq --geometry-types=linestring -a type,id -o pbf/<c>-service.geojsonseq pbf/<c>-service.osm.pbf
 // Each crop is CW x CH dp of a z15 view (256 px tiles) around the view centre; PNG at 2 x (a phone at density 2).
 // Widths in dp are the estimates of make-track-mockups.mjs (not OsmAnd's own).
 // Usage (from research/): node mockups/make-fork-crops.mjs && node mockups/svg2png.mjs mockups/fork-crop-*.svg
@@ -13,11 +16,11 @@ import { classifyDetailed } from '../../js/classify.js';
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
   { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks' },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], casingCheck: true },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'] },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
   { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'] },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
-  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], casingCheck: true },
+  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'] },
 ];
 
 // ---------- Scheme D (values from make-track-mockups.mjs, day only) ----------
@@ -45,9 +48,17 @@ const CLOSED = {
 // Road widths at z15 in dp; tertiary and below use the white class.
 const ROAD = {
   trunk: ['trunk', 7], primary: ['primary', 6.5], secondary: ['secondary', 6],
-  tertiary: ['minor', 5.5], unclassified: ['minor', 4.5], residential: ['minor', 4],
+  tertiary: ['minor', 5.5], unclassified: ['minor', 4.5], residential: ['minor', 4], service: ['minor', 3],
 };
-const RANK = ['residential', 'unclassified', 'tertiary', 'secondary', 'primary', 'trunk'];
+// Casing of white roads by class (Julien, 2026-11-19: casing B, #8f8f8f at 1 dp a side; unclassified darker than
+// the minor roads). Tertiary goes with unclassified (Claude's reading). Paved tracks take the residential grey.
+const MINOR_CASING = { tertiary: '#6f6f6f', unclassified: '#6f6f6f', residential: '#8f8f8f', service: '#a8a8a8' };
+const MINOR_CASING_ROAD = { tertiary: '#4f4f4f', unclassified: '#4f4f4f', residential: '#6f6f6f', service: '#8f8f8f' }; // Road riding focus
+// highway=service (Julien, 2026-11-19): often private, so faded by default. Driveways, parking aisles and drive-throughs
+// are left out at z15 (OSM Carto shows them from z16). Service roads with a "no" access answer are grey like any way
+// you may not ride.
+const SERVICE_OPACITY = 0.45, SERVICE_SKIP = new Set(['driveway', 'parking_aisle', 'drive-through']);
+const RANK = ['service', 'residential', 'unclassified', 'tertiary', 'secondary', 'primary', 'trunk'];
 
 // Vehicle ladder (E-tracks 6.4): smoothness, then tracktype, then surface; 4wd_only as a minimum.
 const LADDER = ['unpaved', 'high', 'fourwd'];
@@ -78,6 +89,10 @@ function access(t) {
 // One look per way: { kind, level } with kind road | track | single | dots | closedTrack | closedPath | skip.
 function look(t) {
   const h = t.highway;
+  if (h === 'service') {
+    if (SERVICE_SKIP.has(t.service)) return { kind: 'skip' };
+    if (access(t) === 'no') return { kind: 'closedTrack' };
+  }
   if (ROAD[h]) {
     const d = classifyDetailed(t);
     return { kind: 'road', level: d.base === 'paved' ? 'paved' : vehicle(t) };
@@ -108,7 +123,8 @@ async function load(country, views) {
     const x0 = px(v.lon) - CW / 2, y0 = py(v.lat) - CH / 2;
     return { v, x0, y0, ways: [] };
   });
-  const rl = createInterface({ input: createReadStream(new URL(`../pbf/${country}-ways.geojsonseq`, import.meta.url)), crlfDelay: Infinity });
+  for (const file of [`${country}-ways`, `${country}-service`]) {
+  const rl = createInterface({ input: createReadStream(new URL(`../pbf/${file}.geojsonseq`, import.meta.url)), crlfDelay: Infinity });
   for await (const raw of rl) {
     const line = raw.replace(/^\x1e/, '');
     if (!line) continue;
@@ -119,6 +135,7 @@ async function load(country, views) {
       const local = pts.map(([x, y]) => [x - b.x0, y - b.y0]);
       if (local.some(([x, y]) => x > -20 && x < CW + 20 && y > -20 && y < CH + 20)) b.ways.push({ tags: f.properties, pts: local });
     }
+  }
   }
   return boxes;
 }
@@ -153,7 +170,7 @@ const stroke = (pts, { color, width, dash = null, cap = null }) =>
 //         little thinner than roads; single tracks and paths hidden (no four-wheeler or heavy bike uses them).
 //   trail: scheme D, single tracks stronger (dirtbike:scale symbols: documented only, not drawn).
 const FOCUS = {
-  road: { title: 'Road riding: paved leads, dirt fades, no single tracks', bandOpacity: 0.3, trackOpacity: 0.3, paths: false, pavedCasing: '#6f6f6f' },
+  road: { title: 'Road riding: paved leads, dirt fades, no single tracks', bandOpacity: 0.3, trackOpacity: 0.3, paths: false, pavedCasing: MINOR_CASING_ROAD },
   adventure: { title: 'Adventure riding (and 4WD): dirt roads lead, all double tracks, no single tracks', band: [0.75, 0.55], trackW: 2, paths: false },
   // dirtbike:scale symbols: not rendered for now (Julien, 2026-11-19), documented in E-tracks 6.4 only. Set
   // symbols: true and pass SYMBOL_LEGEND to the focus sheet to draw them again.
@@ -182,14 +199,16 @@ const CASINGS = {
   darker: { title: 'A. Darker: #8f8f8f, 0.6 dp a side', white: '#8f8f8f', extra: 1.2 },
   wider: { title: 'B. Darker and wider: #8f8f8f, 1 dp a side', white: '#8f8f8f', extra: 2 },
   strong: { title: 'C. Strong: #6f6f6f, 1 dp a side', white: '#6f6f6f', extra: 2 },
+  // The fork default (2026-11-19): B, with the white-road hierarchy of MINOR_CASING.
+  fork: { title: 'Fork: B with the class hierarchy', white: null, extra: 2, hierarchy: true },
 };
 
-function drawCrop(ways, closed, focus = null, cas = CASINGS.current) {
+function drawCrop(ways, closed, focus = null, cas = CASINGS.fork) {
   const F = focus ? FOCUS[focus] : {};
   const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
   const tOp = F.trackOpacity ?? 1, bOp = F.bandOpacity ?? 1;
   const op = (o) => (o < 1 ? `<g opacity="${o}">` : '<g>');
-  const L = { dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], band: [], sym: [] };
+  const L = { service: [], dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], band: [], sym: [] };
   const roads = [];
   for (const w of ways) {
     const k = w.look;
@@ -201,7 +220,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.current) {
     else if (k.kind === 'closedPath') { if (paths) L.closed.push(stroke(w.pts, closed.path)); }
     else if (k.kind === 'single') { if (paths) L.single.push(stroke(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : RAMP[k.level], width: singleW, dash: SINGLE })); }
     else if (k.kind === 'track' && k.level === 'paved') {
-      L.pavedCasing.push(stroke(w.pts, { color: F.pavedCasing ?? cas.white ?? PAVED_TRACK.casing, width: trackW + cas.extra }));
+      L.pavedCasing.push(stroke(w.pts, { color: F.pavedCasing?.residential ?? cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
       L.pavedFill.push(stroke(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
     } else if (k.kind === 'track') L.track.push(stroke(w.pts, { color: RAMP[k.level], width: trackW }));
     else if (k.kind === 'road') roads.push(w);
@@ -209,22 +228,36 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.current) {
   }
   // Roads: all casings, then fills and bands from the lowest class up, so junctions join cleanly.
   roads.sort((a, b) => RANK.indexOf(a.tags.highway) - RANK.indexOf(b.tags.highway));
-  for (const w of roads) {
-    const [cls, width] = ROAD[w.tags.highway];
-    const c = SPEC.classes[cls];
-    const casing = F.pavedCasing && cls === 'minor' && w.look.level === 'paved' ? F.pavedCasing : (cls === 'minor' && cas.white) || c.casing;
-    L.casing.push(stroke(w.pts, { color: casing, width: width + cas.extra }));
-  }
+  const casingOf = (w, cls, c) => {
+    const h = w.tags.highway;
+    if (cls !== 'minor') return c.casing;
+    if (F.pavedCasing && w.look.level === 'paved') return F.pavedCasing[h];
+    return cas.white ?? (cas.hierarchy ? MINOR_CASING[h] : c.casing);
+  };
   const [bandMain, bandWhite] = F.band ?? [0.6, 0.4];
-  for (const w of roads) {
-    const [cls, width] = ROAD[w.tags.highway];
-    const c = SPEC.classes[cls];
-    L.fill.push(stroke(w.pts, { color: c.fill, width }));
+  const fillOf = (w, cls, c, width) => {
+    let f = stroke(w.pts, { color: c.fill, width });
     if (w.look.level !== 'paved') {
       const band = stroke(w.pts, { color: RAMP[w.look.level], width: Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8) });
       // Faded band: the road fill shows through, drawn as its own fill + band so the fade does not reach the casing.
-      L.fill.push(bOp < 1 ? `<g opacity="${bOp}">${band}</g>` : band);
+      f += bOp < 1 ? `<g opacity="${bOp}">${band}</g>` : band;
     }
+    return f;
+  };
+  // Service roads: their own faded group under the other roads (casing, then fill).
+  const service = roads.filter((w) => w.tags.highway === 'service'), main = roads.filter((w) => w.tags.highway !== 'service');
+  if (service.length) {
+    const sc = service.map((w) => stroke(w.pts, { color: casingOf(w, 'minor', SPEC.classes.minor), width: ROAD.service[1] + cas.extra })).join('');
+    const sf = service.map((w) => fillOf(w, 'minor', SPEC.classes.minor, ROAD.service[1])).join('');
+    L.service.push(`<g opacity="${SERVICE_OPACITY}">${sc}${sf}</g>`);
+  }
+  for (const w of main) {
+    const [cls, width] = ROAD[w.tags.highway];
+    L.casing.push(stroke(w.pts, { color: casingOf(w, cls, SPEC.classes[cls]), width: width + cas.extra }));
+  }
+  for (const w of main) {
+    const [cls, width] = ROAD[w.tags.highway];
+    L.fill.push(fillOf(w, cls, SPEC.classes[cls], width));
   }
   const out = Object.entries(L).map(([key, a]) => (['track', 'single', 'dots', 'closed'].includes(key) ? op(tOp) : '<g>') + a.join('') + '</g>');
   return `<rect width="${CW}" height="${CH}" fill="${LAND}"/>` + out.join('');
@@ -235,9 +268,10 @@ const sw = (parts) => parts.map((o) => stroke([[0, 0], [60, 0]], o)).join('');
 function legend(closed) {
   const c = SPEC.classes;
   return [
-    ['Coloured road: paved | Unpaved', sw([{ color: c.primary.casing, width: 7.7 }, { color: c.primary.fill, width: 6.5 }]), sw([{ color: c.primary.casing, width: 7.7 }, { color: c.primary.fill, width: 6.5 }, { color: RAMP.unpaved, width: 3.9 }])],
-    ['White road: paved | Unpaved', sw([{ color: c.minor.casing, width: 5.7 }, { color: c.minor.fill, width: 4.5 }]), sw([{ color: c.minor.casing, width: 5.7 }, { color: c.minor.fill, width: 4.5 }, { color: RAMP.unpaved, width: 1.8 }])],
-    ['Track: paved | Unpaved', sw([{ color: PAVED_TRACK.casing, width: TRACK_W + 1.2 }, { color: PAVED_TRACK.fill, width: TRACK_W }]), sw([{ color: RAMP.unpaved, width: TRACK_W }])],
+    ['Coloured road: paved | Unpaved', sw([{ color: c.primary.casing, width: 8.5 }, { color: c.primary.fill, width: 6.5 }]), sw([{ color: c.primary.casing, width: 8.5 }, { color: c.primary.fill, width: 6.5 }, { color: RAMP.unpaved, width: 3.9 }])],
+    ['Unclassified: paved | Unpaved', sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }]), sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }, { color: RAMP.unpaved, width: 1.8 }])],
+    ['Residential | service (faded)', sw([{ color: MINOR_CASING.residential, width: 6 }, { color: c.minor.fill, width: 4 }]), `<g opacity="${SERVICE_OPACITY}">${sw([{ color: MINOR_CASING.service, width: 5 }, { color: c.minor.fill, width: 3 }])}</g>`],
+    ['Track: paved | Unpaved', sw([{ color: MINOR_CASING.residential, width: TRACK_W + 2 }, { color: PAVED_TRACK.fill, width: TRACK_W }]), sw([{ color: RAMP.unpaved, width: TRACK_W }])],
     ['Track: high clearance | 4WD', sw([{ color: RAMP.high, width: TRACK_W }]), sw([{ color: RAMP.fourwd, width: TRACK_W }])],
     ...(closed.track.color === GREY
       ? [['Single track (motorcycle=yes)', sw([{ color: RAMP.unpaved, width: PATH_W, dash: SINGLE }]), ''],
@@ -301,7 +335,7 @@ const NAMES = {
   'road paved': 'Paved road', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
   'track paved': 'Paved track', 'track unpaved': 'Unpaved track', 'track high': 'High-clearance track', 'track fourwd': '4WD track',
   'single unpaved': 'Single track', 'single high': 'Single track, high clearance', 'single fourwd': 'Single track, 4WD', 'single paved': 'Single track, paved',
-  'dots no answer': 'Path, nobody said yes', 'dots impassable': 'Impassable', closedTrack: 'Closed track', closedPath: 'Closed path',
+  'dots no answer': 'Path, nobody said yes', 'dots impassable': 'Impassable', service: 'Service road (faded)', 'service closed': 'Service road, private or no (grey)', closedTrack: 'Closed track', closedPath: 'Closed path',
 };
 for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
   const boxes = await load(country, VIEWS.filter((v) => v.country === country));
@@ -310,7 +344,7 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
     for (const w of ways) {
       w.look = look(w.tags);
       if (w.look.kind === 'skip') continue;
-      const key = w.look.level ? `${w.look.kind} ${w.look.level}` : w.look.kind;
+      const key = w.tags.highway === 'service' ? (w.look.kind === 'closedTrack' ? 'service closed' : 'service') : w.look.level ? `${w.look.kind} ${w.look.level}` : w.look.kind;
       km[key] = (km[key] ?? 0) + lengthInside(w.pts, v.lat) / 1000;
     }
     const rows = Object.entries(km).filter(([, k]) => k >= 0.05).sort((a, b) => b[1] - a[1]);

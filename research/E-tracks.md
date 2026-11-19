@@ -239,7 +239,20 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 
 One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and paths, paths nobody said yes to (no `motorcycle`, `motor_vehicle`, `vehicle` or `access` answer), hiking paths, and `smoothness=impassable` (solid on a track, dashed on a path). No dots are left in the scheme, and the two greys of the first grey version (dark dots `#6b6b6b`, light closed tracks) become one. This replaces the dots of 2026-11-13: "nobody said yes" is no longer a look of its own, it is grey like a "no". A hiking path now reads as what it is for a rider, a single track you may not ride. Drawn in every grey panel and focus sheet; density check in [mockups/fork-crop-switzerland-1.png](mockups/fork-crop-switzerland-1.png) (55 km of paths in the crop: dots, dashes 1.75 dp, dashes 1.4 dp). Reading: the grey dashes are quieter than the dark dots, though more continuous; at Chiang Rai brown and grey dashes are clearly apart. 1.4 dp is calmer in towns; whether forbidden paths should be thinner than rideable single tracks (1.75 dp) is for Julien.
 
-**Road casing (Julien, 2026-11-19: road strokes too soft).** The OSM Carto white-road casing (`#bbbbbb`, 0.6 dp a side) almost vanishes on the land colour. Four casings compared in [mockups/fork-casing-thailand-1.png](mockups/fork-casing-thailand-1.png) and [mockups/fork-casing-switzerland-1.png](mockups/fork-casing-switzerland-1.png): current; A `#8f8f8f` at 0.6 dp; B `#8f8f8f` at 1 dp a side; C `#6f6f6f` at 1 dp. White roads and paved tracks take the grey (a paved track is a narrow road); coloured roads keep their class casing at the new width. Reading (Claude): A is still soft; B gives every road a clear edge without turning the town into a line drawing; C is the clearest but heavy in towns, and its dark edges compete with the dark-brown tracks. Proposal: B, to confirm.
+**Road casing (Julien, 2026-11-19: road strokes too soft).** The OSM Carto white-road casing (`#bbbbbb`, 0.6 dp a side) almost vanishes on the land colour. Four casings compared in [mockups/fork-casing-thailand-1.png](mockups/fork-casing-thailand-1.png) and [mockups/fork-casing-switzerland-1.png](mockups/fork-casing-switzerland-1.png): current; A `#8f8f8f` at 0.6 dp; B `#8f8f8f` at 1 dp a side; C `#6f6f6f` at 1 dp. White roads and paved tracks take the grey (a paved track is a narrow road); coloured roads keep their class casing at the new width. Reading (Claude): A is still soft; B gives every road a clear edge without turning the town into a line drawing; C is the clearest but heavy in towns, and its dark edges compete with the dark-brown tracks. **Decided: B (Julien, 2026-11-19).**
+
+**White-road hierarchy and service roads (Julien, 2026-11-19).** Casing B, `#8f8f8f` at 1 dp a side, with steps by class, since the white class covers everything from tertiary to service:
+
+| Class | Casing | Width (z15) |
+|---|---|---|
+| tertiary, unclassified | `#6f6f6f` (darker than the minor roads, Julien; tertiary goes with unclassified, Claude's reading) | 5.5, 4.5 dp |
+| residential | `#8f8f8f` | 4 dp |
+| service | `#a8a8a8`, the whole road at 45% opacity | 3 dp |
+| paved track | `#8f8f8f` (a narrow road, as residential) | 2.5 dp |
+
+- **Service roads faded by default**: they are often private (Julien). Driveways, parking aisles and drive-throughs are left out at z15 (OSM Carto shows them from z16). A service road whose first access answer is no, private, agricultural, forestry or destination is grey like any way you may not ride. In the crops: thailand-1 15.3 km faded and 2.3 km grey; switzerland-1 9.3 km and 2.3 km.
+- **Road riding focus** darkens each step once (`#4f4f4f`, `#6f6f6f`, `#8f8f8f`) on paved white roads.
+- Data: `pbf/<country>-service.geojsonseq`, extracted on 2026-11-19 from the same Geofabrik files (commands at the top of `mockups/make-fork-crops.mjs`). Every crop and focus sheet is redrawn with this; the casing comparison sheets stay as drawn.
 
 ### 6.5 Background, hillshade and contours (to evaluate)
 
