@@ -262,7 +262,27 @@ One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and 
 - **Service roads**: faded white by default; grey when private or no; `service=driveway` grey (a driveway leads to a private house or plot), from z16 only, since driveways are too dense at z15 (OSM Carto shows them from z16). Parking aisles and drive-throughs also from z16, faded. Zoom 16 check: [mockups/fork-crop-switzerland-1-z16.png](mockups/fork-crop-switzerland-1-z16.png) (2.1 km of driveways in the crop; widths kept at their z15 values, so roads look thinner than OsmAnd would draw them).
 - **Footways and cycleways hidden in every focus**: a motorbike may never ride them, and in towns they are dense clutter beside the roads (switzerland-1: paths in the crop drop from 54.8 to 16.1 km). With `motorcycle=yes` they stay a brown single track. Paths and bridleways stay grey dashed in Trail riding.
 - **Road riding**: dirt tracks and closed tracks hidden, not grey, since grey says "you may not ride it", which is false for a dirt track. Paved tracks stay as narrow roads. Unpaved roads keep the band at full strength: on a road day it is the warning that the road turns to dirt (Julien, 2026-11-19).
-- **Trail riding**: paved roads drawn at 60% (casing and fill), under the dirt roads, whose brown band stays at full strength.
+- **Trail riding**: paved roads drawn at 60% (casing and fill), under the dirt roads, whose brown band stays at full strength. Road riding keeps the dirt band on roads at full strength: on a road day it is the warning that the road turns to dirt (Julien, 2026-11-19).
+
+**Readability: Garmin and DMD2 review, high-visibility palette (2026-11-19).** Julien: colours hard to read; large and contrasted is easier for older riders with poor eyesight. Compared: AdvOSM and GmapTool Garmin maps of Tanzania ([examples/advosm/](examples/advosm/)), DMD2 (`examples/screenshots/*/dmd2.png`), our crops.
+
+- **AdvOSM (Garmin) reads best**: saturated red, orange, yellow and green on white, thick lines, unpaved as a pattern (yellow with black dashes), road numbers in shields, almost nothing else drawn. GmapTool has the same data and is much harder to read, so the drawing is what works, not the data.
+- **DMD2's map is not its draw**: thin lines (green tracks on a hillshade, unpaved roads as a fine yellow and black dash). Its popularity more likely comes from the app (glove-friendly buttons, roadbook and rally tools, offline maps) and the hillshade. Inferred from the screenshots, not checked with users.
+- **Our fills are pastel** (OSM Carto): contrast against the land 1.06 for the secondary fill, 1.20 primary, 1.54 trunk, 1.15 white; the class reads only from the thin casing (about 4). Made for a desk screen, not a handlebar in sunlight.
+- **High-visibility palette** ([mockups/fork-hivis-thailand-1.png](mockups/fork-hivis-thailand-1.png), [mockups/fork-hivis-switzerland-1.png](mockups/fork-hivis-switzerland-1.png), `HIVIS` in `mockups/make-fork-crops.mjs`): saturated fills (trunk `#e8503a`, primary `#f39c26`, secondary `#f4e04a`, darker casings), every line 1.5 x wider, a near-black edge around the dirt band inside coloured roads, road numbers in white shields (trunk to tertiary, one per ref and 260 dp apart). Contrast printed on the sheets: trunk fill 3.24, primary 1.91, trunk casing 7.58, primary casing 5.09; yellow stays low in luminance (1.17) but reads by saturation, as on the Garmin maps. Reading (Claude): the classes and numbers read at a glance; risks: the orange primary is closer in hue to the brown tracks, and 1.5 x white streets crowd towns. OsmAnd also has a "Map magnifier" setting that enlarges everything; the defaults should still be readable at 100%. Proposal: make it the fork's default palette, to confirm.
+
+**Barriers (Julien, 2026-11-19: would rather not show them; could get ugly quickly).** Proposal: do not draw `barrier=gate` and the like, except a barrier node that blocks (`access`, `motorcycle` or `motor_vehicle` = no or private): a small light grey bar across the line, from z16. Do not grey the whole track: most gates are open or passable, a closed one blocks only part of the way, and the map cannot tell which side; OsmAnd routing already reads the access tags on barrier nodes. Not drawn (barrier nodes are not in the extract).
+
+**Still missing from the fork mockups (2026-11-19, priority order, Claude's proposal):**
+
+1. Road numbers: drawn in the high-visibility sheets; to carry into every sheet if the palette is adopted.
+2. Fuel stations, for adventure riding.
+3. Zooms 10 to 13, where trips are planned (every sheet so far is z15).
+4. Fords and water crossings.
+5. Place names.
+6. Hillshade or contours (6.5, to evaluate; part of DMD2's look).
+7. Night mode for the new rules (grey, focus, hierarchy, high visibility).
+8. Blocking barriers as above (z16+).
 
 ### 6.5 Background, hillshade and contours (to evaluate)
 

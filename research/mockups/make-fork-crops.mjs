@@ -16,11 +16,11 @@ import { classifyDetailed } from '../../js/classify.js';
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
   { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks' },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'] },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
   { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'] },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
-  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'] },
+  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], hivis: true },
   // Same centre at z16: driveways appear (grey), the rest as at z15 (widths kept at their z15 values).
   { country: 'switzerland', name: 'switzerland-1-z16', z: 16, lat: 47.69867, lon: 8.62427, note: 'driveways from z16', closedVariants: ['grey'], noFocus: true },
 ];
@@ -219,7 +219,50 @@ const CASINGS = {
   fork: { title: 'Fork: B with the class hierarchy', white: null, extra: 2, hierarchy: true },
 };
 
-function drawCrop(ways, closed, focus = null, cas = CASINGS.fork) {
+// High-visibility palette (2026-11-19, after the Garmin and DMD2 review): the OSM Carto fills are pastel (secondary
+// 1.06, primary 1.20, trunk 1.54 contrast against the land), so the class reads only from its thin casing. Saturated
+// fills as on the AdvOSM Garmin maps, every line 1.5 x wider, a dark edge around the dirt band inside coloured roads
+// (brown on orange or red is weak), road numbers in shields. Tertiary and below stay white.
+const HIVIS = {
+  widthK: 1.5, bandEdge: '#2b190c', shields: true,
+  classes: {
+    trunk: { ...SPEC.classes.trunk, fill: '#e8503a', casing: '#8e2414' },
+    primary: { ...SPEC.classes.primary, fill: '#f39c26', casing: '#94560b' },
+    secondary: { ...SPEC.classes.secondary, fill: '#f4e04a', casing: '#7d7206' },
+  },
+};
+// Road number shields: one per ref, at the middle of its longest way in the crop, at least 260 dp apart for the
+// same ref. trunk to tertiary only.
+function shields(roads, K) {
+  const placed = [];
+  let out = '';
+  const ranked = roads.filter((w) => w.tags.ref && ['trunk', 'primary', 'secondary', 'tertiary'].includes(w.tags.highway))
+    .map((w) => { let len = 0; for (let i = 1; i < w.pts.length; i++) len += Math.hypot(w.pts[i][0] - w.pts[i - 1][0], w.pts[i][1] - w.pts[i - 1][1]); return { w, len }; })
+    .sort((a, b) => b.len - a.len);
+  for (const { w, len } of ranked) {
+    let acc = 0, mid = w.pts[0];
+    for (let i = 1; i < w.pts.length; i++) {
+      const d = Math.hypot(w.pts[i][0] - w.pts[i - 1][0], w.pts[i][1] - w.pts[i - 1][1]);
+      if (acc + d >= len / 2) { const t = (len / 2 - acc) / d; mid = [w.pts[i - 1][0] + t * (w.pts[i][0] - w.pts[i - 1][0]), w.pts[i - 1][1] + t * (w.pts[i][1] - w.pts[i - 1][1])]; break; }
+      acc += d;
+    }
+    const ref = w.tags.ref.split(';')[0].trim();
+    if (mid[0] < 30 || mid[0] > CW - 30 || mid[1] < 20 || mid[1] > CH - 20) continue;
+    if (placed.some((p) => (p.ref === ref && Math.hypot(p.x - mid[0], p.y - mid[1]) < 260) || Math.hypot(p.x - mid[0], p.y - mid[1]) < 40)) continue;
+    placed.push({ ref, x: mid[0], y: mid[1] });
+    const fs = 9 * K, h = fs + 7, wdt = ref.length * fs * 0.62 + 10;
+    out += `<rect x="${(mid[0] - wdt / 2).toFixed(1)}" y="${(mid[1] - h / 2).toFixed(1)}" width="${wdt.toFixed(1)}" height="${h}" rx="3" fill="#fff" stroke="#222" stroke-width="1.5"/>` +
+      `<text x="${mid[0].toFixed(1)}" y="${(mid[1] + fs * 0.36).toFixed(1)}" font-family="Helvetica, Arial, sans-serif" font-size="${fs}" font-weight="700" fill="#222" text-anchor="middle">${esc(ref)}</text>`;
+  }
+  return out;
+}
+
+function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = null) {
+  // P: palette override (HIVIS below): saturated class colours, every width x widthK, dark edge on the dirt band
+  // inside coloured roads, ref shields. null = the OSM Carto based palette.
+  const K = P?.widthK ?? 1;
+  const st = (pts, o) => stroke(pts, { ...o, width: o.width * K, dash: o.dash && o.cap !== 'round' ? o.dash.split(' ').map((n) => +n * K).join(' ') : o.dash });
+  const C = (cls) => P?.classes?.[cls] ?? SPEC.classes[cls];
   const F = focus ? FOCUS[focus] : {};
   const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
   const tOp = F.trackOpacity ?? 1, bOp = F.bandOpacity ?? 1;
@@ -230,18 +273,18 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork) {
     const k = w.look;
     const greyStyle = closed.track.color === GREY;
     const dirt = F.dirtTracks ?? true;
-    if (k.kind === 'closedRoad') { L.closedRoad.push(stroke(w.pts, { color: GREY, width: ROAD[w.tags.highway][1] })); continue; }
+    if (k.kind === 'closedRoad') { L.closedRoad.push(st(w.pts, { color: GREY, width: ROAD[w.tags.highway][1] })); continue; }
     if (!dirt && (k.kind === 'closedTrack' || (k.kind === 'track' && k.level !== 'paved') || (k.kind === 'dots' && w.tags.highway === 'track'))) continue;
-    if (k.kind === 'dots' && greyStyle && w.tags.highway === 'track') L.closed.push(stroke(w.pts, closed.track));
-    else if (k.kind === 'dots' && greyStyle) { if (paths) L.dots.push(stroke(w.pts, closed.path)); }
-    else if (k.kind === 'dots') { if (paths) L.dots.push(stroke(w.pts, { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' })); }
-    else if (k.kind === 'closedTrack') L.closed.push(stroke(w.pts, closed.track));
-    else if (k.kind === 'closedPath') { if (paths) L.closed.push(stroke(w.pts, closed.path)); }
-    else if (k.kind === 'single') { if (paths) L.single.push(stroke(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : RAMP[k.level], width: singleW, dash: SINGLE })); }
+    if (k.kind === 'dots' && greyStyle && w.tags.highway === 'track') L.closed.push(st(w.pts, closed.track));
+    else if (k.kind === 'dots' && greyStyle) { if (paths) L.dots.push(st(w.pts, closed.path)); }
+    else if (k.kind === 'dots') { if (paths) L.dots.push(st(w.pts, { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' })); }
+    else if (k.kind === 'closedTrack') L.closed.push(st(w.pts, closed.track));
+    else if (k.kind === 'closedPath') { if (paths) L.closed.push(st(w.pts, closed.path)); }
+    else if (k.kind === 'single') { if (paths) L.single.push(st(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : RAMP[k.level], width: singleW, dash: SINGLE })); }
     else if (k.kind === 'track' && k.level === 'paved') {
-      L.pavedCasing.push(stroke(w.pts, { color: F.pavedCasing?.residential ?? cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
-      L.pavedFill.push(stroke(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
-    } else if (k.kind === 'track') L.track.push(stroke(w.pts, { color: RAMP[k.level], width: trackW }));
+      L.pavedCasing.push(st(w.pts, { color: F.pavedCasing?.residential ?? cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
+      L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
+    } else if (k.kind === 'track') L.track.push(st(w.pts, { color: RAMP[k.level], width: trackW }));
     else if (k.kind === 'road') roads.push(w);
     if (F.symbols && /^[0-5]$/.test(w.tags['dirtbike:scale'] ?? '') && k.kind !== 'skip') L.sym.push(symbols(w.pts, w.tags['dirtbike:scale']));
   }
@@ -255,9 +298,11 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork) {
   };
   const [bandMain, bandWhite] = F.band ?? [0.6, 0.4];
   const fillOf = (w, cls, c, width) => {
-    let f = stroke(w.pts, { color: c.fill, width });
+    let f = st(w.pts, { color: c.fill, width });
     if (w.look.level !== 'paved') {
-      const band = stroke(w.pts, { color: RAMP[w.look.level], width: Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8) });
+      const bw = Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8);
+      let band = st(w.pts, { color: RAMP[w.look.level], width: bw });
+      if (P?.bandEdge && cls !== 'minor') band = st(w.pts, { color: P.bandEdge, width: bw + 1.2 }) + band;
       // Faded band: the road fill shows through, drawn as its own fill + band so the fade does not reach the casing.
       f += bOp < 1 ? `<g opacity="${bOp}">${band}</g>` : band;
     }
@@ -266,28 +311,29 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork) {
   // Service roads: their own faded group under the other roads (casing, then fill).
   const service = roads.filter((w) => w.tags.highway === 'service'), main = roads.filter((w) => w.tags.highway !== 'service');
   if (service.length) {
-    const sc = service.map((w) => stroke(w.pts, { color: casingOf(w, 'minor', SPEC.classes.minor), width: ROAD.service[1] + cas.extra })).join('');
-    const sf = service.map((w) => fillOf(w, 'minor', SPEC.classes.minor, ROAD.service[1])).join('');
+    const sc = service.map((w) => st(w.pts, { color: casingOf(w, 'minor', C('minor')), width: ROAD.service[1] + cas.extra })).join('');
+    const sf = service.map((w) => fillOf(w, 'minor', C('minor'), ROAD.service[1])).join('');
     L.service.push(`<g opacity="${SERVICE_OPACITY}">${sc}${sf}</g>`);
   }
   // Trail riding: paved roads in their own group at reduced opacity, under the dirt roads.
   const soft = F.pavedRoadOpacity ? main.filter((w) => w.look.level === 'paved') : [];
   const full = F.pavedRoadOpacity ? main.filter((w) => w.look.level !== 'paved') : main;
   if (soft.length) {
-    const sc = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return stroke(w.pts, { color: casingOf(w, cls, SPEC.classes[cls]), width: width + cas.extra }); }).join('');
-    const sf = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return fillOf(w, cls, SPEC.classes[cls], width); }).join('');
+    const sc = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return st(w.pts, { color: casingOf(w, cls, C(cls)), width: width + cas.extra }); }).join('');
+    const sf = soft.map((w) => { const [cls, width] = ROAD[w.tags.highway]; return fillOf(w, cls, C(cls), width); }).join('');
     L.service.push(`<g opacity="${F.pavedRoadOpacity}">${sc}${sf}</g>`);
   }
   for (const w of full) {
     const [cls, width] = ROAD[w.tags.highway];
-    L.casing.push(stroke(w.pts, { color: casingOf(w, cls, SPEC.classes[cls]), width: width + cas.extra }));
+    L.casing.push(st(w.pts, { color: casingOf(w, cls, C(cls)), width: width + cas.extra }));
   }
   for (const w of full) {
     const [cls, width] = ROAD[w.tags.highway];
-    L.fill.push(fillOf(w, cls, SPEC.classes[cls], width));
+    L.fill.push(fillOf(w, cls, C(cls), width));
   }
+  if (P?.shields) L.sym.push(shields(full, K));
   const out = Object.entries(L).map(([key, a]) => (['track', 'single', 'dots', 'closed'].includes(key) ? op(tOp) : '<g>') + a.join('') + '</g>');
-  return `<rect width="${CW}" height="${CH}" fill="${LAND}"/>` + out.join('');
+  return `<rect width="${CW}" height="${CH}" fill="${P?.land ?? LAND}"/>` + out.join('');
 }
 
 // Legend swatches (60 dp lines).
@@ -358,6 +404,27 @@ const SYMBOL_LEGEND = (() => {
   return { svg, h: 22 + rows.length * 30 + 10 };
 })();
 
+// Contrast against the land (WCAG luminance ratio; 3 is the usual floor for lines that must be seen).
+const lin = (c) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
+const lum = (hex) => [1, 3, 5].map((i) => lin(parseInt(hex.slice(i, i + 2), 16) / 255)).reduce((t, c, i) => t + c * [0.2126, 0.7152, 0.0722][i], 0);
+const cr = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => p - q); return (y + 0.05) / (x + 0.05); };
+const CONTRAST = (() => {
+  const rows = [
+    ['Trunk fill', SPEC.classes.trunk.fill, HIVIS.classes.trunk.fill], ['Primary fill', SPEC.classes.primary.fill, HIVIS.classes.primary.fill],
+    ['Secondary fill', SPEC.classes.secondary.fill, HIVIS.classes.secondary.fill], ['Trunk casing', SPEC.classes.trunk.casing, HIVIS.classes.trunk.casing],
+    ['Primary casing', SPEC.classes.primary.casing, HIVIS.classes.primary.casing], ['Secondary casing', SPEC.classes.secondary.casing, HIVIS.classes.secondary.casing],
+    ['Unclassified casing', MINOR_CASING.unclassified, MINOR_CASING.unclassified], ['Residential casing', MINOR_CASING.residential, MINOR_CASING.residential],
+    ['Unpaved brown', RAMP.unpaved, RAMP.unpaved], ['Grey (may not ride)', GREY, GREY],
+  ];
+  let svg = text(10, 0, 'Contrast against the land: now | high vis', 12, 700);
+  rows.forEach(([n, a, b], i) => {
+    const y = 20 + i * 18;
+    svg += `<rect x="10" y="${y - 10}" width="12" height="12" fill="${a}"/><rect x="26" y="${y - 10}" width="12" height="12" fill="${b}"/>` +
+      text(46, y, `${n}: ${cr(a, LAND).toFixed(2)} | ${cr(b, LAND).toFixed(2)}`, 11, 400, INK);
+  });
+  return { svg, h: 20 + rows.length * 18 + 14 };
+})();
+
 // ---------- Run ----------
 const NAMES = {
   'road paved': 'Paved road', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
@@ -387,6 +454,15 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       `Scheme D tracks and paths with the solid band on Unpaved roads (E-tracks 6.4), from the tags of the Geofabrik 2026-11-12 extract. ${CW} x ${CH} dp around ${v.lat}, ${v.lon}; highways only, no landuse. Light mode.`,
       panels);
     // Riding focus sheets: the same crop three ways, closed ways grey.
+    if (v.hivis) {
+      const hp = [
+        { key: 'now', badge: 'Now', title: 'Now: OSM Carto based palette, z15 widths', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey), stats },
+        { key: 'hivis', badge: 'High vis', title: 'High visibility: saturated fills, 1.5 x widths, dark band edge, road numbers', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, HIVIS), stats },
+      ];
+      sheet(`fork-hivis-${v.name}.svg`, `Fork, high visibility: ${v.name} at z${v.z ?? Z}`,
+        'For a handlebar screen in sunlight and older eyes (Julien, 2026-11-19), after the AdvOSM Garmin and DMD2 review. Contrast of each colour against the land in the legend column.',
+        hp, CONTRAST);
+    }
     if (v.noFocus) continue;
     const fpanels = Object.keys(FOCUS).map((f) => ({ key: f, badge: BADGE[f], title: FOCUS[f].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, f), stats }));
     sheet(`fork-focus-${v.name}.svg`,
