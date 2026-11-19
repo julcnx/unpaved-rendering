@@ -210,7 +210,7 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 | | Road riding | Adventure riding (and 4WD) | Trail riding |
 |---|---|---|---|
 | Paved roads | lead: casings one step darker on white roads | class colours | **at 60%** (2026-11-19) |
-| Unpaved and Off-road roads | band faded to 30% | **lead**: band 75% of the fill (55% on white roads) | band 60% / 40% (scheme D) |
+| Unpaved and Off-road roads | band at full strength: the warning that the road turns to dirt (Julien, 2026-11-19; was faded to 30%) | **lead**: band 75% of the fill (55% on white roads) | band 60% / 40% (scheme D) |
 | Paved tracks | lead: darker casing | as scheme D | as scheme D |
 | Dirt tracks | **hidden** (2026-11-19; was faded); paved tracks kept as narrow roads | **all kept, full vehicle ladder**, 2 dp instead of 2.5 | as scheme D |
 | Single tracks, paths, bridleways | hidden | hidden | **lead**: single tracks 2.2 dp; paths grey dashed |
@@ -261,7 +261,7 @@ One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and 
 - **`destination` is not a no any more**, on roads, tracks and paths. It is common on residential streets, and OsmAnd routes it to reach a place on it. Closed track in switzerland-2: 17.4% of track km (was 18.5%).
 - **Service roads**: faded white by default; grey when private or no; `service=driveway` grey (a driveway leads to a private house or plot), from z16 only, since driveways are too dense at z15 (OSM Carto shows them from z16). Parking aisles and drive-throughs also from z16, faded. Zoom 16 check: [mockups/fork-crop-switzerland-1-z16.png](mockups/fork-crop-switzerland-1-z16.png) (2.1 km of driveways in the crop; widths kept at their z15 values, so roads look thinner than OsmAnd would draw them).
 - **Footways and cycleways hidden in every focus**: a motorbike may never ride them, and in towns they are dense clutter beside the roads (switzerland-1: paths in the crop drop from 54.8 to 16.1 km). With `motorcycle=yes` they stay a brown single track. Paths and bridleways stay grey dashed in Trail riding.
-- **Road riding**: dirt tracks and closed tracks hidden, not grey, since grey says "you may not ride it", which is false for a dirt track. Paved tracks stay as narrow roads; Unpaved roads keep the faded band.
+- **Road riding**: dirt tracks and closed tracks hidden, not grey, since grey says "you may not ride it", which is false for a dirt track. Paved tracks stay as narrow roads. Unpaved roads keep the band at full strength: on a road day it is the warning that the road turns to dirt (Julien, 2026-11-19).
 - **Trail riding**: paved roads drawn at 60% (casing and fill), under the dirt roads, whose brown band stays at full strength.
 
 ### 6.5 Background, hillshade and contours (to evaluate)

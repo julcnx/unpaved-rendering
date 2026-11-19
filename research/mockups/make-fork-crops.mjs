@@ -183,7 +183,9 @@ const stroke = (pts, { color, width, dash = null, cap = null }) =>
 const FOCUS = {
   // Road riding: dirt tracks and closed tracks hidden, not grey (grey = you may not ride it, false for a dirt track);
   // paved tracks kept as narrow roads (Julien, 2026-11-19).
-  road: { title: 'Road riding: paved leads, dirt band faded, no dirt tracks, no paths', bandOpacity: 0.3, dirtTracks: false, paths: false, pavedCasing: MINOR_CASING_ROAD },
+  // The dirt band on roads stays at full strength (Julien, 2026-11-19): on a road day it is the warning that the road
+  // turns to dirt.
+  road: { title: 'Road riding: paved leads, dirt band as a warning, no dirt tracks, no paths', dirtTracks: false, paths: false, pavedCasing: MINOR_CASING_ROAD },
   adventure: { title: 'Adventure riding (and 4WD): dirt roads lead, all double tracks, no single tracks', band: [0.75, 0.55], trackW: 2, paths: false },
   // dirtbike:scale symbols: not rendered for now (Julien, 2026-11-19), documented in E-tracks 6.4 only. Set
   // symbols: true and pass SYMBOL_LEGEND to the focus sheet to draw them again.
