@@ -139,35 +139,78 @@ const d = (pts) => 'M' + pts.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).
 const stroke = (pts, { color, width, dash = null, cap = null }) =>
   `<path d="${d(pts)}" fill="none" stroke="${color}" stroke-width="${width}" stroke-linejoin="round" stroke-linecap="${cap ?? (dash ? 'butt' : 'round')}"${dash ? ` stroke-dasharray="${dash}"` : ''}/>`;
 
-function drawCrop(ways, closed) {
-  const L = { dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], band: [] };
+// Riding focus (proposal, 2026-11-19): one OsmAnd rendering property with three values. The colour ramp stays the
+// same; only the emphasis changes. null = scheme D as drawn above (the Trail riding look without symbols).
+//   road: paved leads (darker casing on white roads and paved tracks); the dirt band and dirt tracks fade;
+//         single tracks and paths hidden.
+//   adventure (and 4WD): dirt roads lead (wider band); every double track kept with the full vehicle ladder, a
+//         little thinner than roads; single tracks and paths hidden (no four-wheeler or heavy bike uses them).
+//   trail: scheme D, single tracks stronger, dirtbike:scale symbols where tagged.
+const FOCUS = {
+  road: { title: 'Road riding: paved leads, dirt fades, no single tracks', bandOpacity: 0.3, trackOpacity: 0.3, paths: false, pavedCasing: '#6f6f6f' },
+  adventure: { title: 'Adventure riding (and 4WD): dirt roads lead, all double tracks, no single tracks', band: [0.75, 0.55], trackW: 2, paths: false },
+  trail: { title: 'Trail riding: scheme D, single tracks stronger, dirtbike:scale symbols', singleW: 2.2, symbols: true },
+};
+// dirtbike:scale symbols (trail focus), drawn with dashes only so core-legacy can draw them too (round cap = dot,
+// butt cap with dash = width = square), dark on a white halo: shape and count carry the level, no colour.
+// 0-1 one dot, 2 two dots, 3 one square, 4-5 two squares. Every 40 dp.
+const SYM_S = 4.2, SYM_H = 6.8, SYM_GAP = 2.6, SYM_STEP = 48;
+function symbols(pts, scale) {
+  const n = +scale, sq = n >= 3, two = n === 2 || n >= 4;
+  const len = sq ? (two ? 2 * SYM_S + SYM_GAP : SYM_S) : (two ? SYM_GAP + 0.01 : 0.01);
+  const mark = sq ? (two ? `${SYM_S} ${SYM_GAP} ${SYM_S} ${SYM_STEP - len}` : `${SYM_S} ${SYM_STEP - SYM_S}`)
+    : (two ? `0.01 ${SYM_GAP + SYM_S - 0.01} 0.01 ${SYM_STEP - SYM_GAP - SYM_S - 0.01}` : `0.01 ${SYM_STEP - 0.01}`);
+  const markLen = sq ? len : (two ? SYM_GAP + SYM_S : 0.01);
+  const halo = sq ? `${markLen + SYM_H - SYM_S} ${SYM_STEP - markLen - SYM_H + SYM_S}` : null;
+  const cap = sq ? 'butt' : 'round';
+  const pd = d(pts);
+  const h = sq
+    ? `<path d="${pd}" fill="none" stroke="#fff" stroke-width="${SYM_H}" stroke-dasharray="${halo}" stroke-dashoffset="${(SYM_H - SYM_S) / 2}" stroke-linecap="butt"/>`
+    : `<path d="${pd}" fill="none" stroke="#fff" stroke-width="${SYM_H}" stroke-dasharray="${mark}" stroke-linecap="round"/>`;
+  return h + `<path d="${pd}" fill="none" stroke="#222" stroke-width="${SYM_S}" stroke-dasharray="${mark}" stroke-linecap="${cap}"/>`;
+}
+
+function drawCrop(ways, closed, focus = null) {
+  const F = focus ? FOCUS[focus] : {};
+  const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
+  const tOp = F.trackOpacity ?? 1, bOp = F.bandOpacity ?? 1;
+  const op = (o) => (o < 1 ? `<g opacity="${o}">` : '<g>');
+  const L = { dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], band: [], sym: [] };
   const roads = [];
   for (const w of ways) {
     const k = w.look;
-    if (k.kind === 'dots') L.dots.push(stroke(w.pts, { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' }));
+    if (k.kind === 'dots') { if (paths) L.dots.push(stroke(w.pts, { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' })); }
     else if (k.kind === 'closedTrack') L.closed.push(stroke(w.pts, closed.track));
-    else if (k.kind === 'closedPath') L.closed.push(stroke(w.pts, closed.path));
-    else if (k.kind === 'single') L.single.push(stroke(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : RAMP[k.level], width: PATH_W, dash: SINGLE }));
+    else if (k.kind === 'closedPath') { if (paths) L.closed.push(stroke(w.pts, closed.path)); }
+    else if (k.kind === 'single') { if (paths) L.single.push(stroke(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : RAMP[k.level], width: singleW, dash: SINGLE })); }
     else if (k.kind === 'track' && k.level === 'paved') {
-      L.pavedCasing.push(stroke(w.pts, { color: PAVED_TRACK.casing, width: TRACK_W + 1.2 }));
-      L.pavedFill.push(stroke(w.pts, { color: PAVED_TRACK.fill, width: TRACK_W }));
-    } else if (k.kind === 'track') L.track.push(stroke(w.pts, { color: RAMP[k.level], width: TRACK_W }));
+      L.pavedCasing.push(stroke(w.pts, { color: F.pavedCasing ?? PAVED_TRACK.casing, width: trackW + 1.2 }));
+      L.pavedFill.push(stroke(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
+    } else if (k.kind === 'track') L.track.push(stroke(w.pts, { color: RAMP[k.level], width: trackW }));
     else if (k.kind === 'road') roads.push(w);
+    if (F.symbols && /^[0-5]$/.test(w.tags['dirtbike:scale'] ?? '') && k.kind !== 'skip') L.sym.push(symbols(w.pts, w.tags['dirtbike:scale']));
   }
   // Roads: all casings, then fills and bands from the lowest class up, so junctions join cleanly.
   roads.sort((a, b) => RANK.indexOf(a.tags.highway) - RANK.indexOf(b.tags.highway));
   for (const w of roads) {
     const [cls, width] = ROAD[w.tags.highway];
     const c = SPEC.classes[cls];
-    L.casing.push(stroke(w.pts, { color: c.casing, width: width + 1.2 }));
+    const casing = F.pavedCasing && cls === 'minor' && w.look.level === 'paved' ? F.pavedCasing : c.casing;
+    L.casing.push(stroke(w.pts, { color: casing, width: width + 1.2 }));
   }
+  const [bandMain, bandWhite] = F.band ?? [0.6, 0.4];
   for (const w of roads) {
     const [cls, width] = ROAD[w.tags.highway];
     const c = SPEC.classes[cls];
     L.fill.push(stroke(w.pts, { color: c.fill, width }));
-    if (w.look.level !== 'paved') L.fill.push(stroke(w.pts, { color: RAMP[w.look.level], width: Math.max(width * (cls === 'minor' ? 0.4 : 0.6), 0.8) }));
+    if (w.look.level !== 'paved') {
+      const band = stroke(w.pts, { color: RAMP[w.look.level], width: Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8) });
+      // Faded band: the road fill shows through, drawn as its own fill + band so the fade does not reach the casing.
+      L.fill.push(bOp < 1 ? `<g opacity="${bOp}">${band}</g>` : band);
+    }
   }
-  return `<rect width="${CW}" height="${CH}" fill="${LAND}"/>` + Object.values(L).map((a) => a.join('')).join('');
+  const out = Object.entries(L).map(([key, a]) => (['track', 'single', 'dots', 'closed'].includes(key) ? op(tOp) : '<g>') + a.join('') + '</g>');
+  return `<rect width="${CW}" height="${CH}" fill="${LAND}"/>` + out.join('');
 }
 
 // Legend swatches (60 dp lines).
@@ -184,7 +227,7 @@ function legend(closed) {
   ];
 }
 
-function sheet(file, heading, note, panels) {
+function sheet(file, heading, note, panels, extra = '') {
   const LW = 330, top = 64, gap = 14;
   const W = LW + panels.length * (CW + gap) + 6, H = top + 24 + CH + 14;
   let out = text(10, 26, heading, 17, 700) + text(10, 46, note, 12, 400, MUTED);
@@ -203,16 +246,30 @@ function sheet(file, heading, note, panels) {
   });
   let y = top + 40 + rows.length * 44;
   if (panels.length > 1) {
-    panels.slice(1).forEach((p) => {
+    panels.slice(1).filter((p) => p.closed !== panels[0].closed).forEach((p) => {
       out += `<rect x="6" y="${y - 12}" width="146" height="24" rx="3" fill="${LAND}"/><g transform="translate(12 ${y})">${sw([p.closed.track])}</g><g transform="translate(86 ${y})">${sw([p.closed.path])}</g>` +
         text(160, y + 4, `Closed, ${p.key}: track | path`, 12);
       y += 44;
     });
   }
+  if (extra) { out += `<g transform="translate(0 ${y - 10})">${extra.svg}</g>`; y += extra.h; }
   out += `<foreignObject x="6" y="${y}" width="${LW - 16}" height="${H - y - 10}"><div xmlns="http://www.w3.org/1999/xhtml" style="font:11px Helvetica,Arial,sans-serif;color:${MUTED};line-height:1.4">${panels[0].stats}</div></foreignObject>`;
   writeFileSync(new URL(file, import.meta.url), `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#fff"/>${out}</svg>`);
   console.error(`mockups/${file}`);
 }
+
+// dirtbike:scale legend: symbols on a sample single track (no real tags: none in these views, and the Thai ones
+// in the extract are not to be shown, see the todo).
+const SYMBOL_LEGEND = (() => {
+  const rows = [['0', '0-1: one dot'], ['2', '2: two dots'], ['3', '3: one square'], ['5', '4-5: two squares']];
+  let svg = text(10, 0, 'Trail riding: dirtbike:scale (sample line)', 12, 700);
+  rows.forEach(([v, label], i) => {
+    const y = 22 + i * 30, pts = [[12, y], [140, y]];
+    svg += `<rect x="6" y="${y - 12}" width="146" height="24" rx="3" fill="${LAND}"/>` + stroke(pts, { color: RAMP.unpaved, width: 2.2, dash: SINGLE }) +
+      symbols([[12 + 14, y], [140, y]], v) + text(160, y + 4, label, 12);
+  });
+  return { svg, h: 22 + rows.length * 30 + 10 };
+})();
 
 // ---------- Run ----------
 const NAMES = {
@@ -242,5 +299,12 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       `Fork, real data: ${v.name} at z15 (${v.note})`,
       `Scheme D tracks and paths with the solid band on Unpaved roads (E-tracks 6.4), from the tags of the Geofabrik 2026-11-12 extract. ${CW} x ${CH} dp around ${v.lat}, ${v.lon}; highways only, no landuse. Light mode.`,
       panels);
+    // Riding focus sheets: the same crop three ways, closed ways grey.
+    const fpanels = Object.keys(FOCUS).map((f) => ({ key: f, title: FOCUS[f].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, f), stats }));
+    const symCount = ways.filter((w) => w.tags['dirtbike:scale']).length;
+    sheet(`fork-focus-${v.name}.svg`,
+      `Fork, riding focus: ${v.name} at z15 (${v.note})`,
+      `One rendering property, three values (proposal). Same tags, same colours; only the emphasis changes. Closed ways grey. dirtbike:scale ways in this crop: ${symCount}.`,
+      fpanels, SYMBOL_LEGEND);
   }
 }

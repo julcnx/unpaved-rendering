@@ -205,6 +205,31 @@ Night: brighter = needs more vehicle (`#9c6a3a`, `#d1a068`, `#f7e3c6`), paved tr
 - Paths are blocked unless a `motorcycle`, `motorcar`, `motor_vehicle` or `vehicle` tag says yes, so the router also follows "dots = nobody said yes".
 - One mismatch, on OsmAnd's side: `motorcar=no` with no `motorcycle` tag blocks motorcycles in the router, while the map (rightly) draws the way open, since `motorcar` does not cover motorcycles. Rare; worth an issue to OsmAnd later, not a fork change.
 
+**Riding focus (proposal, 2026-11-19; Julien's three kinds of day, values by Claude, to check).** One rendering property with three values, shown in the fork's map settings. The colour ramp, the access rule and the classifier are the same in all three; only the emphasis changes. This updates Decision 1: the audience stays adventure, enduro and 4WD with one ramp, but the map stops pretending they all look for the same lines. Drawn on the three views: [mockups/fork-focus-chiangrai.png](mockups/fork-focus-chiangrai.png), [mockups/fork-focus-thailand-1.png](mockups/fork-focus-thailand-1.png), [mockups/fork-focus-switzerland-2.png](mockups/fork-focus-switzerland-2.png) (`node mockups/make-fork-crops.mjs`).
+
+| | Road riding | Adventure riding (and 4WD) | Trail riding |
+|---|---|---|---|
+| Paved roads | lead: darker casing `#6f6f6f` on white roads | class colours | class colours |
+| Unpaved and Off-road roads | band faded to 30% | **lead**: band 75% of the fill (55% on white roads) | band 60% / 40% (scheme D) |
+| Paved tracks | lead: darker casing | as scheme D | as scheme D |
+| Dirt tracks | faded to 30% | **all kept, full vehicle ladder**, 2 dp instead of 2.5 | as scheme D |
+| Single tracks, paths | hidden | hidden | **lead**: single tracks 2.2 dp; dots |
+| Closed | grey, faded | grey | grey |
+| `dirtbike:scale` | | | symbols where tagged |
+
+- **4WD fits Adventure** because Adventure keeps the whole ladder instead of fading the hard tracks: a heavy bike reads near black as "stop", a 4WD driver as the goal; same line, each reader decides. Neither uses single tracks, so both lose them.
+- **Adventure keeps Unpaved tracks**: whether a dirt road is mapped as a road or a track is the mapper's choice (98% of Thai tracks say nothing about their condition), so hiding tracks would cut real routes.
+- **Reading of the crops**: Road riding makes the paved village network of thailand-1 readable at once; Adventure puts the High-clearance and 4WD network of the hills first with the paved roads quiet; Trail riding is scheme D. Chiang Rai in Road and Adventure loses its 8.8 km of moto paths, as intended.
+- **Default when installed: to decide** (Claude's pick: Adventure riding, the largest audience and the closest to the roads article).
+
+**`dirtbike:scale` in OsmAnd (checked 2026-11-19, OsmAnd-resources 85815c678, core-legacy 3317961).**
+
+- **The data is already in the maps.** `obf_creation/rendering_types.xml` (category `dirtbike:scale`, lines 3105-3114) turns every way with `dirtbike:scale` into a `route_dirtbike` line and keeps the values 0 to 5 as additional tags from z12; 6 is commented out. No map change is needed.
+- **OsmAnd already draws it**, in `rendering_styles/routes.addon.render.xml` (lines 1273-1291, setting `showDirtbikeTrails`): a 6 to 13 dp line with round caps and `pathEffect` 1_20 to 1_70, which gives coloured dots along the way, green to maroon by value. That is a dash pattern, so it works in core-legacy too.
+- **Symbols with dashes only**: a round cap on a near-zero dash is a dot, a butt cap with dash = width is a square, and two dashes close together make a pair. So dots, pairs and squares work in every renderer; a diamond does not (a shape needs `pathIcon`, OpenGL only, as found in the grain test). Proposal, black on a white halo, every 48 dp: 0-1 one dot, 2 two dots, 3 one square, 4-5 two squares. Shape and count carry the level, no colour (green and blue would clash with the ramp and with water). The halo is a second line layer (`strokeWidth_2`, `pathEffect_2`). Not yet tried in `osmand-render`.
+- **Labels from the tag are not possible**: core-legacy text comes from name tags only (`renderText`), and `dirtbike:scale` is an additional tag, not a name, so a "2" shield cannot be drawn from it.
+- **Data**: none in the three views and none in Switzerland. The symbols are shown on a sample line in the legend only.
+
 ### 6.5 Background, hillshade and contours (to evaluate)
 
 Julien's task (2026-11-13): find the land colours, landcover, hillshade and contour lines that work best under the combined scheme ([mockups/picks-combined.png](mockups/picks-combined.png)). Preference: a **light background**, as in the OsmAnd Motorcycle plugin, Gaia GPS and cycle.travel.
