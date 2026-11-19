@@ -176,6 +176,7 @@ function symbols(pts, scale) {
 
 // Road casing variants (Julien, 2026-11-19: road strokes too soft). white: casing colour of white roads and paved
 // tracks (a paved track is a narrow road, so it follows); extra: casing width added to the fill (both sides).
+const BADGE = { current: 'Now', darker: 'A', wider: 'B', strong: 'C', thin: 'Thin red', crimson: 'Crimson', dashed: 'Red dashes', grey: 'Grey', greyThin: 'Grey 1.4', greyDots: 'Grey dots', road: 'Road', adventure: 'Adventure', trail: 'Trail' };
 const CASINGS = {
   current: { title: 'Current: #bbbbbb, 0.6 dp a side (OSM Carto)', white: null, extra: 1.2 },
   darker: { title: 'A. Darker: #8f8f8f, 0.6 dp a side', white: '#8f8f8f', extra: 1.2 },
@@ -247,13 +248,18 @@ function legend(closed) {
 }
 
 function sheet(file, heading, note, panels, extra = '') {
-  const LW = 330, top = 64, gap = 14;
-  const W = LW + panels.length * (CW + gap) + 6, H = top + 24 + CH + 14;
+  // Panels in a grid, two per row when there are more than two, each with a large badge (A, B, Road...) so the
+  // variant can be named when the sheet is viewed shrunk (Julien, 2026-11-19: no letters visible).
+  const LW = 330, top = 64, gap = 14, PH = 30 + CH + gap;
+  const cols = panels.length > 2 ? 2 : panels.length, nrows = Math.ceil(panels.length / cols);
+  const W = LW + cols * (CW + gap) + 6, H = Math.max(top + nrows * PH + 4, top + 24 + CH + 14);
   let out = text(10, 26, heading, 17, 700) + text(10, 46, note, 12, 400, MUTED);
   panels.forEach((p, j) => {
-    const x = LW + j * (CW + gap);
-    out += text(x, top + 14, p.title, 13, 700) +
-      `<g transform="translate(${x} ${top + 24})"><clipPath id="c${j}"><rect width="${CW}" height="${CH}" rx="4"/></clipPath><g clip-path="url(#c${j})">${p.svg}</g></g>`;
+    const x = LW + (j % cols) * (CW + gap), y0 = top + Math.floor(j / cols) * PH;
+    const badge = p.badge ? `<rect x="10" y="10" width="${24 + p.badge.length * 23}" height="48" rx="6" fill="#222" fill-opacity="0.85"/>` +
+      `<text x="21" y="46" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#fff">${esc(p.badge)}</text>` : '';
+    out += text(x, y0 + 18, p.title, 16, 700) +
+      `<g transform="translate(${x} ${y0 + 30})"><clipPath id="c${j}"><rect width="${CW}" height="${CH}" rx="4"/></clipPath><g clip-path="url(#c${j})">${p.svg}</g>${badge}</g>`;
   });
   // Legend for the first panel's closed style; the closed row repeats for each panel style.
   const rows = legend(panels[0].closed);
@@ -313,19 +319,19 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
     console.error(`${v.name}: ` + rows.map(([k, n]) => `${NAMES[k] ?? k} ${n.toFixed(1)}`).join(', ') + `; closed ${closedShare.toFixed(1)}% of track km`);
     const stats = `<b>In this crop</b> (km): ` + rows.map(([k, n]) => `${esc(NAMES[k] ?? k)} ${n.toFixed(1)}`).join(', ') +
       `. Closed: ${closedShare.toFixed(1)}% of track km.`;
-    const panels = (v.closedVariants ?? ['thin']).map((key) => ({ key, title: v.closedVariants ? CLOSED[key].title : `${v.name}, z15`, closed: CLOSED[key], svg: drawCrop(ways, CLOSED[key]), stats }));
+    const panels = (v.closedVariants ?? ['thin']).map((key) => ({ key, badge: v.closedVariants ? BADGE[key] : null, title: v.closedVariants ? CLOSED[key].title : `${v.name}, z15`, closed: CLOSED[key], svg: drawCrop(ways, CLOSED[key]), stats }));
     sheet(`fork-crop-${v.name}.svg`,
       `Fork, real data: ${v.name} at z15 (${v.note})`,
       `Scheme D tracks and paths with the solid band on Unpaved roads (E-tracks 6.4), from the tags of the Geofabrik 2026-11-12 extract. ${CW} x ${CH} dp around ${v.lat}, ${v.lon}; highways only, no landuse. Light mode.`,
       panels);
     // Riding focus sheets: the same crop three ways, closed ways grey.
-    const fpanels = Object.keys(FOCUS).map((f) => ({ key: f, title: FOCUS[f].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, f), stats }));
+    const fpanels = Object.keys(FOCUS).map((f) => ({ key: f, badge: BADGE[f], title: FOCUS[f].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, f), stats }));
     sheet(`fork-focus-${v.name}.svg`,
       `Fork, riding focus: ${v.name} at z15 (${v.note})`,
       `One rendering property, three values (proposal). Same tags, same colours; only the emphasis changes. Closed ways grey.`,
       fpanels);
     if (v.casingCheck) {
-      const cpanels = Object.keys(CASINGS).map((k) => ({ key: k, title: CASINGS[k].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS[k]), stats }));
+      const cpanels = Object.keys(CASINGS).map((k) => ({ key: k, badge: BADGE[k], title: CASINGS[k].title, closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS[k]), stats }));
       sheet(`fork-casing-${v.name}.svg`, `Fork, road casing: ${v.name} at z15`,
         'Road strokes too soft (Julien, 2026-11-19): four casings. White roads and paved tracks take the grey; coloured roads keep their class casing, at the same width. Scheme D, grey for every way you may not ride.',
         cpanels);
