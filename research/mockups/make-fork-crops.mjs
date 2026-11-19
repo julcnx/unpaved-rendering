@@ -231,6 +231,17 @@ const HIVIS = {
     secondary: { ...SPEC.classes.secondary, fill: '#f4e04a', casing: '#7d7206' },
   },
 };
+// High vis 2 (2026-11-19, after mockups/score-readability.py): the red trunk #e8503a and the brown Unpaved track were
+// almost the same colour for red-green colour-blind riders (Delta E 7.5), and primary and secondary close for
+// tritanopia (15.2). Crimson-rose trunk, deeper orange primary. Score 6.7 -> 8.2 (AdvOSM 9.1).
+const HIVIS2 = {
+  ...HIVIS,
+  classes: {
+    trunk: { ...SPEC.classes.trunk, fill: '#d6336c', casing: '#7a1236' },
+    primary: { ...SPEC.classes.primary, fill: '#ef8a1f', casing: '#8a4a08' },
+    secondary: HIVIS.classes.secondary,
+  },
+};
 // Road number shields: one per ref, at the middle of its longest way in the crop, at least 260 dp apart for the
 // same ref. trunk to tertiary only.
 function shields(roads, K) {
@@ -458,6 +469,7 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       const hp = [
         { key: 'now', badge: 'Now', title: 'Now: OSM Carto based palette, z15 widths', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey), stats },
         { key: 'hivis', badge: 'High vis', title: 'High visibility: saturated fills, 1.5 x widths, dark band edge, road numbers', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, HIVIS), stats },
+        { key: 'hivis2', badge: 'High vis 2', title: 'High vis 2: crimson-rose trunk, deeper orange (colour-blind safe)', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, HIVIS2), stats },
       ];
       sheet(`fork-hivis-${v.name}.svg`, `Fork, high visibility: ${v.name} at z${v.z ?? Z}`,
         'For a handlebar screen in sunlight and older eyes (Julien, 2026-11-19), after the AdvOSM Garmin and DMD2 review. Contrast of each colour against the land in the legend column.',

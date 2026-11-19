@@ -271,6 +271,22 @@ One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and 
 - **Our fills are pastel** (OSM Carto): contrast against the land 1.06 for the secondary fill, 1.20 primary, 1.54 trunk, 1.15 white; the class reads only from the thin casing (about 4). Made for a desk screen, not a handlebar in sunlight.
 - **High-visibility palette** ([mockups/fork-hivis-thailand-1.png](mockups/fork-hivis-thailand-1.png), [mockups/fork-hivis-switzerland-1.png](mockups/fork-hivis-switzerland-1.png), `HIVIS` in `mockups/make-fork-crops.mjs`): saturated fills (trunk `#e8503a`, primary `#f39c26`, secondary `#f4e04a`, darker casings), every line 1.5 x wider, a near-black edge around the dirt band inside coloured roads, road numbers in white shields (trunk to tertiary, one per ref and 260 dp apart). Contrast printed on the sheets: trunk fill 3.24, primary 1.91, trunk casing 7.58, primary casing 5.09; yellow stays low in luminance (1.17) but reads by saturation, as on the Garmin maps. Reading (Claude): the classes and numbers read at a glance; risks: the orange primary is closer in hue to the brown tracks, and 1.5 x white streets crowd towns. OsmAnd also has a "Map magnifier" setting that enlarges everything; the defaults should still be readable at 100%. Proposal: make it the fork's default palette, to confirm.
 
+**Readability score (2026-11-19, `python3 mockups/score-readability.py`).** Seven measures, each mapped to 0-10 between a floor and a target, mean as the score. Colour distance is CIE76 Delta E, the worst of normal vision and the three colour-blind simulations (Machado 2009). AdvOSM colours sampled from its Tanzania screenshot; measures that do not apply to it are n/a. The thresholds are Claude's, so the score ranks palettes, it is not an absolute grade.
+
+| Measure (floor -> target) | Now | High vis | High vis 2 | AdvOSM (ref.) |
+|---|---|---|---|---|
+| Fill contrast (1 -> 3) | 1.3 (1.27) | 5.5 (2.11) | 7.3 (2.46) | 9.5 (2.89) |
+| Class separation (colour-blind) (5 -> 30) | 0.9 (7.16) | 4.1 (15.25) | 5.8 (19.48) | 7.0 (22.40) |
+| Dirt signal in roads (1 -> 3) | 5.7 (2.14) | 10.0 (4.52) | 10.0 (3.65) | 10.0 (4.17) |
+| Tracks apart from roads (5 -> 30) | 7.3 (23.28) | 1.0 (7.50) | 7.8 (24.38) | n/a |
+| Minor road width (px) (6 -> 14) | 3.8 (9.00) | 9.4 (13.50) | 9.4 (13.50) | n/a |
+| Track width (px) (4 -> 9) | 2.0 (5.00) | 7.0 (7.50) | 7.0 (7.50) | n/a |
+| Road numbers (0 -> 10) | 0 (no) | 10 (yes) | 10 (yes) | 10 (yes) |
+| **Score (mean)** | **3.0** | **6.7** | **8.2** | **9.1** |
+
+- **High vis fails one measure**: its red trunk `#e8503a` and the brown Unpaved track are almost the same colour for red-green colour-blind riders (Delta E 7.5 with deuteranopia, 8.7 protanopia), and primary and secondary are close for tritanopia (15.2).
+- **High vis 2** fixes both: crimson-rose trunk `#d6336c` (casing `#7a1236`) and a deeper orange primary `#ef8a1f` (casing `#8a4a08`). Score 6.7 to 8.2; AdvOSM 9.1, mostly from its white land and higher fill contrast. Drawn as the third panel of the high-visibility sheets. Trade-off: the trunk moves away from the Carto red toward pink, so motorways (not in the extract, see below) will need a colour of their own, such as a dark blue or purple.
+
 **Barriers (Julien, 2026-11-19: would rather not show them; could get ugly quickly).** Proposal: do not draw `barrier=gate` and the like, except a barrier node that blocks (`access`, `motorcycle` or `motor_vehicle` = no or private): a small light grey bar across the line, from z16. Do not grey the whole track: most gates are open or passable, a closed one blocks only part of the way, and the map cannot tell which side; OsmAnd routing already reads the access tags on barrier nodes. Not drawn (barrier nodes are not in the extract).
 
 **Still missing from the fork mockups (2026-11-19, priority order, Claude's proposal):**
@@ -283,6 +299,7 @@ One light warm grey `#c4bdb4` for every way you may not ride: closed tracks and 
 6. Hillshade or contours (6.5, to evaluate; part of DMD2's look).
 7. Night mode for the new rules (grey, focus, hierarchy, high visibility).
 8. Blocking barriers as above (z16+).
+9. Motorways: not in the extract (the osmium filter stops at trunk); they need a colour apart from the new trunk.
 
 ### 6.5 Background, hillshade and contours (to evaluate)
 
