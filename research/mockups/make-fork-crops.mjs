@@ -215,7 +215,7 @@ const FOCUS = {
   // The dirt band on roads stays at full strength (Julien, 2026-11-19): on a road day it is the warning that the road
   // turns to dirt.
   road: { title: 'Road riding: paved leads, dirt band as a warning, no dirt tracks, no paths', dirtTracks: false, paths: false, pavedCasing: MINOR_CASING_ROAD },
-  adventure: { title: 'Adventure riding (and 4WD): dirt roads lead, all double tracks, no single tracks', band: [0.75, 0.55], trackW: 2, paths: false },
+  adventure: { title: 'Adventure riding (and 4WD): dirt roads lead, all double tracks, no single tracks', band: [0.5, 0.5], trackW: 2, paths: false }, // band 75% -> 50% (Julien, 2026-11-20: class hard to see)
   // dirtbike:scale symbols: not rendered for now (Julien, 2026-11-19), documented in E-tracks 6.4 only. Set
   // symbols: true and pass SYMBOL_LEGEND to the focus sheet to draw them again.
   // Trail riding: paved roads softer (60%), the brown band on dirt roads at full strength (Julien, 2026-11-19).
@@ -267,6 +267,9 @@ const HIVIS = {
 // tritanopia (15.2). Crimson-rose trunk, deeper orange primary. Score 6.7 -> 8.2 (AdvOSM 9.1).
 const HIVIS2 = {
   ...HIVIS,
+  // Band 40% on every class (Julien, 2026-11-20: at 60% the class colour hardly showed on main roads); about a track's
+  // width on main roads at 1.5 x. Easy as a shape: white track with brown edges, thin centre line on roads.
+  band: [0.4, 0.4], easyShape: true,
   land: '#fbfaf6', // the proposed near-white land (Julien, 2026-11-19: kept over the Motorcycle plugin's, easier to read)
   classes: {
     trunk: { ...SPEC.classes.trunk, fill: '#d6336c', casing: '#7a1236' },
@@ -319,7 +322,9 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
   const paths = F.paths ?? true, trackW = F.trackW ?? TRACK_W, singleW = F.singleW ?? PATH_W;
   const tOp = F.trackOpacity ?? 1, bOp = F.bandOpacity ?? 1;
   const op = (o) => (o < 1 ? `<g opacity="${o}">` : '<g>');
-  const L = { service: [], closedRoad: [], dots: [], closed: [], single: [], pavedCasing: [], pavedFill: [], track: [], casing: [], fill: [], bandEdge: [], band: [], sym: [] };
+  // Layer order. Smooth tracks above rough ones at junctions (Julien, 2026-11-20): 4WD, then Unpaved, then Easy and
+  // paved tracks (casing, then fill), so the way a car can take stays continuous where a rough track joins it.
+  const L = { service: [], closedRoad: [], dots: [], closed: [], single: [], track4wd: [], track: [], pavedCasing: [], pavedFill: [], casing: [], fill: [], bandEdge: [], band: [], sym: [] };
   const roads = [];
   for (const w of ways) {
     const k = w.look;
@@ -332,11 +337,18 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
     else if (k.kind === 'dots') { if (paths) L.dots.push(st(w.pts, { color: DOTS, width: 1.4, dash: '0.1 2.6', cap: 'round' })); }
     else if (k.kind === 'closedTrack') L.closed.push(st(w.pts, closed.track));
     else if (k.kind === 'closedPath') { if (paths) L.closed.push(st(w.pts, closed.path)); }
-    else if (k.kind === 'single') { if (paths) L.single.push(st(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : R[k.level], width: singleW, dash: SINGLE })); }
+    // Single tracks: Easy drawn as Unpaved when Easy is a shape (a dashed white core would not read).
+    else if (k.kind === 'single') { if (paths) L.single.push(st(w.pts, { color: k.level === 'paved' ? PAVED_TRACK.casing : R[k.level === 'easy' && P?.easyShape ? 'unpaved' : k.level], width: singleW, dash: SINGLE })); }
     else if (k.kind === 'track' && k.level === 'paved') {
       L.pavedCasing.push(st(w.pts, { color: F.pavedCasing?.residential ?? cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
       L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
-    } else if (k.kind === 'track') L.track.push(st(w.pts, { color: R[k.level], width: trackW }));
+    } else if (k.kind === 'track' && k.level === 'easy' && P?.easyShape) {
+      // Easy by shape (Julien, 2026-11-20): a track is drawn like a narrow road, dirt always inside. Easy = the paved
+      // track (white, grey edges) with a thin brown centre line, the same mark as on Easy roads; Unpaved = all brown
+      // (the band fills the track); 4WD = all near black.
+      L.pavedCasing.push(st(w.pts, { color: cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
+      L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }) + st(w.pts, { color: R.unpaved, width: 1 }));
+    } else if (k.kind === 'track') L[k.level === 'fourwd' ? 'track4wd' : 'track'].push(st(w.pts, { color: R[k.level], width: trackW }));
     else if (k.kind === 'road') roads.push(w);
     if (F.symbols && /^[0-5]$/.test(w.tags['dirtbike:scale'] ?? '') && k.kind !== 'skip') L.sym.push(symbols(w.pts, w.tags['dirtbike:scale']));
   }
@@ -348,14 +360,17 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
     if (F.pavedCasing && w.look.level === 'paved') return F.pavedCasing[h];
     return cas.white ?? (cas.hierarchy ? MINOR_CASING[h] : c.casing);
   };
-  const [bandMain, bandWhite] = F.band ?? [0.6, 0.4];
+  const [bandMain, bandWhite] = F.band ?? P?.band ?? [0.6, 0.4];
   // Fill, band edge and band of one road, returned apart: every fill is drawn before every band edge, and every edge
   // before every band, so the next way's fill does not cut the band at each joint (gaps seen by Julien, 2026-11-19).
   const fillOf = (w, cls, c, width) => {
     const r = { fill: st(w.pts, { color: c.fill, width }), edge: '', band: '' };
     if (w.look.level !== 'paved') {
-      const bw = Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8);
+      const easyLine = w.look.level === 'easy' && P?.easyShape;
+      // Easy roads: a thin brown centre line (1 dp), no edge, so the road reads closest to a paved one.
+      const bw = easyLine ? 1 : Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8);
       const fade = (x) => (bOp < 1 ? `<g opacity="${bOp}">${x}</g>` : x);
+      if (easyLine) { r.band = fade(st(w.pts, { color: R.unpaved, width: bw })); return r; }
       r.band = fade(st(w.pts, { color: R[w.look.level], width: bw }));
       if (P?.bandEdge && cls !== 'minor') r.edge = fade(st(w.pts, { color: P.bandEdge, width: bw + 1.2 }));
     }
@@ -387,7 +402,7 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
     L.fill.push(r.fill); L.bandEdge.push(r.edge); L.band.push(r.band);
   }
   if (P?.shields) L.sym.push(shields(full, K));
-  const out = Object.entries(L).map(([key, a]) => (['track', 'single', 'dots', 'closed'].includes(key) ? op(tOp) : '<g>') + a.join('') + '</g>');
+  const out = Object.entries(L).map(([key, a]) => (['track4wd', 'track', 'single', 'dots', 'closed'].includes(key) ? op(tOp) : '<g>') + a.join('') + '</g>');
   return (under ?? `<rect width="${CW}" height="${CH}" fill="${P?.land ?? LAND}"/>`) + out.join('');
 }
 
@@ -400,7 +415,7 @@ function legend(closed) {
     ['Unclassified: paved | Unpaved', sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }]), sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }, { color: RAMP.unpaved, width: 1.8 }])],
     ['Residential | service (faded)', sw([{ color: MINOR_CASING.residential, width: 6 }, { color: c.minor.fill, width: 4 }]), `<g opacity="${SERVICE_OPACITY}">${sw([{ color: MINOR_CASING.service, width: 5 }, { color: c.minor.fill, width: 3 }])}</g>`],
     ['Track: paved | Unpaved', sw([{ color: MINOR_CASING.residential, width: TRACK_W + 2 }, { color: PAVED_TRACK.fill, width: TRACK_W }]), sw([{ color: RAMP.unpaved, width: TRACK_W }])],
-    ['Track: easy, confirmed for a car | 4WD', sw([{ color: RAMP.easy, width: TRACK_W }]), sw([{ color: RAMP.fourwd, width: TRACK_W }])],
+    ['Track: easy, confirmed for a car | 4WD', sw([{ color: MINOR_CASING.residential, width: TRACK_W + 2 }, { color: '#ffffff', width: TRACK_W }, { color: RAMP.unpaved, width: 1 }]), sw([{ color: RAMP.fourwd, width: TRACK_W }])],
     ...(closed.track.color === GREY
       ? [['Single track (motorcycle=yes)', sw([{ color: RAMP.unpaved, width: PATH_W, dash: SINGLE }]), ''],
          ['You may not ride it: track | path', sw([closed.track]), sw([closed.path])],
@@ -597,7 +612,7 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       // olive fail for red-green colour blindness against the brown (Delta E 6 and 2), teal against the grey casings.
       const ev = [['tan', 'Tan', 'Tan #c8a070 (lighter brown)', '#c8a070'], ['blue', 'Blue', 'Slate blue #4a6fb0', '#4a6fb0'], ['purple', 'Purple', 'Purple #8a5aa8', '#8a5aa8'], ['mauve', 'Mauve', 'Mauve #9c74b8 (same weight as the brown)', '#9c74b8']];
       const ep = ev.map(([key, badge, title, c]) => ({ key, badge, title, closed: CLOSED.grey,
-        svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, { ...DEFAULT_P, ramp: { ...RAMP, easy: c } }, land ? drawLand(land, LANDS.proposal) : null), stats }));
+        svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, { ...DEFAULT_P, easyShape: false, band: [0.6, 0.4], ramp: { ...RAMP, easy: c } }, land ? drawLand(land, LANDS.proposal) : null), stats }));
       sheet(`fork-easy-${v.name}.svg`, `Fork, Easy level hue: ${v.name} at z${v.z ?? Z}`,
         'Easy = confirmed for a city car (smoothness bad or better, grade1 or 2, compacted, fine_gravel). Same map, three colours for that level.', ep);
     }

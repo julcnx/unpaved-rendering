@@ -13,7 +13,10 @@ const OPTIONS = [
   { title: 'Tan', levels: [['Easy', '#c8a070'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
   { title: 'Slate blue', levels: [['Easy', '#4a6fb0'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
   { title: 'Purple', levels: [['Easy', '#8a5aa8'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
-  { title: 'Mauve (proposal)', levels: [['Easy', '#9c74b8'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
+  { title: 'Mauve', levels: [['Easy', '#9c74b8'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
+  // Adopted 2026-11-20 (Julien): Easy as a shape, dirt always inside. Track = paved track + thin brown centre line;
+  // road = class fill + thin brown centre line. Band 40% on every class.
+  { title: 'Shape (adopted)', shape: true, levels: [['Easy', 'shape'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
 ];
 // Road classes: fill, casing, width in dp at z15 (before x K), band share of the fill.
 const ROADS = {
@@ -33,8 +36,18 @@ const curve = (x0) => `M${x0 + 8} ${CELL_H - 12} C ${x0 + 35} 8, ${x0 + 65} ${CE
 const line = (d, { color, width, dash = null, cap = 'round' }) =>
   `<path d="${d}" fill="none" stroke="${color}" stroke-width="${width * K}" stroke-linecap="${dash ? 'butt' : cap}" stroke-linejoin="round"${dash ? ` stroke-dasharray="${dash.map((n) => n * K).join(' ')}"` : ''}/>`;
 
-function draw(row, color, x0) {
+function draw(row, color, x0, shape = false) {
   const d = curve(x0);
+  if (color === 'shape') {
+    if (row === 'Track') return line(d, { color: '#8f8f8f', width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 }) + line(d, { color: UNPAVED, width: 1 / K });
+    if (row === 'Single track') return line(d, { color: UNPAVED, width: 1.75, dash: [7, 3] });
+    const r = ROADS[row];
+    return line(d, { color: r.casing, width: r.w + 2 }) + line(d, { color: r.fill, width: r.w }) + line(d, { color: UNPAVED, width: 1 / K });
+  }
+  if (shape && !['Track', 'Single track'].includes(row)) {
+    const r = ROADS[row], bw = r.w * 0.4;
+    return line(d, { color: r.casing, width: r.w + 2 }) + line(d, { color: r.fill, width: r.w }) + (r.edge ? line(d, { color: EDGE, width: bw + 1.2 / K }) : '') + line(d, { color, width: bw });
+  }
   if (row === 'Track') return line(d, { color, width: 2.5 });
   if (row === 'Single track') return line(d, { color, width: 1.75, dash: [7, 3] });
   const r = ROADS[row], bw = Math.max(r.w * r.band, 0.8);
@@ -61,7 +74,7 @@ for (const g of groups) {
     OPTIONS.forEach((o, j) => {
       const x = LW + j * (CELL_W + GAP);
       out += `<g transform="translate(${x} ${y})"><rect width="${CELL_W}" height="${CELL_H}" rx="4" fill="${BG[g]}"/>` +
-        o.levels.map(([, c], k) => draw(row, c, k * SUB)).join('') + '</g>';
+        o.levels.map(([, c], k) => draw(row, c, k * SUB, o.shape)).join('') + '</g>';
     });
     y += CELL_H + GAP;
   }
