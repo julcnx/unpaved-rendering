@@ -177,11 +177,12 @@ console.error('mockups/easy-options.svg');
     : lv === 'Car friendly' ? line(d, { color: UNPAVED, width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
     : line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: 2.5 });
   const single = (lv, d) => lv === 'Paved' ? line(d, { color: '#8f8f8f', width: 1.75 + 2 / K, dash: [7, 3] }) + line(d, { color: '#ffffff', width: 1.75, dash: [7, 3] })
+    : lv === 'Car friendly' ? line(d, { color: UNPAVED, width: 1.75 + 2 / K, dash: [7, 3] }) + line(d, { color: '#ffffff', width: 1.75, dash: [7, 3] })
     : line(d, { color: lv === '4WD' ? FOURWD : UNPAVED, width: 1.75, dash: [7, 3] });
   const SECTIONS = [
     ['Minor ways: the mark is on the edges, then fills the middle', 'Edges are neutral here, so they can carry the surface. More brown = rougher.', [
       ['Track', 'a narrow road; car friendly = white with brown edges', track],
-      ['Single track (motorcycle=yes)', 'paved: white, grey edges; car friendly as Unpaved', single],
+      ['Single track (motorcycle=yes)', 'paved: white, grey edges; smooth: white, brown edges', single],
       ['Unclassified, tertiary', 'dark grey edges #6f6f6f', white(4.5, '#6f6f6f')],
       ['Residential', 'grey edges #8f8f8f', white(4, '#8f8f8f')],
     ]],

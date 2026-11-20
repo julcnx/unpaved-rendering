@@ -348,7 +348,10 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
     // Paved single track (Julien, 2026-11-20): white dashes with grey edges, like a paved track but dashed, so it no
     // longer looks like the grey dashes of a path you may not ride.
     else if (k.kind === 'single' && k.level === 'paved') { if (paths) L.single.push(st(w.pts, { color: MINOR_CASING.residential, width: singleW + 2, dash: SINGLE }) + st(w.pts, { color: '#ffffff', width: singleW, dash: SINGLE })); }
-    else if (k.kind === 'single') { if (paths) L.single.push(st(w.pts, { color: R[k.level === 'easy' && P?.easyShape ? 'unpaved' : k.level], width: singleW, dash: SINGLE })); }
+    // Smooth single track (Julien, 2026-11-20): "car friendly" makes no sense on a single track, so on single tracks the
+    // level reads "smooth": white dashes with brown edges, as the car-friendly track but dashed.
+    else if (k.kind === 'single' && k.level === 'easy' && P?.easyShape) { if (paths) L.single.push(st(w.pts, { color: R.unpaved, width: singleW + 2, dash: SINGLE }) + st(w.pts, { color: '#ffffff', width: singleW, dash: SINGLE })); }
+    else if (k.kind === 'single') { if (paths) L.single.push(st(w.pts, { color: R[k.level], width: singleW, dash: SINGLE })); }
     else if (k.kind === 'track' && k.level === 'paved') {
       L.pavedCasing.push(st(w.pts, { color: F.pavedCasing?.residential ?? cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
       L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
@@ -611,7 +614,7 @@ const mix = (hex, to, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(hex.s
 
 // ---------- Run ----------
 const NAMES = {
-  'road paved': 'Paved road', 'road easy': 'Car-friendly road', 'track easy': 'Car-friendly track', 'single easy': 'Single track, car friendly', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
+  'road paved': 'Paved road', 'road easy': 'Car-friendly road', 'track easy': 'Car-friendly track', 'single easy': 'Single track, smooth', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
   'track paved': 'Paved track', 'track unpaved': 'Unpaved track', 'track high': 'High-clearance track', 'track fourwd': '4WD track',
   'single unpaved': 'Single track', 'single high': 'Single track, high clearance', 'single fourwd': 'Single track, 4WD', 'single paved': 'Single track, paved',
   'dots no answer': 'Path, nobody said yes', 'dots impassable': 'Impassable', service: 'Service road (faded)', 'service closed': 'Service road, private or no (grey)', closedTrack: 'Closed track', closedPath: 'Closed path', closedRoad: 'Closed road (grey)', driveway: 'Driveway (grey)',
