@@ -346,8 +346,16 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
       // Easy by shape (Julien, 2026-11-20): a track is drawn like a narrow road, dirt always inside. Easy = the paved
       // track (white, grey edges) with a thin brown centre line, the same mark as on Easy roads; Unpaved = all brown
       // (the band fills the track); 4WD = all near black.
-      L.pavedCasing.push(st(w.pts, { color: cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
-      L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }) + st(w.pts, { color: R.unpaved, width: 1 }));
+      // easyStyle: v1 brown edges on tracks (centre line on roads); v2 grey edges + brown centre line on both;
+      // v3 (default since 2026-11-20, Julien) brown edges on both: more brown = rougher (edges, then the whole middle).
+      const es = P.easyStyle ?? 'v3';
+      if (es === 'v2') {
+        L.pavedCasing.push(st(w.pts, { color: cas.white ?? (cas.hierarchy ? MINOR_CASING.residential : PAVED_TRACK.casing), width: trackW + cas.extra }));
+        L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }) + st(w.pts, { color: R.unpaved, width: 1 }));
+      } else {
+        L.pavedCasing.push(st(w.pts, { color: R.unpaved, width: trackW + cas.extra }));
+        L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
+      }
     } else if (k.kind === 'track') L[k.level === 'fourwd' ? 'track4wd' : 'track'].push(st(w.pts, { color: R[k.level], width: trackW }));
     else if (k.kind === 'road') roads.push(w);
     if (F.symbols && /^[0-5]$/.test(w.tags['dirtbike:scale'] ?? '') && k.kind !== 'skip') L.sym.push(symbols(w.pts, w.tags['dirtbike:scale']));
@@ -370,6 +378,11 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
       // Easy roads: a thin brown centre line (1 dp), no edge, so the road reads closest to a paved one.
       const bw = easyLine ? 1 : Math.max(width * (cls === 'minor' ? bandWhite : bandMain), 0.8);
       const fade = (x) => (bOp < 1 ? `<g opacity="${bOp}">${x}</g>` : x);
+      if (easyLine && (P.easyStyle ?? 'v3') === 'v3') {
+        // Easy road, v3: thin brown lines just inside the casing (1 dp each side), class fill between them.
+        r.fill = st(w.pts, { color: R.unpaved, width }) + st(w.pts, { color: c.fill, width: Math.max(width - 2, 0.8) });
+        return r;
+      }
       if (easyLine) { r.band = fade(st(w.pts, { color: R.unpaved, width: bw })); return r; }
       r.band = fade(st(w.pts, { color: R[w.look.level], width: bw }));
       if (P?.bandEdge && cls !== 'minor') r.edge = fade(st(w.pts, { color: P.bandEdge, width: bw + 1.2 }));
@@ -606,6 +619,13 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       ];
       sheet(`fork-ladder-${v.name}.svg`, `Fork, condition ladder: ${v.name} at z${v.z ?? Z}`,
         'Julien, 2026-11-20: High clearance drawn like every unconfirmed dirt way; a lighter tan where a city car is confirmed (smoothness bad or better, grade1 or 2, compacted, fine_gravel).', lp2);
+    }
+    if (v.easyCheck && land) {
+      const vs = [['v1', 'v1', 'v1: tracks brown edges, roads brown centre line'], ['v2', 'v2', 'v2: grey edges and brown centre line on both'], ['v3', 'v3', 'v3: brown edges on both (more brown = rougher)']];
+      const sp = vs.map(([key, badge, title]) => ({ key, badge, title, closed: CLOSED.grey,
+        svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, { ...DEFAULT_P, easyStyle: key }, drawLand(land, LANDS.proposal)), stats }));
+      sheet(`fork-easyshape-${v.name}.svg`, `Fork, Easy shape: ${v.name} at z${v.z ?? Z}`,
+        'Easy = confirmed for a city car. Three ways to draw it as a shape (Julien, 2026-11-20). Unpaved: solid brown track, brown band in roads; 4WD near black.', sp);
     }
     if (v.easyCheck) {
       // Easy level by hue (Julien, 2026-11-20: the tan is only a lighter brown, it needs a hue of its own). Green and

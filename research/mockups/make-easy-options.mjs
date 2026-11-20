@@ -16,7 +16,9 @@ const OPTIONS = [
   { title: 'Mauve', levels: [['Easy', '#9c74b8'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
   // Adopted 2026-11-20 (Julien): Easy as a shape, dirt always inside. Track = paved track + thin brown centre line;
   // road = class fill + thin brown centre line. Band 40% on every class.
-  { title: 'Shape (adopted)', shape: true, levels: [['Easy', 'shape'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
+  { title: 'Shape v2: grey edges, centre line', shape: true, levels: [['Easy', 'shape'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
+  // v3, the default since 2026-11-20 (Julien): brown edges on tracks and roads; more brown = rougher.
+  { title: 'Shape v3: brown edges (adopted)', shape: true, levels: [['Easy', 'shape3'], ['Unpaved', UNPAVED], ['4WD', FOURWD]] },
 ];
 // Road classes: fill, casing, width in dp at z15 (before x K), band share of the fill.
 const ROADS = {
@@ -38,6 +40,12 @@ const line = (d, { color, width, dash = null, cap = 'round' }) =>
 
 function draw(row, color, x0, shape = false) {
   const d = curve(x0);
+  if (color === 'shape3') {
+    if (row === 'Track') return line(d, { color: UNPAVED, width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 });
+    if (row === 'Single track') return line(d, { color: UNPAVED, width: 1.75, dash: [7, 3] });
+    const r = ROADS[row];
+    return line(d, { color: r.casing, width: r.w + 2 }) + line(d, { color: UNPAVED, width: r.w }) + line(d, { color: r.fill, width: r.w - 2 / K });
+  }
   if (color === 'shape') {
     if (row === 'Track') return line(d, { color: '#8f8f8f', width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 }) + line(d, { color: UNPAVED, width: 1 / K });
     if (row === 'Single track') return line(d, { color: UNPAVED, width: 1.75, dash: [7, 3] });
