@@ -15,10 +15,10 @@ import { classifyDetailed } from '../../js/classify.js';
 
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
-  { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks', landCheck: true },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true, landCheck: true },
+  { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks', landCheck: true, ladderCheck: true },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true, landCheck: true, ladderCheck: true },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
-  { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'], landCheck: true },
+  { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'], landCheck: true, ladderCheck: true },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
   { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], hivis: true, landCheck: true },
   // Same centre at z16: driveways appear (grey), the rest as at z15 (widths kept at their z15 values).
@@ -27,7 +27,8 @@ const VIEWS = [
 
 // ---------- Scheme D (values from make-track-mockups.mjs, day only) ----------
 const LAND = '#f2efe9', INK = '#222', MUTED = '#666';
-const RAMP = { unpaved: '#b0773a', high: '#74481f', fourwd: '#2b190c' };
+// easy (2026-11-20): confirmed for a city car, a lighter tan. high: the earlier middle step, kept for the comparison sheets.
+const RAMP = { easy: '#c8a070', unpaved: '#b0773a', high: '#74481f', fourwd: '#2b190c' };
 const PAVED_TRACK = { fill: '#ffffff', casing: '#9a9a9a' };
 const DOTS = '#6b6b6b', GREY = '#c4bdb4';
 const TRACK_W = 2.5, PATH_W = 1.75, SINGLE = '7 3';
@@ -77,6 +78,31 @@ function vehicle(t) {
   if (min && LADDER.indexOf(min) > LADDER.indexOf(v)) v = min;
   return v;
 }
+// Confirmed ladder (Julien, 2026-11-20), the default since then: Easy = confirmed for a city car (smoothness
+// excellent to bad, or tracktype grade1 or grade2, or surface compacted or fine_gravel), drawn lighter; High clearance
+// merges into the default brown with every dirt way whose condition is not confirmed (surface=unpaved, no tag,
+// gravel, very_bad, grade3, grade4, rock); 4WD unchanged. Same precedence: smoothness, then tracktype, then surface;
+// 4wd_only as a minimum. Why: at Chiang Rai two unclassified roads tagged very_bad were drawn dark next to the
+// untagged tracks branching off them, as if the road were the hard part; now only confirmed-easy and 4WD stand out.
+let LADDER_MODE = 'confirmed';
+function vehicleConfirmed(t) {
+  const surf = (t.surface ?? '').split(';').map((x) => x.trim());
+  let v;
+  if (['excellent', 'good', 'intermediate', 'bad'].includes(t.smoothness)) v = 'easy';
+  else if (['very_bad'].includes(t.smoothness)) v = 'unpaved';
+  else if (['horrible', 'very_horrible'].includes(t.smoothness)) v = 'fourwd';
+  else if (['grade1', 'grade2'].includes(t.tracktype)) v = 'easy';
+  else if (['grade3', 'grade4'].includes(t.tracktype)) v = 'unpaved';
+  else if (/^grade[5-8]$/.test(t.tracktype ?? '')) v = 'fourwd';
+  else if (surf.includes('mud')) v = 'fourwd';
+  else if (surf.length && surf.every((x) => ['compacted', 'fine_gravel'].includes(x))) v = 'easy';
+  else v = 'unpaved';
+  const order = ['easy', 'unpaved', 'fourwd'];
+  const min = { recommended: 'unpaved', yes: 'fourwd', extreme: 'fourwd' }[t['4wd_only']];
+  if (min && order.indexOf(min) > order.indexOf(v)) v = min;
+  return v;
+}
+const vehicleNow = (t) => (LADDER_MODE === 'confirmed' ? vehicleConfirmed(t) : vehicle(t));
 // Access: first of motorcycle, motor_vehicle, vehicle, access that answers (unknown is no answer).
 // destination is not a no (Julien, 2026-11-19): common on residential streets, and OsmAnd routes it to reach a place
 // on it. Same rule for roads, tracks and paths.
@@ -102,7 +128,7 @@ function look(t, z = Z) {
   if (ROAD[h] && access(t) === 'no') return { kind: 'closedRoad' }; // closed roads grey (Julien, 2026-11-19)
   if (ROAD[h]) {
     const d = classifyDetailed(t);
-    return { kind: 'road', level: d.base === 'paved' ? 'paved' : vehicle(t) };
+    return { kind: 'road', level: d.base === 'paved' ? 'paved' : vehicleNow(t) };
   }
   if (h === 'track') {
     if (t.smoothness === 'impassable') return { kind: 'dots', level: 'impassable' };
@@ -111,16 +137,16 @@ function look(t, z = Z) {
     // colour (Julien, 2026-11-19; the article classifier's "specialized: could be drawn as a path").
     if (t.smoothness === 'very_horrible') return { kind: 'single', level: 'fourwd' };
     const d = classifyDetailed(t);
-    return { kind: 'track', level: d.base === 'paved' ? 'paved' : vehicle(t) };
+    return { kind: 'track', level: d.base === 'paved' ? 'paved' : vehicleNow(t) };
   }
   // Footways and cycleways hidden in every focus (Julien, 2026-11-19): a motorbike may never ride them, and in towns
   // they are dense clutter beside the roads. A motorcycle yes still makes them a single track.
-  if (['footway', 'cycleway'].includes(h)) return access(t) === 'yes' ? { kind: 'single', level: vehicle(t) } : { kind: 'skip' };
+  if (['footway', 'cycleway'].includes(h)) return access(t) === 'yes' ? { kind: 'single', level: vehicleNow(t) } : { kind: 'skip' };
   if (['path', 'bridleway'].includes(h)) {
     if (t.smoothness === 'impassable') return { kind: 'dots', level: 'impassable' };
     const a = access(t);
     if (a === 'no') return { kind: 'closedPath' };
-    if (a === 'yes') return { kind: 'single', level: vehicle(t) };
+    if (a === 'yes') return { kind: 'single', level: vehicleNow(t) };
     return { kind: 'dots', level: 'no answer' };
   }
   return { kind: 'skip' };
@@ -374,7 +400,7 @@ function legend(closed) {
     ['Unclassified: paved | Unpaved', sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }]), sw([{ color: MINOR_CASING.unclassified, width: 6.5 }, { color: c.minor.fill, width: 4.5 }, { color: RAMP.unpaved, width: 1.8 }])],
     ['Residential | service (faded)', sw([{ color: MINOR_CASING.residential, width: 6 }, { color: c.minor.fill, width: 4 }]), `<g opacity="${SERVICE_OPACITY}">${sw([{ color: MINOR_CASING.service, width: 5 }, { color: c.minor.fill, width: 3 }])}</g>`],
     ['Track: paved | Unpaved', sw([{ color: MINOR_CASING.residential, width: TRACK_W + 2 }, { color: PAVED_TRACK.fill, width: TRACK_W }]), sw([{ color: RAMP.unpaved, width: TRACK_W }])],
-    ['Track: high clearance | 4WD', sw([{ color: RAMP.high, width: TRACK_W }]), sw([{ color: RAMP.fourwd, width: TRACK_W }])],
+    ['Track: easy, confirmed for a car | 4WD', sw([{ color: RAMP.easy, width: TRACK_W }]), sw([{ color: RAMP.fourwd, width: TRACK_W }])],
     ...(closed.track.color === GREY
       ? [['Single track (motorcycle=yes)', sw([{ color: RAMP.unpaved, width: PATH_W, dash: SINGLE }]), ''],
          ['You may not ride it: track | path', sw([closed.track]), sw([closed.path])],
@@ -459,13 +485,17 @@ const CONTRAST = (() => {
 // tags-filter and export from the Geofabrik 2026-11-12 files). Areas from their polygons only; rivers and streams as
 // lines. Three backgrounds: OSM Carto, the OsmAnd Motorcycle plugin (enduro.render.xml f0676ed) and the proposal.
 const LANDS = {
-  carto: { title: 'OSM Carto', land: '#f2efe9', forest: '#add19e', scrub: '#c8d7ab', grass: '#cdebb0', farmland: '#eef0d5', residential: '#e0dfdf', water: '#aad3df' },
-  moto: { title: 'OsmAnd Motorcycle plugin', land: '#f9f9ef', forest: '#dce6d0', scrub: '#e9efd9', grass: '#e3f6e3', farmland: null, residential: null, water: '#80b0ff' },
-  proposal: { title: 'Proposal: near-white land, pale forest', land: '#fbfaf6', forest: '#e2ebd8', scrub: '#edf3e4', grass: '#edf3e4', farmland: null, residential: '#f1f0ed', water: '#9cc3ea' },
+  carto: { title: 'OSM Carto', land: '#f2efe9', forest: '#add19e', scrub: '#c8d7ab', grass: '#cdebb0', farmland: '#eef0d5', residential: '#e0dfdf', water: '#aad3df', sand: '#f5e9c6', rock: '#eee5dc' },
+  moto: { title: 'OsmAnd Motorcycle plugin', land: '#f9f9ef', forest: '#dce6d0', scrub: '#e9efd9', grass: '#e3f6e3', farmland: null, residential: null, water: '#80b0ff', sand: null, rock: null },
+  proposal: { title: 'Proposal: near-white land, pale forest', land: '#fbfaf6', forest: '#e2ebd8', scrub: '#edf3e4', grass: '#edf3e4', farmland: null, residential: '#f1f0ed', water: '#9cc3ea', sand: '#f6f1e2', rock: '#efeeeb' },
+  // sand (2026-11-20): pale, not Carto's yellow, so the tan Easy track stays readable on deserts and beaches
+  // (contrast 2.13 against 1.99 on #f5e9c6). rock: a light neutral grey.
 };
 const LAND_CLASS = (p) => {
   const t = (k, ...v) => v.includes(p[k]);
   if (t('landuse', 'forest') || t('natural', 'wood')) return 'forest';
+  if (t('natural', 'sand', 'beach')) return 'sand';
+  if (t('natural', 'bare_rock', 'scree', 'shingle')) return 'rock';
   if (t('natural', 'scrub', 'heath')) return 'scrub';
   if (t('landuse', 'grass', 'meadow') || t('natural', 'grassland') || t('leisure', 'park')) return 'grass';
   if (t('landuse', 'farmland', 'orchard', 'vineyard', 'plantation')) return 'farmland';
@@ -473,7 +503,7 @@ const LAND_CLASS = (p) => {
   if (t('natural', 'water') || t('waterway', 'riverbank') || t('landuse', 'reservoir', 'basin')) return 'water';
   return null;
 };
-const LAND_ORDER = ['farmland', 'residential', 'grass', 'scrub', 'forest', 'water'];
+const LAND_ORDER = ['farmland', 'residential', 'sand', 'rock', 'grass', 'scrub', 'forest', 'water'];
 function loadLand(v) {
   const f = new URL(`../pbf/land-${v.name}.geojsonseq`, import.meta.url);
   if (!existsSync(f)) return null;
@@ -508,7 +538,7 @@ function drawLand(land, pal) {
 
 // ---------- Run ----------
 const NAMES = {
-  'road paved': 'Paved road', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
+  'road paved': 'Paved road', 'road easy': 'Easy road (confirmed)', 'track easy': 'Easy track (confirmed)', 'single easy': 'Single track, easy', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
   'track paved': 'Paved track', 'track unpaved': 'Unpaved track', 'track high': 'High-clearance track', 'track fourwd': '4WD track',
   'single unpaved': 'Single track', 'single high': 'Single track, high clearance', 'single fourwd': 'Single track, 4WD', 'single paved': 'Single track, paved',
   'dots no answer': 'Path, nobody said yes', 'dots impassable': 'Impassable', service: 'Service road (faded)', 'service closed': 'Service road, private or no (grey)', closedTrack: 'Closed track', closedPath: 'Closed path', closedRoad: 'Closed road (grey)', driveway: 'Driveway (grey)',
@@ -518,6 +548,7 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
   for (const { v, ways } of boxes) {
     const km = {};
     for (const w of ways) {
+      LADDER_MODE = 'ladder3'; w.look3 = look(w.tags, v.z ?? Z); LADDER_MODE = 'confirmed';
       w.look = look(w.tags, v.z ?? Z);
       if (w.look.kind === 'skip') continue;
       const key = w.tags.service === 'driveway' ? 'driveway' : w.tags.highway === 'service' ? (w.look.kind === 'closedRoad' ? 'service closed' : 'service') : w.look.level ? `${w.look.kind} ${w.look.level}` : w.look.kind;
@@ -551,6 +582,15 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
         closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, DEFAULT_P, drawLand(land, pal)), stats }));
       sheet(`fork-land-${v.name}.svg`, `Fork, land colours: ${v.name} at z${v.z ?? Z}`,
         `High vis 2 over three backgrounds, with the landcover of the Geofabrik 2026-11-12 extract (${land.areas.length} areas). Farmland not drawn in Moto and Proposal (as the plugin).`, lp);
+    }
+    if (v.ladderCheck) {
+      const old = ways.map((w) => ({ ...w, look: w.look3 }));
+      const lp2 = [
+        { key: 'ladder3', badge: 'Before', title: 'Before: Unpaved, High clearance (dark brown), 4WD', closed: CLOSED.grey, svg: drawCrop(old, CLOSED.grey, null, CASINGS.fork, DEFAULT_P, land ? drawLand(land, LANDS.proposal) : null), stats },
+        { key: 'confirmed', badge: 'Confirmed', title: 'Confirmed ladder: Easy (tan, confirmed for a car), not confirmed (brown), 4WD', closed: CLOSED.grey, svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, DEFAULT_P, land ? drawLand(land, LANDS.proposal) : null), stats },
+      ];
+      sheet(`fork-ladder-${v.name}.svg`, `Fork, condition ladder: ${v.name} at z${v.z ?? Z}`,
+        'Julien, 2026-11-20: High clearance drawn like every unconfirmed dirt way; a lighter tan where a city car is confirmed (smoothness bad or better, grade1 or 2, compacted, fine_gravel).', lp2);
     }
     if (v.rampCheck) {
       const rp = [

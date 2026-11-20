@@ -319,6 +319,19 @@ Score after these changes (a new measure, ramp steps apart, added; the scores ar
 | Road numbers (0 -> 10) | 0 (no) | 10 (yes) | 10 (yes) | 10 (yes) | 10 (yes) |
 | **Score (mean)** | **3.3** | **6.6** | **7.4** | **7.6** | **9.1** |
 
+**Decision (Julien, 2026-11-20): the confirmed ladder replaces the vehicle ladder's middle step.** Trigger: at Chiang Rai two unclassified roads tagged `surface=unpaved` + `smoothness=very_bad` (w204096107 1.9 km, w1301549266 4.1 km) were drawn dark brown, while the 15.1 km of tracks branching off them (`surface=unpaved`, no other tag) and the 3.0 km of untagged unclassified road continuing them were light brown: the surveyed road looked like the hard part, the unsurveyed tracks like the easy one. New ladder, same precedence (`smoothness`, then `tracktype`, then `surface`; `4wd_only` as a minimum):
+
+| Level | Colour | Tags |
+|---|---|---|
+| Easy, confirmed for a city car | tan `#c8a070` | `smoothness` excellent to bad; or `tracktype` grade1 or grade2; or `surface` compacted or fine_gravel only |
+| Unpaved, not confirmed (now includes high clearance) | brown `#b0773a` | no condition tag, `surface=unpaved`, gravel, dirt, ground...; `smoothness=very_bad`, `grade3`, `grade4`, `rock`, `4wd_only=recommended` |
+| 4WD | near black `#2b190c` | `horrible`, `grade5` to `grade8`, `mud`, `4wd_only` yes or extreme |
+
+- The brown now reads "condition not confirmed, could be rough"; only the confirmed-easy tan and 4WD stand out. Gravel stays brown (loose gravel is not always fine for a city car). Easy is rare (under 3% of dirt km worldwide by the stats), so the map mostly shows brown and the odd tan or near black.
+- Tan chosen for balance: contrast 2.31 on the land and 1.96 on forest, Delta E 17.2 from the brown (colour-blind included), apart from the grey and the road fills. Lighter tans fade in forest.
+- [mockups/fork-ladder-chiangrai.png](mockups/fork-ladder-chiangrai.png), [mockups/fork-ladder-thailand-1.png](mockups/fork-ladder-thailand-1.png), [mockups/fork-ladder-switzerland-2.png](mockups/fork-ladder-switzerland-2.png): before and after. Chiang Rai: the very_bad roads now match the tracks around them. thailand-1: 5.7 km of grade2 tracks become tan, the 4WD network in the hills stays near black. Every other sheet uses the new ladder (`vehicleConfirmed` in `mockups/make-fork-crops.mjs`); the rust middle step is moot.
+- **Sand** (Julien, 2026-11-20: deserts and beaches, Africa, Mongolia): the background gets a pale sand `#f6f1e2` for `natural=sand` and `beach`, not Carto's yellow `#f5e9c6`, on which the tan falls to 1.99 (pale sand: 2.13, Delta E 35 against 27). Brown and near black stay strong on any sand (3.1 or more). Bare rock, scree and shingle a light neutral grey `#efeeeb`. Not tested on a desert view yet: none of the four views has sand, and most deserts are not mapped as polygons, so tracks there sit on the plain land colour.
+
 **Barriers (Julien, 2026-11-19: would rather not show them; could get ugly quickly).** Proposal: do not draw `barrier=gate` and the like, except a barrier node that blocks (`access`, `motorcycle` or `motor_vehicle` = no or private): a small light grey bar across the line, from z16. Do not grey the whole track: most gates are open or passable, a closed one blocks only part of the way, and the map cannot tell which side; OsmAnd routing already reads the access tags on barrier nodes. Not drawn (barrier nodes are not in the extract).
 
 **Still missing from the fork mockups (2026-11-19, priority order, Claude's proposal):**
