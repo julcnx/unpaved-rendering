@@ -99,7 +99,7 @@ console.error('mockups/easy-options.svg');
 {
   const mix = (hex, to, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - t) + parseInt(to.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
   const LEVELS = [['Paved', null], ['Car friendly', 'easy'], ['Unpaved', UNPAVED], ['4WD', FOURWD]];
-  const DESIGNS = [['Now: band with dark edge', 'centre'], ['a: no edge', 'plain'], ['b: darker class shade', 'shade'], ['c: light band', 'light'], ['A 50: tint, brown casing', 0.5]];
+  const DESIGNS = [['Before: band with dark edge', 'centre'], ['a: no edge', 'plain'], ['b: darker class shade (adopted)', 'shade'], ['c: light band', 'light'], ['A 50: tint, brown casing', 0.5]];
   const MAIN = Object.entries(ROADS).filter(([k]) => !k.startsWith('White'));
   const SUB4 = CELL_W / 4;
   const mcurve = (x0) => `M${x0 + 6} ${CELL_H - 12} C ${x0 + 26} 8, ${x0 + 48} ${CELL_H}, ${x0 + SUB4 - 6} 14`;
@@ -164,12 +164,14 @@ console.error('mockups/easy-options.svg');
     if (lv === 'Car friendly') return line(d, { color: casing, width: w + 2 }) + line(d, { color: UNPAVED, width: w }) + line(d, { color: '#ffffff', width: w - 2 / K });
     return base + line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: w * 0.4 });
   };
+  const mixc = (hex, to, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - t) + parseInt(to.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
+  // Main roads, b (adopted 2026-11-20): marks in a darker shade of the class colour, 4WD near black.
   const mainR = (r) => (lv, d) => {
     const base = line(d, { color: r.casing, width: r.w + 2 }) + line(d, { color: r.fill, width: r.w });
     if (lv === 'Paved') return base;
-    if (lv === 'Car friendly') return base + line(d, { color: EDGE, width: 2.2 / K }) + line(d, { color: UNPAVED, width: 1.2 / K });
-    const bw = r.w * 0.4;
-    return base + line(d, { color: EDGE, width: bw + 2 / K }) + line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: bw });
+    const shade = mixc(r.fill, '#000000', 0.35);
+    if (lv === 'Car friendly') return base + line(d, { color: shade, width: 1.2 / K });
+    return base + line(d, { color: lv === 'Unpaved' ? shade : FOURWD, width: r.w * 0.4 });
   };
   const track = (lv, d) => lv === 'Paved' ? line(d, { color: '#8f8f8f', width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
     : lv === 'Car friendly' ? line(d, { color: UNPAVED, width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
@@ -179,11 +181,11 @@ console.error('mockups/easy-options.svg');
   const SECTIONS = [
     ['Minor ways: the mark is on the edges, then fills the middle', 'Edges are neutral here, so they can carry the surface. More brown = rougher.', [
       ['Track', 'a narrow road; car friendly = white with brown edges', track],
-      ['Single track (motorcycle=yes)', 'dashes; paved = white with grey edges; car friendly drawn as Unpaved', single],
+      ['Single track (motorcycle=yes)', 'paved: white, grey edges; car friendly as Unpaved', single],
       ['Unclassified, tertiary', 'dark grey edges #6f6f6f', white(4.5, '#6f6f6f')],
       ['Residential', 'grey edges #8f8f8f', white(4, '#8f8f8f')],
     ]],
-    ['Main roads: the mark is inside, the edges keep the class', 'Car friendly a thin centre line; Unpaved a band with a thick dark edge; 4WD a near-black band (design under review).', [
+    ['Main roads: the mark is inside, in a darker shade of the class colour', 'Marks in a darker shade of the class colour: Car friendly a thin centre line, Unpaved a band; 4WD a near-black band.', [
       ['Secondary (yellow)', '', mainR(ROADS['Secondary (yellow)'])],
       ['Primary (orange)', '', mainR(ROADS['Primary (orange)'])],
       ['Trunk (crimson)', '', mainR(ROADS['Trunk (crimson)'])],
