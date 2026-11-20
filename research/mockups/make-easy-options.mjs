@@ -146,3 +146,72 @@ console.error('mockups/easy-options.svg');
     `<svg xmlns="http://www.w3.org/2000/svg" width="${W2}" height="${y2 + 10}" viewBox="0 0 ${W2} ${y2 + 10}"><rect width="${W2}" height="${y2 + 10}" fill="#fff"/>${o}</svg>`);
   console.error('mockups/mainroads-options.svg');
 }
+
+// ---------- Design overview (2026-11-20): the adopted design, minor ways (edges) against main roads (inner band) ----------
+{
+  const LEV = ['Paved', 'Easy', 'Unpaved', '4WD'];
+  const CW2 = 150, CH2 = 58, LW2 = 300, TOP2 = 110;
+  const c2 = (x0) => `M${x0 + 10} ${CH2 - 12} C ${x0 + 45} 8, ${x0 + 95} ${CH2}, ${x0 + CW2 - 10} 14`;
+  const GREYC = '#c4bdb4';
+  // Each row: [label, sub, draw(level) -> strokes]
+  const white = (w, casing) => (lv, d) => {
+    const base = line(d, { color: casing, width: w + 2 }) + line(d, { color: '#ffffff', width: w });
+    if (lv === 'Paved') return base;
+    if (lv === 'Easy') return line(d, { color: casing, width: w + 2 }) + line(d, { color: UNPAVED, width: w }) + line(d, { color: '#ffffff', width: w - 2 / K });
+    return base + line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: w * 0.4 });
+  };
+  const mainR = (r) => (lv, d) => {
+    const base = line(d, { color: r.casing, width: r.w + 2 }) + line(d, { color: r.fill, width: r.w });
+    if (lv === 'Paved') return base;
+    if (lv === 'Easy') return base + line(d, { color: EDGE, width: 2.2 / K }) + line(d, { color: UNPAVED, width: 1.2 / K });
+    const bw = r.w * 0.4;
+    return base + line(d, { color: EDGE, width: bw + 2 / K }) + line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: bw });
+  };
+  const track = (lv, d) => lv === 'Paved' ? line(d, { color: '#8f8f8f', width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
+    : lv === 'Easy' ? line(d, { color: UNPAVED, width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
+    : line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: 2.5 });
+  const single = (lv, d) => lv === 'Paved' ? line(d, { color: '#8f8f8f', width: 1.75, dash: [7, 3] })
+    : line(d, { color: lv === '4WD' ? FOURWD : UNPAVED, width: 1.75, dash: [7, 3] });
+  const SECTIONS = [
+    ['Minor ways: the mark is on the edges, then fills the middle', 'Edges are neutral here, so they can carry the surface. More brown = rougher.', [
+      ['Track', 'a narrow road; Easy = white with brown edges', track],
+      ['Single track (motorcycle=yes)', 'dashes; Easy drawn as Unpaved', single],
+      ['Unclassified, tertiary', 'dark grey edges #6f6f6f', white(4.5, '#6f6f6f')],
+      ['Residential', 'grey edges #8f8f8f', white(4, '#8f8f8f')],
+    ]],
+    ['Main roads: the mark is inside, the edges keep the class', 'Easy a thin centre line; Unpaved a band with a thick dark edge; 4WD a near-black band.', [
+      ['Secondary (yellow)', '', mainR(ROADS['Secondary (yellow)'])],
+      ['Primary (orange)', '', mainR(ROADS['Primary (orange)'])],
+      ['Trunk (crimson)', '', mainR(ROADS['Trunk (crimson)'])],
+    ]],
+    ['You may not ride it', 'one light grey, solid on tracks and roads, dashed on paths', [
+      ['Closed track | path | road', 'no, private, agricultural, forestry; nobody said yes on paths', (lv, d) =>
+        lv === 'Paved' ? line(d, { color: GREYC, width: 2.5 }) : lv === 'Easy' ? line(d, { color: GREYC, width: 1.75, dash: [7, 3] }) : lv === 'Unpaved' ? line(d, { color: GREYC, width: 4.5 }) : ''],
+    ]],
+  ];
+  const W3 = LW2 + LEV.length * (CW2 + GAP) + 10;
+  let o = text(10, 26, 'The design: minor ways (tracks and white roads) against main roads', 17, 700) +
+    text(10, 46, 'High vis 2 colours, 1.5 x widths, z15, on the proposed land. Easy = confirmed for a city car; Unpaved = not confirmed; 4WD = horrible or worse.', 12, 400, MUTED);
+  LEV.forEach((n, j) => { o += text(LW2 + j * (CW2 + GAP) + CW2 / 2, TOP2 - 12, n, 13, 700, INK, 'middle'); });
+  let y3 = TOP2;
+  for (const [title, sub, rows] of SECTIONS) {
+    o += text(10, y3 + 16, title, 14, 700) + text(10, y3 + 32, sub, 11, 400, MUTED);
+    y3 += 42;
+    for (const [label, note, fn] of rows) {
+      o += text(10, y3 + CH2 / 2, label, 12, 700) + (note ? text(10, y3 + CH2 / 2 + 15, note, 10, 400, MUTED) : '');
+      LEV.forEach((lv, j) => {
+        const x = LW2 + j * (CW2 + GAP);
+        const inner = title.startsWith('You may not') ? fn(lv, c2(0)) : fn(lv, c2(0));
+        const cap = title.startsWith('You may not') ? (['track', 'path', 'road', ''][j]) : '';
+        o += `<g transform="translate(${x} ${y3})"><rect width="${CW2}" height="${CH2}" rx="4" fill="${BG.Land}"/>${inner}${cap ? text(CW2 - 8, CH2 - 6, cap, 10, 400, MUTED, 'end') : ''}</g>`;
+      });
+      y3 += CH2 + GAP;
+    }
+    y3 += 10;
+  }
+  // relabel the grey row's columns
+  o += '';
+  writeFileSync(new URL('design-overview.svg', import.meta.url),
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${W3}" height="${y3 + 10}" viewBox="0 0 ${W3} ${y3 + 10}"><rect width="${W3}" height="${y3 + 10}" fill="#fff"/>${o}</svg>`);
+  console.error('mockups/design-overview.svg');
+}
