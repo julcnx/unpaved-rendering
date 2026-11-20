@@ -98,8 +98,8 @@ console.error('mockups/easy-options.svg');
 // class colour (rest white) with a brown casing, near black for 4WD; Easy keeps the full fill with the brown casing.
 {
   const mix = (hex, to, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - t) + parseInt(to.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
-  const LEVELS = [['Paved', null], ['Easy', 'easy'], ['Unpaved', UNPAVED], ['4WD', FOURWD]];
-  const DESIGNS = [['Before: band', 'band'], ['B: inner band (adopted)', 'centre'], ['A 65', 0.65], ['A 50', 0.5], ['A 35', 0.35]];
+  const LEVELS = [['Paved', null], ['Car friendly', 'easy'], ['Unpaved', UNPAVED], ['4WD', FOURWD]];
+  const DESIGNS = [['Now: band with dark edge', 'centre'], ['a: no edge', 'plain'], ['b: darker class shade', 'shade'], ['c: light band', 'light'], ['A 50: tint, brown casing', 0.5]];
   const MAIN = Object.entries(ROADS).filter(([k]) => !k.startsWith('White'));
   const SUB4 = CELL_W / 4;
   const mcurve = (x0) => `M${x0 + 6} ${CELL_H - 12} C ${x0 + 26} 8, ${x0 + 48} ${CELL_H}, ${x0 + SUB4 - 6} 14`;
@@ -111,6 +111,10 @@ console.error('mockups/easy-options.svg');
       if (level === 'easy') return base(r.fill, UNPAVED);
       return base(mix(r.fill, '#ffffff', 1 - design), level === FOURWD ? FOURWD : UNPAVED);
     }
+    if (['plain', 'shade', 'light'].includes(design)) {
+      const col = level === FOURWD ? FOURWD : design === 'shade' ? mix(r.fill, '#000000', 0.35) : design === 'light' ? mix(r.fill, '#ffffff', 0.75) : UNPAVED;
+      return base(r.fill, r.casing) + line(d, { color: col, width: level === 'easy' ? 1.2 / K : bw });
+    }
     if (design === 'centre') {
       if (level === 'easy') return base(r.fill, r.casing) + line(d, { color: EDGE, width: 2.2 / K }) + line(d, { color: UNPAVED, width: 1.2 / K });
       return base(r.fill, r.casing) + line(d, { color: EDGE, width: bw + 2 / K }) + line(d, { color: level, width: bw });
@@ -120,8 +124,8 @@ console.error('mockups/easy-options.svg');
   };
   const groups2 = ['Land', 'Forest'];
   const W2 = LW + DESIGNS.length * (CELL_W + GAP) + 10;
-  let o = text(10, 26, 'Unpaved main roads: five designs, every level (Paved, Easy, Unpaved, 4WD), secondary, primary and trunk', 17, 700) +
-    text(10, 46, 'High vis 2 colours and widths. A = class fill tinted to 65, 50 or 35% with a brown casing (Julien, 2026-11-20); B = centre line and thick-edged band; Now = 40% band.', 12, 400, MUTED);
+  let o = text(10, 26, 'Unpaved main roads: designs side by side, every level (Paved, Car friendly, Unpaved, 4WD)', 17, 700) +
+    text(10, 46, 'High vis 2 colours and widths. Now = brown band with a thick dark edge; a = no edge; b = marks in a darker shade of the class colour; c = pale band; A 50 = tinted fill with a brown casing (dropped: casing changes are hard to see). 4WD near black in all.', 12, 400, MUTED);
   DESIGNS.forEach(([title], j) => {
     const x = LW + j * (CELL_W + GAP);
     o += text(x + CELL_W / 2, TOP - 30, title, 14, 700, INK, 'middle');
@@ -149,7 +153,7 @@ console.error('mockups/easy-options.svg');
 
 // ---------- Design overview (2026-11-20): the adopted design, minor ways (edges) against main roads (inner band) ----------
 {
-  const LEV = ['Paved', 'Easy', 'Unpaved', '4WD'];
+  const LEV = ['Paved', 'Car friendly', 'Unpaved', '4WD'];
   const CW2 = 150, CH2 = 58, LW2 = 300, TOP2 = 110;
   const c2 = (x0) => `M${x0 + 10} ${CH2 - 12} C ${x0 + 45} 8, ${x0 + 95} ${CH2}, ${x0 + CW2 - 10} 14`;
   const GREYC = '#c4bdb4';
@@ -157,41 +161,41 @@ console.error('mockups/easy-options.svg');
   const white = (w, casing) => (lv, d) => {
     const base = line(d, { color: casing, width: w + 2 }) + line(d, { color: '#ffffff', width: w });
     if (lv === 'Paved') return base;
-    if (lv === 'Easy') return line(d, { color: casing, width: w + 2 }) + line(d, { color: UNPAVED, width: w }) + line(d, { color: '#ffffff', width: w - 2 / K });
+    if (lv === 'Car friendly') return line(d, { color: casing, width: w + 2 }) + line(d, { color: UNPAVED, width: w }) + line(d, { color: '#ffffff', width: w - 2 / K });
     return base + line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: w * 0.4 });
   };
   const mainR = (r) => (lv, d) => {
     const base = line(d, { color: r.casing, width: r.w + 2 }) + line(d, { color: r.fill, width: r.w });
     if (lv === 'Paved') return base;
-    if (lv === 'Easy') return base + line(d, { color: EDGE, width: 2.2 / K }) + line(d, { color: UNPAVED, width: 1.2 / K });
+    if (lv === 'Car friendly') return base + line(d, { color: EDGE, width: 2.2 / K }) + line(d, { color: UNPAVED, width: 1.2 / K });
     const bw = r.w * 0.4;
     return base + line(d, { color: EDGE, width: bw + 2 / K }) + line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: bw });
   };
   const track = (lv, d) => lv === 'Paved' ? line(d, { color: '#8f8f8f', width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
-    : lv === 'Easy' ? line(d, { color: UNPAVED, width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
+    : lv === 'Car friendly' ? line(d, { color: UNPAVED, width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 })
     : line(d, { color: lv === 'Unpaved' ? UNPAVED : FOURWD, width: 2.5 });
-  const single = (lv, d) => lv === 'Paved' ? line(d, { color: '#8f8f8f', width: 1.75, dash: [7, 3] })
+  const single = (lv, d) => lv === 'Paved' ? line(d, { color: '#8f8f8f', width: 1.75 + 2 / K, dash: [7, 3] }) + line(d, { color: '#ffffff', width: 1.75, dash: [7, 3] })
     : line(d, { color: lv === '4WD' ? FOURWD : UNPAVED, width: 1.75, dash: [7, 3] });
   const SECTIONS = [
     ['Minor ways: the mark is on the edges, then fills the middle', 'Edges are neutral here, so they can carry the surface. More brown = rougher.', [
-      ['Track', 'a narrow road; Easy = white with brown edges', track],
-      ['Single track (motorcycle=yes)', 'dashes; Easy drawn as Unpaved', single],
+      ['Track', 'a narrow road; car friendly = white with brown edges', track],
+      ['Single track (motorcycle=yes)', 'dashes; paved = white with grey edges; car friendly drawn as Unpaved', single],
       ['Unclassified, tertiary', 'dark grey edges #6f6f6f', white(4.5, '#6f6f6f')],
       ['Residential', 'grey edges #8f8f8f', white(4, '#8f8f8f')],
     ]],
-    ['Main roads: the mark is inside, the edges keep the class', 'Easy a thin centre line; Unpaved a band with a thick dark edge; 4WD a near-black band.', [
+    ['Main roads: the mark is inside, the edges keep the class', 'Car friendly a thin centre line; Unpaved a band with a thick dark edge; 4WD a near-black band (design under review).', [
       ['Secondary (yellow)', '', mainR(ROADS['Secondary (yellow)'])],
       ['Primary (orange)', '', mainR(ROADS['Primary (orange)'])],
       ['Trunk (crimson)', '', mainR(ROADS['Trunk (crimson)'])],
     ]],
     ['You may not ride it', 'one light grey, solid on tracks and roads, dashed on paths', [
       ['Closed track | path | road', 'no, private, agricultural, forestry; nobody said yes on paths', (lv, d) =>
-        lv === 'Paved' ? line(d, { color: GREYC, width: 2.5 }) : lv === 'Easy' ? line(d, { color: GREYC, width: 1.75, dash: [7, 3] }) : lv === 'Unpaved' ? line(d, { color: GREYC, width: 4.5 }) : ''],
+        lv === 'Paved' ? line(d, { color: GREYC, width: 2.5 }) : lv === 'Car friendly' ? line(d, { color: GREYC, width: 1.75, dash: [7, 3] }) : lv === 'Unpaved' ? line(d, { color: GREYC, width: 4.5 }) : ''],
     ]],
   ];
   const W3 = LW2 + LEV.length * (CW2 + GAP) + 10;
   let o = text(10, 26, 'The design: minor ways (tracks and white roads) against main roads', 17, 700) +
-    text(10, 46, 'High vis 2 colours, 1.5 x widths, z15, on the proposed land. Easy = confirmed for a city car; Unpaved = not confirmed; 4WD = horrible or worse.', 12, 400, MUTED);
+    text(10, 46, 'High vis 2 colours, 1.5 x widths, z15, on the proposed land. Car friendly = confirmed for a city car; Unpaved = not confirmed; 4WD = horrible or worse.', 12, 400, MUTED);
   LEV.forEach((n, j) => { o += text(LW2 + j * (CW2 + GAP) + CW2 / 2, TOP2 - 12, n, 13, 700, INK, 'middle'); });
   let y3 = TOP2;
   for (const [title, sub, rows] of SECTIONS) {
