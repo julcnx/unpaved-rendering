@@ -16,11 +16,11 @@ import { classifyDetailed } from '../../js/classify.js';
 const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
   { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks', landCheck: true, ladderCheck: true },
-  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true, landCheck: true, ladderCheck: true },
+  { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true, landCheck: true, ladderCheck: true, easyCheck: true },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
   { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'], landCheck: true, ladderCheck: true },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
-  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], hivis: true, landCheck: true },
+  { country: 'switzerland', name: 'switzerland-1', lat: 47.69867, lon: 8.62427, note: 'path density', closedVariants: ['greyDots', 'grey', 'greyThin'], hivis: true, landCheck: true, easyCheck: true },
   // Same centre at z16: driveways appear (grey), the rest as at z15 (widths kept at their z15 values).
   { country: 'switzerland', name: 'switzerland-1-z16', z: 16, lat: 47.69867, lon: 8.62427, note: 'driveways from z16', closedVariants: ['grey'], noFocus: true },
 ];
@@ -591,6 +591,15 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       ];
       sheet(`fork-ladder-${v.name}.svg`, `Fork, condition ladder: ${v.name} at z${v.z ?? Z}`,
         'Julien, 2026-11-20: High clearance drawn like every unconfirmed dirt way; a lighter tan where a city car is confirmed (smoothness bad or better, grade1 or 2, compacted, fine_gravel).', lp2);
+    }
+    if (v.easyCheck) {
+      // Easy level by hue (Julien, 2026-11-20: the tan is only a lighter brown, it needs a hue of its own). Green and
+      // olive fail for red-green colour blindness against the brown (Delta E 6 and 2), teal against the grey casings.
+      const ev = [['tan', 'Tan', 'Tan #c8a070 (lighter brown)', '#c8a070'], ['blue', 'Blue', 'Slate blue #4a6fb0', '#4a6fb0'], ['purple', 'Purple', 'Purple #8a5aa8', '#8a5aa8'], ['mauve', 'Mauve', 'Mauve #9c74b8 (same weight as the brown)', '#9c74b8']];
+      const ep = ev.map(([key, badge, title, c]) => ({ key, badge, title, closed: CLOSED.grey,
+        svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, { ...DEFAULT_P, ramp: { ...RAMP, easy: c } }, land ? drawLand(land, LANDS.proposal) : null), stats }));
+      sheet(`fork-easy-${v.name}.svg`, `Fork, Easy level hue: ${v.name} at z${v.z ?? Z}`,
+        'Easy = confirmed for a city car (smoothness bad or better, grade1 or 2, compacted, fine_gravel). Same map, three colours for that level.', ep);
     }
     if (v.rampCheck) {
       const rp = [
