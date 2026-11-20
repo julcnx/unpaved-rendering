@@ -91,3 +91,58 @@ for (const g of groups) {
 writeFileSync(new URL('easy-options.svg', import.meta.url),
   `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${y + 10}" viewBox="0 0 ${W} ${y + 10}"><rect width="${W}" height="${y + 10}" fill="#fff"/>${out}</svg>`);
 console.error('mockups/easy-options.svg');
+
+// ---------- Main roads (2026-11-20): five designs, every level, secondary, primary and trunk, land and forest ----------
+// Now: 40% band with a thin dark edge (Easy: brown inner edges, v3). B: Easy a thin centre line with a dark halo,
+// Unpaved the band with a thicker dark edge, 4WD a near-black band. A t: Julien's idea, fill tinted to t of the
+// class colour (rest white) with a brown casing, near black for 4WD; Easy keeps the full fill with the brown casing.
+{
+  const mix = (hex, to, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - t) + parseInt(to.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
+  const LEVELS = [['Paved', null], ['Easy', 'easy'], ['Unpaved', UNPAVED], ['4WD', FOURWD]];
+  const DESIGNS = [['Now', 'band'], ['B: centre line', 'centre'], ['A 65', 0.65], ['A 50', 0.5], ['A 35', 0.35]];
+  const MAIN = Object.entries(ROADS).filter(([k]) => !k.startsWith('White'));
+  const SUB4 = CELL_W / 4;
+  const mcurve = (x0) => `M${x0 + 6} ${CELL_H - 12} C ${x0 + 26} 8, ${x0 + 48} ${CELL_H}, ${x0 + SUB4 - 6} 14`;
+  const road = (r, level, design, x0) => {
+    const d = mcurve(x0), bw = r.w * 0.4;
+    const base = (fill, casing) => line(d, { color: casing, width: r.w + 2 }) + line(d, { color: fill, width: r.w });
+    if (!level) return base(r.fill, r.casing);
+    if (typeof design === 'number') {
+      if (level === 'easy') return base(r.fill, UNPAVED);
+      return base(mix(r.fill, '#ffffff', 1 - design), level === FOURWD ? FOURWD : UNPAVED);
+    }
+    if (design === 'centre') {
+      if (level === 'easy') return base(r.fill, r.casing) + line(d, { color: EDGE, width: 2.2 / K }) + line(d, { color: UNPAVED, width: 1.2 / K });
+      return base(r.fill, r.casing) + line(d, { color: EDGE, width: bw + 2 / K }) + line(d, { color: level, width: bw });
+    }
+    if (level === 'easy') return line(d, { color: r.casing, width: r.w + 2 }) + line(d, { color: UNPAVED, width: r.w }) + line(d, { color: r.fill, width: r.w - 2 / K });
+    return base(r.fill, r.casing) + line(d, { color: EDGE, width: bw + 1.2 / K }) + line(d, { color: level, width: bw });
+  };
+  const groups2 = ['Land', 'Forest'];
+  const W2 = LW + DESIGNS.length * (CELL_W + GAP) + 10;
+  let o = text(10, 26, 'Unpaved main roads: five designs, every level (Paved, Easy, Unpaved, 4WD), secondary, primary and trunk', 17, 700) +
+    text(10, 46, 'High vis 2 colours and widths. A = class fill tinted to 65, 50 or 35% with a brown casing (Julien, 2026-11-20); B = centre line and thick-edged band; Now = 40% band.', 12, 400, MUTED);
+  DESIGNS.forEach(([title], j) => {
+    const x = LW + j * (CELL_W + GAP);
+    o += text(x + CELL_W / 2, TOP - 30, title, 14, 700, INK, 'middle');
+    LEVELS.forEach(([n], k) => { o += text(x + k * SUB4 + SUB4 / 2, TOP - 12, n, 11, 400, MUTED, 'middle'); });
+  });
+  let y2 = TOP;
+  for (const g of groups2) {
+    o += text(10, y2 + 14, g, 14, 700);
+    y2 += 22;
+    for (const [name, r] of MAIN) {
+      o += text(10, y2 + CELL_H / 2 + 4, name, 12);
+      DESIGNS.forEach(([, design], j) => {
+        const x = LW + j * (CELL_W + GAP);
+        o += `<g transform="translate(${x} ${y2})"><rect width="${CELL_W}" height="${CELL_H}" rx="4" fill="${BG[g]}"/>` +
+          LEVELS.map(([, lv], k) => road(r, lv, design, k * SUB4)).join('') + '</g>';
+      });
+      y2 += CELL_H + GAP;
+    }
+    y2 += 8;
+  }
+  writeFileSync(new URL('mainroads-options.svg', import.meta.url),
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${W2}" height="${y2 + 10}" viewBox="0 0 ${W2} ${y2 + 10}"><rect width="${W2}" height="${y2 + 10}" fill="#fff"/>${o}</svg>`);
+  console.error('mockups/mainroads-options.svg');
+}

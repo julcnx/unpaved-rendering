@@ -17,6 +17,9 @@ const Z = 15, CW = 900, CH = 600;
 const VIEWS = [
   { country: 'thailand', name: 'chiangrai', lat: 20.0259, lon: 99.678, note: 'moto paths and untagged tracks', landCheck: true, ladderCheck: true },
   { country: 'thailand', name: 'thailand-1', lat: 7.83617, lon: 98.31665, note: 'every track grade, paved tracks, closed network', closedVariants: ['dashed', 'grey'], hivis: true, rampCheck: true, landCheck: true, ladderCheck: true, easyCheck: true },
+  // thailand-3: 2.5 km of Unpaved and 3.4 km of Off-road trunk to secondary in the track round, for the main-road
+  // designs (2026-11-20).
+  { country: 'thailand', name: 'thailand-3', lat: 20.33948, lon: 99.74487, note: 'unpaved main roads', landCheck: true, mainCheck: true, noFocus: true },
   // switzerland-2: the most closed track km of the three Swiss views (18.5%, against 11.5% and 3.9%), many paved tracks.
   { country: 'switzerland', name: 'switzerland-2', lat: 46.85643, lon: 7.03125, note: 'closed-way density, paved tracks', closedVariants: ['thin', 'crimson', 'dashed', 'grey'], landCheck: true, ladderCheck: true },
   // switzerland-1: 55 km of paths in the crop, the density check for grey dashed paths (2026-11-19).
@@ -362,8 +365,15 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
   }
   // Roads: all casings, then fills and bands from the lowest class up, so junctions join cleanly.
   roads.sort((a, b) => RANK.indexOf(a.tags.highway) - RANK.indexOf(b.tags.highway));
+  // Main roads (trunk, primary, secondary), P.main (2026-11-20): 'band' = the 40% band; 'centre' = Easy a thin
+  // centre line, Unpaved the band with a thicker dark edge, 4WD a near-black band; a number t = Julien's idea, the
+  // class fill tinted to t (share of the class colour, the rest white) with a brown casing, near black for 4WD;
+  // Easy keeps the full fill with the brown casing.
+  const mainStyle = P?.main ?? 'band';
+  const mainDirt = (w, cls) => cls !== 'minor' && w.look.level !== 'paved';
   const casingOf = (w, cls, c) => {
     const h = w.tags.highway;
+    if (typeof mainStyle === 'number' && mainDirt(w, cls)) return w.look.level === 'fourwd' ? R.fourwd : R.unpaved;
     if (cls !== 'minor') return c.casing;
     if (F.pavedCasing && w.look.level === 'paved') return F.pavedCasing[h];
     return cas.white ?? (cas.hierarchy ? MINOR_CASING[h] : c.casing);
@@ -373,6 +383,22 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
   // before every band, so the next way's fill does not cut the band at each joint (gaps seen by Julien, 2026-11-19).
   const fillOf = (w, cls, c, width) => {
     const r = { fill: st(w.pts, { color: c.fill, width }), edge: '', band: '' };
+    if (typeof mainStyle === 'number' && mainDirt(w, cls)) {
+      if (w.look.level !== 'easy') r.fill = st(w.pts, { color: mix(c.fill, '#ffffff', 1 - mainStyle), width });
+      return r;
+    }
+    if (mainStyle === 'centre' && mainDirt(w, cls)) {
+      const fade = (x) => (bOp < 1 ? `<g opacity="${bOp}">${x}</g>` : x);
+      if (w.look.level === 'easy') {
+        r.edge = fade(st(w.pts, { color: P.bandEdge ?? '#3d3d3d', width: 2.2 }));
+        r.band = fade(st(w.pts, { color: R.unpaved, width: 1.2 }));
+      } else {
+        const bw = Math.max(width * bandMain, 0.8);
+        r.edge = fade(st(w.pts, { color: P.bandEdge ?? '#3d3d3d', width: bw + 2 }));
+        r.band = fade(st(w.pts, { color: R[w.look.level], width: bw }));
+      }
+      return r;
+    }
     if (w.look.level !== 'paved') {
       const easyLine = w.look.level === 'easy' && P?.easyShape;
       // Easy roads: a thin brown centre line (1 dp), no edge, so the road reads closest to a paved one.
@@ -564,6 +590,8 @@ function drawLand(land, pal) {
   return out;
 }
 
+const mix = (hex, to, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - t) + parseInt(to.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
+
 // ---------- Run ----------
 const NAMES = {
   'road paved': 'Paved road', 'road easy': 'Easy road (confirmed)', 'track easy': 'Easy track (confirmed)', 'single easy': 'Single track, easy', 'road unpaved': 'Unpaved road', 'road high': 'High-clearance road', 'road fourwd': '4WD road',
@@ -619,6 +647,14 @@ for (const country of [...new Set(VIEWS.map((v) => v.country))]) {
       ];
       sheet(`fork-ladder-${v.name}.svg`, `Fork, condition ladder: ${v.name} at z${v.z ?? Z}`,
         'Julien, 2026-11-20: High clearance drawn like every unconfirmed dirt way; a lighter tan where a city car is confirmed (smoothness bad or better, grade1 or 2, compacted, fine_gravel).', lp2);
+    }
+    if (v.mainCheck) {
+      const mv = [['band', 'Now', 'Now: 40% band, thin dark edge', 'band'], ['centre', 'B', 'B: Easy centre line, band with thick edge', 'centre'],
+        ['t65', 'A 65', 'A: tint 65% of the class colour, brown casing', 0.65], ['t50', 'A 50', 'A: tint 50%, brown casing', 0.5], ['t35', 'A 35', 'A: tint 35%, brown casing', 0.35]];
+      const mp = mv.map(([key, badge, title, m]) => ({ key, badge, title, closed: CLOSED.grey,
+        svg: drawCrop(ways, CLOSED.grey, null, CASINGS.fork, { ...DEFAULT_P, main: m }, land ? drawLand(land, LANDS.proposal) : null), stats }));
+      sheet(`fork-main-${v.name}.svg`, `Fork, unpaved main roads: ${v.name} at z${v.z ?? Z}`,
+        'Five ways to mark Unpaved, Easy and 4WD on trunk, primary and secondary (Julien, 2026-11-20). Tracks and white roads as adopted (v3).', mp);
     }
     if (v.easyCheck && land) {
       const vs = [['v1', 'v1', 'v1: tracks brown edges, roads brown centre line'], ['v2', 'v2', 'v2: grey edges and brown centre line on both'], ['v3', 'v3', 'v3: brown edges on both (more brown = rougher)']];
