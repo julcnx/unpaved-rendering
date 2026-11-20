@@ -273,6 +273,9 @@ const HIVIS2 = {
   // Band 40% on every class (Julien, 2026-11-20: at 60% the class colour hardly showed on main roads); about a track's
   // width on main roads at 1.5 x. Easy as a shape: white track with brown edges, thin centre line on roads.
   band: [0.4, 0.4], easyShape: true,
+  // Main roads (Julien, 2026-11-20): the inner band only, no casing change (a casing change is hard to see on a
+  // class colour): Easy a thin brown centre line, Unpaved the band with a thick dark edge, 4WD a near-black band.
+  main: 'centre',
   land: '#fbfaf6', // the proposed near-white land (Julien, 2026-11-19: kept over the Motorcycle plugin's, easier to read)
   classes: {
     trunk: { ...SPEC.classes.trunk, fill: '#d6336c', casing: '#7a1236' },

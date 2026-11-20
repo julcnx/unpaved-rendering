@@ -99,7 +99,7 @@ console.error('mockups/easy-options.svg');
 {
   const mix = (hex, to, t) => '#' + [1, 3, 5].map((i) => Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - t) + parseInt(to.slice(i, i + 2), 16) * t).toString(16).padStart(2, '0')).join('');
   const LEVELS = [['Paved', null], ['Easy', 'easy'], ['Unpaved', UNPAVED], ['4WD', FOURWD]];
-  const DESIGNS = [['Now', 'band'], ['B: centre line', 'centre'], ['A 65', 0.65], ['A 50', 0.5], ['A 35', 0.35]];
+  const DESIGNS = [['Before: band', 'band'], ['B: inner band (adopted)', 'centre'], ['A 65', 0.65], ['A 50', 0.5], ['A 35', 0.35]];
   const MAIN = Object.entries(ROADS).filter(([k]) => !k.startsWith('White'));
   const SUB4 = CELL_W / 4;
   const mcurve = (x0) => `M${x0 + 6} ${CELL_H - 12} C ${x0 + 26} 8, ${x0 + 48} ${CELL_H}, ${x0 + SUB4 - 6} 14`;
