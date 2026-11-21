@@ -40,7 +40,8 @@ const whiteRow = (title, note, w, grey, opacity = 1) => {
   return [[title, note, (d, l) => g(line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: w + 3 / K * 1.5 }) + line(d, { color: '#ffffff', width: w }))],
     (d) => g(line(d, { color: grey, width: w + 2 / K * 1.5 }) + line(d, { color: '#ffffff', width: w }))];
 };
-const WHITE_MAIN = whiteRow('Reference: unclassified, tertiary', 'white, dark grey edge #6f6f6f; the rule option 11 extends', 4.5, '#6f6f6f');
+// Unclassified clearly wider than residential (Julien, 2026-11-21): 5.5 against 4 dp.
+const WHITE_MAIN = whiteRow('Reference: unclassified', 'white, dark grey edge #6f6f6f; wider than residential', 5.5, '#6f6f6f');
 const WHITE_MINOR = whiteRow('Reference: residential', 'white, grey edge #8f8f8f', 4, '#8f8f8f');
 const SERVICE = whiteRow('Reference: service road', 'white, light edge #a8a8a8, whole road faded (45%)', 3, '#a8a8a8', 0.45);
 

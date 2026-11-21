@@ -54,7 +54,7 @@ const CLOSED = {
 // Road widths at z15 in dp; tertiary and below use the white class.
 const ROAD = {
   trunk: ['trunk', 7], primary: ['primary', 6.5], secondary: ['secondary', 6],
-  tertiary: ['minor', 5.5], unclassified: ['minor', 4.5], residential: ['minor', 4], service: ['minor', 3],
+  tertiary: ['minor', 5.5], unclassified: ['minor', 5.5], residential: ['minor', 4], service: ['minor', 3], // unclassified 4.5 -> 5.5, clearly wider than residential (Julien, 2026-11-21)
 };
 // Casing of white roads by class (Julien, 2026-11-19: casing B, #8f8f8f at 1 dp a side; unclassified darker than
 // the minor roads). Tertiary goes with unclassified (Claude's reading). Paved tracks take the residential grey.
