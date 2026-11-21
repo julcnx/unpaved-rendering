@@ -1,5 +1,5 @@
-// Main roads, Julien's idea (2026-11-21): when not paved, the condition colour as a thick casing and the class colour
-// as an inner band (the core). Three core widths, a paved-to-unpaved transition along one road, land and forest.
+// Main roads, Julien's idea (2026-11-21): when not paved, the condition colour as the casing, a white gap, and the class
+// colour as an inner band (the core): an unpaved white road with a class-colour stripe. First drawn without the gap. Three core widths, a paved-to-unpaved transition along one road, land and forest.
 // Condition colours as in the outline system: Car friendly slate blue, Unpaved brown, 4WD near black.
 // Usage (from research/): node mockups/make-core-options.mjs && node mockups/svg2png.mjs mockups/core-options.svg
 import { writeFileSync } from 'node:fs';
@@ -22,7 +22,8 @@ const LEV = [['Paved', null], ['Car friendly', CF], ['Unpaved', UNPAVED], ['4WD'
 // A road of total width w + 2 (casing included). Paved: class casing 1 dp a side. Not paved: the condition colour over
 // the whole width, the class fill as a core of share `core` of w.
 const paved = (d, fill, casing, w) => line(d, { color: casing, width: w + 2 }) + line(d, { color: fill, width: w });
-const dirt = (d, fill, cond, w, core) => line(d, { color: cond, width: w + 2 }) + line(d, { color: fill, width: w * core });
+const EDGE_W = 1.5; // condition casing, dp a side (white roads in the outline system: 1.5)
+const dirt = (d, fill, cond, w, core) => line(d, { color: cond, width: w + 2 * EDGE_W }) + line(d, { color: '#ffffff', width: w }) + line(d, { color: fill, width: w * core });
 const cell = (fill, casing, w, core, c) => {
   if (c === null) return paved(curve, fill, casing, w);
   if (c === 'transition') return paved(left, fill, casing, w) + dirt(right, fill, UNPAVED, w, core);
@@ -33,11 +34,11 @@ const white = (c) => {
   if (c === 'transition') return line(left, { color: '#6f6f6f', width: 6.5 }) + line(left, { color: '#fff', width: 4.5 }) + line(right, { color: UNPAVED, width: 7.5 }) + line(right, { color: '#fff', width: 4.5 });
   return line(curve, { color: c ?? '#6f6f6f', width: c ? 7.5 : 6.5 }) + line(curve, { color: '#fff', width: 4.5 });
 };
-const CORES = [[0.4, 'core 40%'], [0.55, 'core 55%'], [0.7, 'core 70%']];
+const CORES = [[0.4, 'core 40%'], [0.55, 'core 55%'], [0.7, 'core 70%']]; // share of the fill; the rest is the white gap
 
 const W = LW + LEV.length * (CW + GAP) + 10;
-let out = text(10, 26, 'Main roads: condition colour as a thick casing, class colour as the core', 17, 700) +
-  text(10, 46, 'Julien, 2026-11-21. Car friendly slate blue, Unpaved brown, 4WD near black; paved roads unchanged. Three core widths. High vis 2 colours, 1.5 x, z15.', 12, 400, MUTED);
+let out = text(10, 26, 'Main roads: condition casing, white gap, class colour as the core', 17, 700) +
+  text(10, 46, 'Julien, 2026-11-21. Not paved: casing in the condition colour (1.5 dp a side), white, then the class colour as a core. Car friendly slate blue, Unpaved brown, 4WD near black.', 12, 400, MUTED);
 let y = 84;
 LEV.forEach(([n], j) => { out += text(LW + j * (CW + GAP) + CW / 2, y, n, 12, 700, INK, 'middle'); });
 y += 12;
