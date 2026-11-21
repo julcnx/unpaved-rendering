@@ -53,6 +53,19 @@ const row = ([title, note, fn], pavedFn = paved) => {
 OPTIONS.forEach((o) => row(o));
 y += 10;
 row(WHITE, whitePaved);
+// Track and path references (Julien, 2026-11-21), in the adopted outline system.
+const TRACK = ['Reference: track', 'paved white with grey edges; Unpaved solid brown; 4WD near black',
+  (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 2.5 })];
+const trackPaved = (d) => line(d, { color: '#8f8f8f', width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 });
+const SINGLE = ['Reference: single track (motorcycle=yes)', 'paved white dashes, grey edges; brown; near black',
+  (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 1.75, dash: [7, 3] })];
+const singlePaved = (d) => line(d, { color: '#8f8f8f', width: 1.75 + 2 / K, dash: [7, 3] }) + line(d, { color: '#ffffff', width: 1.75, dash: [7, 3] });
+const PATH = ['Reference: path you may not ride', 'grey dashes (left); closed track solid grey (right cells)',
+  (d) => line(d, { color: '#c4bdb4', width: 2.5 })];
+const pathLeft = (d) => line(d, { color: '#c4bdb4', width: 1.75, dash: [7, 3] });
+row(TRACK, trackPaved);
+row(SINGLE, singlePaved);
+row(PATH, pathLeft);
 writeFileSync(new URL('main-compare.svg', import.meta.url),
   `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${y + 10}" viewBox="0 0 ${WIDTH} ${y + 10}"><rect width="${WIDTH}" height="${y + 10}" fill="#fff"/>${out}</svg>`);
 console.error('mockups/main-compare.svg');
