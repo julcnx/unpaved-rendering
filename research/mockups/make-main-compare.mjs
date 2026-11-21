@@ -47,12 +47,17 @@ const whiteRow = (title, note, w, grey, opacity = 1) => {
     (d) => g(line(d, { color: grey, width: w + 2 / K * 1.5 }) + line(d, { color: '#ffffff', width: w }))];
 };
 // Unclassified clearly wider than residential (Julien, 2026-11-21): 5.5 against 4 dp.
+// Ranked for readability on the light map, worst to best (Claude, 2026-11-21; E-tracks 6.4). Each title gets its rank.
+const RANK = [16, 13, 12, 3, 5, 2, 6, 14, 1, 4, 8, 7, 10, 15, 9, 11];
+const num = (o) => +o[0].split('.')[0];
+OPTIONS.sort((a, b) => RANK.indexOf(num(a)) - RANK.indexOf(num(b)));
+OPTIONS.forEach((o) => { const r = OPTIONS.length - RANK.indexOf(num(o)); o[0] = `#${r} · ${o[0]}`; });
 const WHITE_MAIN = whiteRow('Reference: unclassified', 'white, dark grey edge #6f6f6f; wider than residential', 5.5, '#6f6f6f');
 const WHITE_MINOR = whiteRow('Reference: residential', 'white, grey edge #8f8f8f', 4, '#8f8f8f');
 const SERVICE = whiteRow('Reference: service road', 'white, light edge #a8a8a8, whole road faded (45%)', 3, '#a8a8a8', 0.45);
 
 const WIDTH = LW + TW + 2 * (CW + GAP) + 20;
-let out = text(10, 26, 'Main roads: every option discussed, on one example (orange primary)', 17, 700) +
+let out = text(10, 26, 'Main roads: every option discussed, ranked worst to best for readability (orange primary)', 17, 700) +
   text(10, 46, 'Paved to Unpaved along one road, then Unpaved and 4WD. 2026-11-13 to 2026-11-21. High vis 2 colours, 1.5 x widths, z15, proposed land.', 12, 400, MUTED);
 let y = 80;
 [['Paved → Unpaved', TW], ['Unpaved', CW], ['4WD', CW]].reduce((x, [n, w]) => { out += text(x + w / 2, y, n, 13, 700, INK, 'middle'); return x + w + GAP; }, LW);
