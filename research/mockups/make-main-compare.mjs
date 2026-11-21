@@ -61,6 +61,10 @@ const row = ([title, note, fn], pavedFn = paved) => {
 OPTIONS.forEach((o) => row(o));
 y += 10;
 row(WHITE_MAIN[0], WHITE_MAIN[1]);
+// Old white-road design for reference (until 2026-11-20): grey edge kept, brown or near-black band 40% inside.
+const OLD_WHITE = ['Reference: unclassified, old inner-band design', 'grey edge kept; brown band 40% inside (until 2026-11-20)',
+  (d, l) => line(d, { color: '#6f6f6f', width: 5.5 + 2 / K * 1.5 }) + line(d, { color: '#ffffff', width: 5.5 }) + line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 5.5 * 0.4 })];
+row(OLD_WHITE, (d) => line(d, { color: '#6f6f6f', width: 5.5 + 2 / K * 1.5 }) + line(d, { color: '#ffffff', width: 5.5 }));
 row(WHITE_MINOR[0], WHITE_MINOR[1]);
 row(SERVICE[0], SERVICE[1]);
 // Track and path references (Julien, 2026-11-21), in the adopted outline system.
