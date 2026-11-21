@@ -34,8 +34,15 @@ const OPTIONS = [
   ['10. Thick condition casing, class core 55%', '2026-11-21, no gap; brown close to orange', (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: W + 2 }) + line(d, { color: FILL, width: W * 0.55 })],
   ['11. Condition casing, white gap, class core 55%', '2026-11-21, latest; same rule as white roads', (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: W + 3 }) + line(d, { color: '#ffffff', width: W }) + line(d, { color: FILL, width: W * 0.55 })],
 ];
-const WHITE = ['Reference: white road, outline system', 'unclassified; the rule option 11 extends', (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 4.5 + 3 }) + line(d, { color: '#ffffff', width: 4.5 })];
-const whitePaved = (d) => line(d, { color: '#6f6f6f', width: 6.5 }) + line(d, { color: '#ffffff', width: 4.5 });
+// White roads in the outline system: the condition casing 1.5 dp a side, white fill.
+const whiteRow = (title, note, w, grey, opacity = 1) => {
+  const g = (x) => (opacity < 1 ? `<g opacity="${opacity}">${x}</g>` : x);
+  return [[title, note, (d, l) => g(line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: w + 3 / K * 1.5 }) + line(d, { color: '#ffffff', width: w }))],
+    (d) => g(line(d, { color: grey, width: w + 2 / K * 1.5 }) + line(d, { color: '#ffffff', width: w }))];
+};
+const WHITE_MAIN = whiteRow('Reference: unclassified, tertiary', 'white, dark grey edge #6f6f6f; the rule option 11 extends', 4.5, '#6f6f6f');
+const WHITE_MINOR = whiteRow('Reference: residential', 'white, grey edge #8f8f8f', 4, '#8f8f8f');
+const SERVICE = whiteRow('Reference: service road', 'white, light edge #a8a8a8, whole road faded (45%)', 3, '#a8a8a8', 0.45);
 
 const WIDTH = LW + TW + 2 * (CW + GAP) + 20;
 let out = text(10, 26, 'Main roads: every option discussed, on one example (orange primary)', 17, 700) +
@@ -52,13 +59,15 @@ const row = ([title, note, fn], pavedFn = paved) => {
 };
 OPTIONS.forEach((o) => row(o));
 y += 10;
-row(WHITE, whitePaved);
+row(WHITE_MAIN[0], WHITE_MAIN[1]);
+row(WHITE_MINOR[0], WHITE_MINOR[1]);
+row(SERVICE[0], SERVICE[1]);
 // Track and path references (Julien, 2026-11-21), in the adopted outline system.
-const TRACK = ['Reference: track', 'paved white with grey edges; Unpaved solid brown; 4WD near black',
-  (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 2.5 })];
+const TRACK = ['Reference: track', 'paved white, grey edges; solid brown or near black at the same width',
+  (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 2.5 + 2 / K })]; // as wide as the paved track with its edges (Julien, 2026-11-21)
 const trackPaved = (d) => line(d, { color: '#8f8f8f', width: 2.5 + 2 / K }) + line(d, { color: '#ffffff', width: 2.5 });
 const SINGLE = ['Reference: single track (motorcycle=yes)', 'paved white dashes, grey edges; brown; near black',
-  (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 1.75, dash: [7, 3] })];
+  (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 1.75 + 2 / K, dash: [7, 3] })];
 const singlePaved = (d) => line(d, { color: '#8f8f8f', width: 1.75 + 2 / K, dash: [7, 3] }) + line(d, { color: '#ffffff', width: 1.75, dash: [7, 3] });
 const PATH = ['Reference: path you may not ride', 'grey dashes (left); closed track solid grey (right cells)',
   (d) => line(d, { color: '#c4bdb4', width: 2.5 })];

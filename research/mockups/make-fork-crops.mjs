@@ -369,7 +369,8 @@ function drawCrop(ways, closed, focus = null, cas = CASINGS.fork, P = DEFAULT_P,
         L.pavedCasing.push(st(w.pts, { color: R.unpaved, width: trackW + cas.extra }));
         L.pavedFill.push(st(w.pts, { color: PAVED_TRACK.fill, width: trackW }));
       }
-    } else if (k.kind === 'track') L[k.level === 'fourwd' ? 'track4wd' : 'track'].push(st(w.pts, { color: R[k.level], width: trackW }));
+    // Unpaved and 4WD tracks as wide as a paved track with its edges (Julien, 2026-11-21), so the line keeps its width where the surface changes.
+    } else if (k.kind === 'track') L[k.level === 'fourwd' ? 'track4wd' : 'track'].push(st(w.pts, { color: R[k.level], width: trackW + (P?.easyShape ? cas.extra : 0) }));
     else if (k.kind === 'road') roads.push(w);
     if (F.symbols && /^[0-5]$/.test(w.tags['dirtbike:scale'] ?? '') && k.kind !== 'skip') L.sym.push(symbols(w.pts, w.tags['dirtbike:scale']));
   }
