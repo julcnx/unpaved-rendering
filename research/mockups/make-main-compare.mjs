@@ -33,6 +33,12 @@ const OPTIONS = [
   ['9. Dashed band, fill 40% lighter', 'strong; the article convention', (d, l) => line(d, { color: CASING, width: W + 2 }) + line(d, { color: LIGHT40, width: W }) + (l === '4wd' ? line(d, { color: FOURWD, width: bw }) : line(d, { color: SHADE, width: bw, dash: [bw * 3, bw * 1.1] }))],
   ['10. Thick condition casing, class core 55%', '2026-11-21, no gap; brown close to orange', (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: W + 2 }) + line(d, { color: FILL, width: W * 0.55 })],
   ['11. Condition casing, white gap, class core 55%', '2026-11-21, latest; same rule as white roads', (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: W + 3 }) + line(d, { color: '#ffffff', width: W }) + line(d, { color: FILL, width: W * 0.55 })],
+  // Earlier designs (2026-11-13 road and pairing mockups, article styles), added for reference (Julien, 2026-11-21).
+  ['12. Brown fill, class casing', '2026-11-13 version 1; the class is lost', (d, l) => line(d, { color: CASING, width: W + 2 }) + line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: W })],
+  ['13. Thin brown centre line', '2026-11-13 pairings option 2', (d, l) => paved(d) + line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: 1.3 })],
+  ['14. Dashed casing (article style 4)', 'dashed outline, fill kept', (d, l) => line(d, { color: l === '4wd' ? FOURWD : UNPAVED, width: W + 2.5, dash: [11, 3] }) + line(d, { color: FILL, width: W })],
+  ['15. Dashed fill, full width (article style 5)', 'dashes across the whole road, as Americana', (d, l) => line(d, { color: CASING, width: W + 2 }) + line(d, { color: FILL, width: W }) + line(d, { color: l === '4wd' ? FOURWD : SHADE, width: W, dash: [W * 3.6, W * 0.98] })],
+  ['16. Grain (article style 1)', 'dots over the fill; needs textures in OsmAnd', (d, l) => paved(d) + line(d, { color: l === '4wd' ? FOURWD : SHADE, width: W * 0.75, dash: [0.01, 2.2], cap: 'round' })],
 ];
 // White roads in the outline system: the condition casing 1.5 dp a side, white fill.
 const whiteRow = (title, note, w, grey, opacity = 1) => {
