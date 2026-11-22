@@ -270,8 +270,8 @@ Repo [OsmAnd-Rendering/Motorcycle](https://github.com/OsmAnd-Rendering/Motorcycl
 | 1. Easy, drivable | brown `#996600`, solid | `surface` paved, asphalt, concrete, compacted, fine_gravel, chipseal, paving_stones, metal, wood, unhewn_cobblestone; `tracktype=grade1/2` |
 | 2. Easy but looser | brown, dashed | `surface` gravel, rock, pebblestone, cobblestone; `grade3` |
 | 3. Depends on weather | green `#008800`, solid | `grade4` |
-| 4. Bare ground | green, dashed | `surface` dirt, earth, ground, grass, mud, sand, **unpaved**; `grade5`; `smoothness=horrible/very_horrible`; `ford=yes` (on tracks, dirt, earth, ground and unpaved are in no list and reach 5, same look; E-tracks section 5, 2026-11-13) |
-| 5. No information | as 4; the option "cacher chemin sans info" only drops the dashes (green solid), it hides nothing (E-tracks section 5) | tracks with none of these tags |
+| 4. Bare ground | green, dashed | `surface` dirt, earth, ground, grass, mud, sand, **unpaved**; `grade5`; `smoothness=horrible/very_horrible`; `ford=yes` (on tracks, dirt, earth, ground and unpaved are in no list and reach 5, same look; E-tracks section 5, now in the osmand-overland repo, 2026-11-13) |
+| 5. No information | as 4; the option "cacher chemin sans info" only drops the dashes (green solid), it hides nothing (E-tracks section 5, now in the osmand-overland repo) | tracks with none of these tags |
 
 Colours: `$piste` brown and `$chemin` green ([L242-L261](https://github.com/OsmAnd-Rendering/Motorcycle/blob/f0676ed/enduro.render.xml#L242-L261)), with night, greyscale, "IGN-like" and background-map variants. Tag classes for routing hints: [L520-L570](https://github.com/OsmAnd-Rendering/Motorcycle/blob/f0676ed/enduro.render.xml#L520-L570).
 
