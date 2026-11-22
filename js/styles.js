@@ -14,12 +14,16 @@ const S = SPEC.styles;
 // main: a main road (SPEC.mainRoads), drawn with the stronger mark of each style's `main` block; mainLine, mainDash and
 // mainFullDash: its centre line and dash colours in the dashed fill and the full width, [Unpaved, Off-road]; lowMain: its
 // low-zoom tints. Dark mode takes these colours from SPEC.dark.main.
+// dirt, dirtDots (solid dirt, class dots): [Unpaved, Off-road].
+const DD = S['dirt-dots'];
+const dirtLight = (key) => ({ dirt: [DD.unpaved, DD.offroad], dirtDots: [DD.dots[key], DD.dots[key]] });
+const dirtDark = (key) => ({ dirt: [DD.dark.unpaved, DD.dark.offroad], dirtDots: [DD.dots[key], DD.dark.offDots[key]] });
 const isMain = (key) => SPEC.mainRoads?.includes(key) ?? false;
 const pair = (m, key) => [m.dash[key], m.offDash[key]];
 const mainOf = (key, m) => isMain(key) && { main: true, mainLine: [m['centre-line'].color, m['centre-line'].offColor],
   mainDash: pair(m['dashed-fill'], key), mainFullDash: pair(m['dashed-fill-full'], key), lowMain: [m.lowZoom.unpaved[key], m.lowZoom.offroad[key]] };
 const LIGHT_MAIN = { lowZoom: SPEC.lowZoom.main, 'centre-line': S['centre-line'].main, 'dashed-fill': S['dashed-fill'].main, 'dashed-fill-full': S['dashed-fill-full'].main };
-const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor, unpavedFill: S['dashed-casing'].unpavedFill?.[key],
+const withGapCasing = (key, c) => ({ ...c, gapCasing: S['dashed-casing'].casing[key], offGapCasing: S['dashed-casing'].offCasing[key], offLine: S['centre-line'].offColor, unpavedFill: S['dashed-casing'].unpavedFill?.[key], ...dirtLight(key),
   ...mainOf(key, LIGHT_MAIN) });
 const LIGHT = {
   motorway: withGapCasing('motorway', motorway), trunk: withGapCasing('trunk', trunk), primary: withGapCasing('primary', primary),
@@ -29,7 +33,7 @@ const LIGHT = {
 // Dark palette from the mockups too (SPEC.dark): on a dark map Off-road is the lighter step; the dashed outline uses the
 // class casing, already lighter than the fill.
 const DARK = {
-  ...Object.fromEntries(Object.entries(SPEC.dark.classes).map(([k, c]) => [k, { ...c, gapCasing: c.casing, offGapCasing: SPEC.dark.offCasing[k], offLine: SPEC.dark.centreLineOff, ...mainOf(k, SPEC.dark.main) }])),
+  ...Object.fromEntries(Object.entries(SPEC.dark.classes).map(([k, c]) => [k, { ...c, gapCasing: c.casing, offGapCasing: SPEC.dark.offCasing[k], offLine: SPEC.dark.centreLineOff, ...dirtDark(k), ...mainOf(k, SPEC.dark.main) }])),
   brown: SPEC.dark.centreLine,
 };
 export const palette = (dark) => (dark ? DARK : LIGHT);
@@ -61,6 +65,23 @@ function grain(ctx, bg, dot, scale, shift = [0, 0]) {
     grainCache.set(key, p);
   }
   return grainCache.get(key);
+}
+
+// Dots of one way, spread evenly with half a gap at each end: [[x, y], ...]. `placed` holds the dots already on the map; a dot
+// closer than 0.6 x the spacing to one of them is left out, so two dots never sit side by side where ways meet
+// (Julien, 2026-11-22). A way shorter than half the spacing gets none.
+export function dotPoints(pts, every, placed) {
+  const seg = pts.slice(1).map(([x, y], i) => Math.hypot(x - pts[i][0], y - pts[i][1]));
+  const length = seg.reduce((a, b) => a + b, 0), n = Math.round(length / every), out = [];
+  for (let k = 0, i = 0, before = 0; k < n; k++) {
+    const at = (k + 0.5) * length / n;
+    while (i < seg.length - 1 && before + seg[i] < at) before += seg[i++];
+    const t = seg[i] ? (at - before) / seg[i] : 0;
+    const p = [pts[i][0] + t * (pts[i + 1][0] - pts[i][0]), pts[i][1] + t * (pts[i + 1][1] - pts[i][1])];
+    if (placed.some(([x, y]) => Math.hypot(x - p[0], y - p[1]) < 0.6 * every)) continue;
+    placed.push(p); out.push(p);
+  }
+  return out;
 }
 
 const off = (level) => level === 'offroad' || level === 'specialized';
@@ -112,6 +133,16 @@ export const STYLES = {
       over: level === 'paved' ? [] : [{ color: c.main ? c.mainFullDash[off(level) ? 1 : 0] : off(level) ? offDash(c) : (c.fullDash ?? c.dash), width: w, dash: DF.unpavedXWidth.map((x) => x * w), cap: 'butt' }],
     }),
   },
+  // Surface first, class second: for off-road maps. Dirt over fill and casing, class-colour dots; below the low-zoom limit a
+  // dirt core inside the class colours instead of the plain tint.
+  'dirt-dots': {
+    name: DD.name, note: DD.note, minWidth: 3,
+    draw: (level, c, w) => level === 'paved' ? {} : {
+      casing: { color: c.dirt[off(level) ? 1 : 0] }, fill: { color: c.dirt[off(level) ? 1 : 0] },
+      over: [{ color: c.dirtDots[off(level) ? 1 : 0], width: w * DD.dotXWidth, every: w * DD.dotEveryXWidth, cap: 'round' }],
+    },
+    low: (level, c, w) => ({ over: [{ color: c.dirt[off(level) ? 1 : 0], width: w * DD.lowCore, cap: 'butt' }] }),
+  },
 };
 
 // Below SPEC.lowZoom.below px of fill width every style is a plain tint (patterns blur there): lowTint for Unpaved,
@@ -120,6 +151,7 @@ for (const st of Object.values(STYLES)) {
   const draw = st.draw;
   st.draw = (level, c, w, brown, ctx) => {
     const low = level !== 'paved' && w < SPEC.lowZoom.below;
+    if (low && st.low) return st.low(level, c, w);
     // Main roads: stronger tints (lowMain), the old ones were hard to see.
     const d = low ? { fill: { color: c.lowMain ? c.lowMain[off(level) ? 1 : 0] : off(level) ? offTint(c) : (c.lowTint ?? c.dash) } } : draw(level, c, w, brown, ctx);
     // White roads with a tan tint as fill get a darker casing (tintCasing), or they lose their outline and vanish on sand.

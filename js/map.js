@@ -1,6 +1,6 @@
 // Canvas map: Web Mercator, pan and zoom, roads drawn with the selected unpaved style.
 import { classify } from './classify.js';
-import { STYLES, palette, roadInfo, RANK, widthAt, LOW_BELOW } from './styles.js';
+import { STYLES, palette, roadInfo, RANK, widthAt, LOW_BELOW, dotPoints } from './styles.js';
 
 // Backgrounds: land colour, and whether the map is dark. "terrain" adds hillshade and contours.
 export const BACKGROUNDS = {
@@ -109,11 +109,11 @@ export class MapView {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     // Panels: all styles (plus "No style", everything drawn paved, as most maps today), all backgrounds for one style, or one map.
     const { style, bg, compare } = this.opts;
-    const panels = compare ? [...Object.keys(STYLES), NONE].map((s) => ({ style: s, bg: bg === 'all' ? 'white' : bg, label: s === NONE ? '6. No style (all paved)' : STYLES[s].name }))
+    const panels = compare ? [...Object.keys(STYLES), NONE].map((s) => ({ style: s, bg: bg === 'all' ? 'white' : bg, label: s === NONE ? '7. No style (all paved)' : STYLES[s].name }))
       : bg === 'all' ? Object.keys(BACKGROUNDS).map((b) => ({ style, bg: b, label: BACKGROUNDS[b].name }))
       : [{ style, bg }];
     // Portrait map (taller than wide): 2 columns, so 6 panels stack as 3 rows (for phone-shaped screenshots).
-    const cols = panels.length > 4 && W >= H ? 3 : panels.length > 1 ? 2 : 1, rows = Math.ceil(panels.length / cols);
+    const cols = panels.length > 6 && W >= H ? 4 : panels.length > 4 && W >= H ? 3 : panels.length > 1 ? 2 : 1, rows = Math.ceil(panels.length / cols);
     const cw = W / cols, ch = H / rows;
     this.cell = { w: cw, h: ch };
     // Fill the whole canvas first, so an empty grid cell (5 backgrounds in 3 x 2) does not show old pixels.
@@ -181,7 +181,7 @@ export class MapView {
       // threshold the layers differ and the current ones are kept).
       if (k !== 1) {
         const d0 = style.draw(levelOf(f), c, widthAt(info[1], zb), pal.brown, ctx);
-        const fix = (a, b) => (a?.dash && b?.dash ? { ...a, dash: b.dash.map((x) => x * k) } : a);
+        const fix = (a, b) => (a?.dash && b?.dash ? { ...a, dash: b.dash.map((x) => x * k) } : a?.every && b?.every ? { ...a, every: b.every * k } : a);
         d.casing = fix(d.casing, d0.casing); d.fill = fix(d.fill, d0.fill);
         if (d.over && d0.over?.length === d.over.length) d.over = d.over.map((o, i) => fix(o, d0.over[i]));
       }
@@ -197,7 +197,16 @@ export class MapView {
     }
     for (const r of roads) { path(r.f); stroke(r.d.casing?.color ?? r.c.casing, r.w + Math.max(1, r.w * 0.3), r.d.casing?.dash, r.d.casing?.cap); }
     for (const r of roads) { path(r.f); stroke(r.d.fill?.color ?? r.c.fill, r.w, r.d.fill?.dash, r.d.fill?.cap); }
-    for (const r of roads) for (const o of r.d.over ?? []) { path(r.f); stroke(o.color, o.width, o.dash, o.cap ?? 'round'); }
+    for (const r of roads) for (const o of r.d.over ?? []) if (!o.every) { path(r.f); stroke(o.color, o.width, o.dash, o.cap ?? 'round'); }
+    // Dots, most important roads first (they keep theirs where ways meet).
+    const placed = [];
+    for (const r of [...roads].reverse()) for (const o of r.d.over ?? []) {
+      if (!o.every) continue;
+      const pts = r.f.pts.map(([x, y]) => [x * s + ox, y * s + oy]);
+      if (!pts.some(([x, y]) => x > rect.x - 400 && x < rect.x + rect.w + 400 && y > rect.y - 400 && y < rect.y + rect.h + 400)) continue;
+      ctx.fillStyle = o.color;
+      for (const [x, y] of dotPoints(pts, o.every, placed)) { ctx.beginPath(); ctx.arc(x, y, o.width / 2, 0, 2 * Math.PI); ctx.fill(); }
+    }
     ctx.setLineDash([]);
   }
 

@@ -7,6 +7,7 @@
 // the Off-road marks are ours (neither style has one).
 
 import { readFileSync, writeFileSync } from 'node:fs';
+import { dotPoints } from '../../js/styles.js';
 
 let LAND = '#f2efe9';
 // Per road class (OSM Carto road-colors-generated.mss and roads.mss):
@@ -105,6 +106,15 @@ const SPEC = {
       unpavedFill: { minor: '#e2cfb8' },
       // Main roads (pick A): longer gaps in the outline, 14/8 (was 22/6), for Unpaved and Off-road.
       main: { dash: [14, 8] } },
+    // Solid dirt, class dots (2026-11-22, Julien; for off-road maps): the whole road in the dirt colour, casing included, with dots
+    // in the class colour. Surface first, class second, the reverse of the other five. The dots are saturated, not the Carto fills: those
+    // are only 7 to 11 apart on brown for colour-blind readers (CIE76, worst of normal and the three simulations); these 20 or more
+    // (motorway 13). The dirt is the same brown as Carto's tracks (#996600, 2.8 apart): not for maps that draw tracks that way.
+    // Below lowZoom.below: no dots; dirt core lowCore x the fill, class fill and casing around it.
+    'dirt-dots': { unpaved: '#94612f', offroad: '#2a1a0e', dotXWidth: 0.55, dotEveryXWidth: 2.8, lowCore: 0.6,
+      dots: { motorway: '#ee86c8', trunk: '#ff7d70', primary: '#ffa633', secondary: '#ffe100', minor: '#ffffff' },
+      // Dark map: Off-road is the lighter step, as in the other styles, so its dots are dark.
+      dark: { unpaved: '#94612f', offroad: '#d1a068', offDots: { motorway: '#7a2a50', trunk: '#8c3a20', primary: '#7a4a00', secondary: '#5e6238', minor: '#4b4b4f' } } },
   },
 };
 const MOCKUP_CLASSES = ['trunk', 'primary', 'secondary', 'minor'] as const;
@@ -192,6 +202,36 @@ const OPTIONS: Record<string, Option> = {
     // White roads: the tan dashes cover most of the road, so the casing is the darker tintCasing, as for a tan fill.
     road: (s, c) => road(c.fill, unpaved(s) ? c.tintCasing ?? c.casing : c.casing, unpaved(s) ? line(c.fullDash, W, (offroad(s) ? DF.offroadXWidth : DF.unpavedXWidth).map((x) => x * W).join(' ')) : ''),
   },
+  'dirt-dots': {
+    title: '6. Solid dirt, class dots',
+    note: 'The whole road in brown with dots in the class colour: surface first, for off-road maps. Off-road: near black, same dots.',
+    road: (s, c) => dirtDots(s, c),
+  },
+};
+
+// Solid dirt, class dots: the dirt colour over fill and casing; below the low-zoom limit a dirt core inside the class colours.
+const DD = SPEC.styles['dirt-dots'];
+// Points of a mockup path (M, L and C commands only), curves sampled; dots as dotPoints in js/styles.js.
+const pathPoints = (d: string) => {
+  const pts: number[][] = [];
+  for (const [, cmd, args] of d.matchAll(/([MLC])([^MLC]*)/g)) {
+    const a = args.trim().split(/[\s,]+/).map(Number), q = pts[pts.length - 1];
+    if (cmd !== 'C') pts.push(a);
+    else for (let i = 1; i <= 50; i++) {
+      const t = i / 50, u = 1 - t;
+      pts.push([0, 1].map((k) => u ** 3 * q[k] + 3 * u * u * t * a[k] + 3 * u * t * t * a[k + 2] + t ** 3 * a[k + 4]));
+    }
+  }
+  return pts;
+};
+let PLACED: number[][] | null = null; // dots already in this cell, when several roads share it (junction sheet)
+const dirtDots = (s: State, c: Klass) => {
+  if (!unpaved(s)) return road(c.fill, c.casing);
+  const off = offroad(s), dirt = (DARK_MODE ? DD.dark : DD)[off ? 'offroad' : 'unpaved'];
+  if (W < SPEC.lowZoom.below) return road(c.fill, c.casing, line(dirt, W * DD.lowCore));
+  const dot = ((DARK_MODE && off ? DD.dark.offDots : DD.dots) as Record<string, string>)[c.id];
+  const dots = dotPoints(pathPoints(ROAD), W * DD.dotEveryXWidth, PLACED ?? []);
+  return line(dirt, W + CAS) + dots.map(([x, y]: number[]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${W * DD.dotXWidth / 2}" fill="${dot}"/>`).join('');
 };
 
 // Official Off-road: the Unpaved pattern, only darker: darker fill (offTint) in the grain fill, centre line and casing,
@@ -200,7 +240,7 @@ const OPTIONS: Record<string, Option> = {
 // Main roads (SPEC.mainRoads) draw the picks (PICKS below), with the dark.main colours in dark mode; MAIN_PICKS = false gives the reader-test style.
 let MAIN_PICKS = true;
 const lowMain = (c: Klass) => MAIN_PICKS && (SPEC.mainRoads as string[]).includes(c.id);
-const official = (key: string, s: State, c: Klass) => unpaved(s) && W < SPEC.lowZoom.below
+const official = (key: string, s: State, c: Klass): string => key === 'dirt-dots' ? dirtDots(s, c) : unpaved(s) && W < SPEC.lowZoom.below
   ? road(lowMain(c) ? ((DARK_MODE ? SPEC.dark.main.lowZoom : SPEC.lowZoom.main) as any)[offroad(s) ? 'offroad' : 'unpaved'][c.id] : offroad(s) ? c.offTint : c.lowTint, c.tintCasing ?? c.casing)
   : unpaved(s) && lowMain(c) ? PICKS[key].road(c, offroad(s))
   : !offroad(s) ? OPTIONS[key].road(s, c)
@@ -295,7 +335,12 @@ function renderJunction(suffix = '', land = LAND, twoLevels = false) {
   const PARTS: [string, State][] = [['M 15 28 L 75 28', 'Paved'], ['M 75 28 C 120 28 120 70 165 70', 'Unpaved'], ['M 165 70 C 205 70 205 30 240 30 L 285 30', twoLevels ? 'Unpaved' : 'Unpaved + Off-road']];
   const SIDE = 'M 120 112 L 120 49'; // ends on the middle of the S-bend
   const on = (path: string, draw: () => string) => { ROAD = path; return draw(); };
-  const cell = (key: string, c: Klass) => on(SIDE, () => official(key, 'Unpaved', CLASSES[3])) + PARTS.map(([path, s]) => on(path, () => official(key, s, c))).join('');
+  const cell = (key: string, c: Klass) => {
+    PLACED = [];
+    const main = PARTS.map(([path, s]) => on(path, () => official(key, s, c))).join(''), side = on(SIDE, () => official(key, 'Unpaved', CLASSES[3]));
+    PLACED = null;
+    return side + main;
+  };
   const straight = ROAD, normalLand = LAND;
   LAND = land;
   const w = LABEL_W + keys.length * (CELL_W + 10) + 10, y = (r: number) => 40 + r * (H + 10), h = y(CLASSES.length);

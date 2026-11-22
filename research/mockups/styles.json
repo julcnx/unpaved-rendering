@@ -333,6 +333,33 @@
           8
         ]
       }
+    },
+    "dirt-dots": {
+      "name": "6. Solid dirt, class dots",
+      "note": "The whole road in brown with dots in the class colour: surface first, for off-road maps. Off-road: near black, same dots.",
+      "unpaved": "#94612f",
+      "offroad": "#2a1a0e",
+      "dotXWidth": 0.55,
+      "dotEveryXWidth": 2.8,
+      "lowCore": 0.6,
+      "dots": {
+        "motorway": "#ee86c8",
+        "trunk": "#ff7d70",
+        "primary": "#ffa633",
+        "secondary": "#ffe100",
+        "minor": "#ffffff"
+      },
+      "dark": {
+        "unpaved": "#94612f",
+        "offroad": "#d1a068",
+        "offDots": {
+          "motorway": "#7a2a50",
+          "trunk": "#8c3a20",
+          "primary": "#7a4a00",
+          "secondary": "#5e6238",
+          "minor": "#4b4b4f"
+        }
+      }
     }
   }
 }

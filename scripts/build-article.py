@@ -82,8 +82,8 @@ SLIDER = f'''<figure class="fig wide"><div class="slider">
 </div><figcaption>Drag to compare. Namibia, C38 at Namutoni (Etosha). Left: every road drawn as paved, as most maps do today. Right: the same map with style 4, a dashed outline on unpaved roads; the class colours stay.</figcaption></figure>'''
 
 EMBED = '''<figure class="fig wide">
-<iframe class="demo" src="demo/?embed=1&amp;spot=namibia&amp;style=dashed-casing&amp;bg=terrain&amp;z=16&amp;lat=-18.81068&amp;lon=16.9375" loading="lazy" title="Live demo: the five styles"></iframe>
-<figcaption>Live demo with real OpenStreetMap data. Switch between the five styles; pick a background at the bottom right. <a href="demo/?spot=namibia">Open the full demo</a>, with search and every sample spot.</figcaption></figure>'''
+<iframe class="demo" src="demo/?embed=1&amp;spot=namibia&amp;style=dashed-casing&amp;bg=terrain&amp;z=16&amp;lat=-18.81068&amp;lon=16.9375" loading="lazy" title="Live demo: the six styles"></iframe>
+<figcaption>Live demo with real OpenStreetMap data. Switch between the six styles; pick a background at the bottom right. <a href="demo/?spot=namibia">Open the full demo</a>, with search and every sample spot.</figcaption></figure>'''
 
 STYLES_GRID = (f'<figure class="fig wide"><picture><source media="(max-width: 760px)" srcset="{IMG}/styles-grid-portrait.jpg">'
                f'<img src="{IMG}/styles-grid.jpg" alt="The five styles and No style, side by side, at Namutoni" loading="lazy"></picture>'
@@ -95,8 +95,8 @@ ZOOM_STRIP = ('<figure class="fig wide zoom"><div class="row">' + ''.join(
     'darker tint; from zoom 14 the dashes take over. © OpenStreetMap contributors.</figcaption></figure>')
 
 JUNCTION = (f'<figure class="fig wide junction"><div class="scroll"><img src="{IMG}/junction.jpg" '
-            'alt="Each class colour going Paved, then Unpaved, in the five styles" loading="lazy"></div>'
-            '<figcaption>The four class colours in the five styles. Each road goes Paved, then Unpaved through the S-bend; '
+            'alt="Each class colour going Paved, then Unpaved, in the six styles" loading="lazy"></div>'
+            '<figcaption>The four class colours in the six styles (style 6 is for off-road maps). Each road goes Paved, then Unpaved through the S-bend; '
             'the side road is a white Unpaved road. Source: research/mockups.</figcaption></figure>')
 
 FIGURES = {'slider': SLIDER, 'live demo': EMBED, 'chart': heat_table, 'photo grid': photo_grid, 'apps': app_grid,

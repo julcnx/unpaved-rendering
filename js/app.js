@@ -1,6 +1,6 @@
 // Page wiring: controls, URL parameters, sample spots, live Overpass loading, legend.
 import { MapView, BACKGROUNDS, prepare, NONE } from './map.js';
-import { STYLES, palette, widthAt } from './styles.js';
+import { STYLES, palette, widthAt, dotPoints } from './styles.js';
 import { SPOTS } from './spots.js';
 
 const $ = (id) => document.getElementById(id);
@@ -8,7 +8,7 @@ const params = new URLSearchParams(location.search);
 // No style: every road drawn as paved, as most maps today. Selectable on its own (article figures, comparisons).
 const NO_STYLE = { name: '0. No style (all paved)', note: 'Every road drawn as paved, as most maps today.', minWidth: 0, draw: () => ({}) };
 const styleOf = (k) => (k === NONE ? NO_STYLE : STYLES[k]);
-// embed=1: one large map for an iframe in the article: no sidebar, only the five style chips (no "No style", no "All"),
+// embed=1: one large map for an iframe in the article: no sidebar, only the six style chips (no "No style", no "All"),
 // and the map takes input after a first click, so the page still scrolls.
 const embed = params.get('embed') === '1';
 if (embed) {
@@ -142,7 +142,11 @@ function sample(canvas, styleKey, level, W = 90) {
   };
   line(d.casing?.color ?? c.casing, w + 3, d.casing?.dash, d.casing?.cap);
   line(d.fill?.color ?? c.fill, w, d.fill?.dash, d.fill?.cap);
-  for (const o of d.over ?? []) line(o.color, o.width, o.dash, o.cap);
+  for (const o of d.over ?? []) {
+    if (!o.every) { line(o.color, o.width, o.dash, o.cap); continue; }
+    ctx.fillStyle = o.color;
+    for (const [x, y] of dotPoints([[6, H / 2], [W - 6, H / 2]], o.every, [])) { ctx.beginPath(); ctx.arc(x, y, o.width / 2, 0, 2 * Math.PI); ctx.fill(); }
+  }
 }
 
 const LEVELS = [['paved', 'Paved'], ['unpaved', 'Unpaved'], ['offroad', 'Off-road']];
@@ -171,7 +175,7 @@ function updateNote() {
   $('status').textContent = `Zoom ${z.toFixed(1)}: primary road ${w.toFixed(1)} px wide${w < st.minWidth && !map.opts.compare ? ', too thin for this style' : ''}.`;
 }
 
-// Style chips on the map, and keys 1-4 (A = all side by side): switch style in one click.
+// Style chips on the map, and keys 1-6 (A = all side by side): switch style in one click.
 function renderChips() {
   const items = [...Object.entries(STYLES).map(([k, v], i) => [k, v.name.replace(/^\d+\.\s*/, ''), String(i + 1)]), ...(embed ? [] : [[NONE, 'No style', '0'], ['all', 'All', 'A']])];
   $('chips').innerHTML = items.map(([k, label, key]) => {
