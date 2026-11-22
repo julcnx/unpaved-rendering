@@ -1,5 +1,7 @@
 # E. Tracks and paths (working draft, for the enduro OsmAnd renderer)
 
+> **Superseded 2026-11-22 for the OsmAnd style**: the theme is now [theme-spec.md](theme-spec.md), built in [../osmand/](../osmand/) (merge: [theme-merge.md](theme-merge.md)). Section 6 is kept as the history of the decisions; its open design proposals (design #11, pale yellow tertiary, outlines, slate blue, Car friendly, riding focus, survey toggle) are dropped. The access rules, land colours, service roads, hidden footways and drawing order carried over.
+
 Started 2026-11-13. A private design brief for the OsmAnd Motorcycle fork ([decisions.md](decisions.md) decision 18, A-providers [A6](A-providers.md#a6-osmand-motorcycle-style-code-review-for-the-fork-2026-11-10)), not a public proposal and not part of the roads article. If it holds up in the fork, it may become a second article later.
 
 ## 1. Scope

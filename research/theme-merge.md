@@ -1,6 +1,6 @@
 # Theme spec against the existing theme: comparison and merge proposal
 
-2026-11-22. Nothing in the theme is changed yet: this is the comparison and the questions, waiting for Julien.
+2026-11-22. **Confirmed by Julien the same day and built**: [../osmand/](../osmand/) (the XML, generator, checks) from [theme-spec.md](theme-spec.md), whose first section lists the confirmed changes. Answers: C3 becomes a setting (from which smoothness a way is hard; default `horrible`), C18 gates at high zoom only, everything else as proposed. The comparison below is kept as it was.
 
 - **Spec**: the design system finalised by Julien in a separate session (pasted 2026-11-22).
 - **Mine**: the theme in this repo. There is **no rendering XML yet**: the style ([decisions.md](decisions.md) 18, "Overland"; own minimal style on `depends="default"`) exists only as [E-tracks.md](E-tracks.md) and the mockup scripts, mainly [mockups/make-fork-crops.mjs](mockups/make-fork-crops.mjs). Values below are that script's defaults. The `.render.xml` files in `~/Workspaces/OSM/osmand-render/styles/` are OsmAnd's own styles, the GPL Motorcycle style and test copies of it.
