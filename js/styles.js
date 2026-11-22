@@ -151,6 +151,9 @@ export const STYLES = {
   },
 };
 
+// Styles the demo offers: style 6 is hidden (decision 23).
+export const STYLE_KEYS = Object.keys(STYLES).filter((k) => k !== 'dirt-dots');
+
 // Below SPEC.lowZoom.below px of fill width every style is a plain tint (patterns blur there): lowTint for Unpaved,
 // offTint for Off-road. Dark mode has no measured tints yet: falls back to the dash colour.
 for (const st of Object.values(STYLES)) {

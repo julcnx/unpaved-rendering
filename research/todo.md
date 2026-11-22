@@ -2,15 +2,17 @@
 
 Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to D), [LOG.md](../LOG.md), [outreach/](outreach/) and git history. The OsmAnd style (Overland) has its own repo and todo, osmand-overland.
 
-## High priority
+## Next, in this order
 
-- **Reader test round 2** (does the stronger mark on unpaved main roads work? round 1: 43% found, against 78% of minor roads). Pictures are live. Julien posts https://julcnx.github.io/unpaved-rendering/reader-test/?src=v2 to new people only (if not done yet); aim for 15 to 30 answers. Then score with `score.py export.csv --images 3 --exclude e491f01c` and replace "a second round is checking it" in the article (sections 6 and 7) with the result. Keep the Google Sheet: round 1 answers live only there. Blocks publishing and outreach: the issues and the Spirit PR should carry the fixed style.
-- **Reader test round 3**: style 6 (solid dirt, class dots; decision 19), after round 2 is scored.
+1. **Spirit PR #93**: code, local render, then Julien's comment with the updated commits (plan under Outreach). Needs Docker running.
+2. **OsmAnd #9465 and Organic Maps #8485 comments** ([2-osmand.md](outreach/issues/2-osmand.md), [3-organic-maps.md](outreach/issues/3-organic-maps.md)): no code needed; check text, images and figures against the final styles (drafted before the main-road marks), and drop "after the forum feedback" in all the issue drafts. Julien posts.
+3. **CyclOSM** ([1-cyclosm.md](outreach/issues/1-cyclosm.md)): local render first. **OpenMapTiles** ([4-openmaptiles.md](outreach/issues/4-openmaptiles.md)): size test first.
+4. **Wiki page, diary entry, Facebook post** (under Article, wiki and posts).
 
 ## Waiting on feedback
 
 - **Key:surface wiki edit, around 2026-11-23**: no objections so far on [Talk](https://wiki.openstreetmap.org/wiki/Talk:Key:surface#Paved_assumption_for_motor_roads) (no reply on 2026-11-22). Replace the "typically an assumption ... paved" sentence of "Surface for motor roads" with: "For roads for motor vehicles, there is no default: data consumers may guess the surface, each in their own way (see Default values)."
-- **Forum thread** ([150052](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052)): nothing new since our replies #14 and #15 of 2026-11-16. Read Americana's [PR 717](https://github.com/osm-americana/openstreetmap-americana/pull/717) (tracks, open, active 2026-11-22).
+- **Forum thread** ([150052](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052)): round over (Julien, 2026-11-22); last posts are our replies #14 and #15 of 2026-11-16, answer only if someone writes. Read Americana's [PR 717](https://github.com/osm-americana/openstreetmap-americana/pull/717) (tracks, open, active 2026-11-22).
 - **Bot proposals** `cement` → `concrete`, `brick` → `bricks` ([outreach/bot-cement-brick.md](outreach/bot-cement-brick.md)): waiting for Mateusz's review, no deadline (busy, PM of 2026-11-19; the 2026-11-21 fallback in that file is dropped). Then: post the merged topic, put its link in both wiki pages, reply to Mateusz with it, answer comments; then an id-tagging-schema issue to deprecate both values (iD offers them), and see whether `chipseal` can be found there by "DBST", "BST" or "surface dressing".
 - **Local values** `dbst`, `ottaseal`, `Blacktopped` ([outreach/local-values-mappers.md](outreach/local-values-mappers.md#answers)): 4 of 18 mappers answered on 2026-11-19, all retagged (check for new answers). From **2026-11-30**: the `dbst` family by hand without an answer; the others only with one. [Nepal topic](https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053): no reply.
 - **AdvOSM** ([outreach/advosm.md](outreach/advosm.md)): outcome of the meeting planned for 2026-11-18 not noted yet; questions were the fast primary and secondary in routing, the `surface` list, the S points, using the images, and the current GmapTool TYP. Credit as "AdvOSM" only, no name.
@@ -26,7 +28,7 @@ Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only wh
 
 - Finish the app reports page (built as a draft). DMD2: the forum link there and in A0 may be outdated (drivemodedashboard.com moved to dmdnavigation.com).
 - Legend or wiki text: one line saying broken pavement is drawn as Unpaved on purpose (decision 15). Support if asked: Gaia GPS does the same (30 of 31 sampled paved minor roads with `smoothness` very_bad or worse drawn as tracks).
-- After the forum round: a short OSM wiki page for the tag mapping only, linking to the repo; an OSM diary entry; a Facebook post pointing to the diary.
+- A short OSM wiki page for the tag mapping only, linking to the repo; an OSM diary entry; a Facebook post pointing to the diary.
 
 ## Research left
 
@@ -40,7 +42,7 @@ Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only wh
   - Started 2026-11-13, paused: fork cloned in `~/Workspaces/OSM/spirit` on branch `unpaved-road-casing` (4 commits behind upstream; rebase first), no code changes yet; `local/` (git-excluded) for extracts, may hold a partial Namibia download. Draft comment: [outreach/issues/5-spirit-pr93.md](outreach/issues/5-spirit-pr93.md).
   - Code: in `spirit/roads-high.sql.jinja2`, a paved whitelist on `surface` only (Spirit stores no `smoothness`; values from `classifier/classify.sql`, multiple values split on `;`); in `style/roads.glug`, drop the dashed casing and add a style 3 layer after `road_fill` (dashes in a band 60% of the fill width, darker class tint at contrast 1.3, 1.4 on red and orange, tan `#dccab0` on white roads; values in `js/style-spec.js`).
   - Render: PostGIS and osm2pgsql 2.x in Docker (Homebrew osm2pgsql 1.11 is broken, missing boost; the local PostgreSQL 17 needs a password), themepark, Tilekiln, glug; small extracts around Namutoni, switzerland-1 and thailand-3; skip the ocean polygons (none of the views needs them). Screenshots of unpaved roads next to tunnels and footways.
-  - Commit locally only: no push, no comment until the forum round is over.
+  - Commit locally only: no push or comment without Julien's go (the forum round no longer holds it back).
 - **Issue drafts**, one per provider, adapted to its current rendering and tile schema, using the per-provider table of styles to avoid under A0. Open apps first (Organic Maps, OsmAnd, Americana), issue before PR, small first PR. A3 order: CyclOSM, OsmAnd #9465, Organic Maps #8485, OpenMapTiles whitelist, Kurviger forum, Tracestrack.
 - **Commercial apps** through support or product teams: Komoot, Gaia GPS, Guru Maps, Ride with GPS and the others.
 - **Allies**: HOT, local mapping communities, the laterite-discussion contacts.

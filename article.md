@@ -16,7 +16,7 @@ Most map apps built on OpenStreetMap draw an unpaved main road exactly like an a
 [Live demo](demo/) · [App reports](apps/) · [Data and methods](#s-data-and-methods)
 
 <!-- BOX -->
-**For map makers, in short.** *What to change:* classify roads with a paved whitelist, draw unpaved ones with one of five styles in their own class colour (a sixth is for off-road maps), and add two legend words. *What it costs:* a style change for most maps; the data or tiles already carry the surface ([Limits](#s-7-limits) lists the exceptions), and the classifier is ready in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js). *Where to start:* find your map in the [App reports](apps/).
+**For map makers, in short.** *What to change:* classify roads with a paved whitelist, draw unpaved ones with one of five styles in their own class colour, and add two legend words. *What it costs:* a style change for most maps; the data or tiles already carry the surface ([Limits](#s-7-limits) lists the exceptions), and the classifier is ready in [Lua](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.lua), [SQL](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/classify.sql) and [JavaScript](https://github.com/julcnx/unpaved-rendering/blob/master/js/classify.js). *Where to start:* find your map in the [App reports](apps/).
 <!-- /BOX -->
 
 ## 1. The misconception
@@ -104,42 +104,38 @@ Where the mark starts depends on the reader. `very_bad` fits a city car and is t
 
 I designed the styles around a few principles from map design and from how people read maps:
 
-- **Keep the class colour.** The colour says how important a road is, and readers rely on it to find the main route. The surface is added to it, never shown in its place. One style, for off-road maps only, turns this around: see style 6 below.
+- **Keep the class colour.** The colour says how important a road is, and readers rely on it to find the main route. The surface is added to it, never shown in its place.
 - **Add one signal, not a new kind of road.** Unpaved is a property of the road, so it shows as a pattern on the road, not as a different line.
-- **Readable without a legend.** A broken or grainy line is a common map convention for rougher roads, so the two base levels should read at a glance. In an informal test without a legend, 22 people who don't map (riders and friends) found about four in five unpaved minor roads, but fewer than half of the unpaved main roads: where a highway changes from asphalt to gravel, most did not notice. Almost no paved road was taken for unpaved. No style clearly beat the others. So each of the five general styles now gives main roads a stronger mark, as in the pictures here, and a second round of the test is checking it.
+- **Readable without a legend.** A broken or grainy line is a common map convention for rougher roads, so the two base levels should read at a glance. In an informal test without a legend, 22 people who don't map (riders and friends) found about four in five unpaved minor roads, but fewer than half of the unpaved main roads: where a highway changes from asphalt to gravel, most did not notice. Almost no paved road was taken for unpaved. No style clearly beat the others. So every style now gives main roads a stronger mark, as in the pictures here. It should be easier to notice, but it has not been tested with readers.
 - **Distinct from what maps already use.** Many maps draw tracks with dashes, tunnels with a dashed outline, roads under construction with a dashed fill and restricted access with dots. An unpaved road works best when it looks like none of them.
 - **Quiet at low zoom.** On thin roads patterns blur, so below about 6 pixels of road width a plain tint of the class colour takes over.
 - **For every reader, on every map.** Colours are tuned per class on white, forest, sand, hillshade and dark backgrounds, and checked for colour blindness.
 
 <!-- FIGURE: one road at zoom 13, 14 and 16 (low-zoom tint). -->
 
-Following these principles, I designed five styles for general maps, from faint to strong. Each fits some maps better than others:
+Following these principles, I designed five styles, from faint to strong. Each fits some maps better than others:
 
 1. **Grain fill**: a fine grain inside the road fill. The approach of OSM Carto, and the most subtle. For maps that can draw fill patterns; it needs a road wide enough to show the grain.
 2. **Dashed centre line**: a thin dashed line along the middle of the road. For vector styles where fill patterns are hard to draw, and for maps with nothing else in the middle of the road (OSM Carto puts access restrictions there).
 3. **Dashed fill**: dashes in a band along the middle of the fill. A calmer version of style 5, for maps with many minor roads.
 4. **Dashed casing**: the outline is dashed, the fill stays continuous, so the road stays one line. White roads also get a light tan fill: a white road with only a dashed outline looked like the tracks of some apps, and on forest its dashes nearly vanished. Not for maps that draw tunnels with a dashed outline.
-5. **Dashed fill, full width**: dashes across the whole road, as Americana does. The strongest of the five, and loud in towns, so best where minor roads are few.
-
-A sixth style is for a different reader. On a map for motorcycle, 4x4 or other off-road travel, dirt is what people look for, and the road class comes second:
-
-6. **Solid dirt, class dots**: the whole road is brown, and the class colour is kept as dots along it. The whole road changes colour where the surface changes, the largest step of the six. Tracks are plain solid lines in the same colours, so dots mean a road and no dots a track. The class gets less room than in the other five, so it is for off-road maps only. On thin roads, where dots blur, the road is brown inside its class colour.
+5. **Dashed fill, full width**: dashes across the whole road, as Americana does. The strongest, and loud in towns, so best where minor roads are few.
 
 <!-- FIGURE: slider, Namibia C38 at Namutoni, No style vs style 4 (demo, hillshade, z16). -->
 
-There is no single default among the first five: the right style depends on each map's design, and above all on how it already draws tracks, tunnels and construction. The legend needs one word: **Unpaved**.
+There is no single default: the right style depends on each map's design, and above all on how it already draws tracks, tunnels and construction. The legend needs one word: **Unpaved**.
 
-<!-- FIGURE: junction, each class colour going Paved then Unpaved in the six styles (mockup sheet). -->
+<!-- FIGURE: junction, each class colour going Paved then Unpaved in the five styles (mockup sheet). -->
 
-The demo below draws the six styles on real data, at any of the sample spots or anywhere else.
+The demo below draws the five styles on real data, at any of the sample spots or anywhere else.
 
-<!-- FIGURE: live demo (iframe, one map, six style chips, five backgrounds). Link: open the full demo. -->
+<!-- FIGURE: live demo (iframe, one map, five style chips, five backgrounds). Link: open the full demo. -->
 
 ## 7. Limits
 
 - **Tile data.** A style can only draw what its tiles carry. OpenMapTiles, used by Americana, MapTiler, Stadia and OpenFreeMap, has no surface below zoom 12, so these maps cannot show unpaved roads in an overview, whatever the style says. Protomaps has no surface at all. Shortbread, OsmAnd and Organic Maps already carry it, so for them it is a style change only (in OsmAnd from zoom 13: its maps have no surface at zoom 12).
 - **The data.** Roads without a surface tag are drawn as paved, and some unpaved tags are out of date (16% in the photo check). `surface=unpaved` says nothing about how rough a road is.
-- **The styles.** They exist as mockups and a demo, not yet in a real app at scale. In a small [reader test](https://github.com/julcnx/unpaved-rendering/blob/master/research/reader-test/README.md), people without a legend missed more than half of the unpaved main roads. The styles now mark main roads more strongly; whether that is enough is not tested yet. Style 6 came later and has not been tested with readers.
+- **The styles.** They exist as mockups and a demo, not yet in a real app at scale. In a small [reader test](https://github.com/julcnx/unpaved-rendering/blob/master/research/reader-test/README.md), people without a legend missed more than half of the unpaved main roads. The styles now mark main roads more strongly; whether that is enough is not tested yet.
 
 ## 8. Future work
 
@@ -155,7 +151,7 @@ The demo below draws the six styles on real data, at any of the sample spots or 
 - **Map users:** find your app in the [App reports](apps/) and ask for it through its channel; once a request is open, support it there.
 - **Everyone:** [discuss it on the OpenStreetMap community forum](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052), or report a correction as a [GitHub issue](https://github.com/julcnx/unpaved-rendering/issues).
 
-**What happens next.** Feedback is being collected in a [thread on the OpenStreetMap community forum](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052). Then comes one request per app, starting with the open-source ones. The [App reports](apps/) will show where each stands.
+**What happens next.** The first round of feedback came through a [thread on the OpenStreetMap community forum](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052). Next is one request per app, starting with the open-source ones. The [App reports](apps/) will show where each stands.
 
 ## Questions
 
@@ -189,7 +185,7 @@ Most unpaved roads are tagged only `surface=unpaved`, which says nothing about d
 
 ### Won't dashes clutter the map, or look like tracks or tunnels?
 
-That is why there are several styles: each map picks one that stays distinct ([How to draw it](#s-6-how-to-draw-it)). I checked how 28 map styles draw tracks and paths, on seven views full of them. None draws tracks with a grain. The most common track look is a single thin dashed line. A few apps (Gaia GPS, AllTrails, the Thunderforest maps) draw tracks as a light line with a dashed outline. A dashed casing on a red, orange or yellow main road keeps its colour and does not look like them; on a white minor road it did, which is why white roads get a light tan fill in that style. OSM Carto and Organic Maps draw tunnels with a dashed outline. Details per app are in the [evidence](https://github.com/julcnx/unpaved-rendering/blob/master/research/A-providers.md).
+That is why there are five styles: each map picks one that stays distinct ([How to draw it](#s-6-how-to-draw-it)). I checked how 28 map styles draw tracks and paths, on seven views full of them. None draws tracks with a grain. The most common track look is a single thin dashed line. A few apps (Gaia GPS, AllTrails, the Thunderforest maps) draw tracks as a light line with a dashed outline. A dashed casing on a red, orange or yellow main road keeps its colour and does not look like them; on a white minor road it did, which is why white roads get a light tan fill in that style. OSM Carto and Organic Maps draw tunnels with a dashed outline. Details per app are in the [evidence](https://github.com/julcnx/unpaved-rendering/blob/master/research/A-providers.md).
 
 ## Data and methods
 

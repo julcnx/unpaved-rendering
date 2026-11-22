@@ -117,4 +117,4 @@ Clearest drawing, 17 full rankings by non-mappers: dashed casing (average rank 2
 
 Other: 6 of 22 non-mappers left at least one map with no tap ("I see no difference"); median time 27 s on the first map, 9 s on the next ones; 7 of 35 people stopped early, 5 of them on map 1.
 
-**In short.** On white minor roads every style was read by most people; on coloured main roads, fewer than half of the unpaved parts were noticed. A second round of this test can check any change to the styles.
+**In short.** On white minor roads every style was read by most people; on coloured main roads, fewer than half of the unpaved parts were noticed. The styles were then given stronger marks on main roads (picture set 3). Round 2, meant to check them, was dropped on 2026-11-22 without being posted (decision 21): the stronger marks are untested.

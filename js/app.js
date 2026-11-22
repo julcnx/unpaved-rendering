@@ -1,6 +1,6 @@
 // Page wiring: controls, URL parameters, sample spots, live Overpass loading, legend.
 import { MapView, BACKGROUNDS, prepare, NONE } from './map.js';
-import { STYLES, palette, widthAt, dotPoints } from './styles.js';
+import { STYLES, STYLE_KEYS, palette, widthAt, dotPoints } from './styles.js';
 import { SPOTS } from './spots.js';
 
 const $ = (id) => document.getElementById(id);
@@ -8,7 +8,7 @@ const params = new URLSearchParams(location.search);
 // No style: every road drawn as paved, as most maps today. Selectable on its own (article figures, comparisons).
 const NO_STYLE = { name: '0. No style (all paved)', note: 'Every road drawn as paved, as most maps today.', minWidth: 0, draw: () => ({}) };
 const styleOf = (k) => (k === NONE ? NO_STYLE : STYLES[k]);
-// embed=1: one large map for an iframe in the article: no sidebar, only the six style chips (no "No style", no "All"),
+// embed=1: one large map for an iframe in the article: no sidebar, only the five style chips (no "No style", no "All"),
 // and the map takes input after a first click, so the page still scrolls.
 const embed = params.get('embed') === '1';
 if (embed) {
@@ -26,7 +26,7 @@ const options = (sel, entries, value) => {
   if (value) sel.value = value;
 };
 options($('spot'), [['', '(none: search or pan)'], ...Object.entries(SPOTS).map(([k, v]) => [k, v.name])], params.get('spot') ?? 'namibia');
-options($('style'), [...Object.entries(STYLES).map(([k, v]) => [k, v.name]), [NONE, NO_STYLE.name]], params.get('style'));
+options($('style'), [...STYLE_KEYS.map((k) => [k, STYLES[k].name]), [NONE, NO_STYLE.name]], params.get('style') === 'dirt-dots' ? null : params.get('style'));
 $('compare').checked = params.get('compare') !== '0' && !embed; // all styles side by side by default (not in embed)
 // Background: a key of BACKGROUNDS, or 'all' (every background side by side, one style only).
 let bg = BACKGROUNDS[params.get('bg')] || (params.get('bg') === 'all' && !embed) ? params.get('bg') : 'white';
@@ -153,7 +153,7 @@ const LEVELS = [['paved', 'Paved'], ['unpaved', 'Unpaved'], ['offroad', 'Off-roa
 function updateLegend() {
   if (map.opts.compare) {
     // All styles: one row per level, one small sample per style, numbered like the panels.
-    const keys = Object.keys(STYLES);
+    const keys = STYLE_KEYS;
     $('legend').innerHTML = `<table class="all"><tr><th></th>${keys.map((k) => `<th title="${STYLES[k].name}">${STYLES[k].name.split('.')[0]}</th>`).join('')}</tr>` +
       LEVELS.map(([lv, text]) => `<tr><td>${text}</td>${keys.map((k) => `<td><canvas data-level="${lv}" data-style="${k}"></canvas></td>`).join('')}</tr>`).join('') + '</table>';
     $('legend').querySelectorAll('canvas').forEach((cv) => sample(cv, cv.dataset.style, cv.dataset.level, 38));
@@ -175,9 +175,9 @@ function updateNote() {
   $('status').textContent = `Zoom ${z.toFixed(1)}: primary road ${w.toFixed(1)} px wide${w < st.minWidth && !map.opts.compare ? ', too thin for this style' : ''}.`;
 }
 
-// Style chips on the map, and keys 1-6 (A = all side by side): switch style in one click.
+// Style chips on the map, and keys 1-5 (A = all side by side): switch style in one click.
 function renderChips() {
-  const items = [...Object.entries(STYLES).map(([k, v], i) => [k, v.name.replace(/^\d+\.\s*/, ''), String(i + 1)]), ...(embed ? [] : [[NONE, 'No style', '0'], ['all', 'All', 'A']])];
+  const items = [...STYLE_KEYS.map((k, i) => [k, STYLES[k].name.replace(/^\d+\.\s*/, ''), String(i + 1)]), ...(embed ? [] : [[NONE, 'No style', '0'], ['all', 'All', 'A']])];
   $('chips').innerHTML = items.map(([k, label, key]) => {
     const on = k === 'all' ? map.opts.compare : !map.opts.compare && map.opts.style === k;
     return `<button data-style="${k}" aria-pressed="${on}">${label}<kbd>${key}</kbd></button>`;
@@ -201,7 +201,7 @@ $('bgchips').addEventListener('click', (e) => {
 });
 window.addEventListener('keydown', (e) => {
   if (e.target.matches('input, select, textarea') || e.metaKey || e.ctrlKey || e.altKey) return;
-  const keys = Object.keys(STYLES);
+  const keys = STYLE_KEYS;
   if (e.key >= '1' && e.key <= String(keys.length)) pickStyle(keys[+e.key - 1]);
   else if (e.key === '0' && !embed) pickStyle(NONE);
   else if (e.key.toLowerCase() === 'a' && !embed) pickStyle('all');

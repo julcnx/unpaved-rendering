@@ -1,6 +1,6 @@
 // Canvas map: Web Mercator, pan and zoom, roads drawn with the selected unpaved style.
 import { classify } from './classify.js';
-import { STYLES, palette, roadInfo, RANK, widthAt, LOW_BELOW, dotPoints } from './styles.js';
+import { STYLES, STYLE_KEYS, palette, roadInfo, RANK, widthAt, LOW_BELOW, dotPoints } from './styles.js';
 
 // Backgrounds: land colour, and whether the map is dark. "terrain" adds hillshade and contours.
 export const BACKGROUNDS = {
@@ -109,7 +109,7 @@ export class MapView {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     // Panels: all styles (plus "No style", everything drawn paved, as most maps today), all backgrounds for one style, or one map.
     const { style, bg, compare } = this.opts;
-    const panels = compare ? [...Object.keys(STYLES), NONE].map((s) => ({ style: s, bg: bg === 'all' ? 'white' : bg, label: s === NONE ? '7. No style (all paved)' : STYLES[s].name }))
+    const panels = compare ? [...STYLE_KEYS, NONE].map((s) => ({ style: s, bg: bg === 'all' ? 'white' : bg, label: s === NONE ? '6. No style (all paved)' : STYLES[s].name }))
       : bg === 'all' ? Object.keys(BACKGROUNDS).map((b) => ({ style, bg: b, label: BACKGROUNDS[b].name }))
       : [{ style, bg }];
     // Portrait map (taller than wide): 2 columns, so 6 panels stack as 3 rows (for phone-shaped screenshots).
