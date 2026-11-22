@@ -77,7 +77,7 @@ Contrast and colour distance as in `mockups/score-readability.py` (CIE76, worst 
 - **Confirmed**: easy against hard is 3.2 in contrast and 40 in distance. Easy on the spec's land 4.55, forest 3.61 (mine: 3.63 and 3.08 on its own land). The darker brown is better.
 - **Colour-blind check is not fully passed.** Trunk and tertiary dots are 5 apart for protanopia: on dirt, where the dots carry the class, they look the same. Trunk and primary dots are 12 apart for tritanopia. A lighter teal dot fixes the first: `#5cc9be` gives 18 from trunk and 23 from the white dots, `#7fd6cc` 23 and 17.
 - **Motorway dot on easy brown**: contrast 1.05 (seen by hue only); `#a98be0` gives 1.86 and stays apart from the others. Dirt motorways are close to nonexistent.
-- **Trunk paved fill against easy brown**: 19 for deuteranopia (crimson: 25 from mine).
+- **Trunk paved fill against easy brown**: 19 for deuteranopia (mine, crimson against its own brown: 29).
 - **Secondary paved fill on the spec's forest**: contrast 1.01, carried by its edge only.
 - **Forbidden on the spec's forest**: 1.20 (1.42 on mine; `#b9b4ab` 1.42 on the spec's).
 - **Tertiary teal against rivers** `#8fb8e0`: 11 for tritanopia, 16 from lakes for deuteranopia.
