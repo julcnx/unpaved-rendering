@@ -110,8 +110,9 @@ const SPEC = {
     // in the class colour. Surface first, class second, the reverse of the other five. The dots are saturated, not the Carto fills: those
     // are only 7 to 11 apart on brown for colour-blind readers (CIE76, worst of normal and the three simulations); these 20 or more
     // (motorway 13). The dirt is the same brown as Carto's tracks (#996600, 2.8 apart): not for maps that draw tracks that way.
-    // Below lowZoom.below: no dots; dirt core lowCore x the fill, class fill and casing around it.
-    'dirt-dots': { unpaved: '#94612f', offroad: '#2a1a0e', dotXWidth: 0.55, dotEveryXWidth: 2.8, lowCore: 0.6,
+    // Tracks (Julien, 2026-11-22): plain solid lines in the dirt colours, half a minor road wide: dots = road, no dots = track. Demo only.
+    // Below lowZoom.below: no dots; dirt core lowCore x the fill (white roads lowCoreMinor, so a minor road stays heavier than a track), class fill and casing around it.
+    'dirt-dots': { unpaved: '#94612f', offroad: '#2a1a0e', dotXWidth: 0.55, dotEveryXWidth: 2.8, lowCore: 0.6, lowCoreMinor: 0.8, trackWidth: 4, trackMin: 1.8,
       dots: { motorway: '#ee86c8', trunk: '#ff7d70', primary: '#ffa633', secondary: '#ffe100', minor: '#ffffff' },
       // Dark map: Off-road is the lighter step, as in the other styles, so its dots are dark.
       dark: { unpaved: '#94612f', offroad: '#d1a068', offDots: { motorway: '#7a2a50', trunk: '#8c3a20', primary: '#7a4a00', secondary: '#5e6238', minor: '#4b4b4f' } } },
@@ -228,7 +229,7 @@ let PLACED: number[][] | null = null; // dots already in this cell, when several
 const dirtDots = (s: State, c: Klass) => {
   if (!unpaved(s)) return road(c.fill, c.casing);
   const off = offroad(s), dirt = (DARK_MODE ? DD.dark : DD)[off ? 'offroad' : 'unpaved'];
-  if (W < SPEC.lowZoom.below) return road(c.fill, c.casing, line(dirt, W * DD.lowCore));
+  if (W < SPEC.lowZoom.below) return road(c.fill, c.casing, line(dirt, W * (c.id === 'minor' ? DD.lowCoreMinor : DD.lowCore)));
   const dot = ((DARK_MODE && off ? DD.dark.offDots : DD.dots) as Record<string, string>)[c.id];
   const dots = dotPoints(pathPoints(ROAD), W * DD.dotEveryXWidth, PLACED ?? []);
   return line(dirt, W + CAS) + dots.map(([x, y]: number[]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${W * DD.dotXWidth / 2}" fill="${dot}"/>`).join('');

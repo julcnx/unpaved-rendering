@@ -89,6 +89,8 @@ The mark is optional because the evidence is rare. Only 5.9% of unpaved km carry
 
 One rule draws it in every style: the Unpaved pattern, only darker (lighter on a dark map). The colour still reads at low zoom, where patterns merge, and the road keeps its class colour. The legend then needs a second word: **Off-road**.
 
+Where the mark starts depends on the reader. `very_bad` fits a city car and is the default here; a map for 4x4s or motorcycles can start it at `horrible`, and an app can let each user choose. The tags and their order stay the same, and so do the two base levels. The legend should then name the vehicle, for example **Off-road: 4x4 only**, or the same word means different things on different maps.
+
 | Country | Unpaved km | With evidence | Off-road mark |
 |---|---:|---:|---:|
 | Bolivia | 175,879 | 41.1% | 34.0% |
@@ -121,7 +123,7 @@ Following these principles, I designed five styles for general maps, from faint 
 
 A sixth style is for a different reader. On a map for motorcycle, 4x4 or other off-road travel, dirt is what people look for, and the road class comes second:
 
-6. **Solid dirt, class dots**: the whole road is brown, and the class colour is kept as dots along it. The whole road changes colour where the surface changes, the largest step of the six. The class gets less room than in the other five, so it is for off-road maps only, and not for a map that draws tracks as solid brown lines. On thin roads, where dots blur, the road is brown inside its class colour.
+6. **Solid dirt, class dots**: the whole road is brown, and the class colour is kept as dots along it. The whole road changes colour where the surface changes, the largest step of the six. Tracks are plain solid lines in the same colours, so dots mean a road and no dots a track. The class gets less room than in the other five, so it is for off-road maps only. On thin roads, where dots blur, the road is brown inside its class colour.
 
 <!-- FIGURE: slider, Namibia C38 at Namutoni, No style vs style 4 (demo, hillshade, z16). -->
 

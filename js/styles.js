@@ -16,8 +16,9 @@ const S = SPEC.styles;
 // low-zoom tints. Dark mode takes these colours from SPEC.dark.main.
 // dirt, dirtDots (solid dirt, class dots): [Unpaved, Off-road].
 const DD = S['dirt-dots'];
-const dirtLight = (key) => ({ dirt: [DD.unpaved, DD.offroad], dirtDots: [DD.dots[key], DD.dots[key]] });
-const dirtDark = (key) => ({ dirt: [DD.dark.unpaved, DD.dark.offroad], dirtDots: [DD.dots[key], DD.dark.offDots[key]] });
+const dirtCore = (key) => ({ dirtCore: key === 'minor' ? DD.lowCoreMinor : DD.lowCore });
+const dirtLight = (key) => ({ ...dirtCore(key), dirt: [DD.unpaved, DD.offroad], dirtDots: [DD.dots[key], DD.dots[key]] });
+const dirtDark = (key) => ({ ...dirtCore(key), dirt: [DD.dark.unpaved, DD.dark.offroad], dirtDots: [DD.dots[key], DD.dark.offDots[key]] });
 const isMain = (key) => SPEC.mainRoads?.includes(key) ?? false;
 const pair = (m, key) => [m.dash[key], m.offDash[key]];
 const mainOf = (key, m) => isMain(key) && { main: true, mainLine: [m['centre-line'].color, m['centre-line'].offColor],
@@ -141,7 +142,12 @@ export const STYLES = {
       casing: { color: c.dirt[off(level) ? 1 : 0] }, fill: { color: c.dirt[off(level) ? 1 : 0] },
       over: [{ color: c.dirtDots[off(level) ? 1 : 0], width: w * DD.dotXWidth, every: w * DD.dotEveryXWidth, cap: 'round' }],
     },
-    low: (level, c, w) => ({ over: [{ color: c.dirt[off(level) ? 1 : 0], width: w * DD.lowCore, cap: 'butt' }] }),
+    // Tracks as plain solid lines: strokes to draw, outer first (paved tracks: the white road's casing and fill).
+    track: (level, c, z) => {
+      const w = Math.max(DD.trackMin, widthAt(DD.trackWidth, z));
+      return level === 'paved' ? [{ color: c.casing, width: w + 1.4 }, { color: c.fill, width: w - 0.6 }] : [{ color: c.dirt[off(level) ? 1 : 0], width: w }];
+    },
+    low: (level, c, w) => ({ over: [{ color: c.dirt[off(level) ? 1 : 0], width: w * c.dirtCore, cap: 'butt' }] }),
   },
 };
 

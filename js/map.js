@@ -162,6 +162,10 @@ export class MapView {
       const t = TRACKS[f.tags.highway];
       if (!t || this.reader) continue;
       path(f);
+      if (f.tags.highway === 'track' && STYLES[styleKey]?.track) {
+        for (const l of STYLES[styleKey].track(f.level, pal.minor, z)) stroke(l.color, l.width);
+        continue;
+      }
       stroke(bg.dark ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.6)', (t.width + 2) * zf);
       stroke(bg.dark ? t.dark : t.color, t.width * zf, t.dash.map((d) => d * zfDash), 'butt');
     }
