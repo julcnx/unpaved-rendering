@@ -1,8 +1,10 @@
-# Bot proposals: `surface=cement` → `concrete`, `surface=brick` → `bricks` (drafts, not posted)
+# Bot proposals: `surface=cement` → `concrete`, `surface=brick` → `bricks` (posted 2026-11-23)
 
 Status 2026-11-16: drafts only, nothing posted. Mateusz Konieczny offered to run both worldwide if someone writes the proposals (forum thread and wiki page) and answers the comments ([post 12](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12)). Scope: `highway=*` only, like his US cement bot (decided 2026-11-16). The local values (`dbst`, `ottaseal`, `Blacktopped`) are not part of this: see [local-values-mappers.md](local-values-mappers.md).
 
-**Status 2026-11-16: waiting for Mateusz's review.** Both documentation pages created by Julien (section 4) and Mateusz asked in the bot thread to check them. Post the merged topic (section 3) when he answers OK, or on **2026-11-21** (5 days) without an answer. Then put the topic link in both pages and reply in the bot thread with it.
+**Status 2026-11-23: topic posted, waiting for comments.** https://community.openstreetmap.org/t/proposed-bot-edits-surface-cement-to-concrete-and-surface-brick-to-bricks-on-highways-worldwide-recurring/150534 . Mateusz OK'd the pages in post 15 of 105361; both wiki pages link the topic; reply posted in 105361 (post 16). The bot runs only after an explicit OK in the topic.
+
+**Earlier, 2026-11-16: waiting for Mateusz's review.** Both documentation pages created by Julien (section 4) and Mateusz asked in the bot thread to check them. Post the merged topic (section 3) when he answers OK, or on **2026-11-21** (5 days) without an answer. Then put the topic link in both pages and reply in the bot thread with it.
 
 **Found 2026-11-17: iD suggests both values.** iD's surface field adds taginfo values with more than 100 uses or a wiki page, minus values in id-tagging-schema `data/deprecated.json` ([combo.js](https://github.com/openstreetmap/iD/blob/v2.37.3/modules/ui/fields/combo.js), [taginfo.js](https://github.com/openstreetmap/iD/blob/v2.37.3/modules/services/taginfo.js) `filterValues`). `cement` (2,688) and `brick` (8,326) both pass and are not in deprecated.json, so iD offers them next to `concrete` and `bricks`. That likely explains why `brick` keeps growing. Fix: an id-tagging-schema issue or PR adding `{"old": {"surface": "cement"}, "replace": {"surface": "concrete"}}` and `{"old": {"surface": "brick"}, "replace": {"surface": "bricks"}}` to deprecated.json. That removes them from the list and makes iD offer the upgrade when someone edits such a way. No existing issue (searched 2026-11-17). Do it after the bot topic is accepted, and link the topic.
 
@@ -84,7 +86,7 @@ I propose two small recurring bot edits, both on `highway=*` only, worldwide:
 1. `surface=cement` → `surface=concrete`
 2. `surface=brick` → `surface=bricks`
 
-Mateusz Konieczny would run them with his bot account, as he offered here: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12. I wrote the proposals and I will answer comments. If one part gets objections, the other can still go ahead on its own.
+Mateusz Konieczny would run them with his bot account, as he offered here: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/12, and he reviewed both pages: https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/15 (@Mateusz_Konieczny). I wrote the proposals and I will answer comments. If one part gets objections, the other can still go ahead on its own.
 
 Bot documentation pages (who, rule, code, opt-out):
 - cement: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_highways_worldwide
@@ -95,7 +97,7 @@ Bot documentation pages (who, rule, code, opt-out):
 Software that reads `surface` usually knows only the documented values, so these roads and paths end up with an unknown surface (and on some maps as unpaved).
 
 - `surface=cement` was discussed in 2022 (https://community.openstreetmap.org/t/mysterious-surface-cement/5158) and marked deprecated on the wiki, with `concrete` as the replacement: https://wiki.openstreetmap.org/wiki/Tag:surface%3Dcement. In many languages "cement" is the everyday word for concrete. The same edit already ran on US roads and paths: https://wiki.openstreetmap.org/wiki/Mechanical_Edits/Mateusz_Konieczny_-_bot_account/migrate_surface%3Dcement_to_surface%3Dconcrete_on_USA_roads_and_paths. This extends it to the whole world.
-- `surface=brick` is the same as the documented `surface=bricks` (https://wiki.openstreetmap.org/wiki/Tag:surface%3Dbricks; the `surface=brick` page redirects there), only the plural is missing. It keeps growing: about 4,100 objects in 2020, 8,326 today.
+- `surface=brick` is the same as the documented `surface=bricks` (https://wiki.openstreetmap.org/wiki/Tag:surface%3Dbricks; the `surface=brick` page redirects there), only the plural is missing. It keeps growing: about 4,100 objects in 2020, 8,326 today. Every data consumer listed on taginfo that reads `surface=brick` also reads `surface=bricks`, so none loses anything.
 
 **What would change**
 
