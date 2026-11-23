@@ -45,6 +45,7 @@ Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only wh
   - Commit locally only: no push or comment without Julien's go (the forum round no longer holds it back).
 - **Issue drafts**, one per provider, adapted to its current rendering and tile schema, using the per-provider table of styles to avoid under A0. Open apps first (Organic Maps, OsmAnd, Americana), issue before PR, small first PR. A3 order: CyclOSM, OsmAnd #9465, Organic Maps #8485, OpenMapTiles whitelist, Kurviger forum, Tracestrack.
 - **Commercial apps** through support or product teams: Komoot, Gaia GPS, Guru Maps, Ride with GPS and the others.
+  - Ride with GPS (request #296036): developers queuing `laterite` as unpaved; tiles still `paved` on 2026-11-23 (built 2026-11-19). Recheck tile `rwgps/14/12720/7267` with `research/tiles/tile-match.mjs` (spot A).
 - **Allies**: HOT, local mapping communities, the laterite-discussion contacts.
 
 ## Low priority
