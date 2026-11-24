@@ -11,12 +11,10 @@ Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only wh
 
 ## Waiting on feedback
 
-- **Key:surface wiki edit, around 2026-11-23**: no objections so far on [Talk](https://wiki.openstreetmap.org/wiki/Talk:Key:surface#Paved_assumption_for_motor_roads) (no reply on 2026-11-22). Replace the "typically an assumption ... paved" sentence of "Surface for motor roads" with: "For roads for motor vehicles, there is no default: data consumers may guess the surface, each in their own way (see Default values)."
-- **Forum thread** ([150052](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052)): round over (Julien, 2026-11-22); last posts are our replies #14 and #15 of 2026-11-16, answer only if someone writes. Read Americana's [PR 717](https://github.com/osm-americana/openstreetmap-americana/pull/717) (tracks, open, active 2026-11-22).
+- **Forum thread** ([150052](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052)): round over (Julien, 2026-11-22); last posts are our replies #14 and #15 of 2026-11-16, answer only if someone writes. Americana's [PR 717](https://github.com/osm-americana/openstreetmap-americana/pull/717) merged 2026-11-23: tracks as double dashed lines (solid when `surface=paved`); checked 2026-11-24 ([A-providers](A-providers.md), style 5 note): tracks and unpaved roads stay distinct, but the grey dashes on white minor roads barely show below z17. An Americana request would ask for a tan dash on white roads (as our style 5), not for track changes. Draft not written yet.
 - **Bot proposals** `cement` → `concrete`, `brick` → `bricks` ([outreach/bot-cement-brick.md](outreach/bot-cement-brick.md)): **waiting for comments.** Merged topic posted 2026-11-23: https://community.openstreetmap.org/t/proposed-bot-edits-surface-cement-to-concrete-and-surface-brick-to-bricks-on-highways-worldwide-recurring/150534 (Mateusz pinged; he OK'd the pages in [post 15](https://community.openstreetmap.org/t/proposed-bot-edit-automatic-replacement-of-surface-values-where-it-is-safe/105361/15)). Both wiki pages have the topic as `discussion_url` and in Discussion, link posted in 105361 (post 16). Next: answer comments; Mateusz runs only after an explicit OK in the topic, not silence; then an id-tagging-schema issue to deprecate both values (iD offers them), and see whether `chipseal` can be found there by "DBST", "BST" or "surface dressing".
 - **Local values** `dbst`, `ottaseal`, `Blacktopped` ([outreach/local-values-mappers.md](outreach/local-values-mappers.md#answers)): 4 of 18 mappers answered on 2026-11-19, all retagged (check for new answers). From **2026-11-30**: the `dbst` family by hand without an answer; the others only with one. [Nepal topic](https://community.openstreetmap.org/t/surface-values-ottaseal-and-blacktopped-in-nepal/150053): no reply.
 - **AdvOSM** ([outreach/advosm.md](outreach/advosm.md)): outcome of the meeting planned for 2026-11-18 not noted yet; questions were the fast primary and secondary in routing, the `surface` list, the S points, using the images, and the current GmapTool TYP. Credit as "AdvOSM" only, no name.
-- **cycle.travel** ([outreach/forum/5-cycle-travel.md](outreach/forum/5-cycle-travel.md)): add the A0 row; tunnels not checked.
 
 ## Styles and demo
 
@@ -26,7 +24,7 @@ Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only wh
 
 ## Article, wiki and posts
 
-- Finish the app reports page (built as a draft). DMD2: the forum link there and in A0 may be outdated (drivemodedashboard.com moved to dmdnavigation.com).
+- App reports page, checked 2026-11-24 before the requests: Americana tracks and faint white-road dashes, DMD2 contact link, 109 test cases, OsmAnd surface zoom 13, cycle.travel A0 row done. Left: cycle.travel tunnels by hand (Cloudflare blocks automated browsers), e.g. https://cycle.travel/map?lat=45.8693&lon=7.1757&zoom=15 (Great St Bernard, trunk) and https://cycle.travel/map?lat=47.1269&lon=10.1883&zoom=16 (Arlberg); then fill "tunnels not checked" in apps.md and A0.
 - Legend or wiki text: one line saying broken pavement is drawn as Unpaved on purpose (decision 15). Support if asked: Gaia GPS does the same (30 of 31 sampled paved minor roads with `smoothness` very_bad or worse drawn as tracks).
 - A short OSM wiki page for the tag mapping only, linking to the repo; an OSM diary entry; a Facebook post pointing to the diary.
 

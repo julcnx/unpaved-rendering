@@ -16,8 +16,8 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 | Map | Open source | Unpaved on main roads | Data | Tracks and paths | Styles that fit | Where to ask |
 |---|---|---|---|---|---|---|
 | OSM Carto (openstreetmap.org) | yes | Every class from zoom 6: a fine grain in the class colour | Full `surface`; explicit lists of unpaved values, so unknown values such as `laterite` are drawn as paved | Brown dashes, rhythm by `tracktype`; paths salmon dots | 1 (in use) | [GitHub](https://github.com/openstreetmap-carto/openstreetmap-carto/issues) |
-| Americana | yes | Every class from zoom 12: lighter dashes of the class colour | Paved or unpaved, from OpenMapTiles, only from zoom 12 | None drawn | Any; 5 in use | [GitHub](https://github.com/osm-americana/openstreetmap-americana/issues) |
-| DMD2 | no | Every class seen: dark dashes in the fill | Counts `laterite` as unpaved (seen on test roads in its web planner) | Coloured dashes inside the line, like its unpaved roads | 3 in use | [DMD forum](https://drivemodedashboard.com/forums/) |
+| Americana | yes | Every class from zoom 12: lighter dashes of the class colour. On white minor roads the dashes are light grey and barely show below zoom 17 | Paved or unpaved, from OpenMapTiles, only from zoom 12 | Since November 2026: two thin brown dashed lines with no fill (solid when paved); paths not drawn | Any; 5 in use | [GitHub](https://github.com/osm-americana/openstreetmap-americana/issues) |
+| DMD2 | no | Every class seen: dark dashes in the fill | Counts `laterite` as unpaved (seen on test roads in its web planner) | Coloured dashes inside the line, like its unpaved roads | 3 in use | [Contact](https://www.dmdnavigation.com/contact/) |
 | CyclOSM | yes | From zoom 14, primary and below, as cycling surface dashes. `surface=unpaved` is in none of its lists (75% of unpaved km) and trunks get no surface rule | Full `surface` and `smoothness` (explicit lists) | Dark green dashes by bike type; paths teal dots | Its own dashes, in the road colour | [GitHub](https://github.com/cyclosm/cyclosm-cartocss-style/issues) |
 | Tracestrack Topo | partly | Secondary and below: a dashed outline. Primary and trunk: no difference | A list of unpaved values that includes `laterite`; a value it does not know is drawn as paved (seen on test roads) | Brown dashes; its unpaved minor roads look close to them | 1, 3; 4 on main roads (as today) | [GitHub](https://github.com/tracestrack/tracestrack-maps/issues) |
 | cycle.travel | no (built with its maker's open tilemaker and glug) | A dashed dark outline; a secondary keeps its yellow (Canada), a tertiary turns from cream to white on its unpaved section (Switzerland): the European raster database drops the class on unpaved roads, the North American one keeps it, and so do the vector maps of the app (the site will move to them, its maker says). Map data in Europe and North America only | A list of unpaved values: `rock`, `cement` and `asphalt_lanes` drawn as paved (seen on test roads); `tracktype` counts | Brown dashed and dotted lines, no outline; paved tracks drawn as minor roads; paths green dots | 4 in use (tunnels not checked) | [OSM forum](https://community.openstreetmap.org/t/draft-for-feedback-showing-unpaved-roads-on-osm-based-maps-without-losing-the-road-class/150052) |
@@ -33,7 +33,7 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 
 | Map | Open source | Unpaved on main roads | Data | Tracks and paths | Styles that fit | Where to ask |
 |---|---|---|---|---|---|---|
-| Humanitarian (HOT) | yes | Every class from zoom 11, but the road takes the residential colour, so an unpaved primary looks like a minor street | Paved whitelist; untagged unclassified and residential roads count as unpaved | Same fill as its unpaved roads, plus dashes; paths dots | Keep the class colour; then 1, 2, or 4 on main roads | [GitHub](https://github.com/hotosm/HDM-CartoCSS/issues) ([#104](https://github.com/hotosm/HDM-CartoCSS/issues/104)) |
+| Humanitarian (HOT) | yes | Every class from zoom 11, but the road takes the residential colour, so an unpaved primary looks like a minor street | Paved whitelist; untagged unclassified and residential roads count as unpaved | Same fill as its unpaved roads, plus dashes; paths dots | Keep the class colour; then 1, 2, or 4 on main roads | None: the repository is archived (read-only, last change 2021), so no new issues; [#104](https://github.com/hotosm/HDM-CartoCSS/issues/104) asked for this in 2014 |
 | Ride with GPS | no | Drawn as dashed brown lines, like tracks | Paved or unpaved, from zoom 10; untagged roads and values it does not know, such as `laterite`, count as paved | Two brown dashed lines on a pale fill, like its unpaved roads | 1, 3; 4 on main roads | [Help center](https://support.ridewithgps.com) |
 | OsmAnd Motorcycle styles | yes | Primary to residential with a gravel or dirt surface drawn like tracks; motorway and trunk never | Full `surface` and `tracktype` | Five colour categories by surface and track type: green dashes for dirt and tracks without a grade, brown for easier ones; paths red dashes. Unpaved roads below trunk take the track colour and width | 1, 3, 4, on the road's own class colour instead of the track look | [GitHub discussion #22](https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22) |
 | AdvOSM (Garmin maps) | no: style rules not published (the TYP file can be read from any map) | Every class except service, as one yellow dashed line, so an unpaved trunk looks like an unpaved minor road; its route number shield (T8) still shows. Done for routing: on Garmin the line also sets the travel speed, so unpaved roads get realistic times (51 km/h on a Tanzania test route, against 87 km/h on maps that only add a mark) | `surface`, `smoothness`, `tracktype` and width; warning icons for bad `smoothness`, low `tracktype` grades and narrow roads | Tracks white dashes between grey edges, thinner than roads; closed tracks red dashes; footpaths red dashes | 1, 2, 3, 4 in the class colour | Contact form on [the site](https://rex8475.wixsite.com/advosm) |
@@ -61,7 +61,7 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 
 ## Where the classifier goes
 
-For open-source maps: where the surface is classified today, and which ready-made version of the paved whitelist fits. All versions pass the same [67 test cases](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json).
+For open-source maps: where the surface is classified today, and which ready-made version of the paved whitelist fits. All versions pass the same [109 test cases](https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json).
 
 | Map | Where the surface is classified | Version to use |
 |---|---|---|
@@ -83,7 +83,7 @@ A style can only draw what its tiles carry.
 |---|---|---|---|
 | OpenMapTiles | Americana, MapTiler, Stadia, OpenFreeMap | Paved or unpaved | 12 |
 | Shortbread | OSMF vector tiles | Full `surface` and `tracktype` | 11 |
-| OsmAnd (OBF) | OsmAnd | Full `surface`, `smoothness` and `tracktype` | 12 to 14 |
+| OsmAnd (OBF) | OsmAnd | Full `surface`, `smoothness` and `tracktype` | 13 (`tracktype` from 12) |
 | Organic Maps (MWM) | Organic Maps, CoMaps | Paved or unpaved, good or bad | with the road |
 | Protomaps | Protomaps basemap | None | |
 | Mapbox Streets v8 | Mapbox-based maps | Paved or unpaved, where OSM has it | not documented |

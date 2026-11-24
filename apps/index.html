@@ -151,7 +151,7 @@
   <p class="kicker"><a href="../">Mind the Surface</a></p>
   <h1>App reports</h1>
   <p class="sub">How OpenStreetMap-based maps draw unpaved roads, November 2026</p>
-  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 15 November 2026</p>
+  <p class="byline">By <a href="https://www.openstreetmap.org/user/julcnx">julcnx</a> · Last updated 24 November 2026</p>
 </header>
 
 
@@ -185,9 +185,9 @@
 <tr>
 <td>Americana</td>
 <td>yes</td>
-<td>Every class from zoom 12: lighter dashes of the class colour</td>
+<td>Every class from zoom 12: lighter dashes of the class colour. On white minor roads the dashes are light grey and barely show below zoom 17</td>
 <td>Paved or unpaved, from OpenMapTiles, only from zoom 12</td>
-<td>None drawn</td>
+<td>Since November 2026: two thin brown dashed lines with no fill (solid when paved); paths not drawn</td>
 <td>Any; 5 in use</td>
 <td><a href="https://github.com/osm-americana/openstreetmap-americana/issues">GitHub</a></td>
 </tr>
@@ -198,7 +198,7 @@
 <td>Counts <code>laterite</code> as unpaved (seen on test roads in its web planner)</td>
 <td>Coloured dashes inside the line, like its unpaved roads</td>
 <td>3 in use</td>
-<td><a href="https://drivemodedashboard.com/forums/">DMD forum</a></td>
+<td><a href="https://www.dmdnavigation.com/contact/">Contact</a></td>
 </tr>
 <tr>
 <td>CyclOSM</td>
@@ -284,7 +284,7 @@
 <td>Paved whitelist; untagged unclassified and residential roads count as unpaved</td>
 <td>Same fill as its unpaved roads, plus dashes; paths dots</td>
 <td>Keep the class colour; then 1, 2, or 4 on main roads</td>
-<td><a href="https://github.com/hotosm/HDM-CartoCSS/issues">GitHub</a> (<a href="https://github.com/hotosm/HDM-CartoCSS/issues/104">#104</a>)</td>
+<td>None: the repository is archived (read-only, last change 2021), so no new issues; <a href="https://github.com/hotosm/HDM-CartoCSS/issues/104">#104</a> asked for this in 2014</td>
 </tr>
 <tr>
 <td>Ride with GPS</td>
@@ -476,7 +476,7 @@
 </tbody>
 </table></div>
 <h2 id="s-where-the-classifier-goes">Where the classifier goes</h2>
-<p>For open-source maps: where the surface is classified today, and which ready-made version of the paved whitelist fits. All versions pass the same <a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json">67 test cases</a>.</p>
+<p>For open-source maps: where the surface is classified today, and which ready-made version of the paved whitelist fits. All versions pass the same <a href="https://github.com/julcnx/unpaved-rendering/blob/master/research/classifier/test-cases.json">109 test cases</a>.</p>
 <div class="scroll"><table>
 <thead>
 <tr>
@@ -561,7 +561,7 @@
 <td>OsmAnd (OBF)</td>
 <td>OsmAnd</td>
 <td>Full <code>surface</code>, <code>smoothness</code> and <code>tracktype</code></td>
-<td>12 to 14</td>
+<td>13 (<code>tracktype</code> from 12)</td>
 </tr>
 <tr>
 <td>Organic Maps (MWM)</td>
