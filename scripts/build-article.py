@@ -140,6 +140,18 @@ def build(src, out, title, description, kicker, h1, sub, hero, body_class=''):
     body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>Country)', r'<table class="num">\1', body)  # number tables align right
     if body_class == 'apps-page':
         body = re.sub(r'(<table>.*?</table>)', r'<div class="scroll">\1</div>', body, flags=re.S)  # wide tables scroll on phones
+        # One anchor per app row (apps/#osmand), so a request can link to its own app: the name before any bracket or comma.
+        app_id = lambda name: re.sub(r'[^a-z0-9]+', '-', re.split(r'[(,]', name)[0].lower()).strip('-')
+        ids = []
+        def anchor(t):
+            if '<th>Open source</th>' not in t.group(0):
+                return t.group(0)  # only the app tables, not the classifier or schema ones
+            def row(m):
+                ids.append(app_id(m.group(1)))
+                return f'<tr id="{ids[-1]}">\n<td>{m.group(1)}</td>'
+            return re.sub(r'<tr>\n<td>(.*?)</td>', row, t.group(0))
+        body = re.sub(r'<table>.*?</table>', anchor, body, flags=re.S)
+        assert len(ids) == len(set(ids)), ids
 
     # Section ids and the table of contents
     slug = lambda t: 's-' + re.sub(r'[^a-z0-9]+', '-', re.sub(r'<.*?>', '', t).lower()).strip('-')

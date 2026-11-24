@@ -30,6 +30,8 @@
   .scroll { overflow-x: auto; }
   .apps-page .article > .scroll { max-width: none; }
   .apps-page .article table { font-size: 15px; min-width: 760px; }
+  .apps-page tr:target td { background: #f3e6cf; } /* the app a link points to (apps/#osmand) */
+  .apps-page tr[id] { scroll-margin-top: 24px; }
 
   /* Hero: full-width map, photos placed in the empty land on each side of the road (Komoot, centred on the transition) */
   .hero { position: relative; margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 2 / 1; }

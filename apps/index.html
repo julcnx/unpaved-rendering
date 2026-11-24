@@ -30,6 +30,8 @@
   .scroll { overflow-x: auto; }
   .apps-page .article > .scroll { max-width: none; }
   .apps-page .article table { font-size: 15px; min-width: 760px; }
+  .apps-page tr:target td { background: #f3e6cf; } /* the app a link points to (apps/#osmand) */
+  .apps-page tr[id] { scroll-margin-top: 24px; }
 
   /* Hero: full-width map, photos placed in the empty land on each side of the road (Komoot, centred on the transition) */
   .hero { position: relative; margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 2 / 1; }
@@ -173,7 +175,7 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="osm-carto">
 <td>OSM Carto (openstreetmap.org)</td>
 <td>yes</td>
 <td>Every class from zoom 6: a fine grain in the class colour</td>
@@ -182,7 +184,7 @@
 <td>1 (in use)</td>
 <td><a href="https://github.com/openstreetmap-carto/openstreetmap-carto/issues">GitHub</a></td>
 </tr>
-<tr>
+<tr id="americana">
 <td>Americana</td>
 <td>yes</td>
 <td>Every class from zoom 12: lighter dashes of the class colour. On white minor roads the dashes are light grey and barely show below zoom 17</td>
@@ -191,7 +193,7 @@
 <td>Any; 5 in use</td>
 <td><a href="https://github.com/osm-americana/openstreetmap-americana/issues">GitHub</a></td>
 </tr>
-<tr>
+<tr id="dmd2">
 <td>DMD2</td>
 <td>no</td>
 <td>Every class seen: dark dashes in the fill</td>
@@ -200,7 +202,7 @@
 <td>3 in use</td>
 <td><a href="https://www.dmdnavigation.com/contact/">Contact</a></td>
 </tr>
-<tr>
+<tr id="cyclosm">
 <td>CyclOSM</td>
 <td>yes</td>
 <td>From zoom 14, primary and below, as cycling surface dashes. <code>surface=unpaved</code> is in none of its lists (75% of unpaved km) and trunks get no surface rule</td>
@@ -209,7 +211,7 @@
 <td>Its own dashes, in the road colour</td>
 <td><a href="https://github.com/cyclosm/cyclosm-cartocss-style/issues">GitHub</a></td>
 </tr>
-<tr>
+<tr id="tracestrack-topo">
 <td>Tracestrack Topo</td>
 <td>partly</td>
 <td>Secondary and below: a dashed outline. Primary and trunk: no difference</td>
@@ -218,7 +220,7 @@
 <td>1, 3; 4 on main roads (as today)</td>
 <td><a href="https://github.com/tracestrack/tracestrack-maps/issues">GitHub</a></td>
 </tr>
-<tr>
+<tr id="cycle-travel">
 <td>cycle.travel</td>
 <td>no (built with its maker's open tilemaker and glug)</td>
 <td>A dashed dark outline; a secondary keeps its yellow (Canada), a tertiary turns from cream to white on its unpaved section (Switzerland): the European raster database drops the class on unpaved roads, the North American one keeps it, and so do the vector maps of the app (the site will move to them, its maker says). Map data in Europe and North America only</td>
@@ -243,7 +245,7 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="osmand">
 <td>OsmAnd</td>
 <td>yes</td>
 <td>Only with the "Road surface" or "Road quality" overlay, off by default, from zoom 14</td>
@@ -252,7 +254,7 @@
 <td>1, 3, 4</td>
 <td><a href="https://github.com/osmandapp/OsmAnd/issues">GitHub</a> (<a href="https://github.com/osmandapp/OsmAnd/issues/9465">#9465</a>)</td>
 </tr>
-<tr>
+<tr id="locus-map">
 <td>Locus Map</td>
 <td>no</td>
 <td>Depends on the map theme; not on the LoMaps web map</td>
@@ -277,7 +279,7 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="humanitarian">
 <td>Humanitarian (HOT)</td>
 <td>yes</td>
 <td>Every class from zoom 11, but the road takes the residential colour, so an unpaved primary looks like a minor street</td>
@@ -286,7 +288,7 @@
 <td>Keep the class colour; then 1, 2, or 4 on main roads</td>
 <td>None: the repository is archived (read-only, last change 2021), so no new issues; <a href="https://github.com/hotosm/HDM-CartoCSS/issues/104">#104</a> asked for this in 2014</td>
 </tr>
-<tr>
+<tr id="ride-with-gps">
 <td>Ride with GPS</td>
 <td>no</td>
 <td>Drawn as dashed brown lines, like tracks</td>
@@ -295,7 +297,7 @@
 <td>1, 3; 4 on main roads</td>
 <td><a href="https://support.ridewithgps.com">Help center</a></td>
 </tr>
-<tr>
+<tr id="osmand-motorcycle-styles">
 <td>OsmAnd Motorcycle styles</td>
 <td>yes</td>
 <td>Primary to residential with a gravel or dirt surface drawn like tracks; motorway and trunk never</td>
@@ -304,7 +306,7 @@
 <td>1, 3, 4, on the road's own class colour instead of the track look</td>
 <td><a href="https://github.com/OsmAnd-Rendering/Motorcycle/discussions/22">GitHub discussion #22</a></td>
 </tr>
-<tr>
+<tr id="advosm">
 <td>AdvOSM (Garmin maps)</td>
 <td>no: style rules not published (the TYP file can be read from any map)</td>
 <td>Every class except service, as one yellow dashed line, so an unpaved trunk looks like an unpaved minor road; its route number shield (T8) still shows. Done for routing: on Garmin the line also sets the travel speed, so unpaved roads get realistic times (51 km/h on a Tanzania test route, against 87 km/h on maps that only add a mark)</td>
@@ -313,7 +315,7 @@
 <td>1, 2, 3, 4 in the class colour</td>
 <td>Contact form on <a href="https://rex8475.wixsite.com/advosm">the site</a></td>
 </tr>
-<tr>
+<tr id="gaia-gps">
 <td>Gaia GPS (Gaia Topo)</td>
 <td>no</td>
 <td><code>surface</code> is not used. Tertiary, unclassified and residential roads with <code>smoothness</code> very_bad or worse, or <code>4wd_only=yes</code>, are drawn as tracks; trunk, primary and secondary never. The premium Overland layer shows surfaces</td>
@@ -338,7 +340,7 @@
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="organic-maps">
 <td>Organic Maps, CoMaps</td>
 <td>yes</td>
 <td>No</td>
@@ -347,7 +349,7 @@
 <td>1, 3; 4 below primary (tunnels have a dashed outline)</td>
 <td><a href="https://github.com/organicmaps/organicmaps/issues">GitHub</a> (<a href="https://github.com/organicmaps/organicmaps/issues/8485">#8485</a>)</td>
 </tr>
-<tr>
+<tr id="osmf-shortbread">
 <td>OSMF Shortbread (vector.openstreetmap.org)</td>
 <td>yes</td>
 <td>No</td>
@@ -356,7 +358,7 @@
 <td>1, 3 (tunnels have a dashed outline)</td>
 <td><a href="https://github.com/pnorman/spirit/pull/93">Spirit PR #93</a> (open)</td>
 </tr>
-<tr>
+<tr id="maptiler">
 <td>MapTiler (Streets, Outdoor)</td>
 <td>no</td>
 <td>No</td>
@@ -365,7 +367,7 @@
 <td>1, 3, 5</td>
 <td><a href="https://www.maptiler.com/support/">MapTiler support</a></td>
 </tr>
-<tr>
+<tr id="komoot">
 <td>Komoot</td>
 <td>no</td>
 <td>No; surfaces only in the route summary</td>
@@ -374,7 +376,7 @@
 <td>1, 2, 3</td>
 <td><a href="https://support.komoot.com">Help center</a></td>
 </tr>
-<tr>
+<tr id="mapy-com">
 <td>Mapy.com (basic map)</td>
 <td>no</td>
 <td>No</td>
@@ -383,7 +385,7 @@
 <td>1, 3, 4</td>
 <td><a href="https://community.mapy.com/category/4/ideas-for-new-features-nápady-na-nové-vychytávky">Community forum, ideas</a></td>
 </tr>
-<tr>
+<tr id="kurviger">
 <td>Kurviger</td>
 <td>no</td>
 <td>Only on the planned route, not on the map</td>
@@ -392,7 +394,7 @@
 <td>Any</td>
 <td><a href="https://forum.kurviger.com/t/different-colours-for-sealed-and-unsealed-roads/18588">Forum</a></td>
 </tr>
-<tr>
+<tr id="alltrails">
 <td>AllTrails</td>
 <td>no</td>
 <td>No</td>
@@ -401,7 +403,7 @@
 <td>1, 3; 4 on main roads</td>
 <td><a href="https://support.alltrails.com">Help center</a></td>
 </tr>
-<tr>
+<tr id="maps-me">
 <td>Maps.me</td>
 <td>no</td>
 <td>No</td>
@@ -410,7 +412,7 @@
 <td>1, 3</td>
 <td><a href="https://support.maps.me">Help center</a></td>
 </tr>
-<tr>
+<tr id="guru-maps">
 <td>Guru Maps</td>
 <td>no</td>
 <td>No</td>
@@ -419,7 +421,7 @@
 <td>1, 3, 4 (tunnels not checked)</td>
 <td><a href="https://gurumaps.app/docs/intro">Documentation</a>, support in the app</td>
 </tr>
-<tr>
+<tr id="opentopomap">
 <td>OpenTopoMap</td>
 <td>yes</td>
 <td>No; surface only on paths</td>
@@ -428,7 +430,7 @@
 <td>1, 3, 4</td>
 <td><a href="https://github.com/der-stefan/OpenTopoMap/issues">GitHub</a></td>
 </tr>
-<tr>
+<tr id="thunderforest">
 <td>Thunderforest (OpenCycleMap, Transport, Outdoors)</td>
 <td>no</td>
 <td>No</td>
@@ -437,7 +439,7 @@
 <td>1, 3; 4 on main roads</td>
 <td><a href="https://www.thunderforest.com/contact/">Contact</a></td>
 </tr>
-<tr>
+<tr id="stadia-maps">
 <td>Stadia Maps (Alidade Smooth, Outdoors)</td>
 <td>no</td>
 <td>No</td>
@@ -446,7 +448,7 @@
 <td>Any</td>
 <td><a href="https://docs.stadiamaps.com/support/">Support</a></td>
 </tr>
-<tr>
+<tr id="strava">
 <td>Strava</td>
 <td>no</td>
 <td>No</td>
@@ -455,7 +457,7 @@
 <td>1, 2, 3</td>
 <td><a href="https://communityhub.strava.com">Community Hub ideas</a></td>
 </tr>
-<tr>
+<tr id="caltopo">
 <td>CalTopo</td>
 <td>no</td>
 <td>No</td>
@@ -464,7 +466,7 @@
 <td>1</td>
 <td><a href="https://help.caltopo.com/hc/en-us/community/topics/4416797631899-Feature-Requests">Feature requests</a></td>
 </tr>
-<tr>
+<tr id="protomaps-basemap">
 <td>Protomaps basemap</td>
 <td>yes</td>
 <td>No</td>
