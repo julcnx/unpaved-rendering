@@ -28,7 +28,7 @@ Unpaved values missing from Carto-style unpaved lists (a blacklist draws them pa
 | `asphalt_lanes` (paved) | residential Oberer Geißkopf w29476753, Vorarlberg (AT) | https://cycle.travel/map?lat=47.42432&lon=9.81797&zoom=16 |
 | tunnel (asphalt) | unclassified Längenbergstrasse w26533725, Schaffhausen | https://cycle.travel/map?lat=47.72844&lon=8.62737&zoom=16 |
 
-Result (Julien's shots, 2026-11-13, in `examples/screenshots/cycle-travel-values/`, kept local, not in git): `rock`, `cement` and `asphalt_lanes` are drawn as plain paved roads (white, solid casing); `grit` looks paved too (projection about 30 px off, so medium confidence). So cycle.travel lists unpaved values and draws everything else as paved, like OSM Carto: unknown unpaved values such as `rock` show as paved. The tunnel spot is only a few metres under the H4 and shows nothing; tunnels still not checked.
+Result (Julien's shots, 2026-11-13, in `examples/screenshots/cycle-travel-values/`, kept local, not in git): `rock`, `cement` and `asphalt_lanes` are drawn as plain paved roads (white, solid casing); `grit` looks paved too (projection about 30 px off, so medium confidence). So cycle.travel lists unpaved values and draws everything else as paved, like OSM Carto: unknown unpaved values such as `rock` show as paved. The tunnel spot is only a few metres under the H4 and shows nothing. Checked on 2026-11-24 instead on the Great St Bernard and Arlberg tunnels (Julien's shots, `tunnel-gsb.png` and `tunnel-arlberg.png` in the same folder): a pale see-through road with a thin solid outline, no dashes, so its dashed-outline unpaved roads do not look like tunnels.
 
 ## Draft
 

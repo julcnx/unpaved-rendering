@@ -24,7 +24,7 @@ Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only wh
 
 ## Article, wiki and posts
 
-- App reports page, checked 2026-11-24 before the requests: Americana tracks and faint white-road dashes, DMD2 contact link, 109 test cases, OsmAnd surface zoom 13, cycle.travel A0 row done. Left: cycle.travel tunnels by hand (Cloudflare blocks automated browsers), e.g. https://cycle.travel/map?lat=45.8693&lon=7.1757&zoom=15 (Great St Bernard, trunk) and https://cycle.travel/map?lat=47.1269&lon=10.1883&zoom=16 (Arlberg); then fill "tunnels not checked" in apps.md and A0.
+- App reports page, checked 2026-11-24 before the requests: Americana tracks and faint white-road dashes, DMD2 contact link, 109 test cases, OsmAnd surface zoom 13, cycle.travel A0 row done. cycle.travel tunnels checked by hand: no dashes, no collision.
 - Legend or wiki text: one line saying broken pavement is drawn as Unpaved on purpose (decision 15). Support if asked: Gaia GPS does the same (30 of 31 sampled paved minor roads with `smoothness` very_bad or worse drawn as tracks).
 - A short OSM wiki page for the tag mapping only, linking to the repo; an OSM diary entry; a Facebook post pointing to the diary.
 
