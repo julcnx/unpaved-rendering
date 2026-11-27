@@ -1,6 +1,6 @@
 # To do
 
-Updated 2026-11-27 (Spirit PR #93 reworked and rendered; forum, wiki and PR 717 last checked online on 2026-11-22). Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to D), [LOG.md](../LOG.md), [outreach/](outreach/) and git history. The OsmAnd style (Overland) has its own repo and todo, osmand-overland.
+Updated 2026-11-27 (Spirit PR #93 reworked and rendered; link preview card redone with the title; forum, wiki and PR 717 last checked online on 2026-11-22). Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to D), [LOG.md](../LOG.md), [outreach/](outreach/) and git history. The OsmAnd style (Overland) has its own repo and todo, osmand-overland.
 
 ## Next, in this order
 
@@ -26,6 +26,7 @@ Updated 2026-11-27 (Spirit PR #93 reworked and rendered; forum, wiki and PR 717 
 
 - App reports page, checked 2026-11-24 before the requests: Americana tracks and faint white-road dashes, DMD2 contact link, 109 test cases, OsmAnd surface zoom 13, cycle.travel A0 row done. cycle.travel tunnels checked by hand: no dashes, no collision.
 - Legend or wiki text: one line saying broken pavement is drawn as Unpaved on purpose (decision 15). Support if asked: Gaia GPS does the same (30 of 31 sampled paved minor roads with `smoothness` very_bad or worse drawn as tracks).
+- Link preview card (og:image) redone 2026-11-27 with the title and the two C48 photos: [article/og.html](../article/og.html), rendered by `node scripts/og-image.mjs` into [article/img/og.jpg](../article/img/og.jpg). Once pushed, check it in the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) (Scrape Again clears the old cached image).
 - A short OSM wiki page for the tag mapping only, linking to the repo; an OSM diary entry; a Facebook post pointing to the diary.
 
 ## Research left
