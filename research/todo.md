@@ -4,7 +4,7 @@ Updated 2026-11-27 (OsmAnd #9465 and Organic Maps #8485 commented; Spirit PR #93
 
 ## Next, in this order
 
-1. **CyclOSM** ([1-cyclosm.md](outreach/issues/1-cyclosm.md)): local render first. **OpenMapTiles** ([4-openmaptiles.md](outreach/issues/4-openmaptiles.md)): size test first.
+1. **CyclOSM** ([1-cyclosm.md](outreach/issues/1-cyclosm.md)): local render first. **OpenMapTiles** ([4-openmaptiles.md](outreach/issues/4-openmaptiles.md)): size test first, or post as is (the text offers to measure). Both texts checked against upstream 2026-11-27: still accurate, nothing changed in the code they cite.
 2. **Wiki page, diary entry, Facebook post** (under Article, wiki and posts).
 
 ## Waiting on feedback
