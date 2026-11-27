@@ -1,10 +1,10 @@
 # To do
 
-Updated 2026-11-27 (Spirit PR #93 reworked and rendered; link preview card redone with the title; forum, wiki and PR 717 last checked online on 2026-11-22). Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to D), [LOG.md](../LOG.md), [outreach/](outreach/) and git history. The OsmAnd style (Overland) has its own repo and todo, osmand-overland.
+Updated 2026-11-27 (OsmAnd and Organic Maps comments ready; Spirit PR #93 reworked and rendered; link preview card redone with the title; forum, wiki and PR 717 last checked online on 2026-11-22). Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to D), [LOG.md](../LOG.md), [outreach/](outreach/) and git history. The OsmAnd style (Overland) has its own repo and todo, osmand-overland.
 
 ## Next, in this order
 
-1. **OsmAnd #9465 and Organic Maps #8485 comments** ([2-osmand.md](outreach/issues/2-osmand.md), [3-organic-maps.md](outreach/issues/3-organic-maps.md)): no code needed; check text, images and figures against the final styles (drafted before the main-road marks), and drop "after the forum feedback" in all the issue drafts. Julien posts.
+1. **OsmAnd #9465 and Organic Maps #8485 comments** ([2-osmand.md](outreach/issues/2-osmand.md), [3-organic-maps.md](outreach/issues/3-organic-maps.md)): **ready, Julien posts.** Checked 2026-11-27 against the final styles: figures unchanged (26%, Namibia 66/95%, Bolivia 58%, 99.4% whitelist coverage), the OsmAnd image shows OsmAnd's own rendering so it stays; both now mention the stronger main-road mark (reader test) and the low-zoom tint, and say the forum round is over. Both threads unchanged online (OsmAnd 7 comments, last 2022; Organic Maps 18, last 2026-07). "After the forum feedback" dropped from every draft.
 2. **CyclOSM** ([1-cyclosm.md](outreach/issues/1-cyclosm.md)): local render first. **OpenMapTiles** ([4-openmaptiles.md](outreach/issues/4-openmaptiles.md)): size test first.
 3. **Wiki page, diary entry, Facebook post** (under Article, wiki and posts).
 
