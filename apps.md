@@ -26,7 +26,7 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 
 | Map | Open source | Unpaved on main roads | Data | Tracks and paths | Styles that fit | Where to ask |
 |---|---|---|---|---|---|---|
-| OsmAnd | yes | Only with the "Road surface" or "Road quality" overlay, off by default, from zoom 14 | Full `surface`, `smoothness` and `tracktype` | Default style: grey-green dashes by `tracktype`; paths dark grey dashes. Off-road style: black dashes on a tan underlay, paths dark red dashes; its "Road surface integrity" option recolours roads by surface, replacing the class colour. The OsmAnd web map uses the OSM Carto style instead | 1, 3, 4 | [GitHub](https://github.com/osmandapp/OsmAnd/issues) ([#9465](https://github.com/osmandapp/OsmAnd/issues/9465)) |
+| OsmAnd | yes | Only with the "Road surface" or "Road quality" overlay, off by default, from zoom 14 | Full `surface`, `smoothness` and `tracktype` | Default style: grey-green dashes by `tracktype`; paths dark grey dashes. Off-road style: black dashes on a tan underlay, paths dark red dashes; its "Road surface integrity" option recolours roads by surface, replacing the class colour. The OsmAnd web map uses the OSM Carto style instead | 1, 3, 4 | [GitHub](https://github.com/osmandapp/OsmAnd/issues) ([#9465](https://github.com/osmandapp/OsmAnd/issues/9465), [commented](https://github.com/osmandapp/OsmAnd/issues/9465#issuecomment-7209920065) 2026-11-27) |
 | Locus Map | no | Depends on the map theme; not on the LoMaps web map | To check | Web map: thin dark dashes, tracks and paths alike | 1, 3, 4 | [Helpdesk ideas](https://help.locusmap.eu) |
 
 ## Show it, lose the class
@@ -43,7 +43,7 @@ How each map draws a road that changes from paved to unpaved. The web maps were 
 
 | Map | Open source | Unpaved on main roads | Data | Tracks and paths | Styles that fit | Where to ask |
 |---|---|---|---|---|---|---|
-| Organic Maps, CoMaps | yes | No | Paved or unpaved, with good or bad, already in the map data (used for routing only) | Olive dashes, the same for every track; paths brown dashes; footways white dashes | 1, 3; 4 below primary (tunnels have a dashed outline) | [GitHub](https://github.com/organicmaps/organicmaps/issues) ([#8485](https://github.com/organicmaps/organicmaps/issues/8485)) |
+| Organic Maps, CoMaps | yes | No | Paved or unpaved, with good or bad, already in the map data (used for routing only) | Olive dashes, the same for every track; paths brown dashes; footways white dashes | 1, 3; 4 below primary (tunnels have a dashed outline) | [GitHub](https://github.com/organicmaps/organicmaps/issues) ([#8485](https://github.com/organicmaps/organicmaps/issues/8485), [commented](https://github.com/organicmaps/organicmaps/issues/8485#issuecomment-7209920458) 2026-11-27) |
 | OSMF Shortbread (vector.openstreetmap.org) | yes | No | Full `surface` in the tiles from zoom 11 | None in the Spirit style; thin black dots on osm.org | 1, 3 (tunnels have a dashed outline) | [Spirit PR #93](https://github.com/pnorman/spirit/pull/93) (open) |
 | MapTiler (Streets, Outdoor) | no | No | Paved or unpaved, from OpenMapTiles, from zoom 12 | Thin plain lines; tan dashes in the layer on osm.org | 1, 3, 5 | [MapTiler support](https://www.maptiler.com/support/) |
 | Komoot | no | No; surfaces only in the route summary | No surface in the map tiles, only `tracktype`; surfaces come from its routing data | Own "Track" category: cream with a brown edge | 1, 2, 3 | [Help center](https://support.komoot.com) |
