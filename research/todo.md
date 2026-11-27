@@ -25,6 +25,7 @@ Updated 2026-11-27 (Spirit PR #93 reworked and rendered; link preview card redon
 ## Article, wiki and posts
 
 - App reports page, checked 2026-11-24 before the requests: Americana tracks and faint white-road dashes, DMD2 contact link, 109 test cases, OsmAnd surface zoom 13, cycle.travel A0 row done. cycle.travel tunnels checked by hand: no dashes, no collision.
+- OsmAnd Motorcycle styles marked as a third-party plugin in the App reports row and the app figure label too (2026-11-27; article text and caption already said so). Kept in the article on purpose, Overland stays unnamed until it is ready (decision 18).
 - Legend or wiki text: one line saying broken pavement is drawn as Unpaved on purpose (decision 15). Support if asked: Gaia GPS does the same (30 of 31 sampled paved minor roads with `smoothness` very_bad or worse drawn as tracks).
 - Link preview card (og:image) redone 2026-11-27 as the article header and hero (title, Komoot map, pins A and B, both photos): [article/og.html](../article/og.html), rendered by `node scripts/og-image.mjs` into [article/img/og.jpg](../article/img/og.jpg). Once pushed, check it in the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) (Scrape Again clears the old cached image).
 - A short OSM wiki page for the tag mapping only, linking to the repo; an OSM diary entry; a Facebook post pointing to the diary.

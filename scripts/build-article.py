@@ -58,7 +58,7 @@ def photo_grid():
 
 APPS = [('Show it, keep the class', [('americana', 'Americana'), ('dmd2', 'DMD2')]),
         ('Do not show it', [('komoot', 'Komoot'), ('mapy-com', 'Mapy.com')]),
-        ('Show it, lose the class', [('osmand-motorcycle', 'OsmAnd Motorcycle'), ('ridewithgps', 'Ride with GPS')])]
+        ('Show it, lose the class', [('osmand-motorcycle', 'OsmAnd Motorcycle (third-party)'), ('ridewithgps', 'Ride with GPS')])]
 
 
 def app_grid():
