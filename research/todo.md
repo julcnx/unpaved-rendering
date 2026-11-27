@@ -1,10 +1,10 @@
 # To do
 
-Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to D), [LOG.md](../LOG.md), [outreach/](outreach/) and git history. The OsmAnd style (Overland) has its own repo and todo, osmand-overland.
+Updated 2026-11-27 (Spirit PR #93 reworked and rendered; forum, wiki and PR 717 last checked online on 2026-11-22). Only what is still open. Settled decisions are in [decisions.md](decisions.md); finished work is in the task files (A to D), [LOG.md](../LOG.md), [outreach/](outreach/) and git history. The OsmAnd style (Overland) has its own repo and todo, osmand-overland.
 
 ## Next, in this order
 
-1. **Spirit PR #93**: code, local render, then Julien's comment with the updated commits (plan under Outreach). Needs Docker running.
+1. **Spirit PR #93**: code and render done (2026-11-27), committed locally only. Julien: push the branch, then post the comment in [5-spirit-pr93.md](outreach/issues/5-spirit-pr93.md) with the six figures next to it.
 2. **OsmAnd #9465 and Organic Maps #8485 comments** ([2-osmand.md](outreach/issues/2-osmand.md), [3-organic-maps.md](outreach/issues/3-organic-maps.md)): no code needed; check text, images and figures against the final styles (drafted before the main-road marks), and drop "after the forum feedback" in all the issue drafts. Julien posts.
 3. **CyclOSM** ([1-cyclosm.md](outreach/issues/1-cyclosm.md)): local render first. **OpenMapTiles** ([4-openmaptiles.md](outreach/issues/4-openmaptiles.md)): size test first.
 4. **Wiki page, diary entry, Facebook post** (under Article, wiki and posts).
@@ -36,11 +36,7 @@ Updated 2026-11-22 (forum, wiki and PR 717 checked online the same day). Only wh
 
 ## Outreach (drafts only, send nothing)
 
-- **Spirit PR #93** (Julien's, open): before pinging again, switch to a paved whitelist and a style that does not dash the casing (the maintainer asked about tunnel confusion; see A-providers A5 and the Shortbread row).
-  - Started 2026-11-13, paused: fork cloned in `~/Workspaces/OSM/spirit` on branch `unpaved-road-casing` (4 commits behind upstream; rebase first), no code changes yet; `local/` (git-excluded) for extracts, may hold a partial Namibia download. Draft comment: [outreach/issues/5-spirit-pr93.md](outreach/issues/5-spirit-pr93.md).
-  - Code: in `spirit/roads-high.sql.jinja2`, a paved whitelist on `surface` only (Spirit stores no `smoothness`; values from `classifier/classify.sql`, multiple values split on `;`); in `style/roads.glug`, drop the dashed casing and add a style 3 layer after `road_fill` (dashes in a band 60% of the fill width, darker class tint at contrast 1.3, 1.4 on red and orange, tan `#dccab0` on white roads; values in `js/style-spec.js`).
-  - Render: PostGIS and osm2pgsql 2.x in Docker (Homebrew osm2pgsql 1.11 is broken, missing boost; the local PostgreSQL 17 needs a password), themepark, Tilekiln, glug; small extracts around Namutoni, switzerland-1 and thailand-3; skip the ocean polygons (none of the views needs them). Screenshots of unpaved roads next to tunnels and footways.
-  - Commit locally only: no push or comment without Julien's go (the forum round no longer holds it back).
+- **Spirit PR #93** (Julien's, open): reworked 2026-11-27 in `~/Workspaces/OSM/spirit`, branch `unpaved-road-casing` (rebased on upstream main; commit `e9f3c1e`, not pushed). Paved whitelist on `surface`; casing left solid; style 3 dashes in Spirit's class tints, full width below about 6 px of fill, then a 60% band. Rendered in Docker (`spirit/local/`, git-excluded), before/after figures and details in [5-spirit-pr93.md](outreach/issues/5-spirit-pr93.md). Left: Julien pushes and posts. Optional separate upstream issues: dead glyph URL (blank map), `tracktype = object.tags.oneway` in `roads.lua`.
 - **Issue drafts**, one per provider, adapted to its current rendering and tile schema, using the per-provider table of styles to avoid under A0. Open apps first (Organic Maps, OsmAnd, Americana), issue before PR, small first PR. A3 order: CyclOSM, OsmAnd #9465, Organic Maps #8485, OpenMapTiles whitelist, Kurviger forum, Tracestrack.
 - **Commercial apps** through support or product teams: Komoot, Gaia GPS, Guru Maps, Ride with GPS and the others.
   - Ride with GPS (request #296036): developers queuing `laterite` as unpaved; tiles still `paved` on 2026-11-23 (built 2026-11-19). Recheck tile `rwgps/14/12720/7267` with `research/tiles/tile-match.mjs` (spot A).
