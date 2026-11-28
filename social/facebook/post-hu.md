@@ -4,7 +4,7 @@ Draft, 2026-11-28. To post Tuesday evening (2026-12-01), two days after the wall
 
 ## Text
 
-**Ever planned or followed a nice solid line on the map and ended up on gravel?**
+**Ever planned a route on a nice solid line and ended up on gravel?**
 
 Whether you follow the app on the bars or plan at home and ride a GPX, it's the same problem: most map apps draw dirt and gravel exactly like tarmac.
 
@@ -17,7 +17,9 @@ And it's not bad data. OpenStreetMap mappers have tagged the surface, the apps j
 🇦🇺 Australia: 45% of tertiary roads
 Across 54 countries, at least a quarter of all road length.
 
-I'm a regular contributor to OpenStreetMap and the open map tools built on it, so I wrote a proposal: Mind the Surface. Roads keep their usual colour, so you still see which one is the main road, and the unpaved stretches get a simple pattern like dashes. It's tested with a reader survey and comes with data, mockups, a live demo and a review of about 30 apps. I'm now taking it to app makers one by one.
+I'm a regular contributor to OpenStreetMap and the open map tools built on it, so I wrote a proposal: Mind the Surface. Roads keep their usual colour, so you still see which one is the main road, and the unpaved stretches get a simple pattern like dashes. You'd see the gravel while planning, before you commit to the route.
+
+I tested it with a reader survey, and it comes with data, mockups, a live demo and a review of about 30 apps. I'm now taking it to app makers one by one.
 
 Two questions:
 👉 Which app do you plan or ride with, and does it show you the gravel?
