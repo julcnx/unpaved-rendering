@@ -17,9 +17,7 @@ And it's not bad data. OpenStreetMap mappers have tagged the surface, the apps j
 🇦🇺 Australia: 45% of tertiary roads
 Across 54 countries, at least a quarter of all road length.
 
-I'm a regular contributor to OpenStreetMap and the open map tools built on it, so I wrote a proposal: Mind the Surface. Roads keep their usual colour, so you still see which one is the main road, and the unpaved stretches get a simple pattern like dashes. You'd see the gravel while planning, before you commit to the route.
-
-I tested it with a reader survey, and it comes with data, mockups, a live demo and a review of about 30 apps. I'm now taking it to app makers one by one.
+I'm a regular contributor to OpenStreetMap and the open map tools built on it, so I wrote a proposal: Mind the Surface. Roads keep their usual colour, so you still see which one is the main road, and the unpaved stretches get a simple pattern like dashes. You'd see the gravel while planning, before you commit to the route. I'm now taking it to app makers one by one.
 
 Two questions:
 👉 Which app do you plan or ride with, and does it show you the gravel?
