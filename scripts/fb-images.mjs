@@ -43,15 +43,15 @@ const today = path.join(root, 'article/img/slider-today.jpg');
 const proposed = path.join(root, 'article/img/slider-proposed.jpg');
 const font = '/System/Library/Fonts/Helvetica.ttc';
 const T = 7; // loop length, s
-const crop = 'crop=720:900:640:0,scale=864:1080:flags=lanczos,format=gbrp';
+// Each label is drawn on its own map, so the wipe covers and reveals it with that map: only "Today" when the divider
+// is fully right, only "Proposed" when fully left. Both top centre, so they swap halfway through each wipe.
+const label = (text) => `drawtext=fontfile=${font}:text='${text}':fontsize=44:fontcolor=0x222222:box=1:boxcolor=white@0.92:boxborderw=14:x=(w-tw)/2:y=36`;
+const crop = (text) => `crop=720:900:640:0,scale=864:1080:flags=lanczos,${label(text)},format=gbrp`;
 // p(t): 1 for 0-1.2s, eases to 0 by 2.7s, holds to 5.2s, eases back to 1 by 6.7s, holds.
 const ease = (a, b) => `(0.5-0.5*cos(PI*(T-${a})/${b - a}))`;
 const p = `if(lt(T,1.2),1,if(lt(T,2.7),1-${ease(1.2, 2.7)},if(lt(T,5.2),0,if(lt(T,6.7),${ease(5.2, 6.7)},1))))`;
-const label = (text, x) => `drawtext=fontfile=${font}:text='${text}':fontsize=44:fontcolor=0x222222:box=1:boxcolor=white@0.92:boxborderw=14:x=${x}:y=36`;
 const filter = [
-  `[0:v]${crop}[a];[1:v]${crop}[b];[a][b]blend=all_expr='if(lt(abs(X-W*${p}),3),255,if(lt(X,W*${p}),A,B))'`,
-  label('Today', 36),
-  label('Proposed', 'w-tw-36'),
+  `[0:v]${crop('Today')}[a];[1:v]${crop('Proposed')}[b];[a][b]blend=all_expr='if(lt(abs(X-W*${p}),3),255,if(lt(X,W*${p}),A,B))'`,
   'fps=15,split[x][y];[x]palettegen=max_colors=128[pal];[y][pal]paletteuse=dither=bayer:bayer_scale=4',
 ].join(',');
 const inputs = ['-loop', '1', '-t', String(T), '-framerate', '15', '-i', today, '-loop', '1', '-t', String(T), '-framerate', '15', '-i', proposed];
