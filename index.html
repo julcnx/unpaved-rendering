@@ -99,7 +99,8 @@
   .slider .l { left: 10px; } .slider .r { right: 10px; }
   .demo { width: 100%; aspect-ratio: 16 / 10; border: 1px solid var(--line); border-radius: 10px; display: block; }
   .heat .scroll { overflow-x: auto; }
-  .heat table { border-collapse: separate; border-spacing: 2px; width: 100%; margin: 0; font-size: 15px; }
+  .heat table { border-collapse: separate; border-spacing: 2px; width: 100%; margin: 0; font-size: 15px; table-layout: fixed; }
+  .heat tr:first-child th:first-child { width: 24%; }
   .heat th, .heat td { border: 0; padding: 6px 8px; }
   .heat tr:first-child th { font-weight: 600; color: var(--muted); text-align: center; font-size: 13px; }
   .heat th:first-child { text-align: left; font-weight: 600; white-space: nowrap; }
@@ -142,7 +143,6 @@
     .apps { grid-template-columns: 1fr; gap: 16px; }
     .apps .pair { grid-template-columns: 1fr 1fr; gap: 8px; }
     .zoom .row { grid-template-columns: 1fr; }
-    .junction .scroll img { width: 900px; max-width: none; } /* 20 panels: scroll sideways at a readable size */
     .heat table { font-size: 13px; }
     .heat th, .heat td { padding: 5px 4px; }
   }
@@ -329,7 +329,7 @@
 </div><figcaption>Drag to compare. Namibia, C38 at Namutoni (Etosha). Left: every road drawn as paved, as most maps do today. Right: the same map with style 4, a dashed outline on unpaved roads; the class colours stay.</figcaption></figure>
 
 <p>There is no single default: the right style depends on each map's design, and above all on how it already draws tracks, tunnels and construction. The legend needs one word: <strong>Unpaved</strong>.</p>
-<figure class="fig wide junction"><div class="scroll"><img src="article/img/junction.jpg" alt="Each class colour going Paved, then Unpaved, in the five styles" loading="lazy"></div><figcaption>The four class colours in the five styles. Each road goes Paved, then Unpaved through the S-bend; the side road is a white Unpaved road. Source: research/mockups.</figcaption></figure>
+<figure class="fig wide junction"><picture><source media="(max-width: 760px)" srcset="article/img/junction-portrait.jpg"><img src="article/img/junction.jpg" alt="Each class colour going Paved, then Unpaved, in the five styles" loading="lazy"></picture><figcaption>The four class colours in the five styles. Each road goes Paved, then Unpaved through the S-bend; the side road is a white Unpaved road. Source: research/mockups.</figcaption></figure>
 
 <p>The demo below draws the five styles on real data, at any of the sample spots or anywhere else.</p>
 <figure class="fig wide">

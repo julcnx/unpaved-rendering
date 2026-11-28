@@ -331,7 +331,8 @@ function renderComparison(suffix: string) {
 // side road joining in the bend. Straight samples hide what dashes do on curves, at short ways and where the surface changes.
 // twoLevels (article figure, 2026-11-13): the last part stays Unpaved, so the sheet shows Paved and Unpaved only;
 // the Off-road mark is an optional extension described in text.
-function renderJunction(suffix = '', land = LAND, twoLevels = false) {
+// transposed (2026-11-28, article on phones and Facebook): one row per style, one column per class colour.
+function renderJunction(suffix = '', land = LAND, twoLevels = false, transposed = false) {
   const H = 120, LABEL_W = 290, keys = Object.keys(OPTIONS);
   const PARTS: [string, State][] = [['M 15 28 L 75 28', 'Paved'], ['M 75 28 C 120 28 120 70 165 70', 'Unpaved'], ['M 165 70 C 205 70 205 30 240 30 L 285 30', twoLevels ? 'Unpaved' : 'Unpaved + Off-road']];
   const SIDE = 'M 120 112 L 120 49'; // ends on the middle of the S-bend
@@ -344,10 +345,21 @@ function renderJunction(suffix = '', land = LAND, twoLevels = false) {
   };
   const straight = ROAD, normalLand = LAND;
   LAND = land;
-  const w = LABEL_W + keys.length * (CELL_W + 10) + 10, y = (r: number) => 40 + r * (H + 10), h = y(CLASSES.length);
-  const body = keys.map((key, i) => text(LABEL_W + i * (CELL_W + 10) + CELL_W / 2, 26, OPTIONS[key].title, 15, 700, 'middle')).join('') +
-    CLASSES.map((c, r) => text(10, y(r) + H / 2 + 5, `${c.name}: Paved, Unpaved${twoLevels ? '' : ', Off-road'}`, 14, 700) + keys.map((key, i) =>
-      `<g transform="translate(${LABEL_W + i * (CELL_W + 10)} ${y(r)})"><rect width="${CELL_W}" height="${H}" fill="${LAND}" rx="4"/>${cell(key, c)}</g>`).join('')).join('');
+  const at = (x: number, top: number, inner: string) => `<g transform="translate(${x} ${top})"><rect width="${CELL_W}" height="${H}" fill="${LAND}" rx="4"/>${inner}</g>`;
+  let w: number, h: number, body: string;
+  if (transposed) {
+    const five = keys.filter((k) => k !== 'dirt-dots'); // the article's five styles; style 6 is a later candidate
+    const y = (r: number) => 84 + r * (H + 44); // labels larger than the landscape sheet: it is read on phones
+    w = CLASSES.length * (CELL_W + 10) + 10; h = y(five.length) - 34;
+    body = CLASSES.map((c, i) => text(10 + i * (CELL_W + 10) + CELL_W / 2, 30, `${c.name}: Paved, Unpaved`, 22, 700, 'middle')).join('') +
+      five.map((key, r) => text(10, y(r) - 10, OPTIONS[key].title, 24, 700) + CLASSES.map((c, i) => at(10 + i * (CELL_W + 10), y(r), cell(key, c))).join('')).join('');
+  } else {
+    const y = (r: number) => 40 + r * (H + 10);
+    w = LABEL_W + keys.length * (CELL_W + 10) + 10; h = y(CLASSES.length);
+    body = keys.map((key, i) => text(LABEL_W + i * (CELL_W + 10) + CELL_W / 2, 26, OPTIONS[key].title, 15, 700, 'middle')).join('') +
+      CLASSES.map((c, r) => text(10, y(r) + H / 2 + 5, `${c.name}: Paved, Unpaved${twoLevels ? '' : ', Off-road'}`, 14, 700) + keys.map((key, i) =>
+        at(LABEL_W + i * (CELL_W + 10), y(r), cell(key, c))).join('')).join('');
+  }
   ROAD = straight; LAND = normalLand;
   out(`options-junction${suffix}`, svg(w, h + 30, body + text(10, h + 18, twoLevels
     ? 'Left to right: Paved, then Unpaved through the S-bend. Side road: white, Unpaved. Each part is its own way, so the dashes restart where the surface changes.'
@@ -530,6 +542,7 @@ function renderLowZoom() {
 render('');
 renderJunction();
 renderJunction('-2levels', LAND, true);
+renderJunction('-2levels-portrait', LAND, true, true);
 // The same sheet on the demo's forest and sand backgrounds (js/map.js): the tints and browns must hold on green and on beige.
 renderJunction('-forest', '#add19e');
 renderJunction('-sand', '#e8d6ad');
