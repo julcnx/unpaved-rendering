@@ -1,6 +1,6 @@
 # Facebook post (Horizons Unlimited group)
 
-Draft, 2026-11-28. To post Tuesday evening (2026-12-01), two days after the wall post ([post.md](post.md)). Post fresh, not shared from the wall. Same five images and captions as the wall post, same order. Check the group rules on links first.
+Draft, 2026-11-28. To post Tuesday evening (2026-12-01), two days after the wall post ([post.md](post.md)). Post fresh, not shared from the wall. Same five images as the wall post, same order; captions below. Check the group rules on links first.
 
 ## Text
 
@@ -26,5 +26,13 @@ Two questions:
 https://julcnx.github.io/unpaved-rendering
 
 Follow me for more on this and other map topics.
+
+## Photo captions
+
+1. `1-photos.png`: Main roads, all of them unpaved. Most map apps draw every one as smooth tarmac. Photos: Mapillary contributors (names on the image), CC BY-SA 4.0.
+2. `2-slider.gif`: Same map, same colours. The dashed edge just tells you where the tarmac ends. Namutoni, Namibia. © OpenStreetMap contributors.
+3. `3-apps.png`: One road in Namibia in six apps. Some show the gravel, some don't, some lose the road class. © OpenStreetMap contributors.
+4. `4-table.png`: Share of each road class tagged unpaved. Namibia 95% of secondary roads, Bolivia 73%. And these are minimums. Source: OpenStreetMap, November 2026.
+5. `5-styles.png`: The five styles I tested, on each road colour.
 
 Figures: research/stats/report.md (all km, untagged counted as paved, so minimums), November 2026.
