@@ -25,6 +25,19 @@ await page.goto('file://' + path.join(root, 'index.html'), { waitUntil: 'network
 await page.addStyleTag({ content: '.photos .grid { grid-template-columns: repeat(3, 1fr) !important; }' });
 await page.evaluate(() => document.querySelectorAll('img[loading=lazy]').forEach(i => i.loading = 'eager'));
 await new Promise(r => setTimeout(r, 1500));
+// Photo grid: no year, and the photographer's username small on the photo's bottom-right corner (CC BY-SA credit stays on the image).
+await page.evaluate(() => document.querySelectorAll('.photos .grid figure').forEach(f => {
+  const span = f.querySelector('figcaption span'), img = f.querySelector('img');
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'position:relative';
+  img.replaceWith(wrap);
+  wrap.append(img);
+  const credit = document.createElement('span');
+  credit.textContent = span.querySelector('a').textContent;
+  credit.style.cssText = 'position:absolute;right:6px;bottom:4px;font-size:9px;color:rgba(255,255,255,.85);text-shadow:0 0 3px rgba(0,0,0,.8),0 0 1px rgba(0,0,0,.9)';
+  wrap.append(credit);
+  span.remove();
+}));
 for (const [file, sel, keepCaption] of figs) {
   const el = await page.$(sel);
   await el.evaluate((f, keep) => {
