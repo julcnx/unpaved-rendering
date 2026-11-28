@@ -27,6 +27,6 @@ Two questions:
 
 https://julcnx.github.io/unpaved-rendering
 
-Follow me for more on this and other map topics. Next up: laterite, the red dirt that's fine when dry and slippery when wet.
+Follow me for more on this and other map topics.
 
 Figures: research/stats/report.md (all km, untagged counted as paved, so minimums), November 2026.
