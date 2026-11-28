@@ -6,7 +6,7 @@ Draft, 2026-11-28. To post Tuesday evening (2026-12-01), two days after the wall
 
 **Ever planned or followed a nice solid line on the map and ended up on gravel?**
 
-Whether you follow the app on the bars or plan at home and ride a GPX, it's the same problem: most map apps draw dirt and gravel exactly like tarmac. It happened to me between Pai and Wiang Haeng in Thailand.
+Whether you follow the app on the bars or plan at home and ride a GPX, it's the same problem: most map apps draw dirt and gravel exactly like tarmac.
 
 And it's not bad data. OpenStreetMap mappers have tagged the surface, the apps just don't show it. Unpaved, at least:
 🇧🇴 Bolivia: 58% of primary roads
